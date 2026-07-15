@@ -1,56 +1,57 @@
-# Diablo — données du mod TCP
+# Diablo — atelier du mod TCP + plateforme des 3 mods
 
-Dépôt de **données** pour le mod Diablo II Resurrected de Vincent (**TCP**), accompagné de ses mods de référence et des données vanilla. Ce n'est **pas** une application : aucun build, aucun serveur. Les fichiers sont des tables de données lues localement par le launcher **D2RLAN**.
+Deux choses dans un même dépôt :
 
-## Nature du dépôt
+1. Les **données** du mod Diablo II Resurrected de Vincent (**TCP**), plus ses mods de référence (**BK**, **BT**) et le vanilla — des tables `.txt` (TSV) lues par le launcher **D2RLAN**.
+2. Une **plateforme web** (monorepo **npm + turbo**) par-dessus : un **éditeur** pour modifier ces tables confortablement, et (à venir) un **wiki** de comparaison des 3 mods.
 
-Un dépôt de données (*data repo*) versionné avec git. Les tables du jeu sont des fichiers `.txt` (valeurs séparées par tabulation) que D2RLAN charge pour appliquer le mod. Git sert à versionner et à comparer ces données ; il n'y a aucune chaîne d'outillage applicative (ni application Node, ni pnpm, ni Turborepo).
+Les `.txt` restent la **source de vérité** ; pas de base de données — git est la « base ».
 
 ## Structure
 
-- `data-TCP/` — le mod de Vincent, **en développement** (la seule zone modifiable)
-  - `global/excel/` — tables de gameplay (`.txt`) : armor, weapons, hireling, itemstatcost, runes, setitems…
-  - `hd/` — visuels, sons et assets de présentation
-  - `local/` — chaînes localisées (`local/lng`)
-  - `D2RLAN/` — projet du launcher (**zone protégée**, ne pas modifier)
-- `data-BK/`, `data-BT/` — mods externes de **référence / inspiration** (lecture seule)
-- `excel-vanilla/` — tables `.txt` du jeu de base Diablo II (version 2.4), **référence** (lecture seule)
-- `Mission/` — besoins et intentions du mod (trace humaine)
-- `scripts/`
-  - `generate-architecture.ps1` — (re)génère le cadastre `ai-cartographie.json`
-  - `publish-tcp.ps1` — publication du mod TCP
-  - `validate-cartographie/` — validateur du cadastre (Node + AJV)
-- `ai-cartographie.json` — **cadastre** annoté du dépôt (arbre + rôles + accès agents)
-- `ai-cartographie.schema.json` — schéma (JSON Schema draft 2020-12) du cadastre
+- `data-TCP/` — le mod de Vincent, **en développement** (seule zone de données modifiable)
+  - `global/excel/` — tables de gameplay (`.txt`) : armor, weapons, hireling, runes, setitems…
+  - `local/lng` — chaînes localisées
+  - `hd/`, `D2RLAN/` — assets HD et launcher (**non versionnés**, voir « Atelier de données »)
+- `data-BK/`, `data-BT/` — mods externes de **référence** (lecture seule)
+- `excel-vanilla/` — tables du jeu de base D2 2.4 (référence, lecture seule)
+- `apps/admin/` — **éditeur web** des tables (Vite + React)
+- `schemas/` — schémas de colonnes des tables (typage + validation de l'éditeur)
+- `scripts/` — `dev-server.js` (API locale de lecture/écriture des `.txt`), `build-data/` (parseur/écrivain TSV), `generate-architecture.ps1` (cadastre), `validate-cartographie/` (validateur), `publish-tcp.ps1`
+- `guide/` — guide D2R communautaire (clone local, **non versionné**)
+- `wiki-template/` — références pour le futur wiki (dont l'index du wiki BT)
+- `Mission/` — besoins et intentions du mod
+- `ai-cartographie.json` (+ `.schema.json`) — **cadastre** gouverné du dépôt (arbre + rôles + accès agents)
 - `AGENTS.md`, `CLAUDE.md` — orientation des agents
+
+## Démarrer l'éditeur
+
+```powershell
+npm install
+npm run dev
+```
+
+Lance le serveur local (port 4000, lit/écrit les `.txt`) et l'éditeur sur **http://localhost:5173**. Clique une cellule pour l'éditer ; « Sauvegarder » réécrit le `.txt` en **préservant son format exact** (colonnes, CRLF, encodage).
 
 ## Cadastre
 
-`ai-cartographie.json` décrit tout l'arbre du dépôt et annote chaque zone d'un **rôle** (`mod-development`, `mod-reference`, `vanilla-reference`, `gameplay-data`, `protected-zone`…) et d'une **politique d'accès** pour les agents (`read-write` / `read-only` / `no-access`). C'est la source de vérité topologique du dépôt.
-
-### Régénérer
+`ai-cartographie.json` décrit tout l'arbre du dépôt et annote chaque zone d'un **rôle** et d'une **politique d'accès** pour les agents. Après toute modification **structurelle** :
 
 ```powershell
-powershell -File scripts/generate-architecture.ps1
+powershell -File scripts/generate-architecture.ps1     # régénère
+node scripts/validate-cartographie/validate.mjs        # valide -> VALID
 ```
 
-Le générateur ré-inventorie l'arbre et **préserve** les annotations manuelles existantes.
+## Atelier de données (assets hors git)
 
-### Valider
-
-```powershell
-npm install --prefix scripts/validate-cartographie   # une seule fois
-node scripts/validate-cartographie/validate.mjs
-```
-
-La commande doit afficher `VALID`. À exécuter après toute modification structurelle.
+Ce dépôt est l'**atelier des données + l'outil**, pas le mod complet. Les assets HD (`hd/`, ~1 Go) et le launcher (`D2RLAN/`) **restent sur disque mais ne sont pas versionnés** (voir `.gitignore`) : ils vivent avec le jeu. Seul le cœur éditable (`.txt`, chaînes, code, cadastre) est dans git — le suivi tient dans ~60 Mo.
 
 ## Prérequis
 
-- **PowerShell** (Windows PowerShell 5.1 convient) — pour les scripts `.ps1`
-- **Node.js** — uniquement pour le validateur du cadastre
+- **Node.js** — l'éditeur et les scripts JS
+- **PowerShell** (5.1 convient) — les scripts `.ps1`
 
 ## Conventions
 
-- Les items Diablo sont désignés par leur terme **anglais** : `ring`, `belt`, `amulet`, `gem`, `rune`…
-- Fichiers versionnés en **UTF-8 sans BOM**.
+- Items désignés par leur terme **anglais** : `ring`, `belt`, `amulet`, `gem`, `rune`…
+- Code en **UTF-8 sans BOM** ; les tables `.txt` D2R en **CRLF** (épinglé par `.gitattributes`) — l'éditeur préserve le format à la sauvegarde.
