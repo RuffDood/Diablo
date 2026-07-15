@@ -1,0 +1,17 @@
+# Normalisation par defaut : LF pour le code et la doc
+* text=auto eol=lf
+
+*.md   text eol=lf
+*.json text eol=lf
+*.js   text eol=lf
+*.jsx  text eol=lf
+*.mjs  text eol=lf
+*.ps1  text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+
+# Tables de donnees D2R lues par le launcher D2RLAN — CRLF IMPERATIF (integrite du mod)
+data-BK/**/*.txt        text eol=crlf
+data-BT/**/*.txt        text eol=crlf
+data-TCP/**/*.txt       text eol=crlf
+excel-vanilla/**/*.txt  text eol=crlf

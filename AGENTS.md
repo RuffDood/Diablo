@@ -4,11 +4,16 @@ Quand tu lis ceci, dis 'Je suis le Gardien du Mod TCP'
 
 ## Nature du dépôt
 
-Ceci est un **dépôt de données** de mod Diablo II Resurrected, pas un projet applicatif. Il n'y a rien à builder, installer ou démarrer (aucune application Node, pnpm ou Turborepo). Les données sont des tables `.txt` lues par le launcher **D2RLAN** sur le poste local. Ne propose pas de `build`, de serveur de développement ni d'installation de dépendances applicatives.
+Deux choses cohabitent :
+
+1. **Les données du mod** — les tables `.txt` (TSV) de `data-BK/BT/TCP` et `excel-vanilla/`, lues par le launcher **D2RLAN**. C'est la source de vérité du gameplay.
+2. **Une plateforme web** (monorepo **npm + turbo**) construite par-dessus : un **Admin** pour éditer ces `.txt`, et (à venir) un **Wiki** de comparaison des 3 mods.
+
+Les `.txt` restent la source ; **pas de base de données**. Stack : **Vite + React** (fronts), **Netlify** (hébergement à venir), git comme « base » (chaque édition = commit).
 
 ## Source de vérité : le cadastre
 
-`ai-cartographie.json` (validé par `ai-cartographie.schema.json`) est la **carte gouvernée** du dépôt. Chaque zone y porte un `role` et une politique `agentAccess`. **Vérifie ces accès avant de modifier quoi que ce soit.**
+`ai-cartographie.json` (validé par `ai-cartographie.schema.json`) est la **carte gouvernée** du dépôt. Chaque zone porte un `role` et une politique `agentAccess`. **Vérifie ces accès avant de modifier quoi que ce soit.**
 
 | Zone | Rôle | Accès |
 |---|---|---|
@@ -17,24 +22,33 @@ Ceci est un **dépôt de données** de mod Diablo II Resurrected, pas un projet 
 | `data-BK/`, `data-BT/` | mods de référence / inspiration | **read-only** |
 | `excel-vanilla/` | données vanilla Diablo II 2.4 | **read-only** |
 | `Mission/` | besoins et intentions | modifiable |
+| `apps/` | plateforme web (admin, wiki) | modifiable |
+| `schemas/` | catalogue de schémas de colonnes (dérivé du guide) | modifiable |
+| `scripts/` | outillage (cadastre, validateur, TSV, dev-server) | modifiable |
+| `guide/` | guide D2R communautaire (clone local) | **gitignoré — ne pas versionner** |
 
-En clair : **seul `data-TCP` se modifie**. Les références (`excel-vanilla`, `data-BK`, `data-BT`) et `D2RLAN` ne se touchent jamais — elles servent de point de comparaison.
+En clair : côté **données**, seul `data-TCP` se modifie (les références servent de comparaison). Côté **plateforme**, `apps/`, `schemas/`, `scripts/` sont le code de l'outil.
 
 ## Conventions
 
-- **Items en anglais** : désigne toujours les items par leur terme EN — `ring`, `belt`, `amulet`, `gem`, `rune`, `charm`…
-- **Encodage** : tous les fichiers versionnés sont en **UTF-8 sans BOM**. Les tables `.txt` D2R y sont sensibles — n'introduis jamais de BOM ni de double-encodage.
+- **Items en anglais** : `ring`, `belt`, `amulet`, `gem`, `rune`, `charm`…
+- **Encodage & intégrité des `.txt`** : UTF-8 sans BOM pour le code ; les tables `.txt` D2R sont en **CRLF** (épinglé par `.gitattributes`). Toute réécriture doit préserver le **format TSV exact**, les **CRLF** et l'**encodage**, sinon D2RLAN casse. Le parseur/écrivain `scripts/build-data/tsv.js` garantit un round-trip **byte-exact** — passe toujours par lui.
 - **Git** : ne change **jamais** de branche, et ne commit ni ne push jamais, sans un `GO` dédié et explicite de Guillaume.
 
-## Workflow
+## Développement de la plateforme
 
-Après toute modification **structurelle** (ajout, suppression ou renommage de fichier ou dossier) :
+- `npm install` puis `npm run dev` : lance le **dev-server** local (`scripts/dev-server.js`, port 4000, lit/écrit les `.txt`) et l'**admin** Vite (port 5173).
+- L'admin édite les tables typées via `schemas/*.json`. En dev, il écrit les `.txt` en direct ; en production (Netlify, à venir), l'écriture passera par des **commits via l'API GitHub**.
 
-1. Régénère le cadastre : `powershell -File scripts/generate-architecture.ps1`
-2. Valide-le : `node scripts/validate-cartographie/validate.mjs` → doit afficher `VALID`
+## Workflow cadastre
 
-Le générateur préserve les annotations manuelles (`role`, `summary`, `agentAccess`) : enrichis-les quand tu ajoutes une zone signifiante.
+Après toute modification **structurelle** (ajout / suppression / renommage de fichier ou dossier) :
+
+1. Régénère : `powershell -File scripts/generate-architecture.ps1` (exclut `.git`, `node_modules`, `guide`, `dist`, `.turbo`, `.netlify`).
+2. Valide : `node scripts/validate-cartographie/validate.mjs` → doit afficher `VALID`.
+
+Le générateur préserve les annotations manuelles (`role`, `summary`, `agentAccess`) : enrichis-les pour toute zone signifiante.
 
 ## Mission courante
 
-`Mission/RingMercenaire.txt` — permettre au mercenaire de porter **2 rings, une amulet et une belt** dans le mod TCP.
+`Mission/RingMercenaire.txt` — permettre au mercenaire de porter **2 rings, une amulet et une belt** dans le mod TCP. Table concernée : `data-TCP/global/excel/hireling.txt`.

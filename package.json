@@ -1,0 +1,17 @@
+{
+  "name": "diablo",
+  "private": true,
+  "packageManager": "npm@11.9.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"node scripts/dev-server.js\" \"npm run dev -w apps/admin\"",
+    "build": "turbo run build",
+    "preview": "turbo run preview"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "turbo": "^2.10.5"
+  }
+}

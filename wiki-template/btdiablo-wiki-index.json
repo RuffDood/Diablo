@@ -1,0 +1,4943 @@
+{
+  "site": "BTDiablo Wiki",
+  "description": "Index des pages du wiki du mod BT (data-BT, par BTNeandertha1) — inspiration pour le Wiki des 3 Mods.",
+  "homepage": "https://btd.miraheze.org/wiki/Main_Page",
+  "baseUrl": "https://btd.miraheze.org/wiki/",
+  "source": "https://btd.miraheze.org/sitemap.xml",
+  "sitemapLastmod": "2026-07-11",
+  "pageCount": 1233,
+  "pages": [
+    {
+      "title": "Main Page",
+      "url": "https://btd.miraheze.org/wiki/Main_Page"
+    },
+    {
+      "title": "General Changes",
+      "url": "https://btd.miraheze.org/wiki/General_Changes"
+    },
+    {
+      "title": "How to Install",
+      "url": "https://btd.miraheze.org/wiki/How_to_Install"
+    },
+    {
+      "title": "Bug Reporting",
+      "url": "https://btd.miraheze.org/wiki/Bug_Reporting"
+    },
+    {
+      "title": "Future Ideas",
+      "url": "https://btd.miraheze.org/wiki/Future_Ideas"
+    },
+    {
+      "title": "Credits",
+      "url": "https://btd.miraheze.org/wiki/Credits"
+    },
+    {
+      "title": "Full Patch Notes",
+      "url": "https://btd.miraheze.org/wiki/Full_Patch_Notes"
+    },
+    {
+      "title": "Game",
+      "url": "https://btd.miraheze.org/wiki/Game"
+    },
+    {
+      "title": "Characters",
+      "url": "https://btd.miraheze.org/wiki/Characters"
+    },
+    {
+      "title": "Shrines",
+      "url": "https://btd.miraheze.org/wiki/Shrines"
+    },
+    {
+      "title": "Affixes",
+      "url": "https://btd.miraheze.org/wiki/Affixes"
+    },
+    {
+      "title": "Shop",
+      "url": "https://btd.miraheze.org/wiki/Shop"
+    },
+    {
+      "title": "Endgame",
+      "url": "https://btd.miraheze.org/wiki/Endgame"
+    },
+    {
+      "title": "Monsters",
+      "url": "https://btd.miraheze.org/wiki/Monsters"
+    },
+    {
+      "title": "Elites",
+      "url": "https://btd.miraheze.org/wiki/Elites"
+    },
+    {
+      "title": "Mercenary",
+      "url": "https://btd.miraheze.org/wiki/Mercenary"
+    },
+    {
+      "title": "Difficulties",
+      "url": "https://btd.miraheze.org/wiki/Difficulties"
+    },
+    {
+      "title": "Area Changes",
+      "url": "https://btd.miraheze.org/wiki/Area_Changes"
+    },
+    {
+      "title": "Axes",
+      "url": "https://btd.miraheze.org/wiki/Axes"
+    },
+    {
+      "title": "Boots",
+      "url": "https://btd.miraheze.org/wiki/Boots"
+    },
+    {
+      "title": "Holidays",
+      "url": "https://btd.miraheze.org/wiki/Holidays"
+    },
+    {
+      "title": "Runes",
+      "url": "https://btd.miraheze.org/wiki/Runes"
+    },
+    {
+      "title": "Gems",
+      "url": "https://btd.miraheze.org/wiki/Gems"
+    },
+    {
+      "title": "Corruptions",
+      "url": "https://btd.miraheze.org/wiki/Corruptions"
+    },
+    {
+      "title": "Recipes",
+      "url": "https://btd.miraheze.org/wiki/Recipes"
+    },
+    {
+      "title": "Runeword Helms",
+      "url": "https://btd.miraheze.org/wiki/Runeword_Helms"
+    },
+    {
+      "title": "Runeword Weapons",
+      "url": "https://btd.miraheze.org/wiki/Runeword_Weapons"
+    },
+    {
+      "title": "Runeword Chests",
+      "url": "https://btd.miraheze.org/wiki/Runeword_Chests"
+    },
+    {
+      "title": "Runeword Shields",
+      "url": "https://btd.miraheze.org/wiki/Runeword_Shields"
+    },
+    {
+      "title": "Maces",
+      "url": "https://btd.miraheze.org/wiki/Maces"
+    },
+    {
+      "title": "Staves",
+      "url": "https://btd.miraheze.org/wiki/Staves"
+    },
+    {
+      "title": "Chests",
+      "url": "https://btd.miraheze.org/wiki/Chests"
+    },
+    {
+      "title": "Daggers",
+      "url": "https://btd.miraheze.org/wiki/Daggers"
+    },
+    {
+      "title": "Gloves",
+      "url": "https://btd.miraheze.org/wiki/Gloves"
+    },
+    {
+      "title": "Helms",
+      "url": "https://btd.miraheze.org/wiki/Helms"
+    },
+    {
+      "title": "Javelins",
+      "url": "https://btd.miraheze.org/wiki/Javelins"
+    },
+    {
+      "title": "Class Weapons",
+      "url": "https://btd.miraheze.org/wiki/Class_Weapons"
+    },
+    {
+      "title": "Polearms",
+      "url": "https://btd.miraheze.org/wiki/Polearms"
+    },
+    {
+      "title": "Class Armors",
+      "url": "https://btd.miraheze.org/wiki/Class_Armors"
+    },
+    {
+      "title": "Scepters",
+      "url": "https://btd.miraheze.org/wiki/Scepters"
+    },
+    {
+      "title": "Shields",
+      "url": "https://btd.miraheze.org/wiki/Shields"
+    },
+    {
+      "title": "Spears",
+      "url": "https://btd.miraheze.org/wiki/Spears"
+    },
+    {
+      "title": "Swords",
+      "url": "https://btd.miraheze.org/wiki/Swords"
+    },
+    {
+      "title": "Wands",
+      "url": "https://btd.miraheze.org/wiki/Wands"
+    },
+    {
+      "title": "Rings",
+      "url": "https://btd.miraheze.org/wiki/Rings"
+    },
+    {
+      "title": "Amulets",
+      "url": "https://btd.miraheze.org/wiki/Amulets"
+    },
+    {
+      "title": "Item Overview",
+      "url": "https://btd.miraheze.org/wiki/Item_Overview"
+    },
+    {
+      "title": "Crafting",
+      "url": "https://btd.miraheze.org/wiki/Crafting"
+    },
+    {
+      "title": "Throwing",
+      "url": "https://btd.miraheze.org/wiki/Throwing"
+    },
+    {
+      "title": "Bows",
+      "url": "https://btd.miraheze.org/wiki/Bows"
+    },
+    {
+      "title": "Crossbows",
+      "url": "https://btd.miraheze.org/wiki/Crossbows"
+    },
+    {
+      "title": "Jewels",
+      "url": "https://btd.miraheze.org/wiki/Jewels"
+    },
+    {
+      "title": "Belts",
+      "url": "https://btd.miraheze.org/wiki/Belts"
+    },
+    {
+      "title": "Socket List",
+      "url": "https://btd.miraheze.org/wiki/Socket_List"
+    },
+    {
+      "title": "Charms",
+      "url": "https://btd.miraheze.org/wiki/Charms"
+    },
+    {
+      "title": "Common",
+      "url": "https://btd.miraheze.org/wiki/Common"
+    },
+    {
+      "title": "Normal",
+      "url": "https://btd.miraheze.org/wiki/Normal"
+    },
+    {
+      "title": "Expansion",
+      "url": "https://btd.miraheze.org/wiki/Expansion"
+    },
+    {
+      "title": "Amazon",
+      "url": "https://btd.miraheze.org/wiki/Amazon"
+    },
+    {
+      "title": "Assassin",
+      "url": "https://btd.miraheze.org/wiki/Assassin"
+    },
+    {
+      "title": "Barbarian",
+      "url": "https://btd.miraheze.org/wiki/Barbarian"
+    },
+    {
+      "title": "Druid",
+      "url": "https://btd.miraheze.org/wiki/Druid"
+    },
+    {
+      "title": "Necromancer",
+      "url": "https://btd.miraheze.org/wiki/Necromancer"
+    },
+    {
+      "title": "Paladin",
+      "url": "https://btd.miraheze.org/wiki/Paladin"
+    },
+    {
+      "title": "Sorceress",
+      "url": "https://btd.miraheze.org/wiki/Sorceress"
+    },
+    {
+      "title": "User talk:BinaryAzeotrope",
+      "url": "https://btd.miraheze.org/wiki/User_talk:BinaryAzeotrope"
+    },
+    {
+      "title": "All Items",
+      "url": "https://btd.miraheze.org/wiki/All_Items"
+    },
+    {
+      "title": "-199 MF Penalty",
+      "url": "https://btd.miraheze.org/wiki/-199_MF_Penalty"
+    },
+    {
+      "title": "Prefix/Suffix Changes",
+      "url": "https://btd.miraheze.org/wiki/Prefix/Suffix_Changes"
+    },
+    {
+      "title": "Dev",
+      "url": "https://btd.miraheze.org/wiki/Dev"
+    },
+    {
+      "title": "Dev11",
+      "url": "https://btd.miraheze.org/wiki/Dev11"
+    },
+    {
+      "title": "Items/RuneWord/Smoke",
+      "url": "https://btd.miraheze.org/wiki/Items/RuneWord/Smoke"
+    },
+    {
+      "title": "Items/Runeword/Smoke",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Smoke"
+    },
+    {
+      "title": "Items/Runewords",
+      "url": "https://btd.miraheze.org/wiki/Items/Runewords"
+    },
+    {
+      "title": "Items/Runeword/Honor",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Honor"
+    },
+    {
+      "title": "Items/Runeword/Wrath",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Wrath"
+    },
+    {
+      "title": "Items/Runeword/Ancients Pledge",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Ancients_Pledge"
+    },
+    {
+      "title": "Items/Runeword/Venom",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Venom"
+    },
+    {
+      "title": "Items/Runeword/Leaf",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Leaf"
+    },
+    {
+      "title": "Items/Runeword/Spirit",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Spirit"
+    },
+    {
+      "title": "Items/Runeword/Plague",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Plague"
+    },
+    {
+      "title": "Items/Runeword/Mosaic",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Mosaic"
+    },
+    {
+      "title": "Items/Runeword/Broken Promise",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Broken_Promise"
+    },
+    {
+      "title": "Items/Runeword/Holy Thunder",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Holy_Thunder"
+    },
+    {
+      "title": "Items/Runeword/Beast",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Beast"
+    },
+    {
+      "title": "Items/Runeword/Wealth",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Wealth"
+    },
+    {
+      "title": "Items/Runeword/Rain",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Rain"
+    },
+    {
+      "title": "Items/Runeword/Passion",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Passion"
+    },
+    {
+      "title": "Items/Runeword/Memory",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Memory"
+    },
+    {
+      "title": "Items/Runeword/Silence",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Silence"
+    },
+    {
+      "title": "Items/Runeword/Kings Grace",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Kings_Grace"
+    },
+    {
+      "title": "Items/Runeword/Duress",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Duress"
+    },
+    {
+      "title": "Items/Runeword/Enigma",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Enigma"
+    },
+    {
+      "title": "Items/Runeword/Rift",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Rift"
+    },
+    {
+      "title": "Items/Runeword/Prudence",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Prudence"
+    },
+    {
+      "title": "Items/Runeword/Ground",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Ground"
+    },
+    {
+      "title": "Items/Runeword/Exile",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Exile"
+    },
+    {
+      "title": "Items/Runeword/Steel",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Steel"
+    },
+    {
+      "title": "Items/Runeword/Gloom",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Gloom"
+    },
+    {
+      "title": "Items/Runeword/Call to Arms",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Call_to_Arms"
+    },
+    {
+      "title": "Items/Runeword/Delirium",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Delirium"
+    },
+    {
+      "title": "Items/Runeword/Lore",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Lore"
+    },
+    {
+      "title": "Items/Runeword/Death",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Death"
+    },
+    {
+      "title": "Items/Runeword/Myth",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Myth"
+    },
+    {
+      "title": "Items/Runeword/Knights Vigil",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Knights_Vigil"
+    },
+    {
+      "title": "Items/Runeword/Melody",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Melody"
+    },
+    {
+      "title": "Items/Runeword/Bramble",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Bramble"
+    },
+    {
+      "title": "Items/Runeword/Harmony",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Harmony"
+    },
+    {
+      "title": "Items/Runeword/Brand",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Brand"
+    },
+    {
+      "title": "Items/Runeword/Phoenix",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Phoenix"
+    },
+    {
+      "title": "Items/Runeword/Treachery",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Treachery"
+    },
+    {
+      "title": "Items/Runeword/Bone",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Bone"
+    },
+    {
+      "title": "Items/Runeword/Ice",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Ice"
+    },
+    {
+      "title": "Items/Runeword/Wind",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Wind"
+    },
+    {
+      "title": "Items/Runeword/Tempest",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Tempest"
+    },
+    {
+      "title": "Items/Runeword/Chains of Honor",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Chains_of_Honor"
+    },
+    {
+      "title": "Items/Runeword/Dilemma",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Dilemma"
+    },
+    {
+      "title": "Items/Runeword/Insight",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Insight"
+    },
+    {
+      "title": "Items/Runeword/Principle",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Principle"
+    },
+    {
+      "title": "Items/Runeword/Temper",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Temper"
+    },
+    {
+      "title": "Items/Runeword/Peace",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Peace"
+    },
+    {
+      "title": "Items/Runeword/Last Wish",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Last_Wish"
+    },
+    {
+      "title": "Items/Runeword/Metamorphosis",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Metamorphosis"
+    },
+    {
+      "title": "Items/Runeword/Edge",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Edge"
+    },
+    {
+      "title": "Items/Runeword/Doom",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Doom"
+    },
+    {
+      "title": "Items/Runeword/Sanctuary",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Sanctuary"
+    },
+    {
+      "title": "Items/Runeword/Red",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Red"
+    },
+    {
+      "title": "Items/Runeword/Cure",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Cure"
+    },
+    {
+      "title": "Items/Runeword/Grief",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Grief"
+    },
+    {
+      "title": "Items/Runeword/Rhyme",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Rhyme"
+    },
+    {
+      "title": "Items/Runeword/Malice",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Malice"
+    },
+    {
+      "title": "Items/Runeword/Breath of the Dying",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Breath_of_the_Dying"
+    },
+    {
+      "title": "Items/Runeword/Wisdom",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Wisdom"
+    },
+    {
+      "title": "Items/Runeword/Obedience",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Obedience"
+    },
+    {
+      "title": "Items/Runeword/Mist",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Mist"
+    },
+    {
+      "title": "Items/Runeword/Pestilence",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Pestilence"
+    },
+    {
+      "title": "Items/Runeword/Knowledge",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Knowledge"
+    },
+    {
+      "title": "Items/Runeword/Fury",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Fury"
+    },
+    {
+      "title": "Items/Runeword/Enlightenment",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Enlightenment"
+    },
+    {
+      "title": "Items/Runeword/Temptation",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Temptation"
+    },
+    {
+      "title": "Items/Runeword/Kingslayer",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Kingslayer"
+    },
+    {
+      "title": "Items/Runeword/Heart of the Oak",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Heart_of_the_Oak"
+    },
+    {
+      "title": "Items/Runeword/Unbending Will",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Unbending_Will"
+    },
+    {
+      "title": "Items/Runeword/Oath",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Oath"
+    },
+    {
+      "title": "Items/Runeword/Dragon",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Dragon"
+    },
+    {
+      "title": "Items/Runeword/Radiance",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Radiance"
+    },
+    {
+      "title": "Items/Runeword/Famine",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Famine"
+    },
+    {
+      "title": "Items/Runeword/Stone",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Stone"
+    },
+    {
+      "title": "Items/Runeword/Eternity",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Eternity"
+    },
+    {
+      "title": "Items/Runeword/Destruction",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Destruction"
+    },
+    {
+      "title": "Items/Runeword/Lawbringer",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Lawbringer"
+    },
+    {
+      "title": "Items/Runeword/Trust",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Trust"
+    },
+    {
+      "title": "Items/Runeword/Stealth",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Stealth"
+    },
+    {
+      "title": "Items/Runeword/Pattern",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Pattern"
+    },
+    {
+      "title": "Items/Runeword/Flickering Flame",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Flickering_Flame"
+    },
+    {
+      "title": "Items/Runeword/Faith",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Faith"
+    },
+    {
+      "title": "Items/Runeword/Strength",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Strength"
+    },
+    {
+      "title": "Items/Runeword/Voice of Reason",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Voice_of_Reason"
+    },
+    {
+      "title": "Items/Runeword/White",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/White"
+    },
+    {
+      "title": "Items/Runeword/Humility",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Humility"
+    },
+    {
+      "title": "Items/Runeword/Splendor",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Splendor"
+    },
+    {
+      "title": "Items/Runeword/Revenge",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Revenge"
+    },
+    {
+      "title": "Items/Runeword/Lionheart",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Lionheart"
+    },
+    {
+      "title": "Items/Runeword/Black",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Black"
+    },
+    {
+      "title": "Items/Runeword/Nadir",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Nadir"
+    },
+    {
+      "title": "Items/Runeword/Fortitude",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Fortitude"
+    },
+    {
+      "title": "Items/Runeword/Chaos",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Chaos"
+    },
+    {
+      "title": "Items/Runeword/Dream",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Dream"
+    },
+    {
+      "title": "Items/Runeword/Infinity",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Infinity"
+    },
+    {
+      "title": "Items/Runeword/Hand of Justice",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Hand_of_Justice"
+    },
+    {
+      "title": "Items/Runeword/Hearth",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Hearth"
+    },
+    {
+      "title": "Items/Runeword/Zephyr",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Zephyr"
+    },
+    {
+      "title": "Items/Runeword/Bulwark",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Bulwark"
+    },
+    {
+      "title": "Items/Runeword/Obsession",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Obsession"
+    },
+    {
+      "title": "Items/Runeword/Crescent Moon",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Crescent_Moon"
+    },
+    {
+      "title": "Items/Runeword/Pride",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Pride"
+    },
+    {
+      "title": "Items/Runeword/Fortune",
+      "url": "https://btd.miraheze.org/wiki/Items/Runeword/Fortune"
+    },
+    {
+      "title": "Items/Uniques",
+      "url": "https://btd.miraheze.org/wiki/Items/Uniques"
+    },
+    {
+      "title": "Items/Unique/Howltusk",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Howltusk"
+    },
+    {
+      "title": "Items/Unique/Gargoyles Bite",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Gargoyles_Bite"
+    },
+    {
+      "title": "Items/Unique/Steel Carapice",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Steel_Carapice"
+    },
+    {
+      "title": "Items/Unique/Warshrike",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Warshrike"
+    },
+    {
+      "title": "Items/Unique/Mistiltein",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Mistiltein"
+    },
+    {
+      "title": "Items/Unique/Honor",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Honor"
+    },
+    {
+      "title": "Items/Unique/Widowmaker",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Widowmaker"
+    },
+    {
+      "title": "Items/Unique/The Spirit Shroud",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Spirit_Shroud"
+    },
+    {
+      "title": "Items/Unique/Husoldal Evo",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Husoldal_Evo"
+    },
+    {
+      "title": "Items/Unique/Witherstring",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Witherstring"
+    },
+    {
+      "title": "Items/Unique/Jalals Mane",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Jalals_Mane"
+    },
+    {
+      "title": "Items/Unique/Spiritforge",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Spiritforge"
+    },
+    {
+      "title": "Items/Unique/Andariels Visage",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Andariels_Visage"
+    },
+    {
+      "title": "Items/Unique/Kerkes Sanctuary",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Kerkes_Sanctuary"
+    },
+    {
+      "title": "Items/Unique/Slanderer",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Slanderer"
+    },
+    {
+      "title": "Items/Unique/Piercerib",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Piercerib"
+    },
+    {
+      "title": "Items/Unique/Wolfhowl",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Wolfhowl"
+    },
+    {
+      "title": "Items/Unique/Spike Thorn",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Spike_Thorn"
+    },
+    {
+      "title": "Items/Unique/Razorswitch",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Razorswitch"
+    },
+    {
+      "title": "Items/Unique/Frostburn",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Frostburn"
+    },
+    {
+      "title": "Items/Unique/Soul Harvest",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Soul_Harvest"
+    },
+    {
+      "title": "Items/Unique/Herald of Zakarum",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Herald_of_Zakarum"
+    },
+    {
+      "title": "Items/Unique/Lidless Wall",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Lidless_Wall"
+    },
+    {
+      "title": "Items/Unique/Elemental Union",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Elemental_Union"
+    },
+    {
+      "title": "Items/Unique/Atmas Wail",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Atmas_Wail"
+    },
+    {
+      "title": "Items/Unique/Static Accumulator",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Static_Accumulator"
+    },
+    {
+      "title": "Items/Unique/Chromatic Ire",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Chromatic_Ire"
+    },
+    {
+      "title": "Items/Unique/Ghoulhide",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Ghoulhide"
+    },
+    {
+      "title": "Items/Unique/Peasent Crown",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Peasent_Crown"
+    },
+    {
+      "title": "Items/Unique/Headhunters Glory",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Headhunters_Glory"
+    },
+    {
+      "title": "Items/Unique/Blackleach Blade",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Blackleach_Blade"
+    },
+    {
+      "title": "Items/Unique/Fleshripper",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Fleshripper"
+    },
+    {
+      "title": "Items/Unique/Langer Briser",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Langer_Briser"
+    },
+    {
+      "title": "Items/Unique/Bane Ash",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Bane_Ash"
+    },
+    {
+      "title": "Items/Unique/Rockfleece",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Rockfleece"
+    },
+    {
+      "title": "Items/Unique/Deathspade",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Deathspade"
+    },
+    {
+      "title": "Items/Unique/Ormus Robes",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Ormus_Robes"
+    },
+    {
+      "title": "Items/Unique/The Centurion",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Centurion"
+    },
+    {
+      "title": "Items/Unique/Shadowdancer",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Shadowdancer"
+    },
+    {
+      "title": "Items/Unique/Ginthers Rift",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Ginthers_Rift"
+    },
+    {
+      "title": "Items/Unique/Heart Carver",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Heart_Carver"
+    },
+    {
+      "title": "Items/Unique/Darksight Helm",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Darksight_Helm"
+    },
+    {
+      "title": "Items/Unique/Gheeds Fortune",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Gheeds_Fortune"
+    },
+    {
+      "title": "Items/Unique/Titans Revenge",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Titans_Revenge"
+    },
+    {
+      "title": "Items/Unique/Stormshield",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Stormshield"
+    },
+    {
+      "title": "Items/Unique/Darkforge Spawn",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Darkforge_Spawn"
+    },
+    {
+      "title": "Items/Unique/Atmas Scarab",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Atmas_Scarab"
+    },
+    {
+      "title": "Items/Unique/Twitchthroe",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Twitchthroe"
+    },
+    {
+      "title": "Items/Unique/Giantskull",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Giantskull"
+    },
+    {
+      "title": "Items/Unique/The Mahim-Oak Curio",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Mahim-Oak_Curio"
+    },
+    {
+      "title": "Items/Unique/Venom Grip",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Venom_Grip"
+    },
+    {
+      "title": "Items/Unique/Spirit Ward",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Spirit_Ward"
+    },
+    {
+      "title": "Items/Unique/Bing Sz Wang",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Bing_Sz_Wang"
+    },
+    {
+      "title": "Items/Unique/Sparking Mail",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Sparking_Mail"
+    },
+    {
+      "title": "Items/Unique/Athenas Wrath",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Athenas_Wrath"
+    },
+    {
+      "title": "Items/Unique/Alma Negra",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Alma_Negra"
+    },
+    {
+      "title": "Items/Unique/Pompes Wrath",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Pompes_Wrath"
+    },
+    {
+      "title": "Items/Unique/Culwens Point",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Culwens_Point"
+    },
+    {
+      "title": "Items/Unique/Gutsiphon",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Gutsiphon"
+    },
+    {
+      "title": "Items/Unique/Djinnslayer",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Djinnslayer"
+    },
+    {
+      "title": "Items/Unique/Coif of Glory",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Coif_of_Glory"
+    },
+    {
+      "title": "Items/Unique/Corrupted Azurewrath",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Corrupted_Azurewrath"
+    },
+    {
+      "title": "Items/Unique/Wartraveler",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Wartraveler"
+    },
+    {
+      "title": "Items/Unique/The Vile Husk",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Vile_Husk"
+    },
+    {
+      "title": "Items/Unique/Boneslayer Blade",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Boneslayer_Blade"
+    },
+    {
+      "title": "Items/Unique/The Cats Eye",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Cats_Eye"
+    },
+    {
+      "title": "Items/Unique/Wind God Fist",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Wind_God_Fist"
+    },
+    {
+      "title": "Items/Unique/Rattlecage",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Rattlecage"
+    },
+    {
+      "title": "Items/Unique/Treads of Cthon",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Treads_of_Cthon"
+    },
+    {
+      "title": "Items/Unique/Spineripper",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Spineripper"
+    },
+    {
+      "title": "Items/Unique/Wizardspike",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Wizardspike"
+    },
+    {
+      "title": "Items/Unique/Cerebus",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Cerebus"
+    },
+    {
+      "title": "Items/Unique/Kinemils Awl",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Kinemils_Awl"
+    },
+    {
+      "title": "Items/Unique/The Battlebranch",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Battlebranch"
+    },
+    {
+      "title": "Items/Unique/Goreshovel",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Goreshovel"
+    },
+    {
+      "title": "Items/Unique/The Tannr Gorerod",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Tannr_Gorerod"
+    },
+    {
+      "title": "Items/Unique/Warlords Trust",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Warlords_Trust"
+    },
+    {
+      "title": "Items/Unique/Griffons Eye",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Griffons_Eye"
+    },
+    {
+      "title": "Items/Unique/Thunderlords Overcharge",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Thunderlords_Overcharge"
+    },
+    {
+      "title": "Items/Unique/Tomb Reaver",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Tomb_Reaver"
+    },
+    {
+      "title": "Items/Unique/The Jade Tan Do",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Jade_Tan_Do"
+    },
+    {
+      "title": "Items/Unique/Goldwrap",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Goldwrap"
+    },
+    {
+      "title": "Items/Unique/Stoneraven",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Stoneraven"
+    },
+    {
+      "title": "Items/Unique/War Bonnet",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/War_Bonnet"
+    },
+    {
+      "title": "Items/Unique/Unsullieds Legacy",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Unsullieds_Legacy"
+    },
+    {
+      "title": "Items/Unique/Highlords Wrath",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Highlords_Wrath"
+    },
+    {
+      "title": "Items/Unique/Crown of Thieves",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Crown_of_Thieves"
+    },
+    {
+      "title": "Items/Unique/Infernostride",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Infernostride"
+    },
+    {
+      "title": "Items/Unique/Tyraels Might",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Tyraels_Might"
+    },
+    {
+      "title": "Items/Unique/Shadowkiller",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Shadowkiller"
+    },
+    {
+      "title": "Items/Unique/Stormspire",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Stormspire"
+    },
+    {
+      "title": "Items/Unique/Irices Shard",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Irices_Shard"
+    },
+    {
+      "title": "Items/Unique/The Dragon Chang",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Dragon_Chang"
+    },
+    {
+      "title": "Items/Unique/Halaberds Reign",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Halaberds_Reign"
+    },
+    {
+      "title": "Items/Unique/Azurewrath",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Azurewrath"
+    },
+    {
+      "title": "Items/Unique/Gravenspine",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Gravenspine"
+    },
+    {
+      "title": "Items/Unique/Umbral Disk",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Umbral_Disk"
+    },
+    {
+      "title": "Items/Unique/Razortine",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Razortine"
+    },
+    {
+      "title": "Items/Unique/Demonlimb",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Demonlimb"
+    },
+    {
+      "title": "Items/Unique/Ironward",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Ironward"
+    },
+    {
+      "title": "Items/Unique/Goblin Toe",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Goblin_Toe"
+    },
+    {
+      "title": "Items/Unique/Rockstopper",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Rockstopper"
+    },
+    {
+      "title": "Items/Unique/Pluckeye",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Pluckeye"
+    },
+    {
+      "title": "Items/Unique/Horizons Tornado",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Horizons_Tornado"
+    },
+    {
+      "title": "Items/Unique/Kings Absolution",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Kings_Absolution"
+    },
+    {
+      "title": "Items/Unique/Magewrath",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Magewrath"
+    },
+    {
+      "title": "Items/Unique/Schaefers Hammer",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Schaefers_Hammer"
+    },
+    {
+      "title": "Items/Unique/Hone Sundan",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Hone_Sundan"
+    },
+    {
+      "title": "Items/Unique/Firelizards Talons",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Firelizards_Talons"
+    },
+    {
+      "title": "Items/Unique/Ironstone",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Ironstone"
+    },
+    {
+      "title": "Items/Unique/Lacerator",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Lacerator"
+    },
+    {
+      "title": "Items/Unique/Starting Charm",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Starting_Charm"
+    },
+    {
+      "title": "Items/Unique/Gull",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Gull"
+    },
+    {
+      "title": "Items/Unique/Swordback Hold",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Swordback_Hold"
+    },
+    {
+      "title": "Items/Unique/Cranebeak",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Cranebeak"
+    },
+    {
+      "title": "Items/Unique/Ripsaw",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Ripsaw"
+    },
+    {
+      "title": "Items/Unique/Shadowfang",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Shadowfang"
+    },
+    {
+      "title": "Items/Unique/Hell Forge Hammer",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Hell_Forge_Hammer"
+    },
+    {
+      "title": "Items/Unique/Giants Protection",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Giants_Protection"
+    },
+    {
+      "title": "Items/Unique/The Diggler",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Diggler"
+    },
+    {
+      "title": "Items/Unique/Messerschmidts Reaver",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Messerschmidts_Reaver"
+    },
+    {
+      "title": "Items/Unique/Gungnirs Almighty",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Gungnirs_Almighty"
+    },
+    {
+      "title": "Items/Unique/Godstrike Arch",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Godstrike_Arch"
+    },
+    {
+      "title": "Items/Unique/Skin of the Vipermagi",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Skin_of_the_Vipermagi"
+    },
+    {
+      "title": "Items/Unique/Coldkill",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Coldkill"
+    },
+    {
+      "title": "Items/Unique/Dark Clan Crusher",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Dark_Clan_Crusher"
+    },
+    {
+      "title": "Items/Unique/Riphook",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Riphook"
+    },
+    {
+      "title": "Items/Unique/Raven Frost",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Raven_Frost"
+    },
+    {
+      "title": "Items/Unique/Hellplague",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Hellplague"
+    },
+    {
+      "title": "Items/Unique/Blackbogs Sharp",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Blackbogs_Sharp"
+    },
+    {
+      "title": "Items/Unique/Elemental Exposure",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Elemental_Exposure"
+    },
+    {
+      "title": "Items/Unique/Templars Might",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Templars_Might"
+    },
+    {
+      "title": "Items/Unique/Rimeraven",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Rimeraven"
+    },
+    {
+      "title": "Items/Unique/The Cranium Basher",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Cranium_Basher"
+    },
+    {
+      "title": "Items/Unique/Frostwind",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Frostwind"
+    },
+    {
+      "title": "Items/Unique/Rixots Keen",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Rixots_Keen"
+    },
+    {
+      "title": "Items/Unique/The Fetid Sprinkler",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Fetid_Sprinkler"
+    },
+    {
+      "title": "Items/Unique/Killing Intent",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Killing_Intent"
+    },
+    {
+      "title": "Items/Unique/Lycanders Aim",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Lycanders_Aim"
+    },
+    {
+      "title": "Items/Unique/Hellslayer",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Hellslayer"
+    },
+    {
+      "title": "Items/Unique/Wizendraw",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Wizendraw"
+    },
+    {
+      "title": "Items/Unique/Suicide Branch",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Suicide_Branch"
+    },
+    {
+      "title": "Items/Unique/Crushflange",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Crushflange"
+    },
+    {
+      "title": "Items/Unique/Blastbark",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Blastbark"
+    },
+    {
+      "title": "Items/Unique/Knell Striker",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Knell_Striker"
+    },
+    {
+      "title": "Items/Unique/Dwarf Star",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Dwarf_Star"
+    },
+    {
+      "title": "Items/Unique/Skin of the Flayerd One",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Skin_of_the_Flayerd_One"
+    },
+    {
+      "title": "Items/Unique/Charm Level",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Charm_Level"
+    },
+    {
+      "title": "Items/Unique/Blacktongue",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Blacktongue"
+    },
+    {
+      "title": "Items/Unique/Arachnid Mesh",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Arachnid_Mesh"
+    },
+    {
+      "title": "Items/Unique/The Oculus",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Oculus"
+    },
+    {
+      "title": "Items/Unique/Steelgoad",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Steelgoad"
+    },
+    {
+      "title": "Items/Unique/Bloodtree Stump",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Bloodtree_Stump"
+    },
+    {
+      "title": "Items/Unique/Gloomstrap",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Gloomstrap"
+    },
+    {
+      "title": "Items/Unique/KhalimFlail",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/KhalimFlail"
+    },
+    {
+      "title": "Items/Unique/Hellcast",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Hellcast"
+    },
+    {
+      "title": "Items/Unique/Felloak",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Felloak"
+    },
+    {
+      "title": "Items/Unique/Woestave",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Woestave"
+    },
+    {
+      "title": "Items/Unique/Islestrike",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Islestrike"
+    },
+    {
+      "title": "Items/Unique/Eschutas temper",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Eschutas_temper"
+    },
+    {
+      "title": "Items/Unique/Lance of Yaggai",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Lance_of_Yaggai"
+    },
+    {
+      "title": "Items/Unique/Wall of the Eyeless",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Wall_of_the_Eyeless"
+    },
+    {
+      "title": "Items/Unique/Cliffkiller",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Cliffkiller"
+    },
+    {
+      "title": "Items/Unique/Ravaging T1",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Ravaging_T1"
+    },
+    {
+      "title": "Items/Unique/The Gladiators Bane",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Gladiators_Bane"
+    },
+    {
+      "title": "Items/Unique/The Minataur",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Minataur"
+    },
+    {
+      "title": "Items/Unique/Steelshade",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Steelshade"
+    },
+    {
+      "title": "Items/Unique/Deathss Web",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Deathss_Web"
+    },
+    {
+      "title": "Items/Unique/Blade of Ali Baba",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Blade_of_Ali_Baba"
+    },
+    {
+      "title": "Items/Unique/Steelrend",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Steelrend"
+    },
+    {
+      "title": "Items/Unique/Guardian Naga",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Guardian_Naga"
+    },
+    {
+      "title": "Items/Unique/Lightsabre",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Lightsabre"
+    },
+    {
+      "title": "Items/Unique/Iceblink",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Iceblink"
+    },
+    {
+      "title": "Items/Unique/Leviathan",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Leviathan"
+    },
+    {
+      "title": "Items/Unique/Unsullieds Glory",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Unsullieds_Glory"
+    },
+    {
+      "title": "Items/Unique/Medusas Gaze",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Medusas_Gaze"
+    },
+    {
+      "title": "Items/Unique/The Face of Horror",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Face_of_Horror"
+    },
+    {
+      "title": "Items/Unique/Vampiregaze",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Vampiregaze"
+    },
+    {
+      "title": "Items/Unique/Amazons Teaching",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Amazons_Teaching"
+    },
+    {
+      "title": "Items/Unique/Runemaster",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Runemaster"
+    },
+    {
+      "title": "Items/Unique/Moonfall",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Moonfall"
+    },
+    {
+      "title": "Items/Unique/Griswolds Edge",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Griswolds_Edge"
+    },
+    {
+      "title": "Items/Unique/Undead Crown",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Undead_Crown"
+    },
+    {
+      "title": "Items/Unique/Calamity",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Calamity"
+    },
+    {
+      "title": "Items/Unique/Steelclash",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Steelclash"
+    },
+    {
+      "title": "Items/Unique/Maelstromwrath",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Maelstromwrath"
+    },
+    {
+      "title": "Items/Unique/Serpent Lord",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Serpent_Lord"
+    },
+    {
+      "title": "Items/Unique/Bloodmoon",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Bloodmoon"
+    },
+    {
+      "title": "Items/Unique/Silkweave",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Silkweave"
+    },
+    {
+      "title": "Items/Unique/Crow Caw",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Crow_Caw"
+    },
+    {
+      "title": "Items/Unique/Jyms Swift Journey",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Jyms_Swift_Journey"
+    },
+    {
+      "title": "Items/Unique/Maras Kaleidoscope",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Maras_Kaleidoscope"
+    },
+    {
+      "title": "Items/Unique/Annihilus",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Annihilus"
+    },
+    {
+      "title": "Items/Unique/Buriza-Do Kyanon",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Buriza-Do_Kyanon"
+    },
+    {
+      "title": "Items/Unique/Demon Machine",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Demon_Machine"
+    },
+    {
+      "title": "Items/Unique/Doomspittle",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Doomspittle"
+    },
+    {
+      "title": "Items/Unique/Stormrider",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Stormrider"
+    },
+    {
+      "title": "Items/Unique/Windhammer",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Windhammer"
+    },
+    {
+      "title": "Items/Unique/Deathbit",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Deathbit"
+    },
+    {
+      "title": "Items/Unique/Gaias Precision",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Gaias_Precision"
+    },
+    {
+      "title": "Items/Unique/Manald Heal",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Manald_Heal"
+    },
+    {
+      "title": "Items/Unique/Arreats Face",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Arreats_Face"
+    },
+    {
+      "title": "Items/Unique/Neverfrost",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Neverfrost"
+    },
+    {
+      "title": "Items/Unique/Baals Heart",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Baals_Heart"
+    },
+    {
+      "title": "Items/Unique/Bverrit Keep",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Bverrit_Keep"
+    },
+    {
+      "title": "Items/Unique/Swordguard",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Swordguard"
+    },
+    {
+      "title": "Items/Unique/Heavens Light",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Heavens_Light"
+    },
+    {
+      "title": "Items/Unique/Stoutnail",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Stoutnail"
+    },
+    {
+      "title": "Items/Unique/Magefist",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Magefist"
+    },
+    {
+      "title": "Items/Unique/Gravepalm",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Gravepalm"
+    },
+    {
+      "title": "Items/Unique/Lavagout",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Lavagout"
+    },
+    {
+      "title": "Items/Unique/String of Ears",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/String_of_Ears"
+    },
+    {
+      "title": "Items/Unique/Metalgrid",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Metalgrid"
+    },
+    {
+      "title": "Items/Unique/Soulfeast Tine",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Soulfeast_Tine"
+    },
+    {
+      "title": "Items/Unique/Kiras Guardian",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Kiras_Guardian"
+    },
+    {
+      "title": "Items/Unique/The Generals Tan Do Li Ga",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Generals_Tan_Do_Li_Ga"
+    },
+    {
+      "title": "Items/Unique/Ariocs Needle",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Ariocs_Needle"
+    },
+    {
+      "title": "Items/Unique/Boneflame",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Boneflame"
+    },
+    {
+      "title": "Items/Unique/Ravenlore",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Ravenlore"
+    },
+    {
+      "title": "Items/Unique/Todesfaelle Flamme",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Todesfaelle_Flamme"
+    },
+    {
+      "title": "Items/Unique/Cloudcrack",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Cloudcrack"
+    },
+    {
+      "title": "Items/Unique/Grims Burning Dead",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Grims_Burning_Dead"
+    },
+    {
+      "title": "Items/Unique/Stone Crusher",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Stone_Crusher"
+    },
+    {
+      "title": "Items/Unique/The Humongous",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Humongous"
+    },
+    {
+      "title": "Items/Unique/Corrupted Saracens Chance",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Corrupted_Saracens_Chance"
+    },
+    {
+      "title": "Items/Unique/Rainbow Facet",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Rainbow_Facet"
+    },
+    {
+      "title": "Items/Unique/Stormchaser",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Stormchaser"
+    },
+    {
+      "title": "Items/Unique/Executioners Justice",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Executioners_Justice"
+    },
+    {
+      "title": "Items/Unique/Stormlash",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Stormlash"
+    },
+    {
+      "title": "Items/Unique/Snakecord",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Snakecord"
+    },
+    {
+      "title": "Items/Unique/Ethereal Edge",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Ethereal_Edge"
+    },
+    {
+      "title": "Items/Unique/Shaftstop",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Shaftstop"
+    },
+    {
+      "title": "Items/Unique/Fleshrender",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Fleshrender"
+    },
+    {
+      "title": "Items/Unique/Bloodthief",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Bloodthief"
+    },
+    {
+      "title": "Items/Unique/Skullders Ire",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Skullders_Ire"
+    },
+    {
+      "title": "Items/Unique/Destiny",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Destiny"
+    },
+    {
+      "title": "Items/Unique/Windforce",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Windforce"
+    },
+    {
+      "title": "Items/Unique/Bladebuckle",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Bladebuckle"
+    },
+    {
+      "title": "Items/Unique/Demonhorns Edge",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Demonhorns_Edge"
+    },
+    {
+      "title": "Items/Unique/Harlequin Crest",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Harlequin_Crest"
+    },
+    {
+      "title": "Items/Unique/Boneshade",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Boneshade"
+    },
+    {
+      "title": "Items/Unique/SuperKhalimFlail",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/SuperKhalimFlail"
+    },
+    {
+      "title": "Items/Unique/Carin Shard",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Carin_Shard"
+    },
+    {
+      "title": "Items/Unique/Veil of Steel",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Veil_of_Steel"
+    },
+    {
+      "title": "Items/Unique/Demons Arch",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Demons_Arch"
+    },
+    {
+      "title": "Items/Unique/Duskdeep",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Duskdeep"
+    },
+    {
+      "title": "Items/Unique/Ghostflame",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Ghostflame"
+    },
+    {
+      "title": "Items/Unique/The Patriarch",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Patriarch"
+    },
+    {
+      "title": "Items/Unique/The Scalper",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Scalper"
+    },
+    {
+      "title": "Items/Unique/Gorerider",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Gorerider"
+    },
+    {
+      "title": "Items/Unique/Seraphs Hymn",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Seraphs_Hymn"
+    },
+    {
+      "title": "Items/Unique/Endlesshail",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Endlesshail"
+    },
+    {
+      "title": "Items/Unique/Nightwings Veil",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Nightwings_Veil"
+    },
+    {
+      "title": "Items/Unique/Hawkmail",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Hawkmail"
+    },
+    {
+      "title": "Items/Unique/Black Hades",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Black_Hades"
+    },
+    {
+      "title": "Items/Unique/Skorn",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Skorn"
+    },
+    {
+      "title": "Items/Unique/Dimoaks Hew",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Dimoaks_Hew"
+    },
+    {
+      "title": "Items/Unique/Viperfork",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Viperfork"
+    },
+    {
+      "title": "Items/Unique/The Eye of Etlich",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Eye_of_Etlich"
+    },
+    {
+      "title": "Items/Unique/The Grandfather",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Grandfather"
+    },
+    {
+      "title": "Items/Unique/Toothrow",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Toothrow"
+    },
+    {
+      "title": "Items/Unique/Gimmershred",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Gimmershred"
+    },
+    {
+      "title": "Items/Unique/Radimants Sphere",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Radimants_Sphere"
+    },
+    {
+      "title": "Items/Unique/The Reedeemer",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Reedeemer"
+    },
+    {
+      "title": "Items/Unique/Hotspur",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Hotspur"
+    },
+    {
+      "title": "Items/Unique/Saboteurs Blade",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Saboteurs_Blade"
+    },
+    {
+      "title": "Items/Unique/Nokozan Relic",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Nokozan_Relic"
+    },
+    {
+      "title": "Items/Unique/Slayers Edge",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Slayers_Edge"
+    },
+    {
+      "title": "Items/Unique/Hellrack",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Hellrack"
+    },
+    {
+      "title": "Items/Unique/Pelta Lunata",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Pelta_Lunata"
+    },
+    {
+      "title": "Items/Unique/The Ward",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Ward"
+    },
+    {
+      "title": "Items/Unique/Blackhand Key",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Blackhand_Key"
+    },
+    {
+      "title": "Items/Unique/Sandstorm Trek",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Sandstorm_Trek"
+    },
+    {
+      "title": "Items/Unique/Earth Shifter",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Earth_Shifter"
+    },
+    {
+      "title": "Items/Unique/Lazarus Spire",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Lazarus_Spire"
+    },
+    {
+      "title": "Items/Unique/Fathom",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Fathom"
+    },
+    {
+      "title": "Items/Unique/Spiritkeeper",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Spiritkeeper"
+    },
+    {
+      "title": "Items/Unique/Wrath of the High Heavens",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Wrath_of_the_High_Heavens"
+    },
+    {
+      "title": "Items/Unique/The Grim Reaper",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Grim_Reaper"
+    },
+    {
+      "title": "Items/Unique/Deathcleaver",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Deathcleaver"
+    },
+    {
+      "title": "Items/Unique/The Iron Jang Bong",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Iron_Jang_Bong"
+    },
+    {
+      "title": "Items/Unique/Hellfire Torch",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Hellfire_Torch"
+    },
+    {
+      "title": "Items/Unique/Visceratuant",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Visceratuant"
+    },
+    {
+      "title": "Items/Unique/Bonehew",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Bonehew"
+    },
+    {
+      "title": "Items/Unique/Nords Tenderizer",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Nords_Tenderizer"
+    },
+    {
+      "title": "Items/Unique/Hexfire",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Hexfire"
+    },
+    {
+      "title": "Items/Unique/The Rising Sun",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Rising_Sun"
+    },
+    {
+      "title": "Items/Unique/Stormguild",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Stormguild"
+    },
+    {
+      "title": "Items/Unique/Cutthroat1",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Cutthroat1"
+    },
+    {
+      "title": "Items/Unique/Goldskin",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Goldskin"
+    },
+    {
+      "title": "Items/Unique/Bul Kathos Mind",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Bul_Kathos_Mind"
+    },
+    {
+      "title": "Items/Unique/Sureshrill Frost",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Sureshrill_Frost"
+    },
+    {
+      "title": "Items/Unique/Staff of Kings",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Staff_of_Kings"
+    },
+    {
+      "title": "Items/Unique/Darkglow",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Darkglow"
+    },
+    {
+      "title": "Items/Unique/The Impaler",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Impaler"
+    },
+    {
+      "title": "Items/Unique/Boneflesh",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Boneflesh"
+    },
+    {
+      "title": "Items/Unique/Krintizs Skewer",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Krintizs_Skewer"
+    },
+    {
+      "title": "Items/Unique/Arm of King Leoric",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Arm_of_King_Leoric"
+    },
+    {
+      "title": "Items/Unique/Constricting Ring",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Constricting_Ring"
+    },
+    {
+      "title": "Items/Unique/Victors Silk",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Victors_Silk"
+    },
+    {
+      "title": "Items/Unique/Hellclap",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Hellclap"
+    },
+    {
+      "title": "Items/Unique/Iros Torch",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Iros_Torch"
+    },
+    {
+      "title": "Items/Unique/Thunderstroke",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Thunderstroke"
+    },
+    {
+      "title": "Items/Unique/Butchers Pupil",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Butchers_Pupil"
+    },
+    {
+      "title": "Items/Unique/Hand of Blessed Light",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Hand_of_Blessed_Light"
+    },
+    {
+      "title": "Items/Unique/Kuko Shakaku",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Kuko_Shakaku"
+    },
+    {
+      "title": "Items/Unique/Valkiry Wing",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Valkiry_Wing"
+    },
+    {
+      "title": "Items/Unique/Que-Hegans Wisdon",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Que-Hegans_Wisdon"
+    },
+    {
+      "title": "Items/Unique/Skullcollector",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Skullcollector"
+    },
+    {
+      "title": "Items/Unique/Gleamscythe",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Gleamscythe"
+    },
+    {
+      "title": "Items/Unique/Flamebellow",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Flamebellow"
+    },
+    {
+      "title": "Items/Unique/Carrion Wind",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Carrion_Wind"
+    },
+    {
+      "title": "Items/Unique/Dragonscale",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Dragonscale"
+    },
+    {
+      "title": "Items/Unique/Tarnhelm",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Tarnhelm"
+    },
+    {
+      "title": "Items/Unique/Pullspite",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Pullspite"
+    },
+    {
+      "title": "Items/Unique/Souldrain",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Souldrain"
+    },
+    {
+      "title": "Items/Unique/Draculs Grasp",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Draculs_Grasp"
+    },
+    {
+      "title": "Items/Unique/Mang Songs Lesson",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Mang_Songs_Lesson"
+    },
+    {
+      "title": "Items/Unique/Skystrike",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Skystrike"
+    },
+    {
+      "title": "Items/Unique/Bloodrise",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Bloodrise"
+    },
+    {
+      "title": "Items/Unique/Chance Guards",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Chance_Guards"
+    },
+    {
+      "title": "Items/Unique/Mindrend",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Mindrend"
+    },
+    {
+      "title": "Items/Unique/Nightsmoke",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Nightsmoke"
+    },
+    {
+      "title": "Items/Unique/Pierre Tombale Couant",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Pierre_Tombale_Couant"
+    },
+    {
+      "title": "Items/Unique/Spire of Honor",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Spire_of_Honor"
+    },
+    {
+      "title": "Items/Unique/Lycanders Flank",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Lycanders_Flank"
+    },
+    {
+      "title": "Items/Unique/Bloodfist",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Bloodfist"
+    },
+    {
+      "title": "Items/Unique/Thunderfury",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Thunderfury"
+    },
+    {
+      "title": "Items/Unique/Wisp",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Wisp"
+    },
+    {
+      "title": "Items/Unique/Rakescar",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Rakescar"
+    },
+    {
+      "title": "Items/Unique/Blackhorns Face",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Blackhorns_Face"
+    },
+    {
+      "title": "Items/Unique/Spellsteel",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Spellsteel"
+    },
+    {
+      "title": "Items/Unique/Blackoak Shield",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Blackoak_Shield"
+    },
+    {
+      "title": "Items/Unique/Umes Lament",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Umes_Lament"
+    },
+    {
+      "title": "Items/Unique/Stormeye",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Stormeye"
+    },
+    {
+      "title": "Items/Unique/The Gnasher",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Gnasher"
+    },
+    {
+      "title": "Items/Unique/Sigurds Staunching Helm",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Sigurds_Staunching_Helm"
+    },
+    {
+      "title": "Items/Unique/Razortail",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Razortail"
+    },
+    {
+      "title": "Items/Unique/The Hand of Broc",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Hand_of_Broc"
+    },
+    {
+      "title": "Items/Unique/Homunculus",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Homunculus"
+    },
+    {
+      "title": "Items/Unique/Nagelring",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Nagelring"
+    },
+    {
+      "title": "Items/Unique/The Atlantian",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Atlantian"
+    },
+    {
+      "title": "Items/Unique/Steelpillar",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Steelpillar"
+    },
+    {
+      "title": "Items/Unique/Verdugos Hearty Cord",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Verdugos_Hearty_Cord"
+    },
+    {
+      "title": "Items/Unique/Simple Solution",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Simple_Solution"
+    },
+    {
+      "title": "Items/Unique/The Corrupted Grandfather",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Corrupted_Grandfather"
+    },
+    {
+      "title": "Items/Unique/Horadric Staff",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Horadric_Staff"
+    },
+    {
+      "title": "Items/Unique/Bonesob",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Bonesob"
+    },
+    {
+      "title": "Items/Unique/Thudergods Vigor",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Thudergods_Vigor"
+    },
+    {
+      "title": "Items/Unique/Nosferatus Coil",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Nosferatus_Coil"
+    },
+    {
+      "title": "Items/Unique/Lenyms Cord",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Lenyms_Cord"
+    },
+    {
+      "title": "Items/Unique/Crainte Vomir",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Crainte_Vomir"
+    },
+    {
+      "title": "Items/Unique/Eaglehorn",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Eaglehorn"
+    },
+    {
+      "title": "Items/Unique/Brainhew",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Brainhew"
+    },
+    {
+      "title": "Items/Unique/Warpspear",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Warpspear"
+    },
+    {
+      "title": "Items/Unique/Ichorsting",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Ichorsting"
+    },
+    {
+      "title": "Items/Unique/Marrowwalk",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Marrowwalk"
+    },
+    {
+      "title": "Items/Unique/The Reapers Toll",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Reapers_Toll"
+    },
+    {
+      "title": "Items/Unique/Wormskull",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Wormskull"
+    },
+    {
+      "title": "Items/Unique/Razoredge",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Razoredge"
+    },
+    {
+      "title": "Items/Unique/Whichwild String",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Whichwild_String"
+    },
+    {
+      "title": "Items/Unique/Blood Crescent",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Blood_Crescent"
+    },
+    {
+      "title": "Items/Unique/Doombringer",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Doombringer"
+    },
+    {
+      "title": "Items/Unique/Mosers Blessed Circle",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Mosers_Blessed_Circle"
+    },
+    {
+      "title": "Items/Unique/Steeldriver",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Steeldriver"
+    },
+    {
+      "title": "Items/Unique/The Gavel of Pain",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Gavel_of_Pain"
+    },
+    {
+      "title": "Items/Unique/Guardian Angel",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Guardian_Angel"
+    },
+    {
+      "title": "Items/Unique/Corpsemourn",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Corpsemourn"
+    },
+    {
+      "title": "Items/Unique/Gorefoot",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Gorefoot"
+    },
+    {
+      "title": "Items/Unique/Pus Spiter",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Pus_Spiter"
+    },
+    {
+      "title": "Items/Unique/Bloodletter",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Bloodletter"
+    },
+    {
+      "title": "Items/Unique/Plague Bearer",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Plague_Bearer"
+    },
+    {
+      "title": "Items/Unique/Bul Kathos Wedding Band",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Bul_Kathos_Wedding_Band"
+    },
+    {
+      "title": "Items/Unique/Jadetalon",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Jadetalon"
+    },
+    {
+      "title": "Items/Unique/Ironpelt",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Ironpelt"
+    },
+    {
+      "title": "Items/Unique/The Stone of Jordan",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Stone_of_Jordan"
+    },
+    {
+      "title": "Items/Unique/Corrupted Valkyrie Wing",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Corrupted_Valkyrie_Wing"
+    },
+    {
+      "title": "Items/Unique/Crown of Ages",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Crown_of_Ages"
+    },
+    {
+      "title": "Items/Unique/Bloodravens Charge",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Bloodravens_Charge"
+    },
+    {
+      "title": "Items/Unique/Tiamats Rebuke",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Tiamats_Rebuke"
+    },
+    {
+      "title": "Items/Unique/Tearhaunch",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Tearhaunch"
+    },
+    {
+      "title": "Items/Unique/The Meat Scraper",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Meat_Scraper"
+    },
+    {
+      "title": "Items/Unique/Stealskull",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Stealskull"
+    },
+    {
+      "title": "Items/Unique/Corrupted Harlequin Crest",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Corrupted_Harlequin_Crest"
+    },
+    {
+      "title": "Items/Unique/Waterwalk",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Waterwalk"
+    },
+    {
+      "title": "Items/Unique/Rusthandle",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Rusthandle"
+    },
+    {
+      "title": "Items/Unique/Corrupted Arkaines Valor",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Corrupted_Arkaines_Valor"
+    },
+    {
+      "title": "Items/Unique/Bladebone",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Bladebone"
+    },
+    {
+      "title": "Items/Unique/Baranars Star",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Baranars_Star"
+    },
+    {
+      "title": "Items/Unique/Coldsteel Eye",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Coldsteel_Eye"
+    },
+    {
+      "title": "Items/Unique/Robe of the Horadrim",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Robe_of_the_Horadrim"
+    },
+    {
+      "title": "Items/Unique/Arkaines Valor",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Arkaines_Valor"
+    },
+    {
+      "title": "Items/Unique/Blinkbats Form",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Blinkbats_Form"
+    },
+    {
+      "title": "Items/Unique/Mad Dog",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Mad_Dog"
+    },
+    {
+      "title": "Items/Unique/Meshifs Travellers",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Meshifs_Travellers"
+    },
+    {
+      "title": "Items/Unique/Corrupted Bartucs Cut-Throat",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Corrupted_Bartucs_Cut-Throat"
+    },
+    {
+      "title": "Items/Unique/Earthshaker",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Earthshaker"
+    },
+    {
+      "title": "Items/Unique/Kelpie Snare",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Kelpie_Snare"
+    },
+    {
+      "title": "Items/Unique/Stormspike",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Stormspike"
+    },
+    {
+      "title": "Items/Unique/Wraithflight",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Wraithflight"
+    },
+    {
+      "title": "Items/Unique/Leadcrow",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Leadcrow"
+    },
+    {
+      "title": "Items/Unique/Saracens Chance",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Saracens_Chance"
+    },
+    {
+      "title": "Items/Unique/Lance Guard",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Lance_Guard"
+    },
+    {
+      "title": "Items/Unique/Heavenly Garb",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Heavenly_Garb"
+    },
+    {
+      "title": "Items/Unique/Numbness",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Numbness"
+    },
+    {
+      "title": "Items/Unique/Zakarums Hand",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Zakarums_Hand"
+    },
+    {
+      "title": "Items/Unique/Natures Peace",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Natures_Peace"
+    },
+    {
+      "title": "Items/Unique/Crescent Moon",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Crescent_Moon"
+    },
+    {
+      "title": "Items/Unique/Ribcracker",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Ribcracker"
+    },
+    {
+      "title": "Items/Unique/Pride",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Pride"
+    },
+    {
+      "title": "Items/Unique/The Salamander",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Salamander"
+    },
+    {
+      "title": "Items/Unique/The Chieftan",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/The_Chieftan"
+    },
+    {
+      "title": "Items/Unique/Soulflay",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Soulflay"
+    },
+    {
+      "title": "Items/Unique/Ondals Wisdom",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Ondals_Wisdom"
+    },
+    {
+      "title": "Items/Unique/Duriels Shell",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Duriels_Shell"
+    },
+    {
+      "title": "Items/Unique/Hellmouth",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Hellmouth"
+    },
+    {
+      "title": "Items/Unique/Headstriker",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Headstriker"
+    },
+    {
+      "title": "Items/Unique/Baezils Vortex",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Baezils_Vortex"
+    },
+    {
+      "title": "Items/Unique/Venomsward",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Venomsward"
+    },
+    {
+      "title": "Items/Unique/Snowclash",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Snowclash"
+    },
+    {
+      "title": "Items/Unique/Greyform",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Greyform"
+    },
+    {
+      "title": "Items/Unique/Fechmars Axe",
+      "url": "https://btd.miraheze.org/wiki/Items/Unique/Fechmars_Axe"
+    },
+    {
+      "title": "Items/Sets",
+      "url": "https://btd.miraheze.org/wiki/Items/Sets"
+    },
+    {
+      "title": "Items/Set/Griswolds Masterwork",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Griswolds_Masterwork"
+    },
+    {
+      "title": "Items/Set/Civerbs Vestments",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Civerbs_Vestments"
+    },
+    {
+      "title": "Items/Set/Infernal Tools",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Infernal_Tools"
+    },
+    {
+      "title": "Items/Set/Tancreds Battlegear",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Tancreds_Battlegear"
+    },
+    {
+      "title": "Items/Set/Trang-Ouls Avatar",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Trang-Ouls_Avatar"
+    },
+    {
+      "title": "Items/Set/Orphans Call",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Orphans_Call"
+    },
+    {
+      "title": "Items/Set/Tal Rashas Wrappings",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Tal_Rashas_Wrappings"
+    },
+    {
+      "title": "Items/Set/The Disciple",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/The_Disciple"
+    },
+    {
+      "title": "Items/Set/Mavinas Battle Hymn",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Mavinas_Battle_Hymn"
+    },
+    {
+      "title": "Items/Set/Sigons Complete Steel",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Sigons_Complete_Steel"
+    },
+    {
+      "title": "Items/Set/Angelical Raiment",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Angelical_Raiment"
+    },
+    {
+      "title": "Items/Set/Tal Rashas Elements",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Tal_Rashas_Elements"
+    },
+    {
+      "title": "Items/Set/Immortal King",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Immortal_King"
+    },
+    {
+      "title": "Items/Set/Irathas Finery",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Irathas_Finery"
+    },
+    {
+      "title": "Items/Set/Natalyas Vengeance",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Natalyas_Vengeance"
+    },
+    {
+      "title": "Items/Set/Nadins Winning Strategy",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Nadins_Winning_Strategy"
+    },
+    {
+      "title": "Items/Set/Arcannas Tricks",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Arcannas_Tricks"
+    },
+    {
+      "title": "Items/Set/Isenharts Armory",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Isenharts_Armory"
+    },
+    {
+      "title": "Items/Set/Cleglaws Brace",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Cleglaws_Brace"
+    },
+    {
+      "title": "Items/Set/Sanctuarys Blessing Melee",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Sanctuarys_Blessing_Melee"
+    },
+    {
+      "title": "Items/Set/Mavinas Disappointment",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Mavinas_Disappointment"
+    },
+    {
+      "title": "Items/Set/Aldurs Beacon",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Aldurs_Beacon"
+    },
+    {
+      "title": "Items/Set/Sanctuarys Blessing Caster",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Sanctuarys_Blessing_Caster"
+    },
+    {
+      "title": "Items/Set/Natalyas Odium",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Natalyas_Odium"
+    },
+    {
+      "title": "Items/Set/Hwanins Majesty",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Hwanins_Majesty"
+    },
+    {
+      "title": "Items/Set/Heavens Brethren",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Heavens_Brethren"
+    },
+    {
+      "title": "Items/Set/Trang-Ouls Incarnation",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Trang-Ouls_Incarnation"
+    },
+    {
+      "title": "Items/Set/Berserkers Garb",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Berserkers_Garb"
+    },
+    {
+      "title": "Items/Set/Cathans Traps",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Cathans_Traps"
+    },
+    {
+      "title": "Items/Set/Vidalas Rig",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Vidalas_Rig"
+    },
+    {
+      "title": "Items/Set/Sazabis Grand Tribute",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Sazabis_Grand_Tribute"
+    },
+    {
+      "title": "Items/Set/The Ascension",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/The_Ascension"
+    },
+    {
+      "title": "Items/Set/Bul Kathos Embodiment",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Bul_Kathos_Embodiment"
+    },
+    {
+      "title": "Items/Set/Bul-Kathos Children",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Bul-Kathos_Children"
+    },
+    {
+      "title": "Items/Set/Royal Guard",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Royal_Guard"
+    },
+    {
+      "title": "Items/Set/Fake Ascension",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Fake_Ascension"
+    },
+    {
+      "title": "Items/Set/Sigurds Nobility",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Sigurds_Nobility"
+    },
+    {
+      "title": "Items/Set/God of War Mavina",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/God_of_War_Mavina"
+    },
+    {
+      "title": "Items/Set/Najs Ancient Set",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Najs_Ancient_Set"
+    },
+    {
+      "title": "Items/Set/Arctic Gear",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Arctic_Gear"
+    },
+    {
+      "title": "Items/Set/Deaths Disguise",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Deaths_Disguise"
+    },
+    {
+      "title": "Items/Set/Milabregas Regalia",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Milabregas_Regalia"
+    },
+    {
+      "title": "Items/Set/Hsarus Defense",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Hsarus_Defense"
+    },
+    {
+      "title": "Items/Set/Aldurs Watchtower",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Aldurs_Watchtower"
+    },
+    {
+      "title": "Items/Set/Griswolds Legacy",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Griswolds_Legacy"
+    },
+    {
+      "title": "Items/Set/Humanitys End",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Humanitys_End"
+    },
+    {
+      "title": "Items/Set/Cow Kings Leathers",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Cow_Kings_Leathers"
+    },
+    {
+      "title": "Items/Gems",
+      "url": "https://btd.miraheze.org/wiki/Items/Gems"
+    },
+    {
+      "title": "Items/Set/Sanders Folly",
+      "url": "https://btd.miraheze.org/wiki/Items/Set/Sanders_Folly"
+    },
+    {
+      "title": "Items/Runes",
+      "url": "https://btd.miraheze.org/wiki/Items/Runes"
+    },
+    {
+      "title": "Kexitems/Runes",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runes"
+    },
+    {
+      "title": "Kexitems/Sets",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Sets"
+    },
+    {
+      "title": "Kexitems/Uniques",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Uniques"
+    },
+    {
+      "title": "Kexitems/Gems",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Gems"
+    },
+    {
+      "title": "Kexitems/Runewords",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runewords"
+    },
+    {
+      "title": "Kexitems/Runeword/Smoke",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Smoke"
+    },
+    {
+      "title": "Kexitems/Runeword/Honor",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Honor"
+    },
+    {
+      "title": "Kexitems/Runeword/Wrath",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Wrath"
+    },
+    {
+      "title": "Kexitems/Runeword/Ancients Pledge",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Ancients_Pledge"
+    },
+    {
+      "title": "Kexitems/Runeword/Venom",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Venom"
+    },
+    {
+      "title": "Kexitems/Runeword/Leaf",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Leaf"
+    },
+    {
+      "title": "Kexitems/Runeword/Spirit",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Spirit"
+    },
+    {
+      "title": "Kexitems/Runeword/Plague",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Plague"
+    },
+    {
+      "title": "Kexitems/Runeword/Mosaic",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Mosaic"
+    },
+    {
+      "title": "Kexitems/Runeword/Broken Promise",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Broken_Promise"
+    },
+    {
+      "title": "Kexitems/Runeword/Holy Thunder",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Holy_Thunder"
+    },
+    {
+      "title": "Kexitems/Runeword/Beast",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Beast"
+    },
+    {
+      "title": "Kexitems/Runeword/Wealth",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Wealth"
+    },
+    {
+      "title": "Kexitems/Runeword/Rain",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Rain"
+    },
+    {
+      "title": "Kexitems/Runeword/Passion",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Passion"
+    },
+    {
+      "title": "Kexitems/Runeword/Memory",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Memory"
+    },
+    {
+      "title": "Kexitems/Runeword/Silence",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Silence"
+    },
+    {
+      "title": "Kexitems/Runeword/Kings Grace",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Kings_Grace"
+    },
+    {
+      "title": "Kexitems/Runeword/Duress",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Duress"
+    },
+    {
+      "title": "Kexitems/Runeword/Enigma",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Enigma"
+    },
+    {
+      "title": "Kexitems/Runeword/Rift",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Rift"
+    },
+    {
+      "title": "Kexitems/Runeword/Prudence",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Prudence"
+    },
+    {
+      "title": "Kexitems/Runeword/Ground",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Ground"
+    },
+    {
+      "title": "Kexitems/Runeword/Exile",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Exile"
+    },
+    {
+      "title": "Kexitems/Runeword/Steel",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Steel"
+    },
+    {
+      "title": "Kexitems/Runeword/Gloom",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Gloom"
+    },
+    {
+      "title": "Kexitems/Runeword/Call to Arms",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Call_to_Arms"
+    },
+    {
+      "title": "Kexitems/Runeword/Delirium",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Delirium"
+    },
+    {
+      "title": "Kexitems/Runeword/Lore",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Lore"
+    },
+    {
+      "title": "Kexitems/Runeword/Death",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Death"
+    },
+    {
+      "title": "Kexitems/Runeword/Myth",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Myth"
+    },
+    {
+      "title": "Kexitems/Runeword/Knights Vigil",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Knights_Vigil"
+    },
+    {
+      "title": "Kexitems/Runeword/Melody",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Melody"
+    },
+    {
+      "title": "Kexitems/Runeword/Bramble",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Bramble"
+    },
+    {
+      "title": "Kexitems/Runeword/Harmony",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Harmony"
+    },
+    {
+      "title": "Kexitems/Runeword/Brand",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Brand"
+    },
+    {
+      "title": "Kexitems/Runeword/Phoenix",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Phoenix"
+    },
+    {
+      "title": "Kexitems/Runeword/Treachery",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Treachery"
+    },
+    {
+      "title": "Kexitems/Runeword/Bone",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Bone"
+    },
+    {
+      "title": "Kexitems/Runeword/Ice",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Ice"
+    },
+    {
+      "title": "Kexitems/Runeword/Wind",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Wind"
+    },
+    {
+      "title": "Kexitems/Runeword/Tempest",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Tempest"
+    },
+    {
+      "title": "Kexitems/Runeword/Chains of Honor",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Chains_of_Honor"
+    },
+    {
+      "title": "Kexitems/Runeword/Dilemma",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Dilemma"
+    },
+    {
+      "title": "Kexitems/Runeword/Insight",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Insight"
+    },
+    {
+      "title": "Kexitems/Runeword/Principle",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Principle"
+    },
+    {
+      "title": "Kexitems/Runeword/Temper",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Temper"
+    },
+    {
+      "title": "Kexitems/Runeword/Peace",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Peace"
+    },
+    {
+      "title": "Kexitems/Runeword/Last Wish",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Last_Wish"
+    },
+    {
+      "title": "Kexitems/Runeword/Metamorphosis",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Metamorphosis"
+    },
+    {
+      "title": "Kexitems/Runeword/Edge",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Edge"
+    },
+    {
+      "title": "Kexitems/Runeword/Doom",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Doom"
+    },
+    {
+      "title": "Kexitems/Runeword/Sanctuary",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Sanctuary"
+    },
+    {
+      "title": "Kexitems/Runeword/Red",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Red"
+    },
+    {
+      "title": "Kexitems/Runeword/Cure",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Cure"
+    },
+    {
+      "title": "Kexitems/Runeword/Grief",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Grief"
+    },
+    {
+      "title": "Kexitems/Runeword/Rhyme",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Rhyme"
+    },
+    {
+      "title": "Kexitems/Runeword/Malice",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Malice"
+    },
+    {
+      "title": "Kexitems/Runeword/Breath of the Dying",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Breath_of_the_Dying"
+    },
+    {
+      "title": "Kexitems/Runeword/Wisdom",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Wisdom"
+    },
+    {
+      "title": "Kexitems/Runeword/Obedience",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Obedience"
+    },
+    {
+      "title": "Kexitems/Runeword/Mist",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Mist"
+    },
+    {
+      "title": "Kexitems/Runeword/Pestilence",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Pestilence"
+    },
+    {
+      "title": "Kexitems/Runeword/Knowledge",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Knowledge"
+    },
+    {
+      "title": "Kexitems/Runeword/Fury",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Fury"
+    },
+    {
+      "title": "Kexitems/Runeword/Enlightenment",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Enlightenment"
+    },
+    {
+      "title": "Kexitems/Runeword/Temptation",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Temptation"
+    },
+    {
+      "title": "Kexitems/Runeword/Kingslayer",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Kingslayer"
+    },
+    {
+      "title": "Kexitems/Runeword/Heart of the Oak",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Heart_of_the_Oak"
+    },
+    {
+      "title": "Kexitems/Runeword/Unbending Will",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Unbending_Will"
+    },
+    {
+      "title": "Kexitems/Runeword/Oath",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Oath"
+    },
+    {
+      "title": "Kexitems/Runeword/Dragon",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Dragon"
+    },
+    {
+      "title": "Kexitems/Runeword/Radiance",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Radiance"
+    },
+    {
+      "title": "Kexitems/Runeword/Famine",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Famine"
+    },
+    {
+      "title": "Kexitems/Runeword/Stone",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Stone"
+    },
+    {
+      "title": "Kexitems/Runeword/Eternity",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Eternity"
+    },
+    {
+      "title": "Kexitems/Runeword/Destruction",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Destruction"
+    },
+    {
+      "title": "Kexitems/Runeword/Lawbringer",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Lawbringer"
+    },
+    {
+      "title": "Kexitems/Runeword/Trust",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Trust"
+    },
+    {
+      "title": "Kexitems/Runeword/Stealth",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Stealth"
+    },
+    {
+      "title": "Kexitems/Runeword/Pattern",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Pattern"
+    },
+    {
+      "title": "Kexitems/Runeword/Flickering Flame",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Flickering_Flame"
+    },
+    {
+      "title": "Kexitems/Runeword/Faith",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Faith"
+    },
+    {
+      "title": "Kexitems/Runeword/Strength",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Strength"
+    },
+    {
+      "title": "Kexitems/Runeword/Voice of Reason",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Voice_of_Reason"
+    },
+    {
+      "title": "Kexitems/Runeword/White",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/White"
+    },
+    {
+      "title": "Kexitems/Runeword/Humility",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Humility"
+    },
+    {
+      "title": "Kexitems/Runeword/Splendor",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Splendor"
+    },
+    {
+      "title": "Kexitems/Runeword/Revenge",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Revenge"
+    },
+    {
+      "title": "Kexitems/Runeword/Lionheart",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Lionheart"
+    },
+    {
+      "title": "Kexitems/Runeword/Black",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Black"
+    },
+    {
+      "title": "Kexitems/Runeword/Nadir",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Nadir"
+    },
+    {
+      "title": "Kexitems/Runeword/Fortitude",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Fortitude"
+    },
+    {
+      "title": "Kexitems/Runeword/Chaos",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Chaos"
+    },
+    {
+      "title": "Kexitems/Runeword/Dream",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Dream"
+    },
+    {
+      "title": "Kexitems/Runeword/Infinity",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Infinity"
+    },
+    {
+      "title": "Kexitems/Runeword/Hand of Justice",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Hand_of_Justice"
+    },
+    {
+      "title": "Kexitems/Runeword/Hearth",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Hearth"
+    },
+    {
+      "title": "Kexitems/Runeword/Zephyr",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Zephyr"
+    },
+    {
+      "title": "Kexitems/Runeword/Bulwark",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Bulwark"
+    },
+    {
+      "title": "Kexitems/Runeword/Obsession",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Obsession"
+    },
+    {
+      "title": "Kexitems/Runeword/Crescent Moon",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Crescent_Moon"
+    },
+    {
+      "title": "Kexitems/Runeword/Pride",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Pride"
+    },
+    {
+      "title": "Kexitems/Runeword/Fortune",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Runeword/Fortune"
+    },
+    {
+      "title": "Kexitems/Unique/Howltusk",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Howltusk"
+    },
+    {
+      "title": "Kexitems/Unique/Gargoyles Bite",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Gargoyles_Bite"
+    },
+    {
+      "title": "Kexitems/Unique/Steel Carapice",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Steel_Carapice"
+    },
+    {
+      "title": "Kexitems/Unique/Warshrike",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Warshrike"
+    },
+    {
+      "title": "Kexitems/Unique/Mistiltein",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Mistiltein"
+    },
+    {
+      "title": "Kexitems/Unique/Honor",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Honor"
+    },
+    {
+      "title": "Kexitems/Unique/Widowmaker",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Widowmaker"
+    },
+    {
+      "title": "Kexitems/Unique/The Spirit Shroud",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Spirit_Shroud"
+    },
+    {
+      "title": "Kexitems/Unique/Husoldal Evo",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Husoldal_Evo"
+    },
+    {
+      "title": "Kexitems/Unique/Witherstring",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Witherstring"
+    },
+    {
+      "title": "Kexitems/Unique/Jalals Mane",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Jalals_Mane"
+    },
+    {
+      "title": "Kexitems/Unique/Spiritforge",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Spiritforge"
+    },
+    {
+      "title": "Kexitems/Unique/Andariels Visage",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Andariels_Visage"
+    },
+    {
+      "title": "Kexitems/Unique/Kerkes Sanctuary",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Kerkes_Sanctuary"
+    },
+    {
+      "title": "Kexitems/Unique/Slanderer",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Slanderer"
+    },
+    {
+      "title": "Kexitems/Unique/Piercerib",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Piercerib"
+    },
+    {
+      "title": "Kexitems/Unique/Wolfhowl",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Wolfhowl"
+    },
+    {
+      "title": "Kexitems/Unique/Spike Thorn",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Spike_Thorn"
+    },
+    {
+      "title": "Kexitems/Unique/Razorswitch",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Razorswitch"
+    },
+    {
+      "title": "Kexitems/Unique/Frostburn",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Frostburn"
+    },
+    {
+      "title": "Kexitems/Unique/Soul Harvest",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Soul_Harvest"
+    },
+    {
+      "title": "Kexitems/Unique/Herald of Zakarum",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Herald_of_Zakarum"
+    },
+    {
+      "title": "Kexitems/Unique/Lidless Wall",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Lidless_Wall"
+    },
+    {
+      "title": "Kexitems/Unique/Elemental Union",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Elemental_Union"
+    },
+    {
+      "title": "Kexitems/Unique/Atmas Wail",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Atmas_Wail"
+    },
+    {
+      "title": "Kexitems/Unique/Static Accumulator",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Static_Accumulator"
+    },
+    {
+      "title": "Kexitems/Unique/Chromatic Ire",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Chromatic_Ire"
+    },
+    {
+      "title": "Kexitems/Unique/Ghoulhide",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Ghoulhide"
+    },
+    {
+      "title": "Kexitems/Unique/Peasent Crown",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Peasent_Crown"
+    },
+    {
+      "title": "Kexitems/Unique/Headhunters Glory",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Headhunters_Glory"
+    },
+    {
+      "title": "Kexitems/Unique/Blackleach Blade",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Blackleach_Blade"
+    },
+    {
+      "title": "Kexitems/Unique/Fleshripper",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Fleshripper"
+    },
+    {
+      "title": "Kexitems/Unique/Langer Briser",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Langer_Briser"
+    },
+    {
+      "title": "Kexitems/Unique/Bane Ash",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Bane_Ash"
+    },
+    {
+      "title": "Kexitems/Unique/Rockfleece",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Rockfleece"
+    },
+    {
+      "title": "Kexitems/Unique/Deathspade",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Deathspade"
+    },
+    {
+      "title": "Kexitems/Unique/Ormus Robes",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Ormus_Robes"
+    },
+    {
+      "title": "Kexitems/Unique/The Centurion",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Centurion"
+    },
+    {
+      "title": "Kexitems/Unique/Shadowdancer",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Shadowdancer"
+    },
+    {
+      "title": "Kexitems/Unique/Ginthers Rift",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Ginthers_Rift"
+    },
+    {
+      "title": "Kexitems/Unique/Heart Carver",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Heart_Carver"
+    },
+    {
+      "title": "Kexitems/Unique/Darksight Helm",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Darksight_Helm"
+    },
+    {
+      "title": "Kexitems/Unique/Gheeds Fortune",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Gheeds_Fortune"
+    },
+    {
+      "title": "Kexitems/Unique/Titans Revenge",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Titans_Revenge"
+    },
+    {
+      "title": "Kexitems/Unique/Stormshield",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Stormshield"
+    },
+    {
+      "title": "Kexitems/Unique/Darkforge Spawn",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Darkforge_Spawn"
+    },
+    {
+      "title": "Kexitems/Unique/Atmas Scarab",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Atmas_Scarab"
+    },
+    {
+      "title": "Kexitems/Unique/Twitchthroe",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Twitchthroe"
+    },
+    {
+      "title": "Kexitems/Unique/Giantskull",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Giantskull"
+    },
+    {
+      "title": "Kexitems/Unique/The Mahim-Oak Curio",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Mahim-Oak_Curio"
+    },
+    {
+      "title": "Kexitems/Unique/Venom Grip",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Venom_Grip"
+    },
+    {
+      "title": "Kexitems/Unique/Spirit Ward",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Spirit_Ward"
+    },
+    {
+      "title": "Kexitems/Unique/Bing Sz Wang",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Bing_Sz_Wang"
+    },
+    {
+      "title": "Kexitems/Unique/Sparking Mail",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Sparking_Mail"
+    },
+    {
+      "title": "Kexitems/Unique/Athenas Wrath",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Athenas_Wrath"
+    },
+    {
+      "title": "Kexitems/Unique/Alma Negra",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Alma_Negra"
+    },
+    {
+      "title": "Kexitems/Unique/Pompes Wrath",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Pompes_Wrath"
+    },
+    {
+      "title": "Kexitems/Unique/Culwens Point",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Culwens_Point"
+    },
+    {
+      "title": "Kexitems/Unique/Gutsiphon",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Gutsiphon"
+    },
+    {
+      "title": "Kexitems/Unique/Djinnslayer",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Djinnslayer"
+    },
+    {
+      "title": "Kexitems/Unique/Coif of Glory",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Coif_of_Glory"
+    },
+    {
+      "title": "Kexitems/Unique/Corrupted Azurewrath",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Corrupted_Azurewrath"
+    },
+    {
+      "title": "Kexitems/Unique/Wartraveler",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Wartraveler"
+    },
+    {
+      "title": "Kexitems/Unique/The Vile Husk",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Vile_Husk"
+    },
+    {
+      "title": "Kexitems/Unique/Boneslayer Blade",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Boneslayer_Blade"
+    },
+    {
+      "title": "Kexitems/Unique/The Cats Eye",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Cats_Eye"
+    },
+    {
+      "title": "Kexitems/Unique/Wind God Fist",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Wind_God_Fist"
+    },
+    {
+      "title": "Kexitems/Unique/Rattlecage",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Rattlecage"
+    },
+    {
+      "title": "Kexitems/Unique/Treads of Cthon",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Treads_of_Cthon"
+    },
+    {
+      "title": "Kexitems/Unique/Spineripper",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Spineripper"
+    },
+    {
+      "title": "Kexitems/Unique/Wizardspike",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Wizardspike"
+    },
+    {
+      "title": "Kexitems/Unique/Cerebus",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Cerebus"
+    },
+    {
+      "title": "Kexitems/Unique/Kinemils Awl",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Kinemils_Awl"
+    },
+    {
+      "title": "Kexitems/Unique/The Battlebranch",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Battlebranch"
+    },
+    {
+      "title": "Kexitems/Unique/Goreshovel",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Goreshovel"
+    },
+    {
+      "title": "Kexitems/Unique/The Tannr Gorerod",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Tannr_Gorerod"
+    },
+    {
+      "title": "Kexitems/Unique/Warlords Trust",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Warlords_Trust"
+    },
+    {
+      "title": "Kexitems/Unique/Griffons Eye",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Griffons_Eye"
+    },
+    {
+      "title": "Kexitems/Unique/Thunderlords Overcharge",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Thunderlords_Overcharge"
+    },
+    {
+      "title": "Kexitems/Unique/Tomb Reaver",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Tomb_Reaver"
+    },
+    {
+      "title": "Kexitems/Unique/The Jade Tan Do",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Jade_Tan_Do"
+    },
+    {
+      "title": "Kexitems/Unique/Goldwrap",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Goldwrap"
+    },
+    {
+      "title": "Kexitems/Unique/Stoneraven",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Stoneraven"
+    },
+    {
+      "title": "Kexitems/Unique/War Bonnet",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/War_Bonnet"
+    },
+    {
+      "title": "Kexitems/Unique/Unsullieds Legacy",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Unsullieds_Legacy"
+    },
+    {
+      "title": "Kexitems/Unique/Highlords Wrath",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Highlords_Wrath"
+    },
+    {
+      "title": "Kexitems/Unique/Crown of Thieves",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Crown_of_Thieves"
+    },
+    {
+      "title": "Kexitems/Unique/Infernostride",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Infernostride"
+    },
+    {
+      "title": "Kexitems/Unique/Tyraels Might",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Tyraels_Might"
+    },
+    {
+      "title": "Kexitems/Unique/Shadowkiller",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Shadowkiller"
+    },
+    {
+      "title": "Kexitems/Unique/Stormspire",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Stormspire"
+    },
+    {
+      "title": "Kexitems/Unique/Irices Shard",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Irices_Shard"
+    },
+    {
+      "title": "Kexitems/Unique/The Dragon Chang",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Dragon_Chang"
+    },
+    {
+      "title": "Kexitems/Unique/Halaberds Reign",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Halaberds_Reign"
+    },
+    {
+      "title": "Kexitems/Unique/Azurewrath",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Azurewrath"
+    },
+    {
+      "title": "Kexitems/Unique/Gravenspine",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Gravenspine"
+    },
+    {
+      "title": "Kexitems/Unique/Umbral Disk",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Umbral_Disk"
+    },
+    {
+      "title": "Kexitems/Unique/Razortine",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Razortine"
+    },
+    {
+      "title": "Kexitems/Unique/Demonlimb",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Demonlimb"
+    },
+    {
+      "title": "Kexitems/Unique/Ironward",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Ironward"
+    },
+    {
+      "title": "Kexitems/Unique/Goblin Toe",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Goblin_Toe"
+    },
+    {
+      "title": "Kexitems/Unique/Rockstopper",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Rockstopper"
+    },
+    {
+      "title": "Kexitems/Unique/Pluckeye",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Pluckeye"
+    },
+    {
+      "title": "Kexitems/Unique/Horizons Tornado",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Horizons_Tornado"
+    },
+    {
+      "title": "Kexitems/Unique/Kings Absolution",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Kings_Absolution"
+    },
+    {
+      "title": "Kexitems/Unique/Magewrath",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Magewrath"
+    },
+    {
+      "title": "Kexitems/Unique/Schaefers Hammer",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Schaefers_Hammer"
+    },
+    {
+      "title": "Kexitems/Unique/Hone Sundan",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Hone_Sundan"
+    },
+    {
+      "title": "Kexitems/Unique/Firelizards Talons",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Firelizards_Talons"
+    },
+    {
+      "title": "Kexitems/Unique/Ironstone",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Ironstone"
+    },
+    {
+      "title": "Kexitems/Unique/Lacerator",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Lacerator"
+    },
+    {
+      "title": "Kexitems/Unique/Starting Charm",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Starting_Charm"
+    },
+    {
+      "title": "Kexitems/Unique/Gull",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Gull"
+    },
+    {
+      "title": "Kexitems/Unique/Swordback Hold",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Swordback_Hold"
+    },
+    {
+      "title": "Kexitems/Unique/Cranebeak",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Cranebeak"
+    },
+    {
+      "title": "Kexitems/Unique/Ripsaw",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Ripsaw"
+    },
+    {
+      "title": "Kexitems/Unique/Shadowfang",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Shadowfang"
+    },
+    {
+      "title": "Kexitems/Unique/Hell Forge Hammer",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Hell_Forge_Hammer"
+    },
+    {
+      "title": "Kexitems/Unique/Giants Protection",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Giants_Protection"
+    },
+    {
+      "title": "Kexitems/Unique/The Diggler",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Diggler"
+    },
+    {
+      "title": "Kexitems/Unique/Messerschmidts Reaver",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Messerschmidts_Reaver"
+    },
+    {
+      "title": "Kexitems/Unique/Gungnirs Almighty",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Gungnirs_Almighty"
+    },
+    {
+      "title": "Kexitems/Unique/Godstrike Arch",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Godstrike_Arch"
+    },
+    {
+      "title": "Kexitems/Unique/Skin of the Vipermagi",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Skin_of_the_Vipermagi"
+    },
+    {
+      "title": "Kexitems/Unique/Coldkill",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Coldkill"
+    },
+    {
+      "title": "Kexitems/Unique/Dark Clan Crusher",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Dark_Clan_Crusher"
+    },
+    {
+      "title": "Kexitems/Unique/Riphook",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Riphook"
+    },
+    {
+      "title": "Kexitems/Unique/Raven Frost",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Raven_Frost"
+    },
+    {
+      "title": "Kexitems/Unique/Hellplague",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Hellplague"
+    },
+    {
+      "title": "Kexitems/Unique/Blackbogs Sharp",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Blackbogs_Sharp"
+    },
+    {
+      "title": "Kexitems/Unique/Elemental Exposure",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Elemental_Exposure"
+    },
+    {
+      "title": "Kexitems/Unique/Templars Might",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Templars_Might"
+    },
+    {
+      "title": "Kexitems/Unique/Rimeraven",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Rimeraven"
+    },
+    {
+      "title": "Kexitems/Unique/The Cranium Basher",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Cranium_Basher"
+    },
+    {
+      "title": "Kexitems/Unique/Frostwind",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Frostwind"
+    },
+    {
+      "title": "Kexitems/Unique/Rixots Keen",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Rixots_Keen"
+    },
+    {
+      "title": "Kexitems/Unique/The Fetid Sprinkler",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Fetid_Sprinkler"
+    },
+    {
+      "title": "Kexitems/Unique/Killing Intent",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Killing_Intent"
+    },
+    {
+      "title": "Kexitems/Unique/Lycanders Aim",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Lycanders_Aim"
+    },
+    {
+      "title": "Kexitems/Unique/Hellslayer",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Hellslayer"
+    },
+    {
+      "title": "Kexitems/Unique/Wizendraw",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Wizendraw"
+    },
+    {
+      "title": "Kexitems/Unique/Suicide Branch",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Suicide_Branch"
+    },
+    {
+      "title": "Kexitems/Unique/Crushflange",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Crushflange"
+    },
+    {
+      "title": "Kexitems/Unique/Blastbark",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Blastbark"
+    },
+    {
+      "title": "Kexitems/Unique/Knell Striker",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Knell_Striker"
+    },
+    {
+      "title": "Kexitems/Unique/Dwarf Star",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Dwarf_Star"
+    },
+    {
+      "title": "Kexitems/Unique/Skin of the Flayerd One",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Skin_of_the_Flayerd_One"
+    },
+    {
+      "title": "Kexitems/Unique/Charm Level",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Charm_Level"
+    },
+    {
+      "title": "Kexitems/Unique/Blacktongue",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Blacktongue"
+    },
+    {
+      "title": "Kexitems/Unique/Arachnid Mesh",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Arachnid_Mesh"
+    },
+    {
+      "title": "Kexitems/Unique/The Oculus",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Oculus"
+    },
+    {
+      "title": "Kexitems/Unique/Steelgoad",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Steelgoad"
+    },
+    {
+      "title": "Kexitems/Unique/Bloodtree Stump",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Bloodtree_Stump"
+    },
+    {
+      "title": "Kexitems/Unique/Gloomstrap",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Gloomstrap"
+    },
+    {
+      "title": "Kexitems/Unique/KhalimFlail",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/KhalimFlail"
+    },
+    {
+      "title": "Kexitems/Unique/Hellcast",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Hellcast"
+    },
+    {
+      "title": "Kexitems/Unique/Felloak",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Felloak"
+    },
+    {
+      "title": "Kexitems/Unique/Woestave",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Woestave"
+    },
+    {
+      "title": "Kexitems/Unique/Islestrike",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Islestrike"
+    },
+    {
+      "title": "Kexitems/Unique/Eschutas temper",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Eschutas_temper"
+    },
+    {
+      "title": "Kexitems/Unique/Lance of Yaggai",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Lance_of_Yaggai"
+    },
+    {
+      "title": "Kexitems/Unique/Wall of the Eyeless",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Wall_of_the_Eyeless"
+    },
+    {
+      "title": "Kexitems/Unique/Cliffkiller",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Cliffkiller"
+    },
+    {
+      "title": "Kexitems/Unique/Ravaging T1",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Ravaging_T1"
+    },
+    {
+      "title": "Kexitems/Unique/The Gladiators Bane",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Gladiators_Bane"
+    },
+    {
+      "title": "Kexitems/Unique/The Minataur",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Minataur"
+    },
+    {
+      "title": "Kexitems/Unique/Steelshade",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Steelshade"
+    },
+    {
+      "title": "Kexitems/Unique/Deathss Web",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Deathss_Web"
+    },
+    {
+      "title": "Kexitems/Unique/Blade of Ali Baba",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Blade_of_Ali_Baba"
+    },
+    {
+      "title": "Kexitems/Unique/Steelrend",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Steelrend"
+    },
+    {
+      "title": "Kexitems/Unique/Guardian Naga",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Guardian_Naga"
+    },
+    {
+      "title": "Kexitems/Unique/Lightsabre",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Lightsabre"
+    },
+    {
+      "title": "Kexitems/Unique/Iceblink",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Iceblink"
+    },
+    {
+      "title": "Kexitems/Unique/Leviathan",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Leviathan"
+    },
+    {
+      "title": "Kexitems/Unique/Unsullieds Glory",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Unsullieds_Glory"
+    },
+    {
+      "title": "Kexitems/Unique/Medusas Gaze",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Medusas_Gaze"
+    },
+    {
+      "title": "Kexitems/Unique/The Face of Horror",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Face_of_Horror"
+    },
+    {
+      "title": "Kexitems/Unique/Vampiregaze",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Vampiregaze"
+    },
+    {
+      "title": "Kexitems/Unique/Amazons Teaching",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Amazons_Teaching"
+    },
+    {
+      "title": "Kexitems/Unique/Runemaster",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Runemaster"
+    },
+    {
+      "title": "Kexitems/Unique/Moonfall",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Moonfall"
+    },
+    {
+      "title": "Kexitems/Unique/Griswolds Edge",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Griswolds_Edge"
+    },
+    {
+      "title": "Kexitems/Unique/Undead Crown",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Undead_Crown"
+    },
+    {
+      "title": "Kexitems/Unique/Calamity",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Calamity"
+    },
+    {
+      "title": "Kexitems/Unique/Steelclash",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Steelclash"
+    },
+    {
+      "title": "Kexitems/Unique/Maelstromwrath",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Maelstromwrath"
+    },
+    {
+      "title": "Kexitems/Unique/Serpent Lord",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Serpent_Lord"
+    },
+    {
+      "title": "Kexitems/Unique/Bloodmoon",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Bloodmoon"
+    },
+    {
+      "title": "Kexitems/Unique/Silkweave",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Silkweave"
+    },
+    {
+      "title": "Kexitems/Unique/Crow Caw",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Crow_Caw"
+    },
+    {
+      "title": "Kexitems/Unique/Jyms Swift Journey",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Jyms_Swift_Journey"
+    },
+    {
+      "title": "Kexitems/Unique/Maras Kaleidoscope",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Maras_Kaleidoscope"
+    },
+    {
+      "title": "Kexitems/Unique/Annihilus",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Annihilus"
+    },
+    {
+      "title": "Kexitems/Unique/Buriza-Do Kyanon",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Buriza-Do_Kyanon"
+    },
+    {
+      "title": "Kexitems/Unique/Demon Machine",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Demon_Machine"
+    },
+    {
+      "title": "Kexitems/Unique/Doomspittle",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Doomspittle"
+    },
+    {
+      "title": "Kexitems/Unique/Stormrider",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Stormrider"
+    },
+    {
+      "title": "Kexitems/Unique/Windhammer",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Windhammer"
+    },
+    {
+      "title": "Kexitems/Unique/Deathbit",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Deathbit"
+    },
+    {
+      "title": "Kexitems/Unique/Gaias Precision",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Gaias_Precision"
+    },
+    {
+      "title": "Kexitems/Unique/Manald Heal",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Manald_Heal"
+    },
+    {
+      "title": "Kexitems/Unique/Arreats Face",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Arreats_Face"
+    },
+    {
+      "title": "Kexitems/Unique/Neverfrost",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Neverfrost"
+    },
+    {
+      "title": "Kexitems/Unique/Baals Heart",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Baals_Heart"
+    },
+    {
+      "title": "Kexitems/Unique/Bverrit Keep",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Bverrit_Keep"
+    },
+    {
+      "title": "Kexitems/Unique/Swordguard",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Swordguard"
+    },
+    {
+      "title": "Kexitems/Unique/Heavens Light",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Heavens_Light"
+    },
+    {
+      "title": "Kexitems/Unique/Stoutnail",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Stoutnail"
+    },
+    {
+      "title": "Kexitems/Unique/Magefist",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Magefist"
+    },
+    {
+      "title": "Kexitems/Unique/Gravepalm",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Gravepalm"
+    },
+    {
+      "title": "Kexitems/Unique/Lavagout",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Lavagout"
+    },
+    {
+      "title": "Kexitems/Unique/String of Ears",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/String_of_Ears"
+    },
+    {
+      "title": "Kexitems/Unique/Metalgrid",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Metalgrid"
+    },
+    {
+      "title": "Kexitems/Unique/Soulfeast Tine",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Soulfeast_Tine"
+    },
+    {
+      "title": "Kexitems/Unique/Kiras Guardian",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Kiras_Guardian"
+    },
+    {
+      "title": "Kexitems/Unique/The Generals Tan Do Li Ga",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Generals_Tan_Do_Li_Ga"
+    },
+    {
+      "title": "Kexitems/Unique/Ariocs Needle",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Ariocs_Needle"
+    },
+    {
+      "title": "Kexitems/Unique/Boneflame",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Boneflame"
+    },
+    {
+      "title": "Kexitems/Unique/Ravenlore",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Ravenlore"
+    },
+    {
+      "title": "Kexitems/Unique/Todesfaelle Flamme",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Todesfaelle_Flamme"
+    },
+    {
+      "title": "Kexitems/Unique/Cloudcrack",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Cloudcrack"
+    },
+    {
+      "title": "Kexitems/Unique/Grims Burning Dead",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Grims_Burning_Dead"
+    },
+    {
+      "title": "Kexitems/Unique/Stone Crusher",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Stone_Crusher"
+    },
+    {
+      "title": "Kexitems/Unique/The Humongous",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Humongous"
+    },
+    {
+      "title": "Kexitems/Unique/Corrupted Saracens Chance",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Corrupted_Saracens_Chance"
+    },
+    {
+      "title": "Kexitems/Unique/Rainbow Facet",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Rainbow_Facet"
+    },
+    {
+      "title": "Kexitems/Unique/Stormchaser",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Stormchaser"
+    },
+    {
+      "title": "Kexitems/Unique/Executioners Justice",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Executioners_Justice"
+    },
+    {
+      "title": "Kexitems/Unique/Stormlash",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Stormlash"
+    },
+    {
+      "title": "Kexitems/Unique/Snakecord",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Snakecord"
+    },
+    {
+      "title": "Kexitems/Unique/Ethereal Edge",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Ethereal_Edge"
+    },
+    {
+      "title": "Kexitems/Unique/Shaftstop",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Shaftstop"
+    },
+    {
+      "title": "Kexitems/Unique/Fleshrender",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Fleshrender"
+    },
+    {
+      "title": "Kexitems/Unique/Bloodthief",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Bloodthief"
+    },
+    {
+      "title": "Kexitems/Unique/Skullders Ire",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Skullders_Ire"
+    },
+    {
+      "title": "Kexitems/Unique/Destiny",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Destiny"
+    },
+    {
+      "title": "Kexitems/Unique/Windforce",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Windforce"
+    },
+    {
+      "title": "Kexitems/Unique/Bladebuckle",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Bladebuckle"
+    },
+    {
+      "title": "Kexitems/Unique/Demonhorns Edge",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Demonhorns_Edge"
+    },
+    {
+      "title": "Kexitems/Unique/Harlequin Crest",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Harlequin_Crest"
+    },
+    {
+      "title": "Kexitems/Unique/Boneshade",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Boneshade"
+    },
+    {
+      "title": "Kexitems/Unique/SuperKhalimFlail",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/SuperKhalimFlail"
+    },
+    {
+      "title": "Kexitems/Unique/Carin Shard",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Carin_Shard"
+    },
+    {
+      "title": "Kexitems/Unique/Veil of Steel",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Veil_of_Steel"
+    },
+    {
+      "title": "Kexitems/Unique/Demons Arch",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Demons_Arch"
+    },
+    {
+      "title": "Kexitems/Unique/Duskdeep",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Duskdeep"
+    },
+    {
+      "title": "Kexitems/Unique/Ghostflame",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Ghostflame"
+    },
+    {
+      "title": "Kexitems/Unique/The Patriarch",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Patriarch"
+    },
+    {
+      "title": "Kexitems/Unique/The Scalper",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Scalper"
+    },
+    {
+      "title": "Kexitems/Unique/Gorerider",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Gorerider"
+    },
+    {
+      "title": "Kexitems/Unique/Seraphs Hymn",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Seraphs_Hymn"
+    },
+    {
+      "title": "Kexitems/Unique/Endlesshail",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Endlesshail"
+    },
+    {
+      "title": "Kexitems/Unique/Nightwings Veil",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Nightwings_Veil"
+    },
+    {
+      "title": "Kexitems/Unique/Hawkmail",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Hawkmail"
+    },
+    {
+      "title": "Kexitems/Unique/Black Hades",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Black_Hades"
+    },
+    {
+      "title": "Kexitems/Unique/Skorn",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Skorn"
+    },
+    {
+      "title": "Kexitems/Unique/Dimoaks Hew",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Dimoaks_Hew"
+    },
+    {
+      "title": "Kexitems/Unique/Viperfork",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Viperfork"
+    },
+    {
+      "title": "Kexitems/Unique/The Eye of Etlich",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Eye_of_Etlich"
+    },
+    {
+      "title": "Kexitems/Unique/The Grandfather",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Grandfather"
+    },
+    {
+      "title": "Kexitems/Unique/Toothrow",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Toothrow"
+    },
+    {
+      "title": "Kexitems/Unique/Gimmershred",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Gimmershred"
+    },
+    {
+      "title": "Kexitems/Unique/Radimants Sphere",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Radimants_Sphere"
+    },
+    {
+      "title": "Kexitems/Unique/The Reedeemer",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Reedeemer"
+    },
+    {
+      "title": "Kexitems/Unique/Hotspur",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Hotspur"
+    },
+    {
+      "title": "Kexitems/Unique/Saboteurs Blade",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Saboteurs_Blade"
+    },
+    {
+      "title": "Kexitems/Unique/Nokozan Relic",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Nokozan_Relic"
+    },
+    {
+      "title": "Kexitems/Unique/Slayers Edge",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Slayers_Edge"
+    },
+    {
+      "title": "Kexitems/Unique/Hellrack",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Hellrack"
+    },
+    {
+      "title": "Kexitems/Unique/Pelta Lunata",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Pelta_Lunata"
+    },
+    {
+      "title": "Kexitems/Unique/The Ward",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Ward"
+    },
+    {
+      "title": "Kexitems/Unique/Blackhand Key",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Blackhand_Key"
+    },
+    {
+      "title": "Kexitems/Unique/Sandstorm Trek",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Sandstorm_Trek"
+    },
+    {
+      "title": "Kexitems/Unique/Earth Shifter",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Earth_Shifter"
+    },
+    {
+      "title": "Kexitems/Unique/Lazarus Spire",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Lazarus_Spire"
+    },
+    {
+      "title": "Kexitems/Unique/Fathom",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Fathom"
+    },
+    {
+      "title": "Kexitems/Unique/Spiritkeeper",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Spiritkeeper"
+    },
+    {
+      "title": "Kexitems/Unique/Wrath of the High Heavens",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Wrath_of_the_High_Heavens"
+    },
+    {
+      "title": "Kexitems/Unique/The Grim Reaper",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Grim_Reaper"
+    },
+    {
+      "title": "Kexitems/Unique/Deathcleaver",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Deathcleaver"
+    },
+    {
+      "title": "Kexitems/Unique/The Iron Jang Bong",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Iron_Jang_Bong"
+    },
+    {
+      "title": "Kexitems/Unique/Hellfire Torch",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Hellfire_Torch"
+    },
+    {
+      "title": "Kexitems/Unique/Visceratuant",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Visceratuant"
+    },
+    {
+      "title": "Kexitems/Unique/Bonehew",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Bonehew"
+    },
+    {
+      "title": "Kexitems/Unique/Nords Tenderizer",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Nords_Tenderizer"
+    },
+    {
+      "title": "Kexitems/Unique/Hexfire",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Hexfire"
+    },
+    {
+      "title": "Kexitems/Unique/The Rising Sun",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Rising_Sun"
+    },
+    {
+      "title": "Kexitems/Unique/Stormguild",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Stormguild"
+    },
+    {
+      "title": "Kexitems/Unique/Cutthroat1",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Cutthroat1"
+    },
+    {
+      "title": "Kexitems/Unique/Goldskin",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Goldskin"
+    },
+    {
+      "title": "Kexitems/Unique/Bul Kathos Mind",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Bul_Kathos_Mind"
+    },
+    {
+      "title": "Kexitems/Unique/Sureshrill Frost",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Sureshrill_Frost"
+    },
+    {
+      "title": "Kexitems/Unique/Staff of Kings",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Staff_of_Kings"
+    },
+    {
+      "title": "Kexitems/Unique/Darkglow",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Darkglow"
+    },
+    {
+      "title": "Kexitems/Unique/The Impaler",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Impaler"
+    },
+    {
+      "title": "Kexitems/Unique/Boneflesh",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Boneflesh"
+    },
+    {
+      "title": "Kexitems/Unique/Krintizs Skewer",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Krintizs_Skewer"
+    },
+    {
+      "title": "Kexitems/Unique/Arm of King Leoric",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Arm_of_King_Leoric"
+    },
+    {
+      "title": "Kexitems/Unique/Constricting Ring",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Constricting_Ring"
+    },
+    {
+      "title": "Kexitems/Unique/Victors Silk",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Victors_Silk"
+    },
+    {
+      "title": "Kexitems/Unique/Hellclap",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Hellclap"
+    },
+    {
+      "title": "Kexitems/Unique/Iros Torch",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Iros_Torch"
+    },
+    {
+      "title": "Kexitems/Unique/Thunderstroke",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Thunderstroke"
+    },
+    {
+      "title": "Kexitems/Unique/Butchers Pupil",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Butchers_Pupil"
+    },
+    {
+      "title": "Kexitems/Unique/Hand of Blessed Light",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Hand_of_Blessed_Light"
+    },
+    {
+      "title": "Kexitems/Unique/Kuko Shakaku",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Kuko_Shakaku"
+    },
+    {
+      "title": "Kexitems/Unique/Valkiry Wing",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Valkiry_Wing"
+    },
+    {
+      "title": "Kexitems/Unique/Que-Hegans Wisdon",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Que-Hegans_Wisdon"
+    },
+    {
+      "title": "Kexitems/Unique/Skullcollector",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Skullcollector"
+    },
+    {
+      "title": "Kexitems/Unique/Gleamscythe",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Gleamscythe"
+    },
+    {
+      "title": "Kexitems/Unique/Flamebellow",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Flamebellow"
+    },
+    {
+      "title": "Kexitems/Unique/Carrion Wind",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Carrion_Wind"
+    },
+    {
+      "title": "Kexitems/Unique/Dragonscale",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Dragonscale"
+    },
+    {
+      "title": "Kexitems/Unique/Tarnhelm",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Tarnhelm"
+    },
+    {
+      "title": "Kexitems/Unique/Pullspite",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Pullspite"
+    },
+    {
+      "title": "Kexitems/Unique/Souldrain",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Souldrain"
+    },
+    {
+      "title": "Kexitems/Unique/Draculs Grasp",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Draculs_Grasp"
+    },
+    {
+      "title": "Kexitems/Unique/Mang Songs Lesson",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Mang_Songs_Lesson"
+    },
+    {
+      "title": "Kexitems/Unique/Skystrike",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Skystrike"
+    },
+    {
+      "title": "Kexitems/Unique/Bloodrise",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Bloodrise"
+    },
+    {
+      "title": "Kexitems/Unique/Chance Guards",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Chance_Guards"
+    },
+    {
+      "title": "Kexitems/Unique/Mindrend",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Mindrend"
+    },
+    {
+      "title": "Kexitems/Unique/Nightsmoke",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Nightsmoke"
+    },
+    {
+      "title": "Kexitems/Unique/Pierre Tombale Couant",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Pierre_Tombale_Couant"
+    },
+    {
+      "title": "Kexitems/Unique/Spire of Honor",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Spire_of_Honor"
+    },
+    {
+      "title": "Kexitems/Unique/Lycanders Flank",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Lycanders_Flank"
+    },
+    {
+      "title": "Kexitems/Unique/Bloodfist",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Bloodfist"
+    },
+    {
+      "title": "Kexitems/Unique/Thunderfury",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Thunderfury"
+    },
+    {
+      "title": "Kexitems/Unique/Wisp",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Wisp"
+    },
+    {
+      "title": "Kexitems/Unique/Rakescar",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Rakescar"
+    },
+    {
+      "title": "Kexitems/Unique/Blackhorns Face",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Blackhorns_Face"
+    },
+    {
+      "title": "Kexitems/Unique/Spellsteel",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Spellsteel"
+    },
+    {
+      "title": "Kexitems/Unique/Blackoak Shield",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Blackoak_Shield"
+    },
+    {
+      "title": "Kexitems/Unique/Umes Lament",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Umes_Lament"
+    },
+    {
+      "title": "Kexitems/Unique/Stormeye",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Stormeye"
+    },
+    {
+      "title": "Kexitems/Unique/The Gnasher",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Gnasher"
+    },
+    {
+      "title": "Kexitems/Unique/Sigurds Staunching Helm",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Sigurds_Staunching_Helm"
+    },
+    {
+      "title": "Kexitems/Unique/Razortail",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Razortail"
+    },
+    {
+      "title": "Kexitems/Unique/The Hand of Broc",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Hand_of_Broc"
+    },
+    {
+      "title": "Kexitems/Unique/Homunculus",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Homunculus"
+    },
+    {
+      "title": "Kexitems/Unique/Nagelring",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Nagelring"
+    },
+    {
+      "title": "Kexitems/Unique/The Atlantian",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Atlantian"
+    },
+    {
+      "title": "Kexitems/Unique/Steelpillar",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Steelpillar"
+    },
+    {
+      "title": "Kexitems/Unique/Verdugos Hearty Cord",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Verdugos_Hearty_Cord"
+    },
+    {
+      "title": "Kexitems/Unique/Simple Solution",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Simple_Solution"
+    },
+    {
+      "title": "Kexitems/Unique/The Corrupted Grandfather",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Corrupted_Grandfather"
+    },
+    {
+      "title": "Kexitems/Unique/Horadric Staff",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Horadric_Staff"
+    },
+    {
+      "title": "Kexitems/Unique/Bonesob",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Bonesob"
+    },
+    {
+      "title": "Kexitems/Unique/Thudergods Vigor",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Thudergods_Vigor"
+    },
+    {
+      "title": "Kexitems/Unique/Nosferatus Coil",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Nosferatus_Coil"
+    },
+    {
+      "title": "Kexitems/Unique/Lenyms Cord",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Lenyms_Cord"
+    },
+    {
+      "title": "Kexitems/Unique/Crainte Vomir",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Crainte_Vomir"
+    },
+    {
+      "title": "Kexitems/Unique/Eaglehorn",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Eaglehorn"
+    },
+    {
+      "title": "Kexitems/Unique/Brainhew",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Brainhew"
+    },
+    {
+      "title": "Kexitems/Unique/Warpspear",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Warpspear"
+    },
+    {
+      "title": "Kexitems/Unique/Ichorsting",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Ichorsting"
+    },
+    {
+      "title": "Kexitems/Unique/Marrowwalk",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Marrowwalk"
+    },
+    {
+      "title": "Kexitems/Unique/The Reapers Toll",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Reapers_Toll"
+    },
+    {
+      "title": "Kexitems/Unique/Wormskull",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Wormskull"
+    },
+    {
+      "title": "Kexitems/Unique/Razoredge",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Razoredge"
+    },
+    {
+      "title": "Kexitems/Unique/Whichwild String",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Whichwild_String"
+    },
+    {
+      "title": "Kexitems/Unique/Blood Crescent",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Blood_Crescent"
+    },
+    {
+      "title": "Kexitems/Unique/Doombringer",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Doombringer"
+    },
+    {
+      "title": "Kexitems/Unique/Mosers Blessed Circle",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Mosers_Blessed_Circle"
+    },
+    {
+      "title": "Kexitems/Unique/Steeldriver",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Steeldriver"
+    },
+    {
+      "title": "Kexitems/Unique/The Gavel of Pain",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Gavel_of_Pain"
+    },
+    {
+      "title": "Kexitems/Unique/Guardian Angel",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Guardian_Angel"
+    },
+    {
+      "title": "Kexitems/Unique/Corpsemourn",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Corpsemourn"
+    },
+    {
+      "title": "Kexitems/Unique/Gorefoot",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Gorefoot"
+    },
+    {
+      "title": "Kexitems/Unique/Pus Spiter",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Pus_Spiter"
+    },
+    {
+      "title": "Kexitems/Unique/Bloodletter",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Bloodletter"
+    },
+    {
+      "title": "Kexitems/Unique/Plague Bearer",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Plague_Bearer"
+    },
+    {
+      "title": "Kexitems/Unique/Bul Kathos Wedding Band",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Bul_Kathos_Wedding_Band"
+    },
+    {
+      "title": "Kexitems/Unique/Jadetalon",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Jadetalon"
+    },
+    {
+      "title": "Kexitems/Unique/Ironpelt",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Ironpelt"
+    },
+    {
+      "title": "Kexitems/Unique/The Stone of Jordan",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Stone_of_Jordan"
+    },
+    {
+      "title": "Kexitems/Unique/Corrupted Valkyrie Wing",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Corrupted_Valkyrie_Wing"
+    },
+    {
+      "title": "Kexitems/Unique/Crown of Ages",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Crown_of_Ages"
+    },
+    {
+      "title": "Kexitems/Unique/Bloodravens Charge",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Bloodravens_Charge"
+    },
+    {
+      "title": "Kexitems/Unique/Tiamats Rebuke",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Tiamats_Rebuke"
+    },
+    {
+      "title": "Kexitems/Unique/Tearhaunch",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Tearhaunch"
+    },
+    {
+      "title": "Kexitems/Unique/The Meat Scraper",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Meat_Scraper"
+    },
+    {
+      "title": "Kexitems/Unique/Stealskull",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Stealskull"
+    },
+    {
+      "title": "Kexitems/Unique/Corrupted Harlequin Crest",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Corrupted_Harlequin_Crest"
+    },
+    {
+      "title": "Kexitems/Unique/Waterwalk",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Waterwalk"
+    },
+    {
+      "title": "Kexitems/Unique/Rusthandle",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Rusthandle"
+    },
+    {
+      "title": "Kexitems/Unique/Corrupted Arkaines Valor",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Corrupted_Arkaines_Valor"
+    },
+    {
+      "title": "Kexitems/Unique/Bladebone",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Bladebone"
+    },
+    {
+      "title": "Kexitems/Unique/Baranars Star",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Baranars_Star"
+    },
+    {
+      "title": "Kexitems/Unique/Coldsteel Eye",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Coldsteel_Eye"
+    },
+    {
+      "title": "Kexitems/Unique/Robe of the Horadrim",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Robe_of_the_Horadrim"
+    },
+    {
+      "title": "Kexitems/Unique/Arkaines Valor",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Arkaines_Valor"
+    },
+    {
+      "title": "Kexitems/Unique/Blinkbats Form",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Blinkbats_Form"
+    },
+    {
+      "title": "Kexitems/Unique/Mad Dog",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Mad_Dog"
+    },
+    {
+      "title": "Kexitems/Unique/Meshifs Travellers",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Meshifs_Travellers"
+    },
+    {
+      "title": "Kexitems/Unique/Corrupted Bartucs Cut-Throat",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Corrupted_Bartucs_Cut-Throat"
+    },
+    {
+      "title": "Kexitems/Unique/Earthshaker",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Earthshaker"
+    },
+    {
+      "title": "Kexitems/Unique/Kelpie Snare",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Kelpie_Snare"
+    },
+    {
+      "title": "Kexitems/Unique/Stormspike",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Stormspike"
+    },
+    {
+      "title": "Kexitems/Unique/Wraithflight",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Wraithflight"
+    },
+    {
+      "title": "Kexitems/Unique/Leadcrow",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Leadcrow"
+    },
+    {
+      "title": "Kexitems/Unique/Saracens Chance",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Saracens_Chance"
+    },
+    {
+      "title": "Kexitems/Unique/Lance Guard",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Lance_Guard"
+    },
+    {
+      "title": "Kexitems/Unique/Heavenly Garb",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Heavenly_Garb"
+    },
+    {
+      "title": "Kexitems/Unique/Numbness",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Numbness"
+    },
+    {
+      "title": "Kexitems/Unique/Zakarums Hand",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Zakarums_Hand"
+    },
+    {
+      "title": "Kexitems/Unique/Natures Peace",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Natures_Peace"
+    },
+    {
+      "title": "Kexitems/Unique/Crescent Moon",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Crescent_Moon"
+    },
+    {
+      "title": "Kexitems/Unique/Ribcracker",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Ribcracker"
+    },
+    {
+      "title": "Kexitems/Unique/Pride",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Pride"
+    },
+    {
+      "title": "Kexitems/Unique/The Salamander",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Salamander"
+    },
+    {
+      "title": "Kexitems/Unique/The Chieftan",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/The_Chieftan"
+    },
+    {
+      "title": "Kexitems/Unique/Soulflay",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Soulflay"
+    },
+    {
+      "title": "Kexitems/Unique/Ondals Wisdom",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Ondals_Wisdom"
+    },
+    {
+      "title": "Kexitems/Unique/Duriels Shell",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Duriels_Shell"
+    },
+    {
+      "title": "Kexitems/Unique/Hellmouth",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Hellmouth"
+    },
+    {
+      "title": "Kexitems/Unique/Headstriker",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Headstriker"
+    },
+    {
+      "title": "Kexitems/Unique/Baezils Vortex",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Baezils_Vortex"
+    },
+    {
+      "title": "Kexitems/Unique/Venomsward",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Venomsward"
+    },
+    {
+      "title": "Kexitems/Unique/Snowclash",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Snowclash"
+    },
+    {
+      "title": "Kexitems/Unique/Greyform",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Greyform"
+    },
+    {
+      "title": "Kexitems/Unique/Fechmars Axe",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Unique/Fechmars_Axe"
+    },
+    {
+      "title": "Kexitems/Set/Griswolds Masterwork",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Griswolds_Masterwork"
+    },
+    {
+      "title": "Kexitems/Set/Civerbs Vestments",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Civerbs_Vestments"
+    },
+    {
+      "title": "Kexitems/Set/Sanders Folly",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Sanders_Folly"
+    },
+    {
+      "title": "Kexitems/Set/Infernal Tools",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Infernal_Tools"
+    },
+    {
+      "title": "Kexitems/Set/Tancreds Battlegear",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Tancreds_Battlegear"
+    },
+    {
+      "title": "Kexitems/Set/Trang-Ouls Avatar",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Trang-Ouls_Avatar"
+    },
+    {
+      "title": "Kexitems/Set/Orphans Call",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Orphans_Call"
+    },
+    {
+      "title": "Kexitems/Set/Tal Rashas Wrappings",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Tal_Rashas_Wrappings"
+    },
+    {
+      "title": "Kexitems/Set/The Disciple",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/The_Disciple"
+    },
+    {
+      "title": "Kexitems/Set/Mavinas Battle Hymn",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Mavinas_Battle_Hymn"
+    },
+    {
+      "title": "Kexitems/Set/Sigons Complete Steel",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Sigons_Complete_Steel"
+    },
+    {
+      "title": "Kexitems/Set/Angelical Raiment",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Angelical_Raiment"
+    },
+    {
+      "title": "Kexitems/Set/Tal Rashas Elements",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Tal_Rashas_Elements"
+    },
+    {
+      "title": "Kexitems/Set/Immortal King",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Immortal_King"
+    },
+    {
+      "title": "Kexitems/Set/Irathas Finery",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Irathas_Finery"
+    },
+    {
+      "title": "Kexitems/Set/Natalyas Vengeance",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Natalyas_Vengeance"
+    },
+    {
+      "title": "Kexitems/Set/Nadins Winning Strategy",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Nadins_Winning_Strategy"
+    },
+    {
+      "title": "Kexitems/Set/Arcannas Tricks",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Arcannas_Tricks"
+    },
+    {
+      "title": "Kexitems/Set/Isenharts Armory",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Isenharts_Armory"
+    },
+    {
+      "title": "Kexitems/Set/Cleglaws Brace",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Cleglaws_Brace"
+    },
+    {
+      "title": "Kexitems/Set/Sanctuarys Blessing Melee",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Sanctuarys_Blessing_Melee"
+    },
+    {
+      "title": "Kexitems/Set/Mavinas Disappointment",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Mavinas_Disappointment"
+    },
+    {
+      "title": "Kexitems/Set/Aldurs Beacon",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Aldurs_Beacon"
+    },
+    {
+      "title": "Kexitems/Set/Sanctuarys Blessing Caster",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Sanctuarys_Blessing_Caster"
+    },
+    {
+      "title": "Kexitems/Set/Natalyas Odium",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Natalyas_Odium"
+    },
+    {
+      "title": "Kexitems/Set/Hwanins Majesty",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Hwanins_Majesty"
+    },
+    {
+      "title": "Kexitems/Set/Heavens Brethren",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Heavens_Brethren"
+    },
+    {
+      "title": "Kexitems/Set/Trang-Ouls Incarnation",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Trang-Ouls_Incarnation"
+    },
+    {
+      "title": "Kexitems/Set/Berserkers Garb",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Berserkers_Garb"
+    },
+    {
+      "title": "Kexitems/Set/Cathans Traps",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Cathans_Traps"
+    },
+    {
+      "title": "Kexitems/Set/Vidalas Rig",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Vidalas_Rig"
+    },
+    {
+      "title": "Kexitems/Set/Sazabis Grand Tribute",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Sazabis_Grand_Tribute"
+    },
+    {
+      "title": "Kexitems/Set/The Ascension",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/The_Ascension"
+    },
+    {
+      "title": "Kexitems/Set/Bul Kathos Embodiment",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Bul_Kathos_Embodiment"
+    },
+    {
+      "title": "Kexitems/Set/Bul-Kathos Children",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Bul-Kathos_Children"
+    },
+    {
+      "title": "Kexitems/Set/Royal Guard",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Royal_Guard"
+    },
+    {
+      "title": "Kexitems/Set/Fake Ascension",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Fake_Ascension"
+    },
+    {
+      "title": "Kexitems/Set/Sigurds Nobility",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Sigurds_Nobility"
+    },
+    {
+      "title": "Kexitems/Set/God of War Mavina",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/God_of_War_Mavina"
+    },
+    {
+      "title": "Kexitems/Set/Najs Ancient Set",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Najs_Ancient_Set"
+    },
+    {
+      "title": "Kexitems/Set/Arctic Gear",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Arctic_Gear"
+    },
+    {
+      "title": "Kexitems/Set/Deaths Disguise",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Deaths_Disguise"
+    },
+    {
+      "title": "Kexitems/Set/Milabregas Regalia",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Milabregas_Regalia"
+    },
+    {
+      "title": "Kexitems/Set/Hsarus Defense",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Hsarus_Defense"
+    },
+    {
+      "title": "Kexitems/Set/Aldurs Watchtower",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Aldurs_Watchtower"
+    },
+    {
+      "title": "Kexitems/Set/Griswolds Legacy",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Griswolds_Legacy"
+    },
+    {
+      "title": "Kexitems/Set/Humanitys End",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Humanitys_End"
+    },
+    {
+      "title": "Kexitems/Set/Cow Kings Leathers",
+      "url": "https://btd.miraheze.org/wiki/Kexitems/Set/Cow_Kings_Leathers"
+    },
+    {
+      "title": "Ladder Patch Notes",
+      "url": "https://btd.miraheze.org/wiki/Ladder_Patch_Notes"
+    },
+    {
+      "title": "Resistbreaker",
+      "url": "https://btd.miraheze.org/wiki/Resistbreaker"
+    },
+    {
+      "title": "Arcbane",
+      "url": "https://btd.miraheze.org/wiki/Arcbane"
+    }
+  ]
+}

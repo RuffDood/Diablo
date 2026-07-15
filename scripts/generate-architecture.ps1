@@ -7,6 +7,9 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
+# Dossiers exclus du cadastre (bruit / non versionne / genere)
+$script:excludedDirectories = @('.git', 'node_modules', 'guide', 'dist', '.turbo', '.netlify')
+
 if ([string]::IsNullOrWhiteSpace($Root)) {
     $Root = Split-Path -Parent $PSScriptRoot
 }
@@ -141,6 +144,7 @@ function Convert-ToArchitectureNode {
         $script:directoryCount++
         $children = @(
             Get-ChildItem -LiteralPath $Item.FullName -Force |
+                Where-Object { -not ($_.PSIsContainer -and $script:excludedDirectories -contains $_.Name) } |
                 Sort-Object `
                     @{ Expression = { if ($_.PSIsContainer) { 0 } else { 1 } } },
                     @{ Expression = { $_.Name } } |
