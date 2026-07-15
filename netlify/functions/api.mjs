@@ -52,6 +52,20 @@ export default async (request) => {
       return json({ tables: await listTables() });
     }
 
+    // Comparateur : lit la meme table dans vanilla/BK/BT (lecture seule).
+    const cm = path.match(/^\/api\/compare\/([^/]+)$/);
+    if (cm && request.method === 'GET') {
+      const name = decodeURIComponent(cm[1]);
+      if (!NAME_RE.test(name)) return json({ error: 'nom de table invalide' }, 400);
+      const out = { name };
+      for (const src of ['vanilla', 'BK', 'BT']) {
+        const f = await readFile(paths[src](name), 'latin1');
+        out[src] = f ? parseTsv(f.content) : null;
+        if (out[src]) { delete out[src].eol; delete out[src].hasFinalEol; }
+      }
+      return json(out);
+    }
+
     const m = path.match(/^\/api\/table\/([^/]+)$/);
     if (m) {
       const name = decodeURIComponent(m[1]);
@@ -68,7 +82,7 @@ export default async (request) => {
       }
 
       if (request.method === 'PUT') {
-        if (!hasToken()) return json({ error: 'ecriture indisponible : GITHUB_TOKEN non configure' }, 503);
+        if (!hasToken()) return json({ error: 'ecriture indisponible : GITHUB_DIABLO_TOKEN non configure' }, 503);
         const incoming = await request.json();
         const current = await readFile(paths.table(name), 'latin1');
         if (!current) return json({ error: 'table introuvable: ' + name }, 404);

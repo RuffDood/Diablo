@@ -10,6 +10,7 @@ export default defineConfig({
     strictPort: true,
     proxy: {
       '/api': 'http://localhost:4000',
+      '/roadmap': 'http://localhost:4000',
     },
   },
 });

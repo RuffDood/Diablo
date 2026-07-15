@@ -1,6 +1,6 @@
 // Client GitHub minimal : lit / ecrit les fichiers du repo via l'API "contents".
 // La lecture d'un repo public ne demande pas de token (rate limit plus bas) ;
-// l'ecriture (commit) exige GITHUB_TOKEN (fine-grained, droit contents:write).
+// l'ecriture (commit) exige GITHUB_DIABLO_TOKEN (fine-grained, droit contents:write).
 //
 // Encodage : les tables .txt D2R sont traitees en 'latin1' (byte-exact) ;
 // les schemas .json en 'utf8'.
@@ -8,7 +8,7 @@
 const OWNER = process.env.GITHUB_OWNER || 'RuffDood';
 const REPO = process.env.GITHUB_REPO || 'Diablo';
 const BRANCH = process.env.GITHUB_BRANCH || 'main';
-const TOKEN = process.env.GITHUB_TOKEN || '';
+const TOKEN = process.env.GITHUB_DIABLO_TOKEN || '';
 const API = 'https://api.github.com';
 const EXCEL_DIR = 'data-TCP/global/excel';
 
@@ -26,6 +26,10 @@ function ghHeaders(extra = {}) {
 export const paths = {
   table: (name) => `${EXCEL_DIR}/${name}.txt`,
   schema: (name) => `schemas/${name}.json`,
+  // Sources de reference pour le Comparateur (lecture seule, jamais ecrites).
+  vanilla: (name) => `excel-vanilla/${name}.txt`,
+  BK: (name) => `data-BK/global/excel/${name}.txt`,
+  BT: (name) => `data-BT/global/excel/${name}.txt`,
 };
 
 export function hasToken() {
@@ -36,10 +40,17 @@ export async function listTables() {
   const res = await fetch(`${API}/repos/${OWNER}/${REPO}/contents/${EXCEL_DIR}?ref=${BRANCH}`, { headers: ghHeaders() });
   if (!res.ok) throw new Error(`GitHub list ${res.status}`);
   const items = await res.json();
-  return items
+  const names = items
     .filter((i) => i.type === 'file' && i.name.endsWith('.txt'))
     .map((i) => i.name.slice(0, -4))
     .sort();
+
+  // Un seul appel API supplementaire pour toutes les categories (plutot que 40 lectures de schema).
+  let categories = {};
+  const cf = await readFile('schemas/_categories.json', 'utf8');
+  if (cf) { try { categories = JSON.parse(cf.content); } catch { /* manifest illisible : ignore */ } }
+
+  return names.map((name) => ({ name, category: categories[name] || 'other' }));
 }
 
 export async function readFile(path, encoding = 'latin1') {
@@ -52,7 +63,7 @@ export async function readFile(path, encoding = 'latin1') {
 }
 
 export async function writeFile(path, content, sha, message, encoding = 'latin1') {
-  if (!TOKEN) throw new Error('GITHUB_TOKEN absent : ecriture impossible (lecture seule)');
+  if (!TOKEN) throw new Error('GITHUB_DIABLO_TOKEN absent : ecriture impossible (lecture seule)');
   const body = {
     message,
     content: Buffer.from(content, encoding).toString('base64'),
