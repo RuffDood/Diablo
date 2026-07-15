@@ -1,5 +1,6 @@
 {
   "table": "setitems",
+  "category": "items",
   "file": "global/excel/setitems.txt",
   "description": "Table setitems du mod TCP (colonnes documentees via le D2R Data Guide).",
   "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",

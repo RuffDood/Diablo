@@ -1,5 +1,6 @@
 {
   "table": "inventory",
+  "category": "system",
   "file": "global/excel/inventory.txt",
   "description": "Table inventory du mod TCP (colonnes documentees via le D2R Data Guide).",
   "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",

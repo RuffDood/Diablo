@@ -1,5 +1,6 @@
 {
   "table": "monstats",
+  "category": "characters",
   "file": "global/excel/monstats.txt",
   "description": "Table monstats du mod TCP (colonnes documentees via le D2R Data Guide).",
   "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",

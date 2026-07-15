@@ -1,5 +1,6 @@
 {
   "table": "armor",
+  "category": "items",
   "file": "global/excel/armor.txt",
   "description": "Table armor du mod TCP (colonnes documentees via le D2R Data Guide).",
   "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",

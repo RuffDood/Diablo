@@ -1,5 +1,6 @@
 {
   "table": "weapons",
+  "category": "items",
   "file": "global/excel/weapons.txt",
   "description": "Table weapons du mod TCP (colonnes documentees via le D2R Data Guide).",
   "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",

@@ -1,5 +1,6 @@
 {
   "table": "hireling",
+  "category": "characters",
   "file": "global/excel/hireling.txt",
   "description": "Mercenaires : type, stats de base, progression par niveau et competences.",
   "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",

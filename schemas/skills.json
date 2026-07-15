@@ -1,5 +1,6 @@
 {
   "table": "skills",
+  "category": "skills",
   "file": "global/excel/skills.txt",
   "description": "Table skills du mod TCP.",
   "source": "Colonnes et types inferes du .txt (table non couverte par le guide).",

@@ -1,5 +1,6 @@
 {
   "table": "treasureclassex",
+  "category": "system",
   "file": "global/excel/treasureclassex.txt",
   "description": "Table treasureclassex du mod TCP (colonnes documentees via le D2R Data Guide).",
   "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",

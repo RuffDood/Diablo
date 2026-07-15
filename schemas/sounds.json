@@ -1,5 +1,6 @@
 {
   "table": "sounds",
+  "category": "system",
   "file": "global/excel/sounds.txt",
   "description": "Table sounds du mod TCP (colonnes documentees via le D2R Data Guide).",
   "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",

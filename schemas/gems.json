@@ -1,5 +1,6 @@
 {
   "table": "gems",
+  "category": "items",
   "file": "global/excel/gems.txt",
   "description": "Table gems du mod TCP (colonnes documentees via le D2R Data Guide).",
   "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",

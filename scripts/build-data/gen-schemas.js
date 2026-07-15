@@ -17,6 +17,25 @@ const SCHEMAS_DIR = path.join(ROOT, 'schemas');
 
 const TYPE_MAP = { N: 'number', B: 'boolean', O: 'text', C: 'text' };
 
+// Categorisation par domaine de jeu (nav : fil d'Ariane / regroupement des tables).
+// 'other' sert de filet pour toute table future non listee ici.
+const CATEGORIES = {
+  // items
+  armor: 'items', automagic: 'items', gems: 'items', itemratio: 'items',
+  itemstatcost: 'items', itemtypes: 'items', magicprefix: 'items', magicsuffix: 'items',
+  misc: 'items', properties: 'items', runes: 'items', setitems: 'items',
+  sets: 'items', transmog_table: 'items', uniqueitems: 'items', weapons: 'items',
+  // characters
+  charstats: 'characters', hireling: 'characters', monstats: 'characters',
+  monstats2: 'characters', monumod: 'characters', npc: 'characters', superuniques: 'characters',
+  // skills
+  missiles: 'skills', overlay: 'skills', skilldesc: 'skills', skills: 'skills', states: 'skills',
+  // system
+  actinfo: 'system', cubemain: 'system', difficultylevels: 'system', experience: 'system',
+  inventory: 'system', levels: 'system', lvlprest: 'system', lvlwarp: 'system',
+  objects: 'system', shrines: 'system', sounds: 'system', treasureclassex: 'system',
+};
+
 // Parse le guide -> { tableName(lowercase): { colName(lowercase): {type, guideType, description} } }
 function parseGuide() {
   if (!fs.existsSync(GUIDE)) return {};
@@ -60,6 +79,7 @@ function main() {
   if (!fs.existsSync(SCHEMAS_DIR)) fs.mkdirSync(SCHEMAS_DIR);
   const files = fs.readdirSync(EXCEL_DIR).filter((f) => f.endsWith('.txt')).sort();
   let generated = 0, enriched = 0;
+  const categoryIndex = {};
 
   for (const file of files) {
     const name = file.slice(0, -4);
@@ -88,8 +108,12 @@ function main() {
 
     if (guide[name]) enriched++;
 
+    const category = CATEGORIES[name] || existing?.category || 'other';
+    categoryIndex[name] = category;
+
     const schema = {
       table: name,
+      category,
       file: 'global/excel/' + file,
       description: existing?.description
         || (guide[name] ? `Table ${name} du mod TCP (colonnes documentees via le D2R Data Guide).` : `Table ${name} du mod TCP.`),
@@ -104,6 +128,11 @@ function main() {
     fs.writeFileSync(existingPath, JSON.stringify(schema, null, 2) + '\n');
     generated++;
   }
+
+  // Manifest agrege table -> categorie, pour lister /api/tables sans lire les 40 schemas
+  // un a un (couteux via l'API GitHub en production).
+  const categoriesPath = path.join(SCHEMAS_DIR, '_categories.json');
+  fs.writeFileSync(categoriesPath, JSON.stringify(categoryIndex, null, 2) + '\n');
 
   console.log(`schemas generes: ${generated} (${enriched} enrichis par le guide)`);
 }
