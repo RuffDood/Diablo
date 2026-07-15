@@ -61,6 +61,10 @@ Quand une **tâche significative émerge** en cours de conversation :
 2. **Seulement si** l'utilisateur **confirme** l'ajout : **analyse** où l'insérer — au niveau **métier et efficacité d'avancement** du projet humain (le bon placement *technique* t'est acquis par défaut, ce n'est pas l'enjeu).
 3. À l'issue de cette analyse, dégage **deux séquencements** logiques et cohérents, puis **propose les 2 options** à l'utilisateur.
 
+Quand une **tâche ou un commit** est fait :
+
+1. **Vérifie** la fraîcheur de la ROADMAP. Et ajuste la ROADMAP selon le contexte.
+
 ## Mission courante
 
 Cherche et trouve la mission courante. Si le contexte ou la ROADMAP ne sont pas assez clair, valide inline avec le user sur les prochains steps (hint : si de nouvelles tâches émergent n'oublie pas de les ajouter à la roadmap )

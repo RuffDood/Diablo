@@ -168,7 +168,7 @@
     <div class="taches">
       <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Netlify Function : lecture/écriture des .txt via l'<b>API GitHub</b> (FS éphémère → commit dans le repo)</span></label>
       <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Auth cookie HMAC + allowlist courriel + écran de login (pattern assurance-admin)</span></label>
-      <label class="tache" data-id="i3-token"><input type="checkbox"><span class="lbl">Token <b>fine-grained</b> limité à Diablo (Contents read-write)</span><span class="qui v">VINCENT</span></label>
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Token <b>fine-grained</b> de Vincent, limité à Diablo (Contents read-write) — en main, vérifié</span></label>
       <label class="tache" data-id="i3-netlify"><input type="checkbox"><span class="lbl">Connecter le site Netlify + poser les variables d'env (custom domain)</span><span class="qui g">GUILLAUME</span></label>
       <label class="tache" data-id="i3-deploy"><input type="checkbox"><span class="lbl">Test intégré (<code>netlify dev</code>) + déploiement + variables d'env</span><span class="qui a">AGENT</span></label>
     </div>
@@ -178,12 +178,12 @@
     </div>
   </div>
 
-  <div class="station" data-etape="4">
-    <div class="st-tete"><span class="st-num">INCRÉMENT 4</span><span class="st-titre">Wiki des 3 Mods</span><span class="st-etat avenir">À VENIR</span></div>
+  <div class="station encours" data-etape="4">
+    <div class="st-tete"><span class="st-num">INCRÉMENT 4</span><span class="st-titre">Wiki des 3 Mods</span><span class="st-etat encours">EN COURS</span></div>
     <p class="st-but">Consultation et comparaison BK / BT / TCP / vanilla — le principe diff-vs-vanilla.</p>
     <div class="taches">
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Vue de <b>Comparateur</b> intégrée à l'éditeur : vanilla/BK/BT/TCP côte à côte sur une même table, TCP éditable <span class="note-t">alignement par ligne + nom de colonne, robuste aux écarts entre mods (ex. armor.txt chez BK)</span></span></label>
       <label class="tache" data-id="i4-gen"><input type="checkbox"><span class="lbl">Pages générées des .txt : uniques, sets, runewords, cube, skills (taxonomie BTDiablo)</span><span class="qui a">AGENT</span></label>
-      <label class="tache" data-id="i4-diff"><input type="checkbox"><span class="lbl">Vue de <b>comparaison</b> : écarts entre les 3 mods et le vanilla sur une même table</span><span class="qui a">AGENT</span></label>
       <label class="tache" data-id="i4-cadre"><input type="checkbox"><span class="lbl">Cadrer le contenu éditorial (patch notes, install) vs généré</span><span class="qui g">GUILLAUME</span></label>
     </div>
     <div class="st-pied">
@@ -192,11 +192,14 @@
     </div>
   </div>
 
-  <div class="station" data-etape="5">
-    <div class="st-tete"><span class="st-num">INCRÉMENT 5</span><span class="st-titre">Polish & mise en service</span><span class="st-etat avenir">À VENIR</span></div>
+  <div class="station encours" data-etape="5">
+    <div class="st-tete"><span class="st-num">INCRÉMENT 5</span><span class="st-titre">Polish & mise en service</span><span class="st-etat encours">EN COURS</span></div>
     <p class="st-but">Recherche, ergonomie, durcissement — l'outil devient quotidien.</p>
     <div class="taches">
-      <label class="tache" data-id="i5-recherche"><input type="checkbox"><span class="lbl">Recherche et filtres (par item, par colonne) ; navigation croisée entre tables</span><span class="qui a">AGENT</span></label>
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Recherche texte libre + filtre par colonne (plage pour les nombres, sous-chaîne pour le texte)</span></label>
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Navigation par catégorie : fil d'Ariane + sélecteur de tables groupé (Objets/Personnages & monstres/Compétences/Système)</span></label>
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Sélecteur de colonnes visibles : recherche, tout afficher/désélectionner, presets nommés par table (localStorage)</span></label>
+      <label class="tache" data-id="i5-navigation-croisee"><input type="checkbox"><span class="lbl">Navigation croisée entre tables (sauter d'une table à l'autre via les colonnes de référence)</span><span class="qui a">AGENT</span></label>
       <label class="tache" data-id="i5-mission"><input type="checkbox"><span class="lbl">Mission mercenaire : 2 rings + amulet + belt via l'éditeur (<code>hireling</code>/<code>inventory</code>)</span><span class="qui a">AGENT</span></label>
       <label class="tache" data-id="i5-durcir"><input type="checkbox"><span class="lbl">Durcir l'auth (protection de site Netlify) ; export/sauvegarde</span><span class="qui g">GUILLAUME</span></label>
       <label class="tache" data-id="i5-wiki-public"><input type="checkbox"><span class="lbl">Option <b>(c) wiki public des 3 mods</b> : encyclopédie communauté (style BTDiablo) — pages rédigées + dérivées du comparateur. À détailler.</span><span class="qui g">GUILLAUME</span></label>
@@ -238,7 +241,7 @@
 </details>
 
 <footer>
-  ROADMAP v1 — Diablo TCP, 15 juillet 2026 · <b>FONDATIONS + INCRÉMENTS 1 &amp; 2 CLOS</b> · éditeur multi-tables + validations en service · <b>40 schémas générés du guide</b> (hireling 77/77) · I3 en cours : backend hébergé <b>codé</b> (Function GitHub + auth cookie) — reste le token fine-grained de Vincent + le déploiement. Coche les cases à venir : l'état est sauvegardé dans ton navigateur.
+  ROADMAP v1 — Diablo TCP, 15 juillet 2026 · <b>FONDATIONS + INCRÉMENTS 1 &amp; 2 CLOS</b> · éditeur multi-tables + validations en service · <b>40 schémas générés du guide</b> (hireling 77/77) · I3 en cours : backend codé + token de Vincent en main — reste le site Netlify et le déploiement · I4 amorcé : Comparateur vanilla/BK/BT/TCP en service · I5 amorcé : navigation par catégorie, recherche/filtres, colonnes visibles. Coche les cases à venir : l'état est sauvegardé dans ton navigateur.
 </footer>
 </main>
 
