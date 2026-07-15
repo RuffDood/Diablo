@@ -1,0 +1,187 @@
+{
+  "table": "treasureclassex",
+  "file": "global/excel/treasureclassex.txt",
+  "description": "Table treasureclassex du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 9,
+  "columns": [
+    {
+      "name": "Treasure Class",
+      "type": "text",
+      "description": "Defines the unique Treasure Class ID, that is referenced in other files",
+      "guideType": "[O]"
+    },
+    {
+      "name": "group",
+      "type": "number",
+      "description": "Assigns the Treasure Class to a group ID value, which will connect this Treasure Class with other Treasure Classes, as a potential Treasure Class to use for an itemdrop. When determining which Treasure Class to use for an item drop, the game will iterate through all Treasure Classes that share the same group. This field works with the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "level",
+      "type": "number",
+      "description": "Defines the level of a Treasure Class. Monsters who have a Treasure Class will pick the Treasure Class that a level value that is less than or equal to the monster's level. This is ignored for Boss monsters",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Picks",
+      "type": "number",
+      "description": "Controls how to handle the calculations for item drops. If this value is positive, then this value will control how many item drop chances will be rolled for the Treasure Class using the \"Prob#\" fields as probability values. If this value is negative, then this value functions as the total guaranteed quantity of item drops from the Treasure Class, and each \"Prob#\" field now defines the quantity of items generated from its related \"Item#\" field. If this field is empty, then default to a value of 1",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Unique",
+      "type": "number",
+      "description": "Modifies the item ratio drop for a Unique Quality item. A higher value means a better chance of being chosen. (ItemRatio.txt for an explanation for how the Item Quality is chosen)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Set",
+      "type": "number",
+      "description": "Modifies the item ratio drop for a Set Quality item. A higher value means a better chance of being chosen. (ItemRatio.txt for an explanation for how the Item Quality is chosen)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Rare",
+      "type": "number",
+      "description": "Modifies the item ratio drop for a Rare Quality item. A higher value means a better chance of being chosen. (ItemRatio.txt for an explanation for how the Item Quality is chosen)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Magic",
+      "type": "number",
+      "description": "Modifies the item ratio drop for a Magic Quality item. A higher value means a better chance of being chosen. (ItemRatio.txt for an explanation for how the Item Quality is chosen)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "NoDrop",
+      "type": "number",
+      "description": "Controls the probability of no item dropping by the Treasure Class. The higher this value, then the more likely no item will drop from the monster. This can be automatically be affected by the number of players currently in the game",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Item1",
+      "type": "text"
+    },
+    {
+      "name": "Prob1",
+      "type": "number"
+    },
+    {
+      "name": "Item2",
+      "type": "text"
+    },
+    {
+      "name": "Prob2",
+      "type": "number"
+    },
+    {
+      "name": "Item3",
+      "type": "text"
+    },
+    {
+      "name": "Prob3",
+      "type": "number"
+    },
+    {
+      "name": "Item4",
+      "type": "text"
+    },
+    {
+      "name": "Prob4",
+      "type": "number"
+    },
+    {
+      "name": "Item5",
+      "type": "text"
+    },
+    {
+      "name": "Prob5",
+      "type": "number"
+    },
+    {
+      "name": "Item6",
+      "type": "text"
+    },
+    {
+      "name": "Prob6",
+      "type": "number"
+    },
+    {
+      "name": "Item7",
+      "type": "text"
+    },
+    {
+      "name": "Prob7",
+      "type": "number"
+    },
+    {
+      "name": "Item8",
+      "type": "text"
+    },
+    {
+      "name": "Prob8",
+      "type": "number"
+    },
+    {
+      "name": "Item9",
+      "type": "text"
+    },
+    {
+      "name": "Prob9",
+      "type": "number"
+    },
+    {
+      "name": "Item10",
+      "type": "text"
+    },
+    {
+      "name": "Prob10",
+      "type": "text"
+    },
+    {
+      "name": "*ItemProbSum",
+      "type": "number",
+      "comment": true
+    },
+    {
+      "name": "*ItemProbTotal",
+      "type": "number",
+      "comment": true
+    },
+    {
+      "name": "*TreasureClassDropChance",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "ConditionCalc",
+      "type": "text"
+    },
+    {
+      "name": "firstLadderSeason",
+      "type": "number"
+    },
+    {
+      "name": "lastLadderSeason",
+      "type": "number"
+    },
+    {
+      "name": "noAlwaysSpawn",
+      "type": "number"
+    },
+    {
+      "name": "QuestFlag",
+      "type": "text"
+    },
+    {
+      "name": "QuestFlagEx",
+      "type": "text"
+    },
+    {
+      "name": "*eol",
+      "type": "number",
+      "comment": true
+    }
+  ]
+}

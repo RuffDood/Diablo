@@ -1,0 +1,305 @@
+{
+  "table": "itemstatcost",
+  "file": "global/excel/itemstatcost.txt",
+  "description": "Table itemstatcost du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 43,
+  "columns": [
+    {
+      "name": "Stat",
+      "type": "text",
+      "description": "Defines the unique pointer for this stat, which is used in other files",
+      "guideType": "[O]"
+    },
+    {
+      "name": "*ID",
+      "type": "number",
+      "comment": true
+    },
+    {
+      "name": "Send Other",
+      "type": "boolean",
+      "description": "If equals 1, then only add the stat to a new monster if the that has no state and has an item mask. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Signed",
+      "type": "boolean",
+      "description": "If equals 1, then the stat will be treated as a signed integer, meaning that it can be either a positive or negative value. If equals 0, then stat will be treated as an unsigned integer, meaning that it can only be a positive value. This only affects stats with state bits",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Send Bits",
+      "type": "number",
+      "description": "Controls how many bits of data for the stat to send to the game client, essentially controlling the max value possible for the stat. Signed values should have less than 32 bits, otherwise they will be treated as unsigned values",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Send Param Bits",
+      "type": "number",
+      "description": "Controls how many bits of data for the stat's parameter value to send to the client for a unit. This value is always treated as a signed integer",
+      "guideType": "[N]"
+    },
+    {
+      "name": "UpdateAnimRate",
+      "type": "boolean",
+      "description": "If equals 1, then the stat will notify that game to handle and adjust the speed of the unit when the stat changes. If equals 0, then ignore this. This is only checked for stats with States or for specific skill server functions including 30, 61, 71",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Saved",
+      "type": "boolean",
+      "description": "If equals 1, then this state will be inserted in the change list to be stored in the Character Save file. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "CSvSigned",
+      "type": "boolean",
+      "description": "If equals 1, then the stat will be saved as a signed integer in the Character Save file. If equals 0, then the stat will be saved as an unsigned integer in the Character Save file. This is only used if the \"Saved\" field is enabled",
+      "guideType": "[B]"
+    },
+    {
+      "name": "CSvBits",
+      "type": "number",
+      "description": "Controls how many bits of data for the stat to send to save in the Character Save file. Signed values should have less than 32 bits, otherwise they will be treated as unsigned values. This is only used if the \"Saved\" field is enabled",
+      "guideType": "[N]"
+    },
+    {
+      "name": "CSvParam",
+      "type": "number",
+      "description": "Controls how many bits of data for the stat's parameter value to save in the Character Save file. This value is always treated as a signed integer. This is only used if the \"Saved\" field is enabled",
+      "guideType": "[N]"
+    },
+    {
+      "name": "fCallback",
+      "type": "boolean",
+      "description": "If equals 1, then any changes to the stat will call the Callback function which will update thgecharacter's States, skills, or item events based on the changed stat value. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "fMin",
+      "type": "boolean",
+      "description": "If equals 1, then the stat will have a minimum value that cannot be reduced further than that value (\"MinAccr\" field). If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "MinAccr",
+      "type": "number",
+      "description": "The minimum value of a stat. This is only used if the \"fMin\" field is enabled",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Encode",
+      "type": "number",
+      "description": "Controls how the stat will modify an item's buy, sell, and repair costs. This field uses a code value to select a function to handle the calculations. This field relies on the \"Add\", \"Multiply\" and \"ValShift\" fields. The baseline Stat Value is first modified using the \"ValShift\" field to shift the bits. This Stat Value is then used in the calculations by one of the selected functions.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Add",
+      "type": "number",
+      "description": "Used as a possible parameter value for the \"Encode\" function. Flat integer modification to the Unique item's buy, sell, and repair costs. This is added after the \"Multiply\" field has modified the costs",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Multiply",
+      "type": "number",
+      "description": "Used as a possible parameter value for the \"Encode\" function.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ValShift",
+      "type": "number",
+      "description": "Used to shift the stat's input value by a number of bits to obtain the actual value when performing calculations (such as for the \"Encode\" function)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "1.09-Save Bits",
+      "type": "number",
+      "description": "Controls how many bits of data are allocated for the overall size of the stat when saving/reading an item from a Character Save. This value can be treated as a signed or unsigned integer, depending on the stat. This field is only used for items saved in a game version of Patch 1.09d or older",
+      "guideType": "[N]"
+    },
+    {
+      "name": "1.09-Save Add",
+      "type": "number",
+      "description": "Controls how many bits of data are allocated for the stat's value when saving/reading an item from a Character Save. This value is treated as a signed integer. This field is only used for items saved in a game version of Patch 1.09d or older",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Save Bits",
+      "type": "number",
+      "description": "Controls how many bits of data are allocated for the overall size of the stat when saving/reading an item from a Character Save. This value can be treated as a signed or unsigned integer, depending on the stat",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Save Add",
+      "type": "number",
+      "description": "Controls how many bits of data are allocated for the stat's value when saving/reading an item from a Character Save. This value is treated as a signed integer",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Save Param Bits",
+      "type": "number",
+      "description": "Controls how many bits of data for the stat's parameter value to use when saving/reading an item from a Character Save. This value is always treated asan unsigned integer",
+      "guideType": "[N]"
+    },
+    {
+      "name": "keepzero",
+      "type": "boolean",
+      "description": "If equals 1, then this stat will remain on the stat change list, when being updated, even if that stat value is 0. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "op",
+      "type": "number",
+      "description": "This is the stat operator, used for advanced stat modification when calculating the value of a stat. This can involves using this stat and its value to modify another stat's value. This use a function ID to determine what to calculate.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "op param",
+      "type": "number",
+      "description": "Used as a possible parameter value for the \"op\" function",
+      "guideType": "[N]"
+    },
+    {
+      "name": "op base",
+      "type": "number",
+      "description": "Used as a possible parameter value for the \"op\" function",
+      "guideType": "[N]"
+    },
+    {
+      "name": "op stat1",
+      "type": "text"
+    },
+    {
+      "name": "op stat2",
+      "type": "text"
+    },
+    {
+      "name": "op stat3",
+      "type": "text"
+    },
+    {
+      "name": "direct",
+      "type": "boolean",
+      "description": "If equals 1, then when the stat is being updated in certain skill functions having to do with state changes, the stat will update in relation to its \"maxstat\" field to ensure that it never exceeds that value. If equals 0, then ignore this, and the stat will simply update in these cases. This only applies to skills that use skill server function 65, 66, 81, and 82",
+      "guideType": "[B]"
+    },
+    {
+      "name": "maxstat",
+      "type": "text",
+      "description": "Controls which stat is associated with this stat to be treated as the maximum version of this stat. This means that 2 stats are essentially linked so that there can be a current version of the stat and a maximum version to control the cap of stat's value. This is used for Life, Mana, Stamina, and Durability. This field relies on the \"direct\" field to be enabled unless it is being used for the healing potion item spell",
+      "guideType": "[O]"
+    },
+    {
+      "name": "damagerelated",
+      "type": "boolean",
+      "description": "If equals 1, then this stat will be exclusive to the item and will not add to the unit. If equals 0, then ignore this, and the stat will always add to the unit. This is typically used for weapons and is important when dual wielding weapons so that when a unit attacks, then one weapon's stats do not stack with another weapon's stats",
+      "guideType": "[B]"
+    },
+    {
+      "name": "itemevent1",
+      "type": "text"
+    },
+    {
+      "name": "itemeventfunc1",
+      "type": "number"
+    },
+    {
+      "name": "itemevent2",
+      "type": "text"
+    },
+    {
+      "name": "itemeventfunc2",
+      "type": "number"
+    },
+    {
+      "name": "descpriority",
+      "type": "number",
+      "description": "Controls how this stat is sorted in item tooltips. This field is compared to the same field on other stats to determine how to order the stats. The higher the value means that the stat will be sorted higher than other stats. If more than 1 stat has the same \"descpriority\" value, then they will be listed in the order defined in this data file",
+      "guideType": "[N]"
+    },
+    {
+      "name": "descfunc",
+      "type": "number",
+      "description": "Controls how the stat is displayed in tooltips. Uses the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "descval",
+      "type": "number",
+      "description": "Used as a possible parameter value for the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "descstrpos",
+      "type": "text",
+      "description": "Used as a possible parameter value for the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "descstrneg",
+      "type": "text",
+      "description": "Used as a possible parameter value for the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "descstr2",
+      "type": "text",
+      "description": "Used as a possible parameter value for the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "dgrp",
+      "type": "number",
+      "description": "Assigns the stat to a group ID value. If all stats with a matching \"dgrp\" value are applied on the unit, then instead of displaying each stat individually, the group description will be applied instead (",
+      "guideType": "[N]"
+    },
+    {
+      "name": "dgrpfunc",
+      "type": "number",
+      "description": "Controls how the shared group of stats is displayed in tooltips. Uses an ID value to select a description function to format the string value. This function IDs are exactly the same as the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "dgrpval",
+      "type": "number",
+      "description": "Used as a possible parameter value for the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "dgrpstrpos",
+      "type": "text",
+      "description": "Used as a possible parameter value for the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "dgrpstrneg",
+      "type": "text",
+      "description": "Used as a possible parameter value for the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "dgrpstr2",
+      "type": "text",
+      "description": "Used as a possible parameter value for the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "stuff",
+      "type": "number",
+      "description": "Used as a bit shift value for handling the conversion of skill IDs and skill levels to bit values for the stat. Controls the numeric range of possible skill IDs and skill levels for charge based items. This value cannot be less than or equal to 0, or greater than 8, otherwise it will default to 6. The row that this value appears in the data file is unrelated, since this is a universally applied value",
+      "guideType": "[N]"
+    },
+    {
+      "name": "advdisplay",
+      "type": "number",
+      "description": "Controls how the stat appears in the Advanced Stats UI",
+      "guideType": "[N]"
+    },
+    {
+      "name": "*eol",
+      "type": "number",
+      "comment": true
+    }
+  ]
+}

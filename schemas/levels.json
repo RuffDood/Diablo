@@ -1,0 +1,843 @@
+{
+  "table": "levels",
+  "file": "global/excel/levels.txt",
+  "description": "Table levels du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 42,
+  "columns": [
+    {
+      "name": "Name",
+      "type": "text",
+      "description": "Defines the unique name pointer for the area level, which is used in other files",
+      "guideType": "[O]"
+    },
+    {
+      "name": "*StringName",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Id",
+      "type": "number",
+      "description": "Defines the unique numeric ID for the area level, which is used in other files",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Pal",
+      "type": "number",
+      "description": "Defines which palette file to use for the area level. This uses index values from 0 to 4 to convey Act 1 to Act 5",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Act",
+      "type": "number",
+      "description": "Defines the Act number that the area level is a part of. This uses index values from 0 to 4 to convey Act 1 to Act 5",
+      "guideType": "[N]"
+    },
+    {
+      "name": "QuestFlag",
+      "type": "number",
+      "description": "Controls what quest record that the player needs to have completed before being allowed to enter this area level, while playing in Classic Mode. Each quest can have multiple quest records, and this field is looking for a specific quest record from a quest. Referenced by the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "QuestFlagEx",
+      "type": "number",
+      "description": "Controls what quest record that the player needs to have completed before being allowed to enter this area level, while playing in Expansion Mode. Each quest can have multiple quest records, and this field is looking for a specific quest record from a quest. Referenced by the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Layer",
+      "type": "number",
+      "description": "Defines a unique numeric ID that is used to identify which Automap data belongs to which area level when saving and loading data from the character save",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SizeX",
+      "type": "number"
+    },
+    {
+      "name": "SizeY",
+      "type": "number"
+    },
+    {
+      "name": "SizeX(N)",
+      "type": "number"
+    },
+    {
+      "name": "SizeY(N)",
+      "type": "number"
+    },
+    {
+      "name": "SizeX(H)",
+      "type": "number"
+    },
+    {
+      "name": "SizeY(H)",
+      "type": "number"
+    },
+    {
+      "name": "OffsetX",
+      "type": "number"
+    },
+    {
+      "name": "OffsetY",
+      "type": "number"
+    },
+    {
+      "name": "Depend",
+      "type": "number",
+      "description": "Assigns another level to be this area level's depended level, which controls this area level's position and how it starts building its tiles. Uses the level",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Teleport",
+      "type": "number",
+      "description": "Controls the functionality of the Sorceress Teleport skill and the Assassin Dragon Flight skill on the area level",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Rain",
+      "type": "boolean",
+      "description": "If equals 1, then allow rain to play its effects on the area level. If the level is part of Act 5, then it will snow on the area level, instead of rain. If equals 0, then it will never rain on the area level",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Mud",
+      "type": "boolean",
+      "description": "If equals 1, then random bubbles will animate on the tiles that are flagged as water tiles. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "NoPer",
+      "type": "boolean",
+      "description": "If equals 1, then allow the use of display option of Perspective Mode while the player is in the level. If equals 0, then disable the option of Perspective Mode and force the player to use Orthographic Mode while the player is in the level",
+      "guideType": "[B]"
+    },
+    {
+      "name": "LOSDraw",
+      "type": "boolean",
+      "description": "If equals 1, then the level will check the player's line of sight before drawing monsters. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "FloorFilter",
+      "type": "boolean",
+      "description": "If equals 1 and if the floor's layer in the area level equals 1, then draw the floor tiles with a linear texture sampler. If equals 0, then draw the floor tiles with a nearest texture sampler",
+      "guideType": "[B]"
+    },
+    {
+      "name": "BlankScreen",
+      "type": "boolean",
+      "description": "If equals 1, then draw the area level screen. If equals 0, then do not draw the area level screen, meaning that the level will be a blank screen",
+      "guideType": "[B]"
+    },
+    {
+      "name": "DrawEdges",
+      "type": "boolean",
+      "description": "If equals 1, then draw the areas in levels that are not covered by floor tiles. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "*IsInside",
+      "type": "number",
+      "comment": true
+    },
+    {
+      "name": "DrlgType",
+      "type": "number",
+      "description": "Determines the type of Dynamic Random Level Generation used for building and handling different elements of the area level. Uses the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "LevelType",
+      "type": "number",
+      "description": "Defines the Level Type used for this area level. Uses the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SubType",
+      "type": "number",
+      "description": "Controls the group of tile substitutions for the area level (",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SubTheme",
+      "type": "number",
+      "description": "Controls which theme number to use in a Level Substitution. The allowed values are 0 to 4, which convey which",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SubWaypoint",
+      "type": "number",
+      "description": "Controls the level substitutions for adding waypoints in the area level (",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SubShrine",
+      "type": "number",
+      "description": "Controls the level substitutions for adding Shrines in the area level (",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Vis0",
+      "type": "number"
+    },
+    {
+      "name": "Vis1",
+      "type": "number"
+    },
+    {
+      "name": "Vis2",
+      "type": "number"
+    },
+    {
+      "name": "Vis3",
+      "type": "number"
+    },
+    {
+      "name": "Vis4",
+      "type": "number"
+    },
+    {
+      "name": "Vis5",
+      "type": "number"
+    },
+    {
+      "name": "Vis6",
+      "type": "number"
+    },
+    {
+      "name": "Vis7",
+      "type": "number"
+    },
+    {
+      "name": "Warp0",
+      "type": "number"
+    },
+    {
+      "name": "Warp1",
+      "type": "number"
+    },
+    {
+      "name": "Warp2",
+      "type": "number"
+    },
+    {
+      "name": "Warp3",
+      "type": "number"
+    },
+    {
+      "name": "Warp4",
+      "type": "number"
+    },
+    {
+      "name": "Warp5",
+      "type": "number"
+    },
+    {
+      "name": "Warp6",
+      "type": "number"
+    },
+    {
+      "name": "Warp7",
+      "type": "number"
+    },
+    {
+      "name": "Intensity",
+      "type": "number",
+      "description": "Controls the intensity value of the area level's ambient colors. This affects brightness of the room's RGB colors. Uses a value between 0 and 255. If all these related fields equal 0, then the game ignores setting the area level's ambient colors",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Red",
+      "type": "number",
+      "description": "Controls the red value of the area level's ambient colors. Uses a value between 0 and 255",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Green",
+      "type": "number",
+      "description": "Controls the green value of the area level's ambient colors. Uses a value between 0 and 255",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Blue",
+      "type": "number",
+      "description": "Controls the blue value of the area level's ambient colors. Uses a value between 0 and 255",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Portal",
+      "type": "boolean",
+      "description": "If equals 1, then this area level will be flagged as a portal level, which is saved in the player's information and can be used for keeping track of the player's portal functionalities. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Position",
+      "type": "boolean",
+      "description": "If equals 1, then enable special casing for positioning the player on the area level. This can mean that the player could spawn on a different location on the area level, depending on the level room's position type. An example can be when the player spawns in a town when loading the game, or using a waypoint, or using a town portal. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "SaveMonsters",
+      "type": "boolean",
+      "description": "If equals 1, then the game will save the monsters in the area level, such as when all players leave the area level. If equals 0, then monsters will not be saved and will be removed. This is usually disabled for areas where monsters do not spawn",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Quest",
+      "type": "number",
+      "description": "Controls what quest record is attached to monsters that spawn in this area level. This is used for specific quests handling lists of monsters in the area level. Referenced by the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "WarpDist",
+      "type": "number",
+      "description": "Defines the minimum pixel distance from a Level Warp that a monster is allowed to spawn near. Tile distance values are converted to game pixel distance values by multiplying the tile distance value by 160 / 32, where 160 is the width of pixels of a tile",
+      "guideType": "[N]"
+    },
+    {
+      "name": "MonLvl",
+      "type": "number"
+    },
+    {
+      "name": "MonLvl(N)",
+      "type": "number"
+    },
+    {
+      "name": "MonLvl(H)",
+      "type": "number"
+    },
+    {
+      "name": "MonLvlEx",
+      "type": "number"
+    },
+    {
+      "name": "MonLvlEx(N)",
+      "type": "number"
+    },
+    {
+      "name": "MonLvlEx(H)",
+      "type": "number"
+    },
+    {
+      "name": "MonDen",
+      "type": "number"
+    },
+    {
+      "name": "MonDen(N)",
+      "type": "number"
+    },
+    {
+      "name": "MonDen(H)",
+      "type": "number"
+    },
+    {
+      "name": "MonUMin",
+      "type": "number"
+    },
+    {
+      "name": "MonUMax",
+      "type": "number"
+    },
+    {
+      "name": "MonUMin(N)",
+      "type": "number"
+    },
+    {
+      "name": "MonUMax(N)",
+      "type": "number"
+    },
+    {
+      "name": "MonUMin(H)",
+      "type": "number"
+    },
+    {
+      "name": "MonUMax(H)",
+      "type": "number"
+    },
+    {
+      "name": "MonWndr",
+      "type": "boolean",
+      "description": "If equals 1, then allow Wandering Monsters to spawn on this area level (",
+      "guideType": "[B]"
+    },
+    {
+      "name": "MonSpcWalk",
+      "type": "number",
+      "description": "Defines a distance value, used to handle monster pathing AI when the level has certain pathing blockers, such as jail bars or rivers. In these cases, monsters will walk randomly until a player is located within this distance value or when the monsters find a possible path to target the player. If this equals 0, then ignore this field",
+      "guideType": "[N]"
+    },
+    {
+      "name": "NumMon",
+      "type": "number",
+      "description": "Controls the number of different monsters randomly spawn in the area level. The maximum value is 13. This controls the number of random selections from the 25 related",
+      "guideType": "[N]"
+    },
+    {
+      "name": "mon1",
+      "type": "text"
+    },
+    {
+      "name": "mon2",
+      "type": "text"
+    },
+    {
+      "name": "mon3",
+      "type": "text"
+    },
+    {
+      "name": "mon4",
+      "type": "text"
+    },
+    {
+      "name": "mon5",
+      "type": "text"
+    },
+    {
+      "name": "mon6",
+      "type": "text"
+    },
+    {
+      "name": "mon7",
+      "type": "text"
+    },
+    {
+      "name": "mon8",
+      "type": "text"
+    },
+    {
+      "name": "mon9",
+      "type": "text"
+    },
+    {
+      "name": "mon10",
+      "type": "text"
+    },
+    {
+      "name": "mon11",
+      "type": "text"
+    },
+    {
+      "name": "mon12",
+      "type": "text"
+    },
+    {
+      "name": "mon13",
+      "type": "text"
+    },
+    {
+      "name": "mon14",
+      "type": "text"
+    },
+    {
+      "name": "mon15",
+      "type": "text"
+    },
+    {
+      "name": "mon16",
+      "type": "text"
+    },
+    {
+      "name": "mon17",
+      "type": "text"
+    },
+    {
+      "name": "mon18",
+      "type": "text"
+    },
+    {
+      "name": "mon19",
+      "type": "text"
+    },
+    {
+      "name": "mon20",
+      "type": "text"
+    },
+    {
+      "name": "mon21",
+      "type": "text"
+    },
+    {
+      "name": "mon22",
+      "type": "text"
+    },
+    {
+      "name": "mon23",
+      "type": "text"
+    },
+    {
+      "name": "mon24",
+      "type": "text"
+    },
+    {
+      "name": "mon25",
+      "type": "text"
+    },
+    {
+      "name": "rangedspawn",
+      "type": "boolean",
+      "description": "If equals 1, then for the first monster, try to pick a ranged type. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "nmon1",
+      "type": "text"
+    },
+    {
+      "name": "nmon2",
+      "type": "text"
+    },
+    {
+      "name": "nmon3",
+      "type": "text"
+    },
+    {
+      "name": "nmon4",
+      "type": "text"
+    },
+    {
+      "name": "nmon5",
+      "type": "text"
+    },
+    {
+      "name": "nmon6",
+      "type": "text"
+    },
+    {
+      "name": "nmon7",
+      "type": "text"
+    },
+    {
+      "name": "nmon8",
+      "type": "text"
+    },
+    {
+      "name": "nmon9",
+      "type": "text"
+    },
+    {
+      "name": "nmon10",
+      "type": "text"
+    },
+    {
+      "name": "nmon11",
+      "type": "text"
+    },
+    {
+      "name": "nmon12",
+      "type": "text"
+    },
+    {
+      "name": "nmon13",
+      "type": "text"
+    },
+    {
+      "name": "nmon14",
+      "type": "text"
+    },
+    {
+      "name": "nmon15",
+      "type": "text"
+    },
+    {
+      "name": "nmon16",
+      "type": "text"
+    },
+    {
+      "name": "nmon17",
+      "type": "text"
+    },
+    {
+      "name": "nmon18",
+      "type": "text"
+    },
+    {
+      "name": "nmon19",
+      "type": "text"
+    },
+    {
+      "name": "nmon20",
+      "type": "text"
+    },
+    {
+      "name": "nmon21",
+      "type": "text"
+    },
+    {
+      "name": "nmon22",
+      "type": "text"
+    },
+    {
+      "name": "nmon23",
+      "type": "text"
+    },
+    {
+      "name": "nmon24",
+      "type": "text"
+    },
+    {
+      "name": "nmon25",
+      "type": "text"
+    },
+    {
+      "name": "umon1",
+      "type": "text"
+    },
+    {
+      "name": "umon2",
+      "type": "text"
+    },
+    {
+      "name": "umon3",
+      "type": "text"
+    },
+    {
+      "name": "umon4",
+      "type": "text"
+    },
+    {
+      "name": "umon5",
+      "type": "text"
+    },
+    {
+      "name": "umon6",
+      "type": "text"
+    },
+    {
+      "name": "umon7",
+      "type": "text"
+    },
+    {
+      "name": "umon8",
+      "type": "text"
+    },
+    {
+      "name": "umon9",
+      "type": "text"
+    },
+    {
+      "name": "umon10",
+      "type": "text"
+    },
+    {
+      "name": "umon11",
+      "type": "text"
+    },
+    {
+      "name": "umon12",
+      "type": "text"
+    },
+    {
+      "name": "umon13",
+      "type": "text"
+    },
+    {
+      "name": "umon14",
+      "type": "text"
+    },
+    {
+      "name": "umon15",
+      "type": "text"
+    },
+    {
+      "name": "umon16",
+      "type": "text"
+    },
+    {
+      "name": "umon17",
+      "type": "text"
+    },
+    {
+      "name": "umon18",
+      "type": "text"
+    },
+    {
+      "name": "umon19",
+      "type": "text"
+    },
+    {
+      "name": "umon20",
+      "type": "text"
+    },
+    {
+      "name": "umon21",
+      "type": "text"
+    },
+    {
+      "name": "umon22",
+      "type": "text"
+    },
+    {
+      "name": "umon23",
+      "type": "text"
+    },
+    {
+      "name": "umon24",
+      "type": "text"
+    },
+    {
+      "name": "umon25",
+      "type": "text"
+    },
+    {
+      "name": "cmon1",
+      "type": "text"
+    },
+    {
+      "name": "cmon2",
+      "type": "text"
+    },
+    {
+      "name": "cmon3",
+      "type": "text"
+    },
+    {
+      "name": "cmon4",
+      "type": "text"
+    },
+    {
+      "name": "cpct1",
+      "type": "number"
+    },
+    {
+      "name": "cpct2",
+      "type": "number"
+    },
+    {
+      "name": "cpct3",
+      "type": "number"
+    },
+    {
+      "name": "cpct4",
+      "type": "number"
+    },
+    {
+      "name": "camt1",
+      "type": "text"
+    },
+    {
+      "name": "camt2",
+      "type": "text"
+    },
+    {
+      "name": "camt3",
+      "type": "text"
+    },
+    {
+      "name": "camt4",
+      "type": "text"
+    },
+    {
+      "name": "Themes",
+      "type": "number",
+      "description": "Controls the type of theme when building a level room. This value is a summation of possible values to build a bit mask for determining which themes to use when building a level room. For example, a value of 60 means that the area level can have the following themes: 32, 16, 8, 4.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SoundEnv",
+      "type": "number",
+      "description": "Uses the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Waypoint",
+      "type": "number",
+      "description": "Defines the unique numeric ID for the Waypoint in the area level. If this value is greater than or equal to 255, then ignore this field",
+      "guideType": "[N]"
+    },
+    {
+      "name": "LevelName",
+      "type": "text",
+      "description": "Used for displaying the name of the area level, such as when in the UI when the Automap is being viewed",
+      "guideType": "[O]"
+    },
+    {
+      "name": "LevelWarp",
+      "type": "text",
+      "description": "Used for displaying the entrance name of the area level on Level Warp tiles that link to this area level. For example, when the player mouse hovers over a tile to warp to the area level, then this string is displayed",
+      "guideType": "[O]"
+    },
+    {
+      "name": "LevelEntry",
+      "type": "text",
+      "description": "Used for displaying the UI popup title string when the player enters the area level",
+      "guideType": "[O]"
+    },
+    {
+      "name": "ObjGrp0",
+      "type": "number"
+    },
+    {
+      "name": "ObjGrp1",
+      "type": "number"
+    },
+    {
+      "name": "ObjGrp2",
+      "type": "number"
+    },
+    {
+      "name": "ObjGrp3",
+      "type": "number"
+    },
+    {
+      "name": "ObjGrp4",
+      "type": "number"
+    },
+    {
+      "name": "ObjGrp5",
+      "type": "number"
+    },
+    {
+      "name": "ObjGrp6",
+      "type": "number"
+    },
+    {
+      "name": "ObjGrp7",
+      "type": "number"
+    },
+    {
+      "name": "ObjPrb0",
+      "type": "number"
+    },
+    {
+      "name": "ObjPrb1",
+      "type": "number"
+    },
+    {
+      "name": "ObjPrb2",
+      "type": "number"
+    },
+    {
+      "name": "ObjPrb3",
+      "type": "number"
+    },
+    {
+      "name": "ObjPrb4",
+      "type": "number"
+    },
+    {
+      "name": "ObjPrb5",
+      "type": "number"
+    },
+    {
+      "name": "ObjPrb6",
+      "type": "number"
+    },
+    {
+      "name": "ObjPrb7",
+      "type": "number"
+    },
+    {
+      "name": "LevelGroup",
+      "type": "text",
+      "description": "Defines what group this level belongs to. Used for condensing level names in desecrated (terror) zones messaging. See LevelGroups.txt.",
+      "guideType": "[O]"
+    },
+    {
+      "name": "PreventTownPortal",
+      "type": "number"
+    }
+  ]
+}

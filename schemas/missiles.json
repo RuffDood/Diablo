@@ -1,0 +1,888 @@
+{
+  "table": "missiles",
+  "file": "global/excel/missiles.txt",
+  "description": "Table missiles du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 83,
+  "columns": [
+    {
+      "name": "Missile",
+      "type": "text",
+      "description": "Defines the unique name ID for the missile, which is how other files can reference the missile. The order of defined missiles will determine their ID numbers, so they should not be reordered",
+      "guideType": "[O]"
+    },
+    {
+      "name": "*ID",
+      "type": "number",
+      "comment": true
+    },
+    {
+      "name": "pCltDoFunc",
+      "type": "number",
+      "description": "Uses an ID value from the below table, to select a function for the missile's behavior that will be active every frame on the client side. This is more about handling the local graphics while the missile is moving.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "pCltHitFunc",
+      "type": "number",
+      "description": "Uses an ID value from the below table, to select a specialized function for the missile's behavior when hitting something on the client side. This is more about handling the local graphics at the moment of missile collision.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "pSrvDoFunc",
+      "type": "number",
+      "description": "Uses an ID value from the below table, to select a specialized function for the missile's behavior while active every frame on the server side",
+      "guideType": "[N]"
+    },
+    {
+      "name": "pSrvHitFunc",
+      "type": "number",
+      "description": "Uses an ID value from the below table, to select a specialized function for the missile's behavior when hitting something on the server side",
+      "guideType": "[N]"
+    },
+    {
+      "name": "pSrvDmgFunc",
+      "type": "number",
+      "description": "Uses an ID value from the below table, to select a specialized function that gets called before damaging a unit on the server side",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SrvCalc1",
+      "type": "text",
+      "description": "Used as a parameter for the",
+      "guideType": "[C]"
+    },
+    {
+      "name": "*srv calc 1 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param1",
+      "type": "number"
+    },
+    {
+      "name": "*param1 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param2",
+      "type": "number"
+    },
+    {
+      "name": "*param2 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param3",
+      "type": "number"
+    },
+    {
+      "name": "*param3 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param4",
+      "type": "number"
+    },
+    {
+      "name": "*param4 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param5",
+      "type": "number"
+    },
+    {
+      "name": "*param5 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "CltCalc1",
+      "type": "text",
+      "description": "Used as a parameter for the",
+      "guideType": "[C]"
+    },
+    {
+      "name": "*client calc 1 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "CltParam1",
+      "type": "number"
+    },
+    {
+      "name": "*client param1 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "CltParam2",
+      "type": "number"
+    },
+    {
+      "name": "*client param2 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "CltParam3",
+      "type": "number"
+    },
+    {
+      "name": "*client param3 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "CltParam4",
+      "type": "number"
+    },
+    {
+      "name": "*client param4 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "CltParam5",
+      "type": "text"
+    },
+    {
+      "name": "*client param5 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "SHitCalc1",
+      "type": "text",
+      "description": "Used as a parameter for the",
+      "guideType": "[C]"
+    },
+    {
+      "name": "*server hit calc 1 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "sHitPar1",
+      "type": "number"
+    },
+    {
+      "name": "*server hit param1 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "sHitPar2",
+      "type": "number"
+    },
+    {
+      "name": "*server hit param2 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "sHitPar3",
+      "type": "number"
+    },
+    {
+      "name": "*server hit param3 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "CHitCalc1",
+      "type": "text",
+      "description": "Used as a parameter for the",
+      "guideType": "[C]"
+    },
+    {
+      "name": "*client hit calc1 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "cHitPar1",
+      "type": "text"
+    },
+    {
+      "name": "*client hit param1 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "cHitPar2",
+      "type": "number"
+    },
+    {
+      "name": "*client hit param2 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "cHitPar3",
+      "type": "number"
+    },
+    {
+      "name": "*client hit param3 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "DmgCalc1",
+      "type": "text",
+      "description": "Used as a parameter for the",
+      "guideType": "[C]"
+    },
+    {
+      "name": "*damage calc 1",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "dParam1",
+      "type": "number"
+    },
+    {
+      "name": "*damage param1 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "dParam2",
+      "type": "number"
+    },
+    {
+      "name": "*damage param2 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Vel",
+      "type": "number",
+      "description": "The baseline velocity of the missile, which is the speed at which the missile moves in the game world. This is measured by distance in pixels traveled per frame",
+      "guideType": "[N]"
+    },
+    {
+      "name": "MaxVel",
+      "type": "number",
+      "description": "The maximum velocity of the missile. If the missile's current velocity increases (based on other fields), then this field controls how high the velocity is allowed to go",
+      "guideType": "[N]"
+    },
+    {
+      "name": "VelLev",
+      "type": "number",
+      "description": "Adds extra velocity based on the caster unit's level. Each level gained beyond level 1 will add this value to the baseline",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Accel",
+      "type": "number",
+      "description": "Controls the acceleration of the missile's movement. A positive value will increase the missile's velocity per frame. A negative value will decrease the missile's velocity per frame. The bigger positive or negative values will cause the velocity to change faster per frame",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Range",
+      "type": "number",
+      "description": "Controls the baseline duration that the missile will exist for after it is created. This is measured in frames where 25 Frames = 1 second",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Radius",
+      "type": "text"
+    },
+    {
+      "name": "Light",
+      "type": "number",
+      "description": "Controls the missile's Light Radius size (measured in grid sub-tiles)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Flicker",
+      "type": "number",
+      "description": "If greater than 0, then every 4th frame while the missile is active, the Light Radius will randomly change in size between base size to its base size plus this value (measured in grid sub-tiles)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Red",
+      "type": "number",
+      "description": "Controls the red color value of the missile's Light Radius (Uses a value from 0 to 255)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Green",
+      "type": "number",
+      "description": "Controls the green color value of the monster's Light Radius (Uses a value from 0 to 255)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Blue",
+      "type": "number",
+      "description": "Controls the blue color value of the monster's Light Radius (Uses a value from 0 to 255)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "InitSteps",
+      "type": "number",
+      "description": "The number of frames the missile needs to be alive until it becomes visible on the game client. If the missile's current duration in frame count is less than this value, then the missile will appear invisible",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Activate",
+      "type": "number",
+      "description": "The number of frames the missile needs to be alive until it becomes active. If the missile's current duration in frame count is less than this value, then the missile will not collide",
+      "guideType": "[N]"
+    },
+    {
+      "name": "LoopAnim",
+      "type": "boolean",
+      "description": "If equals 1, then the missile's animation will repeat once the previous animation finishes. If equals 0, then the missile's animation will only play once, which can cause the missile to appear invisible at the end of the animation, but it will still be alive",
+      "guideType": "[B]"
+    },
+    {
+      "name": "CelFile",
+      "type": "text"
+    },
+    {
+      "name": "animrate",
+      "type": "number",
+      "description": "Controls the visual speed of the missile's animation graphics. The overall missile animation rate is calculated as the following: 256 * [\"animrate\"] / 1024",
+      "guideType": "[N]"
+    },
+    {
+      "name": "AnimLen",
+      "type": "number",
+      "description": "Defines the length of the missile's animation in frames where 25 Frames = 1 second. This field can sometimes be used to calculate the missile animation rate, depending on the missile function used",
+      "guideType": "[N]"
+    },
+    {
+      "name": "AnimSpeed",
+      "type": "number",
+      "description": "Controls the visual speed of the missile's animation graphics on the client side (Measured in 16ths, where 16 equals 1 frame per second). This can be overridden by certain missile functions",
+      "guideType": "[N]"
+    },
+    {
+      "name": "RandStart",
+      "type": "number",
+      "description": "If this value is greater than 0, then the missile will start at a random frame between 0 and this value when it begins its animation",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SubLoop",
+      "type": "boolean",
+      "description": "If equals 1, then the missile will use a specific sequence of its animation while it is alive, depending on its creation. If equals 0, then the missile will not use a sequenced animation",
+      "guideType": "[B]"
+    },
+    {
+      "name": "SubStart",
+      "type": "number",
+      "description": "The starting frame of the sequence animation. This requires that the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SubStop",
+      "type": "number",
+      "description": "The ending frame of the sequence animation. After reaching this frame, then the sequenced animation will loop back to the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "CollideType",
+      "type": "number",
+      "description": "Defines the missile's collision type, which controls what units, objects, or parts of the environment that the missile can impact",
+      "guideType": "[N]"
+    },
+    {
+      "name": "CollideKill",
+      "type": "boolean",
+      "description": "If equals 1, then the missile will be destroyed when it collides with something. If equals 0, then the missile will not be destroyed when it collides with something",
+      "guideType": "[B]"
+    },
+    {
+      "name": "CollideFriend",
+      "type": "boolean",
+      "description": "If equals 1, then the missile can collide with friendly units, including the caster. If equals 0, then the missile will ignore friendly units",
+      "guideType": "[B]"
+    },
+    {
+      "name": "LastCollide",
+      "type": "boolean",
+      "description": "If equals 1, then the missile will track the last unit that it collided with, which is useful for making sure the missile does not hit the same unit twice. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Collision",
+      "type": "boolean",
+      "description": "If equals 1, then the missile will have a missile type path placement collision mask when it is initialized or moved. If equals 0, then the missile will have no placement collision mask when it is created or moved",
+      "guideType": "[B]"
+    },
+    {
+      "name": "ClientCol",
+      "type": "boolean",
+      "description": "If equals 1, then the missile will check collision on the client, depending on the missile's",
+      "guideType": "[B]"
+    },
+    {
+      "name": "CollisionOverlap",
+      "type": "number"
+    },
+    {
+      "name": "ClientSend",
+      "type": "boolean",
+      "description": "If equals 1, then the server will create the missile on the client. This can be used when reloading area levels or transitioning units between areas. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "NextHit",
+      "type": "boolean",
+      "description": "If equals 1, then the missile will use the next delay. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "NextDelay",
+      "type": "number",
+      "description": "Controls the delay in frame length until the missile is allowed to hit the same unit again. This field relies on the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "xoffset",
+      "type": "text"
+    },
+    {
+      "name": "yoffset",
+      "type": "number"
+    },
+    {
+      "name": "zoffset",
+      "type": "number"
+    },
+    {
+      "name": "Size",
+      "type": "number",
+      "description": "Defines the diameter in sub-tiles (for both the X and Y axis) that the missile will occupy. This affects how the missile will collide with something or how the game will handle placement for the missile",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SrcTown",
+      "type": "boolean",
+      "description": "If equals 1, then the missile will be destroyed if the caster unit is located in an act town. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "CltSrcTown",
+      "type": "number",
+      "description": "If this value is greater than 0 and the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "CanDestroy",
+      "type": "boolean",
+      "description": "If equals 1, then the missile can be attacked and destroyed. If equals 0, then the missile cannot be attacked",
+      "guideType": "[B]"
+    },
+    {
+      "name": "ToHit",
+      "type": "boolean",
+      "description": "If equals 1, then this missile will use the caster's Attack Rating stat to determine if the missile should hit its target. If equals 0, then the missile will always hit its target",
+      "guideType": "[B]"
+    },
+    {
+      "name": "AlwaysExplode",
+      "type": "boolean",
+      "description": "If equals 1, then the missile will always process an explosion when it is killed, which can use the",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Explosion",
+      "type": "boolean",
+      "description": "If equals 1, then the missile will be classified as an explosion which will make it use different handlers for finding nearby units and dealing damage. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Town",
+      "type": "boolean",
+      "description": "If equals 1, then the missile is allowed to be alive when in a town area. If equals 0, then the missile will be immediately destroyed when located within a town area",
+      "guideType": "[B]"
+    },
+    {
+      "name": "NoUniqueMod",
+      "type": "boolean",
+      "description": "If equals 1, then the missile will not receive bonuses from Unique monster modifiers. If equals 0, then the missile will receive bonuses from Unique monster modifiers",
+      "guideType": "[B]"
+    },
+    {
+      "name": "NoMultiShot",
+      "type": "boolean",
+      "description": "If equals 1, then the missile will not be affected by the Multi-Shot monster modifier. If equals 0, then the missile will be affected by theMulti-Shot monster modifier",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Holy",
+      "type": "number",
+      "description": "Controls a bit field flag where each value is a code to allow the missile to damage a certain type of monster",
+      "guideType": "[N]"
+    },
+    {
+      "name": "CanSlow",
+      "type": "boolean",
+      "description": "If equals 1, then the missile can be affected by the \"slowmissiles\" state (",
+      "guideType": "[B]"
+    },
+    {
+      "name": "ReturnFire",
+      "type": "boolean",
+      "description": "If equals 1, then missile can trigger the Sorceress Chilling Armor event function. If equals 0, then this missile will not trigger that function",
+      "guideType": "[B]"
+    },
+    {
+      "name": "GetHit",
+      "type": "boolean",
+      "description": "If equals 1, then the missile will cause the target unit to enter the Get Hit mode (GH), which acts as the hit recovery mode. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "SoftHit",
+      "type": "boolean",
+      "description": "If equals 1, then the missile will cause a soft hit on the unit, which can trigger a blood splatter effect, hit flash, and/or a hit sound. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "KnockBack",
+      "type": "number",
+      "description": "Controls the percentage chance (out of 100) that the target unit will be knocked back when hit by the missile",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Trans",
+      "type": "number",
+      "description": "Controls the alpha mode for how the missile is displayed, which can affect transparency and blending",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Pierce",
+      "type": "boolean",
+      "description": "If equals 1, then allow the Pierce modifier function to work with this missile. If equals 0, then do not allow Pierce to work with this missile",
+      "guideType": "[B]"
+    },
+    {
+      "name": "MissileSkill",
+      "type": "boolean",
+      "description": "If equals 1, then the missile will look up the skill that created it and use that skill's damage instead of the missile damage. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Skill",
+      "type": "text",
+      "description": "Links to the \"skill\" field from the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "ResultFlags",
+      "type": "number"
+    },
+    {
+      "name": "HitFlags",
+      "type": "number",
+      "description": "Controls different flags that can affect the damage dealt when the target is hit by the missile. Uses an integer value to check against different bit fields by using the \"&\" operator. For example, if the value equals 6 (binary = 110) then that returns true for both the 4 (binary = 100) and 2 (binary = 10) bit field values. Referenced by the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "HitShift",
+      "type": "number",
+      "description": "Controls the percentage modifier for the missile's damage. This value cannot be less than 0 or greater than 8. This is calculated in 256ths, where 8=256/256, 7=128/256, 6=64/256, 5=32/256, 4=16/256, 3=8/256, 2=4/256, 1=2/256, and 0=1/256",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ApplyMastery",
+      "type": "boolean",
+      "description": "If equals 1, then apply the caster's elemental mastery bonus modifiers to the missile's elemental damage. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "SrcDamage",
+      "type": "number",
+      "description": "Controls how much of the source unit's damage should be added to the missile's damage. This is calculated in 128ths and acts as a percentage modifier for the source unit's damage that added to the missile. If equals -1 or 0, then the source damage is not included",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Half2HSrc",
+      "type": "boolean",
+      "description": "If equals 1 and the source unit is currently wielding a 2-Handed weapon, then the",
+      "guideType": "[B]"
+    },
+    {
+      "name": "SrcMissDmg",
+      "type": "number",
+      "description": "If the missile was created by another missile, then this controls how much of the source missile's damage should be added to this missile's damage. This is calculated in 128ths and acts as a percentage modifier for the source missile's damage that added to this missile. If equals 0, then the source damage is not included",
+      "guideType": "[N]"
+    },
+    {
+      "name": "MinDamage",
+      "type": "number",
+      "description": "Minimum baseline physical damage dealt by the missile",
+      "guideType": "[N]"
+    },
+    {
+      "name": "MinLevDam1",
+      "type": "number"
+    },
+    {
+      "name": "MinLevDam2",
+      "type": "number"
+    },
+    {
+      "name": "MinLevDam3",
+      "type": "number"
+    },
+    {
+      "name": "MinLevDam4",
+      "type": "number"
+    },
+    {
+      "name": "MinLevDam5",
+      "type": "number"
+    },
+    {
+      "name": "MaxDamage",
+      "type": "number",
+      "description": "Maximum baseline physical damage dealt by the missile",
+      "guideType": "[N]"
+    },
+    {
+      "name": "MaxLevDam1",
+      "type": "number"
+    },
+    {
+      "name": "MaxLevDam2",
+      "type": "number"
+    },
+    {
+      "name": "MaxLevDam3",
+      "type": "number"
+    },
+    {
+      "name": "MaxLevDam4",
+      "type": "number"
+    },
+    {
+      "name": "MaxLevDam5",
+      "type": "number"
+    },
+    {
+      "name": "DmgSymPerCalc",
+      "type": "text",
+      "description": "Determines the percentage increase to the physical damage dealt by the missile based on specified skill levels",
+      "guideType": "[C]"
+    },
+    {
+      "name": "EType",
+      "type": "text",
+      "description": "Defines the type of elemental damage dealt by the missile. If this field is empty, then the related elemental fields below will not be used. Referenced by the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "EMin",
+      "type": "number",
+      "description": "Minimum baseline elemental damage dealt by the missile",
+      "guideType": "[N]"
+    },
+    {
+      "name": "MinELev1",
+      "type": "number"
+    },
+    {
+      "name": "MinELev2",
+      "type": "number"
+    },
+    {
+      "name": "MinELev3",
+      "type": "number"
+    },
+    {
+      "name": "MinELev4",
+      "type": "number"
+    },
+    {
+      "name": "MinELev5",
+      "type": "number"
+    },
+    {
+      "name": "EMax",
+      "type": "number",
+      "description": "Maximum baseline elemental damage dealt by the missile",
+      "guideType": "[N]"
+    },
+    {
+      "name": "MaxELev1",
+      "type": "number"
+    },
+    {
+      "name": "MaxELev2",
+      "type": "number"
+    },
+    {
+      "name": "MaxELev3",
+      "type": "number"
+    },
+    {
+      "name": "MaxELev4",
+      "type": "number"
+    },
+    {
+      "name": "MaxELev5",
+      "type": "number"
+    },
+    {
+      "name": "EDmgSymPerCalc",
+      "type": "text",
+      "description": "Determines the percentage increase to the elemental damage dealt by the missile based on specified skill levels",
+      "guideType": "[C]"
+    },
+    {
+      "name": "ELen",
+      "type": "number",
+      "description": "The baseline elemental duration dealt by the missile. This is calculated in frame lengths where 25 Frames = 1 second. These fields only apply to appropriate elemental types with a duration",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ELevLen1",
+      "type": "number"
+    },
+    {
+      "name": "ELevLen2",
+      "type": "number"
+    },
+    {
+      "name": "ELevLen3",
+      "type": "number"
+    },
+    {
+      "name": "HitClass",
+      "type": "number",
+      "description": "Defines the missile's own hit class into the damage routines, mainly used for determining hit sound effects and overlays. This field only handles the hit class layers, so values beyond these defined bits are ignored. Uses an integer value to check against different bit fields by using the \"&\" operator. For example, if the value equals 6 (binary = 110) then that returns true for both the 4 (binary = 100) and 2 (binary = 10) bit field values.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "NumDirections",
+      "type": "number",
+      "description": "The number of directions allowed by the missile, based on the DCC file used (",
+      "guideType": "[N]"
+    },
+    {
+      "name": "LocalBlood",
+      "type": "boolean",
+      "description": "If equals 1, then change the color of blood missiles to green. If equals 0, then keep the blood missiles colored the default red",
+      "guideType": "[B]"
+    },
+    {
+      "name": "DamageRate",
+      "type": "number",
+      "description": "Controls the \"damage_framerate\" stat (Calculated in 1024ths), which acts as a percentage multiplier for the physical damage reduction and magic damage reduction stat modifiers, when performing damage resistance calculations. This is only enabled if the value is greater than 0",
+      "guideType": "[N]"
+    },
+    {
+      "name": "TravelSound",
+      "type": "text",
+      "description": "Points to a",
+      "guideType": "[O]"
+    },
+    {
+      "name": "HitSound",
+      "type": "text",
+      "description": "Points to a",
+      "guideType": "[O]"
+    },
+    {
+      "name": "OnDiedSound",
+      "type": "text"
+    },
+    {
+      "name": "ProgSound",
+      "type": "text",
+      "description": "Points to a",
+      "guideType": "[O]"
+    },
+    {
+      "name": "ProgOverlay",
+      "type": "text",
+      "description": "Points to the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "ExplosionMissile",
+      "type": "text",
+      "description": "Points to the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "SubMissile1",
+      "type": "text"
+    },
+    {
+      "name": "SubMissile2",
+      "type": "text"
+    },
+    {
+      "name": "SubMissile3",
+      "type": "text"
+    },
+    {
+      "name": "HitSubMissile1",
+      "type": "text"
+    },
+    {
+      "name": "HitSubMissile2",
+      "type": "text"
+    },
+    {
+      "name": "HitSubMissile3",
+      "type": "text"
+    },
+    {
+      "name": "HitSubMissile4",
+      "type": "text"
+    },
+    {
+      "name": "CltSubMissile1",
+      "type": "text"
+    },
+    {
+      "name": "CltSubMissile2",
+      "type": "text"
+    },
+    {
+      "name": "CltSubMissile3",
+      "type": "text"
+    },
+    {
+      "name": "CltHitSubMissile1",
+      "type": "text"
+    },
+    {
+      "name": "CltHitSubMissile2",
+      "type": "text"
+    },
+    {
+      "name": "CltHitSubMissile3",
+      "type": "text"
+    },
+    {
+      "name": "CltHitSubMissile4",
+      "type": "text"
+    },
+    {
+      "name": "MissileWeaponVFX",
+      "type": "number"
+    },
+    {
+      "name": "*eol",
+      "type": "number",
+      "comment": true
+    }
+  ]
+}

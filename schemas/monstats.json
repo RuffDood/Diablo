@@ -1,0 +1,1261 @@
+{
+  "table": "monstats",
+  "file": "global/excel/monstats.txt",
+  "description": "Table monstats du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 91,
+  "columns": [
+    {
+      "name": "Id",
+      "type": "number",
+      "description": "Controls the unique name ID to define the monster",
+      "guideType": "[N]"
+    },
+    {
+      "name": "*hcIdx",
+      "type": "number",
+      "comment": true
+    },
+    {
+      "name": "BaseId",
+      "type": "text",
+      "description": "Points to the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "NextInClass",
+      "type": "text",
+      "description": "Points to the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "TransLvl",
+      "type": "number",
+      "description": "Defines the color transform level to use for this monster, which affects what color palette that the monster will use",
+      "guideType": "[N]"
+    },
+    {
+      "name": "NameStr",
+      "type": "text"
+    },
+    {
+      "name": "MonStatsEx",
+      "type": "text",
+      "description": "Controls a pointer to the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "MonProp",
+      "type": "text",
+      "description": "Points to the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "MonType",
+      "type": "text",
+      "description": "Points to the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "AI",
+      "type": "text",
+      "description": "Points to a type of AI script to use for the monster (",
+      "guideType": "[O]"
+    },
+    {
+      "name": "DescStr",
+      "type": "text"
+    },
+    {
+      "name": "Code",
+      "type": "text",
+      "description": "Controls the token used for choosing the proper cells to display the monster's graphics",
+      "guideType": "[O]"
+    },
+    {
+      "name": "enabled",
+      "type": "boolean",
+      "description": "If equals 1, then this monster is allowed to spawn in the game. If equals 0, then this monster will never spawn in the game",
+      "guideType": "[B]"
+    },
+    {
+      "name": "rangedtype",
+      "type": "boolean",
+      "description": "If equals 1, then the monster will be classified as a ranged type. If equals 0, then the monster will be classified as a melee type",
+      "guideType": "[B]"
+    },
+    {
+      "name": "placespawn",
+      "type": "boolean",
+      "description": "If equals 1, then this monster will be treated as a spawner, so monsters that spawn can be initially placed within this monster. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "spawn",
+      "type": "text",
+      "description": "Points to the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "spawnx",
+      "type": "number"
+    },
+    {
+      "name": "spawny",
+      "type": "number"
+    },
+    {
+      "name": "spawnmode",
+      "type": "text",
+      "description": "Defines the animation mode that the spawned monsters will be initiated with. Referenced from the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "minion1",
+      "type": "text"
+    },
+    {
+      "name": "minion2",
+      "type": "text"
+    },
+    {
+      "name": "SetBoss",
+      "type": "boolean",
+      "description": "If equals 1, then set the monster AI to use the Boss AI type, which can affect the monster's behaviors. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "BossXfer",
+      "type": "boolean",
+      "description": "If equals 1, then the monster's AI will transfer its boss recognition to another monster, which can affect the minion monster behaviors after this boss is killed. If equals 0, then ignore no boss AI will transfer and minion monsters will behave differently after the boss is killed. This field relies on the",
+      "guideType": "[B]"
+    },
+    {
+      "name": "PartyMin",
+      "type": "number",
+      "description": "The minimum number of minions that can spawn with this monster. Uses the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "PartyMax",
+      "type": "number",
+      "description": "The maximum number of minions that can spawn with this monster. Uses the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "MinGrp",
+      "type": "number",
+      "description": "The minimum number of duplicates of this monster that can spawn together. The actual number is a random value chosen between the \"MinGrp\" and \"MaxGrp\" field values",
+      "guideType": "[N]"
+    },
+    {
+      "name": "MaxGrp",
+      "type": "number",
+      "description": "The maximum number of duplicates of this monster that can spawn together. The actual number is a random value chosen between the \"MinGrp\" and \"MaxGrp\" field values",
+      "guideType": "[N]"
+    },
+    {
+      "name": "sparsePopulate",
+      "type": "number",
+      "description": "If this value is greater than 0, then it controls the percent chance that this monster does not spawn, and another monster will spawn in its place. (Out of 100)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Velocity",
+      "type": "number",
+      "description": "Determines the movement velocity of the monster, which can be the monster's baseline walk speed",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Run",
+      "type": "number",
+      "description": "Determines the run speed of the monster as opposed to walk speed. This is only used if the monster has a Run mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Rarity",
+      "type": "number",
+      "description": "Modifies the chance that this monster will be chosen to spawn in the area level. The higher the value is, then the more likely this monster will be chosen. This value acts as a numerator and a denominator. All \"Rarity\" values of possible monsters get summed together to give a total denominator, used for the random roll. For example, if there are 3 possible monsters that can spawn, and their \"Rarity\" values are 1, 2, 2, then their chances to be chosen are 1/5, 2/5, and 2/5 respectively. If this value equals 0, then this monster is never randomly selected to spawn in an area level",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Level",
+      "type": "number",
+      "description": "Determines the monster's level. This value for Nightmare and Hell difficulty can be overridden by the area level's",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Level(N)",
+      "type": "number"
+    },
+    {
+      "name": "Level(H)",
+      "type": "number"
+    },
+    {
+      "name": "MonSound",
+      "type": "text",
+      "description": "Points to the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "UMonSound",
+      "type": "text",
+      "description": "Points to the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "threat",
+      "type": "number",
+      "description": "Controls the AI threat value of the monster which can affect the targeting priorities of enemy Ais for this monster. The higher this value is, then the more likely that enemy AI will target this monster",
+      "guideType": "[N]"
+    },
+    {
+      "name": "aidel",
+      "type": "number",
+      "description": "Controls the delay in frame length for how often the monster's AI will update its commands. A lower delay means that the monster will perform commands more often without as long of a pause in between",
+      "guideType": "[N]"
+    },
+    {
+      "name": "aidel(N)",
+      "type": "number"
+    },
+    {
+      "name": "aidel(H)",
+      "type": "number"
+    },
+    {
+      "name": "aidist",
+      "type": "number",
+      "description": "Controls the maximum distance (measured in tiles) between the monster and an enemy until the monster's AI becomes aggressive. If equals 0, then default to 35",
+      "guideType": "[N]"
+    },
+    {
+      "name": "aidist(N)",
+      "type": "number"
+    },
+    {
+      "name": "aidist(H)",
+      "type": "number"
+    },
+    {
+      "name": "aip1",
+      "type": "number"
+    },
+    {
+      "name": "aip1(N)",
+      "type": "number"
+    },
+    {
+      "name": "aip1(H)",
+      "type": "number"
+    },
+    {
+      "name": "aip2",
+      "type": "number"
+    },
+    {
+      "name": "aip2(N)",
+      "type": "number"
+    },
+    {
+      "name": "aip2(H)",
+      "type": "number"
+    },
+    {
+      "name": "aip3",
+      "type": "number"
+    },
+    {
+      "name": "aip3(N)",
+      "type": "number"
+    },
+    {
+      "name": "aip3(H)",
+      "type": "number"
+    },
+    {
+      "name": "aip4",
+      "type": "number"
+    },
+    {
+      "name": "aip4(N)",
+      "type": "number"
+    },
+    {
+      "name": "aip4(H)",
+      "type": "number"
+    },
+    {
+      "name": "aip5",
+      "type": "number"
+    },
+    {
+      "name": "aip5(N)",
+      "type": "number"
+    },
+    {
+      "name": "aip5(H)",
+      "type": "number"
+    },
+    {
+      "name": "aip6",
+      "type": "number"
+    },
+    {
+      "name": "aip6(N)",
+      "type": "number"
+    },
+    {
+      "name": "aip6(H)",
+      "type": "number"
+    },
+    {
+      "name": "aip7",
+      "type": "number"
+    },
+    {
+      "name": "aip7(N)",
+      "type": "number"
+    },
+    {
+      "name": "aip7(H)",
+      "type": "number"
+    },
+    {
+      "name": "aip8",
+      "type": "number"
+    },
+    {
+      "name": "aip8(N)",
+      "type": "number"
+    },
+    {
+      "name": "aip8(H)",
+      "type": "number"
+    },
+    {
+      "name": "MissA1",
+      "type": "text"
+    },
+    {
+      "name": "MissA2",
+      "type": "text"
+    },
+    {
+      "name": "MissS1",
+      "type": "text"
+    },
+    {
+      "name": "MissS2",
+      "type": "text"
+    },
+    {
+      "name": "MissS3",
+      "type": "text"
+    },
+    {
+      "name": "MissS4",
+      "type": "text"
+    },
+    {
+      "name": "MissC",
+      "type": "text",
+      "description": "Points to the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "MissSQ",
+      "type": "text",
+      "description": "Points to the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "Align",
+      "type": "number",
+      "description": "Controls the monster's alignment, which determines if the monster will be an enemy, ally, or neutral party to the player.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "isSpawn",
+      "type": "boolean",
+      "description": "If equals 1, then the monster is allowed to spawn in an area level. If equals 0, then the monster will not be spawned automatically in an area level",
+      "guideType": "[B]"
+    },
+    {
+      "name": "isMelee",
+      "type": "boolean",
+      "description": "If equals 1, then the monster is classified as a melee only type, which can affect its AI behaviors and what monster modifiers are allowed on the monster. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "npc",
+      "type": "boolean",
+      "description": "If equals 1, then the monster is classified as an NPC (Non-Playable Character), which can affect its AI behaviors and how the player treats this monster. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "interact",
+      "type": "boolean",
+      "description": "If equals 1, then the monster is interactable, meaning that the player can click on the monster to perform an interact command instead of attacking. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "inventory",
+      "type": "boolean",
+      "description": "If equals 1, then monster will have an inventory with randomly generated items, such as an NPC with shop items (if the",
+      "guideType": "[B]"
+    },
+    {
+      "name": "inTown",
+      "type": "boolean",
+      "description": "If equals 1, then the monster is allowed to be in town. If equals 0, then the monster is not allowed to be in town, which can affect or disable their AI or collision from entering towns",
+      "guideType": "[B]"
+    },
+    {
+      "name": "lUndead",
+      "type": "boolean",
+      "description": "If equals 1, then the monster is treated as a Low Undead, meaning that the monster is classified as an Undead type and can be resurrected by certain AI. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "hUndead",
+      "type": "boolean",
+      "description": "If equals 1, then the monster is treated as a High Undead, meaning that the monster is classified as an Undead type but cannot be resurrected by certain AI. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "demon",
+      "type": "boolean",
+      "description": "If equals 1, then the monster is classified as a Demon type. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "flying",
+      "type": "boolean",
+      "description": "If equals 1, then the monster is flagged as a flying type, which can affect its collision with the area level and how it is spawned. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "opendoors",
+      "type": "boolean",
+      "description": "If equals 1, then the monster will use its AI to open doors if necessary. If equals 0, then the monster cannot open doors and will treat doors as another type of collision",
+      "guideType": "[B]"
+    },
+    {
+      "name": "boss",
+      "type": "boolean",
+      "description": "If equals 1, then the monster is classified as a Boss type, which can affect boss related AI and functions. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "primeevil",
+      "type": "boolean",
+      "description": "If equals 1, then the monster is classified as a Prime Evil type, or an Act End boss, which can affect various skills, AI, and damage related functions. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "killable",
+      "type": "boolean",
+      "description": "If equals 1, then the monster can be killed, damage, and be put in a Death or Dead mode. If equals 0, then the monster cannot be damaged or killed",
+      "guideType": "[B]"
+    },
+    {
+      "name": "switchai",
+      "type": "boolean",
+      "description": "If equals 1, then monster's AI can switched, such as by the Assassin's Mind Blast ability. If equals 0, then the monster AI cannot be switched",
+      "guideType": "[B]"
+    },
+    {
+      "name": "noAura",
+      "type": "boolean",
+      "description": "If equals 1, then the monster cannot be affected by friendly auras. If equals 0, then the monster can be affected by friendly auras",
+      "guideType": "[B]"
+    },
+    {
+      "name": "nomultishot",
+      "type": "boolean",
+      "description": "If equals 1, then the monster is not allowed to spawn with the Multi-Shot unique monster modifier (",
+      "guideType": "[B]"
+    },
+    {
+      "name": "neverCount",
+      "type": "boolean",
+      "description": "If equals 1, then the monster is not counted on the list of the active monsters in the area, which affects spawning and saving functions. If equals 0, then the monster will be accounted for, and can be part of the active or inactive list functions",
+      "guideType": "[B]"
+    },
+    {
+      "name": "petIgnore",
+      "type": "boolean",
+      "description": "If equals 1, then pet AI scripts will ignore this monster (",
+      "guideType": "[B]"
+    },
+    {
+      "name": "deathDmg",
+      "type": "boolean",
+      "description": "If equals 1, then the monster will explode on death. This has special cases for the \"bonefetish1\" and \"siegebeast1\" monster classes, otherwise the monster will use a general death damage function to damage nearby units based on the monster's health percentage. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "genericSpawn",
+      "type": "boolean",
+      "description": "If equals 1, the monster is flagged as a possible selection for the AI generic spawner function. There are defaults for using the If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "zoo",
+      "type": "boolean",
+      "description": "If equals 1, then the monster will be flagged as a zoo type monster, which will give it the AI zoo behavior. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "rightArmItemType",
+      "type": "text",
+      "description": "Determines what type of items the monster is allowed to hold in its right arm (",
+      "guideType": "[O]"
+    },
+    {
+      "name": "leftArmItemType",
+      "type": "text",
+      "description": "Determines what type of items the monster is allowed to hold in its left arm (",
+      "guideType": "[O]"
+    },
+    {
+      "name": "canNotUseTwoHandedItems",
+      "type": "boolean",
+      "description": "If equals 1, then the monster can not items marked as two handed (",
+      "guideType": "[B]"
+    },
+    {
+      "name": "SendSkills",
+      "type": "number",
+      "description": "Determines which of the monster's skill's level should be sent to the client. Uses a byte value, where the code tests each bit to determine which of the monster's skills to check",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Skill1",
+      "type": "text"
+    },
+    {
+      "name": "Sk1mode",
+      "type": "text"
+    },
+    {
+      "name": "Sk1lvl",
+      "type": "number"
+    },
+    {
+      "name": "Skill2",
+      "type": "text"
+    },
+    {
+      "name": "Sk2mode",
+      "type": "text"
+    },
+    {
+      "name": "Sk2lvl",
+      "type": "number"
+    },
+    {
+      "name": "Skill3",
+      "type": "text"
+    },
+    {
+      "name": "Sk3mode",
+      "type": "text"
+    },
+    {
+      "name": "Sk3lvl",
+      "type": "number"
+    },
+    {
+      "name": "Skill4",
+      "type": "text"
+    },
+    {
+      "name": "Sk4mode",
+      "type": "text"
+    },
+    {
+      "name": "Sk4lvl",
+      "type": "number"
+    },
+    {
+      "name": "Skill5",
+      "type": "text"
+    },
+    {
+      "name": "Sk5mode",
+      "type": "text"
+    },
+    {
+      "name": "Sk5lvl",
+      "type": "number"
+    },
+    {
+      "name": "Skill6",
+      "type": "text"
+    },
+    {
+      "name": "Sk6mode",
+      "type": "text"
+    },
+    {
+      "name": "Sk6lvl",
+      "type": "number"
+    },
+    {
+      "name": "Skill7",
+      "type": "text"
+    },
+    {
+      "name": "Sk7mode",
+      "type": "text"
+    },
+    {
+      "name": "Sk7lvl",
+      "type": "number"
+    },
+    {
+      "name": "Skill8",
+      "type": "text"
+    },
+    {
+      "name": "Sk8mode",
+      "type": "text"
+    },
+    {
+      "name": "Sk8lvl",
+      "type": "number"
+    },
+    {
+      "name": "Drain",
+      "type": "number",
+      "description": "Controls the monster's overall Life and Mana steal percentage. This can also be affected by the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Drain(N)",
+      "type": "number"
+    },
+    {
+      "name": "Drain(H)",
+      "type": "number"
+    },
+    {
+      "name": "coldeffect",
+      "type": "number",
+      "description": "Sets the percentage change in movement speed and attack rate when the monster if chilled by a cold effect. If this equals 0, then the monster will be immune to the cold effect",
+      "guideType": "[N]"
+    },
+    {
+      "name": "coldeffect(N)",
+      "type": "number"
+    },
+    {
+      "name": "coldeffect(H)",
+      "type": "number"
+    },
+    {
+      "name": "ResDm",
+      "type": "number",
+      "description": "Sets the monster's Physical Damage Resistance stat",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ResMa",
+      "type": "number",
+      "description": "Sets the monster's Magic Resistance stat",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ResFi",
+      "type": "number",
+      "description": "Sets the monster's Fire Resistance stat",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ResLi",
+      "type": "number",
+      "description": "Sets the monster's Lightning Resistance stat",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ResCo",
+      "type": "number",
+      "description": "Sets the monster's Cold Resistance stat",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ResPo",
+      "type": "number",
+      "description": "Sets the monster's Poison Resistance stat",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ResDm(N)",
+      "type": "number"
+    },
+    {
+      "name": "ResMa(N)",
+      "type": "number"
+    },
+    {
+      "name": "ResFi(N)",
+      "type": "number"
+    },
+    {
+      "name": "ResLi(N)",
+      "type": "number"
+    },
+    {
+      "name": "ResCo(N)",
+      "type": "number"
+    },
+    {
+      "name": "ResPo(N)",
+      "type": "number"
+    },
+    {
+      "name": "ResDm(H)",
+      "type": "number"
+    },
+    {
+      "name": "ResMa(H)",
+      "type": "number"
+    },
+    {
+      "name": "ResFi(H)",
+      "type": "number"
+    },
+    {
+      "name": "ResLi(H)",
+      "type": "number"
+    },
+    {
+      "name": "ResCo(H)",
+      "type": "number"
+    },
+    {
+      "name": "ResPo(H)",
+      "type": "number"
+    },
+    {
+      "name": "DamageRegen",
+      "type": "number",
+      "description": "Controls the monster's Life regeneration per frame. This is calculated based on the monster's maximum life: Regeneration Rate = (Life * \"DamageRegen\") / 16",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SkillDamage",
+      "type": "number",
+      "description": "Points to a skill from the \"skill\" field in the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "noRatio",
+      "type": "boolean",
+      "description": "If equals 1, then use this file's fields to determine the monster's baseline stats (",
+      "guideType": "[B]"
+    },
+    {
+      "name": "NoShldBlock",
+      "type": "number"
+    },
+    {
+      "name": "ToBlock",
+      "type": "number",
+      "description": "The monster's percent chance to block an attack",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ToBlock(N)",
+      "type": "number"
+    },
+    {
+      "name": "ToBlock(H)",
+      "type": "number"
+    },
+    {
+      "name": "Crit",
+      "type": "number",
+      "description": "The percent chance for the monster to score a critical hit when attacking an enemy, which causes the attack to deal double damage",
+      "guideType": "[N]"
+    },
+    {
+      "name": "minHP",
+      "type": "number",
+      "description": "The monster's minimum amount of Life when spawned",
+      "guideType": "[N]"
+    },
+    {
+      "name": "maxHP",
+      "type": "number",
+      "description": "The monster's maximum amount of Life when spawned",
+      "guideType": "[N]"
+    },
+    {
+      "name": "AC",
+      "type": "number",
+      "description": "The monster's Defense value",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Exp",
+      "type": "number",
+      "description": "The amount of Experience that is rewarded to the player when the monster is killed",
+      "guideType": "[N]"
+    },
+    {
+      "name": "A1MinD",
+      "type": "number",
+      "description": "The minimum damage dealt by the monster when it is using the Attack 1 (A1) animation mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "A1MaxD",
+      "type": "number",
+      "description": "The maximum damage dealt by the monster when it is using the Attack 1 (A1) animation mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "A1TH",
+      "type": "number",
+      "description": "The monster's Attack Rating when it is using the Attack 1 (A1) animation mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "A2MinD",
+      "type": "number",
+      "description": "The minimum damage dealt by the monster when it is using the Attack 2 (A2) animation mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "A2MaxD",
+      "type": "number",
+      "description": "The maximum damage dealt by the monster when it is using the Attack 2 (A2) animation mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "A2TH",
+      "type": "number",
+      "description": "The monster's Attack Rating when it is using the Attack 2 (A2) animation mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "S1MinD",
+      "type": "number",
+      "description": "The minimum damage dealt by the monster when it is using the Skill 1 (S1) animation mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "S1MaxD",
+      "type": "number",
+      "description": "The maximum damage dealt by the monster when it is using the Skill 1 (S1) animation mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "S1TH",
+      "type": "number",
+      "description": "The monster's Attack Rating when it is using the Skill 1 (S1) animation mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "MinHP(N)",
+      "type": "number"
+    },
+    {
+      "name": "MaxHP(N)",
+      "type": "number"
+    },
+    {
+      "name": "AC(N)",
+      "type": "number"
+    },
+    {
+      "name": "Exp(N)",
+      "type": "number"
+    },
+    {
+      "name": "A1MinD(N)",
+      "type": "number"
+    },
+    {
+      "name": "A1MaxD(N)",
+      "type": "number"
+    },
+    {
+      "name": "A1TH(N)",
+      "type": "number"
+    },
+    {
+      "name": "A2MinD(N)",
+      "type": "number"
+    },
+    {
+      "name": "A2MaxD(N)",
+      "type": "number"
+    },
+    {
+      "name": "A2TH(N)",
+      "type": "number"
+    },
+    {
+      "name": "S1MinD(N)",
+      "type": "number"
+    },
+    {
+      "name": "S1MaxD(N)",
+      "type": "number"
+    },
+    {
+      "name": "S1TH(N)",
+      "type": "number"
+    },
+    {
+      "name": "MinHP(H)",
+      "type": "number"
+    },
+    {
+      "name": "MaxHP(H)",
+      "type": "number"
+    },
+    {
+      "name": "AC(H)",
+      "type": "number"
+    },
+    {
+      "name": "Exp(H)",
+      "type": "number"
+    },
+    {
+      "name": "A1MinD(H)",
+      "type": "number"
+    },
+    {
+      "name": "A1MaxD(H)",
+      "type": "number"
+    },
+    {
+      "name": "A1TH(H)",
+      "type": "number"
+    },
+    {
+      "name": "A2MinD(H)",
+      "type": "number"
+    },
+    {
+      "name": "A2MaxD(H)",
+      "type": "number"
+    },
+    {
+      "name": "A2TH(H)",
+      "type": "number"
+    },
+    {
+      "name": "S1MinD(H)",
+      "type": "number"
+    },
+    {
+      "name": "S1MaxD(H)",
+      "type": "number"
+    },
+    {
+      "name": "S1TH(H)",
+      "type": "number"
+    },
+    {
+      "name": "El1Mode",
+      "type": "text"
+    },
+    {
+      "name": "El1Type",
+      "type": "text"
+    },
+    {
+      "name": "El1Pct",
+      "type": "number"
+    },
+    {
+      "name": "El1MinD",
+      "type": "number"
+    },
+    {
+      "name": "El1MaxD",
+      "type": "number"
+    },
+    {
+      "name": "El1Dur",
+      "type": "number"
+    },
+    {
+      "name": "El1Pct(N)",
+      "type": "number"
+    },
+    {
+      "name": "El1MinD(N)",
+      "type": "number"
+    },
+    {
+      "name": "El1MaxD(N)",
+      "type": "number"
+    },
+    {
+      "name": "El1Dur(N)",
+      "type": "number"
+    },
+    {
+      "name": "El1Pct(H)",
+      "type": "number"
+    },
+    {
+      "name": "El1MinD(H)",
+      "type": "number"
+    },
+    {
+      "name": "El1MaxD(H)",
+      "type": "number"
+    },
+    {
+      "name": "El1Dur(H)",
+      "type": "number"
+    },
+    {
+      "name": "El2Mode",
+      "type": "text"
+    },
+    {
+      "name": "El2Type",
+      "type": "text"
+    },
+    {
+      "name": "El2Pct",
+      "type": "number"
+    },
+    {
+      "name": "El2MinD",
+      "type": "number"
+    },
+    {
+      "name": "El2MaxD",
+      "type": "number"
+    },
+    {
+      "name": "El2Dur",
+      "type": "number"
+    },
+    {
+      "name": "El2Pct(N)",
+      "type": "number"
+    },
+    {
+      "name": "El2MinD(N)",
+      "type": "number"
+    },
+    {
+      "name": "El2MaxD(N)",
+      "type": "number"
+    },
+    {
+      "name": "El2Dur(N)",
+      "type": "number"
+    },
+    {
+      "name": "El2Pct(H)",
+      "type": "number"
+    },
+    {
+      "name": "El2MinD(H)",
+      "type": "number"
+    },
+    {
+      "name": "El2MaxD(H)",
+      "type": "number"
+    },
+    {
+      "name": "El2Dur(H)",
+      "type": "number"
+    },
+    {
+      "name": "El3Mode",
+      "type": "text"
+    },
+    {
+      "name": "El3Type",
+      "type": "text"
+    },
+    {
+      "name": "El3Pct",
+      "type": "text"
+    },
+    {
+      "name": "El3MinD",
+      "type": "text"
+    },
+    {
+      "name": "El3MaxD",
+      "type": "text"
+    },
+    {
+      "name": "El3Dur",
+      "type": "text"
+    },
+    {
+      "name": "El3Pct(N)",
+      "type": "text"
+    },
+    {
+      "name": "El3MinD(N)",
+      "type": "text"
+    },
+    {
+      "name": "El3MaxD(N)",
+      "type": "text"
+    },
+    {
+      "name": "El3Dur(N)",
+      "type": "text"
+    },
+    {
+      "name": "El3Pct(H)",
+      "type": "text"
+    },
+    {
+      "name": "El3MinD(H)",
+      "type": "text"
+    },
+    {
+      "name": "El3MaxD(H)",
+      "type": "text"
+    },
+    {
+      "name": "El3Dur(H)",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClass1",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClass2",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClass3",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClass4",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClassDesecrated",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClassDesecratedChamp",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClassDesecratedUnique",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClass1(N)",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClass2(N)",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClass3(N)",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClass4(N)",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClassDesecrated(N)",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClassDesecratedChamp(N)",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClassDesecratedUnique(N)",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClass1(H)",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClass2(H)",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClass3(H)",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClass4(H)",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClassDesecrated(H)",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClassDesecratedChamp(H)",
+      "type": "text"
+    },
+    {
+      "name": "TreasureClassDesecratedUnique(H)",
+      "type": "text"
+    },
+    {
+      "name": "TCQuestId",
+      "type": "number",
+      "description": "Checks to see if the player has does not have a quest flag progress. If not, then use the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "TCQuestCP",
+      "type": "number",
+      "description": "Controls which Quest Checkpoint, or current progress within a quest (based on the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SplEndDeath",
+      "type": "number",
+      "description": "Controls a special case death handler for the monster that is ran on the server side",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SplGetModeChart",
+      "type": "boolean",
+      "description": "If equals 1, then check special case handlers of certain monsters with specific",
+      "guideType": "[B]"
+    },
+    {
+      "name": "SplEndGeneric",
+      "type": "boolean",
+      "description": "If equals 1, then check special case handlers of monsters with specific",
+      "guideType": "[B]"
+    },
+    {
+      "name": "SplClientEnd",
+      "type": "boolean",
+      "description": "If equals 1, then on the client side, check special case handlers of monsters with specific",
+      "guideType": "[B]"
+    },
+    {
+      "name": "*eol",
+      "type": "number",
+      "comment": true
+    }
+  ]
+}

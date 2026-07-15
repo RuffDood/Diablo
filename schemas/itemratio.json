@@ -1,0 +1,129 @@
+{
+  "table": "itemratio",
+  "file": "global/excel/itemratio.txt",
+  "description": "Table itemratio du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 20,
+  "columns": [
+    {
+      "name": "Function",
+      "type": "text",
+      "description": "This is a reference field to define the item ratio name",
+      "guideType": "[O]"
+    },
+    {
+      "name": "Version",
+      "type": "number",
+      "description": "Defines which game version to use this item ratio (0 = Classic mode | 100 = Expansion mode)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Uber",
+      "type": "boolean",
+      "description": "If equals 1, then the item ratio will apply to items with Exceptional or Elite Quality. If equals 0, then the item ratio will apply to Normal Quality items (This is determined by the",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Class Specific",
+      "type": "boolean",
+      "description": "If equals 1, then the item ratio will apply to class-based items (This will compare to the Item Type's",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Unique",
+      "type": "number",
+      "description": "Base value for calculating the Unique Quality chance. Higher value means rarer chance. (Calculated first)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "UniqueDivisor",
+      "type": "number",
+      "description": "Modifier for changing the Unique Quality chance, based on the difference between the Monster Level and the Item's base level",
+      "guideType": "[N]"
+    },
+    {
+      "name": "UniqueMin",
+      "type": "number",
+      "description": "The minimum value of the probability denominator for Unique Quality. This is compared to the calculated Unique Quality value after Magic Find calculations and is chosen if it is greater than that value. (Calculated in 128ths)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Rare",
+      "type": "number",
+      "description": "Base value for calculating the Rare Quality chance. Higher value means rarer chance. (Calculated after Set)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "RareDivisor",
+      "type": "number",
+      "description": "Modifier for changing the Rare Quality chance, based on the difference between the Monster Level and the Item's base level",
+      "guideType": "[N]"
+    },
+    {
+      "name": "RareMin",
+      "type": "number",
+      "description": "The minimum value of the probability denominator for Rare Quality. This is compared to the calculated Rare Quality value after Magic Find calculations and is chosen if it is greater than that value. (Calculated in 128ths)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Set",
+      "type": "number",
+      "description": "Base value for calculating the Set Quality chance. Higher value means rarer chance. (Calculated after Unique)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SetDivisor",
+      "type": "number",
+      "description": "Modifier for changing the Set Quality chance, based on the difference between the Monster Level and the Item's base level",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SetMin",
+      "type": "number",
+      "description": "The minimum value of the probability denominator for Set Quality. This is compared to the calculated Set Quality value after Magic Find calculations and is chosen if it is greater than that value. (Calculated in 128ths)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Magic",
+      "type": "number",
+      "description": "Base value for calculating the Magic Quality chance. Higher value means rarer chance. (Calculated after Rare)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "MagicDivisor",
+      "type": "number",
+      "description": "Modifier for changing the Magic Quality chance, based on the difference between the Monster Level and the Item's base level",
+      "guideType": "[N]"
+    },
+    {
+      "name": "MagicMin",
+      "type": "number",
+      "description": "The minimum value of the probability denominator for Magic Quality. This is compared to the calculated Magic Quality value after Magic Find calculations and is chosen if it is greater than that value. (Calculated in 128ths)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "HiQuality",
+      "type": "number",
+      "description": "Base value for calculating the High Quality (Superior) chance. Higher value means rarer chance. (Calculated after Magic)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "HiQualityDivisor",
+      "type": "number",
+      "description": "Modifier for changing the High Quality (Superior) chance, based on the difference between the Monster Level and the Item's base level",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Normal",
+      "type": "number",
+      "description": "Base value for calculating the Normal Quality chance. Higher value means rarer chance. (Calculated after Normal, and if this does not succeed in rolling, then the item is defaulted to Low Quality)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "NormalDivisor",
+      "type": "number",
+      "description": "Modifier for changing the Normal Quality chance, based on the difference between the Monster Level and the Item's base level",
+      "guideType": "[N]"
+    }
+  ]
+}

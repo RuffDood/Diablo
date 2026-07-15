@@ -1,0 +1,711 @@
+{
+  "table": "weapons",
+  "file": "global/excel/weapons.txt",
+  "description": "Table weapons du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 10,
+  "columns": [
+    {
+      "name": "name",
+      "type": "text"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "type2",
+      "type": "text"
+    },
+    {
+      "name": "code",
+      "type": "text"
+    },
+    {
+      "name": "alternategfx",
+      "type": "text"
+    },
+    {
+      "name": "namestr",
+      "type": "text"
+    },
+    {
+      "name": "version",
+      "type": "number"
+    },
+    {
+      "name": "compactsave",
+      "type": "text"
+    },
+    {
+      "name": "rarity",
+      "type": "number"
+    },
+    {
+      "name": "spawnable",
+      "type": "number"
+    },
+    {
+      "name": "DropConditionCalc",
+      "type": "text"
+    },
+    {
+      "name": "Transmogrify",
+      "type": "number"
+    },
+    {
+      "name": "TMogType",
+      "type": "text"
+    },
+    {
+      "name": "TMogMin",
+      "type": "text"
+    },
+    {
+      "name": "TMogMax",
+      "type": "text"
+    },
+    {
+      "name": "mindam",
+      "type": "number"
+    },
+    {
+      "name": "maxdam",
+      "type": "number"
+    },
+    {
+      "name": "1or2handed",
+      "type": "boolean",
+      "description": "If equals 1, then the item will be treated as a one-handed and two-handed weapon by the Barbarian class. If equals 0, then the Barbarian can only use this weapon as either one-handed or two-handed, but not both",
+      "guideType": "[B]"
+    },
+    {
+      "name": "2handed",
+      "type": "boolean",
+      "description": "If equals 1, then the item will be treated as two-handed weapon. If equals 0, then the item will be treated as one-handed weapon",
+      "guideType": "[B]"
+    },
+    {
+      "name": "2handmindam",
+      "type": "number",
+      "description": "The minimum physical damage provided by the weapon if the item is two-handed. This relies on the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "2handmaxdam",
+      "type": "number",
+      "description": "The maximum physical damage provided by the weapon",
+      "guideType": "[N]"
+    },
+    {
+      "name": "minmisdam",
+      "type": "number",
+      "description": "The maximum physical damage provided by the item if it is a throwing weapon",
+      "guideType": "[N]"
+    },
+    {
+      "name": "maxmisdam",
+      "type": "number",
+      "description": "The maximum physical damage provided by the item if it is a throwing weapon",
+      "guideType": "[N]"
+    },
+    {
+      "name": "rangeadder",
+      "type": "number",
+      "description": "Adds extra range in grid spaces for melee attacks while the melee weapon is equipped. The baseline melee range is 1, and this field adds to that range",
+      "guideType": "[N]"
+    },
+    {
+      "name": "speed",
+      "type": "number"
+    },
+    {
+      "name": "StrBonus",
+      "type": "number"
+    },
+    {
+      "name": "DexBonus",
+      "type": "number"
+    },
+    {
+      "name": "reqstr",
+      "type": "number"
+    },
+    {
+      "name": "reqdex",
+      "type": "number"
+    },
+    {
+      "name": "durability",
+      "type": "number"
+    },
+    {
+      "name": "nodurability",
+      "type": "number"
+    },
+    {
+      "name": "level",
+      "type": "number"
+    },
+    {
+      "name": "ShowLevel",
+      "type": "number"
+    },
+    {
+      "name": "levelreq",
+      "type": "number"
+    },
+    {
+      "name": "cost",
+      "type": "number"
+    },
+    {
+      "name": "gamble cost",
+      "type": "number"
+    },
+    {
+      "name": "magic lvl",
+      "type": "number"
+    },
+    {
+      "name": "auto prefix",
+      "type": "number"
+    },
+    {
+      "name": "normcode",
+      "type": "text"
+    },
+    {
+      "name": "ubercode",
+      "type": "text"
+    },
+    {
+      "name": "ultracode",
+      "type": "text"
+    },
+    {
+      "name": "wclass",
+      "type": "text",
+      "description": "Defines the one-handed weapon class, which controls what character animations are used when the weapon is equipped. Referenced by the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "2handedwclass",
+      "type": "text",
+      "description": "Defines the two-handed weapon class, which controls what character animations are used when the weapon is equipped. Referenced by the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "component",
+      "type": "number"
+    },
+    {
+      "name": "hit class",
+      "type": "text",
+      "description": "Defines the hit class of the weapon which is used to know what SFX to use when the weapon hits an enemy. Referenced from the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "invwidth",
+      "type": "number"
+    },
+    {
+      "name": "invheight",
+      "type": "number"
+    },
+    {
+      "name": "stackable",
+      "type": "number"
+    },
+    {
+      "name": "minstack",
+      "type": "number"
+    },
+    {
+      "name": "maxstack",
+      "type": "number"
+    },
+    {
+      "name": "spawnstack",
+      "type": "number"
+    },
+    {
+      "name": "flippyfile",
+      "type": "text"
+    },
+    {
+      "name": "invfile",
+      "type": "text"
+    },
+    {
+      "name": "uniqueinvfile",
+      "type": "text"
+    },
+    {
+      "name": "setinvfile",
+      "type": "text"
+    },
+    {
+      "name": "hasinv",
+      "type": "number"
+    },
+    {
+      "name": "gemsockets",
+      "type": "number"
+    },
+    {
+      "name": "gemapplytype",
+      "type": "number"
+    },
+    {
+      "name": "*comment",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "useable",
+      "type": "number"
+    },
+    {
+      "name": "dropsound",
+      "type": "text"
+    },
+    {
+      "name": "dropsfxframe",
+      "type": "number"
+    },
+    {
+      "name": "usesound",
+      "type": "text"
+    },
+    {
+      "name": "unique",
+      "type": "number"
+    },
+    {
+      "name": "transparent",
+      "type": "number"
+    },
+    {
+      "name": "transtbl",
+      "type": "number"
+    },
+    {
+      "name": "*quivered",
+      "type": "number",
+      "comment": true
+    },
+    {
+      "name": "lightradius",
+      "type": "number"
+    },
+    {
+      "name": "belt",
+      "type": "number"
+    },
+    {
+      "name": "quest",
+      "type": "number"
+    },
+    {
+      "name": "questdiffcheck",
+      "type": "number"
+    },
+    {
+      "name": "missiletype",
+      "type": "number"
+    },
+    {
+      "name": "durwarning",
+      "type": "number"
+    },
+    {
+      "name": "qntwarning",
+      "type": "number"
+    },
+    {
+      "name": "gemoffset",
+      "type": "number"
+    },
+    {
+      "name": "bitfield1",
+      "type": "number"
+    },
+    {
+      "name": "CharsiMin",
+      "type": "number"
+    },
+    {
+      "name": "CharsiMax",
+      "type": "number"
+    },
+    {
+      "name": "CharsiMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "CharsiMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "CharsiMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "GheedMin",
+      "type": "number"
+    },
+    {
+      "name": "GheedMax",
+      "type": "number"
+    },
+    {
+      "name": "GheedMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "GheedMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "GheedMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "AkaraMin",
+      "type": "number"
+    },
+    {
+      "name": "AkaraMax",
+      "type": "number"
+    },
+    {
+      "name": "AkaraMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "AkaraMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "AkaraMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "FaraMin",
+      "type": "number"
+    },
+    {
+      "name": "FaraMax",
+      "type": "number"
+    },
+    {
+      "name": "FaraMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "FaraMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "FaraMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "LysanderMin",
+      "type": "text"
+    },
+    {
+      "name": "LysanderMax",
+      "type": "text"
+    },
+    {
+      "name": "LysanderMagicMin",
+      "type": "text"
+    },
+    {
+      "name": "LysanderMagicMax",
+      "type": "text"
+    },
+    {
+      "name": "LysanderMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "DrognanMin",
+      "type": "number"
+    },
+    {
+      "name": "DrognanMax",
+      "type": "number"
+    },
+    {
+      "name": "DrognanMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "DrognanMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "DrognanMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "HratliMin",
+      "type": "number"
+    },
+    {
+      "name": "HratliMax",
+      "type": "number"
+    },
+    {
+      "name": "HratliMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "HratliMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "HratliMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "AlkorMin",
+      "type": "text"
+    },
+    {
+      "name": "AlkorMax",
+      "type": "text"
+    },
+    {
+      "name": "AlkorMagicMin",
+      "type": "text"
+    },
+    {
+      "name": "AlkorMagicMax",
+      "type": "text"
+    },
+    {
+      "name": "AlkorMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "OrmusMin",
+      "type": "number"
+    },
+    {
+      "name": "OrmusMax",
+      "type": "number"
+    },
+    {
+      "name": "OrmusMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "OrmusMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "OrmusMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "ElzixMin",
+      "type": "number"
+    },
+    {
+      "name": "ElzixMax",
+      "type": "number"
+    },
+    {
+      "name": "ElzixMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "ElzixMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "ElzixMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "AshearaMin",
+      "type": "number"
+    },
+    {
+      "name": "AshearaMax",
+      "type": "number"
+    },
+    {
+      "name": "AshearaMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "AshearaMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "AshearaMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "CainMin",
+      "type": "number"
+    },
+    {
+      "name": "CainMax",
+      "type": "number"
+    },
+    {
+      "name": "CainMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "CainMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "CainMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "HalbuMin",
+      "type": "number"
+    },
+    {
+      "name": "HalbuMax",
+      "type": "number"
+    },
+    {
+      "name": "HalbuMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "HalbuMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "HalbuMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "JamellaMin",
+      "type": "number"
+    },
+    {
+      "name": "JamellaMax",
+      "type": "number"
+    },
+    {
+      "name": "JamellaMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "JamellaMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "JamellaMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "LarzukMin",
+      "type": "number"
+    },
+    {
+      "name": "LarzukMax",
+      "type": "number"
+    },
+    {
+      "name": "LarzukMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "LarzukMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "LarzukMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "AnyaMin",
+      "type": "number"
+    },
+    {
+      "name": "AnyaMax",
+      "type": "number"
+    },
+    {
+      "name": "AnyaMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "AnyaMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "AnyaMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "MalahMin",
+      "type": "number"
+    },
+    {
+      "name": "MalahMax",
+      "type": "number"
+    },
+    {
+      "name": "MalahMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "MalahMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "MalahMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "Transform",
+      "type": "number"
+    },
+    {
+      "name": "InvTrans",
+      "type": "number"
+    },
+    {
+      "name": "SkipName",
+      "type": "number"
+    },
+    {
+      "name": "NightmareUpgrade",
+      "type": "text"
+    },
+    {
+      "name": "HellUpgrade",
+      "type": "text"
+    },
+    {
+      "name": "Nameable",
+      "type": "number"
+    },
+    {
+      "name": "PermStoreItem",
+      "type": "number"
+    },
+    {
+      "name": "UICatOverride",
+      "type": "text"
+    },
+    {
+      "name": "diablocloneweight",
+      "type": "text"
+    }
+  ]
+}

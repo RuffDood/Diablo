@@ -1,0 +1,45 @@
+{
+  "table": "transmog_table",
+  "file": "global/excel/transmog_table.txt",
+  "description": "Table transmog_table du mod TCP.",
+  "source": "Colonnes et types inferes du .txt (table non couverte par le guide).",
+  "columnsDocumented": 0,
+  "columns": [
+    {
+      "name": "index",
+      "type": "number"
+    },
+    {
+      "name": "code_name",
+      "type": "text"
+    },
+    {
+      "name": "code_normal",
+      "type": "text"
+    },
+    {
+      "name": "sets_normal",
+      "type": "text"
+    },
+    {
+      "name": "sets_exceptional",
+      "type": "text"
+    },
+    {
+      "name": "sets_elite",
+      "type": "text"
+    },
+    {
+      "name": "uniques_normal",
+      "type": "text"
+    },
+    {
+      "name": "uniques_exceptional",
+      "type": "text"
+    },
+    {
+      "name": "uniques_elite",
+      "type": "text"
+    }
+  ]
+}

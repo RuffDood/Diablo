@@ -1,0 +1,334 @@
+{
+  "table": "uniqueitems",
+  "file": "global/excel/uniqueitems.txt",
+  "description": "Table uniqueitems du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 19,
+  "columns": [
+    {
+      "name": "index",
+      "type": "text",
+      "description": "Points to a string key value to use as the Unique item's name",
+      "guideType": "[O]"
+    },
+    {
+      "name": "*ID",
+      "type": "number",
+      "comment": true
+    },
+    {
+      "name": "version",
+      "type": "number",
+      "description": "Defines which game version to create this item (0 = Classic mode | 100 = Expansion mode)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "enabled",
+      "type": "boolean",
+      "description": "If equals 1, then this item can be created and dropped. If equals 0, then this item cannot be dropped",
+      "guideType": "[B]"
+    },
+    {
+      "name": "ladder",
+      "type": "boolean",
+      "description": "If equals 1, then this item can only be created and dropped in online Battle.net Ladder games. If equals 0, then this item can be created and dropped in any game mode",
+      "guideType": "[B]"
+    },
+    {
+      "name": "rarity",
+      "type": "number",
+      "description": "Modifies the chances that this Unique item will spawn compared to the other Unique items. This value acts as a numerator and a denominator. Each \"rarity\" value gets summed together to give a total denominator, used for the random roll for the item. For example, if there are 3 possible Unique items, and their \"rarity\" values are 3, 5, 7, then their chances to be chosen are 3/15, 5/15, and 7/15 respectively. (The minimum \"rarity\" value equals 1) (Only works for games in Expansion mode)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "nolimit",
+      "type": "boolean",
+      "description": "Requires the",
+      "guideType": "[B]"
+    },
+    {
+      "name": "lvl",
+      "type": "number",
+      "description": "The item level for the item, which controls what object or monster needs to be in order to drop this item",
+      "guideType": "[N]"
+    },
+    {
+      "name": "lvl req",
+      "type": "number"
+    },
+    {
+      "name": "code",
+      "type": "text",
+      "description": "Defines the baseline item code to use for this Unique item (must match the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "*ItemName",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "carry1",
+      "type": "boolean",
+      "description": "If equals 1, then players can only carry one of these items in their inventory. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "cost mult",
+      "type": "number",
+      "description": "Multiplicative modifier for the Unique item's buy, sell, and repair costs",
+      "guideType": "[N]"
+    },
+    {
+      "name": "cost add",
+      "type": "number",
+      "description": "Flat integer modification to the Unique item's buy, sell, and repair costs. This is added after the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "chrtransform",
+      "type": "text",
+      "description": "Controls the color change of the item when equipped on a character or dropped on the ground. If empty, then the item will have the default item color. Referenced from the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "invtransform",
+      "type": "text",
+      "description": "Controls the color change of the item in the inventory UI. If empty, then the item will have the default item color. Referenced from the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "flippyfile",
+      "type": "text",
+      "description": "An override for the \"flippyfile\" field from the weapon.txt, Armor.txt, or Misc.txt files. By default, the Unique item will use what was defined by the baseline item from the \"item\" field",
+      "guideType": "[O]"
+    },
+    {
+      "name": "invfile",
+      "type": "text",
+      "description": "An override for the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "dropsound",
+      "type": "text",
+      "description": "An override for the \"dropsound\" field from the weapon.txt, Armor.txt, or Misc.txt files. By default, the Unique item will use what was defined by the baseline item from the \"item\" field",
+      "guideType": "[O]"
+    },
+    {
+      "name": "dropsfxframe",
+      "type": "number",
+      "description": "An override for the \"dropsfxframe\" field from the weapon.txt, Armor.txt, or Misc.txt files. By default, the Unique item will use what was defined by the baseline item from the \"item\" field",
+      "guideType": "[N]"
+    },
+    {
+      "name": "usesound",
+      "type": "text",
+      "description": "An override for the \"usesound\" field from the weapon.txt, Armor.txt, or Misc.txt files. By default, the Unique item will use what was defined by the baseline item from the \"item\" field",
+      "guideType": "[O]"
+    },
+    {
+      "name": "prop1",
+      "type": "text"
+    },
+    {
+      "name": "par1",
+      "type": "text"
+    },
+    {
+      "name": "min1",
+      "type": "number"
+    },
+    {
+      "name": "max1",
+      "type": "number"
+    },
+    {
+      "name": "prop2",
+      "type": "text"
+    },
+    {
+      "name": "par2",
+      "type": "text"
+    },
+    {
+      "name": "min2",
+      "type": "number"
+    },
+    {
+      "name": "max2",
+      "type": "number"
+    },
+    {
+      "name": "prop3",
+      "type": "text"
+    },
+    {
+      "name": "par3",
+      "type": "text"
+    },
+    {
+      "name": "min3",
+      "type": "number"
+    },
+    {
+      "name": "max3",
+      "type": "number"
+    },
+    {
+      "name": "prop4",
+      "type": "text"
+    },
+    {
+      "name": "par4",
+      "type": "text"
+    },
+    {
+      "name": "min4",
+      "type": "number"
+    },
+    {
+      "name": "max4",
+      "type": "number"
+    },
+    {
+      "name": "prop5",
+      "type": "text"
+    },
+    {
+      "name": "par5",
+      "type": "text"
+    },
+    {
+      "name": "min5",
+      "type": "number"
+    },
+    {
+      "name": "max5",
+      "type": "number"
+    },
+    {
+      "name": "prop6",
+      "type": "text"
+    },
+    {
+      "name": "par6",
+      "type": "text"
+    },
+    {
+      "name": "min6",
+      "type": "number"
+    },
+    {
+      "name": "max6",
+      "type": "number"
+    },
+    {
+      "name": "prop7",
+      "type": "text"
+    },
+    {
+      "name": "par7",
+      "type": "text"
+    },
+    {
+      "name": "min7",
+      "type": "number"
+    },
+    {
+      "name": "max7",
+      "type": "number"
+    },
+    {
+      "name": "prop8",
+      "type": "text"
+    },
+    {
+      "name": "par8",
+      "type": "text"
+    },
+    {
+      "name": "min8",
+      "type": "number"
+    },
+    {
+      "name": "max8",
+      "type": "number"
+    },
+    {
+      "name": "prop9",
+      "type": "text"
+    },
+    {
+      "name": "par9",
+      "type": "text"
+    },
+    {
+      "name": "min9",
+      "type": "number"
+    },
+    {
+      "name": "max9",
+      "type": "number"
+    },
+    {
+      "name": "prop10",
+      "type": "text"
+    },
+    {
+      "name": "par10",
+      "type": "text"
+    },
+    {
+      "name": "min10",
+      "type": "number"
+    },
+    {
+      "name": "max10",
+      "type": "number"
+    },
+    {
+      "name": "prop11",
+      "type": "text"
+    },
+    {
+      "name": "par11",
+      "type": "text"
+    },
+    {
+      "name": "min11",
+      "type": "number"
+    },
+    {
+      "name": "max11",
+      "type": "number"
+    },
+    {
+      "name": "prop12",
+      "type": "text"
+    },
+    {
+      "name": "par12",
+      "type": "text"
+    },
+    {
+      "name": "min12",
+      "type": "number"
+    },
+    {
+      "name": "max12",
+      "type": "number"
+    },
+    {
+      "name": "diablocloneweight",
+      "type": "number",
+      "description": "The amount of weight added to the diablo clone progress when this item is sold. When offline, selling this item will instead immediately spawn diablo clone.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "*eol",
+      "type": "number",
+      "comment": true
+    }
+  ]
+}

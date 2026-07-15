@@ -1,0 +1,131 @@
+{
+  "table": "lvlprest",
+  "file": "global/excel/lvlprest.txt",
+  "description": "Table lvlprest du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 15,
+  "columns": [
+    {
+      "name": "Name",
+      "type": "text",
+      "description": "This is a reference field to define the Level Preset",
+      "guideType": "[O]"
+    },
+    {
+      "name": "Def",
+      "type": "number",
+      "description": "Defines the unique numeric ID for the Level Preset. This is referenced in other files",
+      "guideType": "[N]"
+    },
+    {
+      "name": "LevelId",
+      "type": "number",
+      "description": "This refers to the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Populate",
+      "type": "boolean",
+      "description": "If equals 1, then units are allowed to spawn in the Level Preset. If equals 0, then units will never spawn in the Level Preset",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Logicals",
+      "type": "boolean",
+      "description": "If equals 1, then the Level Preset allow for wall transparency to function. If equals 0, then walls will always appear solid",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Outdoors",
+      "type": "boolean",
+      "description": "If equals 1, then the Level Preset will be classified as an outdoor area, which can mean that lighting will function differently. If equals 0, then the Level Preset will be classified as an indoor area",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Animate",
+      "type": "boolean",
+      "description": "If equals 1, then the game will animate the tiles in the Level Preset. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "KillEdge",
+      "type": "boolean",
+      "description": "If equals 1, then the game will remove tiles that border the size of the Level Preset. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "FillBlanks",
+      "type": "boolean",
+      "description": "If equals 1, then all blank tiles in the Level Preset will be filled with unwalkable tiles. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "SizeX",
+      "type": "number"
+    },
+    {
+      "name": "SizeY",
+      "type": "number"
+    },
+    {
+      "name": "AutoMap",
+      "type": "boolean",
+      "description": "If equals 1, then this Level Preset will be automatically completely revealed on the Automap. If equals 0, then this Level Preset will be hidden on the Automap and will need to be explored",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Scan",
+      "type": "boolean",
+      "description": "If equals 1, then this Level Preset will allow the usage of warping with waypoints (This requires that the Level Preset has a waypoint object). If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Pops",
+      "type": "number",
+      "description": "Defines how many Pop tiles are defined in the Level Preset file. These Pop tiles are mainly used for controlling the roof and wall popping when a player enters a building in an area",
+      "guideType": "[N]"
+    },
+    {
+      "name": "PopPad",
+      "type": "number",
+      "description": "Determines the size of the Pop tile area, by using an offset value. This offset value can increase or decrease the size of the Pop tile size if it has a positive or negative value",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Files",
+      "type": "number",
+      "description": "Determines the number of different versions to use for the Level Preset. This value acts as a range, which the game will use for randomly choosing one of the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "File1",
+      "type": "text"
+    },
+    {
+      "name": "File2",
+      "type": "text"
+    },
+    {
+      "name": "File3",
+      "type": "text"
+    },
+    {
+      "name": "File4",
+      "type": "text"
+    },
+    {
+      "name": "File5",
+      "type": "text"
+    },
+    {
+      "name": "File6",
+      "type": "text"
+    },
+    {
+      "name": "Dt1Mask",
+      "type": "number",
+      "description": "This functions as a bit field mask with a size of a 32 bit value. This explains to the ds1 file which of the 32 dt1 tile files to use from a Level Type when assembling the Level Preset. Each",
+      "guideType": "[N]"
+    }
+  ]
+}

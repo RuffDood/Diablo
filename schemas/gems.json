@@ -1,0 +1,177 @@
+{
+  "table": "gems",
+  "file": "global/excel/gems.txt",
+  "description": "Table gems du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 4,
+  "columns": [
+    {
+      "name": "name",
+      "type": "text",
+      "description": "This is a reference field to define the gem/rune name",
+      "guideType": "[O]"
+    },
+    {
+      "name": "letter",
+      "type": "text",
+      "description": "Defines the string that is concatenated together in the item tooltip when a rune is socketed into an item",
+      "guideType": "[O]"
+    },
+    {
+      "name": "transform",
+      "type": "number",
+      "description": "Controls the color change of the item after being socketed by the gem/rune. Referenced from the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "code",
+      "type": "text",
+      "description": "Defines the unique item code used to create the gem/rune",
+      "guideType": "[O]"
+    },
+    {
+      "name": "weaponMod1Code",
+      "type": "text"
+    },
+    {
+      "name": "weaponMod1Param",
+      "type": "number"
+    },
+    {
+      "name": "weaponMod1Min",
+      "type": "number"
+    },
+    {
+      "name": "weaponMod1Max",
+      "type": "number"
+    },
+    {
+      "name": "weaponMod2Code",
+      "type": "text"
+    },
+    {
+      "name": "weaponMod2Param",
+      "type": "number"
+    },
+    {
+      "name": "weaponMod2Min",
+      "type": "number"
+    },
+    {
+      "name": "weaponMod2Max",
+      "type": "number"
+    },
+    {
+      "name": "weaponMod3Code",
+      "type": "text"
+    },
+    {
+      "name": "weaponMod3Param",
+      "type": "number"
+    },
+    {
+      "name": "weaponMod3Min",
+      "type": "number"
+    },
+    {
+      "name": "weaponMod3Max",
+      "type": "number"
+    },
+    {
+      "name": "helmMod1Code",
+      "type": "text"
+    },
+    {
+      "name": "helmMod1Param",
+      "type": "number"
+    },
+    {
+      "name": "helmMod1Min",
+      "type": "number"
+    },
+    {
+      "name": "helmMod1Max",
+      "type": "number"
+    },
+    {
+      "name": "helmMod2Code",
+      "type": "text"
+    },
+    {
+      "name": "helmMod2Param",
+      "type": "number"
+    },
+    {
+      "name": "helmMod2Min",
+      "type": "number"
+    },
+    {
+      "name": "helmMod2Max",
+      "type": "number"
+    },
+    {
+      "name": "helmMod3Code",
+      "type": "text"
+    },
+    {
+      "name": "helmMod3Param",
+      "type": "number"
+    },
+    {
+      "name": "helmMod3Min",
+      "type": "number"
+    },
+    {
+      "name": "helmMod3Max",
+      "type": "number"
+    },
+    {
+      "name": "shieldMod1Code",
+      "type": "text"
+    },
+    {
+      "name": "shieldMod1Param",
+      "type": "number"
+    },
+    {
+      "name": "shieldMod1Min",
+      "type": "number"
+    },
+    {
+      "name": "shieldMod1Max",
+      "type": "number"
+    },
+    {
+      "name": "shieldMod2Code",
+      "type": "text"
+    },
+    {
+      "name": "shieldMod2Param",
+      "type": "number"
+    },
+    {
+      "name": "shieldMod2Min",
+      "type": "number"
+    },
+    {
+      "name": "shieldMod2Max",
+      "type": "number"
+    },
+    {
+      "name": "shieldMod3Code",
+      "type": "text"
+    },
+    {
+      "name": "shieldMod3Param",
+      "type": "number"
+    },
+    {
+      "name": "shieldMod3Min",
+      "type": "number"
+    },
+    {
+      "name": "shieldMod3Max",
+      "type": "number"
+    }
+  ]
+}

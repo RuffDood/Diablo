@@ -1,0 +1,1140 @@
+{
+  "table": "skills",
+  "file": "global/excel/skills.txt",
+  "description": "Table skills du mod TCP.",
+  "source": "Colonnes et types inferes du .txt (table non couverte par le guide).",
+  "columnsDocumented": 0,
+  "columns": [
+    {
+      "name": "skill",
+      "type": "text"
+    },
+    {
+      "name": "*Id",
+      "type": "number",
+      "comment": true
+    },
+    {
+      "name": "charclass",
+      "type": "text"
+    },
+    {
+      "name": "skilldesc",
+      "type": "text"
+    },
+    {
+      "name": "srvstfunc",
+      "type": "number"
+    },
+    {
+      "name": "srvdofunc",
+      "type": "number"
+    },
+    {
+      "name": "srvstopfunc",
+      "type": "number"
+    },
+    {
+      "name": "prgstack",
+      "type": "number"
+    },
+    {
+      "name": "srvprgfunc1",
+      "type": "number"
+    },
+    {
+      "name": "srvprgfunc2",
+      "type": "number"
+    },
+    {
+      "name": "srvprgfunc3",
+      "type": "number"
+    },
+    {
+      "name": "prgcalc1",
+      "type": "text"
+    },
+    {
+      "name": "prgcalc2",
+      "type": "text"
+    },
+    {
+      "name": "prgcalc3",
+      "type": "text"
+    },
+    {
+      "name": "prgdam",
+      "type": "number"
+    },
+    {
+      "name": "srvmissile",
+      "type": "text"
+    },
+    {
+      "name": "decquant",
+      "type": "number"
+    },
+    {
+      "name": "lob",
+      "type": "number"
+    },
+    {
+      "name": "srvmissilea",
+      "type": "text"
+    },
+    {
+      "name": "srvmissileb",
+      "type": "text"
+    },
+    {
+      "name": "srvmissilec",
+      "type": "text"
+    },
+    {
+      "name": "useServerMissilesOnRemoteClients",
+      "type": "text"
+    },
+    {
+      "name": "srvoverlay",
+      "type": "text"
+    },
+    {
+      "name": "aurafilter",
+      "type": "number"
+    },
+    {
+      "name": "aurastate",
+      "type": "text"
+    },
+    {
+      "name": "auratargetstate",
+      "type": "text"
+    },
+    {
+      "name": "auralencalc",
+      "type": "text"
+    },
+    {
+      "name": "aurarangecalc",
+      "type": "text"
+    },
+    {
+      "name": "aurastat1",
+      "type": "text"
+    },
+    {
+      "name": "aurastatcalc1",
+      "type": "text"
+    },
+    {
+      "name": "aurastat2",
+      "type": "text"
+    },
+    {
+      "name": "aurastatcalc2",
+      "type": "text"
+    },
+    {
+      "name": "aurastat3",
+      "type": "text"
+    },
+    {
+      "name": "aurastatcalc3",
+      "type": "text"
+    },
+    {
+      "name": "aurastat4",
+      "type": "text"
+    },
+    {
+      "name": "aurastatcalc4",
+      "type": "text"
+    },
+    {
+      "name": "aurastat5",
+      "type": "text"
+    },
+    {
+      "name": "aurastatcalc5",
+      "type": "text"
+    },
+    {
+      "name": "aurastat6",
+      "type": "text"
+    },
+    {
+      "name": "aurastatcalc6",
+      "type": "text"
+    },
+    {
+      "name": "auraevent1",
+      "type": "text"
+    },
+    {
+      "name": "auraeventfunc1",
+      "type": "number"
+    },
+    {
+      "name": "auraevent2",
+      "type": "text"
+    },
+    {
+      "name": "auraeventfunc2",
+      "type": "number"
+    },
+    {
+      "name": "auraevent3",
+      "type": "text"
+    },
+    {
+      "name": "auraeventfunc3",
+      "type": "number"
+    },
+    {
+      "name": "passivestate",
+      "type": "text"
+    },
+    {
+      "name": "passiveitype",
+      "type": "text"
+    },
+    {
+      "name": "passivereqweaponcount",
+      "type": "text"
+    },
+    {
+      "name": "passivestat1",
+      "type": "text"
+    },
+    {
+      "name": "passivecalc1",
+      "type": "text"
+    },
+    {
+      "name": "passivestat2",
+      "type": "text"
+    },
+    {
+      "name": "passivecalc2",
+      "type": "text"
+    },
+    {
+      "name": "passivestat3",
+      "type": "text"
+    },
+    {
+      "name": "passivecalc3",
+      "type": "text"
+    },
+    {
+      "name": "passivestat4",
+      "type": "text"
+    },
+    {
+      "name": "passivecalc4",
+      "type": "text"
+    },
+    {
+      "name": "passivestat5",
+      "type": "text"
+    },
+    {
+      "name": "passivecalc5",
+      "type": "text"
+    },
+    {
+      "name": "passivestat6",
+      "type": "text"
+    },
+    {
+      "name": "passivecalc6",
+      "type": "text"
+    },
+    {
+      "name": "summon",
+      "type": "text"
+    },
+    {
+      "name": "pettype",
+      "type": "text"
+    },
+    {
+      "name": "petmax",
+      "type": "text"
+    },
+    {
+      "name": "requirespettype",
+      "type": "number"
+    },
+    {
+      "name": "summode",
+      "type": "text"
+    },
+    {
+      "name": "sumskill1",
+      "type": "text"
+    },
+    {
+      "name": "sumsk1calc",
+      "type": "text"
+    },
+    {
+      "name": "sumskill2",
+      "type": "text"
+    },
+    {
+      "name": "sumsk2calc",
+      "type": "text"
+    },
+    {
+      "name": "sumskill3",
+      "type": "text"
+    },
+    {
+      "name": "sumsk3calc",
+      "type": "text"
+    },
+    {
+      "name": "sumskill4",
+      "type": "text"
+    },
+    {
+      "name": "sumsk4calc",
+      "type": "text"
+    },
+    {
+      "name": "sumskill5",
+      "type": "text"
+    },
+    {
+      "name": "sumsk5calc",
+      "type": "text"
+    },
+    {
+      "name": "sumumod",
+      "type": "number"
+    },
+    {
+      "name": "sumoverlay",
+      "type": "text"
+    },
+    {
+      "name": "stsuccessonly",
+      "type": "number"
+    },
+    {
+      "name": "stsound",
+      "type": "text"
+    },
+    {
+      "name": "stsoundclass",
+      "type": "text"
+    },
+    {
+      "name": "stsounddelay",
+      "type": "number"
+    },
+    {
+      "name": "weaponsnd",
+      "type": "number"
+    },
+    {
+      "name": "dosound",
+      "type": "text"
+    },
+    {
+      "name": "dosound a",
+      "type": "text"
+    },
+    {
+      "name": "dosound b",
+      "type": "text"
+    },
+    {
+      "name": "tgtoverlay",
+      "type": "text"
+    },
+    {
+      "name": "tgtsound",
+      "type": "text"
+    },
+    {
+      "name": "prgoverlay",
+      "type": "text"
+    },
+    {
+      "name": "prgsound",
+      "type": "text"
+    },
+    {
+      "name": "castoverlay",
+      "type": "text"
+    },
+    {
+      "name": "cltoverlaya",
+      "type": "text"
+    },
+    {
+      "name": "cltoverlayb",
+      "type": "text"
+    },
+    {
+      "name": "cltstfunc",
+      "type": "number"
+    },
+    {
+      "name": "cltdofunc",
+      "type": "number"
+    },
+    {
+      "name": "cltstopfunc",
+      "type": "number"
+    },
+    {
+      "name": "cltprgfunc1",
+      "type": "number"
+    },
+    {
+      "name": "cltprgfunc2",
+      "type": "number"
+    },
+    {
+      "name": "cltprgfunc3",
+      "type": "number"
+    },
+    {
+      "name": "cltmissile",
+      "type": "text"
+    },
+    {
+      "name": "cltmissilea",
+      "type": "text"
+    },
+    {
+      "name": "cltmissileb",
+      "type": "text"
+    },
+    {
+      "name": "cltmissilec",
+      "type": "text"
+    },
+    {
+      "name": "cltmissiled",
+      "type": "text"
+    },
+    {
+      "name": "cltcalc1",
+      "type": "text"
+    },
+    {
+      "name": "*cltcalc1 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "cltcalc2",
+      "type": "text"
+    },
+    {
+      "name": "*cltcalc2 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "cltcalc3",
+      "type": "number"
+    },
+    {
+      "name": "*cltcalc3 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "warp",
+      "type": "number"
+    },
+    {
+      "name": "immediate",
+      "type": "number"
+    },
+    {
+      "name": "enhanceable",
+      "type": "number"
+    },
+    {
+      "name": "attackrank",
+      "type": "number"
+    },
+    {
+      "name": "noammo",
+      "type": "number"
+    },
+    {
+      "name": "range",
+      "type": "text"
+    },
+    {
+      "name": "weapsel",
+      "type": "number"
+    },
+    {
+      "name": "itypea1",
+      "type": "text"
+    },
+    {
+      "name": "itypea2",
+      "type": "text"
+    },
+    {
+      "name": "itypea3",
+      "type": "text"
+    },
+    {
+      "name": "etypea1",
+      "type": "text"
+    },
+    {
+      "name": "etypea2",
+      "type": "text"
+    },
+    {
+      "name": "itypeb1",
+      "type": "text"
+    },
+    {
+      "name": "itypeb2",
+      "type": "text"
+    },
+    {
+      "name": "itypeb3",
+      "type": "text"
+    },
+    {
+      "name": "etypeb1",
+      "type": "text"
+    },
+    {
+      "name": "etypeb2",
+      "type": "text"
+    },
+    {
+      "name": "anim",
+      "type": "text"
+    },
+    {
+      "name": "seqtrans",
+      "type": "text"
+    },
+    {
+      "name": "monanim",
+      "type": "text"
+    },
+    {
+      "name": "seqnum",
+      "type": "number"
+    },
+    {
+      "name": "seqinput",
+      "type": "number"
+    },
+    {
+      "name": "durability",
+      "type": "number"
+    },
+    {
+      "name": "UseAttackRate",
+      "type": "number"
+    },
+    {
+      "name": "LineOfSight",
+      "type": "text"
+    },
+    {
+      "name": "TargetableOnly",
+      "type": "number"
+    },
+    {
+      "name": "SearchEnemyXY",
+      "type": "number"
+    },
+    {
+      "name": "SearchEnemyNear",
+      "type": "number"
+    },
+    {
+      "name": "SearchOpenXY",
+      "type": "number"
+    },
+    {
+      "name": "SelectProc",
+      "type": "number"
+    },
+    {
+      "name": "TargetCorpse",
+      "type": "number"
+    },
+    {
+      "name": "TargetPet",
+      "type": "number"
+    },
+    {
+      "name": "TargetAlly",
+      "type": "number"
+    },
+    {
+      "name": "TargetItem",
+      "type": "number"
+    },
+    {
+      "name": "AttackNoMana",
+      "type": "number"
+    },
+    {
+      "name": "TgtPlaceCheck",
+      "type": "number"
+    },
+    {
+      "name": "KeepCursorStateOnKill",
+      "type": "number"
+    },
+    {
+      "name": "ContinueCastUnselected",
+      "type": "text"
+    },
+    {
+      "name": "ClearSelectedOnHold",
+      "type": "text"
+    },
+    {
+      "name": "ItemEffect",
+      "type": "text"
+    },
+    {
+      "name": "ItemCltEffect",
+      "type": "number"
+    },
+    {
+      "name": "ItemTgtDo",
+      "type": "number"
+    },
+    {
+      "name": "ItemTarget",
+      "type": "number"
+    },
+    {
+      "name": "ItemCheckStart",
+      "type": "number"
+    },
+    {
+      "name": "ItemCltCheckStart",
+      "type": "number"
+    },
+    {
+      "name": "ItemCastSound",
+      "type": "text"
+    },
+    {
+      "name": "ItemCastOverlay",
+      "type": "text"
+    },
+    {
+      "name": "skpoints",
+      "type": "text"
+    },
+    {
+      "name": "reqlevel",
+      "type": "number"
+    },
+    {
+      "name": "maxlvl",
+      "type": "number"
+    },
+    {
+      "name": "reqstr",
+      "type": "text"
+    },
+    {
+      "name": "reqdex",
+      "type": "text"
+    },
+    {
+      "name": "reqint",
+      "type": "text"
+    },
+    {
+      "name": "reqvit",
+      "type": "text"
+    },
+    {
+      "name": "reqskill1",
+      "type": "text"
+    },
+    {
+      "name": "reqskill2",
+      "type": "text"
+    },
+    {
+      "name": "reqskill3",
+      "type": "text"
+    },
+    {
+      "name": "restrict",
+      "type": "number"
+    },
+    {
+      "name": "State1",
+      "type": "text"
+    },
+    {
+      "name": "State2",
+      "type": "text"
+    },
+    {
+      "name": "State3",
+      "type": "text"
+    },
+    {
+      "name": "localdelay",
+      "type": "number"
+    },
+    {
+      "name": "globaldelay",
+      "type": "number"
+    },
+    {
+      "name": "leftskill",
+      "type": "number"
+    },
+    {
+      "name": "rightskill",
+      "type": "number"
+    },
+    {
+      "name": "repeat",
+      "type": "number"
+    },
+    {
+      "name": "alwayshit",
+      "type": "number"
+    },
+    {
+      "name": "usemanaondo",
+      "type": "number"
+    },
+    {
+      "name": "startmana",
+      "type": "number"
+    },
+    {
+      "name": "minmana",
+      "type": "number"
+    },
+    {
+      "name": "manashift",
+      "type": "number"
+    },
+    {
+      "name": "mana",
+      "type": "number"
+    },
+    {
+      "name": "lvlmana",
+      "type": "number"
+    },
+    {
+      "name": "interrupt",
+      "type": "number"
+    },
+    {
+      "name": "InTown",
+      "type": "number"
+    },
+    {
+      "name": "aura",
+      "type": "number"
+    },
+    {
+      "name": "periodic",
+      "type": "number"
+    },
+    {
+      "name": "perdelay",
+      "type": "text"
+    },
+    {
+      "name": "finishing",
+      "type": "number"
+    },
+    {
+      "name": "prgchargestocast",
+      "type": "number"
+    },
+    {
+      "name": "prgchargesconsumed",
+      "type": "number"
+    },
+    {
+      "name": "passive",
+      "type": "number"
+    },
+    {
+      "name": "progressive",
+      "type": "number"
+    },
+    {
+      "name": "scroll",
+      "type": "text"
+    },
+    {
+      "name": "calc1",
+      "type": "text"
+    },
+    {
+      "name": "*calc1 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "calc2",
+      "type": "text"
+    },
+    {
+      "name": "*calc2 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "calc3",
+      "type": "text"
+    },
+    {
+      "name": "*calc3 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "calc4",
+      "type": "text"
+    },
+    {
+      "name": "*calc4 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "calc5",
+      "type": "number"
+    },
+    {
+      "name": "*calc5 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "calc6",
+      "type": "number"
+    },
+    {
+      "name": "*calc6 desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param1",
+      "type": "number"
+    },
+    {
+      "name": "*Param1 Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param2",
+      "type": "number"
+    },
+    {
+      "name": "*Param2 Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param3",
+      "type": "number"
+    },
+    {
+      "name": "*Param3 Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param4",
+      "type": "number"
+    },
+    {
+      "name": "*Param4 Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param5",
+      "type": "number"
+    },
+    {
+      "name": "*Param5 Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param6",
+      "type": "number"
+    },
+    {
+      "name": "*Param6 Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param7",
+      "type": "number"
+    },
+    {
+      "name": "*Param7 Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param8",
+      "type": "number"
+    },
+    {
+      "name": "*Param8 Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param9",
+      "type": "number"
+    },
+    {
+      "name": "*Param9 Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param10",
+      "type": "number"
+    },
+    {
+      "name": "*Param10 Description2",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param11",
+      "type": "number"
+    },
+    {
+      "name": "*Param11 Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param12",
+      "type": "number"
+    },
+    {
+      "name": "*Param12 Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "InGame",
+      "type": "number"
+    },
+    {
+      "name": "ToHit",
+      "type": "number"
+    },
+    {
+      "name": "LevToHit",
+      "type": "number"
+    },
+    {
+      "name": "ToHitCalc",
+      "type": "text"
+    },
+    {
+      "name": "ResultFlags",
+      "type": "number"
+    },
+    {
+      "name": "HitFlags",
+      "type": "number"
+    },
+    {
+      "name": "HitClass",
+      "type": "number"
+    },
+    {
+      "name": "Kick",
+      "type": "text"
+    },
+    {
+      "name": "HitShift",
+      "type": "number"
+    },
+    {
+      "name": "SrcDam",
+      "type": "text"
+    },
+    {
+      "name": "MinDam",
+      "type": "number"
+    },
+    {
+      "name": "MinLevDam1",
+      "type": "number"
+    },
+    {
+      "name": "MinLevDam2",
+      "type": "number"
+    },
+    {
+      "name": "MinLevDam3",
+      "type": "number"
+    },
+    {
+      "name": "MinLevDam4",
+      "type": "number"
+    },
+    {
+      "name": "MinLevDam5",
+      "type": "number"
+    },
+    {
+      "name": "MaxDam",
+      "type": "number"
+    },
+    {
+      "name": "MaxLevDam1",
+      "type": "number"
+    },
+    {
+      "name": "MaxLevDam2",
+      "type": "number"
+    },
+    {
+      "name": "MaxLevDam3",
+      "type": "number"
+    },
+    {
+      "name": "MaxLevDam4",
+      "type": "number"
+    },
+    {
+      "name": "MaxLevDam5",
+      "type": "number"
+    },
+    {
+      "name": "DmgSymPerCalc",
+      "type": "text"
+    },
+    {
+      "name": "EType",
+      "type": "text"
+    },
+    {
+      "name": "EMin",
+      "type": "number"
+    },
+    {
+      "name": "EMinLev1",
+      "type": "number"
+    },
+    {
+      "name": "EMinLev2",
+      "type": "number"
+    },
+    {
+      "name": "EMinLev3",
+      "type": "number"
+    },
+    {
+      "name": "EMinLev4",
+      "type": "number"
+    },
+    {
+      "name": "EMinLev5",
+      "type": "number"
+    },
+    {
+      "name": "EMax",
+      "type": "number"
+    },
+    {
+      "name": "EMaxLev1",
+      "type": "number"
+    },
+    {
+      "name": "EMaxLev2",
+      "type": "number"
+    },
+    {
+      "name": "EMaxLev3",
+      "type": "number"
+    },
+    {
+      "name": "EMaxLev4",
+      "type": "number"
+    },
+    {
+      "name": "EMaxLev5",
+      "type": "number"
+    },
+    {
+      "name": "EDmgSymPerCalc",
+      "type": "text"
+    },
+    {
+      "name": "ELen",
+      "type": "number"
+    },
+    {
+      "name": "ELevLen1",
+      "type": "number"
+    },
+    {
+      "name": "ELevLen2",
+      "type": "number"
+    },
+    {
+      "name": "ELevLen3",
+      "type": "number"
+    },
+    {
+      "name": "ELenSymPerCalc",
+      "type": "text"
+    },
+    {
+      "name": "aitype",
+      "type": "number"
+    },
+    {
+      "name": "aibonus",
+      "type": "number"
+    },
+    {
+      "name": "cost mult",
+      "type": "number"
+    },
+    {
+      "name": "cost add",
+      "type": "number"
+    },
+    {
+      "name": "*eol",
+      "type": "number",
+      "comment": true
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "table": "sets",
+  "file": "global/excel/sets.txt",
+  "description": "Table sets du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 3,
+  "columns": [
+    {
+      "name": "index",
+      "type": "text",
+      "description": "Defines the specific Set ID",
+      "guideType": "[O]"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "description": "Uses a string for displaying the Set name in the inventory tooltip",
+      "guideType": "[O]"
+    },
+    {
+      "name": "version",
+      "type": "number",
+      "description": "Defines which game version to use this Set bonus (0 = Classic mode | 100 = Expansion mode)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "PCode2a",
+      "type": "text"
+    },
+    {
+      "name": "PParam2a",
+      "type": "text"
+    },
+    {
+      "name": "PMin2a",
+      "type": "number"
+    },
+    {
+      "name": "PMax2a",
+      "type": "number"
+    },
+    {
+      "name": "PCode2b",
+      "type": "text"
+    },
+    {
+      "name": "PParam2b",
+      "type": "text"
+    },
+    {
+      "name": "PMin2b",
+      "type": "number"
+    },
+    {
+      "name": "PMax2b",
+      "type": "number"
+    },
+    {
+      "name": "PCode3a",
+      "type": "text"
+    },
+    {
+      "name": "PParam3a",
+      "type": "text"
+    },
+    {
+      "name": "PMin3a",
+      "type": "number"
+    },
+    {
+      "name": "PMax3a",
+      "type": "number"
+    },
+    {
+      "name": "PCode3b",
+      "type": "text"
+    },
+    {
+      "name": "PParam3b",
+      "type": "text"
+    },
+    {
+      "name": "PMin3b",
+      "type": "number"
+    },
+    {
+      "name": "PMax3b",
+      "type": "number"
+    },
+    {
+      "name": "PCode4a",
+      "type": "text"
+    },
+    {
+      "name": "PParam4a",
+      "type": "text"
+    },
+    {
+      "name": "PMin4a",
+      "type": "number"
+    },
+    {
+      "name": "PMax4a",
+      "type": "number"
+    },
+    {
+      "name": "PCode4b",
+      "type": "text"
+    },
+    {
+      "name": "PParam4b",
+      "type": "text"
+    },
+    {
+      "name": "PMin4b",
+      "type": "number"
+    },
+    {
+      "name": "PMax4b",
+      "type": "number"
+    },
+    {
+      "name": "PCode5a",
+      "type": "text"
+    },
+    {
+      "name": "PParam5a",
+      "type": "text"
+    },
+    {
+      "name": "PMin5a",
+      "type": "number"
+    },
+    {
+      "name": "PMax5a",
+      "type": "number"
+    },
+    {
+      "name": "PCode5b",
+      "type": "text"
+    },
+    {
+      "name": "PParam5b",
+      "type": "text"
+    },
+    {
+      "name": "PMin5b",
+      "type": "text"
+    },
+    {
+      "name": "PMax5b",
+      "type": "text"
+    },
+    {
+      "name": "FCode1",
+      "type": "text"
+    },
+    {
+      "name": "FParam1",
+      "type": "text"
+    },
+    {
+      "name": "FMin1",
+      "type": "number"
+    },
+    {
+      "name": "FMax1",
+      "type": "number"
+    },
+    {
+      "name": "FCode2",
+      "type": "text"
+    },
+    {
+      "name": "FParam2",
+      "type": "text"
+    },
+    {
+      "name": "FMin2",
+      "type": "number"
+    },
+    {
+      "name": "FMax2",
+      "type": "number"
+    },
+    {
+      "name": "FCode3",
+      "type": "text"
+    },
+    {
+      "name": "FParam3",
+      "type": "text"
+    },
+    {
+      "name": "FMin3",
+      "type": "number"
+    },
+    {
+      "name": "FMax3",
+      "type": "number"
+    },
+    {
+      "name": "FCode4",
+      "type": "text"
+    },
+    {
+      "name": "FParam4",
+      "type": "text"
+    },
+    {
+      "name": "FMin4",
+      "type": "number"
+    },
+    {
+      "name": "FMax4",
+      "type": "number"
+    },
+    {
+      "name": "FCode5",
+      "type": "text"
+    },
+    {
+      "name": "FParam5",
+      "type": "text"
+    },
+    {
+      "name": "FMin5",
+      "type": "number"
+    },
+    {
+      "name": "FMax5",
+      "type": "number"
+    },
+    {
+      "name": "FCode6",
+      "type": "text"
+    },
+    {
+      "name": "FParam6",
+      "type": "text"
+    },
+    {
+      "name": "FMin6",
+      "type": "number"
+    },
+    {
+      "name": "FMax6",
+      "type": "number"
+    },
+    {
+      "name": "FCode7",
+      "type": "text"
+    },
+    {
+      "name": "FParam7",
+      "type": "text"
+    },
+    {
+      "name": "FMin7",
+      "type": "number"
+    },
+    {
+      "name": "FMax7",
+      "type": "number"
+    },
+    {
+      "name": "FCode8",
+      "type": "text"
+    },
+    {
+      "name": "FParam8",
+      "type": "text"
+    },
+    {
+      "name": "FMin8",
+      "type": "number"
+    },
+    {
+      "name": "FMax8",
+      "type": "number"
+    },
+    {
+      "name": "*eol",
+      "type": "number",
+      "comment": true
+    }
+  ]
+}

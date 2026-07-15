@@ -1,0 +1,83 @@
+{
+  "table": "lvlwarp",
+  "file": "global/excel/lvlwarp.txt",
+  "description": "Table lvlwarp du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 7,
+  "columns": [
+    {
+      "name": "Name",
+      "type": "text",
+      "description": "This is a reference field to define the Level Warp",
+      "guideType": "[O]"
+    },
+    {
+      "name": "Id",
+      "type": "number",
+      "description": "Defines the numeric ID for the type of Level Warp. This ID can be shared between multiple Level Warps if those Level Warps want to use the same functionality. This is referenced in other files",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SelectX",
+      "type": "number"
+    },
+    {
+      "name": "SelectY",
+      "type": "number"
+    },
+    {
+      "name": "SelectDX",
+      "type": "number"
+    },
+    {
+      "name": "SelectDY",
+      "type": "number"
+    },
+    {
+      "name": "ExitWalkX",
+      "type": "number"
+    },
+    {
+      "name": "ExitWalkY",
+      "type": "number"
+    },
+    {
+      "name": "OffsetX",
+      "type": "number"
+    },
+    {
+      "name": "OffsetY",
+      "type": "number"
+    },
+    {
+      "name": "LitVersion",
+      "type": "boolean",
+      "description": "If equals 1, then Level Warp tiles will change their appearance when highlighted. If equals 0, then the Level Warp tiles will not change appearance when highlighted",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Tiles",
+      "type": "number",
+      "description": "Defines an index offset to determine which tile to use in the tile set for the highlighted version of the Level Warp. These tiles are loaded and hidden/revealed when the player mouse hovers over the Level Warp tiles. This relies on",
+      "guideType": "[N]"
+    },
+    {
+      "name": "NoInteract",
+      "type": "boolean",
+      "description": "If equals 1, then the Level War cannot be directly interacted by the player. If equals 0, then the player can interact with the Level Warp",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Direction",
+      "type": "text",
+      "description": "Defines the orientation of the Level Warp. Uses a specific string code.",
+      "guideType": "[O]"
+    },
+    {
+      "name": "UniqueId",
+      "type": "number",
+      "description": "Defines the unique numeric ID for the Level Warp. Each Level Warp should have a unique ID so that the game can handle loading that specific Level Warp's related files.",
+      "guideType": "[N]"
+    }
+  ]
+}

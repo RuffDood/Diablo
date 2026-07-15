@@ -1,0 +1,228 @@
+{
+  "table": "sounds",
+  "file": "global/excel/sounds.txt",
+  "description": "Table sounds du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 33,
+  "columns": [
+    {
+      "name": "Sound",
+      "type": "text",
+      "description": "Defines the unique name ID for the sound, which is how other files can reference the sound",
+      "guideType": "[O]"
+    },
+    {
+      "name": "*Index",
+      "type": "number",
+      "comment": true
+    },
+    {
+      "name": "Redirect",
+      "type": "text",
+      "description": "Points the sound so the index of another sound in the data file. If this field is not empty, the game will use the redirected sound instead of this sound. This can be used when playing the game in the new graphics mode",
+      "guideType": "[O]"
+    },
+    {
+      "name": "Channel",
+      "type": "text",
+      "description": "Declares which channel the sound is initialized in. This can affect how different volume or sound settings handle this sound.",
+      "guideType": "[O]"
+    },
+    {
+      "name": "FileName",
+      "type": "text",
+      "description": "Defines the file path and name of the sound file to play",
+      "guideType": "[O]"
+    },
+    {
+      "name": "IsLocal",
+      "type": "boolean",
+      "description": "If equals 1, then this sound is considered a localized sound and will change based on the game's localization setting. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "IsMusic",
+      "type": "boolean",
+      "description": "If equals 1, then the sound is flagged as a music sound, which affects how music related settings handle this sound. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "IsAmbientScene",
+      "type": "boolean",
+      "description": "If equals 1, then the sound is flagged as an ambient scene sound, which affects how the game handles the sound when the player transitions between areas. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "IsAmbientEvent",
+      "type": "boolean",
+      "description": "If equals 1, then the sound is flagged as an ambient event sound, which affects how the game treats the sound when the player transitions between areas. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "IsUI",
+      "type": "boolean",
+      "description": "If equals 1, then the sound is flagged as a UI sound, which affects how UI related settings handle this sound. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Volume Min",
+      "type": "number",
+      "description": "Controls the minimum volume of the sound. Uses a range of 0 to 255",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Volume Max",
+      "type": "number",
+      "description": "Controls the maximum volume of the sound. If both",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Pitch Min",
+      "type": "number",
+      "description": "Controls the minimum pitch percentage of the sound",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Pitch Max",
+      "type": "number",
+      "description": "Controls the maximum pitch percentage of the sound. If both",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Group Size",
+      "type": "number",
+      "description": "Defines a sound Group by declaring a size value. When the sound has this value greater than 0, then this sound is declared as the group's base sound. Any link to use a sound should use the base sound, to signify that the game should use this group of sounds. This field's value controls the number of sounds indexed after base sound that should be added to the group. For example, if the sound has a \"Group Size\" value equal to 5, then this sound is declared as the group's base sound, and the next 4 sounds indexed after this base sound will be added to the group",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Group Weight",
+      "type": "number",
+      "description": "Controls the chance to pick the sound when it is part of a group with other sounds. If all sounds in the group do not have a \"Group Weight\" value, then the group sounds will play in historical order. This value controls a weighted random chance, meaning that all related sounds have their weights added together for a total chance and each sound's weight value is rolled against that total value to determine if the sound is successfully picked. The higher this value, the more likely the sound will be picked. This is only used when the sound is part of a group (\"Group Size\")",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Loop",
+      "type": "boolean",
+      "description": "If equals 1, then the sound will replay itself after it finishes playing. If equals 0, then the sound will only play once",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Fade In",
+      "type": "number",
+      "description": "Controls how long to gradually increase the sound's volume starting from 0 when the sound starts playing. Measured in audio game ticks, where 1 game frame is 40 audio ticks, and the game runs at 25 frames per second",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Fade Out",
+      "type": "number",
+      "description": "Controls how long to gradually decrease the sound's volume to 0 when the sound stops playing. Measured in audio game ticks, where 1 game frame is 40 audio ticks, and the game runs at 25 frames per second",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Defer Inst",
+      "type": "boolean",
+      "description": "If equals 1, then when a duplicate instance of this sound plays the game will stop that request. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Stop Inst",
+      "type": "boolean",
+      "description": "If equals 1, then when a duplicate instance of this sound plays the previous instance of the sound will stop and the new instance of the sound will play. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Duration",
+      "type": "number",
+      "description": "Controls the length of time to play the sound. When the sound has been playing for this length of time, then the sound will stop. If this equals 0, then ignore this functionality",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Compound",
+      "type": "number",
+      "description": "Controls the game tick time limit for when a sound can join in playing based on the previous sound played in the Group. If equals 0, then the sound will not be compounded",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Falloff",
+      "type": "number",
+      "description": "Defines the range of falloff for hearing the sound, based on distance. Uses a code to determine the range value presets.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "LFEMix",
+      "type": "number",
+      "description": "Controls the percentage (out of 100) of the sound's Low-Frequency Effects channel",
+      "guideType": "[N]"
+    },
+    {
+      "name": "3dSpread",
+      "type": "number",
+      "description": "Controls the 3D spread angle of the sound. This only works if the sound is considered a 3D sound (",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Priority",
+      "type": "number",
+      "description": "Controls which if the sound should play before other sounds when too many sounds are playing at once. This value is compared to the priority value of other sounds, and the sound that has the higher priority will play first. Sounds belonging to the player will get an increased priority value of 80",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Stream",
+      "type": "boolean",
+      "description": "If equals 1, then the sound will be file streamed into the game when called to play. If equals 0, then the entire sound will be loaded into the game before playing",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Is2D",
+      "type": "boolean",
+      "description": "If equals 1, then the sound is considered a 2D sound and will not have 3D spread settings. If equals 0, then the sound is considered a 3D sound and will use the 3D spread settings",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Tracking",
+      "type": "boolean",
+      "description": "If equals 1, then the sound will track a unit and will update its position to follow that unit. If equals 0, then the sound will not move and will be stationary",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Solo",
+      "type": "boolean",
+      "description": "If equals 1, then reduce the volume of other sounds while this sound is playing. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Music Vol",
+      "type": "boolean",
+      "description": "If equals 1, then the sound's volume will be affected by the music volume in the game options menu. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Block 1",
+      "type": "number"
+    },
+    {
+      "name": "Block 2",
+      "type": "number"
+    },
+    {
+      "name": "Block 3",
+      "type": "number"
+    },
+    {
+      "name": "HDOptOut",
+      "type": "boolean",
+      "description": "If equals 1, then the sound will not play in the new graphics mode. If equals 0, then the sound will play in the new graphics mode",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Delay",
+      "type": "number",
+      "description": "Adds a delay to the starting tick of the sound when the sound starts playing. Measured in audio game ticks, where 1 game frame is 40 audio ticks, and the game runs at 25 frames per second.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "4841",
+      "type": "text"
+    }
+  ]
+}

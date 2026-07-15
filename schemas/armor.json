@@ -1,0 +1,692 @@
+{
+  "table": "armor",
+  "file": "global/excel/armor.txt",
+  "description": "Table armor du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 9,
+  "columns": [
+    {
+      "name": "name",
+      "type": "text"
+    },
+    {
+      "name": "version",
+      "type": "number"
+    },
+    {
+      "name": "compactsave",
+      "type": "number"
+    },
+    {
+      "name": "rarity",
+      "type": "number"
+    },
+    {
+      "name": "spawnable",
+      "type": "number"
+    },
+    {
+      "name": "minac",
+      "type": "number",
+      "description": "The minimum amount of Defense that an armor item type can have",
+      "guideType": "[N]"
+    },
+    {
+      "name": "maxac",
+      "type": "number",
+      "description": "The maximum amount of Defense that an armor item type can have",
+      "guideType": "[N]"
+    },
+    {
+      "name": "speed",
+      "type": "number"
+    },
+    {
+      "name": "reqstr",
+      "type": "number"
+    },
+    {
+      "name": "reqdex",
+      "type": "number"
+    },
+    {
+      "name": "block",
+      "type": "number",
+      "description": "Controls the block percent chance that the item provides (out of 100, but caps at 75)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "durability",
+      "type": "number"
+    },
+    {
+      "name": "nodurability",
+      "type": "number"
+    },
+    {
+      "name": "level",
+      "type": "number"
+    },
+    {
+      "name": "ShowLevel",
+      "type": "number"
+    },
+    {
+      "name": "levelreq",
+      "type": "number"
+    },
+    {
+      "name": "cost",
+      "type": "number"
+    },
+    {
+      "name": "gamble cost",
+      "type": "number"
+    },
+    {
+      "name": "code",
+      "type": "text"
+    },
+    {
+      "name": "namestr",
+      "type": "text"
+    },
+    {
+      "name": "magic lvl",
+      "type": "number"
+    },
+    {
+      "name": "auto prefix",
+      "type": "number"
+    },
+    {
+      "name": "alternategfx",
+      "type": "text"
+    },
+    {
+      "name": "normcode",
+      "type": "text"
+    },
+    {
+      "name": "ubercode",
+      "type": "text"
+    },
+    {
+      "name": "ultracode",
+      "type": "text"
+    },
+    {
+      "name": "component",
+      "type": "number"
+    },
+    {
+      "name": "invwidth",
+      "type": "number"
+    },
+    {
+      "name": "invheight",
+      "type": "number"
+    },
+    {
+      "name": "hasinv",
+      "type": "number"
+    },
+    {
+      "name": "gemsockets",
+      "type": "number"
+    },
+    {
+      "name": "gemapplytype",
+      "type": "number"
+    },
+    {
+      "name": "flippyfile",
+      "type": "text"
+    },
+    {
+      "name": "invfile",
+      "type": "text"
+    },
+    {
+      "name": "uniqueinvfile",
+      "type": "text"
+    },
+    {
+      "name": "setinvfile",
+      "type": "text"
+    },
+    {
+      "name": "rArm",
+      "type": "number",
+      "description": "Controls the character's graphics and animations for the Right Arm component when wearing the armor, where the value 0 = Light or \"lit\", 1 = Medium or \"med\", and 2 = Heavy or \"hvy\"",
+      "guideType": "[N]"
+    },
+    {
+      "name": "lArm",
+      "type": "number",
+      "description": "Controls the character's graphics and animations for the Left Arm component when wearing the armor, where the value 0 = Light or \"lit\", 1 = Medium or \"med\", and 2 = Heavy or \"hvy\"",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Torso",
+      "type": "number",
+      "description": "Controls the character's graphics and animations for the Torso component when wearing the armor, where the value 0 = Light or \"lit\", 1 = Medium or \"med\", and 2 = Heavy or \"hvy\"",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Legs",
+      "type": "number",
+      "description": "Controls the character's graphics and animations for the Legs component when wearing the armor, where the value 0 = Light or \"lit\", 1 = Medium or \"med\", and 2 = Heavy or \"hvy\"",
+      "guideType": "[N]"
+    },
+    {
+      "name": "rSPad",
+      "type": "number",
+      "description": "Controls the character's graphics and animations for the Right Shoulder Pad component when wearing the armor, where the value 0 = Light or \"lit\", 1 = Medium or \"med\", and 2 = Heavy or \"hvy\"",
+      "guideType": "[N]"
+    },
+    {
+      "name": "lSPad",
+      "type": "number",
+      "description": "Controls the character's graphics and animations for the Left Shoulder Pad component when wearing the armor, where the value 0 = Light or \"lit\", 1 = Medium or \"med\", and 2 = Heavy or \"hvy\"",
+      "guideType": "[N]"
+    },
+    {
+      "name": "useable",
+      "type": "number"
+    },
+    {
+      "name": "stackable",
+      "type": "text"
+    },
+    {
+      "name": "minstack",
+      "type": "text"
+    },
+    {
+      "name": "maxstack",
+      "type": "text"
+    },
+    {
+      "name": "spawnstack",
+      "type": "text"
+    },
+    {
+      "name": "Transmogrify",
+      "type": "number"
+    },
+    {
+      "name": "TMogType",
+      "type": "text"
+    },
+    {
+      "name": "TMogMin",
+      "type": "text"
+    },
+    {
+      "name": "TMogMax",
+      "type": "text"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "type2",
+      "type": "text"
+    },
+    {
+      "name": "dropsound",
+      "type": "text"
+    },
+    {
+      "name": "dropsfxframe",
+      "type": "number"
+    },
+    {
+      "name": "usesound",
+      "type": "text"
+    },
+    {
+      "name": "unique",
+      "type": "number"
+    },
+    {
+      "name": "transparent",
+      "type": "number"
+    },
+    {
+      "name": "transtbl",
+      "type": "number"
+    },
+    {
+      "name": "*quivered",
+      "type": "number",
+      "comment": true
+    },
+    {
+      "name": "lightradius",
+      "type": "number"
+    },
+    {
+      "name": "belt",
+      "type": "number"
+    },
+    {
+      "name": "quest",
+      "type": "text"
+    },
+    {
+      "name": "questdiffcheck",
+      "type": "text"
+    },
+    {
+      "name": "missiletype",
+      "type": "number"
+    },
+    {
+      "name": "durwarning",
+      "type": "number"
+    },
+    {
+      "name": "qntwarning",
+      "type": "number"
+    },
+    {
+      "name": "mindam",
+      "type": "number"
+    },
+    {
+      "name": "maxdam",
+      "type": "number"
+    },
+    {
+      "name": "StrBonus",
+      "type": "number"
+    },
+    {
+      "name": "DexBonus",
+      "type": "text"
+    },
+    {
+      "name": "gemoffset",
+      "type": "number"
+    },
+    {
+      "name": "bitfield1",
+      "type": "number"
+    },
+    {
+      "name": "CharsiMin",
+      "type": "number"
+    },
+    {
+      "name": "CharsiMax",
+      "type": "number"
+    },
+    {
+      "name": "CharsiMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "CharsiMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "CharsiMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "GheedMin",
+      "type": "number"
+    },
+    {
+      "name": "GheedMax",
+      "type": "number"
+    },
+    {
+      "name": "GheedMagicMin",
+      "type": "text"
+    },
+    {
+      "name": "GheedMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "GheedMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "AkaraMin",
+      "type": "text"
+    },
+    {
+      "name": "AkaraMax",
+      "type": "text"
+    },
+    {
+      "name": "AkaraMagicMin",
+      "type": "text"
+    },
+    {
+      "name": "AkaraMagicMax",
+      "type": "text"
+    },
+    {
+      "name": "AkaraMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "FaraMin",
+      "type": "number"
+    },
+    {
+      "name": "FaraMax",
+      "type": "number"
+    },
+    {
+      "name": "FaraMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "FaraMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "FaraMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "LysanderMin",
+      "type": "text"
+    },
+    {
+      "name": "LysanderMax",
+      "type": "text"
+    },
+    {
+      "name": "LysanderMagicMin",
+      "type": "text"
+    },
+    {
+      "name": "LysanderMagicMax",
+      "type": "text"
+    },
+    {
+      "name": "LysanderMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "DrognanMin",
+      "type": "number"
+    },
+    {
+      "name": "DrognanMax",
+      "type": "number"
+    },
+    {
+      "name": "DrognanMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "DrognanMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "DrognanMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "HratliMin",
+      "type": "number"
+    },
+    {
+      "name": "HratliMax",
+      "type": "number"
+    },
+    {
+      "name": "HratliMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "HratliMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "HratliMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "AlkorMin",
+      "type": "text"
+    },
+    {
+      "name": "AlkorMax",
+      "type": "text"
+    },
+    {
+      "name": "AlkorMagicMin",
+      "type": "text"
+    },
+    {
+      "name": "AlkorMagicMax",
+      "type": "text"
+    },
+    {
+      "name": "AlkorMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "OrmusMin",
+      "type": "text"
+    },
+    {
+      "name": "OrmusMax",
+      "type": "number"
+    },
+    {
+      "name": "OrmusMagicMin",
+      "type": "text"
+    },
+    {
+      "name": "OrmusMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "OrmusMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "ElzixMin",
+      "type": "number"
+    },
+    {
+      "name": "ElzixMax",
+      "type": "number"
+    },
+    {
+      "name": "ElzixMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "ElzixMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "ElzixMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "AshearaMin",
+      "type": "number"
+    },
+    {
+      "name": "AshearaMax",
+      "type": "number"
+    },
+    {
+      "name": "AshearaMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "AshearaMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "AshearaMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "CainMin",
+      "type": "number"
+    },
+    {
+      "name": "CainMax",
+      "type": "number"
+    },
+    {
+      "name": "CainMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "CainMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "CainMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "HalbuMin",
+      "type": "number"
+    },
+    {
+      "name": "HalbuMax",
+      "type": "number"
+    },
+    {
+      "name": "HalbuMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "HalbuMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "HalbuMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "JamellaMin",
+      "type": "number"
+    },
+    {
+      "name": "JamellaMax",
+      "type": "number"
+    },
+    {
+      "name": "JamellaMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "JamellaMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "JamellaMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "LarzukMin",
+      "type": "number"
+    },
+    {
+      "name": "LarzukMax",
+      "type": "number"
+    },
+    {
+      "name": "LarzukMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "LarzukMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "LarzukMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "MalahMin",
+      "type": "text"
+    },
+    {
+      "name": "MalahMax",
+      "type": "text"
+    },
+    {
+      "name": "MalahMagicMin",
+      "type": "text"
+    },
+    {
+      "name": "MalahMagicMax",
+      "type": "text"
+    },
+    {
+      "name": "MalahMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "AnyaMin",
+      "type": "number"
+    },
+    {
+      "name": "AnyaMax",
+      "type": "number"
+    },
+    {
+      "name": "AnyaMagicMin",
+      "type": "number"
+    },
+    {
+      "name": "AnyaMagicMax",
+      "type": "number"
+    },
+    {
+      "name": "AnyaMagicLvl",
+      "type": "number"
+    },
+    {
+      "name": "Transform",
+      "type": "number"
+    },
+    {
+      "name": "InvTrans",
+      "type": "number"
+    },
+    {
+      "name": "SkipName",
+      "type": "number"
+    },
+    {
+      "name": "NightmareUpgrade",
+      "type": "text"
+    },
+    {
+      "name": "HellUpgrade",
+      "type": "text"
+    },
+    {
+      "name": "Nameable",
+      "type": "number"
+    },
+    {
+      "name": "PermStoreItem",
+      "type": "number"
+    },
+    {
+      "name": "diablocloneweight",
+      "type": "text"
+    }
+  ]
+}

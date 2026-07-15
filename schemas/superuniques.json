@@ -1,0 +1,122 @@
+{
+  "table": "superuniques",
+  "file": "global/excel/superuniques.txt",
+  "description": "Table superuniques du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 10,
+  "columns": [
+    {
+      "name": "Superunique",
+      "type": "text",
+      "description": "Defines the unique name ID for the Super Unique monster",
+      "guideType": "[O]"
+    },
+    {
+      "name": "Name",
+      "type": "text",
+      "description": "Uses a string for the Super Unique monster's name",
+      "guideType": "[O]"
+    },
+    {
+      "name": "Class",
+      "type": "text",
+      "description": "Defines the baseline monster type for the Super Unique monster, which this monster will use for default values. This uses the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "hcIdx",
+      "type": "number",
+      "description": "Defines the unique numeric ID for the Super Unique monster. The existing IDs are hardcoded for specific scripts with the specified Super Unique monsters",
+      "guideType": "[N]"
+    },
+    {
+      "name": "MonSound",
+      "type": "text",
+      "description": "Defines what set of sounds to use for the Super Unique monster. Uses the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "Mod1",
+      "type": "number"
+    },
+    {
+      "name": "Mod2",
+      "type": "number"
+    },
+    {
+      "name": "Mod3",
+      "type": "number"
+    },
+    {
+      "name": "MinGrp",
+      "type": "number",
+      "description": "Controls the min amount of Minion monsters that will spawn with the Super Unique monster",
+      "guideType": "[N]"
+    },
+    {
+      "name": "MaxGrp",
+      "type": "number",
+      "description": "Controls the max amount of Minion monsters that will spawn with the Super Unique monster. This value must be equal to or higher than",
+      "guideType": "[N]"
+    },
+    {
+      "name": "AutoPos",
+      "type": "boolean",
+      "description": "If equals 1, then the Super Unique monster will randomly spawn within a radius of its designated position. If equals 0, then the Super Unique monster will spawn at exact coordinates of its designated position",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Stacks",
+      "type": "boolean",
+      "description": "If equals 1, then this Super Unique monster can spawn more than once in the same game. If equals 0, then this Super Unique monster can only spawn once in the same game",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Replaceable",
+      "type": "boolean",
+      "description": "If equals 1, then the room where the Super Unique monster spawns in can be replaced during the creation of a level preset. If equals 0, then the room cannot be replaced and will remain static",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Utrans",
+      "type": "number"
+    },
+    {
+      "name": "Utrans(N)",
+      "type": "number"
+    },
+    {
+      "name": "Utrans(H)",
+      "type": "number"
+    },
+    {
+      "name": "TC",
+      "type": "text"
+    },
+    {
+      "name": "TC Desecrated",
+      "type": "text"
+    },
+    {
+      "name": "TC(N)",
+      "type": "text"
+    },
+    {
+      "name": "TC(N) Desecrated",
+      "type": "text"
+    },
+    {
+      "name": "TC(H)",
+      "type": "text"
+    },
+    {
+      "name": "TC(H) Desecrated",
+      "type": "text"
+    },
+    {
+      "name": "*eol",
+      "type": "number",
+      "comment": true
+    }
+  ]
+}

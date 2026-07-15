@@ -1,0 +1,452 @@
+{
+  "table": "cubemain",
+  "file": "global/excel/cubemain.txt",
+  "description": "Table cubemain du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 9,
+  "columns": [
+    {
+      "name": "description",
+      "type": "text",
+      "description": "This is a reference field to define the cube recipe",
+      "guideType": "[O]"
+    },
+    {
+      "name": "enabled",
+      "type": "boolean",
+      "description": "If equals 1, then the recipe can be used in-game. If equals 0, then the recipe cannot be used in-game",
+      "guideType": "[B]"
+    },
+    {
+      "name": "firstLadderSeason",
+      "type": "number"
+    },
+    {
+      "name": "lastLadderSeason",
+      "type": "number"
+    },
+    {
+      "name": "min diff",
+      "type": "number",
+      "description": "The minimum game difficulty to use the recipe (0 = All Game Difficulties | 1 = Nightmare and Hell Difficulty only | 2 = Hell Difficulty only)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "version",
+      "type": "number",
+      "description": "Defines which game version to use this recipe (0 = Classic mode | 100 = Expansion mode)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "op",
+      "type": "number",
+      "description": "Uses a function as an additional input requirement for the recipe. (See",
+      "guideType": "[N]"
+    },
+    {
+      "name": "param",
+      "type": "number",
+      "description": "Integer value used as a possible parameter for the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "description": "Integer value used as a possible parameter for the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "class",
+      "type": "text",
+      "description": "Defines the recipe to be only usable by a defined class. Referenced from the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "numinputs",
+      "type": "number",
+      "description": "Controls the number of items that need to be inside the cube for the recipe",
+      "guideType": "[N]"
+    },
+    {
+      "name": "input 1",
+      "type": "text"
+    },
+    {
+      "name": "input 2",
+      "type": "text"
+    },
+    {
+      "name": "input 3",
+      "type": "text"
+    },
+    {
+      "name": "input 4",
+      "type": "text"
+    },
+    {
+      "name": "input 5",
+      "type": "text"
+    },
+    {
+      "name": "input 6",
+      "type": "text"
+    },
+    {
+      "name": "input 7",
+      "type": "text"
+    },
+    {
+      "name": "output",
+      "type": "text"
+    },
+    {
+      "name": "lvl",
+      "type": "number"
+    },
+    {
+      "name": "plvl",
+      "type": "number"
+    },
+    {
+      "name": "ilvl",
+      "type": "text"
+    },
+    {
+      "name": "mod 1",
+      "type": "text"
+    },
+    {
+      "name": "mod 1 chance",
+      "type": "number"
+    },
+    {
+      "name": "mod 1 param",
+      "type": "number"
+    },
+    {
+      "name": "mod 1 min",
+      "type": "number"
+    },
+    {
+      "name": "mod 1 max",
+      "type": "text"
+    },
+    {
+      "name": "mod 2",
+      "type": "text"
+    },
+    {
+      "name": "mod 2 chance",
+      "type": "number"
+    },
+    {
+      "name": "mod 2 param",
+      "type": "number"
+    },
+    {
+      "name": "mod 2 min",
+      "type": "number"
+    },
+    {
+      "name": "mod 2 max",
+      "type": "number"
+    },
+    {
+      "name": "mod 3",
+      "type": "text"
+    },
+    {
+      "name": "mod 3 chance",
+      "type": "number"
+    },
+    {
+      "name": "mod 3 param",
+      "type": "number"
+    },
+    {
+      "name": "mod 3 min",
+      "type": "number"
+    },
+    {
+      "name": "mod 3 max",
+      "type": "number"
+    },
+    {
+      "name": "mod 4",
+      "type": "text"
+    },
+    {
+      "name": "mod 4 chance",
+      "type": "number"
+    },
+    {
+      "name": "mod 4 param",
+      "type": "number"
+    },
+    {
+      "name": "mod 4 min",
+      "type": "number"
+    },
+    {
+      "name": "mod 4 max",
+      "type": "number"
+    },
+    {
+      "name": "mod 5",
+      "type": "text"
+    },
+    {
+      "name": "mod 5 chance",
+      "type": "number"
+    },
+    {
+      "name": "mod 5 param",
+      "type": "number"
+    },
+    {
+      "name": "mod 5 min",
+      "type": "number"
+    },
+    {
+      "name": "mod 5 max",
+      "type": "text"
+    },
+    {
+      "name": "output b",
+      "type": "text"
+    },
+    {
+      "name": "b lvl",
+      "type": "number"
+    },
+    {
+      "name": "b plvl",
+      "type": "text"
+    },
+    {
+      "name": "b ilvl",
+      "type": "number"
+    },
+    {
+      "name": "b mod 1",
+      "type": "text"
+    },
+    {
+      "name": "b mod 1 chance",
+      "type": "text"
+    },
+    {
+      "name": "b mod 1 param",
+      "type": "text"
+    },
+    {
+      "name": "b mod 1 min",
+      "type": "text"
+    },
+    {
+      "name": "b mod 1 max",
+      "type": "text"
+    },
+    {
+      "name": "b mod 2",
+      "type": "text"
+    },
+    {
+      "name": "b mod 2 chance",
+      "type": "text"
+    },
+    {
+      "name": "b mod 2 param",
+      "type": "text"
+    },
+    {
+      "name": "b mod 2 min",
+      "type": "text"
+    },
+    {
+      "name": "b mod 2 max",
+      "type": "text"
+    },
+    {
+      "name": "b mod 3",
+      "type": "text"
+    },
+    {
+      "name": "b mod 3 chance",
+      "type": "text"
+    },
+    {
+      "name": "b mod 3 param",
+      "type": "text"
+    },
+    {
+      "name": "b mod 3 min",
+      "type": "text"
+    },
+    {
+      "name": "b mod 3 max",
+      "type": "text"
+    },
+    {
+      "name": "b mod 4",
+      "type": "text"
+    },
+    {
+      "name": "b mod 4 chance",
+      "type": "text"
+    },
+    {
+      "name": "b mod 4 param",
+      "type": "text"
+    },
+    {
+      "name": "b mod 4 min",
+      "type": "text"
+    },
+    {
+      "name": "b mod 4 max",
+      "type": "text"
+    },
+    {
+      "name": "b mod 5",
+      "type": "text"
+    },
+    {
+      "name": "b mod 5 chance",
+      "type": "text"
+    },
+    {
+      "name": "b mod 5 param",
+      "type": "text"
+    },
+    {
+      "name": "b mod 5 min",
+      "type": "text"
+    },
+    {
+      "name": "b mod 5 max",
+      "type": "text"
+    },
+    {
+      "name": "output c",
+      "type": "text"
+    },
+    {
+      "name": "c lvl",
+      "type": "number"
+    },
+    {
+      "name": "c plvl",
+      "type": "text"
+    },
+    {
+      "name": "c ilvl",
+      "type": "number"
+    },
+    {
+      "name": "c mod 1",
+      "type": "text"
+    },
+    {
+      "name": "c mod 1 chance",
+      "type": "text"
+    },
+    {
+      "name": "c mod 1 param",
+      "type": "text"
+    },
+    {
+      "name": "c mod 1 min",
+      "type": "text"
+    },
+    {
+      "name": "c mod 1 max",
+      "type": "text"
+    },
+    {
+      "name": "c mod 2",
+      "type": "text"
+    },
+    {
+      "name": "c mod 2 chance",
+      "type": "text"
+    },
+    {
+      "name": "c mod 2 param",
+      "type": "text"
+    },
+    {
+      "name": "c mod 2 min",
+      "type": "text"
+    },
+    {
+      "name": "c mod 2 max",
+      "type": "text"
+    },
+    {
+      "name": "c mod 3",
+      "type": "text"
+    },
+    {
+      "name": "c mod 3 chance",
+      "type": "text"
+    },
+    {
+      "name": "c mod 3 param",
+      "type": "text"
+    },
+    {
+      "name": "c mod 3 min",
+      "type": "text"
+    },
+    {
+      "name": "c mod 3 max",
+      "type": "text"
+    },
+    {
+      "name": "c mod 4",
+      "type": "text"
+    },
+    {
+      "name": "c mod 4 chance",
+      "type": "text"
+    },
+    {
+      "name": "c mod 4 param",
+      "type": "text"
+    },
+    {
+      "name": "c mod 4 min",
+      "type": "text"
+    },
+    {
+      "name": "c mod 4 max",
+      "type": "text"
+    },
+    {
+      "name": "c mod 5",
+      "type": "text"
+    },
+    {
+      "name": "c mod 5 chance",
+      "type": "text"
+    },
+    {
+      "name": "c mod 5 param",
+      "type": "text"
+    },
+    {
+      "name": "c mod 5 min",
+      "type": "text"
+    },
+    {
+      "name": "c mod 5 max",
+      "type": "number"
+    },
+    {
+      "name": "*eol",
+      "type": "number",
+      "comment": true
+    }
+  ]
+}

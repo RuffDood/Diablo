@@ -1,0 +1,406 @@
+{
+  "table": "charstats",
+  "file": "global/excel/charstats.txt",
+  "description": "Table charstats du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 28,
+  "columns": [
+    {
+      "name": "class",
+      "type": "text",
+      "description": "The name of the character class (this cannot be changed)",
+      "guideType": "[O]"
+    },
+    {
+      "name": "str",
+      "type": "number",
+      "description": "Starting amount of the Strength attribute",
+      "guideType": "[N]"
+    },
+    {
+      "name": "dex",
+      "type": "number",
+      "description": "Starting amount of the Dexterity attribute",
+      "guideType": "[N]"
+    },
+    {
+      "name": "int",
+      "type": "number",
+      "description": "Starting amount of the Energy attribute",
+      "guideType": "[N]"
+    },
+    {
+      "name": "vit",
+      "type": "number",
+      "description": "Starting amount of the Vitality attribute",
+      "guideType": "[N]"
+    },
+    {
+      "name": "stamina",
+      "type": "number",
+      "description": "Starting amount of Stamina",
+      "guideType": "[N]"
+    },
+    {
+      "name": "hpadd",
+      "type": "number",
+      "description": "Bonus starting Life value (This value gets added with the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ManaRegen",
+      "type": "number",
+      "description": "Number of seconds to regain max Mana. (If this equals 0 then it will default to 300 seconds)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ToHitFactor",
+      "type": "number",
+      "description": "Starting amount of Attack Rating",
+      "guideType": "[N]"
+    },
+    {
+      "name": "WalkVelocity",
+      "type": "number",
+      "description": "Base Walk movement speed",
+      "guideType": "[N]"
+    },
+    {
+      "name": "RunVelocity",
+      "type": "number",
+      "description": "Base Run movement speed",
+      "guideType": "[N]"
+    },
+    {
+      "name": "RunDrain",
+      "type": "number",
+      "description": "Rate at which Stamina is lost while running",
+      "guideType": "[N]"
+    },
+    {
+      "name": "*Comment",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "LifePerLevel",
+      "type": "number",
+      "description": "Amount of Life added for each level gained (Calculated in fourths and is divided by 256)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "StaminaPerLevel",
+      "type": "number",
+      "description": "Amount of Stamina added for each level gained (Calculated in fourths and is divided by 256)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ManaPerLevel",
+      "type": "number"
+    },
+    {
+      "name": "LifePerVitality",
+      "type": "number",
+      "description": "Amount of Life added for each point in Vitality (Calculated in fourths and is divided by 256)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "StaminaPerVitality",
+      "type": "number",
+      "description": "Amount of Stamina added for each point in Vitality (Calculated in fourths and is divided by 256)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ManaPerMagic",
+      "type": "number",
+      "description": "Amount of Mana added for each point in Energy (Calculated in fourths and is divided by 256)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "StatPerLevel",
+      "type": "number",
+      "description": "Amount of Attribute stat points earned for each level gained",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SkillsPerLevel",
+      "type": "number",
+      "description": "Amount of Skill points earned for each level gained",
+      "guideType": "[N]"
+    },
+    {
+      "name": "LightRadius",
+      "type": "number",
+      "description": "Baseline radius size of the character's Light Radius",
+      "guideType": "[N]"
+    },
+    {
+      "name": "BlockFactor",
+      "type": "number",
+      "description": "Baseline percent chance for Blocking",
+      "guideType": "[N]"
+    },
+    {
+      "name": "MinimumCastingDelay",
+      "type": "number",
+      "description": "Global delay on all Skills after using a Skill with a Casting Delay (Calculated in Frames, where 25 Frames = 1 Second)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "StartSkill",
+      "type": "text",
+      "description": "Controls what skill will be added by default to the character's starting weapon and will be slotted in the Right Skill selection (Uses the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "Skill 1",
+      "type": "text"
+    },
+    {
+      "name": "Skill 2",
+      "type": "text"
+    },
+    {
+      "name": "Skill 3",
+      "type": "text"
+    },
+    {
+      "name": "Skill 4",
+      "type": "text"
+    },
+    {
+      "name": "Skill 5",
+      "type": "text"
+    },
+    {
+      "name": "Skill 6",
+      "type": "text"
+    },
+    {
+      "name": "Skill 7",
+      "type": "text"
+    },
+    {
+      "name": "Skill 8",
+      "type": "text"
+    },
+    {
+      "name": "Skill 9",
+      "type": "text"
+    },
+    {
+      "name": "Skill 10",
+      "type": "text"
+    },
+    {
+      "name": "StrAllSkills",
+      "type": "text",
+      "description": "String key for displaying the item modifier bonus to all skills for the class (Ex: \"+1 to Barbarian Skill Levels\")",
+      "guideType": "[O]"
+    },
+    {
+      "name": "StrSkillTab1",
+      "type": "text"
+    },
+    {
+      "name": "StrSkillTab2",
+      "type": "text"
+    },
+    {
+      "name": "StrSkillTab3",
+      "type": "text"
+    },
+    {
+      "name": "StrClassOnly",
+      "type": "text",
+      "description": "String key for displaying on item modifier exclusive to the class or for class specific items (Ex: \"Barbarian only\")",
+      "guideType": "[O]"
+    },
+    {
+      "name": "HealthPotionPercent",
+      "type": "number",
+      "description": "This scales the amount of Life that a Healing potion will restore based on the class",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ManaPotionPercent",
+      "type": "number",
+      "description": "This scales the amount of Mana that a Mana potion will restore based on the class",
+      "guideType": "[N]"
+    },
+    {
+      "name": "baseWClass",
+      "type": "text",
+      "description": "Base weapon class that the character will use by default when no weapon is equipped. Referenced by the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "item1",
+      "type": "text"
+    },
+    {
+      "name": "item1loc",
+      "type": "text"
+    },
+    {
+      "name": "item1count",
+      "type": "number"
+    },
+    {
+      "name": "item1quality",
+      "type": "number"
+    },
+    {
+      "name": "item2",
+      "type": "text"
+    },
+    {
+      "name": "item2loc",
+      "type": "text"
+    },
+    {
+      "name": "item2count",
+      "type": "number"
+    },
+    {
+      "name": "item2quality",
+      "type": "number"
+    },
+    {
+      "name": "item3",
+      "type": "text"
+    },
+    {
+      "name": "item3loc",
+      "type": "text"
+    },
+    {
+      "name": "item3count",
+      "type": "number"
+    },
+    {
+      "name": "item3quality",
+      "type": "number"
+    },
+    {
+      "name": "item4",
+      "type": "text"
+    },
+    {
+      "name": "item4loc",
+      "type": "text"
+    },
+    {
+      "name": "item4count",
+      "type": "number"
+    },
+    {
+      "name": "item4quality",
+      "type": "number"
+    },
+    {
+      "name": "item5",
+      "type": "text"
+    },
+    {
+      "name": "item5loc",
+      "type": "text"
+    },
+    {
+      "name": "item5count",
+      "type": "number"
+    },
+    {
+      "name": "item5quality",
+      "type": "number"
+    },
+    {
+      "name": "item6",
+      "type": "number"
+    },
+    {
+      "name": "item6loc",
+      "type": "text"
+    },
+    {
+      "name": "item6count",
+      "type": "number"
+    },
+    {
+      "name": "item6quality",
+      "type": "number"
+    },
+    {
+      "name": "item7",
+      "type": "number"
+    },
+    {
+      "name": "item7loc",
+      "type": "text"
+    },
+    {
+      "name": "item7count",
+      "type": "number"
+    },
+    {
+      "name": "item7quality",
+      "type": "number"
+    },
+    {
+      "name": "item8",
+      "type": "number"
+    },
+    {
+      "name": "item8loc",
+      "type": "text"
+    },
+    {
+      "name": "item8count",
+      "type": "number"
+    },
+    {
+      "name": "item8quality",
+      "type": "number"
+    },
+    {
+      "name": "item9",
+      "type": "number"
+    },
+    {
+      "name": "item9loc",
+      "type": "text"
+    },
+    {
+      "name": "item9count",
+      "type": "number"
+    },
+    {
+      "name": "item9quality",
+      "type": "number"
+    },
+    {
+      "name": "item10",
+      "type": "number"
+    },
+    {
+      "name": "item10loc",
+      "type": "text"
+    },
+    {
+      "name": "item10count",
+      "type": "number"
+    },
+    {
+      "name": "item10quality",
+      "type": "number"
+    },
+    {
+      "name": "TwoHandedOffHandRestrictItemType",
+      "type": "text"
+    },
+    {
+      "name": "TwoHandedDamageAsOneHanded",
+      "type": "text"
+    }
+  ]
+}

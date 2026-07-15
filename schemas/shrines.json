@@ -1,0 +1,79 @@
+{
+  "table": "shrines",
+  "file": "global/excel/shrines.txt",
+  "description": "Table shrines du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 8,
+  "columns": [
+    {
+      "name": "Name",
+      "type": "text",
+      "description": "This is a reference field to define the Shrine index",
+      "guideType": "[O]"
+    },
+    {
+      "name": "*Shrine Type",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "*Effect",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Code",
+      "type": "number",
+      "description": "Code function used to define the Shrine's function. Uses ID values listed below to define what function to use.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Arg0",
+      "type": "number"
+    },
+    {
+      "name": "Arg1",
+      "type": "number"
+    },
+    {
+      "name": "Duration in frames",
+      "type": "number",
+      "description": "Duration of the effects of the Shrine (Calculated in Frames, where 25 Frames = 1 Second)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "reset time in minutes",
+      "type": "number",
+      "description": "Controls the amount of time before the Shrine is available to use again. Each value of 1 equals 1200 Frames or 48 seconds. A value of 0 means that the Shrine is a one-time use",
+      "guideType": "[N]"
+    },
+    {
+      "name": "rarity",
+      "type": "number"
+    },
+    {
+      "name": "StringName",
+      "type": "text",
+      "description": "Uses a string to display as the Shrine's name",
+      "guideType": "[O]"
+    },
+    {
+      "name": "StringPhrase",
+      "type": "text",
+      "description": "Uses a string to display as the Shrine's activation phrase when it is used",
+      "guideType": "[O]"
+    },
+    {
+      "name": "effectclass",
+      "type": "number",
+      "description": "Used to define the Shrine's archetype which is involved with calculating region stats",
+      "guideType": "[N]"
+    },
+    {
+      "name": "LevelMin",
+      "type": "number",
+      "description": "Define the earliest area level where the Shrine can spawn. Area levels are determined from Levels.txt",
+      "guideType": "[N]"
+    }
+  ]
+}

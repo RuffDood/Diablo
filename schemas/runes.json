@@ -1,0 +1,217 @@
+{
+  "table": "runes",
+  "file": "global/excel/runes.txt",
+  "description": "Table runes du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 2,
+  "columns": [
+    {
+      "name": "Name",
+      "type": "text",
+      "description": "Controls the string key that is used to the display the name of the item when the Rune Word is complete",
+      "guideType": "[O]"
+    },
+    {
+      "name": "*Rune Name",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "complete",
+      "type": "boolean",
+      "description": "If equals 1, then the Rune Word can be crafted in-game. If equals 0, then the Rune Word cannot be crafted in-game",
+      "guideType": "[B]"
+    },
+    {
+      "name": "ladder",
+      "type": "number"
+    },
+    {
+      "name": "*Patch Release",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "itype1",
+      "type": "text"
+    },
+    {
+      "name": "itype2",
+      "type": "text"
+    },
+    {
+      "name": "itype3",
+      "type": "text"
+    },
+    {
+      "name": "itype4",
+      "type": "text"
+    },
+    {
+      "name": "itype5",
+      "type": "text"
+    },
+    {
+      "name": "itype6",
+      "type": "text"
+    },
+    {
+      "name": "etype1",
+      "type": "text"
+    },
+    {
+      "name": "etype2",
+      "type": "text"
+    },
+    {
+      "name": "etype3",
+      "type": "text"
+    },
+    {
+      "name": "*RunesUsed",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Rune1",
+      "type": "text"
+    },
+    {
+      "name": "Rune2",
+      "type": "text"
+    },
+    {
+      "name": "Rune3",
+      "type": "text"
+    },
+    {
+      "name": "Rune4",
+      "type": "text"
+    },
+    {
+      "name": "Rune5",
+      "type": "text"
+    },
+    {
+      "name": "Rune6",
+      "type": "text"
+    },
+    {
+      "name": "T1Code1",
+      "type": "text"
+    },
+    {
+      "name": "T1Param1",
+      "type": "text"
+    },
+    {
+      "name": "T1Min1",
+      "type": "number"
+    },
+    {
+      "name": "T1Max1",
+      "type": "number"
+    },
+    {
+      "name": "T1Code2",
+      "type": "text"
+    },
+    {
+      "name": "T1Param2",
+      "type": "text"
+    },
+    {
+      "name": "T1Min2",
+      "type": "number"
+    },
+    {
+      "name": "T1Max2",
+      "type": "number"
+    },
+    {
+      "name": "T1Code3",
+      "type": "text"
+    },
+    {
+      "name": "T1Param3",
+      "type": "text"
+    },
+    {
+      "name": "T1Min3",
+      "type": "number"
+    },
+    {
+      "name": "T1Max3",
+      "type": "number"
+    },
+    {
+      "name": "T1Code4",
+      "type": "text"
+    },
+    {
+      "name": "T1Param4",
+      "type": "text"
+    },
+    {
+      "name": "T1Min4",
+      "type": "number"
+    },
+    {
+      "name": "T1Max4",
+      "type": "number"
+    },
+    {
+      "name": "T1Code5",
+      "type": "text"
+    },
+    {
+      "name": "T1Param5",
+      "type": "text"
+    },
+    {
+      "name": "T1Min5",
+      "type": "number"
+    },
+    {
+      "name": "T1Max5",
+      "type": "number"
+    },
+    {
+      "name": "T1Code6",
+      "type": "text"
+    },
+    {
+      "name": "T1Param6",
+      "type": "text"
+    },
+    {
+      "name": "T1Min6",
+      "type": "number"
+    },
+    {
+      "name": "T1Max6",
+      "type": "number"
+    },
+    {
+      "name": "T1Code7",
+      "type": "text"
+    },
+    {
+      "name": "T1Param7",
+      "type": "text"
+    },
+    {
+      "name": "T1Min7",
+      "type": "number"
+    },
+    {
+      "name": "T1Max7",
+      "type": "number"
+    },
+    {
+      "name": "*eol",
+      "type": "number",
+      "comment": true
+    }
+  ]
+}

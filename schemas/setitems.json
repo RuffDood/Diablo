@@ -1,0 +1,450 @@
+{
+  "table": "setitems",
+  "file": "global/excel/setitems.txt",
+  "description": "Table setitems du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 17,
+  "columns": [
+    {
+      "name": "index",
+      "type": "text",
+      "description": "Links to a string key for displaying the Set item name",
+      "guideType": "[O]"
+    },
+    {
+      "name": "*ID",
+      "type": "number",
+      "comment": true
+    },
+    {
+      "name": "set",
+      "type": "text",
+      "description": "Defines the Set to link to this Set Item (must match the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "disabled",
+      "type": "number"
+    },
+    {
+      "name": "spawnable",
+      "type": "number"
+    },
+    {
+      "name": "DropConditionCalc",
+      "type": "text"
+    },
+    {
+      "name": "firstLadderSeason",
+      "type": "text"
+    },
+    {
+      "name": "lastLadderSeason",
+      "type": "text"
+    },
+    {
+      "name": "item",
+      "type": "text",
+      "description": "Defines the baseline item code to use for this Set item (must match the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "*ItemName",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "rarity",
+      "type": "number",
+      "description": "Modifies the chances that this Unique item will spawn compared to the other Set items. This value acts as a numerator and a denominator. Each \"rarity\" value gets summed together to give a total denominator, used for the random roll for the item. For example, if there are 3 possible Set items, and their \"rarity\" values are 3, 5, 7, then their chances to be chosen are 3/15, 5/15, and 7/15 respectively. (The minimum \"rarity\" value equals 1)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "lvl",
+      "type": "number",
+      "description": "The item level for the item, which controls what object or monster needs to be in order to drop this item",
+      "guideType": "[N]"
+    },
+    {
+      "name": "lvl req",
+      "type": "number",
+      "description": "The minimum character level required to equip the item",
+      "guideType": "[N]"
+    },
+    {
+      "name": "chrtransform",
+      "type": "text",
+      "description": "Controls the color change of the item when equipped on a character or dropped on the ground. If empty, then the item will have the default item color. Referenced from the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "invtransform",
+      "type": "text",
+      "description": "Controls the color change of the item in the inventory UI. If empty, then the item will have the default item color. Referenced from the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "invfile",
+      "type": "text",
+      "description": "An override for the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "flippyfile",
+      "type": "text",
+      "description": "An override for the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "dropsound",
+      "type": "text",
+      "description": "An override for the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "dropsfxframe",
+      "type": "number",
+      "description": "An override for the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "usesound",
+      "type": "text",
+      "description": "An override for the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "cost mult",
+      "type": "number",
+      "description": "Multiplicative modifier for the Set item's buy, sell, and repair costs",
+      "guideType": "[N]"
+    },
+    {
+      "name": "cost add",
+      "type": "number",
+      "description": "Flat integer modification to the Set item's buy, sell, and repair costs. This is added after the \"cost mult\" has modified the costs",
+      "guideType": "[N]"
+    },
+    {
+      "name": "add func",
+      "type": "number",
+      "description": "Controls how the additional Set item properties (aprop#a & aprob#b) will function on the Set item based on other related set items are equipped",
+      "guideType": "[N]"
+    },
+    {
+      "name": "prop1",
+      "type": "text"
+    },
+    {
+      "name": "par1",
+      "type": "number"
+    },
+    {
+      "name": "min1",
+      "type": "number"
+    },
+    {
+      "name": "max1",
+      "type": "number"
+    },
+    {
+      "name": "prop2",
+      "type": "text"
+    },
+    {
+      "name": "par2",
+      "type": "text"
+    },
+    {
+      "name": "min2",
+      "type": "number"
+    },
+    {
+      "name": "max2",
+      "type": "number"
+    },
+    {
+      "name": "prop3",
+      "type": "text"
+    },
+    {
+      "name": "par3",
+      "type": "text"
+    },
+    {
+      "name": "min3",
+      "type": "number"
+    },
+    {
+      "name": "max3",
+      "type": "number"
+    },
+    {
+      "name": "prop4",
+      "type": "text"
+    },
+    {
+      "name": "par4",
+      "type": "text"
+    },
+    {
+      "name": "min4",
+      "type": "number"
+    },
+    {
+      "name": "max4",
+      "type": "number"
+    },
+    {
+      "name": "prop5",
+      "type": "text"
+    },
+    {
+      "name": "par5",
+      "type": "text"
+    },
+    {
+      "name": "min5",
+      "type": "number"
+    },
+    {
+      "name": "max5",
+      "type": "number"
+    },
+    {
+      "name": "prop6",
+      "type": "text"
+    },
+    {
+      "name": "par6",
+      "type": "text"
+    },
+    {
+      "name": "min6",
+      "type": "number"
+    },
+    {
+      "name": "max6",
+      "type": "number"
+    },
+    {
+      "name": "prop7",
+      "type": "text"
+    },
+    {
+      "name": "par7",
+      "type": "text"
+    },
+    {
+      "name": "min7",
+      "type": "number"
+    },
+    {
+      "name": "max7",
+      "type": "number"
+    },
+    {
+      "name": "prop8",
+      "type": "text"
+    },
+    {
+      "name": "par8",
+      "type": "text"
+    },
+    {
+      "name": "min8",
+      "type": "number"
+    },
+    {
+      "name": "max8",
+      "type": "number"
+    },
+    {
+      "name": "prop9",
+      "type": "text"
+    },
+    {
+      "name": "par9",
+      "type": "text"
+    },
+    {
+      "name": "min9",
+      "type": "number"
+    },
+    {
+      "name": "max9",
+      "type": "number"
+    },
+    {
+      "name": "aprop1a",
+      "type": "text"
+    },
+    {
+      "name": "apar1a",
+      "type": "text"
+    },
+    {
+      "name": "amin1a",
+      "type": "number"
+    },
+    {
+      "name": "amax1a",
+      "type": "number"
+    },
+    {
+      "name": "aprop1b",
+      "type": "text"
+    },
+    {
+      "name": "apar1b",
+      "type": "number"
+    },
+    {
+      "name": "amin1b",
+      "type": "number"
+    },
+    {
+      "name": "amax1b",
+      "type": "number"
+    },
+    {
+      "name": "aprop2a",
+      "type": "text"
+    },
+    {
+      "name": "apar2a",
+      "type": "text"
+    },
+    {
+      "name": "amin2a",
+      "type": "number"
+    },
+    {
+      "name": "amax2a",
+      "type": "number"
+    },
+    {
+      "name": "aprop2b",
+      "type": "text"
+    },
+    {
+      "name": "apar2b",
+      "type": "text"
+    },
+    {
+      "name": "amin2b",
+      "type": "number"
+    },
+    {
+      "name": "amax2b",
+      "type": "number"
+    },
+    {
+      "name": "aprop3a",
+      "type": "text"
+    },
+    {
+      "name": "apar3a",
+      "type": "number"
+    },
+    {
+      "name": "amin3a",
+      "type": "number"
+    },
+    {
+      "name": "amax3a",
+      "type": "number"
+    },
+    {
+      "name": "aprop3b",
+      "type": "text"
+    },
+    {
+      "name": "apar3b",
+      "type": "text"
+    },
+    {
+      "name": "amin3b",
+      "type": "text"
+    },
+    {
+      "name": "amax3b",
+      "type": "text"
+    },
+    {
+      "name": "aprop4a",
+      "type": "text"
+    },
+    {
+      "name": "apar4a",
+      "type": "text"
+    },
+    {
+      "name": "amin4a",
+      "type": "number"
+    },
+    {
+      "name": "amax4a",
+      "type": "number"
+    },
+    {
+      "name": "aprop4b",
+      "type": "text"
+    },
+    {
+      "name": "apar4b",
+      "type": "text"
+    },
+    {
+      "name": "amin4b",
+      "type": "text"
+    },
+    {
+      "name": "amax4b",
+      "type": "text"
+    },
+    {
+      "name": "aprop5a",
+      "type": "text"
+    },
+    {
+      "name": "apar5a",
+      "type": "number"
+    },
+    {
+      "name": "amin5a",
+      "type": "number"
+    },
+    {
+      "name": "amax5a",
+      "type": "number"
+    },
+    {
+      "name": "aprop5b",
+      "type": "text"
+    },
+    {
+      "name": "apar5b",
+      "type": "text"
+    },
+    {
+      "name": "amin5b",
+      "type": "text"
+    },
+    {
+      "name": "amax5b",
+      "type": "text"
+    },
+    {
+      "name": "diablocloneweight",
+      "type": "number",
+      "description": "The amount of weight added to the diablo clone progress when this item is sold. When offline, selling this item will instead immediately spawn diablo clone.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "*eol",
+      "type": "number",
+      "comment": true
+    }
+  ]
+}

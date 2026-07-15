@@ -1,0 +1,67 @@
+{
+  "table": "experience",
+  "file": "global/excel/experience.txt",
+  "description": "Table experience du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 9,
+  "columns": [
+    {
+      "name": "Level",
+      "type": "text",
+      "description": "This is a reference field to define the level",
+      "guideType": "[O]"
+    },
+    {
+      "name": "Amazon",
+      "type": "number",
+      "description": "Controls the Experience required for each level with the Amazon class",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Sorceress",
+      "type": "number",
+      "description": "Controls the Experience required for each level with the Sorceress class",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Necromancer",
+      "type": "number",
+      "description": "Controls the Experience required for each level with the Necromancer class",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Paladin",
+      "type": "number",
+      "description": "Controls the Experience required for each level with the Paladin class",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Barbarian",
+      "type": "number",
+      "description": "Controls the Experience required for each level with the Barbarian class",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Druid",
+      "type": "number",
+      "description": "Controls the Experience required for each level with the Druid class",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Assassin",
+      "type": "number",
+      "description": "Controls the Experience required for each level with the Assassin class",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Warlock",
+      "type": "number"
+    },
+    {
+      "name": "ExpRatio",
+      "type": "number",
+      "description": "This multiplier affects the percentage of Experienced earned, based on the level (Calculated in 1024ths by default, but this can be changed by updating the \"10\" value in the \"Maxlvl\" row)",
+      "guideType": "[N]"
+    }
+  ]
+}

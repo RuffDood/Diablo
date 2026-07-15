@@ -1,0 +1,93 @@
+{
+  "table": "npc",
+  "file": "global/excel/npc.txt",
+  "description": "Table npc du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 4,
+  "columns": [
+    {
+      "name": "npc",
+      "type": "text",
+      "description": "Points to the matching \"ID\" value in the monstats.txt file. This should not be changed",
+      "guideType": "[O]"
+    },
+    {
+      "name": "buy mult",
+      "type": "number",
+      "description": "Used to calculate the item's price when it is bought by the NPC from the player. This number is a fraction of 1024 in the following formula: [cost] * [buy mult] / 1024",
+      "guideType": "[N]"
+    },
+    {
+      "name": "sell mult",
+      "type": "number",
+      "description": "Used to calculate the item's price when it is sold by the NPC to the player. This number is a fraction of 1024 in the following formula: [cost] * [sell mult] / 1024",
+      "guideType": "[N]"
+    },
+    {
+      "name": "rep mult",
+      "type": "number",
+      "description": "Used to calculate the cost to repair an item. This number is a fraction of 1024 in the following formula: [cost] * [rep mult] / 1024. This is then used to influence the repair cost based on the item durability and charges",
+      "guideType": "[N]"
+    },
+    {
+      "name": "questflag A",
+      "type": "number"
+    },
+    {
+      "name": "questbuymult A",
+      "type": "number"
+    },
+    {
+      "name": "questsellmult A",
+      "type": "number"
+    },
+    {
+      "name": "questrepmult A",
+      "type": "number"
+    },
+    {
+      "name": "questflag B",
+      "type": "text"
+    },
+    {
+      "name": "questbuymult B",
+      "type": "text"
+    },
+    {
+      "name": "questsellmult B",
+      "type": "text"
+    },
+    {
+      "name": "questrepmult B",
+      "type": "text"
+    },
+    {
+      "name": "questflag C",
+      "type": "text"
+    },
+    {
+      "name": "questbuymult C",
+      "type": "text"
+    },
+    {
+      "name": "questsellmult C",
+      "type": "text"
+    },
+    {
+      "name": "questrepmult C",
+      "type": "text"
+    },
+    {
+      "name": "max buy",
+      "type": "number"
+    },
+    {
+      "name": "max buy (N)",
+      "type": "number"
+    },
+    {
+      "name": "max buy (H)",
+      "type": "number"
+    }
+  ]
+}

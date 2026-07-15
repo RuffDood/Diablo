@@ -1,0 +1,689 @@
+{
+  "table": "objects",
+  "file": "global/excel/objects.txt",
+  "description": "Table objects du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 45,
+  "columns": [
+    {
+      "name": "Class",
+      "type": "text",
+      "description": "Defines the unique type class of the object which is used to reference this object. These are also defined in the objpreset.txt file",
+      "guideType": "[O]"
+    },
+    {
+      "name": "Name",
+      "type": "text"
+    },
+    {
+      "name": "*Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "*ID",
+      "type": "number",
+      "comment": true
+    },
+    {
+      "name": "Token",
+      "type": "text",
+      "description": "Determines what files to use to display the graphics of the object. These are defined by the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "Selectable0",
+      "type": "number"
+    },
+    {
+      "name": "Selectable1",
+      "type": "number"
+    },
+    {
+      "name": "Selectable2",
+      "type": "number"
+    },
+    {
+      "name": "Selectable3",
+      "type": "number"
+    },
+    {
+      "name": "Selectable4",
+      "type": "number"
+    },
+    {
+      "name": "Selectable5",
+      "type": "number"
+    },
+    {
+      "name": "Selectable6",
+      "type": "number"
+    },
+    {
+      "name": "Selectable7",
+      "type": "number"
+    },
+    {
+      "name": "SizeX",
+      "type": "number"
+    },
+    {
+      "name": "SizeY",
+      "type": "number"
+    },
+    {
+      "name": "FrameCnt0",
+      "type": "number"
+    },
+    {
+      "name": "FrameCnt1",
+      "type": "number"
+    },
+    {
+      "name": "FrameCnt2",
+      "type": "number"
+    },
+    {
+      "name": "FrameCnt3",
+      "type": "number"
+    },
+    {
+      "name": "FrameCnt4",
+      "type": "number"
+    },
+    {
+      "name": "FrameCnt5",
+      "type": "number"
+    },
+    {
+      "name": "FrameCnt6",
+      "type": "number"
+    },
+    {
+      "name": "FrameCnt7",
+      "type": "number"
+    },
+    {
+      "name": "FrameDelta0",
+      "type": "number"
+    },
+    {
+      "name": "FrameDelta1",
+      "type": "number"
+    },
+    {
+      "name": "FrameDelta2",
+      "type": "number"
+    },
+    {
+      "name": "FrameDelta3",
+      "type": "number"
+    },
+    {
+      "name": "FrameDelta4",
+      "type": "number"
+    },
+    {
+      "name": "FrameDelta5",
+      "type": "number"
+    },
+    {
+      "name": "FrameDelta6",
+      "type": "number"
+    },
+    {
+      "name": "FrameDelta7",
+      "type": "number"
+    },
+    {
+      "name": "CycleAnim0",
+      "type": "number"
+    },
+    {
+      "name": "CycleAnim1",
+      "type": "number"
+    },
+    {
+      "name": "CycleAnim2",
+      "type": "number"
+    },
+    {
+      "name": "CycleAnim3",
+      "type": "number"
+    },
+    {
+      "name": "CycleAnim4",
+      "type": "number"
+    },
+    {
+      "name": "CycleAnim5",
+      "type": "number"
+    },
+    {
+      "name": "CycleAnim6",
+      "type": "number"
+    },
+    {
+      "name": "CycleAnim7",
+      "type": "number"
+    },
+    {
+      "name": "Lit0",
+      "type": "number"
+    },
+    {
+      "name": "Lit1",
+      "type": "number"
+    },
+    {
+      "name": "Lit2",
+      "type": "number"
+    },
+    {
+      "name": "Lit3",
+      "type": "number"
+    },
+    {
+      "name": "Lit4",
+      "type": "number"
+    },
+    {
+      "name": "Lit5",
+      "type": "number"
+    },
+    {
+      "name": "Lit6",
+      "type": "number"
+    },
+    {
+      "name": "Lit7",
+      "type": "number"
+    },
+    {
+      "name": "BlocksLight0",
+      "type": "number"
+    },
+    {
+      "name": "BlocksLight1",
+      "type": "number"
+    },
+    {
+      "name": "BlocksLight2",
+      "type": "number"
+    },
+    {
+      "name": "BlocksLight3",
+      "type": "number"
+    },
+    {
+      "name": "BlocksLight4",
+      "type": "number"
+    },
+    {
+      "name": "BlocksLight5",
+      "type": "number"
+    },
+    {
+      "name": "BlocksLight6",
+      "type": "number"
+    },
+    {
+      "name": "BlocksLight7",
+      "type": "number"
+    },
+    {
+      "name": "HasCollision0",
+      "type": "number"
+    },
+    {
+      "name": "HasCollision1",
+      "type": "number"
+    },
+    {
+      "name": "HasCollision2",
+      "type": "number"
+    },
+    {
+      "name": "HasCollision3",
+      "type": "number"
+    },
+    {
+      "name": "HasCollision4",
+      "type": "number"
+    },
+    {
+      "name": "HasCollision5",
+      "type": "number"
+    },
+    {
+      "name": "HasCollision6",
+      "type": "number"
+    },
+    {
+      "name": "HasCollision7",
+      "type": "number"
+    },
+    {
+      "name": "IsAttackable0",
+      "type": "boolean",
+      "description": "If equals 1, then the player can target this object to be attacked, and the player will use the Kick skill when operating the object. If the object has the Class equal to \"CompellingOrb\" or \"SoulStoneForge\", then instead of using the Kick skill, players will use the Attack skill when operating the object. If equals 0, then ignore this, and the player will not use a skill or animation when operating the object",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Start0",
+      "type": "number"
+    },
+    {
+      "name": "Start1",
+      "type": "number"
+    },
+    {
+      "name": "Start2",
+      "type": "number"
+    },
+    {
+      "name": "Start3",
+      "type": "number"
+    },
+    {
+      "name": "Start4",
+      "type": "number"
+    },
+    {
+      "name": "Start5",
+      "type": "number"
+    },
+    {
+      "name": "Start6",
+      "type": "number"
+    },
+    {
+      "name": "Start7",
+      "type": "number"
+    },
+    {
+      "name": "EnvEffect",
+      "type": "boolean",
+      "description": "If equals 1, then enable the object to update its mode based on the game's time of day. This can mean that when the object is spawned, and it is current day time and the object is in Opened or Operating mode, then it will reset back to Neutral mode. Also, if the current time is dusk, night, or dawn and the object is in Neutral mode, then it will change to Operating mode. If equals 0, then the object will not update its mode based on the time of day",
+      "guideType": "[B]"
+    },
+    {
+      "name": "IsDoor",
+      "type": "boolean",
+      "description": "If equals 1, then the object will be treated as a door when the game handles its collision, animation properties, tooltips, and commands. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "BlocksVis",
+      "type": "boolean",
+      "description": "If equals 1, then the object will block the player's line of sight to see anything beyond the object. If equals 0, then ignore this. This field relies on the",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Orientation",
+      "type": "number",
+      "description": "Determines the object's orientation type, which can affect mouse selection priority of the object when a unit is being rendered in front of or behind the object (such as a door object covering a unit and how the mouse selection should handle that). This also affects the randomization of the coordinates when spawning the object near the edge of a room.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "OrderFlag0",
+      "type": "number"
+    },
+    {
+      "name": "OrderFlag1",
+      "type": "number"
+    },
+    {
+      "name": "OrderFlag2",
+      "type": "number"
+    },
+    {
+      "name": "OrderFlag3",
+      "type": "number"
+    },
+    {
+      "name": "OrderFlag4",
+      "type": "number"
+    },
+    {
+      "name": "OrderFlag5",
+      "type": "number"
+    },
+    {
+      "name": "OrderFlag6",
+      "type": "number"
+    },
+    {
+      "name": "OrderFlag7",
+      "type": "number"
+    },
+    {
+      "name": "PreOperate",
+      "type": "boolean",
+      "description": "If equals 1, then enable a random chance that the object will spawn in already in Opened mode. The game will choose a 1/14 chance that this can happen when the object is spawned. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Mode0",
+      "type": "number"
+    },
+    {
+      "name": "Mode1",
+      "type": "number"
+    },
+    {
+      "name": "Mode2",
+      "type": "number"
+    },
+    {
+      "name": "Mode3",
+      "type": "number"
+    },
+    {
+      "name": "Mode4",
+      "type": "number"
+    },
+    {
+      "name": "Mode5",
+      "type": "number"
+    },
+    {
+      "name": "Mode6",
+      "type": "number"
+    },
+    {
+      "name": "Mode7",
+      "type": "number"
+    },
+    {
+      "name": "Yoffset",
+      "type": "number"
+    },
+    {
+      "name": "Xoffset",
+      "type": "number"
+    },
+    {
+      "name": "Draw",
+      "type": "boolean",
+      "description": "If equals 1, then draw the object's shadows. If equal's 0, then do not draw the object's shadows",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Red",
+      "type": "number",
+      "description": "Controls the Red color gradient of the object's Light Radius. This field depends on the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Green",
+      "type": "number",
+      "description": "Controls the Green color gradient of the object's Light Radius. This field depends on the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Blue",
+      "type": "number",
+      "description": "Controls the Blue color gradient of the object's Light Radius. This field depends on the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "HD",
+      "type": "boolean",
+      "description": "If equals 1, then the object will be flagged to have a Head composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "TR",
+      "type": "boolean",
+      "description": "If equals 1, then the object will be flagged to have a Torso composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "LG",
+      "type": "boolean",
+      "description": "If equals 1, then the object will be flagged to have a Legs composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "RA",
+      "type": "boolean",
+      "description": "If equals 1, then the object will be flagged to have a Right Arm composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "LA",
+      "type": "boolean",
+      "description": "If equals 1, then the object will be flagged to have a Left Arm composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "RH",
+      "type": "boolean",
+      "description": "If equals 1, then the object will be flagged to have a Right Hand composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "LH",
+      "type": "boolean",
+      "description": "If equals 1, then the object will be flagged to have a Left Hand composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "SH",
+      "type": "boolean",
+      "description": "If equals 1, then the object will be flagged to have a Shield composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "S1",
+      "type": "number"
+    },
+    {
+      "name": "S2",
+      "type": "number"
+    },
+    {
+      "name": "S3",
+      "type": "number"
+    },
+    {
+      "name": "S4",
+      "type": "number"
+    },
+    {
+      "name": "S5",
+      "type": "number"
+    },
+    {
+      "name": "S6",
+      "type": "number"
+    },
+    {
+      "name": "S7",
+      "type": "number"
+    },
+    {
+      "name": "S8",
+      "type": "number"
+    },
+    {
+      "name": "TotalPieces",
+      "type": "number",
+      "description": "Defines the total amount of composite pieces. If this value is greater than 1, then the game will treat the object with the multiple composite piece system, and the player can hover the mouse over and select the object's different components",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SubClass",
+      "type": "number",
+      "description": "Determines the object's class type by declaring a specific value. This is used by the various functions (",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Xspace",
+      "type": "number"
+    },
+    {
+      "name": "Yspace",
+      "type": "number"
+    },
+    {
+      "name": "NameOffset",
+      "type": "number",
+      "description": "Controls the vertical offset of the name tooltip's position above the object when the object is being selected. This is measured in pixels",
+      "guideType": "[N]"
+    },
+    {
+      "name": "MonsterOK",
+      "type": "boolean",
+      "description": "If equals 1, then if a monster operates the object, then the object will run its operate function. If equals 0, then then if a monster operates the object, then the object will not run its operate function",
+      "guideType": "[B]"
+    },
+    {
+      "name": "ShrineFunction",
+      "type": "number",
+      "description": "Controls what shrine function to use (",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Restore",
+      "type": "boolean",
+      "description": "If equals 1, the game will restore the object in an inactive state when the area level repopulates after a player loads back into it. If equals 0, then the game will not restore the object",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Parm0",
+      "type": "number"
+    },
+    {
+      "name": "Parm1",
+      "type": "number"
+    },
+    {
+      "name": "Parm2",
+      "type": "number"
+    },
+    {
+      "name": "Parm3",
+      "type": "number"
+    },
+    {
+      "name": "Parm4",
+      "type": "number"
+    },
+    {
+      "name": "Lockable",
+      "type": "boolean",
+      "description": "If equals 1, then the object will have a random chance to spawn with the locked attribute and have a display tooltip name with the \"lockedchest\"",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Gore",
+      "type": "number",
+      "description": "Controls if an object should call its",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Sync",
+      "type": "boolean",
+      "description": "If equals 1, then the object's animation rate will always match the",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Damage",
+      "type": "number",
+      "description": "Controls the amount of damage dealt by the object when it performs an",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Overlay",
+      "type": "boolean",
+      "description": "If equals 1, then add and remove an overlay on the object based on its current mode. If equals 0, then ignore this. This field will only work with specific object Classes and will use specific Overlays for those objects.",
+      "guideType": "[B]"
+    },
+    {
+      "name": "CollisionSubst",
+      "type": "boolean",
+      "description": "If equals 1, then the game will handle the bounding box around the object for mouse selection. The game will use the object's pixel size and",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Left",
+      "type": "number",
+      "description": "Controls the starting X position offset value for drawing the bounding collision box around the object for mouse selection. Depends on the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Top",
+      "type": "number",
+      "description": "Controls the starting Y position offset value for drawing the bounding collision box around the object for mouse selection. Depends on the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Width",
+      "type": "number",
+      "description": "Controls the ending X position offset value for drawing the bounding collision box around the object for mouse selection. Depends on the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Height",
+      "type": "number",
+      "description": "Controls the ending Y position offset value for drawing the bounding collision box around the object for mouse selection. Depends on the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "OperateFn",
+      "type": "number",
+      "description": "Defines a function that the game will use when the player clicks on the object",
+      "guideType": "[N]"
+    },
+    {
+      "name": "PopulateFn",
+      "type": "number",
+      "description": "Defines a function that the game will use to spawn this object",
+      "guideType": "[N]"
+    },
+    {
+      "name": "InitFn",
+      "type": "number",
+      "description": "Defines a function to control how the object works while active and when initially activated by a player",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ClientFn",
+      "type": "number",
+      "description": "Defines a function that runs on the object from the game's client side.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "RestoreVirgins",
+      "type": "boolean",
+      "description": "If equals 1, then when the object has been used, the game will not restore the object in an inactive state when the area level repopulates after a player loads back into it. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "BlockMissile",
+      "type": "boolean",
+      "description": "If equals 1, then missiles can collide with this object. If equals 0, then missiles will ignore and fly through this object",
+      "guideType": "[B]"
+    },
+    {
+      "name": "DrawUnder",
+      "type": "number",
+      "description": "Controls the targeting priority of the object",
+      "guideType": "[N]"
+    },
+    {
+      "name": "OpenWarp",
+      "type": "boolean",
+      "description": "If equals 1, then this object will be classified as an object that can be opened to warp to another area, and the UI will be notified to display a tooltip for opening or entering, based on the object's mode. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "AutoMap",
+      "type": "number",
+      "description": "Used to display a tile in the Automap to represent the object. Defines which cell number to use in the tile list for the Automap. If this value equals 0, then this object will not display on the Automap. (Automap.txt)",
+      "guideType": "[N]"
+    }
+  ]
+}

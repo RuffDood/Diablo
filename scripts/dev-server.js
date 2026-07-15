@@ -29,6 +29,16 @@ function tablePath(name) {
 
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, 'http://localhost');
+
+  // liste des tables editables (les .txt de global/excel)
+  if (url.pathname === '/api/tables' && req.method === 'GET') {
+    const tables = fs.readdirSync(EXCEL_DIR)
+      .filter((f) => f.endsWith('.txt'))
+      .map((f) => f.slice(0, -4))
+      .sort();
+    return send(res, 200, { tables });
+  }
+
   const match = url.pathname.match(/^\/api\/table\/([^/]+)$/);
   if (!match) return send(res, 404, { error: 'route inconnue' });
 

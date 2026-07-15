@@ -1,0 +1,516 @@
+{
+  "table": "skilldesc",
+  "file": "global/excel/skilldesc.txt",
+  "description": "Table skilldesc du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 13,
+  "columns": [
+    {
+      "name": "skilldesc",
+      "type": "text",
+      "description": "The name of the skill description, as a reference for associated Data files",
+      "guideType": "[O]"
+    },
+    {
+      "name": "SkillPage",
+      "type": "number",
+      "description": "Determines which page on the Skill tree to display the skill",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SkillRow",
+      "type": "number",
+      "description": "Determines which row on the Skill tree page to display the skill",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SkillColumn",
+      "type": "number",
+      "description": "Determines which column on the Skill tree page to display the skill",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ListRow",
+      "type": "number",
+      "description": "Determines which row the skill will be listed in, for the skill select UI.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "IconCel",
+      "type": "number",
+      "description": "Determines the icon asset for displaying the skill, using the Frame# of the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "HireableIconCel",
+      "type": "number",
+      "description": "Determines the icon asset for displaying the skill, using the Frame# of the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "str name",
+      "type": "text",
+      "description": "Uses a string to display as the skill name",
+      "guideType": "[O]"
+    },
+    {
+      "name": "str short",
+      "type": "text",
+      "description": "Uses a string to display as the skill description in shortcuts or when selecting a skill",
+      "guideType": "[O]"
+    },
+    {
+      "name": "str long",
+      "type": "text",
+      "description": "Uses a string to display as the skill description on the Skill Tree",
+      "guideType": "[O]"
+    },
+    {
+      "name": "str alt",
+      "type": "text",
+      "description": "Uses a string to display the skill name on the Character Screen when the skill is selected",
+      "guideType": "[O]"
+    },
+    {
+      "name": "descdam",
+      "type": "number",
+      "description": "Use a function to calculate a skill's damage and determine how to display it. These functions sometimes require certain skill fields, especially the damage related fields.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ddam calc1",
+      "type": "text"
+    },
+    {
+      "name": "ddam calc2",
+      "type": "text"
+    },
+    {
+      "name": "p1dmelem",
+      "type": "text"
+    },
+    {
+      "name": "p1dmmin",
+      "type": "text"
+    },
+    {
+      "name": "p1dmmax",
+      "type": "text"
+    },
+    {
+      "name": "p2dmelem",
+      "type": "text"
+    },
+    {
+      "name": "p2dmmin",
+      "type": "text"
+    },
+    {
+      "name": "p2dmmax",
+      "type": "text"
+    },
+    {
+      "name": "p3dmelem",
+      "type": "text"
+    },
+    {
+      "name": "p3dmmin",
+      "type": "text"
+    },
+    {
+      "name": "p3dmmax",
+      "type": "text"
+    },
+    {
+      "name": "descatt",
+      "type": "number",
+      "description": "Used to display the overall Attack Rating of the skill in the Character Screen",
+      "guideType": "[N]"
+    },
+    {
+      "name": "descmissile1",
+      "type": "text"
+    },
+    {
+      "name": "descmissile2",
+      "type": "text"
+    },
+    {
+      "name": "descmissile3",
+      "type": "text"
+    },
+    {
+      "name": "descline1",
+      "type": "number"
+    },
+    {
+      "name": "desctexta1",
+      "type": "text"
+    },
+    {
+      "name": "desctextb1",
+      "type": "text"
+    },
+    {
+      "name": "desccalca1",
+      "type": "text"
+    },
+    {
+      "name": "desccalcb1",
+      "type": "text"
+    },
+    {
+      "name": "descline2",
+      "type": "number"
+    },
+    {
+      "name": "desctexta2",
+      "type": "text"
+    },
+    {
+      "name": "desctextb2",
+      "type": "text"
+    },
+    {
+      "name": "desccalca2",
+      "type": "text"
+    },
+    {
+      "name": "desccalcb2",
+      "type": "text"
+    },
+    {
+      "name": "descline3",
+      "type": "number"
+    },
+    {
+      "name": "desctexta3",
+      "type": "text"
+    },
+    {
+      "name": "desctextb3",
+      "type": "text"
+    },
+    {
+      "name": "desccalca3",
+      "type": "text"
+    },
+    {
+      "name": "desccalcb3",
+      "type": "text"
+    },
+    {
+      "name": "descline4",
+      "type": "number"
+    },
+    {
+      "name": "desctexta4",
+      "type": "text"
+    },
+    {
+      "name": "desctextb4",
+      "type": "text"
+    },
+    {
+      "name": "desccalca4",
+      "type": "text"
+    },
+    {
+      "name": "desccalcb4",
+      "type": "text"
+    },
+    {
+      "name": "descline5",
+      "type": "number"
+    },
+    {
+      "name": "desctexta5",
+      "type": "text"
+    },
+    {
+      "name": "desctextb5",
+      "type": "text"
+    },
+    {
+      "name": "desccalca5",
+      "type": "text"
+    },
+    {
+      "name": "desccalcb5",
+      "type": "text"
+    },
+    {
+      "name": "descline6",
+      "type": "number"
+    },
+    {
+      "name": "desctexta6",
+      "type": "text"
+    },
+    {
+      "name": "desctextb6",
+      "type": "text"
+    },
+    {
+      "name": "desccalca6",
+      "type": "text"
+    },
+    {
+      "name": "desccalcb6",
+      "type": "text"
+    },
+    {
+      "name": "dsc2line1",
+      "type": "number"
+    },
+    {
+      "name": "dsc2texta1",
+      "type": "text"
+    },
+    {
+      "name": "dsc2textb1",
+      "type": "text"
+    },
+    {
+      "name": "dsc2calca1",
+      "type": "text"
+    },
+    {
+      "name": "dsc2calcb1",
+      "type": "text"
+    },
+    {
+      "name": "dsc2line2",
+      "type": "number"
+    },
+    {
+      "name": "dsc2texta2",
+      "type": "text"
+    },
+    {
+      "name": "dsc2textb2",
+      "type": "text"
+    },
+    {
+      "name": "dsc2calca2",
+      "type": "text"
+    },
+    {
+      "name": "dsc2calcb2",
+      "type": "text"
+    },
+    {
+      "name": "dsc2line3",
+      "type": "number"
+    },
+    {
+      "name": "dsc2texta3",
+      "type": "text"
+    },
+    {
+      "name": "dsc2textb3",
+      "type": "text"
+    },
+    {
+      "name": "dsc2calca3",
+      "type": "text"
+    },
+    {
+      "name": "dsc2calcb3",
+      "type": "text"
+    },
+    {
+      "name": "dsc2line4",
+      "type": "number"
+    },
+    {
+      "name": "dsc2texta4",
+      "type": "text"
+    },
+    {
+      "name": "dsc2textb4",
+      "type": "text"
+    },
+    {
+      "name": "dsc2calca4",
+      "type": "text"
+    },
+    {
+      "name": "dsc2calcb4",
+      "type": "text"
+    },
+    {
+      "name": "dsc2line5",
+      "type": "number"
+    },
+    {
+      "name": "dsc2texta5",
+      "type": "text"
+    },
+    {
+      "name": "dsc2textb5",
+      "type": "text"
+    },
+    {
+      "name": "dsc2calca5",
+      "type": "text"
+    },
+    {
+      "name": "dsc2calcb5",
+      "type": "text"
+    },
+    {
+      "name": "dsc3line1",
+      "type": "number"
+    },
+    {
+      "name": "dsc3texta1",
+      "type": "text"
+    },
+    {
+      "name": "dsc3textb1",
+      "type": "text"
+    },
+    {
+      "name": "dsc3calca1",
+      "type": "number"
+    },
+    {
+      "name": "dsc3calcb1",
+      "type": "text"
+    },
+    {
+      "name": "dsc3line2",
+      "type": "number"
+    },
+    {
+      "name": "dsc3texta2",
+      "type": "text"
+    },
+    {
+      "name": "dsc3textb2",
+      "type": "text"
+    },
+    {
+      "name": "dsc3calca2",
+      "type": "text"
+    },
+    {
+      "name": "dsc3calcb2",
+      "type": "text"
+    },
+    {
+      "name": "dsc3line3",
+      "type": "number"
+    },
+    {
+      "name": "dsc3texta3",
+      "type": "text"
+    },
+    {
+      "name": "dsc3textb3",
+      "type": "text"
+    },
+    {
+      "name": "dsc3calca3",
+      "type": "text"
+    },
+    {
+      "name": "dsc3calcb3",
+      "type": "text"
+    },
+    {
+      "name": "dsc3line4",
+      "type": "number"
+    },
+    {
+      "name": "dsc3texta4",
+      "type": "text"
+    },
+    {
+      "name": "dsc3textb4",
+      "type": "text"
+    },
+    {
+      "name": "dsc3calca4",
+      "type": "text"
+    },
+    {
+      "name": "dsc3calcb4",
+      "type": "number"
+    },
+    {
+      "name": "dsc3line5",
+      "type": "number"
+    },
+    {
+      "name": "dsc3texta5",
+      "type": "text"
+    },
+    {
+      "name": "dsc3textb5",
+      "type": "text"
+    },
+    {
+      "name": "dsc3calca5",
+      "type": "text"
+    },
+    {
+      "name": "dsc3calcb5",
+      "type": "number"
+    },
+    {
+      "name": "dsc3line6",
+      "type": "number"
+    },
+    {
+      "name": "dsc3texta6",
+      "type": "text"
+    },
+    {
+      "name": "dsc3textb6",
+      "type": "text"
+    },
+    {
+      "name": "dsc3calca6",
+      "type": "text"
+    },
+    {
+      "name": "dsc3calcb6",
+      "type": "number"
+    },
+    {
+      "name": "dsc3line7",
+      "type": "number"
+    },
+    {
+      "name": "dsc3texta7",
+      "type": "text"
+    },
+    {
+      "name": "dsc3textb7",
+      "type": "text"
+    },
+    {
+      "name": "dsc3calca7",
+      "type": "text"
+    },
+    {
+      "name": "dsc3calcb7",
+      "type": "text"
+    },
+    {
+      "name": "item proc text",
+      "type": "text"
+    },
+    {
+      "name": "item proc descline count",
+      "type": "number"
+    },
+    {
+      "name": "*eol",
+      "type": "number",
+      "comment": true
+    }
+  ]
+}

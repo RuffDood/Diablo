@@ -1,0 +1,117 @@
+{
+  "table": "actinfo",
+  "file": "global/excel/actinfo.txt",
+  "description": "Table actinfo du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 12,
+  "columns": [
+    {
+      "name": "act",
+      "type": "text",
+      "description": "Defines the ID for the Act",
+      "guideType": "[O]"
+    },
+    {
+      "name": "town",
+      "type": "text",
+      "description": "Uses an area level (",
+      "guideType": "[O]"
+    },
+    {
+      "name": "start",
+      "type": "text",
+      "description": "Uses an area level (",
+      "guideType": "[O]"
+    },
+    {
+      "name": "maxnpcitemlevel",
+      "type": "number",
+      "description": "Controls the maximum item level for items sold by the NPC in the Act",
+      "guideType": "[N]"
+    },
+    {
+      "name": "classlevelrangestart",
+      "type": "text",
+      "description": "Uses an area level (",
+      "guideType": "[O]"
+    },
+    {
+      "name": "classlevelrangeend",
+      "type": "text",
+      "description": "Uses an area level (",
+      "guideType": "[O]"
+    },
+    {
+      "name": "wanderingnpcstart",
+      "type": "number",
+      "description": "Uses an index to determine which wandering monster class to use when populating areas (",
+      "guideType": "[N]"
+    },
+    {
+      "name": "wanderingnpcrange",
+      "type": "number",
+      "description": "This is a modifier that gets added to the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "commonactcof",
+      "type": "text",
+      "description": "Specifies which \".D2\" file to use as for the common Act COF file. This is used to establish the seed when initializing the Act.",
+      "guideType": "[O]"
+    },
+    {
+      "name": "waypoint1",
+      "type": "text"
+    },
+    {
+      "name": "waypoint2",
+      "type": "text"
+    },
+    {
+      "name": "waypoint3",
+      "type": "text"
+    },
+    {
+      "name": "waypoint4",
+      "type": "text"
+    },
+    {
+      "name": "waypoint5",
+      "type": "text"
+    },
+    {
+      "name": "waypoint6",
+      "type": "text"
+    },
+    {
+      "name": "waypoint7",
+      "type": "text"
+    },
+    {
+      "name": "waypoint8",
+      "type": "text"
+    },
+    {
+      "name": "waypoint9",
+      "type": "text"
+    },
+    {
+      "name": "wanderingMonsterPopulateChance",
+      "type": "number",
+      "description": "The percent chance (from 0 to 100) to spawn a wandering monster (",
+      "guideType": "[N]"
+    },
+    {
+      "name": "wanderingMonsterRegionTotal",
+      "type": "number",
+      "description": "The maximum number of wandering monsters allowed at once",
+      "guideType": "[N]"
+    },
+    {
+      "name": "wanderingPopulateRandomChance",
+      "type": "number",
+      "description": "A secondary percent chance (from 0 to #) to determine whether to attempt populating with monsters. Only fails if random chance selects 0.",
+      "guideType": "[N]"
+    }
+  ]
+}

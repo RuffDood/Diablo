@@ -1,0 +1,691 @@
+{
+  "table": "monstats2",
+  "file": "global/excel/monstats2.txt",
+  "description": "Table monstats2 du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 86,
+  "columns": [
+    {
+      "name": "Id",
+      "type": "text",
+      "description": "Controls the unique name ID to define the monster. This must match the same value in the monstats.txt file",
+      "guideType": "[O]"
+    },
+    {
+      "name": "*hcIdx",
+      "type": "number",
+      "comment": true
+    },
+    {
+      "name": "Height",
+      "type": "number",
+      "description": "Determines the height of the monster. This has 2 purposes. The first purpose is to act as an index value for selecting which icebreak missile to use when the monster dies while frozen. The second purpose is to select a code which affects what attack animation the player characters will use when attacking the monster (Attack1 and or Attack2). See each code description types below.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "OverlayHeight",
+      "type": "number",
+      "description": "Determines the height value of overlays (Overlay.txt) for the monster",
+      "guideType": "[N]"
+    },
+    {
+      "name": "pixHeight",
+      "type": "number",
+      "description": "Determines the pixel height value for the damage bar when the monster is selected",
+      "guideType": "[N]"
+    },
+    {
+      "name": "SizeX",
+      "type": "number"
+    },
+    {
+      "name": "SizeY",
+      "type": "number"
+    },
+    {
+      "name": "spawnCol",
+      "type": "number",
+      "description": "Controls the method for spawning the monster based on the collisions in the environment",
+      "guideType": "[N]"
+    },
+    {
+      "name": "MeleeRng",
+      "type": "number",
+      "description": "Controls the range of the monster's melee attack, which can affect also affect certain AI pathing. If this value equals 255, then refer to the monster's weapon class (\"BaseW\")",
+      "guideType": "[N]"
+    },
+    {
+      "name": "BaseW",
+      "type": "text",
+      "description": "Defines the monster's base weapon class, which can affect how the monster attacks. Referenced by the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "HitClass",
+      "type": "text",
+      "description": "Defines the specific class of an attack when the monster successfully hits with an attack. This can affect the sound and overlay display of the attack hit. Referenced from the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "HDv",
+      "type": "text",
+      "description": "Head visual",
+      "guideType": "[O]"
+    },
+    {
+      "name": "TRv",
+      "type": "text",
+      "description": "Torso visual",
+      "guideType": "[O]"
+    },
+    {
+      "name": "LGv",
+      "type": "text",
+      "description": "Legs visual",
+      "guideType": "[O]"
+    },
+    {
+      "name": "Rav",
+      "type": "text",
+      "description": "Right Arm visual",
+      "guideType": "[O]"
+    },
+    {
+      "name": "Lav",
+      "type": "text",
+      "description": "Left Arm visual",
+      "guideType": "[O]"
+    },
+    {
+      "name": "RHv",
+      "type": "text",
+      "description": "Right Hand visual",
+      "guideType": "[O]"
+    },
+    {
+      "name": "LHv",
+      "type": "text",
+      "description": "Left Hand visual",
+      "guideType": "[O]"
+    },
+    {
+      "name": "SHv",
+      "type": "text",
+      "description": "Shield visual",
+      "guideType": "[O]"
+    },
+    {
+      "name": "S1v",
+      "type": "text"
+    },
+    {
+      "name": "S2v",
+      "type": "text"
+    },
+    {
+      "name": "S3v",
+      "type": "text"
+    },
+    {
+      "name": "S4v",
+      "type": "text"
+    },
+    {
+      "name": "S5v",
+      "type": "text"
+    },
+    {
+      "name": "S6v",
+      "type": "text"
+    },
+    {
+      "name": "S7v",
+      "type": "text"
+    },
+    {
+      "name": "S8v",
+      "type": "text"
+    },
+    {
+      "name": "HD",
+      "type": "boolean",
+      "description": "Head",
+      "guideType": "[B]"
+    },
+    {
+      "name": "TR",
+      "type": "boolean",
+      "description": "Torso",
+      "guideType": "[B]"
+    },
+    {
+      "name": "LG",
+      "type": "boolean",
+      "description": "Legs",
+      "guideType": "[B]"
+    },
+    {
+      "name": "RA",
+      "type": "boolean",
+      "description": "Right Arm",
+      "guideType": "[B]"
+    },
+    {
+      "name": "LA",
+      "type": "boolean",
+      "description": "Left Arm",
+      "guideType": "[B]"
+    },
+    {
+      "name": "RH",
+      "type": "boolean",
+      "description": "Right Hand",
+      "guideType": "[B]"
+    },
+    {
+      "name": "LH",
+      "type": "boolean",
+      "description": "Left Hand",
+      "guideType": "[B]"
+    },
+    {
+      "name": "SH",
+      "type": "boolean",
+      "description": "Shield",
+      "guideType": "[B]"
+    },
+    {
+      "name": "S1",
+      "type": "number"
+    },
+    {
+      "name": "S2",
+      "type": "number"
+    },
+    {
+      "name": "S3",
+      "type": "number"
+    },
+    {
+      "name": "S4",
+      "type": "number"
+    },
+    {
+      "name": "S5",
+      "type": "number"
+    },
+    {
+      "name": "S6",
+      "type": "number"
+    },
+    {
+      "name": "S7",
+      "type": "number"
+    },
+    {
+      "name": "S8",
+      "type": "number"
+    },
+    {
+      "name": "TotalPieces",
+      "type": "number",
+      "description": "Defines the total amount of component pieces that the monster uses. This value should match the number of enabled Boolean fields listed above",
+      "guideType": "[N]"
+    },
+    {
+      "name": "mDT",
+      "type": "boolean",
+      "description": "If equals 1, then enable the Death Mode for the monster. If equals 0, then this mode is disabled",
+      "guideType": "[B]"
+    },
+    {
+      "name": "mNU",
+      "type": "boolean",
+      "description": "If equals 1, then enable the Neutral Mode for the monster. If equals 0, then this mode is disabled",
+      "guideType": "[B]"
+    },
+    {
+      "name": "mWL",
+      "type": "boolean",
+      "description": "If equals 1, then enable the Walk Mode for the monster. If equals 0, then this mode is disabled",
+      "guideType": "[B]"
+    },
+    {
+      "name": "mGH",
+      "type": "boolean",
+      "description": "If equals 1, then enable the Get Hit Mode for the monster. If equals 0, then this mode is disabled",
+      "guideType": "[B]"
+    },
+    {
+      "name": "mA1",
+      "type": "number"
+    },
+    {
+      "name": "mA2",
+      "type": "number"
+    },
+    {
+      "name": "mBL",
+      "type": "boolean",
+      "description": "If equals 1, then enable the Block Mode for the monster. If equals 0, then this mode is disabled",
+      "guideType": "[B]"
+    },
+    {
+      "name": "mSC",
+      "type": "boolean",
+      "description": "If equals 1, then enable the Cast Mode for the monster. If equals 0, then this mode is disabled",
+      "guideType": "[B]"
+    },
+    {
+      "name": "mS1",
+      "type": "number"
+    },
+    {
+      "name": "mS2",
+      "type": "number"
+    },
+    {
+      "name": "mS3",
+      "type": "number"
+    },
+    {
+      "name": "mS4",
+      "type": "number"
+    },
+    {
+      "name": "mDD",
+      "type": "boolean",
+      "description": "If equals 1, then enable the Dead Mode for the monster. If equals 0, then this mode is disabled",
+      "guideType": "[B]"
+    },
+    {
+      "name": "mKB",
+      "type": "boolean",
+      "description": "If equals 1, then enable the Knockback Mode for the monster. If equals 0, then this mode is disabled",
+      "guideType": "[B]"
+    },
+    {
+      "name": "mSQ",
+      "type": "boolean",
+      "description": "If equals 1, then enable the Sequence Mode for the monster. If equals 0, then this mode is disabled",
+      "guideType": "[B]"
+    },
+    {
+      "name": "mRN",
+      "type": "boolean",
+      "description": "If equals 1, then enable the Run Mode for the monster. If equals 0, then this mode is disabled",
+      "guideType": "[B]"
+    },
+    {
+      "name": "dDT",
+      "type": "number",
+      "description": "Defines the number of directions that the monster can face during Death Mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "dNU",
+      "type": "number",
+      "description": "Defines the number of directions that the monster can face during Neutral Mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "dWL",
+      "type": "number",
+      "description": "Defines the number of directions that the monster can face during Walk Mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "dGH",
+      "type": "number",
+      "description": "Defines the number of directions that the monster can face during Get Hit Mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "dA1",
+      "type": "number"
+    },
+    {
+      "name": "dA2",
+      "type": "number"
+    },
+    {
+      "name": "dBL",
+      "type": "number",
+      "description": "Defines the number of directions that the monster can face during Block Mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "dSC",
+      "type": "number",
+      "description": "Defines the number of directions that the monster can face during Cast Mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "dS1",
+      "type": "number"
+    },
+    {
+      "name": "dS2",
+      "type": "number"
+    },
+    {
+      "name": "dS3",
+      "type": "number"
+    },
+    {
+      "name": "dS4",
+      "type": "number"
+    },
+    {
+      "name": "dDD",
+      "type": "number",
+      "description": "Defines the number of directions that the monster can face during Dead Mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "dKB",
+      "type": "number",
+      "description": "Defines the number of directions that the monster can face during Knockback Mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "dSQ",
+      "type": "number",
+      "description": "Defines the number of directions that the monster can face during Sequence Mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "dRN",
+      "type": "number",
+      "description": "Defines the number of directions that the monster can face during Run Mode",
+      "guideType": "[N]"
+    },
+    {
+      "name": "A1mv",
+      "type": "text"
+    },
+    {
+      "name": "A2mv",
+      "type": "number"
+    },
+    {
+      "name": "SCmv",
+      "type": "boolean",
+      "description": "If equals 1, then enable the Cast Mode while the monster is moving with the Walk mode or Run mode. If equals 0, then this mode is disabled while the monster is moving",
+      "guideType": "[B]"
+    },
+    {
+      "name": "S1mv",
+      "type": "number"
+    },
+    {
+      "name": "S2mv",
+      "type": "number"
+    },
+    {
+      "name": "S3mv",
+      "type": "text"
+    },
+    {
+      "name": "S4mv",
+      "type": "text"
+    },
+    {
+      "name": "noGfxHitTest",
+      "type": "boolean",
+      "description": "If equals 1, then enable the mouse selection bounding box functionality around the monster. If equals 0, then the monster cannot be selected by the mouse",
+      "guideType": "[B]"
+    },
+    {
+      "name": "htTop",
+      "type": "number",
+      "description": "Define the pixel top offset around the monster for the mouse selection bounding box functionality. This field relies on the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "htLeft",
+      "type": "number",
+      "description": "Define the pixel left offset around the monster for the mouse selection bounding box functionality. This field relies on the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "htWidth",
+      "type": "number",
+      "description": "Define the pixel right offset around the monster for the mouse selection bounding box functionality. This field relies on the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "htHeight",
+      "type": "number",
+      "description": "Define the pixel bottom offset around the monster for the mouse selection bounding box functionality. This field relies on the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "restore",
+      "type": "number",
+      "description": "Determines if the monster should be placed on the inactive list, to be saved when the level unloads. If equals 0, then do not save the monster. If equals 1, then rely on other checks to determine to save the monster. If equals 2, then force save the monster",
+      "guideType": "[N]"
+    },
+    {
+      "name": "automapCel",
+      "type": "number",
+      "description": "Controls what index of the Automap tiles to use to display this monster on the Automap. This field relies on the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "noMap",
+      "type": "boolean",
+      "description": "If equals 1, then the monster will not appear on the Automap. If equals 0, then the monster will normally appear on the Automap",
+      "guideType": "[B]"
+    },
+    {
+      "name": "noOvly",
+      "type": "boolean",
+      "description": "If equals 1, then no looping overlays will be drawn on the monster. If equals 0, then overlays will be drawn on the monster. (",
+      "guideType": "[B]"
+    },
+    {
+      "name": "isSel",
+      "type": "boolean",
+      "description": "If equals 1, then the monster is selectable and can be targeted. If equals 0, then the monster cannot be selected",
+      "guideType": "[B]"
+    },
+    {
+      "name": "alSel",
+      "type": "boolean",
+      "description": "If equals 1, then the player can always select the monster, regardless of being an ally or enemy. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "noSel",
+      "type": "boolean",
+      "description": "If equals 1, then the player can never select the monster. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "shiftSel",
+      "type": "boolean",
+      "description": "If equals 1, then the player can target this monster when holding the Shift key and clicking to use a skill. If equals 0, then the monster cannot be targeted while the player is holding the Shift key",
+      "guideType": "[B]"
+    },
+    {
+      "name": "corpseSel",
+      "type": "boolean",
+      "description": "If equals 1, then the monster's corpse can be with the mouse cursor. If equals 0, then the monster's corpse cannot be selected with the mouse cursor",
+      "guideType": "[B]"
+    },
+    {
+      "name": "isAtt",
+      "type": "boolean",
+      "description": "If equals 1, then the monster can be attacked. If equals 0, then the monster cannot be attacked",
+      "guideType": "[B]"
+    },
+    {
+      "name": "revive",
+      "type": "boolean",
+      "description": "If equals 1, then the monster is allowed to be revived by the Necromancer Revive skill. If equals 0, then the monster cannot be revived by the Necromancer Revive skill",
+      "guideType": "[B]"
+    },
+    {
+      "name": "limitCorpses",
+      "type": "boolean",
+      "description": "If equals 1, then the monster's corpse will be placed into a pool with all other corpses with this field checked. Once that pool reaches the max (50), the corpses at the beginning of the pool start getting removed",
+      "guideType": "[B]"
+    },
+    {
+      "name": "critter",
+      "type": "boolean",
+      "description": "If equals 1, then the monster will be flagged as a critter, which gives some special case handling such as not creating impact sounds and differently handling its spawn placement in presets. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "small",
+      "type": "boolean",
+      "description": "If equals 1, then the monster will be classified as a small type, which can affect what types of missiles can be used on the monster (Example: Barbarian Grim Ward size) or how the monster is knocked back. If equals 0, then ignore this. If this field is enabled, then the",
+      "guideType": "[B]"
+    },
+    {
+      "name": "large",
+      "type": "boolean",
+      "description": "If equals 1, then the monster will be classified as a large type, which can affect what types of missiles can be used on the monster (Example: Barbarian Grim Ward size) or how the monster is knocked back. If equals 0, then ignore this. If this field is enabled, then the",
+      "guideType": "[B]"
+    },
+    {
+      "name": "soft",
+      "type": "boolean",
+      "description": "If equals 1, then the monster's corpse is classified as soft bodied, meaning that its corpse can be used by certain corpse skills such as Barbarian Find Potion, Find Item, or Grim Ward. If equals 0, then the monster's corpse cannot be used for these skills",
+      "guideType": "[B]"
+    },
+    {
+      "name": "inert",
+      "type": "boolean",
+      "description": "If equals 1, then the monster will never attack its enemies. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "objCol",
+      "type": "boolean",
+      "description": "If equals 1 and the monster class is \"barricadedoor\", \"barricadedoor2\", or \"evilhut\", then the monster will place an invisible object with collision. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "deadCol",
+      "type": "boolean",
+      "description": "If equals 1, then the monster's corpse will have collision with other units. If equals 0, then the monster's corpse will not have collision",
+      "guideType": "[B]"
+    },
+    {
+      "name": "unflatDead",
+      "type": "boolean",
+      "description": "If equals 1, then ignore the corpse draw order for rendering the Sprite on top of others, while the monster is dead. If equals 0, then the monster's corpse will have a normal corpse draw order",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Shadow",
+      "type": "boolean",
+      "description": "If equals 1, then the monster will project a shadow on the ground. If equals 0, then the monster will not project a shadow",
+      "guideType": "[B]"
+    },
+    {
+      "name": "noUniqueShift",
+      "type": "boolean",
+      "description": "If equals 1 and the monster is a Unique monster, then the monster will not have random color palette transform shifts. If equals 0, then the non-Unique monster will have random color palette transform shifts",
+      "guideType": "[B]"
+    },
+    {
+      "name": "compositeDeath",
+      "type": "boolean",
+      "description": "If equals 1, then the monster's Death Mode and Dead mode will make use of its component system. If equals 0, then the monster will default to using the Hand-To-Hand weapon class and no component system",
+      "guideType": "[B]"
+    },
+    {
+      "name": "localBlood",
+      "type": "number",
+      "description": "Controls the color of the monster's blood based on the region locale. If equals 0, then do not change the blood to green and keep it red. If equals 1, then change the monster's special components to use the green blood locale. If equals 2, then change the blood to green",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Bleed",
+      "type": "number",
+      "description": "Controls if the monster will create blood missiles. If equals 0, then the monster will never bleed. If equals 1, then the monster will randomly create the \"blood1\" or \"blood2\" missiles when hit. If equals 2, then the monster will randomly create the \"blood1\", \"blood2\", \"bigblood1\", or \"bigblood2\" missiles when hit",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Light",
+      "type": "number",
+      "description": "Controls the monster's minimum Light Radius size (measured in grid sub-tiles)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "light-r",
+      "type": "number",
+      "description": "Controls the red color value of the monster's Light Radius (Uses a value from 0 to 255)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "light-g",
+      "type": "number",
+      "description": "Controls the green color value of the monster's Light Radius (Uses a value from 0 to 255)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "light-b",
+      "type": "number",
+      "description": "Controls the blue color value of the monster's Light Radius (Uses a value from 0 to 255)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Utrans",
+      "type": "number"
+    },
+    {
+      "name": "Utrans(N)",
+      "type": "number"
+    },
+    {
+      "name": "Utrans(H)",
+      "type": "number"
+    },
+    {
+      "name": "InfernoLen",
+      "type": "number",
+      "description": "The frame length to hold the channel cast time of the inferno skill. This is used for when the monster has the \"inferno\" state, or for Diablo when he is using the \"DiabLight\" skill",
+      "guideType": "[N]"
+    },
+    {
+      "name": "InfernoAnim",
+      "type": "number",
+      "description": "The exact frame in the channel animation to loop back and start at again",
+      "guideType": "[N]"
+    },
+    {
+      "name": "InfernoRollback",
+      "type": "number",
+      "description": "The exact frame in the channel animation to determine when to roll back to the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "ResurrectMode",
+      "type": "text",
+      "description": "Controls which monster mode to set on the monster when it is resurrected. Referenced from the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "ResurrectSkill",
+      "type": "text",
+      "description": "Controls what skill should the monster use when it is resurrected (",
+      "guideType": "[O]"
+    },
+    {
+      "name": "SpawnUniqueMod",
+      "type": "text",
+      "description": "Controls what unique modifier the monster should always spawn with (",
+      "guideType": "[O]"
+    },
+    {
+      "name": "*eol",
+      "type": "number",
+      "comment": true
+    }
+  ]
+}

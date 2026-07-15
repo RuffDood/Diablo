@@ -1,0 +1,155 @@
+{
+  "table": "overlay",
+  "file": "global/excel/overlay.txt",
+  "description": "Table overlay du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 18,
+  "columns": [
+    {
+      "name": "overlay",
+      "type": "text",
+      "description": "Defines the name of the overlay, used in other data files",
+      "guideType": "[O]"
+    },
+    {
+      "name": "*ID",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Filename",
+      "type": "text",
+      "description": "Defines which DCC file to use for the Overlay",
+      "guideType": "[O]"
+    },
+    {
+      "name": "version",
+      "type": "number",
+      "description": "Defines which game version to use this Overlay (0 = Classic mode | 100 = Expansion mode)\"'>",
+      "guideType": "[N]"
+    },
+    {
+      "name": "*Frames",
+      "type": "number",
+      "comment": true
+    },
+    {
+      "name": "Character",
+      "type": "text",
+      "description": "Used for name categorizing Overlays for unit translation mapping",
+      "guideType": "[O]"
+    },
+    {
+      "name": "PreDraw",
+      "type": "boolean",
+      "description": "If equals 1, then display the Overlay in front of Sprites. If equals 0, then display the Overlay behind Sprites",
+      "guideType": "[B]"
+    },
+    {
+      "name": "1ofN",
+      "type": "number",
+      "description": "Controls how to randomly display Overlays. This value will randomly add to the current index of the Overlay to possibly use another Overlay that is indexed after this current Overlay. The formula is as follows: Index = Index + RANDOM(0, [\"1ofN\"]-1)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Xoffset",
+      "type": "number",
+      "description": "Sets the horizontal offset of the overlay on the unit. Positive values move it toward the left and negative values move it towards the right",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Yoffset",
+      "type": "number",
+      "description": "Sets the vertical offset of the overlay on the unit. Positive values move it down and negative values move it up",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Height1",
+      "type": "number"
+    },
+    {
+      "name": "Height2",
+      "type": "number"
+    },
+    {
+      "name": "Height3",
+      "type": "number"
+    },
+    {
+      "name": "Height4",
+      "type": "number"
+    },
+    {
+      "name": "AnimRate",
+      "type": "number",
+      "description": "Controls the animation frame rate of the Overlay. The value is the number of frames that will update per second",
+      "guideType": "[N]"
+    },
+    {
+      "name": "LoopWaitTime",
+      "type": "number",
+      "description": "Controls the number of periodic frames to wait until redrawing the Overlay. This only works with Overlays that are a loop type",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Trans",
+      "type": "number",
+      "description": "Controls the alpha mode for how the Overlay is displayed, which can affect transparency and blending. Referenced by the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "InitRadius",
+      "type": "number",
+      "description": "Controls the starting Light Radius value for the Overlay (Max = 18)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Radius",
+      "type": "number",
+      "description": "Controls the maximum Light Radius value for the Overlay. This can only be greater than or equal to",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Red",
+      "type": "number",
+      "description": "Controls the Red color gradient of the Light Radius",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Green",
+      "type": "number",
+      "description": "Controls the Green color gradient of the Light Radius",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Blue",
+      "type": "number",
+      "description": "Controls the Blue color gradient of the Light Radius",
+      "guideType": "[N]"
+    },
+    {
+      "name": "NumDirections",
+      "type": "number",
+      "description": "The number of directions in the cell file",
+      "guideType": "[N]"
+    },
+    {
+      "name": "LocalBlood",
+      "type": "number",
+      "description": "Controls how to display green blood or VFX on a unit.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "WeaponStateFlags",
+      "type": "number"
+    },
+    {
+      "name": "WeaponStateGroup",
+      "type": "number"
+    },
+    {
+      "name": "StartSound",
+      "type": "text"
+    }
+  ]
+}

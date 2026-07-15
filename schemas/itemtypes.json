@@ -1,0 +1,218 @@
+{
+  "table": "itemtypes",
+  "file": "global/excel/itemtypes.txt",
+  "description": "Table itemtypes du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 19,
+  "columns": [
+    {
+      "name": "ItemType",
+      "type": "text",
+      "description": "This is a reference field to define the Item Type name",
+      "guideType": "[O]"
+    },
+    {
+      "name": "Code",
+      "type": "text",
+      "description": "Defines the unique pointer for this Item Type, which is used by various data files",
+      "guideType": "[O]"
+    },
+    {
+      "name": "Equiv1",
+      "type": "text"
+    },
+    {
+      "name": "Equiv2",
+      "type": "text"
+    },
+    {
+      "name": "Repair",
+      "type": "boolean",
+      "description": "If equals 1, then the item can be repaired by an NPC in the shop UI. If equals 0, then the item cannot be repaired",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Body",
+      "type": "boolean",
+      "description": "If equals 1, then the item can be equipped by a character (Also uses the",
+      "guideType": "[B]"
+    },
+    {
+      "name": "BodyLoc1",
+      "type": "text"
+    },
+    {
+      "name": "BodyLoc2",
+      "type": "text"
+    },
+    {
+      "name": "Shoots",
+      "type": "number",
+      "description": "Points to the index of another Item Type as the required equipped Item Type to be used as ammo",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Quiver",
+      "type": "number",
+      "description": "Points to the index of another Item Type as the required equipped Item Type to be used as this ammo's weapon",
+      "guideType": "[N]"
+    },
+    {
+      "name": "Throwable",
+      "type": "number"
+    },
+    {
+      "name": "Reload",
+      "type": "boolean",
+      "description": "If equals 1, then the item (considered ammo in this case) will be automatically transferred from the inventory to the required",
+      "guideType": "[B]"
+    },
+    {
+      "name": "ReEquip",
+      "type": "boolean",
+      "description": "If equals 1, then the item in the inventory will replace a matching equipped item if that equipped item was destroyed. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "AutoStack",
+      "type": "boolean",
+      "description": "If equals 1, then if the player picks up a matching Item Type, then they will try to automatically stack together. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Magic",
+      "type": "boolean",
+      "description": "If equals 1, then this item will always have the Magic quality (unless it is a Quest item). If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Rare",
+      "type": "boolean",
+      "description": "If equals 1, then this item can spawn as a Rare quality. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Normal",
+      "type": "boolean",
+      "description": "If equals 1, then this item will always have the Normal quality. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Beltable",
+      "type": "boolean",
+      "description": "If equals 1, then this item can be placed in the character's belt slots. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "MaxSockets1",
+      "type": "number"
+    },
+    {
+      "name": "MaxSocketsLevelThreshold1",
+      "type": "number"
+    },
+    {
+      "name": "MaxSockets2",
+      "type": "number"
+    },
+    {
+      "name": "MaxSocketsLevelThreshold2",
+      "type": "number"
+    },
+    {
+      "name": "MaxSockets3",
+      "type": "number"
+    },
+    {
+      "name": "TreasureClass",
+      "type": "boolean",
+      "description": "If equals 1, then allow this Item Type to be used in default treasure classes. If equals 0, then ignore this",
+      "guideType": "[B]"
+    },
+    {
+      "name": "Rarity",
+      "type": "number",
+      "description": "Determines the chance for the item to spawn with stats, when created as a random Weapon/Armor/Misc item. Used in the following formula:",
+      "guideType": "[N]"
+    },
+    {
+      "name": "StaffMods",
+      "type": "text",
+      "description": "Determines if the Item Type should have class specific item skill modifiers. Grants skills to the class listed using the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "Class",
+      "type": "text",
+      "description": "Determines if this item should be useable only by a specific class. Referenced from the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "VarInvGfx",
+      "type": "number",
+      "description": "Tracks the number of inventory graphics used for this item type. This number much match the number of",
+      "guideType": "[N]"
+    },
+    {
+      "name": "InvGfx1",
+      "type": "text"
+    },
+    {
+      "name": "InvGfx2",
+      "type": "text"
+    },
+    {
+      "name": "InvGfx3",
+      "type": "text"
+    },
+    {
+      "name": "InvGfx4",
+      "type": "text"
+    },
+    {
+      "name": "InvGfx5",
+      "type": "text"
+    },
+    {
+      "name": "InvGfx6",
+      "type": "text"
+    },
+    {
+      "name": "StorePage",
+      "type": "text",
+      "description": "Uses a code to determine which UI tab page on the NPC shop UI to display this Item Type, such as after it is sold to the NPC. Referenced from the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "*eol",
+      "type": "number",
+      "comment": true
+    },
+    {
+      "name": "*skillID",
+      "type": "number",
+      "comment": true
+    },
+    {
+      "name": "*CTC",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "UICategory",
+      "type": "text"
+    },
+    {
+      "name": "RunewordCategory1",
+      "type": "text"
+    },
+    {
+      "name": "RunewordCategory2",
+      "type": "text"
+    },
+    {
+      "name": "Restricted",
+      "type": "text"
+    }
+  ]
+}

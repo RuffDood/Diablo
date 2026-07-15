@@ -1,0 +1,165 @@
+{
+  "table": "magicsuffix",
+  "file": "global/excel/magicsuffix.txt",
+  "description": "Table magicsuffix du mod TCP.",
+  "source": "Colonnes et types inferes du .txt (table non couverte par le guide).",
+  "columnsDocumented": 0,
+  "columns": [
+    {
+      "name": "Name",
+      "type": "text"
+    },
+    {
+      "name": "version",
+      "type": "number"
+    },
+    {
+      "name": "spawnable",
+      "type": "number"
+    },
+    {
+      "name": "rare",
+      "type": "number"
+    },
+    {
+      "name": "level",
+      "type": "number"
+    },
+    {
+      "name": "maxlevel",
+      "type": "number"
+    },
+    {
+      "name": "levelreq",
+      "type": "number"
+    },
+    {
+      "name": "classspecific",
+      "type": "text"
+    },
+    {
+      "name": "class",
+      "type": "text"
+    },
+    {
+      "name": "classlevelreq",
+      "type": "number"
+    },
+    {
+      "name": "frequency",
+      "type": "number"
+    },
+    {
+      "name": "group",
+      "type": "number"
+    },
+    {
+      "name": "mod1code",
+      "type": "text"
+    },
+    {
+      "name": "mod1param",
+      "type": "number"
+    },
+    {
+      "name": "mod1min",
+      "type": "number"
+    },
+    {
+      "name": "mod1max",
+      "type": "number"
+    },
+    {
+      "name": "mod2code",
+      "type": "text"
+    },
+    {
+      "name": "mod2param",
+      "type": "number"
+    },
+    {
+      "name": "mod2min",
+      "type": "number"
+    },
+    {
+      "name": "mod2max",
+      "type": "number"
+    },
+    {
+      "name": "mod3code",
+      "type": "text"
+    },
+    {
+      "name": "mod3param",
+      "type": "number"
+    },
+    {
+      "name": "mod3min",
+      "type": "number"
+    },
+    {
+      "name": "mod3max",
+      "type": "number"
+    },
+    {
+      "name": "transformcolor",
+      "type": "text"
+    },
+    {
+      "name": "itype1",
+      "type": "text"
+    },
+    {
+      "name": "itype2",
+      "type": "text"
+    },
+    {
+      "name": "itype3",
+      "type": "text"
+    },
+    {
+      "name": "itype4",
+      "type": "text"
+    },
+    {
+      "name": "itype5",
+      "type": "text"
+    },
+    {
+      "name": "itype6",
+      "type": "text"
+    },
+    {
+      "name": "itype7",
+      "type": "text"
+    },
+    {
+      "name": "etype1",
+      "type": "text"
+    },
+    {
+      "name": "etype2",
+      "type": "text"
+    },
+    {
+      "name": "etype3",
+      "type": "text"
+    },
+    {
+      "name": "etype4",
+      "type": "text"
+    },
+    {
+      "name": "etype5",
+      "type": "text"
+    },
+    {
+      "name": "multiply",
+      "type": "number"
+    },
+    {
+      "name": "add",
+      "type": "number"
+    }
+  ]
+}

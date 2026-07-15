@@ -1,0 +1,195 @@
+{
+  "table": "automagic",
+  "file": "global/excel/automagic.txt",
+  "description": "Table automagic du mod TCP (colonnes documentees via le D2R Data Guide).",
+  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "columnsDocumented": 15,
+  "columns": [
+    {
+      "name": "Name",
+      "type": "text",
+      "description": "Defines the item affix name; it does not need to be uniquely named",
+      "guideType": "[O]"
+    },
+    {
+      "name": "version",
+      "type": "number",
+      "description": "Defines which game version to use this item affix (0 = Classic mode | 100 = Expansion mode)",
+      "guideType": "[N]"
+    },
+    {
+      "name": "spawnable",
+      "type": "boolean",
+      "description": "If equals 1, then this item affix is used as part of the game's randomizer for assigning item modifiers when an item spawns. If equals 0, then this item affix is never used.",
+      "guideType": "[B]"
+    },
+    {
+      "name": "rare",
+      "type": "boolean",
+      "description": "If equals 1, then this item affix can be used when randomly assigning item modifiers when a rare item spawns. If equals 0, then this item affix is not used for rare items.",
+      "guideType": "[B]"
+    },
+    {
+      "name": "level",
+      "type": "number",
+      "description": "The minimum item level required for this item affix to spawn on the item. If the item level is below this value, then the item affix will not spawn on the item.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "maxlevel",
+      "type": "number",
+      "description": "The maximum item level required for this item affix to spawn on the item. If the item level is above this value, then the item affix will not spawn on the item.",
+      "guideType": "[N]"
+    },
+    {
+      "name": "levelreq",
+      "type": "number",
+      "description": "The minimum character level required to equip an item that has this item affix",
+      "guideType": "[N]"
+    },
+    {
+      "name": "classspecific",
+      "type": "text",
+      "description": "Controls if this item affix should only be used for class specific items. Specified by the",
+      "guideType": "[O]"
+    },
+    {
+      "name": "class",
+      "type": "text",
+      "description": "Controls which character class is required for the class specific level requirement specified in the below",
+      "guideType": "[O]"
+    },
+    {
+      "name": "classlevelreq",
+      "type": "number",
+      "description": "The minimum character level required for a specific class in order to equip an item that has this item affix. This relies on the class specified in the above",
+      "guideType": "[N]"
+    },
+    {
+      "name": "frequency",
+      "type": "number",
+      "description": "Controls the probability that the affix appears on the item (a higher value means that the item affix will appear on the item more often). This value gets summed together with other",
+      "guideType": "[N]"
+    },
+    {
+      "name": "group",
+      "type": "number",
+      "description": "Assigns an item affix to a specific group number. Items cannot spawn with more than 1 item affix with the same group number. This is used to guarantee that certain item affixes do not overlap on the same item. If this field is null, then the group number will default to group 0",
+      "guideType": "[N]"
+    },
+    {
+      "name": "mod1code",
+      "type": "text"
+    },
+    {
+      "name": "mod1param",
+      "type": "number"
+    },
+    {
+      "name": "mod1min",
+      "type": "number"
+    },
+    {
+      "name": "mod1max",
+      "type": "number"
+    },
+    {
+      "name": "mod2code",
+      "type": "text"
+    },
+    {
+      "name": "mod2param",
+      "type": "text"
+    },
+    {
+      "name": "mod2min",
+      "type": "number"
+    },
+    {
+      "name": "mod2max",
+      "type": "number"
+    },
+    {
+      "name": "mod3code",
+      "type": "text"
+    },
+    {
+      "name": "mod3param",
+      "type": "text"
+    },
+    {
+      "name": "mod3min",
+      "type": "text"
+    },
+    {
+      "name": "mod3max",
+      "type": "text"
+    },
+    {
+      "name": "transformcolor",
+      "type": "number",
+      "description": "Controls the color change of the item after spawning with this item affix. If empty, then the item affix will not change the item's color. Referenced from the",
+      "guideType": "[N]"
+    },
+    {
+      "name": "itype1",
+      "type": "text"
+    },
+    {
+      "name": "itype2",
+      "type": "text"
+    },
+    {
+      "name": "itype3",
+      "type": "text"
+    },
+    {
+      "name": "itype4",
+      "type": "text"
+    },
+    {
+      "name": "itype5",
+      "type": "text"
+    },
+    {
+      "name": "itype6",
+      "type": "text"
+    },
+    {
+      "name": "itype7",
+      "type": "text"
+    },
+    {
+      "name": "etype1",
+      "type": "text"
+    },
+    {
+      "name": "etype2",
+      "type": "text"
+    },
+    {
+      "name": "etype3",
+      "type": "text"
+    },
+    {
+      "name": "etype4",
+      "type": "text"
+    },
+    {
+      "name": "etype5",
+      "type": "text"
+    },
+    {
+      "name": "multiply",
+      "type": "number",
+      "description": "Multiplicative modifier for the item's buy and sell costs, based on the item affix (",
+      "guideType": "[N]"
+    },
+    {
+      "name": "add",
+      "type": "number",
+      "description": "Flat integer modification to the item's buy and sell costs, based on the item affix",
+      "guideType": "[N]"
+    }
+  ]
+}
