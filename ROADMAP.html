@@ -1,0 +1,270 @@
+<title>ROADMAP — Wiki & Éditeur des 3 Mods · Diablo TCP</title>
+<style>
+  :root {
+    --bg:#f6f3f1; --surface:#ffffff; --ink:#241a18; --muted:#6d5d58;
+    --accent:#a6382a; --accent-soft:#f3e0dc; --warn:#8a5a12; --warn-soft:#f5ead6;
+    --line:#e2d8d4; --code-bg:#efe8e5; --done:#a6382a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#161010; --surface:#1f1817; --ink:#ece3e0; --muted:#a3928c;
+      --accent:#e0715a; --accent-soft:#38211c; --warn:#d59a55; --warn-soft:#332617;
+      --line:#302523; --code-bg:#261d1c; --done:#e0715a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#161010; --surface:#1f1817; --ink:#ece3e0; --muted:#a3928c;
+    --accent:#e0715a; --accent-soft:#38211c; --warn:#d59a55; --warn-soft:#332617;
+    --line:#302523; --code-bg:#261d1c; --done:#e0715a;
+  }
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--ink); font:15px/1.55 "Segoe UI","Avenir Next",system-ui,sans-serif;
+    margin:0; padding:0 20px 90px; }
+  main { max-width:840px; margin:0 auto; }
+  code { font-family:Consolas,"Cascadia Mono",monospace; font-size:.9em; background:var(--code-bg);
+    padding:1px 6px; border-radius:4px; }
+  a { color:var(--accent); }
+
+  header { padding:44px 0 10px; }
+  .eyebrow { font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--accent); margin:0 0 10px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .badge { background:var(--accent); color:var(--bg); border-radius:4px; padding:1px 8px;
+    font-size:11px; letter-spacing:.08em; }
+  h1 { font-size:clamp(26px,5vw,36px); margin:0 0 10px; line-height:1.15; text-wrap:balance; }
+  .etoile { border-left:3px solid var(--accent); background:var(--accent-soft); border-radius:0 8px 8px 0;
+    padding:12px 16px; font-size:14.5px; }
+  .etoile b { display:block; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--accent); margin-bottom:4px; }
+
+  .progres-global { position:sticky; top:0; z-index:6; background:var(--bg); padding:12px 0;
+    border-bottom:1px solid var(--line); margin-bottom:26px; display:flex; align-items:center; gap:12px; }
+  .pg-texte { font-size:13px; color:var(--muted); white-space:nowrap; font-variant-numeric:tabular-nums; }
+  .pg-jauge { flex:1; height:10px; background:var(--line); border-radius:99px; overflow:hidden; }
+  .pg-jauge div { height:100%; background:var(--accent); width:0%; transition:width .25s; }
+
+  .route { position:relative; padding-left:34px; }
+  .route::before { content:""; position:absolute; left:11px; top:8px; bottom:8px; width:3px;
+    background:var(--line); border-radius:2px; }
+  .station { position:relative; margin:0 0 22px; background:var(--surface); border:1px solid var(--line);
+    border-radius:12px; padding:16px 20px; }
+  .station::before { content:""; position:absolute; left:-30px; top:22px; width:17px; height:17px;
+    border-radius:50%; background:var(--bg); border:3px solid var(--line); }
+  .station.fait::before { background:var(--done); border-color:var(--done); }
+  .station.encours { border-color:var(--accent); box-shadow:0 0 0 1px var(--accent); }
+  .station.encours::before { background:var(--bg); border-color:var(--accent); border-width:4px; }
+  .st-tete { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .st-num { color:var(--accent); font-weight:700; font-size:12px; letter-spacing:.08em; white-space:nowrap; }
+  .st-titre { font-size:17px; font-weight:700; }
+  .st-etat { margin-left:auto; font-size:11px; font-weight:700; letter-spacing:.06em; padding:2px 9px;
+    border-radius:99px; white-space:nowrap; }
+  .st-etat.fait { background:var(--accent-soft); color:var(--accent); }
+  .st-etat.encours { background:var(--accent); color:var(--bg); }
+  .st-etat.avenir { background:var(--code-bg); color:var(--muted); }
+  .st-but { color:var(--muted); font-size:13.5px; margin:4px 0 10px; }
+
+  .taches { display:flex; flex-direction:column; gap:2px; }
+  .tache { display:flex; align-items:baseline; gap:10px; padding:5px 8px; border-radius:7px;
+    font-size:14px; cursor:pointer; }
+  .tache:hover { background:var(--code-bg); }
+  .tache input { width:16px; height:16px; accent-color:var(--accent); flex:none; transform:translateY(2px); cursor:pointer; }
+  .tache.faite { color:var(--muted); }
+  .tache.faite .lbl { text-decoration:line-through; text-decoration-color:var(--line); }
+  .tache.faite input { cursor:default; }
+  .qui { margin-left:auto; font-size:10.5px; font-weight:700; letter-spacing:.05em; padding:1px 8px;
+    border-radius:99px; white-space:nowrap; align-self:center; }
+  .qui.g { background:var(--warn-soft); color:var(--warn); }
+  .qui.a { background:var(--accent-soft); color:var(--accent); }
+  .note-t { font-size:12px; color:var(--muted); display:block; margin-top:1px; }
+
+  .st-pied { display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
+  .chip { font-size:12px; padding:5px 10px; border-radius:7px; }
+  .chip b { font-size:10px; letter-spacing:.08em; text-transform:uppercase; margin-right:6px; }
+  .chip.gate { background:var(--accent-soft); } .chip.gate b { color:var(--accent); }
+  .chip.ship { background:var(--warn-soft); } .chip.ship b { color:var(--warn); }
+
+  details { border:1px solid var(--line); border-radius:10px; background:var(--surface);
+    padding:14px 18px; margin:14px 0; }
+  summary { cursor:pointer; font-weight:700; font-size:15px; }
+  summary:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+  details p, details li { font-size:14px; }
+  .table-wrap { overflow-x:auto; margin:12px 0; border:1px solid var(--line); border-radius:8px; }
+  table { border-collapse:collapse; width:100%; font-size:13.5px; background:var(--surface); }
+  th { text-align:left; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--muted); padding:9px 12px; border-bottom:2px solid var(--line); }
+  td { padding:9px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+  tr:last-child td { border-bottom:none; }
+  td.k { font-weight:650; white-space:nowrap; }
+  .tree { font-family:Consolas,monospace; font-size:12.5px; line-height:1.7; background:var(--code-bg);
+    border-radius:8px; padding:12px 16px; overflow-x:auto; }
+  .tree .c { color:var(--muted); }
+  footer { margin-top:40px; padding-top:16px; border-top:1px solid var(--line); font-size:12.5px; color:var(--muted); }
+</style>
+
+<main>
+<header>
+  <p class="eyebrow"><span>SPHERE DI · Diablo TCP</span><span class="badge">ROADMAP · V1</span></p>
+  <h1>Le Wiki & l'Éditeur des 3 Mods</h1>
+  <div class="etoile"><b>La North Star</b>
+    Un atelier web pour <b>éditer confortablement les tables du mod TCP</b> (au lieu du TSV cryptique à la main) et <b>comparer les 3 mods</b> (BK · BT · TCP) au vanilla. Les <code>.txt</code> restent la source de vérité, lus par D2RLAN ; git est la « base ». Zéro base de données, hébergement léger sur Netlify.
+  </div>
+</header>
+
+<div class="progres-global">
+  <span class="pg-texte" id="pg-texte">—</span>
+  <div class="pg-jauge"><div id="pg-jauge"></div></div>
+  <button id="exporter-etat" style="border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);padding:4px 11px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;">⬇ État</button>
+</div>
+
+<div class="route">
+
+  <div class="station fait" data-etape="0">
+    <div class="st-tete"><span class="st-num">FONDATIONS</span><span class="st-titre">Assainir & gouverner l'atelier</span><span class="st-etat fait">FAIT · 15 juil.</span></div>
+    <p class="st-but">Faire du faux Turborepo un atelier de données D2R propre et gouverné.</p>
+    <div class="taches">
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Cadastre <code>ai-cartographie.json</code> renommé, bug d'encodage corrigé, validé AJV (draft 2020-12) <span class="note-t">28 mojibakes réparés · zones de référence verrouillées read-only</span></span></label>
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Table rase du scaffolding Turborepo (Next/pnpm) + apps orphelines</span></label>
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Atelier de données (voie 2) : assets HD & launcher <b>hors git</b>, gardés sur disque <span class="note-t">git suivi 1,3 Go → ~60 Mo · <code>.gitattributes</code> CRLF pour l'intégrité des .txt</span></span></label>
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Trilogie agentique <code>README</code>/<code>AGENTS</code>/<code>CLAUDE</code> + index du wiki BTDiablo (1233 pages)</span></label>
+    </div>
+    <div class="st-pied">
+      <span class="chip gate"><b>Gate</b>repo propre · cadastre VALID · poussé sur RuffDood/Diablo</span>
+      <span class="chip ship"><b>Livré</b>atelier gouverné, ~60 Mo suivis</span>
+    </div>
+  </div>
+
+  <div class="station fait" data-etape="1">
+    <div class="st-tete"><span class="st-num">INCRÉMENT 1</span><span class="st-titre">Socle + éditeur d'une table</span><span class="st-etat fait">FAIT · 15 juil.</span></div>
+    <p class="st-but">Poser la charpente et prouver la chaîne d'édition sur une table réelle.</p>
+    <div class="taches">
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Monorepo <b>npm + turbo</b> (Vite + React), calqué sur la stack Sphère DI</span></label>
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Parseur/écrivain TSV <b>byte-exact</b> (<code>build-data/tsv.js</code>) + dev-server local qui lit/écrit les .txt</span></label>
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Éditeur <code>hireling.txt</code> : tableau éditable, pagination, sauvegarde <span class="note-t">preuve d'intégrité : édition → diff git = 1 cellule, CRLF préservé</span></span></label>
+    </div>
+    <div class="st-pied">
+      <span class="chip gate"><b>Gate</b>éditer une cellule → diff git propre</span>
+      <span class="chip ship"><b>Livré</b>éditeur local fonctionnel</span>
+    </div>
+  </div>
+
+  <div class="station encours" data-etape="2">
+    <div class="st-tete"><span class="st-num">INCRÉMENT 2</span><span class="st-titre">Éditeur multi-tables + schémas</span><span class="st-etat encours">EN COURS</span></div>
+    <p class="st-but">Éditer les 40 tables du mod, colonnes documentées et validées.</p>
+    <div class="taches">
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Sélecteur des <b>40 tables</b> (route <code>/api/tables</code> + menu déroulant) — changement dynamique prouvé</span></label>
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Générateur de schémas : croise les colonnes réelles des .txt avec le <b>D2R Data Guide</b> <span class="note-t">40 schémas · 37 enrichis · hireling 77/77 + refs préservés</span></span></label>
+      <label class="tache" data-id="i2-valid"><input type="checkbox"><span class="lbl">Validations à la saisie (nombre/référence) via les schémas</span><span class="qui a">AGENT</span></label>
+      <label class="tache" data-id="i2-communes"><input type="checkbox"><span class="lbl">Raffiner : croiser les « colonnes communes » du guide → mieux documenter armor & les items</span><span class="qui a">AGENT</span></label>
+    </div>
+    <div class="st-pied">
+      <span class="chip gate"><b>Gate</b>éditer n'importe quelle table, typée + validée</span>
+      <span class="chip ship"><b>Livraison</b>éditeur complet local</span>
+    </div>
+  </div>
+
+  <div class="station" data-etape="3">
+    <div class="st-tete"><span class="st-num">INCRÉMENT 3</span><span class="st-titre">Hébergement Netlify</span><span class="st-etat avenir">À VENIR</span></div>
+    <p class="st-but">Rendre l'éditeur accessible en ligne, écriture via commits GitHub.</p>
+    <div class="taches">
+      <label class="tache" data-id="i3-fn"><input type="checkbox"><span class="lbl">Netlify Function : écriture des .txt via l'<b>API GitHub</b> (FS éphémère → commit dans le repo)</span><span class="qui a">AGENT</span></label>
+      <label class="tache" data-id="i3-auth"><input type="checkbox"><span class="lbl">Auth cookie HMAC + allowlist courriel (pattern assurance-admin)</span><span class="qui a">AGENT</span></label>
+      <label class="tache" data-id="i3-token"><input type="checkbox"><span class="lbl">Fournir un token GitHub + connecter le site Netlify (custom domain)</span><span class="qui g">GUILLAUME</span></label>
+    </div>
+    <div class="st-pied">
+      <span class="chip gate"><b>Gate</b>l'admin en ligne édite une table → commit → rebuild</span>
+      <span class="chip ship"><b>Livraison</b>admin hébergé et privé</span>
+    </div>
+  </div>
+
+  <div class="station" data-etape="4">
+    <div class="st-tete"><span class="st-num">INCRÉMENT 4</span><span class="st-titre">Wiki des 3 Mods</span><span class="st-etat avenir">À VENIR</span></div>
+    <p class="st-but">Consultation et comparaison BK / BT / TCP / vanilla — le principe diff-vs-vanilla.</p>
+    <div class="taches">
+      <label class="tache" data-id="i4-gen"><input type="checkbox"><span class="lbl">Pages générées des .txt : uniques, sets, runewords, cube, skills (taxonomie BTDiablo)</span><span class="qui a">AGENT</span></label>
+      <label class="tache" data-id="i4-diff"><input type="checkbox"><span class="lbl">Vue de <b>comparaison</b> : écarts entre les 3 mods et le vanilla sur une même table</span><span class="qui a">AGENT</span></label>
+      <label class="tache" data-id="i4-cadre"><input type="checkbox"><span class="lbl">Cadrer le contenu éditorial (patch notes, install) vs généré</span><span class="qui g">GUILLAUME</span></label>
+    </div>
+    <div class="st-pied">
+      <span class="chip gate"><b>Gate</b>vue de diff entre mods, publiée statique sur Netlify</span>
+      <span class="chip ship"><b>Livraison</b>wiki public des 3 mods</span>
+    </div>
+  </div>
+
+  <div class="station" data-etape="5">
+    <div class="st-tete"><span class="st-num">INCRÉMENT 5</span><span class="st-titre">Polish & mise en service</span><span class="st-etat avenir">À VENIR</span></div>
+    <p class="st-but">Recherche, ergonomie, durcissement — l'outil devient quotidien.</p>
+    <div class="taches">
+      <label class="tache" data-id="i5-recherche"><input type="checkbox"><span class="lbl">Recherche et filtres (par item, par colonne) ; navigation croisée entre tables</span><span class="qui a">AGENT</span></label>
+      <label class="tache" data-id="i5-mission"><input type="checkbox"><span class="lbl">Mission mercenaire : 2 rings + amulet + belt via l'éditeur (<code>hireling</code>/<code>inventory</code>)</span><span class="qui a">AGENT</span></label>
+      <label class="tache" data-id="i5-durcir"><input type="checkbox"><span class="lbl">Durcir l'auth (protection de site Netlify) ; export/sauvegarde</span><span class="qui g">GUILLAUME</span></label>
+    </div>
+    <div class="st-pied">
+      <span class="chip ship"><b>Livraison</b>outil complet déployé et adopté</span>
+    </div>
+  </div>
+
+</div>
+
+<details>
+  <summary>L'architecture — le stack et ses décisions</summary>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Décision</th><th>Choix</th><th>Pourquoi</th></tr>
+    <tr><td class="k">Source de vérité</td><td><b>Les <code>.txt</code></b> (option A), git comme « base »</td><td>D2RLAN lit les .txt ; pas de DB à synchroniser ; versioning natif du mod</td></tr>
+    <tr><td class="k">Stack</td><td>npm + turbo · Vite + React · Netlify</td><td>ossature méta de l'écosystème Sphère DI (Locator / assurance-admin), en léger</td></tr>
+    <tr><td class="k">Écriture hébergée</td><td>Netlify Function → commits GitHub</td><td>une Function a un FS éphémère : l'écriture passe par le repo git</td></tr>
+    <tr><td class="k">Assets HD</td><td>hors git (voie 2), gardés localement</td><td>atelier de données + outil, pas le mod complet — git léger</td></tr>
+    <tr><td class="k">Intégrité</td><td>round-trip byte-exact · CRLF épinglé</td><td>une réécriture qui casse le format TSV casse D2RLAN</td></tr>
+  </table>
+  </div>
+</details>
+
+<details>
+  <summary>Le dépôt — où tout vit</summary>
+  <div class="tree">Diablo/
+├─ apps/admin/        <span class="c">éditeur web (Vite + React)</span>
+├─ scripts/           <span class="c">dev-server · build-data (TSV↔JSON) · gen-schemas · cadastre · validateur</span>
+├─ schemas/           <span class="c">40 schémas de colonnes (types + descriptions du guide)</span>
+├─ data-TCP/          <span class="c">le mod en développement (global/excel = les .txt · hd/D2RLAN hors git)</span>
+├─ data-BK/ data-BT/  <span class="c">mods de référence (lecture seule)</span>
+├─ excel-vanilla/     <span class="c">tables du jeu de base (référence)</span>
+├─ guide/             <span class="c">D2R Data Guide (clone local, non versionné)</span>
+├─ wiki-template/     <span class="c">références wiki (index BTDiablo, gabarits)</span>
+├─ ai-cartographie.json <span class="c">le cadastre gouverné (+ .schema.json)</span>
+└─ ROADMAP.html       <span class="c">CETTE PAGE — le suivi</span> · README · AGENTS · CLAUDE</div>
+</details>
+
+<footer>
+  ROADMAP v1 — Diablo TCP, 15 juillet 2026 · <b>FONDATIONS + INCRÉMENT 1 CLOS</b> · éditeur multi-tables en service · <b>40 schémas générés du guide</b> (hireling 77/77) · prochain jalon : validations à la saisie, puis hébergement Netlify. Coche les cases à venir : l'état est sauvegardé dans ton navigateur.
+</footer>
+</main>
+
+<script>
+(function(){
+  const CLE = "diablo-roadmap-v1";
+  let etat = {};
+  try { etat = JSON.parse(localStorage.getItem(CLE) || "{}"); } catch(e) {}
+  const interactives = document.querySelectorAll(".tache[data-id]");
+  const consignees = document.querySelectorAll(".tache.faite").length;
+  function sauver(){ localStorage.setItem(CLE, JSON.stringify(etat)); rafraichir(); }
+  function rafraichir(){
+    let cochees = 0;
+    interactives.forEach(t => { if (etat[t.dataset.id]) cochees++; });
+    const total = consignees + interactives.length;
+    const faites = consignees + cochees;
+    document.getElementById("pg-texte").textContent = `${faites} / ${total} jalons`;
+    document.getElementById("pg-jauge").style.width = (100*faites/total) + "%";
+  }
+  interactives.forEach(t => {
+    const cb = t.querySelector("input");
+    cb.checked = !!etat[t.dataset.id];
+    cb.addEventListener("change", () => { etat[t.dataset.id] = cb.checked; if(!cb.checked) delete etat[t.dataset.id]; sauver(); });
+  });
+  document.getElementById("exporter-etat").onclick = () => {
+    const sortie = { exporte_le: new Date().toISOString(), coches: Object.keys(etat).filter(k => etat[k]) };
+    const blob = new Blob([JSON.stringify(sortie, null, 1)], {type:"application/json"});
+    const a = Object.assign(document.createElement("a"), { href: URL.createObjectURL(blob), download: "roadmap-etat.json" });
+    a.click(); URL.revokeObjectURL(a.href);
+  };
+  rafraichir();
+})();
+</script>

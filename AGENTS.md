@@ -49,6 +49,16 @@ Après toute modification **structurelle** (ajout / suppression / renommage de f
 
 Le générateur préserve les annotations manuelles (`role`, `summary`, `agentAccess`) : enrichis-les pour toute zone signifiante.
 
+## Suivi de la ROADMAP
+
+`ROADMAP.html` est le tableau de bord du projet — tiens-le à jour au fil de l'avancement (marque les jalons livrés).
+
+Quand une **tâche significative émerge** en cours de conversation :
+
+1. **Propose** à l'utilisateur de l'ajouter à la ROADMAP.
+2. **Seulement si** l'utilisateur **confirme** l'ajout : **analyse** où l'insérer — au niveau **métier et efficacité d'avancement** du projet humain (le bon placement *technique* t'est acquis par défaut, ce n'est pas l'enjeu).
+3. À l'issue de cette analyse, dégage **deux séquencements** logiques et cohérents, puis **propose les 2 options** à l'utilisateur.
+
 ## Mission courante
 
 `Mission/RingMercenaire.txt` — permettre au mercenaire de porter **2 rings, une amulet et une belt** dans le mod TCP. Table concernée : `data-TCP/global/excel/hireling.txt`.
