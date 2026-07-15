@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "schema.json",
+  "$id": "ai-cartographie.schema.json",
   "title": "Diablo workspace architecture",
   "description": "Closed, recursive schema for the workspace tree. Core objects reject unknown properties; namespaced extension payloads are allowed only through the extensions property.",
   "type": "object",

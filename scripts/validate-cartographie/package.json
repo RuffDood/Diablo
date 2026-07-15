@@ -1,0 +1,14 @@
+{
+  "name": "validate-cartographie",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Validation de ai-cartographie.json contre ai-cartographie.schema.json (JSON Schema draft 2020-12).",
+  "scripts": {
+    "validate": "node validate.mjs"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}

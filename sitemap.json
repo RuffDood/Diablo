@@ -1,9 +1,0 @@
-{
-  "pages": [
-    {
-      "path": "/",
-      "priority": 1.0,
-      "changeFrequency": "weekly"
-    }
-  ]
-}

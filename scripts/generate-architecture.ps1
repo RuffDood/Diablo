@@ -18,7 +18,7 @@ if (-not (Test-Path -LiteralPath $rootPath -PathType Container)) {
 }
 
 if ([string]::IsNullOrWhiteSpace($Output)) {
-    $Output = Join-Path $rootPath 'architecture.json'
+    $Output = Join-Path $rootPath 'ai-cartographie.json'
 }
 
 $outputPath = [System.IO.Path]::GetFullPath($Output)
@@ -50,7 +50,7 @@ function Import-ExistingNodeData {
 }
 
 if (Test-Path -LiteralPath $outputPath -PathType Leaf) {
-    $existingJson = Get-Content -Raw -LiteralPath $outputPath
+    $existingJson = Get-Content -Raw -LiteralPath $outputPath -Encoding utf8
 
     if (-not [string]::IsNullOrWhiteSpace($existingJson)) {
         try {
