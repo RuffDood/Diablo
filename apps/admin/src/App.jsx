@@ -3,8 +3,6 @@ import { useEffect, useMemo, useState, useCallback } from 'react';
 const PAGE_SIZE = 25;
 
 // Validation d'une cellule selon le schema. Retourne un message d'erreur, ou null si valide.
-// (La validation des references vers d'autres tables viendra plus tard : elle exige
-//  de charger les cles des tables referencees.)
 function cellError(meta, value) {
   if (!meta || value === '') return null;
   if (meta.type === 'number' && !/^-?\d+$/.test(value)) return 'attend un nombre entier';
@@ -12,28 +10,85 @@ function cellError(meta, value) {
   return null;
 }
 
+// --- Écran de connexion (courriel autorisé) ---
+function Login({ onLogin }) {
+  const [email, setEmail] = useState('');
+  const [err, setErr] = useState('');
+  const [busy, setBusy] = useState(false);
+
+  async function submit(e) {
+    e.preventDefault();
+    setErr('');
+    setBusy(true);
+    try {
+      const res = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const out = await res.json();
+      if (!out.ok) throw new Error(out.error || 'échec de connexion');
+      onLogin();
+    } catch (e) {
+      setErr(e.message);
+      setBusy(false);
+    }
+  }
+
+  return (
+    <div className="login">
+      <h1>Éditeur de tables <small>· mod TCP</small></h1>
+      <form onSubmit={submit}>
+        <p>Connecte-toi avec ton courriel autorisé.</p>
+        <input type="email" required placeholder="toi@spheredi.com" value={email}
+               onChange={(e) => setEmail(e.target.value)} autoFocus />
+        <button type="submit" disabled={busy}>{busy ? '…' : 'Entrer'}</button>
+        {err && <p className="err-msg">{err}</p>}
+      </form>
+    </div>
+  );
+}
+
+// --- Application : porte d'auth ---
 export default function App() {
+  const [auth, setAuth] = useState(null);
+
+  const loadMe = useCallback(() => {
+    fetch('/api/me')
+      .then((r) => r.json())
+      .then(setAuth)
+      .catch(() => setAuth({ authenticated: false, authConfigured: false }));
+  }, []);
+
+  useEffect(() => { loadMe(); }, [loadMe]);
+
+  async function logout() {
+    try { await fetch('/api/logout', { method: 'POST' }); } catch {}
+    loadMe();
+  }
+
+  if (!auth) return <div className="app"><p className="status">Chargement…</p></div>;
+  if (!auth.authenticated && auth.authConfigured) return <Login onLogin={loadMe} />;
+
+  return <Editor auth={auth} onLogout={logout} />;
+}
+
+// --- L'éditeur (monté uniquement si autorisé) ---
+function Editor({ auth, onLogout }) {
   const [tables, setTables] = useState([]);
   const [table, setTable] = useState('hireling');
   const [data, setData] = useState(null);
   const [status, setStatus] = useState('Chargement…');
   const [dirty, setDirty] = useState(false);
   const [page, setPage] = useState(0);
-  const [editing, setEditing] = useState(null); // { row, col }
+  const [editing, setEditing] = useState(null);
 
   useEffect(() => {
-    fetch('/api/tables')
-      .then((r) => r.json())
-      .then((d) => setTables(d.tables || []))
-      .catch(() => {});
+    fetch('/api/tables').then((r) => r.json()).then((d) => setTables(d.tables || [])).catch(() => {});
   }, []);
 
   const loadTable = useCallback((name) => {
-    setData(null);
-    setStatus('Chargement…');
-    setPage(0);
-    setEditing(null);
-    setDirty(false);
+    setData(null); setStatus('Chargement…'); setPage(0); setEditing(null); setDirty(false);
     fetch(`/api/table/${name}`)
       .then((r) => r.json())
       .then((d) => {
@@ -63,29 +118,20 @@ export default function App() {
       if (prev.rows[rowIdx][colIdx] === value) return prev;
       setDirty(true);
       setStatus('Modifié (non sauvegardé)');
-      return {
-        ...prev,
-        rows: prev.rows.map((r, i) =>
-          i === rowIdx ? r.map((c, j) => (j === colIdx ? value : c)) : r,
-        ),
-      };
+      return { ...prev, rows: prev.rows.map((r, i) => (i === rowIdx ? r.map((c, j) => (j === colIdx ? value : c)) : r)) };
     });
   }
 
   function countErrors() {
     if (!data) return 0;
     let n = 0;
-    for (const row of data.rows) {
-      for (let j = 0; j < data.headers.length; j++) {
-        if (cellError(colMeta[data.headers[j]], row[j])) n++;
-      }
-    }
+    for (const row of data.rows) for (let j = 0; j < data.headers.length; j++) if (cellError(colMeta[data.headers[j]], row[j])) n++;
     return n;
   }
 
   async function save() {
     const errors = countErrors();
-    if (errors > 0 && !window.confirm(`${errors} cellule(s) invalide(s) selon le schéma (ex. texte dans une colonne nombre). Sauvegarder quand même ?`)) {
+    if (errors > 0 && !window.confirm(`${errors} cellule(s) invalide(s) selon le schéma. Sauvegarder quand même ?`)) {
       setStatus(`${errors} cellule(s) invalide(s) — sauvegarde annulée`);
       return;
     }
@@ -98,7 +144,7 @@ export default function App() {
       });
       const out = await res.json();
       if (!out.ok) throw new Error(out.error || 'inconnue');
-      setStatus(errors > 0 ? `Sauvegardé ✓ (${errors} invalide(s) conservée(s))` : 'Sauvegardé ✓');
+      setStatus(out.commit ? `Sauvegardé ✓ (commit ${String(out.commit).slice(0, 7)})` : 'Sauvegardé ✓');
       setDirty(false);
     } catch (e) {
       setStatus('Erreur : ' + e.message);
@@ -112,6 +158,7 @@ export default function App() {
 
   return (
     <div className="app">
+      {!auth.authConfigured && <div className="banniere">⚠ Mode ouvert (local) — aucune authentification.</div>}
       <header>
         <h1>Éditeur de tables <small>· mod TCP</small></h1>
         <div className="bar">
@@ -128,6 +175,9 @@ export default function App() {
             </span>
           )}
           <span className="status">{status}</span>
+          {auth.authenticated && auth.user?.email !== 'local' && (
+            <span className="compte">{auth.user?.email} · <a onClick={onLogout}>déconnexion</a></span>
+          )}
         </div>
         {data?.schema && <p className="desc">{data.schema.description} <em>· clique une cellule pour l'éditer</em></p>}
       </header>
@@ -167,16 +217,9 @@ export default function App() {
                             title={err ? `⚠ ${data.headers[j]} : ${err}` : undefined}
                             onClick={() => setEditing({ row: i, col: j })}>
                           {isEditing ? (
-                            <input
-                              autoFocus
-                              defaultValue={cell}
-                              inputMode={isNum ? 'numeric' : 'text'}
-                              onBlur={(e) => { commit(i, j, e.target.value); setEditing(null); }}
-                              onKeyDown={(e) => {
-                                if (e.key === 'Enter') e.currentTarget.blur();
-                                if (e.key === 'Escape') setEditing(null);
-                              }}
-                            />
+                            <input autoFocus defaultValue={cell} inputMode={isNum ? 'numeric' : 'text'}
+                                   onBlur={(e) => { commit(i, j, e.target.value); setEditing(null); }}
+                                   onKeyDown={(e) => { if (e.key === 'Enter') e.currentTarget.blur(); if (e.key === 'Escape') setEditing(null); }} />
                           ) : (
                             <span className="cell">{cell === '' ? ' ' : cell}</span>
                           )}

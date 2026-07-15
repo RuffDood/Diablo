@@ -1,0 +1,16 @@
+# Deploiement Netlify : l'admin (Vite) en site statique + une Function /api/*.
+# Les .txt du mod sont lus/ecrits via l'API GitHub (voir netlify/functions).
+
+[build]
+  command = "npm run build --workspace apps/admin"
+  publish = "apps/admin/dist"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# `netlify dev` : sert l'admin Vite et route /api/* vers la Function locale.
+[dev]
+  command = "npm run dev --workspace apps/admin"
+  targetPort = 5173
+  port = 8888

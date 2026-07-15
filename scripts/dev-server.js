@@ -30,6 +30,11 @@ function tablePath(name) {
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, 'http://localhost');
 
+  // auth : en dev local, aucune authentification (edition directe du FS)
+  if (url.pathname === '/api/me' && req.method === 'GET') {
+    return send(res, 200, { authenticated: true, user: { email: 'local' }, authConfigured: false, mode: 'local' });
+  }
+
   // liste des tables editables (les .txt de global/excel)
   if (url.pathname === '/api/tables' && req.method === 'GET') {
     const tables = fs.readdirSync(EXCEL_DIR)

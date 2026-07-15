@@ -70,6 +70,23 @@ td.num .cell { color: #a8d4f5; }
 td.err { background: rgba(224, 113, 90, 0.16); box-shadow: inset 0 0 0 1px #b8503c; cursor: help; }
 td.err .cell { color: #f0917f; }
 
+/* Écran de connexion */
+.login { max-width: 360px; margin: 12vh auto; padding: 0 20px; }
+.login h1 { font-size: 18px; margin-bottom: 16px; }
+.login h1 small { color: #8a8a99; font-weight: normal; }
+.login form { background: #1f1f28; border: 1px solid #2a2a34; border-radius: 10px; padding: 20px; }
+.login p { color: #9aa0ad; margin: 0 0 12px; }
+.login input { width: 100%; background: #2b2b3a; border: 1px solid #3a3a48; color: #fff; padding: 9px 12px; border-radius: 6px; font: inherit; margin-bottom: 10px; }
+.login button { width: 100%; }
+.err-msg { color: #f0917f; margin: 10px 0 0; }
+
+/* Bannière mode ouvert */
+.banniere { background: #4a3a1a; color: #e8c98a; padding: 6px 12px; border-radius: 6px; font-size: 12px; margin-bottom: 10px; }
+
+/* Compte connecté */
+.compte { color: #8a8a99; font-size: 12px; }
+.compte a { color: #a8d4f5; cursor: pointer; text-decoration: underline; }
+
 td.rownum, th.rownum {
   position: sticky;
   left: 0;
