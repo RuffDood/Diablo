@@ -1,0 +1,2 @@
+1. Je veux que mon mercenaire puisse porter 2 ring, une amulette et une belt, dans mon mod TCP
+
