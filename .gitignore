@@ -1,38 +1,30 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Dependances
+node_modules/
 
-# Dependencies
-node_modules
-.pnp
-.pnp.js
+# Sorties de build
+dist/
+.turbo/
 
-# Local env files
+# Variables d'environnement
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*
+!.env.example
 
-# Testing
-coverage
+# Netlify
+.netlify/
 
-# Turbo
-.turbo
+# Reference externe : guide D2R communautaire (clone local, non versionne)
+guide/
 
-# Vercel
-.vercel
+# Atelier de donnees : les assets HD vivent avec le jeu, hors git (stock local conserve)
+data-BK/hd/
+data-BT/hd/
+data-TCP/hd/
+data-TCP/D2RLAN/
 
-# Build Outputs
-.next/
-out/
-build
-dist
+# Backups automatiques des tables (gardes localement, non versionnes)
+*.bak
 
-
-# Debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Misc
+# Divers
 .DS_Store
-*.pem
+*.log
