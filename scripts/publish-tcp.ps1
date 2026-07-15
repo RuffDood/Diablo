@@ -438,10 +438,12 @@ if (-not $PSCmdlet.ShouldProcess($operationTarget, $actionDescription)) {
     return
 }
 
-$runningGameProcesses = @(Get-Process -Name @('D2R', 'D2RLauncher', 'D2RLAN') -ErrorAction SilentlyContinue)
-if ($runningGameProcesses.Count -gt 0) {
-    $processNames = ($runningGameProcesses | Select-Object -ExpandProperty ProcessName -Unique) -join ', '
-    throw "Ferme le jeu et son lanceur avant de publier. Processus detectes: $processNames"
+if ($changes.Count -gt 0) {
+    $runningGameProcesses = @(Get-Process -Name @('D2R', 'D2RLauncher', 'D2RLAN') -ErrorAction SilentlyContinue)
+    if ($runningGameProcesses.Count -gt 0) {
+        $processNames = ($runningGameProcesses | Select-Object -ExpandProperty ProcessName -Unique) -join ', '
+        throw "Ferme le jeu et son lanceur avant de publier. Processus detectes: $processNames"
+    }
 }
 
 $backupDirectory = $null
