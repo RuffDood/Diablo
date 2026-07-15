@@ -20,14 +20,7 @@
         {
             "type": "ClickCatcherWidget",
             "fields": {
-                "rect": { "x": -180, "y": -200, "width": 1362, "height": 1727 }
-            }
-        },
-        {
-            "type": "ImageWidget", "name": "LeftSprite",
-            "fields": {
-                "rect": "$LeftSideRectHireMenu",
-                "filename": "$LeftSideSpriteNew"
+                "rect": "$PanelClickCatcherRect"
             }
         },
         {
@@ -130,28 +123,6 @@
                 "gemSocketFilename": "PANEL\\gemsocket",
                 "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Ring",
                 "isHireable": true,
-            }
-        },
-        {
-            "type": "InventorySlotWidget", "name": "slot_gloves",
-            "fields": {
-                "rect": { "x": 108, "y": 591, "width": 196, "height": 196 },
-                "cellSize": "$ItemCellSize",
-                "location": "gloves",
-                "gemSocketFilename": "PANEL\\gemsocket",
-                "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Glove",
-                "isHireable": false,
-            }
-        },
-        {
-            "type": "InventorySlotWidget", "name": "slot_feet",
-            "fields": {
-                "rect": { "x": 861, "y": 591, "width": 196, "height": 196 },
-                "cellSize": "$ItemCellSize",
-                "location": "feet",
-                "gemSocketFilename": "PANEL\\gemsocket",
-                "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Boots",
-                "isHireable": false,
             }
         },
         {
