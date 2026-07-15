@@ -1,0 +1,258 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema.json",
+  "title": "Diablo workspace architecture",
+  "description": "Closed, recursive schema for the workspace tree. Core objects reject unknown properties; namespaced extension payloads are allowed only through the extensions property.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "root"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "root": {
+      "$ref": "#/$defs/directoryNode"
+    },
+    "extensions": {
+      "$ref": "#/$defs/extensions"
+    }
+  },
+  "$defs": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[^/\\\\]+$"
+    },
+    "relativePath": {
+      "type": "string",
+      "pattern": "^(?:\\.|[^/\\\\]+(?:/[^/\\\\]+)*)$"
+    },
+    "nodeReference": {
+      "$ref": "#/$defs/relativePath"
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Extension point. Keys must be namespaced, such as diablo.mod or org.example.tool. Each payload is intentionally owned by its extension.",
+      "patternProperties": {
+        "^[a-z][a-z0-9-]*(?:\\.[a-z][a-z0-9-]*)+$": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "importedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "reference": {
+          "type": "string",
+          "format": "uri-reference"
+        }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "editable": {
+          "type": "boolean"
+        },
+        "canonical": {
+          "type": "boolean"
+        },
+        "generated": {
+          "type": "boolean"
+        }
+      }
+    },
+    "relationTargets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/nodeReference"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "relations": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "derivedFrom": {
+          "$ref": "#/$defs/relationTargets"
+        },
+        "overrides": {
+          "$ref": "#/$defs/relationTargets"
+        },
+        "mirrors": {
+          "$ref": "#/$defs/relationTargets"
+        },
+        "dependsOn": {
+          "$ref": "#/$defs/relationTargets"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "active",
+            "experimental",
+            "deprecated",
+            "archived",
+            "reference"
+          ]
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "policy": {
+          "$ref": "#/$defs/policy"
+        },
+        "relations": {
+          "$ref": "#/$defs/relations"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "directoryNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "path",
+        "kind",
+        "children"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/name"
+        },
+        "path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "kind": {
+          "const": "directory"
+        },
+        "meta": {
+          "$ref": "#/$defs/metadata"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/node"
+          }
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
+        }
+      }
+    },
+    "fileNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "path",
+        "kind"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/name"
+        },
+        "path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "kind": {
+          "const": "file"
+        },
+        "meta": {
+          "$ref": "#/$defs/metadata"
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
+        }
+      }
+    },
+    "symlinkNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "path",
+        "kind",
+        "target"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/name"
+        },
+        "path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "kind": {
+          "const": "symlink"
+        },
+        "target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "meta": {
+          "$ref": "#/$defs/metadata"
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
+        }
+      }
+    },
+    "node": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/directoryNode"
+        },
+        {
+          "$ref": "#/$defs/fileNode"
+        },
+        {
+          "$ref": "#/$defs/symlinkNode"
+        }
+      ]
+    }
+  }
+}
