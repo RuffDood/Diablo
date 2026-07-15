@@ -74,6 +74,7 @@
     border-radius:99px; white-space:nowrap; align-self:center; }
   .qui.g { background:var(--warn-soft); color:var(--warn); }
   .qui.a { background:var(--accent-soft); color:var(--accent); }
+  .qui.v { background:#243b30; color:#6fd39b; }
   .note-t { font-size:12px; color:var(--muted); display:block; margin-top:1px; }
 
   .st-pied { display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
@@ -161,13 +162,15 @@
     </div>
   </div>
 
-  <div class="station" data-etape="3">
-    <div class="st-tete"><span class="st-num">INCRÉMENT 3</span><span class="st-titre">Hébergement Netlify</span><span class="st-etat avenir">À VENIR</span></div>
+  <div class="station encours" data-etape="3">
+    <div class="st-tete"><span class="st-num">INCRÉMENT 3</span><span class="st-titre">Hébergement Netlify</span><span class="st-etat encours">EN COURS</span></div>
     <p class="st-but">Rendre l'éditeur accessible en ligne, écriture via commits GitHub.</p>
     <div class="taches">
-      <label class="tache" data-id="i3-fn"><input type="checkbox"><span class="lbl">Netlify Function : écriture des .txt via l'<b>API GitHub</b> (FS éphémère → commit dans le repo)</span><span class="qui a">AGENT</span></label>
-      <label class="tache" data-id="i3-auth"><input type="checkbox"><span class="lbl">Auth cookie HMAC + allowlist courriel (pattern assurance-admin)</span><span class="qui a">AGENT</span></label>
-      <label class="tache" data-id="i3-token"><input type="checkbox"><span class="lbl">Fournir un token GitHub + connecter le site Netlify (custom domain)</span><span class="qui g">GUILLAUME</span></label>
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Netlify Function : lecture/écriture des .txt via l'<b>API GitHub</b> (FS éphémère → commit dans le repo)</span></label>
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Auth cookie HMAC + allowlist courriel + écran de login (pattern assurance-admin)</span></label>
+      <label class="tache" data-id="i3-token"><input type="checkbox"><span class="lbl">Token <b>fine-grained</b> limité à Diablo (Contents read-write)</span><span class="qui v">VINCENT</span></label>
+      <label class="tache" data-id="i3-netlify"><input type="checkbox"><span class="lbl">Connecter le site Netlify + poser les variables d'env (custom domain)</span><span class="qui g">GUILLAUME</span></label>
+      <label class="tache" data-id="i3-deploy"><input type="checkbox"><span class="lbl">Test intégré (<code>netlify dev</code>) + déploiement + variables d'env</span><span class="qui a">AGENT</span></label>
     </div>
     <div class="st-pied">
       <span class="chip gate"><b>Gate</b>l'admin en ligne édite une table → commit → rebuild</span>
@@ -196,6 +199,7 @@
       <label class="tache" data-id="i5-recherche"><input type="checkbox"><span class="lbl">Recherche et filtres (par item, par colonne) ; navigation croisée entre tables</span><span class="qui a">AGENT</span></label>
       <label class="tache" data-id="i5-mission"><input type="checkbox"><span class="lbl">Mission mercenaire : 2 rings + amulet + belt via l'éditeur (<code>hireling</code>/<code>inventory</code>)</span><span class="qui a">AGENT</span></label>
       <label class="tache" data-id="i5-durcir"><input type="checkbox"><span class="lbl">Durcir l'auth (protection de site Netlify) ; export/sauvegarde</span><span class="qui g">GUILLAUME</span></label>
+      <label class="tache" data-id="i5-wiki-public"><input type="checkbox"><span class="lbl">Option <b>(c) wiki public des 3 mods</b> : encyclopédie communauté (style BTDiablo) — pages rédigées + dérivées du comparateur. À détailler.</span><span class="qui g">GUILLAUME</span></label>
     </div>
     <div class="st-pied">
       <span class="chip ship"><b>Livraison</b>outil complet déployé et adopté</span>
@@ -234,7 +238,7 @@
 </details>
 
 <footer>
-  ROADMAP v1 — Diablo TCP, 15 juillet 2026 · <b>FONDATIONS + INCRÉMENTS 1 &amp; 2 CLOS</b> · éditeur multi-tables + validations en service · <b>40 schémas générés du guide</b> (hireling 77/77) · prochain jalon : hébergement Netlify (I3). Coche les cases à venir : l'état est sauvegardé dans ton navigateur.
+  ROADMAP v1 — Diablo TCP, 15 juillet 2026 · <b>FONDATIONS + INCRÉMENTS 1 &amp; 2 CLOS</b> · éditeur multi-tables + validations en service · <b>40 schémas générés du guide</b> (hireling 77/77) · I3 en cours : backend hébergé <b>codé</b> (Function GitHub + auth cookie) — reste le token fine-grained de Vincent + le déploiement. Coche les cases à venir : l'état est sauvegardé dans ton navigateur.
 </footer>
 </main>
 

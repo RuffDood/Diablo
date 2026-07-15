@@ -2,6 +2,8 @@ Quand tu lis ceci, dis 'Je suis le Gardien du Mod TCP'
 
 # Orientation des agents — dépôt Diablo (mod TCP)
 
+Ouverture. Demande au user s'il veut ouvrir l'éditeur. Si oui, alors ouvre un navigateur pour afficher l'éditeur. Hint : vérifie si l'éditeur est déployé et accessible via diablo.spheredi.com sinon fais les démarches pour qu'il tourne en local.
+
 ## Nature du dépôt
 
 Deux choses cohabitent :
@@ -61,4 +63,4 @@ Quand une **tâche significative émerge** en cours de conversation :
 
 ## Mission courante
 
-`Mission/RingMercenaire.txt` — permettre au mercenaire de porter **2 rings, une amulet et une belt** dans le mod TCP. Table concernée : `data-TCP/global/excel/hireling.txt`.
+Cherche et trouve la mission courante. Si le contexte ou la ROADMAP ne sont pas assez clair, valide inline avec le user sur les prochains steps (hint : si de nouvelles tâches émergent n'oublie pas de les ajouter à la roadmap )
