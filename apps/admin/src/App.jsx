@@ -2,6 +2,16 @@ import { useEffect, useMemo, useState, useCallback } from 'react';
 
 const PAGE_SIZE = 25;
 
+// Validation d'une cellule selon le schema. Retourne un message d'erreur, ou null si valide.
+// (La validation des references vers d'autres tables viendra plus tard : elle exige
+//  de charger les cles des tables referencees.)
+function cellError(meta, value) {
+  if (!meta || value === '') return null;
+  if (meta.type === 'number' && !/^-?\d+$/.test(value)) return 'attend un nombre entier';
+  if (meta.type === 'boolean' && value !== '0' && value !== '1') return 'attend 0 ou 1';
+  return null;
+}
+
 export default function App() {
   const [tables, setTables] = useState([]);
   const [table, setTable] = useState('hireling');
@@ -11,7 +21,6 @@ export default function App() {
   const [page, setPage] = useState(0);
   const [editing, setEditing] = useState(null); // { row, col }
 
-  // liste des tables (une fois)
   useEffect(() => {
     fetch('/api/tables')
       .then((r) => r.json())
@@ -19,7 +28,6 @@ export default function App() {
       .catch(() => {});
   }, []);
 
-  // charge la table courante
   const loadTable = useCallback((name) => {
     setData(null);
     setStatus('Chargement…');
@@ -64,7 +72,23 @@ export default function App() {
     });
   }
 
+  function countErrors() {
+    if (!data) return 0;
+    let n = 0;
+    for (const row of data.rows) {
+      for (let j = 0; j < data.headers.length; j++) {
+        if (cellError(colMeta[data.headers[j]], row[j])) n++;
+      }
+    }
+    return n;
+  }
+
   async function save() {
+    const errors = countErrors();
+    if (errors > 0 && !window.confirm(`${errors} cellule(s) invalide(s) selon le schéma (ex. texte dans une colonne nombre). Sauvegarder quand même ?`)) {
+      setStatus(`${errors} cellule(s) invalide(s) — sauvegarde annulée`);
+      return;
+    }
     setStatus('Sauvegarde…');
     try {
       const res = await fetch(`/api/table/${table}`, {
@@ -74,7 +98,7 @@ export default function App() {
       });
       const out = await res.json();
       if (!out.ok) throw new Error(out.error || 'inconnue');
-      setStatus('Sauvegardé ✓');
+      setStatus(errors > 0 ? `Sauvegardé ✓ (${errors} invalide(s) conservée(s))` : 'Sauvegardé ✓');
       setDirty(false);
     } catch (e) {
       setStatus('Erreur : ' + e.message);
@@ -136,8 +160,12 @@ export default function App() {
                       const meta = colMeta[data.headers[j]];
                       const isNum = meta?.type === 'number';
                       const isEditing = editing && editing.row === i && editing.col === j;
+                      const err = cellError(meta, cell);
+                      const cls = (isNum ? 'num ' : '') + (err ? 'err' : '');
                       return (
-                        <td key={j} className={isNum ? 'num' : ''} onClick={() => setEditing({ row: i, col: j })}>
+                        <td key={j} className={cls.trim()}
+                            title={err ? `⚠ ${data.headers[j]} : ${err}` : undefined}
+                            onClick={() => setEditing({ row: i, col: j })}>
                           {isEditing ? (
                             <input
                               autoFocus

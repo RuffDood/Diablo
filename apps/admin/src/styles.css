@@ -66,6 +66,10 @@ td.num { text-align: right; }
 }
 td.num .cell { color: #a8d4f5; }
 
+/* Cellule invalide selon le schéma (type nombre/boolean) */
+td.err { background: rgba(224, 113, 90, 0.16); box-shadow: inset 0 0 0 1px #b8503c; cursor: help; }
+td.err .cell { color: #f0917f; }
+
 td.rownum, th.rownum {
   position: sticky;
   left: 0;
