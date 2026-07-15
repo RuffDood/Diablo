@@ -1,0 +1,87 @@
+{
+    "basedOn": "BankOriginalLayoutHD.json",
+    "type": "BankPanel", "name": "BankExpansionLayout",
+    "children": [
+        {
+            "type": "ClickCatcherWidget", "name": "click_catcher"
+        },
+        {
+            "type": "ImageWidget", "name": "background",
+            "fields": {
+                "filename": "PANEL\\Stash\\StashPanel_BG2"
+            }
+        },
+        {
+            "type": "ImageWidget", "name": "LeftSprite"
+        },
+        {
+            "type": "ImageWidget", "name": "LeftHinge"
+        },
+        {
+            "type": "TextBoxWidget", "name": "title"
+        },
+        {
+            "type": "TextBoxWidget", "name": "gold_amount"
+        },
+        {
+            "type": "ButtonWidget", "name": "gold_withdraw"
+        },
+        {
+            "type": "ButtonWidget", "name": "close"
+        },
+        {
+            "type": "InventoryGridWidget", "name": "grid",
+            "fields": {
+                "rect": { "x": 91, "y": 235 },
+                "cellCount": { "x": 16, "y": 13 }
+            }
+        },
+        {
+            "type": "TabBarWidget", "name": "BankTabs",
+            "fields": {
+                "rect": { "x": 82, "y": 160 },
+                "tabCount": 8,
+                "filename": "PANEL\\stash\\Stash_Tabs_Blank",
+                "inactiveFrames": [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+                "activeFrames": [ 1, 1, 1, 1, 1, 1, 1, 1 ],
+                "disabledFrames": [0, 0, 0, 0, 0, 0, 0, 0 ],
+                "textStrings": [ "@personal", "@shared", "@shared", "@shared", "@shared", "@shared", "@shared", "@shared" ],
+                "textStyle": { "pointSize": "$SmallPanelFontSize" },
+                "activeTextColor": "$TabsActiveTextColor",
+                "inactiveTextColor": "$TabsInactiveTextColor",
+                "tabSize": { "x": 195, "y": 75 },
+                "tabPadding": { "x": 4, "y": 0 },
+                "onSwitchTabMessage": "BankPanelMessage:SelectTab"
+            }
+        },
+        {
+            "type": "ImageWidget", "name": "BackgroundBox",
+            "fields": {
+                "anchor": { "x": 0.575, "y": 0.05 },
+                "filename": "PANEL\\StashSearch"
+            },
+            "children":
+            [
+                {
+                    "type": "InputTextBoxWidget", "name": "search_input",
+                    "fields": {
+                        "anchor": { "x": 0.035, "y": 0.1 },
+                        "rect": { "width": 400, "height": 34 },
+                        "fontType": "Chat",
+                        "alwaysAcceptsKeyInput": true,
+                        "fontStyle": {
+                            "fontColor": { "r": 255, "g": 255, "b": 255, "a": 255 },
+                            "pointSize": "$MediumFontSize",
+                            "fontFace": "BlizzardGlobal",
+                            "alignment": { "h": "left", "v": "center" },
+                            "options": { "pipeCharacterBehavior": "handle" }
+                            },
+                        "backgroundColor": [ 0.05, 0.03, 0.02, 1.0 ],
+                        "text/rect": { "x": 20, "width": 380, "height": 50 },
+                        "maxStringLength": 15
+                    }
+                }
+            ]
+        }
+    ]
+}
