@@ -107,7 +107,7 @@
                 "location": "right_hand",
                 "gemSocketFilename": "PANEL\\gemsocket",
                 "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Ring",
-                "isHireable": false,
+                "isHireable": true,
             }
         },
         {
@@ -118,7 +118,7 @@
                 "location": "left_hand",
                 "gemSocketFilename": "PANEL\\gemsocket",
                 "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Ring",
-                "isHireable": false,
+                "isHireable": true,
             }
         },
         {
@@ -151,7 +151,7 @@
                 "location": "neck",
                 "gemSocketFilename": "PANEL\\gemsocket",
                 "backgroundFilename": "PANEL\\Inventory\\Inventory_Paperdoll_Amulet",
-                "isHireable": false,
+                "isHireable": true,
             }
         },
         {
