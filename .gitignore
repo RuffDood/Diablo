@@ -12,6 +12,7 @@ dist/
 
 # Netlify
 .netlify/
+deno.lock
 
 # Reference externe : guide D2R communautaire (clone local, non versionne)
 guide/

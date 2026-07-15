@@ -144,6 +144,8 @@ td.err .cell { color: #f0917f; }
 td.rownum, th.rownum {
   position: sticky;
   left: 0;
+  width: 52px;
+  min-width: 52px;
   background: #22222c;
   color: #8a8a99;
   padding: 2px 8px;
@@ -152,6 +154,11 @@ td.rownum, th.rownum {
   cursor: default;
 }
 th.rownum { z-index: 2; }
+
+/* Colonne d'identification (1re colonne visible) figee au scroll horizontal,
+   a cote du numero de ligne — pour garder le repere en naviguant les tables larges. */
+td.cle-col { position: sticky; left: 52px; background: #16161a; z-index: 1; }
+th.cle-col { position: sticky; left: 52px; z-index: 2; }
 
 input {
   background: #2b2b3a;

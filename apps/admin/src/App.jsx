@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, useCallback, useRef, Fragment } from 'react';
 
-const PAGE_SIZE = 25;
+const PAGE_SIZE = 1000;
 
 const CATEGORY_LABELS = {
   items: 'Objets',
@@ -404,10 +404,10 @@ function Editor({ auth, onLogout }) {
             <thead>
               <tr>
                 <th className="rownum">#</th>
-                {visibleCols.map((j) => {
+                {visibleCols.map((j, idx) => {
                   const h = data.headers[j];
                   const meta = colMeta[h];
-                  const cls = meta?.comment ? 'comment' : meta?.type === 'number' ? 'num' : 'text';
+                  const cls = (meta?.comment ? 'comment' : meta?.type === 'number' ? 'num' : 'text') + (idx === 0 ? ' cle-col' : '');
                   return (
                     <th key={j} className={cls}
                         title={meta ? `${meta.type}${meta.ref ? ' → ' + meta.ref : ''} — ${meta.description}` : 'colonne non documentée'}>
@@ -424,13 +424,13 @@ function Editor({ auth, onLogout }) {
               {pageRows.map(({ row, i }) => (
                 <tr key={i}>
                   <td className="rownum">{i + 1}</td>
-                  {visibleCols.map((j) => {
+                  {visibleCols.map((j, idx) => {
                     const cell = row[j];
                     const meta = colMeta[data.headers[j]];
                     const isNum = meta?.type === 'number';
                     const isEditing = editing && editing.row === i && editing.col === j;
                     const err = cellError(meta, cell);
-                    const cls = (isNum ? 'num ' : '') + (err ? 'err' : '');
+                    const cls = (isNum ? 'num ' : '') + (err ? 'err ' : '') + (idx === 0 ? 'cle-col' : '');
                     return (
                       <td key={j} className={cls.trim()}
                           title={err ? `⚠ ${data.headers[j]} : ${err}` : undefined}
