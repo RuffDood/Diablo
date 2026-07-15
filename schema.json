@@ -11,7 +11,7 @@
   ],
   "properties": {
     "schemaVersion": {
-      "const": "1.0.0"
+      "const": "1.1.0"
     },
     "generatedAt": {
       "type": "string",
@@ -118,6 +118,41 @@
       "additionalProperties": false,
       "minProperties": 1,
       "properties": {
+        "role": {
+          "description": "Stable semantic role of the node. Values prefixed with x- are project-specific extensions.",
+          "oneOf": [
+            {
+              "enum": [
+                "modding-workspace",
+                "mod-reference",
+                "mod-development",
+                "vanilla-reference",
+                "requirements",
+                "gameplay-data",
+                "presentation-assets",
+                "localization",
+                "protected-zone"
+              ]
+            },
+            {
+              "type": "string",
+              "pattern": "^x-[a-z0-9]+(?:-[a-z0-9]+)*$"
+            }
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "agentAccess": {
+          "description": "Access policy for coding agents. If absent, the value is inherited from the parent; the root defaults to read-write.",
+          "enum": [
+            "read-write",
+            "read-only",
+            "no-access"
+          ],
+          "default": "read-write"
+        },
         "description": {
           "type": "string",
           "minLength": 1
