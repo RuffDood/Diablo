@@ -223,11 +223,21 @@ function generateCube(cube) {
     [...buildAddRecipes(cube), ...buildRemoveRecipes(cube)],
     'ajout/retrait des gems',
   );
-  replaceContiguousRows(
-    cube,
-    isGemCycle,
-    [...buildColorCycles(cube), ...buildQualityCycles(cube)],
-    'rotation des Gem Removers',
+
+  const cycleCount = cube.rows.filter(isGemCycle).length;
+  if (!cycleCount) fail('Bloc rotation des Gem Removers introuvable');
+  cube.rows = cube.rows.filter((row) => !isGemCycle(row));
+
+  // `GFX Change` accepte n'importe quel objet de misc.txt avec un Identify Scroll.
+  // Les recettes précises des removers la précèdent pour lever cette ambiguïté
+  // de correspondance; le comportement effectif reste à confirmer en jeu.
+  const gfxChangeIndex = cube.rows.findIndex((row) => description(row) === 'GFX Change');
+  if (gfxChangeIndex < 0) fail('Recette générique GFX Change introuvable');
+  cube.rows.splice(
+    gfxChangeIndex,
+    0,
+    ...buildColorCycles(cube),
+    ...buildQualityCycles(cube),
   );
 }
 
@@ -407,6 +417,18 @@ function validate() {
   if (qualityRows.length !== STATES.length) fail(`Rotations de qualité : ${qualityRows.length}, attendu 35`);
   if (cubeRows.some((row) => /^Add Gem x\d+$/.test(row.description))) fail("Anciennes recettes génériques 'Add Gem' encore présentes");
   if (cubeRows.some((row) => /^Cycle Gem Remover - /.test(row.description))) fail('Anciennes rotations de Gem Remover encore présentes');
+
+  const gfxChange = expectSingle(cubeRows, (row) => row.description === 'GFX Change', 'GFX Change');
+  assertFields(gfxChange, {
+    numinputs: 2,
+    'input 1': 'misc',
+    'input 2': 'isc',
+  }, 'GFX Change');
+  const gfxChangeIndex = cubeRows.indexOf(gfxChange);
+  const lateQualityRows = qualityRows.filter((row) => cubeRows.indexOf(row) > gfxChangeIndex);
+  if (lateQualityRows.length) {
+    fail(`Priorité des rotations de qualité : ${lateQualityRows.length} recette(s) placée(s) après GFX Change`);
+  }
 
   for (const quality of QUALITIES) {
     for (let quantity = 1; quantity <= BATCH_MAX; quantity += 1) {

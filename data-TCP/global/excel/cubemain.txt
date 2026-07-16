@@ -4,6 +4,76 @@ description	enabled	firstLadderSeason	lastLadderSeason	min diff	version	op	param
 ,uni	0				100					1	apot																																																																																														0
 ,set	0				100					2	mpot,qty=2																																																																																														0
 ,mag	0				100					2	hpot,qty=2																																																																																														0
+Cycle Gem Remover Color - Chipped Amethyst	1				100					1	y63							y64																																																																																							0
+Cycle Gem Remover Color - Chipped Topaz	1				100					1	y64							y65																																																																																							0
+Cycle Gem Remover Color - Chipped Sapphire	1				100					1	y65							y66																																																																																							0
+Cycle Gem Remover Color - Chipped Emerald	1				100					1	y66							y67																																																																																							0
+Cycle Gem Remover Color - Chipped Ruby	1				100					1	y67							y68																																																																																							0
+Cycle Gem Remover Color - Chipped Diamond	1				100					1	y68							y69																																																																																							0
+Cycle Gem Remover Color - Chipped Skull	1				100					1	y69							y63																																																																																							0
+Cycle Gem Remover Color - Flawed Amethyst	1				100					1	y70							y71																																																																																							0
+Cycle Gem Remover Color - Flawed Topaz	1				100					1	y71							y72																																																																																							0
+Cycle Gem Remover Color - Flawed Sapphire	1				100					1	y72							y73																																																																																							0
+Cycle Gem Remover Color - Flawed Emerald	1				100					1	y73							y74																																																																																							0
+Cycle Gem Remover Color - Flawed Ruby	1				100					1	y74							y75																																																																																							0
+Cycle Gem Remover Color - Flawed Diamond	1				100					1	y75							y76																																																																																							0
+Cycle Gem Remover Color - Flawed Skull	1				100					1	y76							y70																																																																																							0
+Cycle Gem Remover Color - Standard Amethyst	1				100					1	y77							y78																																																																																							0
+Cycle Gem Remover Color - Standard Topaz	1				100					1	y78							y79																																																																																							0
+Cycle Gem Remover Color - Standard Sapphire	1				100					1	y79							y80																																																																																							0
+Cycle Gem Remover Color - Standard Emerald	1				100					1	y80							y81																																																																																							0
+Cycle Gem Remover Color - Standard Ruby	1				100					1	y81							y82																																																																																							0
+Cycle Gem Remover Color - Standard Diamond	1				100					1	y82							y83																																																																																							0
+Cycle Gem Remover Color - Standard Skull	1				100					1	y83							y77																																																																																							0
+Cycle Gem Remover Color - Flawless Amethyst	1				100					1	y84							y85																																																																																							0
+Cycle Gem Remover Color - Flawless Topaz	1				100					1	y85							y86																																																																																							0
+Cycle Gem Remover Color - Flawless Sapphire	1				100					1	y86							y87																																																																																							0
+Cycle Gem Remover Color - Flawless Emerald	1				100					1	y87							y88																																																																																							0
+Cycle Gem Remover Color - Flawless Ruby	1				100					1	y88							y89																																																																																							0
+Cycle Gem Remover Color - Flawless Diamond	1				100					1	y89							y90																																																																																							0
+Cycle Gem Remover Color - Flawless Skull	1				100					1	y90							y84																																																																																							0
+Cycle Gem Remover Color - Perfect Amethyst	1				100					1	y02							y03																																																																																							0
+Cycle Gem Remover Color - Perfect Topaz	1				100					1	y03							y04																																																																																							0
+Cycle Gem Remover Color - Perfect Sapphire	1				100					1	y04							y05																																																																																							0
+Cycle Gem Remover Color - Perfect Emerald	1				100					1	y05							y06																																																																																							0
+Cycle Gem Remover Color - Perfect Ruby	1				100					1	y06							y07																																																																																							0
+Cycle Gem Remover Color - Perfect Diamond	1				100					1	y07							y08																																																																																							0
+Cycle Gem Remover Color - Perfect Skull	1				100					1	y08							y02																																																																																							0
+Cycle Gem Remover Quality - Chipped Amethyst	1				100					2	y63	isc						y70																													isc																																																										0
+Cycle Gem Remover Quality - Chipped Topaz	1				100					2	y64	isc						y71																													isc																																																										0
+Cycle Gem Remover Quality - Chipped Sapphire	1				100					2	y65	isc						y72																													isc																																																										0
+Cycle Gem Remover Quality - Chipped Emerald	1				100					2	y66	isc						y73																													isc																																																										0
+Cycle Gem Remover Quality - Chipped Ruby	1				100					2	y67	isc						y74																													isc																																																										0
+Cycle Gem Remover Quality - Chipped Diamond	1				100					2	y68	isc						y75																													isc																																																										0
+Cycle Gem Remover Quality - Chipped Skull	1				100					2	y69	isc						y76																													isc																																																										0
+Cycle Gem Remover Quality - Flawed Amethyst	1				100					2	y70	isc						y77																													isc																																																										0
+Cycle Gem Remover Quality - Flawed Topaz	1				100					2	y71	isc						y78																													isc																																																										0
+Cycle Gem Remover Quality - Flawed Sapphire	1				100					2	y72	isc						y79																													isc																																																										0
+Cycle Gem Remover Quality - Flawed Emerald	1				100					2	y73	isc						y80																													isc																																																										0
+Cycle Gem Remover Quality - Flawed Ruby	1				100					2	y74	isc						y81																													isc																																																										0
+Cycle Gem Remover Quality - Flawed Diamond	1				100					2	y75	isc						y82																													isc																																																										0
+Cycle Gem Remover Quality - Flawed Skull	1				100					2	y76	isc						y83																													isc																																																										0
+Cycle Gem Remover Quality - Standard Amethyst	1				100					2	y77	isc						y84																													isc																																																										0
+Cycle Gem Remover Quality - Standard Topaz	1				100					2	y78	isc						y85																													isc																																																										0
+Cycle Gem Remover Quality - Standard Sapphire	1				100					2	y79	isc						y86																													isc																																																										0
+Cycle Gem Remover Quality - Standard Emerald	1				100					2	y80	isc						y87																													isc																																																										0
+Cycle Gem Remover Quality - Standard Ruby	1				100					2	y81	isc						y88																													isc																																																										0
+Cycle Gem Remover Quality - Standard Diamond	1				100					2	y82	isc						y89																													isc																																																										0
+Cycle Gem Remover Quality - Standard Skull	1				100					2	y83	isc						y90																													isc																																																										0
+Cycle Gem Remover Quality - Flawless Amethyst	1				100					2	y84	isc						y02																													isc																																																										0
+Cycle Gem Remover Quality - Flawless Topaz	1				100					2	y85	isc						y03																													isc																																																										0
+Cycle Gem Remover Quality - Flawless Sapphire	1				100					2	y86	isc						y04																													isc																																																										0
+Cycle Gem Remover Quality - Flawless Emerald	1				100					2	y87	isc						y05																													isc																																																										0
+Cycle Gem Remover Quality - Flawless Ruby	1				100					2	y88	isc						y06																													isc																																																										0
+Cycle Gem Remover Quality - Flawless Diamond	1				100					2	y89	isc						y07																													isc																																																										0
+Cycle Gem Remover Quality - Flawless Skull	1				100					2	y90	isc						y08																													isc																																																										0
+Cycle Gem Remover Quality - Perfect Amethyst	1				100					2	y02	isc						y63																													isc																																																										0
+Cycle Gem Remover Quality - Perfect Topaz	1				100					2	y03	isc						y64																													isc																																																										0
+Cycle Gem Remover Quality - Perfect Sapphire	1				100					2	y04	isc						y65																													isc																																																										0
+Cycle Gem Remover Quality - Perfect Emerald	1				100					2	y05	isc						y66																													isc																																																										0
+Cycle Gem Remover Quality - Perfect Ruby	1				100					2	y06	isc						y67																													isc																																																										0
+Cycle Gem Remover Quality - Perfect Diamond	1				100					2	y07	isc						y68																													isc																																																										0
+Cycle Gem Remover Quality - Perfect Skull	1				100					2	y08	isc						y69																													isc																																																										0
 GFX Change	1				100					2	misc	isc						usetype,mod																																																																																							0
 Staff of Kings + Amulet of the Viper -> Horadric Staff	1				0	28				2	msf	vip						hst																																																																																							0
 Khalim's Flail + Khalim's Heart + Khalim's Eye + Khalim's Brain -> Khalim's Will	1				0	28				4	qf1	qhr	qey	qbr				qf2																																																																																							0
@@ -2248,76 +2318,6 @@ Add Demon's Ear x10	1				100					11	y01	"dhn,qty=10"						useitem				OB-Diablo		
 Withdraw Demon's Ear	1				100	15	368	1		2	y01	y45						useitem				OB-Diablo			-1	-1																					y45																													dhn																													0
 Convert Legacy Organ Remover y46	1				100					1	y46							y45																																																																																							0
 Convert Legacy Organ Remover y47	1				100					1	y47							y45																																																																																							0
-Cycle Gem Remover Color - Chipped Amethyst	1				100					1	y63							y64																																																																																							0
-Cycle Gem Remover Color - Chipped Topaz	1				100					1	y64							y65																																																																																							0
-Cycle Gem Remover Color - Chipped Sapphire	1				100					1	y65							y66																																																																																							0
-Cycle Gem Remover Color - Chipped Emerald	1				100					1	y66							y67																																																																																							0
-Cycle Gem Remover Color - Chipped Ruby	1				100					1	y67							y68																																																																																							0
-Cycle Gem Remover Color - Chipped Diamond	1				100					1	y68							y69																																																																																							0
-Cycle Gem Remover Color - Chipped Skull	1				100					1	y69							y63																																																																																							0
-Cycle Gem Remover Color - Flawed Amethyst	1				100					1	y70							y71																																																																																							0
-Cycle Gem Remover Color - Flawed Topaz	1				100					1	y71							y72																																																																																							0
-Cycle Gem Remover Color - Flawed Sapphire	1				100					1	y72							y73																																																																																							0
-Cycle Gem Remover Color - Flawed Emerald	1				100					1	y73							y74																																																																																							0
-Cycle Gem Remover Color - Flawed Ruby	1				100					1	y74							y75																																																																																							0
-Cycle Gem Remover Color - Flawed Diamond	1				100					1	y75							y76																																																																																							0
-Cycle Gem Remover Color - Flawed Skull	1				100					1	y76							y70																																																																																							0
-Cycle Gem Remover Color - Standard Amethyst	1				100					1	y77							y78																																																																																							0
-Cycle Gem Remover Color - Standard Topaz	1				100					1	y78							y79																																																																																							0
-Cycle Gem Remover Color - Standard Sapphire	1				100					1	y79							y80																																																																																							0
-Cycle Gem Remover Color - Standard Emerald	1				100					1	y80							y81																																																																																							0
-Cycle Gem Remover Color - Standard Ruby	1				100					1	y81							y82																																																																																							0
-Cycle Gem Remover Color - Standard Diamond	1				100					1	y82							y83																																																																																							0
-Cycle Gem Remover Color - Standard Skull	1				100					1	y83							y77																																																																																							0
-Cycle Gem Remover Color - Flawless Amethyst	1				100					1	y84							y85																																																																																							0
-Cycle Gem Remover Color - Flawless Topaz	1				100					1	y85							y86																																																																																							0
-Cycle Gem Remover Color - Flawless Sapphire	1				100					1	y86							y87																																																																																							0
-Cycle Gem Remover Color - Flawless Emerald	1				100					1	y87							y88																																																																																							0
-Cycle Gem Remover Color - Flawless Ruby	1				100					1	y88							y89																																																																																							0
-Cycle Gem Remover Color - Flawless Diamond	1				100					1	y89							y90																																																																																							0
-Cycle Gem Remover Color - Flawless Skull	1				100					1	y90							y84																																																																																							0
-Cycle Gem Remover Color - Perfect Amethyst	1				100					1	y02							y03																																																																																							0
-Cycle Gem Remover Color - Perfect Topaz	1				100					1	y03							y04																																																																																							0
-Cycle Gem Remover Color - Perfect Sapphire	1				100					1	y04							y05																																																																																							0
-Cycle Gem Remover Color - Perfect Emerald	1				100					1	y05							y06																																																																																							0
-Cycle Gem Remover Color - Perfect Ruby	1				100					1	y06							y07																																																																																							0
-Cycle Gem Remover Color - Perfect Diamond	1				100					1	y07							y08																																																																																							0
-Cycle Gem Remover Color - Perfect Skull	1				100					1	y08							y02																																																																																							0
-Cycle Gem Remover Quality - Chipped Amethyst	1				100					2	y63	isc						y70																													isc																																																										0
-Cycle Gem Remover Quality - Chipped Topaz	1				100					2	y64	isc						y71																													isc																																																										0
-Cycle Gem Remover Quality - Chipped Sapphire	1				100					2	y65	isc						y72																													isc																																																										0
-Cycle Gem Remover Quality - Chipped Emerald	1				100					2	y66	isc						y73																													isc																																																										0
-Cycle Gem Remover Quality - Chipped Ruby	1				100					2	y67	isc						y74																													isc																																																										0
-Cycle Gem Remover Quality - Chipped Diamond	1				100					2	y68	isc						y75																													isc																																																										0
-Cycle Gem Remover Quality - Chipped Skull	1				100					2	y69	isc						y76																													isc																																																										0
-Cycle Gem Remover Quality - Flawed Amethyst	1				100					2	y70	isc						y77																													isc																																																										0
-Cycle Gem Remover Quality - Flawed Topaz	1				100					2	y71	isc						y78																													isc																																																										0
-Cycle Gem Remover Quality - Flawed Sapphire	1				100					2	y72	isc						y79																													isc																																																										0
-Cycle Gem Remover Quality - Flawed Emerald	1				100					2	y73	isc						y80																													isc																																																										0
-Cycle Gem Remover Quality - Flawed Ruby	1				100					2	y74	isc						y81																													isc																																																										0
-Cycle Gem Remover Quality - Flawed Diamond	1				100					2	y75	isc						y82																													isc																																																										0
-Cycle Gem Remover Quality - Flawed Skull	1				100					2	y76	isc						y83																													isc																																																										0
-Cycle Gem Remover Quality - Standard Amethyst	1				100					2	y77	isc						y84																													isc																																																										0
-Cycle Gem Remover Quality - Standard Topaz	1				100					2	y78	isc						y85																													isc																																																										0
-Cycle Gem Remover Quality - Standard Sapphire	1				100					2	y79	isc						y86																													isc																																																										0
-Cycle Gem Remover Quality - Standard Emerald	1				100					2	y80	isc						y87																													isc																																																										0
-Cycle Gem Remover Quality - Standard Ruby	1				100					2	y81	isc						y88																													isc																																																										0
-Cycle Gem Remover Quality - Standard Diamond	1				100					2	y82	isc						y89																													isc																																																										0
-Cycle Gem Remover Quality - Standard Skull	1				100					2	y83	isc						y90																													isc																																																										0
-Cycle Gem Remover Quality - Flawless Amethyst	1				100					2	y84	isc						y02																													isc																																																										0
-Cycle Gem Remover Quality - Flawless Topaz	1				100					2	y85	isc						y03																													isc																																																										0
-Cycle Gem Remover Quality - Flawless Sapphire	1				100					2	y86	isc						y04																													isc																																																										0
-Cycle Gem Remover Quality - Flawless Emerald	1				100					2	y87	isc						y05																													isc																																																										0
-Cycle Gem Remover Quality - Flawless Ruby	1				100					2	y88	isc						y06																													isc																																																										0
-Cycle Gem Remover Quality - Flawless Diamond	1				100					2	y89	isc						y07																													isc																																																										0
-Cycle Gem Remover Quality - Flawless Skull	1				100					2	y90	isc						y08																													isc																																																										0
-Cycle Gem Remover Quality - Perfect Amethyst	1				100					2	y02	isc						y63																													isc																																																										0
-Cycle Gem Remover Quality - Perfect Topaz	1				100					2	y03	isc						y64																													isc																																																										0
-Cycle Gem Remover Quality - Perfect Sapphire	1				100					2	y04	isc						y65																													isc																																																										0
-Cycle Gem Remover Quality - Perfect Emerald	1				100					2	y05	isc						y66																													isc																																																										0
-Cycle Gem Remover Quality - Perfect Ruby	1				100					2	y06	isc						y67																													isc																																																										0
-Cycle Gem Remover Quality - Perfect Diamond	1				100					2	y07	isc						y68																													isc																																																										0
-Cycle Gem Remover Quality - Perfect Skull	1				100					2	y08	isc						y69																													isc																																																										0
 Rune Convert - Low -> Mid	1				100	15	362	2048		2	y01	y48						useitem				RB-Low			-2048	-2048	RB-Mid			1	1																y48																																																										0
 Rune Convert - Mid -> High	1				100	15	363	2048		2	y01	y49						useitem				RB-Mid			-2048	-2048	RB-High			1	1																y49																																																										0
 Rune Convert - Low <- Mid	1				100	15	363	1		2	y01	y50						useitem				RB-Low			2048	2048	RB-Mid			-1	-1																y50																																																										0
