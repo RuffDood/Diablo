@@ -23,6 +23,19 @@ data-BT/hd/
 data-TCP/hd/
 data-TCP/D2RLAN/
 
+# Reference VNP : versionner uniquement global/local/hd, ignorer tout le reste.
+data-VNP/*
+!data-VNP/VNP-MP.mpq/
+data-VNP/VNP-MP.mpq/*
+!data-VNP/VNP-MP.mpq/data/
+data-VNP/VNP-MP.mpq/data/*
+!data-VNP/VNP-MP.mpq/data/global/
+!data-VNP/VNP-MP.mpq/data/global/**
+!data-VNP/VNP-MP.mpq/data/local/
+!data-VNP/VNP-MP.mpq/data/local/**
+!data-VNP/VNP-MP.mpq/data/hd/
+!data-VNP/VNP-MP.mpq/data/hd/**
+
 # Backups automatiques des tables (gardes localement, non versionnes)
 *.bak
 

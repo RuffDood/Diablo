@@ -2,7 +2,7 @@
 
 Deux choses dans un même dépôt :
 
-1. Les **données** du mod Diablo II Resurrected de Vincent (**TCP**), plus ses mods de référence (**BK**, **BT**) et le vanilla — des tables `.txt` (TSV) lues par le launcher **D2RLAN**.
+1. Les **données** du mod Diablo II Resurrected de Vincent (**TCP**), plus ses références (**BK**, **BT**, **VNP**) et le vanilla — des tables `.txt` (TSV) lues par le launcher **D2RLAN**.
 2. Une **plateforme web** (monorepo **npm + turbo**) par-dessus : un **éditeur** pour modifier ces tables confortablement, et (à venir) un **wiki** de comparaison des 3 mods.
 
 Les `.txt` restent la **source de vérité** ; pas de base de données — git est la « base ».
@@ -14,6 +14,7 @@ Les `.txt` restent la **source de vérité** ; pas de base de données — git e
   - `local/lng` — chaînes localisées
   - `hd/`, `D2RLAN/` — assets HD et launcher (**non versionnés**, voir « Atelier de données »)
 - `data-BK/`, `data-BT/` — mods externes de **référence** (lecture seule)
+- `data-VNP/` — Mod Vanilla++ servant d'inspiration pour mon mod TCP (**lecture seule**, hors Comparateur) ; seuls `global/`, `local/` et `hd/` sont versionnés
 - `excel-vanilla/` — tables du jeu de base D2 2.4 (référence, lecture seule)
 - `apps/admin/` — **éditeur web** des tables (Vite + React)
 - `schemas/` — schémas de colonnes des tables (typage + validation de l'éditeur)
@@ -44,7 +45,7 @@ node scripts/validate-cartographie/validate.mjs        # valide -> VALID
 
 ## Atelier de données (assets hors git)
 
-Ce dépôt est l'**atelier des données + l'outil**, pas le mod complet. Les assets HD (`hd/`, ~1 Go) et le launcher (`D2RLAN/`) **restent sur disque mais ne sont pas versionnés** (voir `.gitignore`) : ils vivent avec le jeu. Seul le cœur éditable (`.txt`, chaînes, code, cadastre) est dans git — le suivi tient dans ~60 Mo.
+Ce dépôt est l'**atelier des données + l'outil**, pas le mod complet. Pour TCP, BK et BT, les assets HD et le launcher **restent sur disque mais ne sont pas versionnés** (voir `.gitignore`) : ils vivent avec le jeu. Exception volontaire : pour la référence read-only VNP, `global/`, `local/` et `hd/` sont versionnés ; `D2RLAN/`, les assets propres à `VNP/` et les réglages utilisateur restent ignorés.
 
 ## Prérequis
 
