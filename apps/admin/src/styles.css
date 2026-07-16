@@ -64,7 +64,16 @@ th.sub.tcp { background: rgba(58, 157, 93, 0.18); color: #8fd1a8; font-weight: 6
 td.ref-cell { color: #6a6a77; padding: 3px 8px; cursor: default; }
 td.tcp-cell { background: rgba(58, 157, 93, 0.06); }
 td.tcp-cell.num { text-align: right; }
+
+/* Comparateur : au moins une valeur differe entre vanilla/BK/BT/TCP sur cette cellule/ligne */
+td.rownum.row-diff { color: #d9a441; font-weight: 600; }
+td.diff { box-shadow: inset 0 0 0 1px rgba(217, 164, 65, 0.55); background: rgba(217, 164, 65, 0.1); }
+
 td.tcp-cell.err { background: rgba(224, 113, 90, 0.16); box-shadow: inset 0 0 0 1px #b8503c; }
+
+/* Comparateur : ligne presente chez vanilla/BK/BT au-dela de la derniere ligne TCP */
+td.tcp-cell.absent { cursor: default; }
+td.tcp-cell.absent .cell { color: #5a5a66; }
 
 /* Comparateur : en-tête à 2 étages figé au défilement vertical (groupe + sous-colonnes) */
 th.grp, th.sub { position: sticky; z-index: 2; }
@@ -90,6 +99,9 @@ th.cle-col-grp { position: sticky; left: 52px; width: 360px; min-width: 360px; m
 td.cle-col-vanilla, td.cle-col-bk, td.cle-col-bt, td.cle-col-tcp { z-index: 1; }
 td.cle-col-vanilla, td.cle-col-bk, td.cle-col-bt { background: #16161a; }
 td.tcp-cell.cle-col-tcp:not(.err) { background: #181e1e; }
+/* Fond opaque de la colonne figee, teinte pour rester coherent quand elle diverge aussi */
+td.cle-col-vanilla.diff, td.cle-col-bk.diff, td.cle-col-bt.diff { background: #2a241e; }
+td.tcp-cell.cle-col-tcp.diff:not(.err) { background: #2b2b22; }
 th.sub.tcp.cle-col-tcp { background: #263835; }
 .status { color: #9aa0ad; }
 .desc { color: #8a8a99; margin: 4px 0 10px; }
