@@ -228,17 +228,17 @@ function generateCube(cube) {
   if (!cycleCount) fail('Bloc rotation des Gem Removers introuvable');
   cube.rows = cube.rows.filter((row) => !isGemCycle(row));
 
-  // `GFX Change` accepte n'importe quel objet de misc.txt avec un Identify Scroll.
-  // Les recettes précises des removers la précèdent pour lever cette ambiguïté
-  // de correspondance; le comportement effectif reste à confirmer en jeu.
-  const gfxChangeIndex = cube.rows.findIndex((row) => description(row) === 'GFX Change');
-  if (gfxChangeIndex < 0) fail('Recette générique GFX Change introuvable');
+  const runeConversionIndex = cube.rows.findIndex((row) => description(row) === 'Rune Convert - Low -> Mid');
+  if (runeConversionIndex < 0) fail('Ancre des conversions de runes introuvable');
   cube.rows.splice(
-    gfxChangeIndex,
+    runeConversionIndex,
     0,
     ...buildColorCycles(cube),
-    ...buildQualityCycles(cube),
   );
+
+  // Cette disposition, où les recettes de qualité précèdent celles de couleur
+  // partageant le même remover, a été validée en jeu le 16 juillet 2026.
+  cube.rows.unshift(...buildQualityCycles(cube));
 }
 
 function generateMisc(misc) {
@@ -418,16 +418,10 @@ function validate() {
   if (cubeRows.some((row) => /^Add Gem x\d+$/.test(row.description))) fail("Anciennes recettes génériques 'Add Gem' encore présentes");
   if (cubeRows.some((row) => /^Cycle Gem Remover - /.test(row.description))) fail('Anciennes rotations de Gem Remover encore présentes');
 
-  const gfxChange = expectSingle(cubeRows, (row) => row.description === 'GFX Change', 'GFX Change');
-  assertFields(gfxChange, {
-    numinputs: 2,
-    'input 1': 'misc',
-    'input 2': 'isc',
-  }, 'GFX Change');
-  const gfxChangeIndex = cubeRows.indexOf(gfxChange);
-  const lateQualityRows = qualityRows.filter((row) => cubeRows.indexOf(row) > gfxChangeIndex);
-  if (lateQualityRows.length) {
-    fail(`Priorité des rotations de qualité : ${lateQualityRows.length} recette(s) placée(s) après GFX Change`);
+  const lastQualityIndex = Math.max(...qualityRows.map((row) => cubeRows.indexOf(row)));
+  const firstNonQualityIndex = cubeRows.findIndex((row) => !row.description.startsWith('Cycle Gem Remover Quality - '));
+  if (firstNonQualityIndex < 0 || lastQualityIndex >= firstNonQualityIndex) {
+    fail('Les rotations de qualité doivent rester au début de cubemain.txt');
   }
 
   for (const quality of QUALITIES) {
@@ -501,6 +495,7 @@ function validate() {
       'input 2': 'isc',
       output: nextQuality(state).code,
       'output b': 'isc',
+      'output c': '',
     }, qualityLabel);
 
     const miscRows = misc.rows.filter((row) => row[miscIndexes.code] === state.code);
@@ -575,6 +570,8 @@ function validate() {
     batchMax: BATCH_MAX,
     reusedAsset: REMOVER_ASSET,
     stringsIdentifyQualityAndColor: true,
+    qualityCycleReturnsIdentifyScroll: true,
+    qualityCyclesPlacedEarly: true,
     vendorSeed: 'y63 Chipped Amethyst Remover',
   };
 }
