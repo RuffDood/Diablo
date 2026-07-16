@@ -4,6 +4,7 @@ description	enabled	firstLadderSeason	lastLadderSeason	min diff	version	op	param
 ,uni	0				100					1	apot																																																																																														0
 ,set	0				100					2	mpot,qty=2																																																																																														0
 ,mag	0				100					2	hpot,qty=2																																																																																														0
+GFX Change	1				100					2	misc	isc						usetype,mod																																																																																							0
 Staff of Kings + Amulet of the Viper -> Horadric Staff	1				0	28				2	msf	vip						hst																																																																																							0
 Khalim's Flail + Khalim's Heart + Khalim's Eye + Khalim's Brain -> Khalim's Will	1				0	28				4	qf1	qhr	qey	qbr				qf2																																																																																							0
 Wirt's Leg  -> Portal to The Secret Cow Level	1				0	28				1	leg							Cow Portal																													leg																																																										0
