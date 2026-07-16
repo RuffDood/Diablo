@@ -1,6 +1,6 @@
 {
     "schemaVersion":  "1.1.0",
-    "generatedAt":  "2026-07-16T15:26:23.0215467+00:00",
+    "generatedAt":  "2026-07-16T20:00:29.1646415+00:00",
     "root":  {
                  "name":  "Diablo",
                  "path":  ".",
@@ -21169,8 +21169,18 @@
                                                                                          }
                                                                             },
                                                                             {
+                                                                                "name":  "gem-storage.js",
+                                                                                "path":  "scripts/build-data/gem-storage.js",
+                                                                                "kind":  "file"
+                                                                            },
+                                                                            {
                                                                                 "name":  "gen-schemas.js",
                                                                                 "path":  "scripts/build-data/gen-schemas.js",
+                                                                                "kind":  "file"
+                                                                            },
+                                                                            {
+                                                                                "name":  "pandemonium-storage.js",
+                                                                                "path":  "scripts/build-data/pandemonium-storage.js",
                                                                                 "kind":  "file"
                                                                             },
                                                                             {
