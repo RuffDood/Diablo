@@ -1,0 +1,1095 @@
+{
+    "type": "VideoOptionsPanel",
+    "name": "CubeRecipes2Panel",
+    "fields": {
+        "priority": 9003,
+        "rect": "$OptionsPanelRect",
+        "anchor": {
+            "x": 0.5
+        },
+        "applySettingsImmediately": true
+    },
+    "children": [
+        {
+            "type": "ImageWidget",
+            "name": "CubeGuide2ScrollBarBackground",
+            "fields": {
+                "rect": "$OptionsScrollBarBackgroundRect",
+                "anchor": {
+                    "x": 1
+                },
+                "filename": "PauseMenu\\VerticalScroll"
+            },
+            "children": [
+                {
+                    "type": "ScrollControllerWidget",
+                    "name": "CubeGuide2ScrollController",
+                    "fields": {
+                        "rect": "$OptionsScrollBarRect",
+                        "anchor": {
+                            "x": 1
+                        },
+                        "upArrowFilepath": "FrontEnd\\HD\\Final\\FrontEnd_ScrollUpBtn",
+                        "downArrowFilepath": "FrontEnd\\HD\\Final\\FrontEnd_ScrollDownBtn",
+                        "barFilepath": "PauseMenu\\VerticalIndicator",
+                        "viewName": "CubeGuide2ScrollView",
+                        "wheelScrollSound": "cursor_scroll_hd",
+                        "buttonScrollSound": "cursor_scroll_hd"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "ScrollViewWidget",
+            "name": "CubeGuide2ScrollView",
+            "fields": {
+                "fitToParent": true,
+                "scrollControllerName": "CubeGuide2ScrollController"
+            },
+            "children": [
+                {
+                    "type": "TableWidget",
+                    "name": "CubeGuide2Table",
+                    "fields": {
+                        "columns": [
+                            "$CubeOptionsTableColumn1"
+                        ],
+                        "rowHeight": "$CubeGuideTableRowHeight"
+                    },
+                    "children": [
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row001",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row001Text",
+                                    "fields": {
+                                        "text": "Appearance",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide2Row001Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row002",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row002Text",
+                                    "fields": {
+                                        "text": "White Dye + Torso Armor/Helm/Shield/Weapon -> White item.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row003",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row003Text",
+                                    "fields": {
+                                        "text": "Black Dye + Torso Armor/Helm/Shield/Weapon -> Black item.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row004",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row004Text",
+                                    "fields": {
+                                        "text": "Misc item + Scroll of Identify -> change its inventory graphic.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row005",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row005Text",
+                                    "fields": {
+                                        "text": "Quests & Portals",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide2Row005Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row006",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row006Text",
+                                    "fields": {
+                                        "text": "Staff of Kings + Amulet of the Viper -> Horadric Staff",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row007",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row007Text",
+                                    "fields": {
+                                        "text": "Khalim's Flail + Khalim's Heart + Khalim's Eye + Khalim's Brain -> Khalim's Will",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row008",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row008Text",
+                                    "fields": {
+                                        "text": "Wirt's Leg -> Portal to The Secret Cow Level",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row009",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row009Text",
+                                    "fields": {
+                                        "text": "3 Pandemonium Keys -> Portal to Matron's Den/Forgotten Sands/Furnace of Pain (Random)",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row010",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row010Text",
+                                    "fields": {
+                                        "text": "3 Demon's Ears -> Portal to Tristram (Pandemonium Finale)",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row011",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row011Text",
+                                    "fields": {
+                                        "text": "Twisted Essence of Suffering + Charged Essence of Hatred + Burning Essence of Terror + Festering Essence of Destruction -> Uber Keys",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row012",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row012Text",
+                                    "fields": {
+                                        "text": "3 Twisted Essence of Suffering -> Charged Essence of Hatred",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row013",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row013Text",
+                                    "fields": {
+                                        "text": "3 Charged Essence of Hatred -> Burning Essence of Terror",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row014",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row014Text",
+                                    "fields": {
+                                        "text": "3 Burning Essence of Terror -> Festering Essence of Destruction",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row015",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row015Text",
+                                    "fields": {
+                                        "text": "3 Festering Essence of Destruction -> Twisted Essence of Suffering",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row016",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row016Text",
+                                    "fields": {
+                                        "text": "Potions",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide2Row016Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row017",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row017Text",
+                                    "fields": {
+                                        "text": "3 Rejuvenation Potions -> Full Rejuvenation Potion",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row018",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row018Text",
+                                    "fields": {
+                                        "text": "Strangling Gas Potion + Healing Potion (Any) -> Antidote Potion",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row019",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row019Text",
+                                    "fields": {
+                                        "text": "Charsi's Malus + Gheed's Fortune -> 3 MF Potions",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row020",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row020Text",
+                                    "fields": {
+                                        "text": "El + Standard Gem -> Rejuvenation Potion",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row021",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row021Text",
+                                    "fields": {
+                                        "text": "Repair & Recovery",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide2Row021Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row022",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row022Text",
+                                    "fields": {
+                                        "text": "Ort Rune + Weapon -> Fully Repaired Weapon",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row023",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row023Text",
+                                    "fields": {
+                                        "text": "Ral Rune + Armor -> Fully Repaired Armor",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row024",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row024Text",
+                                    "fields": {
+                                        "text": "Ort Rune + Chipped Gem (Any) + Weapon -> Fully Repaired and Recharged Weapon",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row025",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row025Text",
+                                    "fields": {
+                                        "text": "Ral Rune + Flawed Gem (Any) + Armor -> Fully Repaired and Recharged Armor",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row026",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row026Text",
+                                    "fields": {
+                                        "text": "Utilities & Special Recipes",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide2Row026Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row027",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row027Text",
+                                    "fields": {
+                                        "text": "6 Perfect Gems (1 of each type) + Magic Amulet -> Prismatic Amulet",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row028",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row028Text",
+                                    "fields": {
+                                        "text": "Magic Ring + Standard Ruby + Healing Potion -> Garnet Ring",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row029",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row029Text",
+                                    "fields": {
+                                        "text": "Magic Ring + Standard Sapphire + Thawing Potion -> Cobalt Ring",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row030",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row030Text",
+                                    "fields": {
+                                        "text": "Magic Ring + Standard Topaz + Rejuvenation Potion -> Coral Ring",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row031",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row031Text",
+                                    "fields": {
+                                        "text": "Magic Ring + Standard Emerald + Antidote Potion -> Jade Ring",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row032",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row032Text",
+                                    "fields": {
+                                        "text": "Axe (Any) + Dagger (Any) -> Throwing Axe",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row033",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row033Text",
+                                    "fields": {
+                                        "text": "3 Magic Rings -> Magic Amulet",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row034",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row034Text",
+                                    "fields": {
+                                        "text": "3 Magic Amulets -> Magic Ring",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row035",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row035Text",
+                                    "fields": {
+                                        "text": "2 Unique Jewelry -> Standard of Heroes",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row036",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row036Text",
+                                    "fields": {
+                                        "text": "3 Prime Sigils -> Gull Dagger",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row037",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row037Text",
+                                    "fields": {
+                                        "text": "4 Prime Sigils -> Tarnhelm",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row038",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row038Text",
+                                    "fields": {
+                                        "text": "Thaw for Blank Charm",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row039",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row039Text",
+                                    "fields": {
+                                        "text": "2 Thaw for Modifiers Charm",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row040",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row040Text",
+                                    "fields": {
+                                        "text": "3 Thaw for Level Reward Charm",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row041",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row041Text",
+                                    "fields": {
+                                        "text": "Magic Wand + Blood Coiled Stone + Mana Potion -> Wand of Lower Res",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row042",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row042Text",
+                                    "fields": {
+                                        "text": "Magic Wand + Blood Coiled Stone + HP Potion -> Wand of Life Tap",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row043",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row043Text",
+                                    "fields": {
+                                        "text": "Magic Staff + Riftcarver -> Staff of Teleportation",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row044",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row044Text",
+                                    "fields": {
+                                        "text": "Herb + TP Book -> Replenishing TP Book",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row045",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row045Text",
+                                    "fields": {
+                                        "text": "Herb + ID Book -> Replenishing ID Book",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row046",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row046Text",
+                                    "fields": {
+                                        "text": "Weapon + Flask -> Ethereal Weapon",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row047",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row047Text",
+                                    "fields": {
+                                        "text": "Armor + Flask -> Ethereal Armor",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row048",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row048Text",
+                                    "fields": {
+                                        "text": "Charsi's Malus + Hellfire Torch -> Hellfire Ashes",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row049",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row049Text",
+                                    "fields": {
+                                        "text": "Hellfire Ash + Stamina Potion -> 2 Standard of Heroes",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row050",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row050Text",
+                                    "fields": {
+                                        "text": "Charsi's Malus + Annihilus -> 3 Standard of Heroes",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row051",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row051Text",
+                                    "fields": {
+                                        "text": "Key of Hate + Thawing Potion -> Pandemonium Key",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row052",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row052Text",
+                                    "fields": {
+                                        "text": "Key of Destruction + Thawing Potion -> Pandemonium Key",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row053",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row053Text",
+                                    "fields": {
+                                        "text": "35 Standard of Heroes + Thawing Potion -> Flask of Etheric Light",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row054",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row054Text",
+                                    "fields": {
+                                        "text": "20 Bricks -> Pile of Bricks",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row055",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row055Text",
+                                    "fields": {
+                                        "text": "10 Bricks + Thawing Potion -> Gul Rune",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row056",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row056Text",
+                                    "fields": {
+                                        "text": "20 Bricks + Thawing Potion -> Vex Rune",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row057",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row057Text",
+                                    "fields": {
+                                        "text": "30 Bricks + Thawing Potion -> Ohm Rune",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row058",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row058Text",
+                                    "fields": {
+                                        "text": "5 Pile of Bricks + Prime Sigil -> The Divine Standard",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row059",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row059Text",
+                                    "fields": {
+                                        "text": "5 Ascended Diamonds + Prime Sigil -> Diablo's Soulstone + SoH",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row060",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row060Text",
+                                    "fields": {
+                                        "text": "5 Ascended Amethysts + Prime Sigil -> 2 Unique Amulets + SoH",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row061",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row061Text",
+                                    "fields": {
+                                        "text": "5 Ascended Rubies + Prime Sigil -> 2 Unique Rings + SoH",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row062",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row062Text",
+                                    "fields": {
+                                        "text": "5 Ascended Sapphires + Prime Sigil -> Facet + SoH",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row063",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row063Text",
+                                    "fields": {
+                                        "text": "5 Ascended Emeralds + Prime Sigil -> Gheed's Fortune + SoH",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row064",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row064Text",
+                                    "fields": {
+                                        "text": "5 Ascended Topazes + Prime Sigil -> Vex Rune + SoH",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row065",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row065Text",
+                                    "fields": {
+                                        "text": "5 Ascended Skulls + Prime Sigil -> Fracture Halo + Infernal Maw + SoH",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row066",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row066Text",
+                                    "fields": {
+                                        "text": "Ral Rune + Jewel + Superior Armor -> Tempered Armor",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row067",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row067Text",
+                                    "fields": {
+                                        "text": "Ral Rune + Jewel + Superior Weapon -> Tempered Weapon",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row068",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row068Text",
+                                    "fields": {
+                                        "text": "Ral Rune + Jewel + Magic Ring -> Tempered Ring",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row069",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row069Text",
+                                    "fields": {
+                                        "text": "Ral Rune + Jewel + Magic Amulet -> Tempered Amulet",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide2Row070",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide2Row070Text",
+                                    "fields": {
+                                        "text": "El Rune + Chipped Gem (Any) + Tempered Weapon -> Weapon With Extra Attack Rating",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

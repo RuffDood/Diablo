@@ -58,6 +58,13 @@
         "spacing" : "$ReducedSpacing",
         "alignment": { "h": "left", "v": "center" },
     },
+    "CubeGuideText": {
+        "fontColor": "$FontColorLightGold",
+        "pointSize": "$MediumFontSize",
+        "spacing" : "$ReducedSpacing",
+        "alignment": { "h": "left", "v": "center" },
+        "options": { "newlineHandling": "standard", "lineWrap": true },
+    },
     "StyleSettingsCarousel": {
         "pointSize": "$MediumSmallFontSize",
         "spacing" : "$ReducedSpacing",

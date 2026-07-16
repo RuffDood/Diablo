@@ -51,6 +51,16 @@
             },
         },
         {
+            "type": "ButtonWidget", "name": "Recipes",
+            "fields": {
+                "rect": "$HoradricCubePanelRecipe",
+                "filename": "PANEL\\Horadric_Cube\\Recipes",
+                "tooltipString": "Show Cube Recipes",
+                "hoveredFrame": 2,
+                "onClickMessage": "PanelManager:OpenPanel:CubeRecipesPanel",
+            },
+        },
+        {
             "type": "ButtonWidget", "name": "close",
             "fields": {
                 "rect": { "x": 1650, "y": 3 },

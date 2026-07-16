@@ -1,0 +1,553 @@
+{
+    "type": "VideoOptionsPanel",
+    "name": "CubeRecipes5Panel",
+    "fields": {
+        "priority": 9003,
+        "rect": "$OptionsPanelRect",
+        "anchor": {
+            "x": 0.5
+        },
+        "applySettingsImmediately": true
+    },
+    "children": [
+        {
+            "type": "ImageWidget",
+            "name": "CubeGuide5ScrollBarBackground",
+            "fields": {
+                "rect": "$OptionsScrollBarBackgroundRect",
+                "anchor": {
+                    "x": 1
+                },
+                "filename": "PauseMenu\\VerticalScroll"
+            },
+            "children": [
+                {
+                    "type": "ScrollControllerWidget",
+                    "name": "CubeGuide5ScrollController",
+                    "fields": {
+                        "rect": "$OptionsScrollBarRect",
+                        "anchor": {
+                            "x": 1
+                        },
+                        "upArrowFilepath": "FrontEnd\\HD\\Final\\FrontEnd_ScrollUpBtn",
+                        "downArrowFilepath": "FrontEnd\\HD\\Final\\FrontEnd_ScrollDownBtn",
+                        "barFilepath": "PauseMenu\\VerticalIndicator",
+                        "viewName": "CubeGuide5ScrollView",
+                        "wheelScrollSound": "cursor_scroll_hd",
+                        "buttonScrollSound": "cursor_scroll_hd"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "ScrollViewWidget",
+            "name": "CubeGuide5ScrollView",
+            "fields": {
+                "fitToParent": true,
+                "scrollControllerName": "CubeGuide5ScrollController"
+            },
+            "children": [
+                {
+                    "type": "TableWidget",
+                    "name": "CubeGuide5Table",
+                    "fields": {
+                        "columns": [
+                            "$CubeOptionsTableColumn1"
+                        ],
+                        "rowHeight": "$CubeGuideTableRowHeight"
+                    },
+                    "children": [
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row001",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row001Text",
+                                    "fields": {
+                                        "text": "Corruption Rules",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide5Row001Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row002",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row002Text",
+                                    "fields": {
+                                        "text": "Standard of Heroes or Divine Standard + eligible item -> random corruption.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row003",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row003Text",
+                                    "fields": {
+                                        "text": "Eligible qualities: Magic, Rare, Set, Crafted and Unique equipment.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row004",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row004Text",
+                                    "fields": {
+                                        "text": "Charms and Jewels are blocked from Standard and Divine corruption.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row005",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row005Text",
+                                    "fields": {
+                                        "text": "Brick outcome: equipment becomes Rare; Gheed's Fortune becomes Magic.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row006",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row006Text",
+                                    "fields": {
+                                        "text": "Annihilus + Hellfire Ashes, Hellfire Torch + 2 Ashes, or Gheed + Ashes -> charm corruption.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row007",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row007Text",
+                                    "fields": {
+                                        "text": "Generic Socket Outcomes",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide5Row007Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row008",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row008Text",
+                                    "fields": {
+                                        "text": "Bow: 1-6 sockets (Magic, Rare, Set, Unique, Crafted).",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row009",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row009Text",
+                                    "fields": {
+                                        "text": "Crossbow: 1-6 sockets (Magic, Rare, Set, Unique, Crafted).",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row010",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row010Text",
+                                    "fields": {
+                                        "text": "Two-Handed Weapon: 1-6 sockets (Magic, Rare, Set, Unique, Crafted).",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row011",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row011Text",
+                                    "fields": {
+                                        "text": "Weapon: 1-4 sockets (Magic, Rare, Set, Unique, Crafted).",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row012",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row012Text",
+                                    "fields": {
+                                        "text": "Helm: 1-3 sockets (Magic, Rare, Set, Unique, Crafted).",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row013",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row013Text",
+                                    "fields": {
+                                        "text": "Torso Armor: 1-3 sockets (Magic, Rare, Set, Unique, Crafted).",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row014",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row014Text",
+                                    "fields": {
+                                        "text": "Shield: 1-3 sockets (Magic, Rare, Set, Unique, Crafted).",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row015",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row015Text",
+                                    "fields": {
+                                        "text": "Charm Outcomes",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide5Row015Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row016",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row016Text",
+                                    "fields": {
+                                        "text": "Annihilus: MF + GF, FHR + FRW, Attributes, Life + Mana, Increased Attack Speed, Faster Cast Rate, All Resistance",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row017",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row017Text",
+                                    "fields": {
+                                        "text": "Annihilus: Experience",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row018",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row018Text",
+                                    "fields": {
+                                        "text": "Hellfire Torch: Amplify Damage, Lower Resist, Life Tap, Weaken, Decrepify, Bone Armor, Cyclone Armor, Static",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row019",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row019Text",
+                                    "fields": {
+                                        "text": "Hellfire Torch: Frost Nova, Prayer, Blessed Aim, Vigor",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row020",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row020Text",
+                                    "fields": {
+                                        "text": "Gheed's Fortune: Gheed's Blessing, Faster Hit Recovery, All Resistances, Faster Run/Walk, Maximum Damage and AR",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row021",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row021Text",
+                                    "fields": {
+                                        "text": "Gheed's Fortune: Bow and Crossbow, Passive and Magic, Jav and Spear, Traps, Martial Arts, Shadow Disciplines",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row022",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row022Text",
+                                    "fields": {
+                                        "text": "Gheed's Fortune: Curses, Necro Summoning Skills, Poison and Bone, Masteries, Barb Combat, Warcries",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row023",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row023Text",
+                                    "fields": {
+                                        "text": "Gheed's Fortune: Offensive Auras, Defensive Auras, Pally Combat, Fire Skills, Lightning Skills, Cold Skills",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row024",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row024Text",
+                                    "fields": {
+                                        "text": "Gheed's Fortune: Druid Summoning, Elemental Skills, Shapeshifting Skills",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row025",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row025Text",
+                                    "fields": {
+                                        "text": "Divine Unique Socket Exceptions",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide5Row025Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row026",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row026Text",
+                                    "fields": {
+                                        "text": "3/6 sockets: Dragonscale",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row027",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row027Text",
+                                    "fields": {
+                                        "text": "2 sockets: Death's Web",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row028",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row028Text",
+                                    "fields": {
+                                        "text": "3 sockets: Crown of Ages, Darkforce Spawn, Death's Fathom, Fleshripper, Ghostflame, Giant Skull, Griffon's Eye",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row029",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row029Text",
+                                    "fields": {
+                                        "text": "3 sockets: Ravenlore, Shadow Dancer, Spirit Ward, Steel Carapace, Steelrend, Templar's Might, Tyrael's Might",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row030",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row030Text",
+                                    "fields": {
+                                        "text": "4 sockets: Astreon's Iron Ward, Death Cleaver, Frostwind, Gargoyle's Bite, Schaefer's Hammer, Stone Crusher",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row031",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row031Text",
+                                    "fields": {
+                                        "text": "6 sockets: Earth Shifter, Executioner's Justice, Gut Siphon, Mang Song's Lesson, Messerschmidt's Reaver",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide5Row032",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide5Row032Text",
+                                    "fields": {
+                                        "text": "6 sockets: Steel Pillar, Stormspire, The Grandfather, Windforce",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

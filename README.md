@@ -2,7 +2,7 @@
 
 Deux choses dans un même dépôt :
 
-1. Les **données** du mod Diablo II Resurrected de Vincent (**TCP**), plus ses mods de référence (**BK**, **BT**) et le vanilla — des tables `.txt` (TSV) lues par le launcher **D2RLAN**.
+1. Les **données** du mod Diablo II Resurrected de Vincent (**TCP**), plus ses références (**BK**, **BT**, **VNP**) et le vanilla — des tables `.txt` (TSV) lues par le launcher **D2RLAN**.
 2. Une **plateforme web** (monorepo **npm + turbo**) par-dessus : un **éditeur** pour modifier ces tables confortablement, et (à venir) un **wiki** de comparaison des 3 mods.
 
 Les `.txt` restent la **source de vérité** ; pas de base de données — git est la « base ».
@@ -11,9 +11,11 @@ Les `.txt` restent la **source de vérité** ; pas de base de données — git e
 
 - `data-TCP/` — le mod de Vincent, **en développement** (seule zone de données modifiable)
   - `global/excel/` — tables de gameplay (`.txt`) : armor, weapons, hireling, runes, setitems…
-  - `local/lng` — chaînes localisées
-  - `hd/`, `D2RLAN/` — assets HD et launcher (**non versionnés**, voir « Atelier de données »)
-- `data-BK/`, `data-BT/` — mods externes de **référence** (lecture seule)
+  - `local/lng` — chaînes localisées, **versionnées**
+  - `hd/` — assets HD **versionnés via Git LFS**
+  - `D2RLAN/` — launcher local protégé, **non versionné**
+- `data-BK/`, `data-BT/` — mods externes de **référence** (lecture seule) ; `local/` et `hd/` de BK sont versionnés, tandis que `hd/` de BT reste local
+- `data-VNP/` — Mod Vanilla++ servant d'inspiration pour mon mod TCP (**lecture seule**, hors Comparateur) ; seuls `global/`, `local/` et `hd/` sont versionnés
 - `excel-vanilla/` — tables du jeu de base D2 2.4 (référence, lecture seule)
 - `apps/admin/` — **éditeur web** des tables (Vite + React)
 - `schemas/` — schémas de colonnes des tables (typage + validation de l'éditeur)
@@ -42,12 +44,13 @@ powershell -File scripts/generate-architecture.ps1     # régénère
 node scripts/validate-cartographie/validate.mjs        # valide -> VALID
 ```
 
-## Atelier de données (assets hors git)
+## Atelier de données
 
-Ce dépôt est l'**atelier des données + l'outil**, pas le mod complet. Les assets HD (`hd/`, ~1 Go) et le launcher (`D2RLAN/`) **restent sur disque mais ne sont pas versionnés** (voir `.gitignore`) : ils vivent avec le jeu. Seul le cœur éditable (`.txt`, chaînes, code, cadastre) est dans git — le suivi tient dans ~60 Mo.
+Les dossiers `global/`, `local/` et `hd/` de TCP et BK sont versionnés. Les formats HD binaires et les quatre JSON de plus de 10 MiB sont stockés via **Git LFS** ; les autres JSON restent des fichiers Git ordinaires. Le launcher `data-TCP/D2RLAN/`, les assets HD de BT, les backups et les réglages utilisateur restent hors Git. Pour la référence read-only VNP, `global/`, `local/` et `hd/` restent également versionnés ; `D2RLAN/` et les assets propres à `VNP/` restent ignorés.
 
 ## Prérequis
 
+- **Git LFS** — requis pour cloner et publier les assets HD TCP/BK (`git lfs install` une fois par poste)
 - **Node.js** — l'éditeur et les scripts JS
 - **PowerShell** (5.1 convient) — les scripts `.ps1`
 

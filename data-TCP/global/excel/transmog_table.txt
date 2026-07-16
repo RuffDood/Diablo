@@ -1348,3 +1348,31 @@ index	code_name	code_normal	sets_normal	sets_exceptional	sets_elite	uniques_norm
 1347	bone_break					charm/charm_large	charm/charm_large	charm/charm_large
 1348	black_cleft					charm/charm_large	charm/charm_large	charm/charm_large
 1349	gheeds_wager					belt/heavy_belt	belt/heavy_belt	belt/heavy_belt
+1349	y63	..//custom//removergb						
+1350	y64	..//custom//removergb						
+1351	y65	..//custom//removergb						
+1352	y66	..//custom//removergb						
+1353	y67	..//custom//removergb						
+1354	y68	..//custom//removergb						
+1355	y69	..//custom//removergb						
+1356	y70	..//custom//removergb						
+1357	y71	..//custom//removergb						
+1358	y72	..//custom//removergb						
+1359	y73	..//custom//removergb						
+1360	y74	..//custom//removergb						
+1361	y75	..//custom//removergb						
+1362	y76	..//custom//removergb						
+1363	y77	..//custom//removergb						
+1364	y78	..//custom//removergb						
+1365	y79	..//custom//removergb						
+1366	y80	..//custom//removergb						
+1367	y81	..//custom//removergb						
+1368	y82	..//custom//removergb						
+1369	y83	..//custom//removergb						
+1370	y84	..//custom//removergb						
+1371	y85	..//custom//removergb						
+1372	y86	..//custom//removergb						
+1373	y87	..//custom//removergb						
+1374	y88	..//custom//removergb						
+1375	y89	..//custom//removergb						
+1376	y90	..//custom//removergb						

@@ -8,10 +8,10 @@ Ouverture. Demande au user s'il veut ouvrir l'éditeur. Si oui, alors ouvre un n
 
 Deux choses cohabitent :
 
-1. **Les données du mod** — les tables `.txt` (TSV) de `data-BK/BT/TCP` et `excel-vanilla/`, lues par le launcher **D2RLAN**. C'est la source de vérité du gameplay.
+1. **Les données du mod** — les tables `.txt` (TSV) de `data-BK/BT/TCP`, la référence `data-VNP/` et `excel-vanilla/`, lues par le launcher **D2RLAN**. C'est la source de vérité du gameplay.
 2. **Une plateforme web** (monorepo **npm + turbo**) construite par-dessus : un **Admin** pour éditer ces `.txt`, et (à venir) un **Wiki** de comparaison des 3 mods.
 
-Les `.txt` restent la source ; **pas de base de données**. Stack : **Vite + React** (fronts), **Netlify** (hébergement en ligne : `diablo-tcp-admin.netlify.app`), git comme « base » (chaque édition = commit).
+Les `.txt` restent la source ; **pas de base de données**. Les dossiers `local/` et `hd/` de TCP et BK sont également versionnés, avec les binaires HD sous **Git LFS**. Stack : **Vite + React** (fronts), **Netlify** (hébergement en ligne : `diablo-tcp-admin.netlify.app`), git comme « base » (chaque édition = commit).
 
 ## Source de vérité : le cadastre
 
@@ -22,6 +22,7 @@ Les `.txt` restent la source ; **pas de base de données**. Stack : **Vite + Rea
 | `data-TCP/` (`global`, `hd`, `local`) | mod en développement | **modifiable** |
 | `data-TCP/D2RLAN/` | zone protégée (launcher) | **read-only** |
 | `data-BK/`, `data-BT/` | mods de référence / inspiration | **read-only** |
+| `data-VNP/` | Mod Vanilla++ servant d'inspiration pour mon mod TCP | **read-only** |
 | `excel-vanilla/` | données vanilla Diablo II 2.4 | **read-only** |
 | `Mission/` | besoins et intentions | modifiable |
 | `apps/` | plateforme web (admin, wiki) | modifiable |
@@ -35,6 +36,7 @@ En clair : côté **données**, seul `data-TCP` se modifie (les références ser
 
 - **Items en anglais** : `ring`, `belt`, `amulet`, `gem`, `rune`, `charm`…
 - **Encodage & intégrité des `.txt`** : UTF-8 sans BOM pour le code ; les tables `.txt` D2R sont en **CRLF** (épinglé par `.gitattributes`). Toute réécriture doit préserver le **format TSV exact**, les **CRLF** et l'**encodage**, sinon D2RLAN casse. Le parseur/écrivain `scripts/build-data/tsv.js` garantit un round-trip **byte-exact** — passe toujours par lui.
+- **Assets versionnés** : `data-TCP/hd`, `data-TCP/local`, `data-BK/hd` et `data-BK/local` sont dans Git. Les formats HD binaires de TCP/BK passent par Git LFS ; les backups `*.bak` restent exclus.
 - **Git** : ne change **jamais** de branche, et ne commit ni ne push jamais, sans un `GO` dédié et explicite de Guillaume.
 
 ## Développement de la plateforme

@@ -15,3 +15,32 @@ data-BK/**/*.txt        text eol=crlf
 data-BT/**/*.txt        text eol=crlf
 data-TCP/**/*.txt       text eol=crlf
 excel-vanilla/**/*.txt  text eol=crlf
+
+# Reference VNP read-only : conserver exactement les octets importes (LF/CRLF d'origine).
+data-VNP/** -text
+
+# Assets HD binaires TCP/BK : versionnes via Git LFS pour ne pas gonfler l'historique Git.
+data-TCP/hd/**/*.json     -text -diff
+data-BK/hd/**/*.json      -text -diff
+data-TCP/hd/**/*.sprite   filter=lfs diff=lfs merge=lfs -text
+data-TCP/hd/**/*.texture  filter=lfs diff=lfs merge=lfs -text
+data-TCP/hd/**/*.flac     filter=lfs diff=lfs merge=lfs -text
+data-TCP/hd/**/*.ttf      filter=lfs diff=lfs merge=lfs -text
+data-TCP/hd/**/*.otf      filter=lfs diff=lfs merge=lfs -text
+data-TCP/hd/**/*.timelines filter=lfs diff=lfs merge=lfs -text
+data-TCP/hd/**/*.particles filter=lfs diff=lfs merge=lfs -text
+data-TCP/hd/**/*.model    filter=lfs diff=lfs merge=lfs -text
+data-TCP/hd/**/*.skeleton filter=lfs diff=lfs merge=lfs -text
+data-TCP/hd/**/*.webm     filter=lfs diff=lfs merge=lfs -text
+data-TCP/hd/env/preset/act1/court/court*.json filter=lfs diff=lfs merge=lfs -text
+data-BK/hd/**/*.sprite    filter=lfs diff=lfs merge=lfs -text
+data-BK/hd/**/*.texture   filter=lfs diff=lfs merge=lfs -text
+data-BK/hd/**/*.flac      filter=lfs diff=lfs merge=lfs -text
+data-BK/hd/**/*.ttf       filter=lfs diff=lfs merge=lfs -text
+data-BK/hd/**/*.otf       filter=lfs diff=lfs merge=lfs -text
+data-BK/hd/**/*.timelines filter=lfs diff=lfs merge=lfs -text
+data-BK/hd/**/*.particles filter=lfs diff=lfs merge=lfs -text
+data-BK/hd/**/*.model     filter=lfs diff=lfs merge=lfs -text
+data-BK/hd/**/*.skeleton  filter=lfs diff=lfs merge=lfs -text
+data-BK/hd/**/*.webm      filter=lfs diff=lfs merge=lfs -text
+data-BK/hd/texture_desc_cache.json filter=lfs diff=lfs merge=lfs -text

@@ -338,6 +338,21 @@
         "spacing" : "$ReducedSpacing",
         "alignment": { "h": "left", "v": "center" }
     },
+    "CubeGuideText": {
+        "fontColor": "$FontColorLightGold",
+        "pointSize": "$MediumFontSize",
+        "spacing" : "$ReducedSpacing",
+        "alignment": { "h": "left", "v": "center" },
+        "options": { "newlineHandling": "standard", "lineWrap": true }
+    },
+    "CubeGuideSectionText": {
+        "fontColor": "$FontColorGoldYellow",
+        "pointSize": "$MediumLargeFontSize",
+        "spacing" : "$ReducedSpacing",
+        "alignment": { "h": "left", "v": "center" },
+        "options": { "lineWrap": false },
+        "dropShadow": "$DefaultDropShadow"
+    },
     "RecipeSettingsCenterText": {
         "fontColor": "$FontColorLightGold",
         "pointSize": "$MediumLargeFontSize",
@@ -541,6 +556,7 @@
     "CubeOptionsTableColumn1": { "width": 1700, "alignment": { "h": "fit", "v": "fit" } },
     "OptionsTableRowHeight":100,
     "CubeOptionsTableRowHeight":80,
+    "CubeGuideTableRowHeight":110,
     "SkillPOptionsTableRowHeight":60,
     "RMDOptionsTableColumn1": { "width": 1000, "alignment": { "h": "fit", "v": "fit" } },
     "RMDOptionsTableColumn2": { "width": 700, "alignment": { "h": "center", "v": "center" } },
@@ -573,6 +589,7 @@
     "OptionsSliderFocusIndicatorPadding": { "left": 3, "right": 3 },
     "OptionsDividerRect": { "x": 0, "y": 90 },
     "CubeOptionsDividerRect": { "x": 0, "y": 60 },
+    "CubeGuideDividerRect": { "x": 0, "y": 90 },
     "RWOptionsDividerRect": { "x": 0, "y": 75 },
     "RMDOptionsDividerRect": { "x": 0, "y": 45 },
     "OptionsToggleRect": { "width": 70, "height": 70 },
