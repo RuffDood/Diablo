@@ -17,10 +17,9 @@ deno.lock
 # Reference externe : guide D2R communautaire (clone local, non versionne)
 guide/
 
-# Atelier de donnees : les assets HD vivent avec le jeu, hors git (stock local conserve)
-data-BK/hd/
+# Atelier de donnees : HD/local de TCP et BK sont versionnes.
+# BT reste une reference HD locale et le launcher TCP demeure protege hors git.
 data-BT/hd/
-data-TCP/hd/
 data-TCP/D2RLAN/
 
 # Reference VNP : versionner uniquement global/local/hd, ignorer tout le reste.

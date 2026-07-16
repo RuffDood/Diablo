@@ -1,0 +1,44 @@
+{
+    "dependencies": {
+        "particles": [],
+        "models": [],
+        "skeletons": [],
+        "animations": [],
+        "textures": [],
+        "physics": [],
+        "json": [],
+        "variantdata": [],
+        "objecteffects": [],
+        "other": []
+    },
+    "type": "OverlayDefinition",
+    "name": "command",
+    "entities": [
+        {
+            "type": "Entity",
+            "name": "entity_root",
+            "id": 2683417601,
+            "components": [
+                {
+                    "type": "VfxDefinitionComponent",
+                    "name": "component_vfx",
+                    "filename": "data/hd/vfx/particles/overlays/barbarian/whirlwind/vfx_barbarian_whirlwind_mesh.particles",
+                    "hardKillOnDestroy": false
+                }
+            ]
+        },
+        {
+            "type": "Entity",
+            "name": "entity_root",
+            "id": 2971060028,
+            "components": [
+                {
+                    "type": "VfxDefinitionComponent",
+                    "name": "component_vfx",
+                    "filename": "data/hd/vfx/particles/overlays/common/arctic_blast_cast/vfx_druid_ArticBlastCast.particles",
+                    "hardKillOnDestroy": false
+                }
+            ]
+        }
+    ]
+}
