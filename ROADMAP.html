@@ -219,11 +219,12 @@
     <div class="st-tete"><span class="st-num">INCRÉMENT 6</span><span class="st-titre">GameplayMods</span><span class="st-etat encours">EN COURS</span></div>
     <p class="st-but">Fiabiliser et valider en jeu les systèmes gameplay ajoutés au mod TCP.</p>
     <div class="taches">
-      <label class="tache" data-id="i6-storage-bag"><input type="checkbox"><span class="lbl"><b>Implanter correctement le système du Storage Bag de VNP</b> <span class="note-t">réaligner les 540 recettes de <code>cubemain.txt</code> · corriger les 26 libellés de cycles · valider en jeu les ajouts et les 46 removers</span></span><span class="qui v">VINCENT</span></label>
+      <label class="tache" data-id="i6-itemstatcost-audit"><input type="checkbox"><span class="lbl"><b>Auditer et migrer les limites d’encodage de <code>itemstatcost.txt</code> de BK vers TCP</b> <span class="note-t">38 écarts de <code>Save Bits</code> + 28 de <code>Save Add</code> sur 46 statistiques communes · fusion sélective, sans remplacer le fichier TCP · matrice de tests sur les 13 statistiques déjà observées hors plage · validation sur sauvegarde neuve avant les autres tests gameplay</span></span><span class="qui v">VINCENT</span></label>
+      <label class="tache" data-id="i6-storage-bag"><input type="checkbox"><span class="lbl"><b>Implanter correctement le système du Storage Bag de VNP</b> <span class="note-t">540 recettes de <code>cubemain.txt</code> réalignées + 26 libellés de cycles corrigés le 16 juil. · reste à valider en jeu les ajouts et les 46 removers</span></span><span class="qui v">VINCENT</span></label>
     </div>
     <div class="st-pied">
-      <span class="chip gate"><b>Gate</b>ajouts + 46 removers validés en jeu</span>
-      <span class="chip ship"><b>Livraison</b>Storage Bag entièrement fonctionnel dans TCP</span>
+      <span class="chip gate"><b>Gate</b>encodage des statistiques validé sur sauvegarde neuve · ajouts + 46 removers validés en jeu</span>
+      <span class="chip ship"><b>Livraison</b>ItemStatCost fiable + Storage Bag entièrement fonctionnel dans TCP</span>
     </div>
   </div>
 
@@ -261,7 +262,7 @@
 </details>
 
 <footer>
-  ROADMAP v1 — Diablo TCP, 15 juillet 2026 · <b>FONDATIONS + INCRÉMENTS 1, 2 &amp; 3 CLOS</b> · éditeur multi-tables + validations en service · <b>40 schémas générés du guide</b> (hireling 77/77) · déployé et accessible sur <b>diablo-tcp-admin.netlify.app</b> · I4 amorcé : Comparateur vanilla/BK/BT/TCP en service · I5 amorcé : navigation par catégorie, recherche/filtres, colonnes visibles · I6 ouvert : GameplayMods — réparation et validation en jeu du Storage Bag. Coche les cases à venir : l'état est sauvegardé dans ton navigateur.
+  ROADMAP v1 — Diablo TCP, 16 juillet 2026 · <b>FONDATIONS + INCRÉMENTS 1, 2 &amp; 3 CLOS</b> · éditeur multi-tables + validations en service · <b>40 schémas générés du guide</b> (hireling 77/77) · déployé et accessible sur <b>diablo-tcp-admin.netlify.app</b> · I4 amorcé : Comparateur vanilla/BK/BT/TCP en service · I5 amorcé : navigation par catégorie, recherche/filtres, colonnes visibles · I6 ouvert : GameplayMods — audit et migration contrôlée d’ItemStatCost avant la validation en jeu du Storage Bag. Coche les cases à venir : l'état est sauvegardé dans ton navigateur.
 </footer>
 </main>
 
