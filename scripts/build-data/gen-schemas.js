@@ -37,18 +37,33 @@ const CATEGORIES = {
 };
 
 // Parse le guide -> { tableName(lowercase): { colName(lowercase): {type, guideType, description} } }
+// Un h2 peut nommer plusieurs tables partageant les memes colonnes
+// (ex. "Armor.txt, Misc.txt, Weapons.txt", "MagicPrefix.txt, MagicSuffix.txt") : chaque nom
+// produit une entree au MEME point de depart, et les tables qui recoivent plusieurs sections
+// (colonnes communes + section "X.txt only" dediee) doivent les FUSIONNER, pas se les faire ecraser.
 function parseGuide() {
   if (!fs.existsSync(GUIDE)) return {};
   const html = fs.readFileSync(GUIDE, 'utf8');
-  const tables = {};
-  const secRe = /<h2\s+id="[^"]+"[^>]*>\s*([A-Za-z0-9_]+)\.txt/g;
+  const secRe = /<h2\s+id="[^"]+"[^>]*>([\s\S]*?)<\/h2>/g;
+  const nameRe = /([A-Za-z0-9_]+)\.txt/g;
   const marks = [];
   let m;
-  while ((m = secRe.exec(html))) marks.push({ name: m[1].toLowerCase(), start: m.index });
+  while ((m = secRe.exec(html))) {
+    nameRe.lastIndex = 0;
+    let n;
+    while ((n = nameRe.exec(m[1]))) marks.push({ name: n[1].toLowerCase(), start: m.index });
+  }
+  // Positions distinctes triees : delimitent le contenu reel. Plusieurs marks peuvent partager
+  // le meme start (h2 multi-noms) -- elles lisent toutes jusqu'a la PROCHAINE position distincte.
+  const positions = [...new Set(marks.map((mk) => mk.start))].sort((a, b) => a - b);
   const colRe = /<b>([^<]+)<\/b>\s*-\s*<span[^>]*>\s*<b>\[([NBOC])\]<\/b>\s*<\/span>\s*-\s*([^<]*)/g;
-  for (let i = 0; i < marks.length; i++) {
-    const body = html.slice(marks[i].start, i + 1 < marks.length ? marks[i + 1].start : undefined);
-    const cols = {};
+  const tables = {};
+  for (const mark of marks) {
+    const posIdx = positions.indexOf(mark.start);
+    const end = posIdx + 1 < positions.length ? positions[posIdx + 1] : undefined;
+    const body = html.slice(mark.start, end);
+    const cols = tables[mark.name] || (tables[mark.name] = {});
+    colRe.lastIndex = 0;
     let c;
     while ((c = colRe.exec(body))) {
       cols[c[1].trim().toLowerCase()] = {
@@ -57,7 +72,6 @@ function parseGuide() {
         description: c[3].trim().replace(/\s+/g, ' '),
       };
     }
-    tables[marks[i].name] = cols;
   }
   return tables;
 }
