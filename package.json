@@ -13,6 +13,8 @@
     "test:gem-storage": "node scripts/build-data/gem-storage.js --check",
     "generate:pandemonium-storage": "node scripts/build-data/pandemonium-storage.js",
     "test:pandemonium-storage": "node scripts/build-data/pandemonium-storage.js --check",
+    "generate:cube-guide": "node scripts/build-data/cube-guide.js",
+    "test:cube-guide": "node scripts/build-data/cube-guide.js --check",
     "test:itemstatcost": "node scripts/build-data/audit-itemstatcost.js"
   },
   "devDependencies": {

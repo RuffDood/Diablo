@@ -1,0 +1,160 @@
+{
+    "type": "SettingsPanel",
+    "name": "CubeRecipesPanel",
+    "fields": {
+        "priority": 9002,
+        "fitToParent": true
+    },
+    "children": [
+        {
+            "type": "RectangleWidget",
+            "name": "CubeGuideOverlay",
+            "fields": {
+                "fitToScreen": true,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    0.7
+                ]
+            },
+            "children": [
+                {
+                    "type": "ClickCatcherWidget",
+                    "name": "CubeGuideCatcher",
+                    "fields": {
+                        "fitToParent": true
+                    }
+                },
+                {
+                    "type": "Widget",
+                    "name": "CubeGuideAnchor",
+                    "fields": {
+                        "anchor": {
+                            "x": 0.5,
+                            "y": 0.5
+                        },
+                        "rect": "$SettingsPanelAnchorRect"
+                    },
+                    "children": [
+                        {
+                            "type": "ImageWidget",
+                            "name": "CubeGuideFrame",
+                            "fields": {
+                                "filename": "\\PANEL\\Options\\FrontEndOptionsBG"
+                            }
+                        },
+                        {
+                            "type": "TextBoxWidget",
+                            "name": "CubeGuideTitle",
+                            "fields": {
+                                "rect": {
+                                    "x": 0,
+                                    "y": 50,
+                                    "width": 1950,
+                                    "height": 103
+                                },
+                                "text": "TCP Cube Guide",
+                                "style": "$StyleTitleBlock"
+                            }
+                        },
+                        {
+                            "type": "ButtonWidget",
+                            "name": "CubeGuideCloseButton",
+                            "fields": {
+                                "rect": {
+                                    "x": 1868,
+                                    "y": 8
+                                },
+                                "filename": "PANEL\\closebtn_4x",
+                                "hoveredFrame": 3,
+                                "onClickMessage": "PanelManager:ClosePanel:CubeRecipesPanel",
+                                "tooltipString": "@strClose",
+                                "sound": "cursor_close_window_hd",
+                                "acceptsEscKeyEverywhere": true
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ImageWidget",
+            "name": "CubeGuideSettingsBackground",
+            "fields": {
+                "rect": "$SettingsPanelBackgroundRect",
+                "anchor": {
+                    "x": 0.5
+                },
+                "filename": "Controller/Panel/Options/Panel_Options_BG"
+            }
+        },
+        {
+            "type": "TabBarWidget",
+            "name": "CubeGuideTabs",
+            "fields": {
+                "rect": "$SettingsPanelTabsRect",
+                "anchor": {
+                    "x": 0.5
+                },
+                "tabCount": 4,
+                "tabSize": {
+                    "x": 266,
+                    "y": 121
+                },
+                "tabPadding": {
+                    "x": 2,
+                    "y": 0
+                },
+                "unavailableTabsLeaveGaps": false,
+                "tabSizingMethod": "fixedCenter",
+                "filename": "Controller/Panel/Stash/V2/StashTabs",
+                "inactiveFrames": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "activeFrames": [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "activeTextColor": "$TabsActiveTextColor",
+                "inactiveTextColor": "$TabsInactiveTextColor",
+                "tabTextOffset": {
+                    "x": 0,
+                    "y": -4
+                },
+                "textStyle": {
+                    "options": {
+                        "lineWrap": true
+                    },
+                    "pointSize": "$MediumFontSize",
+                    "alignment": {
+                        "h": "center",
+                        "v": "center"
+                    },
+                    "fontColor": "$FontColorWhite",
+                    "spacing": {
+                        "leading": 0.9,
+                        "kerning": 0.95
+                    }
+                },
+                "textStrings": [
+                    "Essentials",
+                    "Upgrades",
+                    "Crafting",
+                    "Corruptions"
+                ],
+                "tabMessages": [
+                    "SettingsPanelMessage:CheckChanges:CubeRecipes2Panel",
+                    "SettingsPanelMessage:CheckChanges:CubeRecipes3Panel",
+                    "SettingsPanelMessage:CheckChanges:CubeRecipes4Panel",
+                    "SettingsPanelMessage:CheckChanges:CubeRecipes5Panel"
+                ]
+            }
+        }
+    ]
+}

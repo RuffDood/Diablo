@@ -1,6 +1,6 @@
 {
     "schemaVersion":  "1.1.0",
-    "generatedAt":  "2026-07-16T20:00:29.1646415+00:00",
+    "generatedAt":  "2026-07-16T21:43:28.0985706+00:00",
     "root":  {
                  "name":  "Diablo",
                  "path":  ".",
@@ -5080,6 +5080,11 @@
                                                                                                                                                "name":  "hirelinginventorypanelhd.json",
                                                                                                                                                "path":  "data-TCP/global/ui/layouts/controller/hirelinginventorypanelhd.json",
                                                                                                                                                "kind":  "file"
+                                                                                                                                           },
+                                                                                                                                           {
+                                                                                                                                               "name":  "horadriccubelayouthd.json",
+                                                                                                                                               "path":  "data-TCP/global/ui/layouts/controller/horadriccubelayouthd.json",
+                                                                                                                                               "kind":  "file"
                                                                                                                                            }
                                                                                                                                        ]
                                                                                                                       },
@@ -5106,6 +5111,31 @@
                                                                                                                       {
                                                                                                                           "name":  "characterstatspanelhd.json",
                                                                                                                           "path":  "data-TCP/global/ui/layouts/characterstatspanelhd.json",
+                                                                                                                          "kind":  "file"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                          "name":  "cuberecipes2panelhd.json",
+                                                                                                                          "path":  "data-TCP/global/ui/layouts/cuberecipes2panelhd.json",
+                                                                                                                          "kind":  "file"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                          "name":  "cuberecipes3panelhd.json",
+                                                                                                                          "path":  "data-TCP/global/ui/layouts/cuberecipes3panelhd.json",
+                                                                                                                          "kind":  "file"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                          "name":  "cuberecipes4panelhd.json",
+                                                                                                                          "path":  "data-TCP/global/ui/layouts/cuberecipes4panelhd.json",
+                                                                                                                          "kind":  "file"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                          "name":  "cuberecipes5panelhd.json",
+                                                                                                                          "path":  "data-TCP/global/ui/layouts/cuberecipes5panelhd.json",
+                                                                                                                          "kind":  "file"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                          "name":  "cuberecipespanelhd.json",
+                                                                                                                          "path":  "data-TCP/global/ui/layouts/cuberecipespanelhd.json",
                                                                                                                           "kind":  "file"
                                                                                                                       },
                                                                                                                       {
@@ -10899,6 +10929,16 @@
                                                                                                                                                                 {
                                                                                                                                                                     "name":  "horadriccube_bg2.sprite",
                                                                                                                                                                     "path":  "data-TCP/hd/global/ui/panel/horadric_cube/horadriccube_bg2.sprite",
+                                                                                                                                                                    "kind":  "file"
+                                                                                                                                                                },
+                                                                                                                                                                {
+                                                                                                                                                                    "name":  "Recipes.lowend.sprite",
+                                                                                                                                                                    "path":  "data-TCP/hd/global/ui/panel/horadric_cube/Recipes.lowend.sprite",
+                                                                                                                                                                    "kind":  "file"
+                                                                                                                                                                },
+                                                                                                                                                                {
+                                                                                                                                                                    "name":  "Recipes.sprite",
+                                                                                                                                                                    "path":  "data-TCP/hd/global/ui/panel/horadric_cube/Recipes.sprite",
                                                                                                                                                                     "kind":  "file"
                                                                                                                                                                 }
                                                                                                                                                             ]
@@ -21166,6 +21206,15 @@
                                                                                 "meta":  {
                                                                                              "role":  "x-itemstatcost-migration-validator",
                                                                                              "summary":  "Migre sélectivement Save Bits/Save Add via le writer TSV et vérifie les 13 statistiques historiquement hors plage."
+                                                                                         }
+                                                                            },
+                                                                            {
+                                                                                "name":  "cube-guide.js",
+                                                                                "path":  "scripts/build-data/cube-guide.js",
+                                                                                "kind":  "file",
+                                                                                "meta":  {
+                                                                                             "role":  "x-cube-guide-generator",
+                                                                                             "summary":  "Génère et valide les quatre onglets du guide in-game depuis cubemain.txt, avec exclusions et déduplication sémantique."
                                                                                          }
                                                                             },
                                                                             {

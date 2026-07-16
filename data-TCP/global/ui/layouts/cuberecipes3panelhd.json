@@ -1,0 +1,897 @@
+{
+    "type": "VideoOptionsPanel",
+    "name": "CubeRecipes3Panel",
+    "fields": {
+        "priority": 9003,
+        "rect": "$OptionsPanelRect",
+        "anchor": {
+            "x": 0.5
+        },
+        "applySettingsImmediately": true
+    },
+    "children": [
+        {
+            "type": "ImageWidget",
+            "name": "CubeGuide3ScrollBarBackground",
+            "fields": {
+                "rect": "$OptionsScrollBarBackgroundRect",
+                "anchor": {
+                    "x": 1
+                },
+                "filename": "PauseMenu\\VerticalScroll"
+            },
+            "children": [
+                {
+                    "type": "ScrollControllerWidget",
+                    "name": "CubeGuide3ScrollController",
+                    "fields": {
+                        "rect": "$OptionsScrollBarRect",
+                        "anchor": {
+                            "x": 1
+                        },
+                        "upArrowFilepath": "FrontEnd\\HD\\Final\\FrontEnd_ScrollUpBtn",
+                        "downArrowFilepath": "FrontEnd\\HD\\Final\\FrontEnd_ScrollDownBtn",
+                        "barFilepath": "PauseMenu\\VerticalIndicator",
+                        "viewName": "CubeGuide3ScrollView",
+                        "wheelScrollSound": "cursor_scroll_hd",
+                        "buttonScrollSound": "cursor_scroll_hd"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "ScrollViewWidget",
+            "name": "CubeGuide3ScrollView",
+            "fields": {
+                "fitToParent": true,
+                "scrollControllerName": "CubeGuide3ScrollController"
+            },
+            "children": [
+                {
+                    "type": "TableWidget",
+                    "name": "CubeGuide3Table",
+                    "fields": {
+                        "columns": [
+                            "$CubeOptionsTableColumn1"
+                        ],
+                        "rowHeight": "$CubeGuideTableRowHeight"
+                    },
+                    "children": [
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row001",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row001Text",
+                                    "fields": {
+                                        "text": "Larzuk's Forging Hammer",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide3Row001Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row002",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row002Text",
+                                    "fields": {
+                                        "text": "Normal, Low Quality or Superior Helm/Weapon/Armor/Shield -> maximum natural sockets.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row003",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row003Text",
+                                    "fields": {
+                                        "text": "Magic Helm/Weapon/Armor/Shield/Throwing Weapon -> 1-2 sockets.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row004",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row004Text",
+                                    "fields": {
+                                        "text": "Rare, Set, Unique or Crafted Helm/Weapon/Armor/Shield/Throwing Weapon -> 1 socket.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row005",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row005Text",
+                                    "fields": {
+                                        "text": "Cube Socketing",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide3Row005Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row006",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row006Text",
+                                    "fields": {
+                                        "text": "Normal/Superior: Tal Rune + Thul Rune + Perfect Topaz + Normal Torso Armor -> Socketed Torso Armor",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row007",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row007Text",
+                                    "fields": {
+                                        "text": "Normal/Superior: Ral Rune + Amn Rune + Perfect Amethyst + Normal Weapon -> Socketed Weapon",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row008",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row008Text",
+                                    "fields": {
+                                        "text": "Normal/Superior: Ral Rune + Thul Rune + Perfect Sapphire + Normal Helm -> Socketed Helm",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row009",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row009Text",
+                                    "fields": {
+                                        "text": "Normal/Superior: Tal Rune + Amn Rune + Perfect Ruby + Normal Shield -> Socketed Shield",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row010",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row010Text",
+                                    "fields": {
+                                        "text": "Charsi's Malus Imbuing",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide3Row010Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row011",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row011Text",
+                                    "fields": {
+                                        "text": "Charsi's Malus + Normal/Low Quality/Superior Helm, Weapon, Armor, Shield, Gloves, Belt or Boots -> Rare item.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row012",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row012Text",
+                                    "fields": {
+                                        "text": "Ethereal versions remain Ethereal; Circlets are also supported.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row013",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row013Text",
+                                    "fields": {
+                                        "text": "Repair Augments",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide3Row013Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row014",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row014Text",
+                                    "fields": {
+                                        "text": "Herb + Standard of Heroes + eligible item -> Repair Augment.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row015",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row015Text",
+                                    "fields": {
+                                        "text": "Eligible: Throwing Knife, Throwing Axe, Javelin, Magic Item, Rare Item, Set Armor, Set Weapon, Unique Armor",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row016",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row016Text",
+                                    "fields": {
+                                        "text": "Eligible: Unique Weapon, Crafted Item",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row017",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row017Text",
+                                    "fields": {
+                                        "text": "Melee Augments",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide3Row017Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row018",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row018Text",
+                                    "fields": {
+                                        "text": "Item + Standard of Heroes + Charsi's Malus + Gul Rune -> Melee Augment.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row019",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row019Text",
+                                    "fields": {
+                                        "text": "Eligible: Helm, Weapon, Amulet, Shield, Ring, Gloves, Boots, Armor, Belt",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row020",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row020Text",
+                                    "fields": {
+                                        "text": "MF + GF Augments",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide3Row020Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row021",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row021Text",
+                                    "fields": {
+                                        "text": "Item + Jah + Lo + Vex + Standard of Heroes + Charsi's Malus -> MF + GF item.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row022",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row022Text",
+                                    "fields": {
+                                        "text": "Eligible: Helm, Weapon, Amulet, Shield, Ring, Gloves, Boots, Armor, Belt",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row023",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row023Text",
+                                    "fields": {
+                                        "text": "Torso Armor + Zod Rune + Sur Rune + The Stone of Jordan + Standard of Heroes + Charsi's Malus -> Teleport + MF + GF Armor",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row024",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row024Text",
+                                    "fields": {
+                                        "text": "Socketing & Socket Removal",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide3Row024Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row025",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row025Text",
+                                    "fields": {
+                                        "text": "Hel Rune + Scroll of Town Portal + Socketed Item -> Clear Sockets on Item",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row026",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row026Text",
+                                    "fields": {
+                                        "text": "3 Perfect Skull + Socketable Rare Item + Stone of Jordan -> Add 3 Socket to Socketable Rare Item",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row027",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row027Text",
+                                    "fields": {
+                                        "text": "Fracture Halo -> Return Base + Socketed Items",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row028",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row028Text",
+                                    "fields": {
+                                        "text": "Item Tiers & Quality",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide3Row028Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row029",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row029Text",
+                                    "fields": {
+                                        "text": "6 Perfect Skulls + Rare Item -> Low Quality Rare Item",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row030",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row030Text",
+                                    "fields": {
+                                        "text": "Perfect Skull + Rare Item + Stone of Jordan -> High Quality Rare Item",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row031",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row031Text",
+                                    "fields": {
+                                        "text": "9 Perfect Skulls + 3 Hellfire Ash + Larzuk's Forging Hammer + Unique Jewel -> Random Unique Jewel",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row032",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row032Text",
+                                    "fields": {
+                                        "text": "Charsi Hammer + Larzuk Hammer + Normal Unique Weapon -> Exceptional Unique Weapon",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row033",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row033Text",
+                                    "fields": {
+                                        "text": "Charsi Hammer + Larzuk Hammer + Normal Unique Armor -> Exceptional Unique Armor",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row034",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row034Text",
+                                    "fields": {
+                                        "text": "Charsi Hammer + Larzuk Hammer + Standard of Heroes + Exceptional Unique Weapon -> Elite Unique Weapon",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row035",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row035Text",
+                                    "fields": {
+                                        "text": "Charsi Hammer + Larzuk Hammer + Standard of Heroes + Exceptional Unique Armor -> Elite Unique Armor",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row036",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row036Text",
+                                    "fields": {
+                                        "text": "Charsi Hammer + Larzuk Hammer + Normal Rare Weapon -> Exceptional Rare Weapon",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row037",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row037Text",
+                                    "fields": {
+                                        "text": "Charsi Hammer + Larzuk Hammer + Normal Crafted Weapon -> Exceptional Crafted Weapon",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row038",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row038Text",
+                                    "fields": {
+                                        "text": "Charsi Hammer + Larzuk Hammer + Normal Rare Armor -> Exceptional Rare Armor",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row039",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row039Text",
+                                    "fields": {
+                                        "text": "Charsi Hammer + Larzuk Hammer + Normal Crafted Armor -> Exceptional Crafted Armor",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row040",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row040Text",
+                                    "fields": {
+                                        "text": "Charsi Hammer + Larzuk Hammer + Standard of Heroes + Exceptional Rare Weapon -> Elite Rare Weapon",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row041",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row041Text",
+                                    "fields": {
+                                        "text": "Charsi Hammer + Larzuk Hammer + Standard of Heroes + Exceptional Crafted Weapon -> Elite Crafted Weapon",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row042",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row042Text",
+                                    "fields": {
+                                        "text": "Charsi Hammer + Larzuk Hammer + Standard of Heroes + Exceptional Rare Armor -> Elite Rare Armor",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row043",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row043Text",
+                                    "fields": {
+                                        "text": "Charsi Hammer + Larzuk Hammer + Standard of Heroes + Exceptional Crafted Armor -> Elite Crafted Armor",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row044",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row044Text",
+                                    "fields": {
+                                        "text": "Charsi Hammer + Larzuk Hammer + Normal Set Weapon -> Exceptional Set Weapon",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row045",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row045Text",
+                                    "fields": {
+                                        "text": "Charsi Hammer + Larzuk Hammer + Normal Set Armor -> Exceptional Set Armor",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row046",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row046Text",
+                                    "fields": {
+                                        "text": "Charsi Hammer + Larzuk Hammer + Standard of Heroes + Exceptional Set Weapon -> Elite Set Weapon",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row047",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row047Text",
+                                    "fields": {
+                                        "text": "Charsi Hammer + Larzuk Hammer + Standard of Heroes + Exceptional Set Armor -> Elite Set Armor",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row048",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row048Text",
+                                    "fields": {
+                                        "text": "Rerolls",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide3Row048Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row049",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row049Text",
+                                    "fields": {
+                                        "text": "3 Perfect Gems (Any) + Magic Item -> Re-rolled Magic Item",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row050",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row050Text",
+                                    "fields": {
+                                        "text": "Infernal Mawstone + Item -> Rerolls Ethereal Set ; Potential Upgrade or Downgrade",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row051",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row051Text",
+                                    "fields": {
+                                        "text": "Infernal Mawstone + Item -> Rerolls Set; Potential Upgrade or Downgrade",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row052",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row052Text",
+                                    "fields": {
+                                        "text": "Infernal Mawstone + Item -> Rerolls Ethereal Unique ; Potential Upgrade or Downgrade",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide3Row053",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide3Row053Text",
+                                    "fields": {
+                                        "text": "Infernal Mawstone + Item -> Rerolls Unique ; Potential Upgrade or Downgrade",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

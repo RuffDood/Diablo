@@ -1,0 +1,1243 @@
+{
+    "type": "VideoOptionsPanel",
+    "name": "CubeRecipes4Panel",
+    "fields": {
+        "priority": 9003,
+        "rect": "$OptionsPanelRect",
+        "anchor": {
+            "x": 0.5
+        },
+        "applySettingsImmediately": true
+    },
+    "children": [
+        {
+            "type": "ImageWidget",
+            "name": "CubeGuide4ScrollBarBackground",
+            "fields": {
+                "rect": "$OptionsScrollBarBackgroundRect",
+                "anchor": {
+                    "x": 1
+                },
+                "filename": "PauseMenu\\VerticalScroll"
+            },
+            "children": [
+                {
+                    "type": "ScrollControllerWidget",
+                    "name": "CubeGuide4ScrollController",
+                    "fields": {
+                        "rect": "$OptionsScrollBarRect",
+                        "anchor": {
+                            "x": 1
+                        },
+                        "upArrowFilepath": "FrontEnd\\HD\\Final\\FrontEnd_ScrollUpBtn",
+                        "downArrowFilepath": "FrontEnd\\HD\\Final\\FrontEnd_ScrollDownBtn",
+                        "barFilepath": "PauseMenu\\VerticalIndicator",
+                        "viewName": "CubeGuide4ScrollView",
+                        "wheelScrollSound": "cursor_scroll_hd",
+                        "buttonScrollSound": "cursor_scroll_hd"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "ScrollViewWidget",
+            "name": "CubeGuide4ScrollView",
+            "fields": {
+                "fitToParent": true,
+                "scrollControllerName": "CubeGuide4ScrollController"
+            },
+            "children": [
+                {
+                    "type": "TableWidget",
+                    "name": "CubeGuide4Table",
+                    "fields": {
+                        "columns": [
+                            "$CubeOptionsTableColumn1"
+                        ],
+                        "rowHeight": "$CubeGuideTableRowHeight"
+                    },
+                    "children": [
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row001",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row001Text",
+                                    "fields": {
+                                        "text": "Crafting Rules",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide4Row001Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row002",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row002Text",
+                                    "fields": {
+                                        "text": "Classic craft: use the listed Magic base, Jewel, Rune and Perfect Gem.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row003",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row003Text",
+                                    "fields": {
+                                        "text": "Tablet shortcut: Magic base + matching Crafting Tablet -> same family craft.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row004",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row004Text",
+                                    "fields": {
+                                        "text": "Augmented version: add Eth Rune + Charsi's Malus to a classic, tablet or Ascended craft.",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row005",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row005Text",
+                                    "fields": {
+                                        "text": "Classic Crafts",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide4Row005Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row006",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row006Text",
+                                    "fields": {
+                                        "text": "Blood Amulet: Magic Amulet + Jewel + Amn Rune + Perfect Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row007",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row007Text",
+                                    "fields": {
+                                        "text": "Blood Belt: Magic Belt + Jewel + Tal Rune + Perfect Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row008",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row008Text",
+                                    "fields": {
+                                        "text": "Blood Body: Magic Torso Armor + Jewel + Thul Rune + Perfect Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row009",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row009Text",
+                                    "fields": {
+                                        "text": "Blood Boots: Magic Boots + Jewel + Eth Rune + Perfect Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row010",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row010Text",
+                                    "fields": {
+                                        "text": "Blood Gloves: Magic Gloves + Jewel + Nef Rune + Perfect Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row011",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row011Text",
+                                    "fields": {
+                                        "text": "Blood Helm: Magic Circlet + Jewel + Ral Rune + Perfect Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row012",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row012Text",
+                                    "fields": {
+                                        "text": "Blood Helm: Magic Helm + Jewel + Ral Rune + Perfect Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row013",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row013Text",
+                                    "fields": {
+                                        "text": "Blood Ring: Magic Ring + Jewel + Sol Rune + Perfect Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row014",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row014Text",
+                                    "fields": {
+                                        "text": "Blood Shield: Magic Shield + Jewel + Ith Rune + Perfect Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row015",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row015Text",
+                                    "fields": {
+                                        "text": "Blood Weapon: Magic Weapon + Jewel + Ort Rune + Perfect Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row016",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row016Text",
+                                    "fields": {
+                                        "text": "Caster Amulet: Magic Amulet + Jewel + Ral Rune + Perfect Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row017",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row017Text",
+                                    "fields": {
+                                        "text": "Caster Belt: Magic Belt + Jewel + Ith Rune + Perfect Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row018",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row018Text",
+                                    "fields": {
+                                        "text": "Caster Body: Magic Torso Armor + Jewel + Tal Rune + Perfect Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row019",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row019Text",
+                                    "fields": {
+                                        "text": "Caster Boots: Magic Boots + Jewel + Thul Rune + Perfect Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row020",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row020Text",
+                                    "fields": {
+                                        "text": "Caster Gloves: Magic Gloves + Jewel + Ort Rune + Perfect Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row021",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row021Text",
+                                    "fields": {
+                                        "text": "Caster Helm: Magic Circlet + Jewel + Nef Rune + Perfect Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row022",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row022Text",
+                                    "fields": {
+                                        "text": "Caster Helm: Magic Helm + Jewel + Nef Rune + Perfect Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row023",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row023Text",
+                                    "fields": {
+                                        "text": "Caster Ring: Magic Ring + Jewel + Amn Rune + Perfect Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row024",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row024Text",
+                                    "fields": {
+                                        "text": "Caster Shield: Magic Shield + Jewel + Eth Rune + Perfect Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row025",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row025Text",
+                                    "fields": {
+                                        "text": "Caster Weapon: Magic Weapon + Jewel + Tir Rune + Perfect Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row026",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row026Text",
+                                    "fields": {
+                                        "text": "Hit Power Amulet: Magic Amulet + Jewel + Thul Rune + Perfect Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row027",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row027Text",
+                                    "fields": {
+                                        "text": "Hit Power Belt: Magic Belt + Jewel + Tal Rune + Perfect Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row028",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row028Text",
+                                    "fields": {
+                                        "text": "Hit Power Body: Magic Torso Armor + Jewel + Nef Rune + Perfect Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row029",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row029Text",
+                                    "fields": {
+                                        "text": "Hit Power Boots: Magic Boots + Jewel + Ral Rune + Perfect Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row030",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row030Text",
+                                    "fields": {
+                                        "text": "Hit Power Gloves: Magic Gloves + Jewel + Ort Rune + Perfect Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row031",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row031Text",
+                                    "fields": {
+                                        "text": "Hit Power Helm: Magic Circlet + Jewel + Ith Rune + Perfect Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row032",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row032Text",
+                                    "fields": {
+                                        "text": "Hit Power Helm: Magic Helm + Jewel + Ith Rune + Perfect Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row033",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row033Text",
+                                    "fields": {
+                                        "text": "Hit Power Ring: Magic Ring + Jewel + Amn Rune + Perfect Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row034",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row034Text",
+                                    "fields": {
+                                        "text": "Hit Power Shield: Magic Shield + Jewel + Eth Rune + Perfect Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row035",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row035Text",
+                                    "fields": {
+                                        "text": "Hit Power Weapon: Magic Weapon + Jewel + Tir Rune + Perfect Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row036",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row036Text",
+                                    "fields": {
+                                        "text": "Safety Amulet: Magic Amulet + Jewel + Thul Rune + Perfect Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row037",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row037Text",
+                                    "fields": {
+                                        "text": "Safety Belt: Magic Belt + Jewel + Tal Rune + Perfect Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row038",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row038Text",
+                                    "fields": {
+                                        "text": "Safety Body: Magic Torso Armor + Jewel + Eth Rune + Perfect Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row039",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row039Text",
+                                    "fields": {
+                                        "text": "Safety Boots: Magic Boots + Jewel + Ort Rune + Perfect Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row040",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row040Text",
+                                    "fields": {
+                                        "text": "Safety Gloves: Magic Gloves + Jewel + Ral Rune + Perfect Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row041",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row041Text",
+                                    "fields": {
+                                        "text": "Safety Helm: Magic Circlet + Jewel + Ith Rune + Perfect Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row042",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row042Text",
+                                    "fields": {
+                                        "text": "Safety Helm: Magic Helm + Jewel + Ith Rune + Perfect Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row043",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row043Text",
+                                    "fields": {
+                                        "text": "Safety Ring: Magic Ring + Jewel + Amn Rune + Perfect Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row044",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row044Text",
+                                    "fields": {
+                                        "text": "Safety Shield: Magic Shield + Jewel + Nef Rune + Perfect Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row045",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row045Text",
+                                    "fields": {
+                                        "text": "Safety Weapon: Magic Weapon + Jewel + Sol Rune + Perfect Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row046",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row046Text",
+                                    "fields": {
+                                        "text": "Ascended Crafts",
+                                        "style": "$CubeGuideSectionText"
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "ImageWidget",
+                                            "name": "CubeGuide4Row046Divider",
+                                            "fields": {
+                                                "rect": "$CubeGuideDividerRect",
+                                                "filename": "PauseMenu\\Divider"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row047",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row047Text",
+                                    "fields": {
+                                        "text": "Ascended Blood Amulet: Magic Amulet + Jewel + Fal Rune + Ascended Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row048",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row048Text",
+                                    "fields": {
+                                        "text": "Ascended Blood Belt: Magic Belt + Jewel + Fal Rune + Ascended Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row049",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row049Text",
+                                    "fields": {
+                                        "text": "Ascended Blood Body: Magic Torso Armor + Jewel + Fal Rune + Ascended Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row050",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row050Text",
+                                    "fields": {
+                                        "text": "Ascended Blood Boots: Magic Boots + Jewel + Fal Rune + Ascended Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row051",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row051Text",
+                                    "fields": {
+                                        "text": "Ascended Blood Gloves: Magic Gloves + Jewel + Fal Rune + Ascended Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row052",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row052Text",
+                                    "fields": {
+                                        "text": "Ascended Blood Helm: Magic Helm + Jewel + Fal Rune + Ascended Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row053",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row053Text",
+                                    "fields": {
+                                        "text": "Ascended Blood Ring: Magic Ring + Jewel + Fal Rune + Ascended Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row054",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row054Text",
+                                    "fields": {
+                                        "text": "Ascended Blood Shield: Magic Shield + Jewel + Fal Rune + Ascended Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row055",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row055Text",
+                                    "fields": {
+                                        "text": "Ascended Blood Weapon: Magic Weapon + Jewel + Fal Rune + Ascended Ruby",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row056",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row056Text",
+                                    "fields": {
+                                        "text": "Ascended Caster Amulet: Magic Amulet + Jewel + Lum Rune + Ascended Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row057",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row057Text",
+                                    "fields": {
+                                        "text": "Ascended Caster Belt: Magic Belt + Jewel + Lum Rune + Ascended Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row058",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row058Text",
+                                    "fields": {
+                                        "text": "Ascended Caster Body: Magic Torso Armor + Jewel + Lum Rune + Ascended Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row059",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row059Text",
+                                    "fields": {
+                                        "text": "Ascended Caster Boots: Magic Boots + Jewel + Lum Rune + Ascended Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row060",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row060Text",
+                                    "fields": {
+                                        "text": "Ascended Caster Gloves: Magic Gloves + Jewel + Lum Rune + Ascended Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row061",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row061Text",
+                                    "fields": {
+                                        "text": "Ascended Caster Helm: Magic Helm + Jewel + Lum Rune + Ascended Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row062",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row062Text",
+                                    "fields": {
+                                        "text": "Ascended Caster Ring: Magic Ring + Jewel + Lum Rune + Ascended Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row063",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row063Text",
+                                    "fields": {
+                                        "text": "Ascended Caster Shield: Magic Shield + Jewel + Lum Rune + Ascended Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row064",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row064Text",
+                                    "fields": {
+                                        "text": "Ascended Caster Weapon: Magic Weapon + Jewel + Lum Rune + Ascended Amethyst",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row065",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row065Text",
+                                    "fields": {
+                                        "text": "Ascended Hit Power Amulet: Magic Amulet + Jewel + Ko Rune + Ascended Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row066",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row066Text",
+                                    "fields": {
+                                        "text": "Ascended Hit Power Belt: Magic Belt + Jewel + Ko Rune + Ascended Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row067",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row067Text",
+                                    "fields": {
+                                        "text": "Ascended Hit Power Body: Magic Torso Armor + Jewel + Ko Rune + Ascended Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row068",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row068Text",
+                                    "fields": {
+                                        "text": "Ascended Hit Power Boots: Magic Boots + Jewel + Ko Rune + Ascended Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row069",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row069Text",
+                                    "fields": {
+                                        "text": "Ascended Hit Power Gloves: Magic Gloves + Jewel + Ko Rune + Ascended Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row070",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row070Text",
+                                    "fields": {
+                                        "text": "Ascended Hit Power Helm: Magic Helm + Jewel + Ko Rune + Ascended Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row071",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row071Text",
+                                    "fields": {
+                                        "text": "Ascended Hit Power Ring: Magic Ring + Jewel + Ko Rune + Ascended Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row072",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row072Text",
+                                    "fields": {
+                                        "text": "Ascended Hit Power Shield: Magic Shield + Jewel + Ko Rune + Ascended Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row073",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row073Text",
+                                    "fields": {
+                                        "text": "Ascended Hit Power Weapon: Magic Weapon + Jewel + Ko Rune + Ascended Sapphire",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row074",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row074Text",
+                                    "fields": {
+                                        "text": "Ascended Safety Amulet: Magic Amulet + Jewel + Lem Rune + Ascended Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row075",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row075Text",
+                                    "fields": {
+                                        "text": "Ascended Safety Belt: Magic Belt + Jewel + Lem Rune + Ascended Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row076",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row076Text",
+                                    "fields": {
+                                        "text": "Ascended Safety Body: Magic Torso Armor + Jewel + Lem Rune + Ascended Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row077",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row077Text",
+                                    "fields": {
+                                        "text": "Ascended Safety Boots: Magic Boots + Jewel + Lem Rune + Ascended Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row078",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row078Text",
+                                    "fields": {
+                                        "text": "Ascended Safety Gloves: Magic Gloves + Jewel + Lem Rune + Ascended Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row079",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row079Text",
+                                    "fields": {
+                                        "text": "Ascended Safety Helm: Magic Helm + Jewel + Lem Rune + Ascended Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row080",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row080Text",
+                                    "fields": {
+                                        "text": "Ascended Safety Ring: Magic Ring + Jewel + Lem Rune + Ascended Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row081",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row081Text",
+                                    "fields": {
+                                        "text": "Ascended Safety Shield: Magic Shield + Jewel + Lem Rune + Ascended Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableRowWidget",
+                            "name": "CubeGuide4Row082",
+                            "children": [
+                                {
+                                    "type": "TextBoxWidget",
+                                    "name": "CubeGuide4Row082Text",
+                                    "fields": {
+                                        "text": "Ascended Safety Weapon: Magic Weapon + Jewel + Lem Rune + Ascended Emerald",
+                                        "style": "$CubeGuideText"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
