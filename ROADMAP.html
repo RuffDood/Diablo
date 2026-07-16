@@ -154,7 +154,6 @@
       <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Sélecteur des <b>40 tables</b> (route <code>/api/tables</code> + menu déroulant) — changement dynamique prouvé</span></label>
       <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Générateur de schémas : croise les colonnes réelles des .txt avec le <b>D2R Data Guide</b> <span class="note-t">40 schémas · 37 enrichis · hireling 77/77 + refs préservés</span></span></label>
       <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Validations à la saisie : type nombre/boolean, marquage visuel des cellules invalides, garde-fou à la sauvegarde</span></label>
-      <label class="tache" data-id="i2-communes"><input type="checkbox"><span class="lbl">Raffiner : croiser les « colonnes communes » du guide → mieux documenter armor & les items</span><span class="qui a">AGENT</span></label>
     </div>
     <div class="st-pied">
       <span class="chip gate"><b>Gate</b>éditer n'importe quelle table, typée + validée</span>
@@ -162,15 +161,15 @@
     </div>
   </div>
 
-  <div class="station encours" data-etape="3">
-    <div class="st-tete"><span class="st-num">INCRÉMENT 3</span><span class="st-titre">Hébergement Netlify</span><span class="st-etat encours">EN COURS</span></div>
+  <div class="station fait" data-etape="3">
+    <div class="st-tete"><span class="st-num">INCRÉMENT 3</span><span class="st-titre">Hébergement Netlify</span><span class="st-etat fait">FAIT · 15 juil.</span></div>
     <p class="st-but">Rendre l'éditeur accessible en ligne, écriture via commits GitHub.</p>
     <div class="taches">
       <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Netlify Function : lecture/écriture des .txt via l'<b>API GitHub</b> (FS éphémère → commit dans le repo)</span></label>
       <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Auth cookie HMAC + allowlist courriel + écran de login (pattern assurance-admin)</span></label>
       <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Token <b>fine-grained</b> de Vincent, limité à Diablo (Contents read-write) — en main, vérifié</span></label>
-      <label class="tache" data-id="i3-netlify"><input type="checkbox"><span class="lbl">Connecter le site Netlify + poser les variables d'env (custom domain)</span><span class="qui g">GUILLAUME</span></label>
-      <label class="tache" data-id="i3-deploy"><input type="checkbox"><span class="lbl">Test intégré (<code>netlify dev</code>) + déploiement + variables d'env</span><span class="qui a">AGENT</span></label>
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Site Netlify <code>diablo-tcp-admin</code> créé + 3 variables d'environnement posées</span></label>
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Test intégré (<code>netlify dev</code>) + déploiement en production <span class="note-t">vérifié en direct : login, lecture des 40 tables via l'API GitHub, Comparateur — sur <code>diablo-tcp-admin.netlify.app</code></span></span></label>
     </div>
     <div class="st-pied">
       <span class="chip gate"><b>Gate</b>l'admin en ligne édite une table → commit → rebuild</span>
@@ -200,10 +199,12 @@
       <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Recherche texte libre + filtre par colonne (plage pour les nombres, sous-chaîne pour le texte)</span></label>
       <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Navigation par catégorie : fil d'Ariane + sélecteur de tables groupé (Objets/Personnages & monstres/Compétences/Système)</span></label>
       <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Sélecteur de colonnes visibles : recherche, tout afficher/désélectionner, presets nommés par table (localStorage)</span></label>
-      <label class="tache" data-id="i5-comparateur-headers-figes"><input type="checkbox"><span class="lbl">Verrouillage complet des headers du <b>Comparateur</b> au défilement : garder visibles les titres de colonnes ainsi que les sous-headers vanilla/BK/BT/TCP</span><span class="qui a">AGENT</span></label>
-      <label class="tache" data-id="i5-guide-headers"><input type="checkbox"><span class="lbl">Aide contextuelle des headers de l'Éditeur .txt : afficher au survol une fenêtre descriptive alimentée par le <b>D2R Data Guide</b> via les schémas de colonnes <span class="note-t">fonction du header visible sans quitter l'éditeur</span></span><span class="qui a">AGENT</span></label>
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Verrouillage complet des headers du <b>Comparateur</b> au défilement : titres de colonnes + sous-headers vanilla/BK/BT/TCP figés (vertical + 1er champ figé à l'horizontale)</span></label>
+      <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Aide contextuelle des headers de l'Éditeur .txt : fenêtre descriptive au survol, alimentée par le <b>D2R Data Guide</b> via les schémas de colonnes</span></label>
+      <label class="tache" data-id="i2-communes"><input type="checkbox"><span class="lbl">Raffiner : croiser les « colonnes communes » du guide → mieux documenter armor & les items</span><span class="qui a">AGENT</span></label>
       <label class="tache" data-id="i5-navigation-croisee"><input type="checkbox"><span class="lbl">Navigation croisée entre tables (sauter d'une table à l'autre via les colonnes de référence)</span><span class="qui a">AGENT</span></label>
       <label class="tache faite" data-id="i5-mission"><input type="checkbox" checked disabled><span class="lbl">Expanded Merc Equipment : 2 rings + amulet + belt, sans boots/gloves — validé en jeu (<code>itemtypes</code>/<code>hireling</code>/<code>inventory</code>)</span><span class="qui a">AGENT</span></label>
+      <label class="tache" data-id="i5-domaine"><input type="checkbox"><span class="lbl">Domaine personnalisé <code>diablo.spheredi.com</code> <span class="note-t">actuellement sur <code>diablo-tcp-admin.netlify.app</code> — demande un enregistrement DNS côté Guillaume</span></span><span class="qui g">GUILLAUME</span></label>
       <label class="tache" data-id="i5-durcir"><input type="checkbox"><span class="lbl">Durcir l'auth (protection de site Netlify) ; export/sauvegarde</span><span class="qui g">GUILLAUME</span></label>
       <label class="tache" data-id="i5-wiki-public"><input type="checkbox"><span class="lbl">Option <b>(c) wiki public des 3 mods</b> : encyclopédie communauté (style BTDiablo) — pages rédigées + dérivées du comparateur. À détailler.</span><span class="qui g">GUILLAUME</span></label>
     </div>
@@ -244,11 +245,13 @@
   <summary>Le dépôt — où tout vit</summary>
   <div class="tree">Diablo/
 ├─ apps/admin/        <span class="c">éditeur web (Vite + React)</span>
+├─ netlify/           <span class="c">Function hébergée (API GitHub, auth) — netlify.toml à la racine</span>
 ├─ scripts/           <span class="c">dev-server · build-data (TSV↔JSON) · gen-schemas · cadastre · validateur</span>
 ├─ schemas/           <span class="c">40 schémas de colonnes (types + descriptions du guide)</span>
 ├─ data-TCP/          <span class="c">le mod en développement (global/excel = les .txt · hd/D2RLAN hors git)</span>
 ├─ data-BK/ data-BT/  <span class="c">mods de référence (lecture seule)</span>
 ├─ excel-vanilla/     <span class="c">tables du jeu de base (référence)</span>
+├─ Mission/           <span class="c">besoins et intentions du mod</span>
 ├─ guide/             <span class="c">D2R Data Guide (clone local, non versionné)</span>
 ├─ wiki-template/     <span class="c">références wiki (index BTDiablo, gabarits)</span>
 ├─ ai-cartographie.json <span class="c">le cadastre gouverné (+ .schema.json)</span>
@@ -256,7 +259,7 @@
 </details>
 
 <footer>
-  ROADMAP v1 — Diablo TCP, 15 juillet 2026 · <b>FONDATIONS + INCRÉMENTS 1 &amp; 2 CLOS</b> · éditeur multi-tables + validations en service · <b>40 schémas générés du guide</b> (hireling 77/77) · I3 en cours : backend codé + token de Vincent en main — reste le site Netlify et le déploiement · I4 amorcé : Comparateur vanilla/BK/BT/TCP en service · I5 amorcé : navigation par catégorie, recherche/filtres, colonnes visibles · I6 ouvert : GameplayMods — réparation et validation en jeu du Storage Bag. Coche les cases à venir : l'état est sauvegardé dans ton navigateur.
+  ROADMAP v1 — Diablo TCP, 15 juillet 2026 · <b>FONDATIONS + INCRÉMENTS 1, 2 &amp; 3 CLOS</b> · éditeur multi-tables + validations en service · <b>40 schémas générés du guide</b> (hireling 77/77) · déployé et accessible sur <b>diablo-tcp-admin.netlify.app</b> · I4 amorcé : Comparateur vanilla/BK/BT/TCP en service · I5 amorcé : navigation par catégorie, recherche/filtres, colonnes visibles · I6 ouvert : GameplayMods — réparation et validation en jeu du Storage Bag. Coche les cases à venir : l'état est sauvegardé dans ton navigateur.
 </footer>
 </main>
 

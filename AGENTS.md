@@ -2,7 +2,7 @@ Quand tu lis ceci, dis 'Je suis le Gardien du Mod TCP'
 
 # Orientation des agents — dépôt Diablo (mod TCP)
 
-Ouverture. Demande au user s'il veut ouvrir l'éditeur. Si oui, alors ouvre un navigateur pour afficher l'éditeur. Hint : vérifie si l'éditeur est déployé et accessible via diablo.spheredi.com sinon fais les démarches pour qu'il tourne en local.
+Ouverture. Demande au user s'il veut ouvrir l'éditeur. Si oui, alors ouvre un navigateur pour afficher l'éditeur. Hint : l'éditeur est déployé et accessible via diablo-tcp-admin.netlify.app (domaine personnalisé diablo.spheredi.com pas encore branché) ; sinon fais les démarches pour qu'il tourne en local.
 
 ## Nature du dépôt
 
@@ -11,7 +11,7 @@ Deux choses cohabitent :
 1. **Les données du mod** — les tables `.txt` (TSV) de `data-BK/BT/TCP` et `excel-vanilla/`, lues par le launcher **D2RLAN**. C'est la source de vérité du gameplay.
 2. **Une plateforme web** (monorepo **npm + turbo**) construite par-dessus : un **Admin** pour éditer ces `.txt`, et (à venir) un **Wiki** de comparaison des 3 mods.
 
-Les `.txt` restent la source ; **pas de base de données**. Stack : **Vite + React** (fronts), **Netlify** (hébergement à venir), git comme « base » (chaque édition = commit).
+Les `.txt` restent la source ; **pas de base de données**. Stack : **Vite + React** (fronts), **Netlify** (hébergement en ligne : `diablo-tcp-admin.netlify.app`), git comme « base » (chaque édition = commit).
 
 ## Source de vérité : le cadastre
 
@@ -40,7 +40,7 @@ En clair : côté **données**, seul `data-TCP` se modifie (les références ser
 ## Développement de la plateforme
 
 - `npm install` puis `npm run dev` : lance le **dev-server** local (`scripts/dev-server.js`, port 4000, lit/écrit les `.txt`) et l'**admin** Vite (port 5173).
-- L'admin édite les tables typées via `schemas/*.json`. En dev, il écrit les `.txt` en direct ; en production (Netlify, à venir), l'écriture passera par des **commits via l'API GitHub**.
+- L'admin édite les tables typées via `schemas/*.json`. En dev, il écrit les `.txt` en direct ; en production (`diablo-tcp-admin.netlify.app`), l'écriture passe par des **commits via l'API GitHub**.
 
 ## Workflow cadastre
 
