@@ -118,6 +118,7 @@ function Editor({ auth, onLogout }) {
   const [colsSearch, setColsSearch] = useState('');
   const [presets, setPresets] = useState([]);
   const [selectedPreset, setSelectedPreset] = useState('');
+  const [hoverCol, setHoverCol] = useState(null); // nom de colonne survolee (popover d'aide, mode Editeur)
   const [mode, setMode] = useState('editor'); // 'editor' | 'compare' — persiste au changement de table
   const [compareData, setCompareData] = useState(null);
 
@@ -129,7 +130,7 @@ function Editor({ auth, onLogout }) {
     setData(null); setStatus('Chargement…'); setPage(0); setEditing(null); setDirty(false);
     setSearch(''); setFilterCol(''); setFilterMin(''); setFilterMax(''); setFilterText('');
     setHiddenCols(new Set()); setColsOpen(false); setColsSearch('');
-    setPresets(loadPresets(name)); setSelectedPreset('');
+    setPresets(loadPresets(name)); setSelectedPreset(''); setHoverCol(null);
     fetch(`/api/table/${name}`)
       .then((r) => r.json())
       .then((d) => {
@@ -410,8 +411,22 @@ function Editor({ auth, onLogout }) {
                   const cls = (meta?.comment ? 'comment' : meta?.type === 'number' ? 'num' : 'text') + (idx === 0 ? ' cle-col' : '');
                   return (
                     <th key={j} className={cls}
-                        title={meta ? `${meta.type}${meta.ref ? ' → ' + meta.ref : ''} — ${meta.description}` : 'colonne non documentée'}>
+                        onMouseEnter={() => setHoverCol(h)}
+                        onMouseLeave={() => setHoverCol(null)}>
                       {h}
+                      {hoverCol === h && (
+                        <div className="col-tooltip">
+                          {meta ? (
+                            <>
+                              <strong>{h}</strong>
+                              <span className="col-tooltip-type">{meta.type}{meta.ref ? ` → ${meta.ref}` : ''}</span>
+                              <p>{meta.description}</p>
+                            </>
+                          ) : (
+                            <p>colonne non documentée</p>
+                          )}
+                        </div>
+                      )}
                     </th>
                   );
                 })}
@@ -462,17 +477,17 @@ function Editor({ auth, onLogout }) {
             <thead>
               <tr>
                 <th className="rownum" rowSpan={2}>#</th>
-                {visibleCols.map((j) => (
-                  <th key={j} className="grp" colSpan={4}>{data.headers[j]}</th>
+                {visibleCols.map((j, idx) => (
+                  <th key={j} className={'grp' + (idx === 0 ? ' cle-col-grp' : '')} colSpan={4}>{data.headers[j]}</th>
                 ))}
               </tr>
               <tr>
-                {visibleCols.map((j) => (
+                {visibleCols.map((j, idx) => (
                   <Fragment key={j}>
-                    <th className="sub">vanilla</th>
-                    <th className="sub">BK</th>
-                    <th className="sub">BT</th>
-                    <th className="sub tcp">TCP</th>
+                    <th className={'sub' + (idx === 0 ? ' cle-col-vanilla' : '')}>vanilla</th>
+                    <th className={'sub' + (idx === 0 ? ' cle-col-bk' : '')}>BK</th>
+                    <th className={'sub' + (idx === 0 ? ' cle-col-bt' : '')}>BT</th>
+                    <th className={'sub tcp' + (idx === 0 ? ' cle-col-tcp' : '')}>TCP</th>
                   </Fragment>
                 ))}
               </tr>
@@ -484,19 +499,20 @@ function Editor({ auth, onLogout }) {
               {pageRows.map(({ row, i }) => (
                 <tr key={i}>
                   <td className="rownum">{i + 1}</td>
-                  {visibleCols.map((j) => {
+                  {visibleCols.map((j, idx) => {
                     const h = data.headers[j];
                     const cell = row[j];
                     const meta = colMeta[h];
                     const isNum = meta?.type === 'number';
                     const isEditing = editing && editing.row === i && editing.col === j;
                     const err = cellError(meta, cell);
-                    const tcpCls = 'tcp-cell' + (isNum ? ' num' : '') + (err ? ' err' : '');
+                    const freeze = idx === 0;
+                    const tcpCls = 'tcp-cell' + (isNum ? ' num' : '') + (err ? ' err' : '') + (freeze ? ' cle-col-tcp' : '');
                     return (
                       <Fragment key={j}>
-                        <td className={'ref-cell' + (isNum ? ' num' : '')}>{refValue('vanilla', h, i) ?? '—'}</td>
-                        <td className={'ref-cell' + (isNum ? ' num' : '')}>{refValue('BK', h, i) ?? '—'}</td>
-                        <td className={'ref-cell' + (isNum ? ' num' : '')}>{refValue('BT', h, i) ?? '—'}</td>
+                        <td className={'ref-cell' + (isNum ? ' num' : '') + (freeze ? ' cle-col-vanilla' : '')}>{refValue('vanilla', h, i) ?? '—'}</td>
+                        <td className={'ref-cell' + (isNum ? ' num' : '') + (freeze ? ' cle-col-bk' : '')}>{refValue('BK', h, i) ?? '—'}</td>
+                        <td className={'ref-cell' + (isNum ? ' num' : '') + (freeze ? ' cle-col-bt' : '')}>{refValue('BT', h, i) ?? '—'}</td>
                         <td className={tcpCls}
                             title={err ? `⚠ ${h} : ${err}` : undefined}
                             onClick={() => setEditing({ row: i, col: j })}>

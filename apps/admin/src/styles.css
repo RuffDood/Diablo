@@ -65,6 +65,32 @@ td.ref-cell { color: #6a6a77; padding: 3px 8px; cursor: default; }
 td.tcp-cell { background: rgba(58, 157, 93, 0.06); }
 td.tcp-cell.num { text-align: right; }
 td.tcp-cell.err { background: rgba(224, 113, 90, 0.16); box-shadow: inset 0 0 0 1px #b8503c; }
+
+/* Comparateur : en-tête à 2 étages figé au défilement vertical (groupe + sous-colonnes) */
+th.grp, th.sub { position: sticky; z-index: 2; }
+th.grp { top: 0; }
+th.sub { top: 27px; }
+
+/* Comparateur : les 4 sous-colonnes du premier champ visible figées au défilement horizontal,
+   même principe que .cle-col en mode Éditeur — largeur fixe pour un décalage "left" prévisible. */
+.cle-col-vanilla, .cle-col-bk, .cle-col-bt, .cle-col-tcp {
+  position: sticky;
+  width: 90px;
+  min-width: 90px;
+  max-width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cle-col-vanilla { left: 52px; }
+.cle-col-bk { left: 142px; }
+.cle-col-bt { left: 232px; }
+.cle-col-tcp { left: 322px; }
+th.cle-col-grp { position: sticky; left: 52px; width: 360px; min-width: 360px; max-width: 360px; }
+
+td.cle-col-vanilla, td.cle-col-bk, td.cle-col-bt, td.cle-col-tcp { z-index: 1; }
+td.cle-col-vanilla, td.cle-col-bk, td.cle-col-bt { background: #16161a; }
+td.tcp-cell.cle-col-tcp:not(.err) { background: #181e1e; }
+th.sub.tcp.cle-col-tcp { background: #263835; }
 .status { color: #9aa0ad; }
 .desc { color: #8a8a99; margin: 4px 0 10px; }
 .desc em { color: #6a6a77; }
@@ -104,6 +130,27 @@ th {
 }
 th.num { color: #7bb8e8; }
 th.comment { color: #d0965a; font-style: italic; }
+
+/* Aide contextuelle au survol d'un header (mode Éditeur) — remplace le tooltip natif du navigateur */
+.col-tooltip {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 20;
+  width: 240px;
+  background: #1f1f28;
+  border: 1px solid #3a3a48;
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+  white-space: normal;
+  text-align: left;
+  font-weight: normal;
+  pointer-events: none;
+}
+.col-tooltip strong { display: block; color: #fff; margin-bottom: 4px; }
+.col-tooltip-type { display: inline-block; color: #7bb8e8; font-size: 11px; margin-bottom: 6px; }
+.col-tooltip p { margin: 0; color: #c8ccd6; line-height: 1.4; }
 
 td { cursor: text; }
 td.num { text-align: right; }
