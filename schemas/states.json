@@ -4,7 +4,7 @@
   "file": "global/excel/states.txt",
   "description": "Table states du mod TCP (colonnes documentees via le D2R Data Guide).",
   "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 66,
+  "columnsDocumented": 67,
   "columns": [
     {
       "name": "state",
@@ -425,7 +425,9 @@
     },
     {
       "name": "sunderfull",
-      "type": "number"
+      "type": "number",
+      "description": "If equals 1, then this state will reapply any negative resistance stats at full potential when calculating pierce immunity if the immunity was broken. If equals 0, then reapply at the normal reduced efficiency (currently 1/5).",
+      "guideType": "[B]"
     },
     {
       "name": "sunder-res-reduce",

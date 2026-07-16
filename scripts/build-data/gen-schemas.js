@@ -56,7 +56,14 @@ function parseGuide() {
   // Positions distinctes triees : delimitent le contenu reel. Plusieurs marks peuvent partager
   // le meme start (h2 multi-noms) -- elles lisent toutes jusqu'a la PROCHAINE position distincte.
   const positions = [...new Set(marks.map((mk) => mk.start))].sort((a, b) => a - b);
-  const colRe = /<b>([^<]+)<\/b>\s*-\s*<span[^>]*>\s*<b>\[([NBOC])\]<\/b>\s*<\/span>\s*-\s*([^<]*)/g;
+  // La description va jusqu'a la vraie fin de l'entree (prochain champ, </p>, tableau ou titre) --
+  // pas jusqu'au premier tag rencontre, sinon un lien ou un span colore en plein texte la tronque.
+  // Un badge [X] (« ne fonctionne pas ») peut precede le badge de type reel -- optionnel.
+  const DEPR = '(?:<span[^>]*>\\s*<b>\\[X\\]\\s*<\\/b>\\s*<\\/span>\\s*)?';
+  const colRe = new RegExp(
+    '<b>([^<]+)<\\/b>\\s*-\\s*' + DEPR + '<span[^>]*>\\s*<b>\\[([NBOC])\\]<\\/b>\\s*<\\/span>\\s*-\\s*' +
+    '([\\s\\S]*?)(?=<b>[^<]+<\\/b>\\s*-\\s*' + DEPR + '<span[^>]*>\\s*<b>\\[[NBOC]\\]<\\/b>|<\\/p>|<table|<h[1-6]|$)', 'g'
+  );
   const tables = {};
   for (const mark of marks) {
     const posIdx = positions.indexOf(mark.start);
@@ -69,7 +76,7 @@ function parseGuide() {
       cols[c[1].trim().toLowerCase()] = {
         type: TYPE_MAP[c[2]] || 'text',
         guideType: '[' + c[2] + ']',
-        description: c[3].trim().replace(/\s+/g, ' '),
+        description: c[3].replace(/<[^>]+>/g, ' ').trim().replace(/\s+/g, ' '),
       };
     }
   }

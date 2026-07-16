@@ -4,35 +4,35 @@
   "file": "global/excel/armor.txt",
   "description": "Table armor du mod TCP (colonnes documentees via le D2R Data Guide).",
   "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 72,
+  "columnsDocumented": 78,
   "columns": [
     {
       "name": "name",
       "type": "text",
-      "description": "This is a reference field to define the item; it does",
+      "description": "This is a reference field to define the item; it does not need to be uniquely named",
       "guideType": "[O]"
     },
     {
       "name": "version",
       "type": "number",
-      "description": "Defines which game version to create this item",
+      "description": "Defines which game version to create this item (0 = Classic mode | 100 = Expansion mode)",
       "guideType": "[N]"
     },
     {
       "name": "compactsave",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then only the item's base stats will be stored in the character save, but not any modifiers or additional stats. If equals 0, then all of the items stats will be saved.",
       "guideType": "[B]"
     },
     {
       "name": "rarity",
       "type": "number",
-      "description": "Determines the chance that the item will randomly spawn",
+      "description": "Determines the chance that the item will randomly spawn (1 / N) . The higher the value then the rarer the item will be. This field depends on the spawnable field being enabled, the quest field being disabled, and the item level being less than or equal to the area level. This value is also affected by the relative Act number that the item is dropping in, where the higher the Act number, then the more common the item will drop.",
       "guideType": "[N]"
     },
     {
       "name": "spawnable",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then this item can be randomly spawned. If equals 0, then this item will never randomly spawn.",
       "guideType": "[B]"
     },
@@ -51,6 +51,7 @@
     {
       "name": "speed",
       "type": "number",
+      "description": "For Armors: Controls the Walk/Run Speed reduction when wearing the item. For Weapons: Controls the Attack Speed reduction when wearing the item.",
       "guideType": "[N]"
     },
     {
@@ -79,7 +80,7 @@
     },
     {
       "name": "nodurability",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the item will not have durability. If equals 0, then the item will have durability.",
       "guideType": "[B]"
     },
@@ -91,7 +92,7 @@
     },
     {
       "name": "ShowLevel",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then display the item level next to the item name. If equals 0, then ignore this.",
       "guideType": "[B]"
     },
@@ -109,12 +110,14 @@
     },
     {
       "name": "gamble cost",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the gambling gold cost of the item on the Gambling UI. Only functions for rings and amulets.",
+      "guideType": "[N]"
     },
     {
       "name": "code",
       "type": "text",
-      "description": "Defines a unique 3* letter/number identifier code for the item. This code is case sensitive, so",
+      "description": "Defines a unique 3* letter/number identifier code for the item. This code is case sensitive, so a69 and A69 are considered different. *Can technically use 4 characters instead of 3, but Items.json will not process it (no visuals).",
       "guideType": "[O]"
     },
     {
@@ -126,43 +129,43 @@
     {
       "name": "magic lvl",
       "type": "number",
-      "description": "Defines the magic level of the item, which can affect how magical item modifiers that can appear on the item (",
+      "description": "Defines the magic level of the item, which can affect how magical item modifiers that can appear on the item ( AutoMagic.txt )",
       "guideType": "[N]"
     },
     {
       "name": "auto prefix",
       "type": "number",
-      "description": "Automatically picks an item affix name from a designated",
+      "description": "Automatically picks an item affix name from a designated group value from AutoMagic.txt . Applies to all item qualities, excluding sets and uniques.",
       "guideType": "[N]"
     },
     {
       "name": "alternategfx",
       "type": "text",
-      "description": "Uses a unique 3 letter/number code similar to the defined",
+      "description": "Uses a unique 3 letter/number code similar to the defined code fields to determine what in-game graphics to display on the player character when the item is equipped",
       "guideType": "[O]"
     },
     {
       "name": "normcode",
       "type": "text",
-      "description": "Links to the",
+      "description": "Links to the Code field to determine the normal version of the item",
       "guideType": "[O]"
     },
     {
       "name": "ubercode",
       "type": "text",
-      "description": "Links to a",
+      "description": "Links to a Code field to determine the Exceptional version of the item",
       "guideType": "[O]"
     },
     {
       "name": "ultracode",
       "type": "text",
-      "description": "Links to a",
+      "description": "Links to a Code field to determine the Elite version of the item",
       "guideType": "[O]"
     },
     {
       "name": "component",
       "type": "number",
-      "description": "Determines the layer of player animation when the item is equipped. This uses a",
+      "description": "Determines the layer of player animation when the item is equipped. This uses a Token entry from Composit.txt",
       "guideType": "[N]"
     },
     {
@@ -175,44 +178,44 @@
     },
     {
       "name": "hasinv",
-      "type": "number",
-      "description": "Determines if an item can be socketed with runes, jewels or Gems.",
+      "type": "boolean",
+      "description": "Determines if an item can be socketed with runes, jewels or Gems. (1 = Socketable | 0 = Not Socketable)",
       "guideType": "[B]"
     },
     {
       "name": "gemsockets",
       "type": "number",
-      "description": "Controls the maximum number of sockets allowed on this item. This is limited by the item's size based on the",
+      "description": "Controls the maximum number of sockets allowed on this item. This is limited by the item's size based on the invwidth and invheight fields. This also compares with the MaxSockets1 field(s) in the ItemTypes.txt file.",
       "guideType": "[N]"
     },
     {
       "name": "gemapplytype",
       "type": "number",
-      "description": "Determines which affect from a gem or rune will be applied when it is socketed into this item (",
+      "description": "Determines which affect from a gem or rune will be applied when it is socketed into this item ( Gems.txt )",
       "guideType": "[N]"
     },
     {
       "name": "flippyfile",
       "type": "text",
-      "description": "Controls which DC6 file to use for displaying the item in the game world when it is dropped on the ground (uses the file name as the input).",
+      "description": "Controls which DC6 file to use for displaying the item in the game world when it is dropped on the ground (uses the file name as the input). *Legacy View Only",
       "guideType": "[O]"
     },
     {
       "name": "invfile",
       "type": "text",
-      "description": "Controls which DC6 file to use for displaying the item graphics in the inventory (uses the file name as the input).",
+      "description": "Controls which DC6 file to use for displaying the item graphics in the inventory (uses the file name as the input). *Legacy View Only",
       "guideType": "[O]"
     },
     {
       "name": "uniqueinvfile",
       "type": "text",
-      "description": "Controls which DC6 file to use for displaying the item graphics in the inventory when it is a Unique quality item (uses the file name as the input).",
+      "description": "Controls which DC6 file to use for displaying the item graphics in the inventory when it is a Unique quality item (uses the file name as the input). *Legacy View Only (Any text required in field to use entry from uniques.JSON for D2R view)",
       "guideType": "[O]"
     },
     {
       "name": "setinvfile",
       "type": "text",
-      "description": "Controls which DC6 file to use for displaying the item graphics in the inventory when it is a Set quality item (uses the file name as the input).",
+      "description": "Controls which DC6 file to use for displaying the item graphics in the inventory when it is a Set quality item (uses the file name as the input). *Legacy View Only",
       "guideType": "[O]"
     },
     {
@@ -253,96 +256,104 @@
     },
     {
       "name": "useable",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the item can be used with the right-click mouse button command (this only works with specific belt items or quest items). If equals 0, then ignore this",
       "guideType": "[B]"
     },
     {
       "name": "stackable",
-      "type": "text",
+      "type": "boolean",
       "description": "If equals 1, then the item will use a quantity field and handle stacking functionality. This can depend on if the item type is throwable, is a type of ammunition, or is some other kind of miscellaneous item. If equals 0, then the item cannot be stacked",
       "guideType": "[B]"
     },
     {
       "name": "minstack",
-      "type": "text",
-      "description": "Controls the minimum stack count or quantity that is allowed on the item. This field depends on the",
+      "type": "number",
+      "description": "Controls the minimum stack count or quantity that is allowed on the item. This field depends on the stackable field being enabled",
       "guideType": "[N]"
     },
     {
       "name": "maxstack",
-      "type": "text",
-      "description": "Controls the maximum stack count or quantity that is allowed on the item. This field depends on the",
+      "type": "number",
+      "description": "Controls the maximum stack count or quantity that is allowed on the item. This field depends on the stackable field being enabled",
       "guideType": "[N]"
     },
     {
       "name": "spawnstack",
-      "type": "text",
-      "description": "Controls the stack count or quantity that the item can spawn with. This field depends on the",
+      "type": "number",
+      "description": "Controls the stack count or quantity that the item can spawn with. This field depends on the stackable field being enabled",
       "guideType": "[N]"
     },
     {
       "name": "Transmogrify",
-      "type": "number"
+      "type": "boolean",
+      "description": "If equals 1, then the item will use the transmogrify function. If equals 0, then ignore this. This field depends on the \"useable\" field being enabled. Does not function at all",
+      "guideType": "[B]"
     },
     {
       "name": "TMogType",
-      "type": "text"
+      "type": "text",
+      "description": "Links to a \"code\" field to determine which item is chosen to transmogrify this item to. Does not function at all",
+      "guideType": "[O]"
     },
     {
       "name": "TMogMin",
-      "type": "text"
+      "type": "number",
+      "description": "Controls the minimum quantity that the transmogrify item will have. This depends on what item was chosen in the \"TMogType\" field, and that the transmogrify item has quantity. Does not function at all",
+      "guideType": "[N]"
     },
     {
       "name": "TMogMax",
-      "type": "text"
+      "type": "number",
+      "description": "Controls the minimum quantity that the transmogrify item will have. This depends on what item was chosen in the \"TMogType\" field, and that the transmogrify item has quantity. Does not function at all",
+      "guideType": "[N]"
     },
     {
       "name": "type",
       "type": "text",
-      "description": "Points to an",
+      "description": "Points to an Code defined in the ItemTypes.txt file, which controls how the item functions",
       "guideType": "[O]"
     },
     {
       "name": "type2",
       "type": "text",
-      "description": "Points to a secondary Item Type defined in the",
+      "description": "Points to a secondary Item Type defined in the ItemTypes.txt file, which controls how the item functions. This is optional but can add more functionalities and possibilities with the item",
       "guideType": "[O]"
     },
     {
       "name": "dropsound",
       "type": "text",
-      "description": "Points to a sound defined in the",
+      "description": "Points to a sound defined in the Sounds.txt file. Used when the item is dropped on the ground",
       "guideType": "[O]"
     },
     {
       "name": "dropsfxframe",
       "type": "number",
-      "description": "Defines which frame in the",
+      "description": "Defines which frame in the flippyfile animation to play the dropsound when the item is dropped on the ground",
       "guideType": "[N]"
     },
     {
       "name": "usesound",
       "type": "text",
-      "description": "Points to sound defined in the",
+      "description": "Points to sound defined in the Sounds.txt file. Used when the item is moved in the inventory or used",
       "guideType": "[O]"
     },
     {
       "name": "unique",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the item can only spawn as a Unique quality type. If equals 0, then the item can spawn as other quality types",
       "guideType": "[B]"
     },
     {
       "name": "transparent",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the item will be drawn transparent on the player model (similar to ethereal models). If equals 0, then the item will appear solid on the player model",
       "guideType": "[B]"
     },
     {
       "name": "transtbl",
       "type": "number",
-      "description": "Controls what type of transparency to use (if the above",
+      "description": "Controls what type of transparency to use (if the above transparent field is enabled). Referenced by the Code value of the Transparency Table",
       "guideType": "[N]"
     },
     {
@@ -359,25 +370,25 @@
     {
       "name": "belt",
       "type": "number",
-      "description": "Controls which belt type to use for belt items only. This field determines what index entry in the",
+      "description": "Controls which belt type to use for belt items only. This field determines what index entry in the Belts.txt file to use",
       "guideType": "[N]"
     },
     {
       "name": "quest",
-      "type": "text",
-      "description": "Controls what quest class is tied to the item which can enable certain item functionalities for a specific quest. Any value greater than 0 will also mean the item is flagged as a quest item, which can affect how it is displayed in tooltips, how it is traded with other players, its item rarity, and how it cannot be sold to an NPC. If equals 0, then the item will not be flagged as a quest item. Referenced by the",
+      "type": "number",
+      "description": "Controls what quest class is tied to the item which can enable certain item functionalities for a specific quest. Any value greater than 0 will also mean the item is flagged as a quest item, which can affect how it is displayed in tooltips, how it is traded with other players, its item rarity, and how it cannot be sold to an NPC. If equals 0, then the item will not be flagged as a quest item. Referenced by the Code value of the Quests Table",
       "guideType": "[N]"
     },
     {
       "name": "questdiffcheck",
-      "type": "text",
-      "description": "If equals 1 and the",
+      "type": "boolean",
+      "description": "If equals 1 and the quest field is enabled, then the game will check the current difficulty setting and will tie that difficulty setting to the quest item. This means that the player can have more than 1 of the same quest item as long each they are obtained per difficulty mode (Normal / Nightmare / Hell). If equals 0 and the \"quest\" field is enabled, then the player can only have 1 count of the quest item in the inventory, regardless of difficulty",
       "guideType": "[B]"
     },
     {
       "name": "missiletype",
-      "type": "number",
-      "description": "Points to the",
+      "type": "text",
+      "description": "Points to the *ID field from the Missiles.txt file, which determines what type of missile is used when using the throwing weapons",
       "guideType": "[O]"
     },
     {
@@ -412,14 +423,14 @@
     },
     {
       "name": "DexBonus",
-      "type": "text",
+      "type": "number",
       "description": "The percentage multiplier that gets multiplied the player's current Dexterity attribute value to modify the bonus damage percent from the equipped item. If this equals 1, then default the value to 100",
       "guideType": "[N]"
     },
     {
       "name": "gemoffset",
       "type": "number",
-      "description": "Determines the starting index of possible gem/rune options based on the",
+      "description": "Determines the starting index of possible gem/rune options based on the gemapplytype field and the Gems.txt entries. For example, if this value equals 9, then the game will start with index 9 (\"Chipped Emerald\") and ignore lower-indexed entries, meaning the item cannot roll these options",
       "guideType": "[N]"
     },
     {
@@ -770,49 +781,49 @@
     },
     {
       "name": "Transform",
-      "type": "number",
-      "description": "Controls the color palette change of the item for the character model graphics. Referenced by the",
+      "type": "text",
+      "description": "Controls the color palette change of the item for the character model graphics. Referenced by the Code value of the Inventory Transform Table",
       "guideType": "[O]"
     },
     {
       "name": "InvTrans",
       "type": "number",
-      "description": "Controls the color palette change of the item for the inventory graphics. Referenced by the",
+      "description": "Controls the color palette change of the item for the inventory graphics. Referenced by the Code value of the Inventory Transform Table",
       "guideType": "[N]"
     },
     {
       "name": "SkipName",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1 and the item is Unique rarity, then skip adding the item's base name in its title. If equals 0, then ignore this",
       "guideType": "[B]"
     },
     {
       "name": "NightmareUpgrade",
       "type": "text",
-      "description": "Links to another item's",
+      "description": "Links to another item's Code field. Used to determine which item will replace this item when being generated in the NPC's store while the game is playing in Nightmare difficulty. If this field's code equals \"xxx\", then this item will not change in this difficulty",
       "guideType": "[O]"
     },
     {
       "name": "HellUpgrade",
       "type": "text",
-      "description": "Links to another item's",
+      "description": "Links to another item's Code field. Used to determine which item will replace this item when being generated in the NPC's store while the game is playing in Hell difficulty. If this field's code equals \"xxx\", then this item will not change in this difficulty",
       "guideType": "[O]"
     },
     {
       "name": "Nameable",
-      "type": "number",
-      "description": "If equals 1, then the item's name can be personalized by Anya for the",
+      "type": "boolean",
+      "description": "If equals 1, then the item's name can be personalized by Anya for the Act 5 Betrayal of Harrogath quest reward. If equals 0, then the item cannot be used for the personalized name reward",
       "guideType": "[B]"
     },
     {
       "name": "PermStoreItem",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then this item will always appear on the NPC's store. If equals 0, then the item will randomly appear on the NPC's store when appropriate",
       "guideType": "[B]"
     },
     {
       "name": "diablocloneweight",
-      "type": "text",
+      "type": "number",
       "description": "The amount of weight added to the diablo clone progress when this item is sold. When offline, selling this item will instead immediately spawn diablo clone.",
       "guideType": "[N]"
     }

@@ -2,7 +2,7 @@
   "table": "magicsuffix",
   "category": "items",
   "file": "global/excel/magicsuffix.txt",
-  "description": "Table magicsuffix du mod TCP.",
+  "description": "Table magicsuffix du mod TCP (colonnes documentees via le D2R Data Guide).",
   "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
   "columnsDocumented": 14,
   "columns": [
@@ -20,13 +20,13 @@
     },
     {
       "name": "spawnable",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then this item affix is used as part of the game's randomizer for assigning item modifiers when an item spawns. If equals 0, then this item affix is never used",
       "guideType": "[B]"
     },
     {
       "name": "rare",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then this item affix can be used when randomly assigning item modifiers when a rare item spawns. If equals 0, then this item affix is not used for rare items",
       "guideType": "[B]"
     },
@@ -51,19 +51,19 @@
     {
       "name": "classspecific",
       "type": "text",
-      "description": "Controls if this item affix should only be used for class specific items. This relies on the",
+      "description": "Controls if this item affix should only be used for class specific items. This relies on the Class specified from ItemTypes.txt , for the specific item. Referenced from the Code column in PlayerClass.txt",
       "guideType": "[O]"
     },
     {
       "name": "class",
       "type": "text",
-      "description": "Controls which character class is required for the class specific level requirement (",
+      "description": "Controls which character class is required for the class specific level requirement ( classlevelreq field). Referenced from the Code column in PlayerClass.txt",
       "guideType": "[O]"
     },
     {
       "name": "classlevelreq",
       "type": "number",
-      "description": "The minimum character level required for a specific class in order to equip an item that has this item affix. This relies on the",
+      "description": "The minimum character level required for a specific class in order to equip an item that has this item affix. This relies on the class specified. If equals null, then the class will default to using the levelreq field",
       "guideType": "[N]"
     },
     {
@@ -181,7 +181,7 @@
     {
       "name": "multiply",
       "type": "number",
-      "description": "Multiplicative modifier for the item's buy and sell costs, based on the item affix (",
+      "description": "Multiplicative modifier for the item's buy and sell costs, based on the item affix ( Calculated in 1024ths for buy cost and 4096ths for sell cost)",
       "guideType": "[N]"
     },
     {

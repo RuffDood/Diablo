@@ -2,9 +2,9 @@
   "table": "skills",
   "category": "skills",
   "file": "global/excel/skills.txt",
-  "description": "Table skills du mod TCP.",
+  "description": "Table skills du mod TCP (colonnes documentees via le D2R Data Guide).",
   "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 129,
+  "columnsDocumented": 130,
   "columns": [
     {
       "name": "skill",
@@ -20,13 +20,13 @@
     {
       "name": "charclass",
       "type": "text",
-      "description": "Assigns the skill to a specific character class which affects how skill item modifiers work and what skills the class can learn. Referenced from the",
+      "description": "Assigns the skill to a specific character class which affects how skill item modifiers work and what skills the class can learn. Referenced from the Code column in PlayerClass.txt",
       "guideType": "[O]"
     },
     {
       "name": "skilldesc",
       "type": "text",
-      "description": "Controls the skill's tooltip and general UI display. Points to the",
+      "description": "Controls the skill's tooltip and general UI display. Points to the SkillDesc field from SkillDesc.txt",
       "guideType": "[O]"
     },
     {
@@ -49,8 +49,8 @@
     },
     {
       "name": "prgstack",
-      "type": "number",
-      "description": "If equals 1, then all",
+      "type": "boolean",
+      "description": "If equals 1, then all srvprgfunc1 functions will execute, based on the current number of progressive charges. If equals 0, then only the relative srvprgfunc1 function will execute, based on the current number of progressive charges",
       "guideType": "[B]"
     },
     {
@@ -86,18 +86,18 @@
     {
       "name": "srvmissile",
       "type": "text",
-      "description": "Used as a parameter for controlling what main missile is used for the server functions used (",
+      "description": "Used as a parameter for controlling what main missile is used for the server functions used ( Missile field from Missiles.txt )",
       "guideType": "[O]"
     },
     {
       "name": "decquant",
-      "type": "number",
-      "description": "If equals 1, then the unit's ammo quantity will be updated each time the skill's",
+      "type": "boolean",
+      "description": "If equals 1, then the unit's ammo quantity will be updated each time the skill's srvdofunc is called. If equals 0, then ignore this",
       "guideType": "[B]"
     },
     {
       "name": "lob",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then missiles created by the skill's functions will use the missile lobbing function, which will cause the missile fly in an arc pattern. If equals 0, then missiles that are created will use the normal linear function",
       "guideType": "[B]"
     },
@@ -115,30 +115,32 @@
     },
     {
       "name": "useServerMissilesOnRemoteClients",
-      "type": "text"
+      "type": "number",
+      "description": "Control new missile changes per player skill. Values of 1 will force enable it for that skill. Skills that have matching server/client missiles sets for the skill get auto enabled. Setting this to a value greater than 1 will force it to skip this auto enable logic. If equals 0, then ignore this. Note: this feature is disabled",
+      "guideType": "[N]"
     },
     {
       "name": "srvoverlay",
       "type": "text",
-      "description": "Creates an overlay on the target unit when the skill is used. This is a possible parameter used by various skill functions (",
+      "description": "Creates an overlay on the target unit when the skill is used. This is a possible parameter used by various skill functions ( overlay field from Overlay.txt )",
       "guideType": "[O]"
     },
     {
       "name": "aurafilter",
       "type": "number",
-      "description": "Controls different flags that affect how the skill's aura will affect the different types of units. Uses an integer value to check against different bit fields. For example, if the value equals 4354 (binary = 1000100000010) then that returns true for the 4096 (binary = 1000000000000), 256 (binary = 0000100000000), and 2 (binary = 0000000000010) bit field values. (See",
+      "description": "Controls different flags that affect how the skill's aura will affect the different types of units. Uses an integer value to check against different bit fields. For example, if the value equals 4354 (binary = 1000100000010) then that returns true for the 4096 (binary = 1000000000000), 256 (binary = 0000100000000), and 2 (binary = 0000000000010) bit field values. (See SuperCalc for a helpful calculator for this)",
       "guideType": "[N]"
     },
     {
       "name": "aurastate",
       "type": "text",
-      "description": "Links to a state that can be applied to the caster unit when casting the skill, depending on the skill function used (",
+      "description": "Links to a state that can be applied to the caster unit when casting the skill, depending on the skill function used ( state field from States.txt )",
       "guideType": "[O]"
     },
     {
       "name": "auratargetstate",
       "type": "text",
-      "description": "Links to a state that can be applied to the target unit when using the skill, depending on the skill function used (",
+      "description": "Links to a state that can be applied to the target unit when using the skill, depending on the skill function used ( state field from States.txt )",
       "guideType": "[O]"
     },
     {
@@ -228,18 +230,18 @@
     {
       "name": "passivestate",
       "type": "text",
-      "description": "Links to a state that can be applied by the passive skill, depending on the skill function used (",
+      "description": "Links to a state that can be applied by the passive skill, depending on the skill function used ( state field from States.txt )",
       "guideType": "[O]"
     },
     {
       "name": "passiveitype",
       "type": "text",
-      "description": "Links to an Item Type to define what type of item needs to be equipped in order to enable the passive state (",
+      "description": "Links to an Item Type to define what type of item needs to be equipped in order to enable the passive state ( Code field from Itemtypes.txt )",
       "guideType": "[O]"
     },
     {
       "name": "passivereqweaponcount",
-      "type": "text",
+      "type": "number",
       "description": "Controls how many equipped weapons are needed for this passive state to be enabled. If the value equals 1, then the player must have 1 weapon equipped for this passive state to be enabled. If the value equals 2, then the player must be dual wielding weapons for this passive state to be enabled. If the value equals 0, then ignore this field",
       "guideType": "[N]"
     },
@@ -294,13 +296,13 @@
     {
       "name": "summon",
       "type": "text",
-      "description": "Controls what monster is summoned by the skill (",
+      "description": "Controls what monster is summoned by the skill ( ID field from MonStats.txt ). This field's usage will depend on the skill function used. This field can also be used as reference for AI behaviors and for SkillDesc.txt",
       "guideType": "[O]"
     },
     {
       "name": "pettype",
       "type": "text",
-      "description": "Links to a pet type data to control how the summoned unit is displayed on the UI (",
+      "description": "Links to a pet type data to control how the summoned unit is displayed on the UI ( PetType column in PetType.txt )",
       "guideType": "[O]"
     },
     {
@@ -316,7 +318,7 @@
     {
       "name": "summode",
       "type": "text",
-      "description": "Defines the animation mode that the summoned monster will be initiated with. Referenced from the",
+      "description": "Defines the animation mode that the summoned monster will be initiated with. Referenced from the Code column in MonMode.txt",
       "guideType": "[O]"
     },
     {
@@ -362,49 +364,49 @@
     {
       "name": "sumumod",
       "type": "number",
-      "description": "Assigns a monster modifier to the summoned monster (",
+      "description": "Assigns a monster modifier to the summoned monster ( ID field from MonUMod.txt )",
       "guideType": "[N]"
     },
     {
       "name": "sumoverlay",
       "type": "text",
-      "description": "Creates an overlay on the summoned monster when it is first created (",
+      "description": "Creates an overlay on the summoned monster when it is first created ( overlay field from Overlay.txt )",
       "guideType": "[O]"
     },
     {
       "name": "stsuccessonly",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the following sound and overlay fields will only play when the skill is successfully cast, instead of always being used even when the skill cast is interrupted. If equals 0, then the following sound and overlay fields will always be used when the skill is cast, regardless if the skill was interrupted or not",
       "guideType": "[B]"
     },
     {
       "name": "stsound",
       "type": "text",
-      "description": "Controls what client sound is played when the skill is used, based on the client starting function (",
+      "description": "Controls what client sound is played when the skill is used, based on the client starting function ( Sound field from Sounds.txt )",
       "guideType": "[O]"
     },
     {
       "name": "stsoundclass",
       "type": "text",
-      "description": "Controls what client sound is played when the skill is used by the skill's assigned class (",
+      "description": "Controls what client sound is played when the skill is used by the skill's assigned class ( charclass ), based on the client starting function ( Sound field from Sounds.txt ). If the unit using the skill is not the same class as the \"charclass\" value for the skill, then this sound will not play",
       "guideType": "[O]"
     },
     {
       "name": "stsounddelay",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then use the weapon's hit class to determine the delay in frames (where 25 frames = 1 second) before playing the skill's start sound. If equals 0, then the skill's start sound will play immediately.",
       "guideType": "[B]"
     },
     {
       "name": "weaponsnd",
-      "type": "number",
-      "description": "If equals 1, then play the weapon's hit sound when hitting an enemy with this skill. The sound chosen is based on the weapon's hit class. Also use the sound delay based on the weapon's hit class to determine the delay in frames (where 25 frames = 1 second) before playing the weapon hit sound (",
+      "type": "boolean",
+      "description": "If equals 1, then play the weapon's hit sound when hitting an enemy with this skill. The sound chosen is based on the weapon's hit class. Also use the sound delay based on the weapon's hit class to determine the delay in frames (where 25 frames = 1 second) before playing the weapon hit sound ( stsounddelay for the types of hit class sounds and delays used). If equals 0, then do not play the weapon hit sound when hitting an enemy with the skill attack",
       "guideType": "[B]"
     },
     {
       "name": "dosound",
       "type": "text",
-      "description": "Controls the sound for the skill each time the",
+      "description": "Controls the sound for the skill each time the cltdofunc is used ( Sound field from Sounds.txt )",
       "guideType": "[O]"
     },
     {
@@ -418,31 +420,31 @@
     {
       "name": "tgtoverlay",
       "type": "text",
-      "description": "Used as a possible parameter for adding an Overlay on the target unit, based on the",
+      "description": "Used as a possible parameter for adding an Overlay on the target unit, based on the cltdofunc used ( overlay field from Overlay.txt )",
       "guideType": "[O]"
     },
     {
       "name": "tgtsound",
       "type": "text",
-      "description": "Used as a possible parameter for playing a sound located on the target unit, based on the",
+      "description": "Used as a possible parameter for playing a sound located on the target unit, based on the cltdofunc used ( Sound field from Sounds.txt )",
       "guideType": "[O]"
     },
     {
       "name": "prgoverlay",
       "type": "text",
-      "description": "Used as a possible parameter for adding an Overlay on the caster unit for progressive charge-up skill functions, based on the",
+      "description": "Used as a possible parameter for adding an Overlay on the caster unit for progressive charge-up skill functions, based on the cltdofunc used and how many progressive charges the caster unit has ( overlay field from Overlay.txt )",
       "guideType": "[O]"
     },
     {
       "name": "prgsound",
       "type": "text",
-      "description": "Used as a possible parameter for playing a sound when using the skill for progressive charge-up skill functions, based on the",
+      "description": "Used as a possible parameter for playing a sound when using the skill for progressive charge-up skill functions, based on the cltdofunc used and how many progressive charges the caster unit has ( Sound field from Sounds.txt )",
       "guideType": "[O]"
     },
     {
       "name": "castoverlay",
       "type": "text",
-      "description": "Used as a possible parameter for adding an Overlay on the caster unit when using the skill, based on the Client Start/Do function used (",
+      "description": "Used as a possible parameter for adding an Overlay on the caster unit when using the skill, based on the Client Start/Do function used ( overlay field from Overlay.txt )",
       "guideType": "[O]"
     },
     {
@@ -486,7 +488,7 @@
     {
       "name": "cltmissile",
       "type": "text",
-      "description": "Used as a parameter for controlling what main missile is used for the client functions used (",
+      "description": "Used as a parameter for controlling what main missile is used for the client functions used ( Missile field from Missiles.txt )",
       "guideType": "[O]"
     },
     {
@@ -534,20 +536,20 @@
     },
     {
       "name": "warp",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1 and the skill uses a function that involves warping/teleporting, then check for a scene transition loading screen, if necessary. If equals 0, then ignore this",
       "guideType": "[B]"
     },
     {
       "name": "immediate",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1 and the skill has a periodic function, then immediately perform the skill's function when the periodic skill is activated. If equals 0, then wait until the skill's first periodic delay before performing the skill's function",
       "guideType": "[B]"
     },
     {
       "name": "enhanceable",
-      "type": "number",
-      "description": "If equals 1, then the skill will be included in the plus to all skills item modifier. If equals 0, then the skill will not be included in the plus to all skills item modifier",
+      "type": "boolean",
+      "description": "If equals 1, then the skill will be included in the plus to all skills item modifier. If equals 0, then the skill will not be included in the plus to all skills item modifier attackrank - Controls the skill's AI score value for determining what is the best target for the AI. The higher the value, then the more likely the AI will select a target with this skill equipped",
       "guideType": "[B]"
     },
     {
@@ -556,8 +558,8 @@
     },
     {
       "name": "noammo",
-      "type": "number",
-      "description": "If equals 1, then the skill will not check that weapon's ammo when performing an attack. This relies on the",
+      "type": "boolean",
+      "description": "If equals 1, then the skill will not check that weapon's ammo when performing an attack. This relies on the Shoots field from ItemTypes.txt . If equals 0, then the weapon will consume its ammo when being used by the skill range - Determines how the unit uses the skill, which affects the weapon requirements and the type of attack used",
       "guideType": "[B]"
     },
     {
@@ -613,25 +615,25 @@
     {
       "name": "anim",
       "type": "text",
-      "description": "Controls the animation mode that the player character will use when using this skill. Setting the mode to Sequence (SQ) will cause the player character to play a time controlled animation sequence, utilizing certain sequence fields. Referenced from the",
+      "description": "Controls the animation mode that the player character will use when using this skill. Setting the mode to Sequence (SQ) will cause the player character to play a time controlled animation sequence, utilizing certain sequence fields. Referenced from the Token column in PlrMode.txt",
       "guideType": "[O]"
     },
     {
       "name": "seqtrans",
       "type": "text",
-      "description": "Uses the same inputs as the",
+      "description": "Uses the same inputs as the anim field. If the \"anim\" field equals SQ (Sequence) and this field equals SC (Cast), then the sequence animation speed can be modified by the faster cast rate stat modifier",
       "guideType": "[O]"
     },
     {
       "name": "monanim",
       "type": "text",
-      "description": "Controls the animat on mode that the monster will use when using this skill. This is similar to the",
+      "description": "Controls the animat on mode that the monster will use when using this skill. This is similar to the anim field except with monster units using the skill instead of player units. Referenced from the Token column in MonMode.txt",
       "guideType": "[O]"
     },
     {
       "name": "seqnum",
       "type": "number",
-      "description": "If the unit is a player and the",
+      "description": "If the unit is a player and the anim used for the skill is a Sequence, then this field will control the index of which sequence animation to use. These sequences are specifically designed for certain skills, and each sequence has a set number of frames using certain animations.",
       "guideType": "[N]"
     },
     {
@@ -642,44 +644,44 @@
     },
     {
       "name": "durability",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1 and when the player character ends an animation mode that was not Attack 1, Attack 2, or Throw, then check the quantity and durability of the player's items to see if the valid weapons are out of ammo or are broken. If equals 0, then ignore this",
       "guideType": "[B]"
     },
     {
       "name": "UseAttackRate",
-      "type": "number",
-      "description": "If equals 1, then the current attack speed should be updated after using the skill, relative to the \"attackrate\" stat (",
+      "type": "boolean",
+      "description": "If equals 1, then the current attack speed should be updated after using the skill, relative to the \"attackrate\" stat ( ItemStatCost.txt ), and if the skill was an attacking skill. If equals 0, then the attack speed will not be updated after using the skill",
       "guideType": "[B]"
     },
     {
       "name": "LineOfSight",
-      "type": "text",
+      "type": "number",
       "description": "Controls the skill's collision filters for valid target locations when it is being cast",
       "guideType": "[N]"
     },
     {
       "name": "TargetableOnly",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the skill will require a target unit in order to be used. If equals 0, then ignore this",
       "guideType": "[B]"
     },
     {
       "name": "SearchEnemyXY",
-      "type": "number",
-      "description": "If equals 1, then when the skill is cast on a target location, it will automatically search in different directions in the target area to find the first available enemy target. If equals 0, then ignore this. This field can be overridden if the",
+      "type": "boolean",
+      "description": "If equals 1, then when the skill is cast on a target location, it will automatically search in different directions in the target area to find the first available enemy target. If equals 0, then ignore this. This field can be overridden if the SearchEnemyNear field is enabled",
       "guideType": "[B]"
     },
     {
       "name": "SearchEnemyNear",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then when the skill is cast on a target location, it will automatically find the nearest enemy target. If equals 0, then ignore this",
       "guideType": "[B]"
     },
     {
       "name": "SearchOpenXY",
-      "type": "number",
-      "description": "If equals 1, then automatically search in a radius of size 7 in around the clicked target location to find an available unoccupied location to use the skill, testing for collision. If equals 0, then ignore this. This field can be overridden if the",
+      "type": "boolean",
+      "description": "If equals 1, then automatically search in a radius of size 7 in around the clicked target location to find an available unoccupied location to use the skill, testing for collision. If equals 0, then ignore this. This field can be overridden if the SearchEnemyNear or SearchEnemyXY field is enabled",
       "guideType": "[B]"
     },
     {
@@ -690,61 +692,61 @@
     },
     {
       "name": "TargetCorpse",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the skill is allowed to target corpses. If equals 0, then skill cannot target corpses",
       "guideType": "[B]"
     },
     {
       "name": "TargetPet",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the skill is allowed to target pets (summons and mercenaries). If equals 0, then the skill cannot target pets",
       "guideType": "[B]"
     },
     {
       "name": "TargetAlly",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the skill is allowed to target ally units. If equals 0, then the skill cannot target ally units",
       "guideType": "[B]"
     },
     {
       "name": "TargetItem",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the skill is allowed to target items on the ground. If equals 0, then the skill cannot target items",
       "guideType": "[B]"
     },
     {
       "name": "AttackNoMana",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then then when the caster does not have enough mana to cast the skill and attempts to use the skill, the caster will default to using the Attack skill. If equals 0, then attempting to use the skill without enough mana will do nothing",
       "guideType": "[B]"
     },
     {
       "name": "TgtPlaceCheck",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then check that the target location is available for spawning a unit, testing collision. If equals 0, then ignore this. This is only used for skills that monsters use to spawn new units",
       "guideType": "[B]"
     },
     {
       "name": "KeepCursorStateOnKill",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the mouse click hold state will continue to stay active after killing a selected target. If equals 0, then after killing the target, the mouse click hold state will reset",
       "guideType": "[B]"
     },
     {
       "name": "ContinueCastUnselected",
-      "type": "text",
+      "type": "boolean",
       "description": "If equals 1, then while the mouse is held down and there is no more target selected, then the skill will continue being used at the mouse's location. If equals 0, then while the mouse is held down and there is no more target selected, then the player character will cancel the skill and move to the mouse location",
       "guideType": "[B]"
     },
     {
       "name": "ClearSelectedOnHold",
-      "type": "text",
+      "type": "boolean",
       "description": "If equals 1, then when the mouse is held down, the target selection will be cleared. If equals 0, then ignore this",
       "guideType": "[B]"
     },
     {
       "name": "ItemEffect",
-      "type": "text",
+      "type": "number",
       "description": "Uses a Server Do function (\"srvdofunc\") for handling how the skill is used when it is triggered by an item, on the server side",
       "guideType": "[N]"
     },
@@ -756,7 +758,7 @@
     },
     {
       "name": "ItemTgtDo",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then use the skill from the enemy target instead of the caster. If equals 0, then ignore this",
       "guideType": "[B]"
     },
@@ -768,26 +770,26 @@
     },
     {
       "name": "ItemCheckStart",
-      "type": "number",
-      "description": "If equals 1, then use the skill's",
+      "type": "boolean",
+      "description": "If equals 1, then use the skill's srvstfunc when the skill is trigged by an item. If equals 0, then the skill's Server Start function is ignored",
       "guideType": "[B]"
     },
     {
       "name": "ItemCltCheckStart",
-      "type": "number",
-      "description": "If equals 1, then when the skill is triggered by an item, and if the target is dead and the skill has a",
+      "type": "boolean",
+      "description": "If equals 1, then when the skill is triggered by an item, and if the target is dead and the skill has a cltstfunc , then add the \"corpse_noselect\" to the target. If equals 0, then ignore this",
       "guideType": "[B]"
     },
     {
       "name": "ItemCastSound",
       "type": "text",
-      "description": "Play a sound when the skill is used by an item event. (",
+      "description": "Play a sound when the skill is used by an item event. ( Sound field from Sounds.txt )",
       "guideType": "[O]"
     },
     {
       "name": "ItemCastOverlay",
       "type": "text",
-      "description": "Add a cast overlay when the skill is used by an item event. (",
+      "description": "Add a cast overlay when the skill is used by an item event. ( overlay field from Overlay.txt )",
       "guideType": "[O]"
     },
     {
@@ -810,25 +812,25 @@
     },
     {
       "name": "reqstr",
-      "type": "text",
+      "type": "number",
       "description": "Minimum Strength attribute required to be allowed to spend Skill Points on this skill",
       "guideType": "[N]"
     },
     {
       "name": "reqdex",
-      "type": "text",
+      "type": "number",
       "description": "Minimum Dexterity attribute required to be allowed to spend Skill Points on this skill",
       "guideType": "[N]"
     },
     {
       "name": "reqint",
-      "type": "text",
+      "type": "number",
       "description": "Minimum Intelligence attribute required to be allowed to spend Skill Points on this skill",
       "guideType": "[N]"
     },
     {
       "name": "reqvit",
-      "type": "text",
+      "type": "number",
       "description": "Minimum Vitality attribute required to be allowed to spend Skill Points on this skill",
       "guideType": "[N]"
     },
@@ -847,7 +849,7 @@
     {
       "name": "restrict",
       "type": "number",
-      "description": "Controls how the skill is used when the unit has a restricted state (",
+      "description": "Controls how the skill is used when the unit has a restricted state ( restrict field from States.txt )",
       "guideType": "[N]"
     },
     {
@@ -864,43 +866,43 @@
     },
     {
       "name": "localdelay",
-      "type": "number",
+      "type": "text",
       "description": "Controls the Casting Delay duration for this skill after it is used (25 frames = 1 second)",
       "guideType": "[C]"
     },
     {
       "name": "globaldelay",
-      "type": "number",
+      "type": "text",
       "description": "Controls the Casting Delay duration for all other skills with Casting Delays after this skill is used (25 frames = 1 second)",
       "guideType": "[C]"
     },
     {
       "name": "leftskill",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the skill will appear on the list of skills to assign for the Left Mouse Button. If equals 0, then the skill will not appear on the Left Mouse Button skill list",
       "guideType": "[B]"
     },
     {
       "name": "rightskill",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the skill will appear on the list of skills to assign for the Right Mouse Button. If equals 0, then the skill will not appear on the Right Mouse Button skill list",
       "guideType": "[B]"
     },
     {
       "name": "repeat",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1 and the skill has no \"anim\" mode declared, then on the client side, the unit's mode will repeat its current mode (this can also happen if the unit has the \"inferno\" state). If equals 0, then the unit will have its mode set to Neutral when starting to use the skill",
       "guideType": "[B]"
     },
     {
       "name": "alwayshit",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then skills that rely on attack rating and defense will ignore those stats and will always hit enemies. If equals 0, then ignore this",
       "guideType": "[B]"
     },
     {
       "name": "usemanaondo",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the skill will consume mana on its do function instead of its start function. If equals 0, then the skill will consume mana on its start function, which is the general case for skills",
       "guideType": "[B]"
     },
@@ -919,7 +921,7 @@
     {
       "name": "manashift",
       "type": "number",
-      "description": "This acts as a multiplicative modifier to control the precision of the mana cost after calculating the total mana cost with the",
+      "description": "This acts as a multiplicative modifier to control the precision of the mana cost after calculating the total mana cost with the mana and lvlmana fields. Mana is calculated in 256ths in code which equals 8 bits. This field acts as a bitwise shift value, which means it will modify the mana value by the power of 2. For example, if this value equals 5 then that means divide the mana value of 256ths by 2^5 = 32 (or multiply the mana by 32/256). A value equal to 8 means 256/256 which means that the mana of 256ths value is not shifted",
       "guideType": "[N]"
     },
     {
@@ -936,37 +938,37 @@
     },
     {
       "name": "interrupt",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the casting the skill will be interruptible such as when the player is getting hit while casting a skill. If equals 0, then the skill should be uninterruptible",
       "guideType": "[B]"
     },
     {
       "name": "InTown",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the skill can be used while the unit is in town. If equals 0, then the skill cannot be used in town",
       "guideType": "[B]"
     },
     {
       "name": "aura",
-      "type": "number",
-      "description": "If equals 1, then the skill will be classified as an aura, which will make the skill execute its function periodically (",
+      "type": "boolean",
+      "description": "If equals 1, then the skill will be classified as an aura, which will make the skill execute its function periodically ( perdelay ), based on the if the aurastate state is active. Aura skills will also override a preexisting state if that state matches the skill's \"aurastate\" state. If equals 0, then ignore this",
       "guideType": "[B]"
     },
     {
       "name": "periodic",
-      "type": "number",
-      "description": "If equals 1, then the skill will execute its function periodically (",
+      "type": "boolean",
+      "description": "If equals 1, then the skill will execute its function periodically ( perdelay ), based on the if the aurastate state is active. If equals 0, then ignore this",
       "guideType": "[B]"
     },
     {
       "name": "perdelay",
       "type": "text",
-      "description": "Controls the periodic rate that the skill continuously executes its function. Minimum value equals 5. This field requires",
+      "description": "Controls the periodic rate that the skill continuously executes its function. Minimum value equals 5. This field requires periodic or aura field to be enabled",
       "guideType": "[C]"
     },
     {
       "name": "finishing",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the skill will be classified as a finishing move, which can affect how progressive charges are consumed when using the skill and how the skill's description tooltip is displayed. If equals 0, then ignore this",
       "guideType": "[B]"
     },
@@ -984,19 +986,19 @@
     },
     {
       "name": "passive",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the skill will be treated as a passive, which can mean that the skill will not show up in the skill selection menu and will not run a server do function. If equals 0, then the skill is an active skill that can be used",
       "guideType": "[B]"
     },
     {
       "name": "progressive",
-      "type": "number",
-      "description": "If equals 1, then the skill will use the progressive calculations to act as a charge-up skill that will add charges. This is only used for certain skill functions and will generally require the usage of the",
+      "type": "boolean",
+      "description": "If equals 1, then the skill will use the progressive calculations to act as a charge-up skill that will add charges. This is only used for certain skill functions and will generally require the usage of the prgcalc1 and aurastat fields. If equals 0, then ignore this",
       "guideType": "[B]"
     },
     {
       "name": "scroll",
-      "type": "text",
+      "type": "boolean",
       "description": "If equals 1, then the skill can appear as a scroll version in the skill selection UI, if the skill allows for the scroll mechanics and if the player has the skill's scroll item in the inventory. If equals 0, then ignore this",
       "guideType": "[B]"
     },
@@ -1164,7 +1166,7 @@
     },
     {
       "name": "InGame",
-      "type": "number",
+      "type": "boolean",
       "description": "If equals 1, then the skill is enabled to be used in-game. If equals 0, then the skill will be disabled in-game",
       "guideType": "[B]"
     },
@@ -1183,7 +1185,7 @@
     {
       "name": "ToHitCalc",
       "type": "text",
-      "description": "Calculates the bonus Attack Rating when using the skill. This will override the",
+      "description": "Calculates the bonus Attack Rating when using the skill. This will override the ToHit and LevToHit fields if it is not blank ResultFlags - [N] - Controls different flags that can affect how the target reacts after being hit by the missile. Uses an integer value to check against different bit fields by using the \"&\" operator. For example, if the value equals 5 (binary = 101) then that returns true for both the 4 (binary = 100) and 1 (binary = 1) bit field values. Referenced by the Bit Field Value of the Result Flags Table",
       "guideType": "[C]"
     },
     {
@@ -1193,7 +1195,7 @@
     {
       "name": "HitFlags",
       "type": "number",
-      "description": "Controls different flags that can affect the damage dealt when the target is hit by the missile. Uses an integer value to check against different bit fields by using the \"&\" operator. For example, if the value equals 6 (binary = 110) then that returns true for both the 4 (binary = 100) and 2 (binary = 10) bit field values. Referenced by the",
+      "description": "Controls different flags that can affect the damage dealt when the target is hit by the missile. Uses an integer value to check against different bit fields by using the \"&\" operator. For example, if the value equals 6 (binary = 110) then that returns true for both the 4 (binary = 100) and 2 (binary = 10) bit field values. Referenced by the Bit Field Value of the Hit Flags Table",
       "guideType": "[N]"
     },
     {
@@ -1204,7 +1206,7 @@
     },
     {
       "name": "Kick",
-      "type": "text",
+      "type": "boolean",
       "description": "If equals 1, then a separate function is used to calculate the physical damage dealt by the skill, ignoring the following damage fields. This function will factor in the player character's Strength and Dexterity attributes (or Monster's level) to determine the baseline damage dealt. If equals 0, then ignore this",
       "guideType": "[B]"
     },
@@ -1216,7 +1218,7 @@
     },
     {
       "name": "SrcDam",
-      "type": "text",
+      "type": "number",
       "description": "Controls the percentage modifier for how much weapon damage is transferred to the skill's damage (Out of 128). For example, if the value equals 64, then 50% (64/128) of the weapon's damage will be added to the skill's damage",
       "guideType": "[N]"
     },
@@ -1281,7 +1283,7 @@
     {
       "name": "EType",
       "type": "text",
-      "description": "Defines the type of elemental damage dealt by the skill. If this field is empty, then the related elemental fields below will not be used. Referenced by the",
+      "description": "Defines the type of elemental damage dealt by the skill. If this field is empty, then the related elemental fields below will not be used. Referenced by the Code value of the Elemental Types Table",
       "guideType": "[O]"
     },
     {
@@ -1387,7 +1389,7 @@
     {
       "name": "cost add",
       "type": "number",
-      "description": "Flat integer modification of an item's gold cost, only when the item has a stat modifier with this skill. This will affect the item's buy, sell, and repair costs. This is added after the",
+      "description": "Flat integer modification of an item's gold cost, only when the item has a stat modifier with this skill. This will affect the item's buy, sell, and repair costs. This is added after the cost mult has modified the costs.",
       "guideType": "[N]"
     },
     {
