@@ -68,3 +68,8 @@ Quand une **tâche ou un commit** est fait :
 ## Mission courante
 
 Cherche et trouve la mission courante. Si le contexte ou la ROADMAP ne sont pas assez clair, valide inline avec le user sur les prochains steps (hint : si de nouvelles tâches émergent n'oublie pas de les ajouter à la roadmap )
+
+## Hygiène Git
+
+- **Vincent** (humain) : rappelle-lui régulièrement de commit et push son travail — grain fin, messages clairs.
+- **Toi (agent)** : ne commit ni ne push **jamais** de ta propre initiative — uniquement sur `GO` explicite de Guillaume (cf. § Conventions).
