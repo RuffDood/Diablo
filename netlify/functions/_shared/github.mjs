@@ -27,7 +27,7 @@ export const paths = {
   table: (name) => `${EXCEL_DIR}/${name}.txt`,
   schema: (name) => `schemas/${name}.json`,
   // Sources de reference pour le Comparateur (lecture seule, jamais ecrites).
-  vanilla: (name) => `excel-vanilla/${name}.txt`,
+  vanilla: (name) => `excel-vanilla2.4/${name}.txt`,
   BK: (name) => `data-BK/global/excel/${name}.txt`,
   BT: (name) => `data-BT/global/excel/${name}.txt`,
 };

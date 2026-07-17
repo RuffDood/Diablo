@@ -18,7 +18,7 @@ const SCHEMAS_DIR = path.join(__dirname, '..', 'schemas');
 
 // Sources de reference pour le Comparateur (lecture seule, jamais ecrites).
 const REF_DIRS = {
-  vanilla: path.join(__dirname, '..', 'excel-vanilla'),
+  vanilla: path.join(__dirname, '..', 'excel-vanilla2.4'),
   BK: path.join(__dirname, '..', 'data-BK', 'global', 'excel'),
   BT: path.join(__dirname, '..', 'data-BT', 'global', 'excel'),
 };

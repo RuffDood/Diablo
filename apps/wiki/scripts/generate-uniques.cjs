@@ -1,6 +1,6 @@
 'use strict';
 // Genere apps/wiki/src/data/uniques.json depuis uniqueitems.txt (TCP) croise avec
-// excel-vanilla/uniqueitems.txt. Appariement par la colonne "index" (le nom interne
+// excel-vanilla2.4/uniqueitems.txt. Appariement par la colonne "index" (le nom interne
 // de l'objet unique, stable — pas par position de ligne, TCP ajoute ses uniques a la
 // suite des uniques vanilla sans les reordonner).
 //
@@ -12,7 +12,7 @@ const { parseTable } = require('../../../scripts/build-data/tsv');
 
 const ROOT = path.join(__dirname, '..', '..', '..');
 const TCP_FILE = path.join(ROOT, 'data-TCP', 'global', 'excel', 'uniqueitems.txt');
-const VANILLA_FILE = path.join(ROOT, 'excel-vanilla', 'uniqueitems.txt');
+const VANILLA_FILE = path.join(ROOT, 'excel-vanilla2.4', 'uniqueitems.txt');
 const OUT_FILE = path.join(__dirname, '..', 'src', 'data', 'uniques.json');
 
 const CORE_FIELDS = [

@@ -20208,8 +20208,8 @@
                                                    ]
                                   },
                                   {
-                                      "name":  "excel-vanilla",
-                                      "path":  "excel-vanilla",
+                                      "name":  "excel-vanilla2.4",
+                                      "path":  "excel-vanilla2.4",
                                       "kind":  "directory",
                                       "meta":  {
                                                    "role":  "vanilla-reference",
@@ -20219,862 +20219,862 @@
                                       "children":  [
                                                        {
                                                            "name":  "_automap_tile_lookup.py",
-                                                           "path":  "excel-vanilla/_automap_tile_lookup.py",
+                                                           "path":  "excel-vanilla2.4/_automap_tile_lookup.py",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "_diabloiidatafileguide.mht",
-                                                           "path":  "excel-vanilla/_diabloiidatafileguide.mht",
+                                                           "path":  "excel-vanilla2.4/_diabloiidatafileguide.mht",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "actcode.bin",
-                                                           "path":  "excel-vanilla/actcode.bin",
+                                                           "path":  "excel-vanilla2.4/actcode.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "actinfo.bin",
-                                                           "path":  "excel-vanilla/actinfo.bin",
+                                                           "path":  "excel-vanilla2.4/actinfo.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "actinfo.txt",
-                                                           "path":  "excel-vanilla/actinfo.txt",
+                                                           "path":  "excel-vanilla2.4/actinfo.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "armor.bin",
-                                                           "path":  "excel-vanilla/armor.bin",
+                                                           "path":  "excel-vanilla2.4/armor.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "armor.txt",
-                                                           "path":  "excel-vanilla/armor.txt",
+                                                           "path":  "excel-vanilla2.4/armor.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "armtype.bin",
-                                                           "path":  "excel-vanilla/armtype.bin",
+                                                           "path":  "excel-vanilla2.4/armtype.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "armtype.txt",
-                                                           "path":  "excel-vanilla/armtype.txt",
+                                                           "path":  "excel-vanilla2.4/armtype.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "automagic.bin",
-                                                           "path":  "excel-vanilla/automagic.bin",
+                                                           "path":  "excel-vanilla2.4/automagic.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "automagic.txt",
-                                                           "path":  "excel-vanilla/automagic.txt",
+                                                           "path":  "excel-vanilla2.4/automagic.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "automap.bin",
-                                                           "path":  "excel-vanilla/automap.bin",
+                                                           "path":  "excel-vanilla2.4/automap.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "automap.txt",
-                                                           "path":  "excel-vanilla/automap.txt",
+                                                           "path":  "excel-vanilla2.4/automap.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "belts.bin",
-                                                           "path":  "excel-vanilla/belts.bin",
+                                                           "path":  "excel-vanilla2.4/belts.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "belts.txt",
-                                                           "path":  "excel-vanilla/belts.txt",
+                                                           "path":  "excel-vanilla2.4/belts.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "bodylocs.txt",
-                                                           "path":  "excel-vanilla/bodylocs.txt",
+                                                           "path":  "excel-vanilla2.4/bodylocs.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "books.bin",
-                                                           "path":  "excel-vanilla/books.bin",
+                                                           "path":  "excel-vanilla2.4/books.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "books.txt",
-                                                           "path":  "excel-vanilla/books.txt",
+                                                           "path":  "excel-vanilla2.4/books.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "charstats.bin",
-                                                           "path":  "excel-vanilla/charstats.bin",
+                                                           "path":  "excel-vanilla2.4/charstats.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "charstats.txt",
-                                                           "path":  "excel-vanilla/charstats.txt",
+                                                           "path":  "excel-vanilla2.4/charstats.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "colors.txt",
-                                                           "path":  "excel-vanilla/colors.txt",
+                                                           "path":  "excel-vanilla2.4/colors.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "compcode.bin",
-                                                           "path":  "excel-vanilla/compcode.bin",
+                                                           "path":  "excel-vanilla2.4/compcode.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "compcode.txt",
-                                                           "path":  "excel-vanilla/compcode.txt",
+                                                           "path":  "excel-vanilla2.4/compcode.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "composit.bin",
-                                                           "path":  "excel-vanilla/composit.bin",
+                                                           "path":  "excel-vanilla2.4/composit.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "composit.txt",
-                                                           "path":  "excel-vanilla/composit.txt",
+                                                           "path":  "excel-vanilla2.4/composit.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "cubemain.bin",
-                                                           "path":  "excel-vanilla/cubemain.bin",
+                                                           "path":  "excel-vanilla2.4/cubemain.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "cubemain.txt",
-                                                           "path":  "excel-vanilla/cubemain.txt",
+                                                           "path":  "excel-vanilla2.4/cubemain.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "cubemod.txt",
-                                                           "path":  "excel-vanilla/cubemod.txt",
+                                                           "path":  "excel-vanilla2.4/cubemod.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "customgossiptbl.template",
-                                                           "path":  "excel-vanilla/customgossiptbl.template",
+                                                           "path":  "excel-vanilla2.4/customgossiptbl.template",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "customnpcs.template",
-                                                           "path":  "excel-vanilla/customnpcs.template",
+                                                           "path":  "excel-vanilla2.4/customnpcs.template",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "difficultylevels.bin",
-                                                           "path":  "excel-vanilla/difficultylevels.bin",
+                                                           "path":  "excel-vanilla2.4/difficultylevels.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "difficultylevels.txt",
-                                                           "path":  "excel-vanilla/difficultylevels.txt",
+                                                           "path":  "excel-vanilla2.4/difficultylevels.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "elemtypes.txt",
-                                                           "path":  "excel-vanilla/elemtypes.txt",
+                                                           "path":  "excel-vanilla2.4/elemtypes.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "events.txt",
-                                                           "path":  "excel-vanilla/events.txt",
+                                                           "path":  "excel-vanilla2.4/events.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "experience.bin",
-                                                           "path":  "excel-vanilla/experience.bin",
+                                                           "path":  "excel-vanilla2.4/experience.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "experience.txt",
-                                                           "path":  "excel-vanilla/experience.txt",
+                                                           "path":  "excel-vanilla2.4/experience.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "gamble.bin",
-                                                           "path":  "excel-vanilla/gamble.bin",
+                                                           "path":  "excel-vanilla2.4/gamble.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "gamble.txt",
-                                                           "path":  "excel-vanilla/gamble.txt",
+                                                           "path":  "excel-vanilla2.4/gamble.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "gems.bin",
-                                                           "path":  "excel-vanilla/gems.bin",
+                                                           "path":  "excel-vanilla2.4/gems.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "gems.txt",
-                                                           "path":  "excel-vanilla/gems.txt",
+                                                           "path":  "excel-vanilla2.4/gems.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "hireling.bin",
-                                                           "path":  "excel-vanilla/hireling.bin",
+                                                           "path":  "excel-vanilla2.4/hireling.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "hireling.txt",
-                                                           "path":  "excel-vanilla/hireling.txt",
+                                                           "path":  "excel-vanilla2.4/hireling.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "hitclass.bin",
-                                                           "path":  "excel-vanilla/hitclass.bin",
+                                                           "path":  "excel-vanilla2.4/hitclass.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "hitclass.txt",
-                                                           "path":  "excel-vanilla/hitclass.txt",
+                                                           "path":  "excel-vanilla2.4/hitclass.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "inventory.bin",
-                                                           "path":  "excel-vanilla/inventory.bin",
+                                                           "path":  "excel-vanilla2.4/inventory.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "inventory.txt",
-                                                           "path":  "excel-vanilla/inventory.txt",
+                                                           "path":  "excel-vanilla2.4/inventory.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "itemratio.bin",
-                                                           "path":  "excel-vanilla/itemratio.bin",
+                                                           "path":  "excel-vanilla2.4/itemratio.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "itemratio.txt",
-                                                           "path":  "excel-vanilla/itemratio.txt",
+                                                           "path":  "excel-vanilla2.4/itemratio.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "itemscode.bin",
-                                                           "path":  "excel-vanilla/itemscode.bin",
+                                                           "path":  "excel-vanilla2.4/itemscode.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "itemstatcost.bin",
-                                                           "path":  "excel-vanilla/itemstatcost.bin",
+                                                           "path":  "excel-vanilla2.4/itemstatcost.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "itemstatcost.txt",
-                                                           "path":  "excel-vanilla/itemstatcost.txt",
+                                                           "path":  "excel-vanilla2.4/itemstatcost.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "itemtypes.bin",
-                                                           "path":  "excel-vanilla/itemtypes.bin",
+                                                           "path":  "excel-vanilla2.4/itemtypes.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "itemtypes.txt",
-                                                           "path":  "excel-vanilla/itemtypes.txt",
+                                                           "path":  "excel-vanilla2.4/itemtypes.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "leveldefs.bin",
-                                                           "path":  "excel-vanilla/leveldefs.bin",
+                                                           "path":  "excel-vanilla2.4/leveldefs.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "levels.bin",
-                                                           "path":  "excel-vanilla/levels.bin",
+                                                           "path":  "excel-vanilla2.4/levels.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "levels.txt",
-                                                           "path":  "excel-vanilla/levels.txt",
+                                                           "path":  "excel-vanilla2.4/levels.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "lowqualityitems.bin",
-                                                           "path":  "excel-vanilla/lowqualityitems.bin",
+                                                           "path":  "excel-vanilla2.4/lowqualityitems.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "lowqualityitems.txt",
-                                                           "path":  "excel-vanilla/lowqualityitems.txt",
+                                                           "path":  "excel-vanilla2.4/lowqualityitems.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "lvlmaze.bin",
-                                                           "path":  "excel-vanilla/lvlmaze.bin",
+                                                           "path":  "excel-vanilla2.4/lvlmaze.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "lvlmaze.txt",
-                                                           "path":  "excel-vanilla/lvlmaze.txt",
+                                                           "path":  "excel-vanilla2.4/lvlmaze.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "lvlprest.bin",
-                                                           "path":  "excel-vanilla/lvlprest.bin",
+                                                           "path":  "excel-vanilla2.4/lvlprest.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "lvlprest.txt",
-                                                           "path":  "excel-vanilla/lvlprest.txt",
+                                                           "path":  "excel-vanilla2.4/lvlprest.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "lvlsub.bin",
-                                                           "path":  "excel-vanilla/lvlsub.bin",
+                                                           "path":  "excel-vanilla2.4/lvlsub.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "lvlsub.txt",
-                                                           "path":  "excel-vanilla/lvlsub.txt",
+                                                           "path":  "excel-vanilla2.4/lvlsub.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "lvltypes.bin",
-                                                           "path":  "excel-vanilla/lvltypes.bin",
+                                                           "path":  "excel-vanilla2.4/lvltypes.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "lvltypes.txt",
-                                                           "path":  "excel-vanilla/lvltypes.txt",
+                                                           "path":  "excel-vanilla2.4/lvltypes.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "lvlwarp.bin",
-                                                           "path":  "excel-vanilla/lvlwarp.bin",
+                                                           "path":  "excel-vanilla2.4/lvlwarp.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "lvlwarp.txt",
-                                                           "path":  "excel-vanilla/lvlwarp.txt",
+                                                           "path":  "excel-vanilla2.4/lvlwarp.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "magicprefix.bin",
-                                                           "path":  "excel-vanilla/magicprefix.bin",
+                                                           "path":  "excel-vanilla2.4/magicprefix.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "magicprefix.txt",
-                                                           "path":  "excel-vanilla/magicprefix.txt",
+                                                           "path":  "excel-vanilla2.4/magicprefix.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "magicsuffix.bin",
-                                                           "path":  "excel-vanilla/magicsuffix.bin",
+                                                           "path":  "excel-vanilla2.4/magicsuffix.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "magicsuffix.txt",
-                                                           "path":  "excel-vanilla/magicsuffix.txt",
+                                                           "path":  "excel-vanilla2.4/magicsuffix.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "misc.bin",
-                                                           "path":  "excel-vanilla/misc.bin",
+                                                           "path":  "excel-vanilla2.4/misc.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "misc.txt",
-                                                           "path":  "excel-vanilla/misc.txt",
+                                                           "path":  "excel-vanilla2.4/misc.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "misscalc.txt",
-                                                           "path":  "excel-vanilla/misscalc.txt",
+                                                           "path":  "excel-vanilla2.4/misscalc.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "misscode.bin",
-                                                           "path":  "excel-vanilla/misscode.bin",
+                                                           "path":  "excel-vanilla2.4/misscode.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "missiles.bin",
-                                                           "path":  "excel-vanilla/missiles.bin",
+                                                           "path":  "excel-vanilla2.4/missiles.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "missiles.txt",
-                                                           "path":  "excel-vanilla/missiles.txt",
+                                                           "path":  "excel-vanilla2.4/missiles.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monai.txt",
-                                                           "path":  "excel-vanilla/monai.txt",
+                                                           "path":  "excel-vanilla2.4/monai.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monequip.bin",
-                                                           "path":  "excel-vanilla/monequip.bin",
+                                                           "path":  "excel-vanilla2.4/monequip.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monequip.txt",
-                                                           "path":  "excel-vanilla/monequip.txt",
+                                                           "path":  "excel-vanilla2.4/monequip.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monlvl.bin",
-                                                           "path":  "excel-vanilla/monlvl.bin",
+                                                           "path":  "excel-vanilla2.4/monlvl.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monlvl.txt",
-                                                           "path":  "excel-vanilla/monlvl.txt",
+                                                           "path":  "excel-vanilla2.4/monlvl.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monmode.bin",
-                                                           "path":  "excel-vanilla/monmode.bin",
+                                                           "path":  "excel-vanilla2.4/monmode.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monmode.txt",
-                                                           "path":  "excel-vanilla/monmode.txt",
+                                                           "path":  "excel-vanilla2.4/monmode.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monplace.txt",
-                                                           "path":  "excel-vanilla/monplace.txt",
+                                                           "path":  "excel-vanilla2.4/monplace.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monpreset.bin",
-                                                           "path":  "excel-vanilla/monpreset.bin",
+                                                           "path":  "excel-vanilla2.4/monpreset.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monpreset.txt",
-                                                           "path":  "excel-vanilla/monpreset.txt",
+                                                           "path":  "excel-vanilla2.4/monpreset.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monprop.bin",
-                                                           "path":  "excel-vanilla/monprop.bin",
+                                                           "path":  "excel-vanilla2.4/monprop.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monprop.txt",
-                                                           "path":  "excel-vanilla/monprop.txt",
+                                                           "path":  "excel-vanilla2.4/monprop.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monseq.bin",
-                                                           "path":  "excel-vanilla/monseq.bin",
+                                                           "path":  "excel-vanilla2.4/monseq.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monseq.txt",
-                                                           "path":  "excel-vanilla/monseq.txt",
+                                                           "path":  "excel-vanilla2.4/monseq.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monsounds.bin",
-                                                           "path":  "excel-vanilla/monsounds.bin",
+                                                           "path":  "excel-vanilla2.4/monsounds.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monsounds.txt",
-                                                           "path":  "excel-vanilla/monsounds.txt",
+                                                           "path":  "excel-vanilla2.4/monsounds.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monstats.bin",
-                                                           "path":  "excel-vanilla/monstats.bin",
+                                                           "path":  "excel-vanilla2.4/monstats.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monstats.txt",
-                                                           "path":  "excel-vanilla/monstats.txt",
+                                                           "path":  "excel-vanilla2.4/monstats.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monstats2.bin",
-                                                           "path":  "excel-vanilla/monstats2.bin",
+                                                           "path":  "excel-vanilla2.4/monstats2.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monstats2.txt",
-                                                           "path":  "excel-vanilla/monstats2.txt",
+                                                           "path":  "excel-vanilla2.4/monstats2.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "montype.bin",
-                                                           "path":  "excel-vanilla/montype.bin",
+                                                           "path":  "excel-vanilla2.4/montype.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "montype.txt",
-                                                           "path":  "excel-vanilla/montype.txt",
+                                                           "path":  "excel-vanilla2.4/montype.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monumod.bin",
-                                                           "path":  "excel-vanilla/monumod.bin",
+                                                           "path":  "excel-vanilla2.4/monumod.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "monumod.txt",
-                                                           "path":  "excel-vanilla/monumod.txt",
+                                                           "path":  "excel-vanilla2.4/monumod.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "npc.bin",
-                                                           "path":  "excel-vanilla/npc.bin",
+                                                           "path":  "excel-vanilla2.4/npc.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "npc.txt",
-                                                           "path":  "excel-vanilla/npc.txt",
+                                                           "path":  "excel-vanilla2.4/npc.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "objects.bin",
-                                                           "path":  "excel-vanilla/objects.bin",
+                                                           "path":  "excel-vanilla2.4/objects.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "objects.txt",
-                                                           "path":  "excel-vanilla/objects.txt",
+                                                           "path":  "excel-vanilla2.4/objects.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "objgroup.bin",
-                                                           "path":  "excel-vanilla/objgroup.bin",
+                                                           "path":  "excel-vanilla2.4/objgroup.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "objgroup.txt",
-                                                           "path":  "excel-vanilla/objgroup.txt",
+                                                           "path":  "excel-vanilla2.4/objgroup.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "objmode.bin",
-                                                           "path":  "excel-vanilla/objmode.bin",
+                                                           "path":  "excel-vanilla2.4/objmode.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "objmode.txt",
-                                                           "path":  "excel-vanilla/objmode.txt",
+                                                           "path":  "excel-vanilla2.4/objmode.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "objpreset.bin",
-                                                           "path":  "excel-vanilla/objpreset.bin",
+                                                           "path":  "excel-vanilla2.4/objpreset.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "objpreset.txt",
-                                                           "path":  "excel-vanilla/objpreset.txt",
+                                                           "path":  "excel-vanilla2.4/objpreset.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "objtype.bin",
-                                                           "path":  "excel-vanilla/objtype.bin",
+                                                           "path":  "excel-vanilla2.4/objtype.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "objtype.txt",
-                                                           "path":  "excel-vanilla/objtype.txt",
+                                                           "path":  "excel-vanilla2.4/objtype.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "overlay.bin",
-                                                           "path":  "excel-vanilla/overlay.bin",
+                                                           "path":  "excel-vanilla2.4/overlay.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "overlay.txt",
-                                                           "path":  "excel-vanilla/overlay.txt",
+                                                           "path":  "excel-vanilla2.4/overlay.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "pettype.bin",
-                                                           "path":  "excel-vanilla/pettype.bin",
+                                                           "path":  "excel-vanilla2.4/pettype.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "pettype.txt",
-                                                           "path":  "excel-vanilla/pettype.txt",
+                                                           "path":  "excel-vanilla2.4/pettype.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "playerclass.bin",
-                                                           "path":  "excel-vanilla/playerclass.bin",
+                                                           "path":  "excel-vanilla2.4/playerclass.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "playerclass.txt",
-                                                           "path":  "excel-vanilla/playerclass.txt",
+                                                           "path":  "excel-vanilla2.4/playerclass.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "plrmode.bin",
-                                                           "path":  "excel-vanilla/plrmode.bin",
+                                                           "path":  "excel-vanilla2.4/plrmode.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "plrmode.txt",
-                                                           "path":  "excel-vanilla/plrmode.txt",
+                                                           "path":  "excel-vanilla2.4/plrmode.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "plrtype.bin",
-                                                           "path":  "excel-vanilla/plrtype.bin",
+                                                           "path":  "excel-vanilla2.4/plrtype.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "plrtype.txt",
-                                                           "path":  "excel-vanilla/plrtype.txt",
+                                                           "path":  "excel-vanilla2.4/plrtype.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "properties.bin",
-                                                           "path":  "excel-vanilla/properties.bin",
+                                                           "path":  "excel-vanilla2.4/properties.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "properties.txt",
-                                                           "path":  "excel-vanilla/properties.txt",
+                                                           "path":  "excel-vanilla2.4/properties.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "qualityitems.bin",
-                                                           "path":  "excel-vanilla/qualityitems.bin",
+                                                           "path":  "excel-vanilla2.4/qualityitems.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "qualityitems.txt",
-                                                           "path":  "excel-vanilla/qualityitems.txt",
+                                                           "path":  "excel-vanilla2.4/qualityitems.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "rareprefix.bin",
-                                                           "path":  "excel-vanilla/rareprefix.bin",
+                                                           "path":  "excel-vanilla2.4/rareprefix.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "rareprefix.txt",
-                                                           "path":  "excel-vanilla/rareprefix.txt",
+                                                           "path":  "excel-vanilla2.4/rareprefix.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "raresuffix.bin",
-                                                           "path":  "excel-vanilla/raresuffix.bin",
+                                                           "path":  "excel-vanilla2.4/raresuffix.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "raresuffix.txt",
-                                                           "path":  "excel-vanilla/raresuffix.txt",
+                                                           "path":  "excel-vanilla2.4/raresuffix.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "runes.bin",
-                                                           "path":  "excel-vanilla/runes.bin",
+                                                           "path":  "excel-vanilla2.4/runes.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "runes.txt",
-                                                           "path":  "excel-vanilla/runes.txt",
+                                                           "path":  "excel-vanilla2.4/runes.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "setitems.bin",
-                                                           "path":  "excel-vanilla/setitems.bin",
+                                                           "path":  "excel-vanilla2.4/setitems.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "setitems.txt",
-                                                           "path":  "excel-vanilla/setitems.txt",
+                                                           "path":  "excel-vanilla2.4/setitems.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "sets.bin",
-                                                           "path":  "excel-vanilla/sets.bin",
+                                                           "path":  "excel-vanilla2.4/sets.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "sets.txt",
-                                                           "path":  "excel-vanilla/sets.txt",
+                                                           "path":  "excel-vanilla2.4/sets.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "shrines.bin",
-                                                           "path":  "excel-vanilla/shrines.bin",
+                                                           "path":  "excel-vanilla2.4/shrines.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "shrines.txt",
-                                                           "path":  "excel-vanilla/shrines.txt",
+                                                           "path":  "excel-vanilla2.4/shrines.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "skillcalc.txt",
-                                                           "path":  "excel-vanilla/skillcalc.txt",
+                                                           "path":  "excel-vanilla2.4/skillcalc.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "skilldesc.bin",
-                                                           "path":  "excel-vanilla/skilldesc.bin",
+                                                           "path":  "excel-vanilla2.4/skilldesc.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "skilldesc.txt",
-                                                           "path":  "excel-vanilla/skilldesc.txt",
+                                                           "path":  "excel-vanilla2.4/skilldesc.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "skilldesccode.bin",
-                                                           "path":  "excel-vanilla/skilldesccode.bin",
+                                                           "path":  "excel-vanilla2.4/skilldesccode.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "skills.bin",
-                                                           "path":  "excel-vanilla/skills.bin",
+                                                           "path":  "excel-vanilla2.4/skills.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "skills.txt",
-                                                           "path":  "excel-vanilla/skills.txt",
+                                                           "path":  "excel-vanilla2.4/skills.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "skillscode.bin",
-                                                           "path":  "excel-vanilla/skillscode.bin",
+                                                           "path":  "excel-vanilla2.4/skillscode.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "soundchannels.json",
-                                                           "path":  "excel-vanilla/soundchannels.json",
+                                                           "path":  "excel-vanilla2.4/soundchannels.json",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "soundenviron.bin",
-                                                           "path":  "excel-vanilla/soundenviron.bin",
+                                                           "path":  "excel-vanilla2.4/soundenviron.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "soundenviron.txt",
-                                                           "path":  "excel-vanilla/soundenviron.txt",
+                                                           "path":  "excel-vanilla2.4/soundenviron.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "sounds.bin",
-                                                           "path":  "excel-vanilla/sounds.bin",
+                                                           "path":  "excel-vanilla2.4/sounds.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "sounds.txt",
-                                                           "path":  "excel-vanilla/sounds.txt",
+                                                           "path":  "excel-vanilla2.4/sounds.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "states.bin",
-                                                           "path":  "excel-vanilla/states.bin",
+                                                           "path":  "excel-vanilla2.4/states.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "states.txt",
-                                                           "path":  "excel-vanilla/states.txt",
+                                                           "path":  "excel-vanilla2.4/states.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "storepage.txt",
-                                                           "path":  "excel-vanilla/storepage.txt",
+                                                           "path":  "excel-vanilla2.4/storepage.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "superuniques.bin",
-                                                           "path":  "excel-vanilla/superuniques.bin",
+                                                           "path":  "excel-vanilla2.4/superuniques.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "superuniques.txt",
-                                                           "path":  "excel-vanilla/superuniques.txt",
+                                                           "path":  "excel-vanilla2.4/superuniques.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "treasureclassex.bin",
-                                                           "path":  "excel-vanilla/treasureclassex.bin",
+                                                           "path":  "excel-vanilla2.4/treasureclassex.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "treasureclassex.txt",
-                                                           "path":  "excel-vanilla/treasureclassex.txt",
+                                                           "path":  "excel-vanilla2.4/treasureclassex.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "uniqueappellation.bin",
-                                                           "path":  "excel-vanilla/uniqueappellation.bin",
+                                                           "path":  "excel-vanilla2.4/uniqueappellation.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "uniqueappellation.txt",
-                                                           "path":  "excel-vanilla/uniqueappellation.txt",
+                                                           "path":  "excel-vanilla2.4/uniqueappellation.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "uniqueitems.bin",
-                                                           "path":  "excel-vanilla/uniqueitems.bin",
+                                                           "path":  "excel-vanilla2.4/uniqueitems.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "uniqueitems.txt",
-                                                           "path":  "excel-vanilla/uniqueitems.txt",
+                                                           "path":  "excel-vanilla2.4/uniqueitems.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "uniqueprefix.bin",
-                                                           "path":  "excel-vanilla/uniqueprefix.bin",
+                                                           "path":  "excel-vanilla2.4/uniqueprefix.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "uniqueprefix.txt",
-                                                           "path":  "excel-vanilla/uniqueprefix.txt",
+                                                           "path":  "excel-vanilla2.4/uniqueprefix.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "uniquesuffix.bin",
-                                                           "path":  "excel-vanilla/uniquesuffix.bin",
+                                                           "path":  "excel-vanilla2.4/uniquesuffix.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "uniquesuffix.txt",
-                                                           "path":  "excel-vanilla/uniquesuffix.txt",
+                                                           "path":  "excel-vanilla2.4/uniquesuffix.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "wanderingmon.bin",
-                                                           "path":  "excel-vanilla/wanderingmon.bin",
+                                                           "path":  "excel-vanilla2.4/wanderingmon.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "wanderingmon.txt",
-                                                           "path":  "excel-vanilla/wanderingmon.txt",
+                                                           "path":  "excel-vanilla2.4/wanderingmon.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "weapons - Copy.txt",
-                                                           "path":  "excel-vanilla/weapons - Copy.txt",
+                                                           "path":  "excel-vanilla2.4/weapons - Copy.txt",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "weapons.bin",
-                                                           "path":  "excel-vanilla/weapons.bin",
+                                                           "path":  "excel-vanilla2.4/weapons.bin",
                                                            "kind":  "file"
                                                        },
                                                        {
                                                            "name":  "weapons.txt",
-                                                           "path":  "excel-vanilla/weapons.txt",
+                                                           "path":  "excel-vanilla2.4/weapons.txt",
                                                            "kind":  "file"
                                                        }
                                                    ]

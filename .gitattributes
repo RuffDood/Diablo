@@ -14,7 +14,7 @@
 data-BK/**/*.txt        text eol=crlf
 data-BT/**/*.txt        text eol=crlf
 data-TCP/**/*.txt       text eol=crlf
-excel-vanilla/**/*.txt  text eol=crlf
+excel-vanilla2.4/**/*.txt  text eol=crlf
 
 # Reference VNP read-only : conserver exactement les octets importes (LF/CRLF d'origine).
 data-VNP/** -text
