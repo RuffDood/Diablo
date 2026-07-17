@@ -161,8 +161,8 @@
     </div>
   </div>
 
-  <div class="station fait" data-etape="3">
-    <div class="st-tete"><span class="st-num">INCRÉMENT 3</span><span class="st-titre">Hébergement Netlify</span><span class="st-etat fait">FAIT · 15 juil.</span></div>
+  <div class="station encours" data-etape="3">
+    <div class="st-tete"><span class="st-num">INCRÉMENT 3</span><span class="st-titre">Hébergement Netlify</span><span class="st-etat encours">EN COURS</span></div>
     <p class="st-but">Rendre l'éditeur accessible en ligne, écriture via commits GitHub.</p>
     <div class="taches">
       <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Netlify Function : lecture/écriture des .txt via l'<b>API GitHub</b> (FS éphémère → commit dans le repo)</span></label>
@@ -170,10 +170,11 @@
       <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Token <b>fine-grained</b> de Vincent, limité à Diablo (Contents read-write) — en main, vérifié</span></label>
       <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Site Netlify <code>diablo-tcp-admin</code> créé + 3 variables d'environnement posées</span></label>
       <label class="tache faite"><input type="checkbox" checked disabled><span class="lbl">Test intégré (<code>netlify dev</code>) + déploiement en production <span class="note-t">vérifié en direct : login, lecture des 40 tables via l'API GitHub, Comparateur — sur <code>diablo-tcp-admin.netlify.app</code></span></span></label>
+      <label class="tache" data-id="migration-brodiablo-netlify"><input type="checkbox"><span class="lbl"><b>Finaliser la migration de l’éditeur vers <code>BRODIABLO/Diablo</code></b> <span class="note-t">mettre à jour le propriétaire GitHub et les références du projet · autoriser ou recréer le jeton fine-grained Netlify pour le dépôt de l’organisation avec Contents read-write · actualiser le remote local · redéployer · valider le login, la lecture des 40 tables et une sauvegarde produisant un commit</span></span><span class="qui g">GUILLAUME</span></label>
     </div>
     <div class="st-pied">
-      <span class="chip gate"><b>Gate</b>l'admin en ligne édite une table → commit → rebuild</span>
-      <span class="chip ship"><b>Livraison</b>admin hébergé et privé</span>
+      <span class="chip gate"><b>Gate</b>éditeur reconnecté à BRODIABLO · lecture et écriture GitHub validées</span>
+      <span class="chip ship"><b>Livraison</b>admin hébergé, privé et opérationnel sur le dépôt d’organisation</span>
     </div>
   </div>
 
@@ -268,7 +269,7 @@
 </details>
 
 <footer>
-  ROADMAP v1 — Diablo TCP, 16 juillet 2026 · <b>FONDATIONS + INCRÉMENTS 1, 2 &amp; 3 CLOS</b> · éditeur multi-tables + validations en service · <b>40 schémas générés du guide</b> (hireling 77/77) · déployé et accessible sur <b>diablo-tcp-admin.netlify.app</b> · I4 amorcé : Comparateur vanilla/BK/BT/TCP en service · I5 amorcé : navigation par catégorie, recherche/filtres, colonnes visibles · I6 rouvert : concevoir un guide in-game des Cube Recipes selon l’approche support d’abord, les autres GameplayMods restant livrés et validés. Coche les cases à venir : l'état est sauvegardé dans ton navigateur.
+  ROADMAP v1 — Diablo TCP, 16 juillet 2026 · <b>FONDATIONS + INCRÉMENTS 1 &amp; 2 CLOS · INCRÉMENT 3 ROUVERT</b> pour reconnecter l’éditeur et Netlify au dépôt d’organisation <b>BRODIABLO/Diablo</b> · <b>40 schémas générés du guide</b> (hireling 77/77) · I4 amorcé : Comparateur vanilla/BK/BT/TCP en service · I5 amorcé : navigation par catégorie, recherche/filtres, colonnes visibles · I6 rouvert : concevoir un guide in-game des Cube Recipes selon l’approche support d’abord, les autres GameplayMods restant livrés et validés. Coche les cases à venir : l’état est sauvegardé dans ton navigateur.
 </footer>
 </main>
 
