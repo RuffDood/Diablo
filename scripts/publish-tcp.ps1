@@ -306,7 +306,7 @@ $expectedSourceRoot = Get-NormalizedPath -Path 'C:\Workspaces\Diablo\data-TCP'
 $targetRoot = Get-NormalizedPath -Path 'C:\Games\D2RLAN\D2R\Mods\TCP\TCP.mpq\data'
 $expectedTargetRoot = Get-NormalizedPath -Path 'C:\Games\D2RLAN\D2R\Mods\TCP\TCP.mpq\data'
 $backupRoot = Get-NormalizedPath -Path 'C:\Games\D2RLAN\D2R\Mods\TCP\_deploy-backups'
-$expectedRemotePattern = '^(https://github\.com/|git@github\.com:)RuffDood/Diablo(?:\.git)?$'
+$expectedRemotePattern = '^(https://github\.com/|git@github\.com:)BRODIABLO/Diablo(?:\.git)?$'
 
 if (-not (Test-SamePath -Left $script:RepositoryRoot -Right $expectedRepositoryRoot)) {
     throw "Ce script doit etre execute depuis le depot $expectedRepositoryRoot"
