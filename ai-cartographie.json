@@ -1,6 +1,6 @@
 {
     "schemaVersion":  "1.1.0",
-    "generatedAt":  "2026-07-17T12:02:14.0631134+00:00",
+    "generatedAt":  "2026-07-17T16:33:47.8092251+00:00",
     "root":  {
                  "name":  "Diablo",
                  "path":  ".",
@@ -7032,35 +7032,35 @@
                                                                                                                                                "kind":  "directory",
                                                                                                                                                "children":  [
                                                                                                                                                                 {
-                                                                                                                                                                    "name":  "sorceress_hair_alb.texture",
-                                                                                                                                                                    "path":  "data-TCP/hd/character/player/sorceress/textures/sorceress_hair_alb.texture",
+                                                                                                                                                                    "name":  "sorceress_body_albedo.texture",
+                                                                                                                                                                    "path":  "data-TCP/hd/character/player/sorceress/textures/sorceress_body_albedo.texture",
+                                                                                                                                                                    "kind":  "file"
+                                                                                                                                                                },
+                                                                                                                                                                {
+                                                                                                                                                                    "name":  "sorceress_body_normal.texture",
+                                                                                                                                                                    "path":  "data-TCP/hd/character/player/sorceress/textures/sorceress_body_normal.texture",
                                                                                                                                                                     "kind":  "file"
                                                                                                                                                                 },
                                                                                                                                                                 {
                                                                                                                                                                     "name":  "sorceress_head_albedo.texture",
                                                                                                                                                                     "path":  "data-TCP/hd/character/player/sorceress/textures/sorceress_head_albedo.texture",
                                                                                                                                                                     "kind":  "file"
-                                                                                                                                                                },
-                                                                                                                                                                {
-                                                                                                                                                                    "name":  "sorceress_head_nrm.texture",
-                                                                                                                                                                    "path":  "data-TCP/hd/character/player/sorceress/textures/sorceress_head_nrm.texture",
-                                                                                                                                                                    "kind":  "file"
-                                                                                                                                                                },
-                                                                                                                                                                {
-                                                                                                                                                                    "name":  "sorceress_head_orm.texture",
-                                                                                                                                                                    "path":  "data-TCP/hd/character/player/sorceress/textures/sorceress_head_orm.texture",
-                                                                                                                                                                    "kind":  "file"
-                                                                                                                                                                },
-                                                                                                                                                                {
-                                                                                                                                                                    "name":  "sorceress_head_sss.texture",
-                                                                                                                                                                    "path":  "data-TCP/hd/character/player/sorceress/textures/sorceress_head_sss.texture",
-                                                                                                                                                                    "kind":  "file"
                                                                                                                                                                 }
                                                                                                                                                             ]
                                                                                                                                            },
                                                                                                                                            {
+                                                                                                                                               "name":  "legs_lit_lod0.model",
+                                                                                                                                               "path":  "data-TCP/hd/character/player/sorceress/legs_lit_lod0.model",
+                                                                                                                                               "kind":  "file"
+                                                                                                                                           },
+                                                                                                                                           {
                                                                                                                                                "name":  "sorceress_state_machine.json",
                                                                                                                                                "path":  "data-TCP/hd/character/player/sorceress/sorceress_state_machine.json",
+                                                                                                                                               "kind":  "file"
+                                                                                                                                           },
+                                                                                                                                           {
+                                                                                                                                               "name":  "torso_lit_lod0.model",
+                                                                                                                                               "path":  "data-TCP/hd/character/player/sorceress/torso_lit_lod0.model",
                                                                                                                                                "kind":  "file"
                                                                                                                                            }
                                                                                                                                        ]
