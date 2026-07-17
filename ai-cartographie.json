@@ -1,6 +1,6 @@
 {
     "schemaVersion":  "1.1.0",
-    "generatedAt":  "2026-07-17T02:50:28.4871238+00:00",
+    "generatedAt":  "2026-07-17T06:34:53.6121292+00:00",
     "root":  {
                  "name":  "Diablo",
                  "path":  ".",
@@ -4158,9 +4158,9 @@
                                                            "path":  "data-TCP/D2RLAN",
                                                            "kind":  "directory",
                                                            "meta":  {
-                                                                        "role":  "protected-zone",
-                                                                        "summary":  "Zone protégée extérieure au périmètre normal de modification du mod TCP.",
-                                                                        "agentAccess":  "read-only"
+                                                                        "role":  "mod-development",
+                                                                        "summary":  "Profil local D2RLAN et zone d\u0027intégration runtime du mod TCP, modifiable mais non versionnée.",
+                                                                        "agentAccess":  "read-write"
                                                                     },
                                                            "children":  [
                                                                             {
@@ -4527,6 +4527,45 @@
                                                                                                      "name":  "skills-original.txt",
                                                                                                      "path":  "data-TCP/D2RLAN/Originals/skills-original.txt",
                                                                                                      "kind":  "file"
+                                                                                                 }
+                                                                                             ]
+                                                                            },
+                                                                            {
+                                                                                "name":  "Runtime",
+                                                                                "path":  "data-TCP/D2RLAN/Runtime",
+                                                                                "kind":  "directory",
+                                                                                "meta":  {
+                                                                                             "role":  "x-runtime-integration",
+                                                                                             "summary":  "Paquets locaux de chargement runtime propres au profil TCP sous D2RLAN.",
+                                                                                             "agentAccess":  "read-write"
+                                                                                         },
+                                                                                "children":  [
+                                                                                                 {
+                                                                                                     "name":  "MercenaryCommand",
+                                                                                                     "path":  "data-TCP/D2RLAN/Runtime/MercenaryCommand",
+                                                                                                     "kind":  "directory",
+                                                                                                     "meta":  {
+                                                                                                                  "role":  "x-mercenary-command-runtime",
+                                                                                                                  "summary":  "Chargeur et module conservés localement pour implémenter srvdofunc 155 sur D2R.exe 1.2.69270 sans remplacer D2RHUD.",
+                                                                                                                  "agentAccess":  "read-write"
+                                                                                                              },
+                                                                                                     "children":  [
+                                                                                                                      {
+                                                                                                                          "name":  "D2RHUD-Loader.exe",
+                                                                                                                          "path":  "data-TCP/D2RLAN/Runtime/MercenaryCommand/D2RHUD-Loader.exe",
+                                                                                                                          "kind":  "file"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                          "name":  "MercenaryCommand.dll",
+                                                                                                                          "path":  "data-TCP/D2RLAN/Runtime/MercenaryCommand/MercenaryCommand.dll",
+                                                                                                                          "kind":  "file"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                          "name":  "README.md",
+                                                                                                                          "path":  "data-TCP/D2RLAN/Runtime/MercenaryCommand/README.md",
+                                                                                                                          "kind":  "file"
+                                                                                                                      }
+                                                                                                                  ]
                                                                                                  }
                                                                                              ]
                                                                             },

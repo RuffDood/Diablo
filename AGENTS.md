@@ -20,7 +20,7 @@ Les `.txt` restent la source ; **pas de base de données**. Les dossiers `local/
 | Zone | Rôle | Accès |
 |---|---|---|
 | `data-TCP/` (`global`, `hd`, `local`) | mod en développement | **modifiable** |
-| `data-TCP/D2RLAN/` | zone protégée (launcher) | **read-only** |
+| `data-TCP/D2RLAN/` | profil local D2RLAN et intégration runtime de TCP | **modifiable** |
 | `data-BK/`, `data-BT/` | mods de référence / inspiration | **read-only** |
 | `data-VNP/` | Mod Vanilla++ servant d'inspiration pour mon mod TCP | **read-only** |
 | `excel-vanilla/` | données vanilla Diablo II 2.4 | **read-only** |
@@ -30,7 +30,7 @@ Les `.txt` restent la source ; **pas de base de données**. Les dossiers `local/
 | `scripts/` | outillage (cadastre, validateur, TSV, dev-server) | modifiable |
 | `guide/` | guide D2R communautaire (clone local) | **gitignoré — ne pas versionner** |
 
-En clair : côté **données**, seul `data-TCP` se modifie (les références servent de comparaison). Côté **plateforme**, `apps/`, `schemas/`, `scripts/` sont le code de l'outil.
+En clair : côté **données et runtime**, seul `data-TCP` se modifie, y compris son profil local `D2RLAN` (les références servent de comparaison). Côté **plateforme**, `apps/`, `schemas/`, `scripts/` sont le code de l'outil.
 
 ## Conventions
 

@@ -13,7 +13,7 @@ Les `.txt` restent la **source de vérité** ; pas de base de données — git e
   - `global/excel/` — tables de gameplay (`.txt`) : armor, weapons, hireling, runes, setitems…
   - `local/lng` — chaînes localisées, **versionnées**
   - `hd/` — assets HD **versionnés via Git LFS**
-  - `D2RLAN/` — launcher local protégé, **non versionné**
+  - `D2RLAN/` — profil launcher local et intégration runtime de TCP, **modifiable mais non versionné**
 - `data-BK/`, `data-BT/` — mods externes de **référence** (lecture seule) ; `local/` et `hd/` de BK sont versionnés, tandis que `hd/` de BT reste local
 - `data-VNP/` — Mod Vanilla++ servant d'inspiration pour mon mod TCP (**lecture seule**, hors Comparateur) ; seuls `global/`, `local/` et `hd/` sont versionnés
 - `excel-vanilla/` — tables du jeu de base D2 2.4 (référence, lecture seule)
@@ -46,7 +46,7 @@ node scripts/validate-cartographie/validate.mjs        # valide -> VALID
 
 ## Atelier de données
 
-Les dossiers `global/`, `local/` et `hd/` de TCP et BK sont versionnés. Les formats HD binaires et les quatre JSON de plus de 10 MiB sont stockés via **Git LFS** ; les autres JSON restent des fichiers Git ordinaires. Le launcher `data-TCP/D2RLAN/`, les assets HD de BT, les backups et les réglages utilisateur restent hors Git. Pour la référence read-only VNP, `global/`, `local/` et `hd/` restent également versionnés ; `D2RLAN/` et les assets propres à `VNP/` restent ignorés.
+Les dossiers `global/`, `local/` et `hd/` de TCP et BK sont versionnés. Les formats HD binaires et les quatre JSON de plus de 10 MiB sont stockés via **Git LFS** ; les autres JSON restent des fichiers Git ordinaires. Le profil local modifiable `data-TCP/D2RLAN/`, les assets HD de BT, les backups et les réglages utilisateur restent hors Git. Pour la référence read-only VNP, `global/`, `local/` et `hd/` restent également versionnés ; `D2RLAN/` et les assets propres à `VNP/` restent ignorés.
 
 ## Prérequis
 
