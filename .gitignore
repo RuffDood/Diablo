@@ -18,9 +18,11 @@ deno.lock
 guide/
 
 # Atelier de donnees : HD/local de TCP et BK sont versionnes.
-# BT reste une reference HD locale et le launcher TCP demeure protege hors git.
+# BT et le profil launcher TCP restent locaux; ses modules Runtime sont versionnes.
 data-BT/hd/
-data-TCP/D2RLAN/
+data-TCP/D2RLAN/*
+!data-TCP/D2RLAN/Runtime/
+!data-TCP/D2RLAN/Runtime/**
 
 # Reference VNP : versionner uniquement global/local/hd, ignorer tout le reste.
 data-VNP/*

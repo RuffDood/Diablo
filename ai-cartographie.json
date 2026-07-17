@@ -1,6 +1,6 @@
 {
     "schemaVersion":  "1.1.0",
-    "generatedAt":  "2026-07-17T06:34:53.6121292+00:00",
+    "generatedAt":  "2026-07-17T12:02:14.0631134+00:00",
     "root":  {
                  "name":  "Diablo",
                  "path":  ".",
@@ -4563,6 +4563,33 @@
                                                                                                                       {
                                                                                                                           "name":  "README.md",
                                                                                                                           "path":  "data-TCP/D2RLAN/Runtime/MercenaryCommand/README.md",
+                                                                                                                          "kind":  "file"
+                                                                                                                      }
+                                                                                                                  ]
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "RejuvenationAutoPickup",
+                                                                                                     "path":  "data-TCP/D2RLAN/Runtime/RejuvenationAutoPickup",
+                                                                                                     "kind":  "directory",
+                                                                                                     "meta":  {
+                                                                                                                  "role":  "x-rejuvenation-autopickup-runtime",
+                                                                                                                  "summary":  "Module runtime TCP configurable qui ramasse automatiquement les potions rvs/rvl dans les colonnes de ceinture autorisées, puis éventuellement dans l\u0027inventaire, sous D2R.exe 1.2.69270.",
+                                                                                                                  "agentAccess":  "read-write"
+                                                                                                              },
+                                                                                                     "children":  [
+                                                                                                                      {
+                                                                                                                          "name":  "README.md",
+                                                                                                                          "path":  "data-TCP/D2RLAN/Runtime/RejuvenationAutoPickup/README.md",
+                                                                                                                          "kind":  "file"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                          "name":  "RejuvenationAutoPickup.dll",
+                                                                                                                          "path":  "data-TCP/D2RLAN/Runtime/RejuvenationAutoPickup/RejuvenationAutoPickup.dll",
+                                                                                                                          "kind":  "file"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                          "name":  "RejuvenationAutoPickup.ini",
+                                                                                                                          "path":  "data-TCP/D2RLAN/Runtime/RejuvenationAutoPickup/RejuvenationAutoPickup.ini",
                                                                                                                           "kind":  "file"
                                                                                                                       }
                                                                                                                   ]
