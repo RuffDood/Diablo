@@ -5,7 +5,7 @@
 // Encodage : les tables .txt D2R sont traitees en 'latin1' (byte-exact) ;
 // les schemas .json en 'utf8'.
 
-const OWNER = process.env.GITHUB_OWNER || 'RuffDood';
+const OWNER = process.env.GITHUB_OWNER || 'BRODIABLO';
 const REPO = process.env.GITHUB_REPO || 'Diablo';
 const BRANCH = process.env.GITHUB_BRANCH || 'main';
 const TOKEN = process.env.GITHUB_DIABLO_TOKEN || '';
