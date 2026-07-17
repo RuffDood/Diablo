@@ -1,6 +1,6 @@
 {
     "schemaVersion":  "1.1.0",
-    "generatedAt":  "2026-07-16T21:43:28.0985706+00:00",
+    "generatedAt":  "2026-07-17T02:50:28.4871238+00:00",
     "root":  {
                  "name":  "Diablo",
                  "path":  ".",
@@ -76,6 +76,91 @@
                                                                             {
                                                                                 "name":  "vite.config.js",
                                                                                 "path":  "apps/admin/vite.config.js",
+                                                                                "kind":  "file"
+                                                                            }
+                                                                        ]
+                                                       },
+                                                       {
+                                                           "name":  "wiki",
+                                                           "path":  "apps/wiki",
+                                                           "kind":  "directory",
+                                                           "children":  [
+                                                                            {
+                                                                                "name":  "scripts",
+                                                                                "path":  "apps/wiki/scripts",
+                                                                                "kind":  "directory",
+                                                                                "children":  [
+                                                                                                 {
+                                                                                                     "name":  "generate-uniques.cjs",
+                                                                                                     "path":  "apps/wiki/scripts/generate-uniques.cjs",
+                                                                                                     "kind":  "file"
+                                                                                                 }
+                                                                                             ]
+                                                                            },
+                                                                            {
+                                                                                "name":  "src",
+                                                                                "path":  "apps/wiki/src",
+                                                                                "kind":  "directory",
+                                                                                "children":  [
+                                                                                                 {
+                                                                                                     "name":  "data",
+                                                                                                     "path":  "apps/wiki/src/data",
+                                                                                                     "kind":  "directory",
+                                                                                                     "children":  [
+                                                                                                                      {
+                                                                                                                          "name":  "uniques.json",
+                                                                                                                          "path":  "apps/wiki/src/data/uniques.json",
+                                                                                                                          "kind":  "file"
+                                                                                                                      }
+                                                                                                                  ]
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "pages",
+                                                                                                     "path":  "apps/wiki/src/pages",
+                                                                                                     "kind":  "directory",
+                                                                                                     "children":  [
+                                                                                                                      {
+                                                                                                                          "name":  "UniqueDetail.jsx",
+                                                                                                                          "path":  "apps/wiki/src/pages/UniqueDetail.jsx",
+                                                                                                                          "kind":  "file"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                          "name":  "UniqueList.jsx",
+                                                                                                                          "path":  "apps/wiki/src/pages/UniqueList.jsx",
+                                                                                                                          "kind":  "file"
+                                                                                                                      }
+                                                                                                                  ]
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "App.jsx",
+                                                                                                     "path":  "apps/wiki/src/App.jsx",
+                                                                                                     "kind":  "file"
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "main.jsx",
+                                                                                                     "path":  "apps/wiki/src/main.jsx",
+                                                                                                     "kind":  "file"
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "styles.css",
+                                                                                                     "path":  "apps/wiki/src/styles.css",
+                                                                                                     "kind":  "file"
+                                                                                                 }
+                                                                                             ]
+                                                                            },
+                                                                            {
+                                                                                "name":  "index.html",
+                                                                                "path":  "apps/wiki/index.html",
+                                                                                "kind":  "file"
+                                                                            },
+                                                                            {
+                                                                                "name":  "package.json",
+                                                                                "path":  "apps/wiki/package.json",
+                                                                                "kind":  "file"
+                                                                            },
+                                                                            {
+                                                                                "name":  "vite.config.js",
+                                                                                "path":  "apps/wiki/vite.config.js",
                                                                                 "kind":  "file"
                                                                             }
                                                                         ]
@@ -12434,6 +12519,11 @@
                                                                                                      "kind":  "file"
                                                                                                  },
                                                                                                  {
+                                                                                                     "name":  "chainlightningbolt.json",
+                                                                                                     "path":  "data-TCP/hd/missiles/chainlightningbolt.json",
+                                                                                                     "kind":  "file"
+                                                                                                 },
+                                                                                                 {
                                                                                                      "name":  "corpse_explode_guts.json",
                                                                                                      "path":  "data-TCP/hd/missiles/corpse_explode_guts.json",
                                                                                                      "kind":  "file"
@@ -12451,6 +12541,11 @@
                                                                                                  {
                                                                                                      "name":  "expansion_shockwave.json",
                                                                                                      "path":  "data-TCP/hd/missiles/expansion_shockwave.json",
+                                                                                                     "kind":  "file"
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "furylightning.json",
+                                                                                                     "path":  "data-TCP/hd/missiles/furylightning.json",
                                                                                                      "kind":  "file"
                                                                                                  },
                                                                                                  {
@@ -12489,8 +12584,23 @@
                                                                                                      "kind":  "file"
                                                                                                  },
                                                                                                  {
+                                                                                                     "name":  "lightning_javelin.json",
+                                                                                                     "path":  "data-TCP/hd/missiles/lightning_javelin.json",
+                                                                                                     "kind":  "file"
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "lightningbolt.json",
+                                                                                                     "path":  "data-TCP/hd/missiles/lightningbolt.json",
+                                                                                                     "kind":  "file"
+                                                                                                 },
+                                                                                                 {
                                                                                                      "name":  "lightningbolt_big.json",
                                                                                                      "path":  "data-TCP/hd/missiles/lightningbolt_big.json",
+                                                                                                     "kind":  "file"
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "lightningstrike.json",
+                                                                                                     "path":  "data-TCP/hd/missiles/lightningstrike.json",
                                                                                                      "kind":  "file"
                                                                                                  },
                                                                                                  {

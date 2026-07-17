@@ -2,7 +2,7 @@
     "dependencies": {
         "particles": [
             {
-                "path": "data/hd/vfx/particles/missiles/lightningbolt_strike/lightningstrike.particles"
+                "path": "data/hd/vfx/particles/missiles/lightningbolt_big/lightning_Bolt_Big.particles"
             }
         ],
         "models": [],
@@ -53,7 +53,7 @@
                 {
                     "type": "VfxDefinitionComponent",
                     "name": "component_vfx1",
-                    "filename": "data/hd/vfx/particles/missiles/lightningbolt_big/lightning_Bolt_Big.particles",
+                    "filename": "data/hd/vfx/particles/missiles/lightning_strike/LightningStrike.particles",
                     "hardKillOnDestroy": false
                 },
                 {
