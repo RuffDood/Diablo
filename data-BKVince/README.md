@@ -2,14 +2,29 @@
 
 Cette copie provient du **BKDiablo converti par D2RLoader pour D2R 3.2**. Elle
 est la cible gouvernée du portage de TCP; `data-TCP/` demeure la référence
-historique 2.4.
+historique 2.4. La conversion a été finalisée le 17 juillet 2026 avec
+`d2rl convert BKVince` sous D2RLoader 1.0.1-beta et le build D2R 92777.
 
-- Source Git : `data-BKVince/bkdiablo.mpq/data/`
-- Runtime local : `mods/BKVince/BKVince.mpq/data/`
+- Source Git : `data-BKVince/bkdiablo.mpq/` et `data-BKVince/d2rloader/`
+- Runtime local : `mods/BKVince/BKVince.mpq/` et `mods/BKVince/d2rloader/`
+- Intégration D2RLoader : métadonnées, configuration, README et gabarit de
+  patch générés dans `data-BKVince/d2rloader/`; le `savepath` historique
+  `BKDiablo/` est conservé.
 - Méthode : calculer les deltas `BK → TCP`, puis les rejouer sélectivement sur
   BKVince afin de préserver Warlock, l'endgame et les adaptations 3.2.
 - Sécurité : ne jamais remplacer BKVince en bloc par TCP et ne synchroniser le
   runtime qu'après fermeture complète du jeu et de D2RLoader.
+
+La plage d'identifiants de chaînes utilisée par D2RLoader a été auditée lors de
+l'intégration. Vingt-deux chaînes BK entraient en collision avec ses libellés;
+leurs identifiants ont été déplacés de `+11000`, sans modifier leurs clés ni
+leurs textes. Une relance à froid confirme les onglets `Extensions` et `About`
+ainsi que les sections `Plugins` et `Patches`.
+
+La commande `d2rl unpack BKVince` n'est pas une étape de build du mod : elle
+extrait temporairement les données de référence embarquées par D2RLoader dans
+`mods/BKVince/d2rloader/data/`. D2RLoader ne génère pas les tables gameplay
+`.txt` à cet emplacement pendant son fonctionnement normal.
 
 Le README original de BKDiablo est conservé ci-dessous pour la provenance et
 les crédits.

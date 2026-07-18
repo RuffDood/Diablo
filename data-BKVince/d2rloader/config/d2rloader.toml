@@ -1,0 +1,42 @@
+#==============================================================================
+# D2RLoader mod settings
+#
+# These settings only apply while this mod is active.
+# Remove the # before a setting to enable it.
+#==============================================================================
+
+[d2rcore.items]
+# Show socket counts on normal and superior ground items.
+# show_ground_sockets = false
+
+# Show item levels on weapons, armor, rings, amulets, charms, and jewels.
+# display_item_levels = false
+
+[d2rcore.player]
+# Allow D2R's built-in respec shortcut.
+# This does not add extra Akara respecs.
+# enable_respec = false
+
+[d2rcore.stash]
+# Add more shared stash tabs after the vanilla tabs.
+# add_shared_tabs = 0
+
+# Set the material stack limit for the advanced stash.
+# 99 is vanilla. The maximum is 255.
+# set_materials_limit = 99
+
+[d2rloader.advanced]
+# Stop global plugins and patches from loading.
+# Mod plugins and patches are still controlled by allow_mod_extensions.
+# suppress_global_extensions = false
+
+[d2rloader.developer]
+# Add data/global/.DISABLE_DEBUG to disable D2RLoader debug tools and cheats shortcuts.
+# Useful for packed .mpq mods, where users cannot delete the marker as a loose file.
+
+[d2rcore.fonts]
+# Register custom fonts for this mod.
+# Names become D2WinFontFace values.
+# Paths are relative to data/hd/ui/fonts.
+# Fonts placed directly in data/hd/ui/fonts are also registered by filename.
+# MyFont = "MyFont.ttf"

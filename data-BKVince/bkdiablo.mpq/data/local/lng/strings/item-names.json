@@ -29121,7 +29121,7 @@
     "zhCN": "4 = Tarnhelm\n3 = Gull\n这可能值一些钱。\nÿc;异国情调的珠宝ÿc0"
   },
   {
-    "id": 62000,
+    "id": 73000,
     "Key": "Charm Modifiers",
     "deDE": "Spielmodiferen",
     "enUS": "Game Modifers",
@@ -29138,7 +29138,7 @@
     "zhTW": "遊戲修飾符"
   },
   {
-    "id": 62001,
+    "id": 73001,
     "Key": "Charm Level Reward",
     "deDE": "Stufe 90 Belohnung",
     "enUS": "Level 90 Reward",
@@ -29155,7 +29155,7 @@
     "zhTW": "90級獎勵"
   },
   {
-    "id": 62002,
+    "id": 73002,
     "Key": "Charm Blank",
     "deDE": "Blank Charm",
     "enUS": "Blank Charm",
