@@ -505,9 +505,13 @@
       },
       {
         "name": "Infinite Town Portal and Identify Tomes",
-        "classification": "patch-site-located",
+        "classification": "multi-site-patched",
         "confidence": "high",
-        "sites": [{ "rva": "0x4F5849", "expected": "458D41FF", "futureIntent": "Change the shared post-cast quantity delta from -1 to 0." }]
+        "sites": [
+          { "rva": "0x4F5849", "expected": "458D41FF", "intent": "Change the direct-use tome quantity delta from -1 to 0." },
+          { "rva": "0x47145D", "expected": "458D41FF", "intent": "Change the inventory book-skill quantity delta from -1 to 0." }
+        ],
+        "decision": "The original single-site port covered direct item use but missed the separate inventory book-skill path, which subtracts quantity and synchronizes the resulting STAT_QUANTITY value to the client. Both D2R 3.2 paths must use a zero delta."
       },
       {
         "name": "Hit Chance % (Display Fix)",
