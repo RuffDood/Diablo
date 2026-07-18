@@ -1,0 +1,30 @@
+# BKVince preset for the mod-local PotionAutoPickup plugin.
+enabled = true
+pickup_distance = 4
+minimum_interval_frames = 3
+family_priority = ["rejuvenation", "healing", "mana"]
+
+[healing]
+enabled = true
+tiers = ["hp4", "hp5"]
+columns = [1]
+overflow_to_inventory = false
+tier_priority = ["hp5", "hp4"]
+
+[mana]
+enabled = true
+tiers = ["mp4", "mp5"]
+columns = [2]
+overflow_to_inventory = false
+tier_priority = ["mp5", "mp4"]
+
+[rejuvenation]
+enabled = true
+tiers = ["rvs", "rvl"]
+columns = [3, 4]
+overflow_to_inventory = true
+tier_priority = ["rvl", "rvs"]
+
+[diagnostics]
+enabled = false
+log_scans = false
