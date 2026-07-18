@@ -32,7 +32,7 @@
     "PlayerInventoryPanelGoldButtonRect": { "x": 420, "y": 1618 },
 
     "HoradricCubePanelRect" : { "x": 236, "y": 210, "width": 1744, "height": 1737 },
-    "HoradricCubePanelConvert": { "x": 810, "y": 1518 },
+    "HoradricCubePanelConvert": { "x": 1455, "y": 1518 },
     "HoradricCubePanelRecipe": { "x": 125, "y": 1518 },
 
     "AdvStatsText": { "x": 186, "y": 282 },

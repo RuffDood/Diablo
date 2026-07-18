@@ -8,7 +8,7 @@ Ouverture. Demande au user s'il veut ouvrir l'éditeur. Si oui, alors ouvre un n
 
 Deux choses cohabitent :
 
-1. **Les données du mod** — les tables `.txt` (TSV) de `data-BK/BT/TCP`, la référence `data-VNP/` et `excel-vanilla2.4/`, lues par le launcher **D2RLAN**. C'est la source de vérité du gameplay.
+1. **Les données du mod** — les tables `.txt` (TSV) de `data-BK/BT/TCP`, les références `data-VNP/`, `excel-vanilla2.4/` et `data-vanilla3.2/data/data/global/excel/`. C'est la source de vérité du gameplay selon le runtime ciblé.
 2. **Une plateforme web** (monorepo **npm + turbo**) construite par-dessus : un **Admin** pour éditer ces `.txt`, et (à venir) un **Wiki** de comparaison des 3 mods.
 
 Les `.txt` restent la source ; **pas de base de données**. Les dossiers `local/` et `hd/` de TCP et BK sont également versionnés, avec les binaires HD sous **Git LFS**. Stack : **Vite + React** (fronts), **Netlify** (hébergement en ligne : `diablo-tcp-admin.netlify.app`), git comme « base » (chaque édition = commit).
@@ -24,6 +24,7 @@ Les `.txt` restent la source ; **pas de base de données**. Les dossiers `local/
 | `data-BK/`, `data-BT/` | mods de référence / inspiration | **read-only** |
 | `data-VNP/` | Mod Vanilla++ servant d'inspiration pour mon mod TCP | **read-only** |
 | `excel-vanilla2.4/` | données vanilla Diablo II 2.4 | **read-only** |
+| `data-vanilla3.2/` | extraction locale CASCView de D2R 3.2 ; seul `data/data/global/excel` est versionné | **read-only** |
 | `Mission/` | besoins et intentions | modifiable |
 | `apps/` | plateforme web (admin, wiki) | modifiable |
 | `schemas/` | catalogue de schémas de colonnes (dérivé du guide) | modifiable |

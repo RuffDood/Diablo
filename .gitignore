@@ -37,9 +37,23 @@ data-VNP/VNP-MP.mpq/data/*
 !data-VNP/VNP-MP.mpq/data/hd/
 !data-VNP/VNP-MP.mpq/data/hd/**
 
+# Reference vanilla D2R 3.2 extraite avec CASCView :
+# versionner uniquement data/global/excel; conserver le reste local.
+data-vanilla3.2/*
+!data-vanilla3.2/data/
+data-vanilla3.2/data/*
+!data-vanilla3.2/data/data/
+data-vanilla3.2/data/data/*
+!data-vanilla3.2/data/data/global/
+data-vanilla3.2/data/data/global/*
+!data-vanilla3.2/data/data/global/excel/
+!data-vanilla3.2/data/data/global/excel/**
+
 # Backups automatiques des tables (gardes localement, non versionnes)
 *.bak
 
 # Divers
 .DS_Store
+desktop.ini
 *.log
+!data-vanilla3.2/data/data/global/excel/**/*.log

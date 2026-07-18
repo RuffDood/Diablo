@@ -23,7 +23,7 @@
 	"PlayerInventoryPanelGoldButtonRect": { "x": 750, "y": 1613 },
 
 	"HoradricCubePanelRect": { "x": 0, "y": 0, "width": 1744, "height": 1737, "scale": 1.16 },
-	"HoradricCubePanelConvert": { "x": 810, "y": 1508 },
+	"HoradricCubePanelConvert": { "x": 1445, "y": 1508 },
     "HoradricCubePanelRecipe": { "x": 175, "y": 1508 },
 
     //ModEnd ExpandedStorageMod

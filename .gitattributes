@@ -16,6 +16,9 @@ data-BT/**/*.txt        text eol=crlf
 data-TCP/**/*.txt       text eol=crlf
 excel-vanilla2.4/**/*.txt  text eol=crlf
 
+# Reference vanilla 3.2 read-only : conserver exactement les octets extraits de CASCView.
+data-vanilla3.2/data/data/global/excel/** -text !eol
+
 # Reference VNP read-only : conserver exactement les octets importes (LF/CRLF d'origine).
 data-VNP/** -text
 

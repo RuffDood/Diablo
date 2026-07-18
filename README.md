@@ -17,6 +17,7 @@ Les `.txt` restent la **source de vérité** ; pas de base de données — git e
 - `data-BK/`, `data-BT/` — mods externes de **référence** (lecture seule) ; `local/` et `hd/` de BK sont versionnés, tandis que `hd/` de BT reste local
 - `data-VNP/` — Mod Vanilla++ servant d'inspiration pour mon mod TCP (**lecture seule**, hors Comparateur) ; seuls `global/`, `local/` et `hd/` sont versionnés
 - `excel-vanilla2.4/` — tables du jeu de base D2 2.4 (référence, lecture seule)
+- `data-vanilla3.2/` — extraction CASCView du jeu de base D2R 3.2 (référence, lecture seule) ; seul `data/data/global/excel/` est versionné, les autres branches demeurent locales
 - `apps/admin/` — **éditeur web** des tables (Vite + React)
 - `schemas/` — schémas de colonnes des tables (typage + validation de l'éditeur)
 - `scripts/` — `dev-server.js` (API locale de lecture/écriture des `.txt`), `build-data/` (parseur/écrivain TSV), `generate-architecture.ps1` (cadastre), `validate-cartographie/` (validateur), `publish-tcp.ps1`

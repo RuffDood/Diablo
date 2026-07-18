@@ -10,6 +10,12 @@ $ErrorActionPreference = 'Stop'
 # Dossiers exclus du cadastre (bruit / non versionne / genere)
 $script:excludedDirectories = @('.git', 'node_modules', 'guide', 'dist', '.turbo', '.netlify')
 
+# Sous-arbres locaux dont seule une branche gouvernée doit entrer au cadastre.
+# Les ancêtres du sous-arbre sont conservés afin que l'arbre reste navigable.
+$script:selectiveWorkspaceSubtrees = @(
+    'data-vanilla3.2/data/data/global/excel'
+)
+
 if ([string]::IsNullOrWhiteSpace($Root)) {
     $Root = Split-Path -Parent $PSScriptRoot
 }
@@ -114,6 +120,29 @@ function Add-PreservedNodeData {
     }
 }
 
+function Test-ArchitectureItemExcluded {
+    param([Parameter(Mandatory)][System.IO.FileSystemInfo]$Item)
+
+    if ($Item.PSIsContainer -and $script:excludedDirectories -contains $Item.Name) {
+        return $true
+    }
+
+    $relativePath = Get-RelativeWorkspacePath -FullName $Item.FullName
+    foreach ($subtree in $script:selectiveWorkspaceSubtrees) {
+        $scopeRoot = ($subtree -split '/')[0]
+        $insideScope = $relativePath -eq $scopeRoot -or $relativePath.StartsWith($scopeRoot + '/', [System.StringComparison]::OrdinalIgnoreCase)
+        if (-not $insideScope) {
+            continue
+        }
+
+        $isSubtree = $relativePath -eq $subtree -or $relativePath.StartsWith($subtree + '/', [System.StringComparison]::OrdinalIgnoreCase)
+        $isAncestor = $subtree.StartsWith($relativePath + '/', [System.StringComparison]::OrdinalIgnoreCase)
+        return -not ($isSubtree -or $isAncestor)
+    }
+
+    return $false
+}
+
 function Convert-ToArchitectureNode {
     param([Parameter(Mandatory)][System.IO.FileSystemInfo]$Item)
 
@@ -144,7 +173,7 @@ function Convert-ToArchitectureNode {
         $script:directoryCount++
         $children = @(
             Get-ChildItem -LiteralPath $Item.FullName -Force |
-                Where-Object { -not ($_.PSIsContainer -and $script:excludedDirectories -contains $_.Name) } |
+                Where-Object { -not (Test-ArchitectureItemExcluded -Item $_) } |
                 Sort-Object `
                     @{ Expression = { if ($_.PSIsContainer) { 0 } else { 1 } } },
                     @{ Expression = { $_.Name } } |
