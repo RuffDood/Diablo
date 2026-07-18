@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "name": "Ethereal Item Rules",
+  "description": "Controls the chance that an eligible generated item becomes ethereal (vanilla rate: 5%) and allows set items to retain the ethereal property.",
+  "patches": [
+    {
+      "description": "Set the ethereal item generation rate (vanilla rate: 5%)",
+      "op": "write-u8",
+      "rva": "0x4434DF",
+      "value": "0x06",
+      "expected": "05"
+    },
+    {
+      "description": "Allow a set-quality item to retain the ethereal flag",
+      "op": "nop",
+      "rva": "0x443315",
+      "size": 6,
+      "expected": "0F 84 3D 02 00 00"
+    }
+  ]
+}

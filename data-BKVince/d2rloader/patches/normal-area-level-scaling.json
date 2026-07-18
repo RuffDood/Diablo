@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Normal Area Level Scaling",
+  "description": "Uses levels.txt area levels for Normal monster scaling.",
+  "patches": [
+    {
+      "description": "Use the Normal area level instead of the monstats.txt level",
+      "op": "nop",
+      "rva": "0x543D35",
+      "size": 2,
+      "expected": "74 19"
+    }
+  ]
+}

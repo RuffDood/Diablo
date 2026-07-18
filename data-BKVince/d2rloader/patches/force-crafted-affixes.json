@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "name": "Force Four Crafted Affixes",
+  "description": "Forces every crafted item to receive four random affixes.",
+  "patches": [
+    {
+      "description": "Raise the fixed crafted-affix base count from 3 to 4",
+      "op": "write-u32",
+      "rva": "0x58A1F8",
+      "value": "0x00000004",
+      "expected": "03 00 00 00"
+    },
+    {
+      "description": "Replace the item-level-dependent count with a fixed EBX value of 4",
+      "op": "bytes",
+      "rva": "0x58A1FF",
+      "expected": "0F 9F C3 FF C3",
+      "bytes": "BB 04 00 00 00"
+    }
+  ]
+}

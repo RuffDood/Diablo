@@ -1,0 +1,819 @@
+{
+  "version": 1,
+  "updatedAt": "2026-07-18",
+  "target": {
+    "game": "D2R 3.2",
+    "build": 92777,
+    "loader": "D2RLoader 1.0.1-beta"
+  },
+  "legacyManifest": {
+    "path": "data-TCP/D2RLAN/memory_overrides.json",
+    "technicalEntryCount": 29,
+    "writeSiteCount": 73
+  },
+  "policy": {
+    "legacyAddressesAreEvidenceOnly": true,
+    "activateInLegacyRuntime": false,
+    "reuseLegacyAddressWithoutProof": false,
+    "requiredForPort": [
+      "Find the equivalent D2R 3.2 routine or data mechanism.",
+      "Use strict expected bytes for every memory write.",
+      "Prefer a softcoded 3.2 mechanism when one exists.",
+      "Validate the resulting behavior in game."
+    ]
+  },
+  "statusSummary": {
+    "trackedLegacyTechnicalEntries": 48,
+    "trackedLegacyWriteSites": 95,
+    "ported": 3,
+    "implementedAwaitingGameValidation": 38,
+    "nativeOrAbsorbed": 3,
+    "notApplicable": 4,
+    "pendingFromLegacyManifest": 0,
+    "pendingSupplemental": 0,
+    "pendingTotal": 0,
+    "deliveredOutsideLegacyManifest": 1,
+    "capturedPanels": 20,
+    "capturedPanelsAlreadyInLegacyManifest": 1
+  },
+  "implementationSummary": {
+    "implementedAt": "2026-07-18",
+    "targetPatchFiles": 19,
+    "targetPatchSites": 56,
+    "newPatchFiles": 16,
+    "newPatchSites": 49,
+    "newlyImplementedEntries": 38,
+    "validation": {
+      "targetImageArtifact": "codex-d2r-92777-decrypted.exe",
+      "targetImageSha256": "CC59119DC2A6C7D43D088098FC162EAFA4AE1299B2079126AEF43C1ACA914715",
+      "expectedByteMismatches": 0,
+      "overlaps": 0,
+      "runtimePatchFilesScanned": 19,
+      "runtimePatchFilesApplied": 19,
+      "runtimePatchFilesFailed": 0,
+      "status": "runtime-load-passed-awaiting-gameplay-validation"
+    },
+    "patches": [
+      {
+        "path": "data-BKVince/d2rloader/patches/normal-area-level-scaling.json",
+        "entries": ["Make monsters scale off area level on normal"]
+      },
+      {
+        "path": "data-BKVince/d2rloader/patches/infinite-item-quantity-and-tomes.json",
+        "entries": ["Disable item quantity", "Infinite Town Portal and Identify Tomes"]
+      },
+      {
+        "path": "data-BKVince/d2rloader/patches/hit-chance-bounds.json",
+        "entries": ["Hit Chance % (Display Fix)", "Hit Chance % (Lower Bound)", "Hit Chance % (Upper Bound)"]
+      },
+      {
+        "path": "data-BKVince/d2rloader/patches/autogold-extended-range.json",
+        "entries": ["Autogold: send higher cost to pickup function", "Autogold: allow higher cost in server check", "Autogold: skip first distance check", "Autogold: skip second distance check"]
+      },
+      {
+        "path": "data-BKVince/d2rloader/patches/gold-capacities.json",
+        "entries": ["Customize Max Character Gold", "Customize Max Stash Gold"]
+      },
+      {
+        "path": "data-BKVince/d2rloader/patches/ethereal-item-rules.json",
+        "entries": ["Change ethereal drop rate", "Enable ethereal set item drops"]
+      },
+      {
+        "path": "data-BKVince/d2rloader/patches/force-crafted-affixes.json",
+        "entries": ["Force max crafted affixes", "Force max crafted affixes (part 2)"]
+      },
+      {
+        "path": "data-BKVince/d2rloader/patches/force-rare-affixes.json",
+        "entries": ["Force max rare affixes", "Force max rare jewel affixes"]
+      },
+      {
+        "path": "data-BKVince/d2rloader/patches/force-staffmod-affixes.json",
+        "entries": ["Force max staffmod affixes"]
+      },
+      {
+        "path": "data-BKVince/d2rloader/patches/infinite-quest-rewards.json",
+        "entries": ["Infinite Anya personalize", "Infinite Anya personalize (part 2)", "Infinite Charsi imbue", "Infinite Charsi imbue (part 2)", "Infinite Larzuk socketing"]
+      },
+      {
+        "path": "data-BKVince/d2rloader/patches/allow-character-levels-100-plus.json",
+        "entries": ["Allow Character Levels 100+"]
+      },
+      {
+        "path": "data-BKVince/d2rloader/patches/enemy-resistance-affects-immunes.json",
+        "entries": ["-Enemy Res% affects immunes"]
+      },
+      {
+        "path": "data-BKVince/d2rloader/patches/ignore-target-defense-champions-uniques.json",
+        "entries": ["ITD applies to Champs/Uniques"]
+      },
+      {
+        "path": "data-BKVince/d2rloader/patches/player-difficulty-overrides.json",
+        "entries": ["Player Difficulty Scaling Override (Actual)", "Player Difficulty Scaling Override (Command)", "Player Difficulty Scaling Override (Max/UI)"]
+      },
+      {
+        "path": "data-BKVince/d2rloader/patches/hireling-ai-tuning.json",
+        "entries": ["Hireling Follow Distance (Moving Owner)", "Hireling Forced Catch-Up Distance", "Ranged Hireling Activity Cap", "Ranged Hireling Activity Formula Offset", "Ranged Hireling Retreat Chance", "Ranged Hireling Retreat Distance"]
+      },
+      {
+        "path": "data-BKVince/d2rloader/patches/allow-ctc-while-uninterruptible.json",
+        "entries": ["Allow CTC while Uninterruptible (On Position)", "Allow CTC while Uninterruptible (On Target)"]
+      }
+    ]
+  },
+  "legacyStatusOverrides": [
+    {
+      "name": "Force magic prefix",
+      "status": "ported",
+      "targetPatch": "data-BKVince/d2rloader/patches/force-magic-prefix-suffix.json"
+    },
+    {
+      "name": "Force magic suffix",
+      "status": "ported",
+      "targetPatch": "data-BKVince/d2rloader/patches/force-magic-prefix-suffix.json"
+    },
+    {
+      "name": "Auto-Collect Player Corpse",
+      "status": "ported",
+      "targetPatch": "data-BKVince/d2rloader/patches/Auto-Collect Player Corpse.json"
+    },
+    {
+      "name": "Sundered MonUMods Patch",
+      "status": "not-applicable",
+      "decision": "Do not port the three legacy >=100 to >=99 comparisons.",
+      "reason": "The edit belongs to the customized pre-native Sunder mechanic. D2R 3.2 has native item_pierce_*_immunity stats and states.txt sunderfull/sunder-res-reduce support; the native Sunder result is 95 resistance rather than the legacy custom 99 threshold.",
+      "localEvidence": [
+        "data-BKVince/bkdiablo.mpq/data/global/excel/itemstatcost.txt",
+        "data-BKVince/bkdiablo.mpq/data/global/excel/states.txt",
+        "data-vanilla3.2/data/data/global/excel/properties.txt"
+      ]
+    },
+    {
+      "name": "Make umon field in levels.txt work on all difficulties",
+      "status": "not-applicable",
+      "decision": "Removed from the BKVince 3.2 patch set at Vincent's request on 2026-07-18.",
+      "reason": "Keep the vanilla Nightmare/Hell elite-monster selection behavior; do not apply the levels.txt umon pool outside Normal."
+    },
+    {
+      "name": "Force max staffmod affixes (part 2)",
+      "status": "not-applicable",
+      "decision": "Removed from the BKVince 3.2 patch set at Vincent's request on 2026-07-18.",
+      "reason": "Preserve the vanilla +1 to +3 bonus roll for each staffmod while retaining the separate edit that forces three staffmods."
+    }
+  ],
+  "confirmedExistingPanels": [
+    {
+      "name": "Customize Save File Limit",
+      "legacyManifestStatus": "already-in-manifest",
+      "description": "Allows control of the maximum save file size by replacing the first half of the byte stack only.",
+      "uiType": "Adjustable",
+      "format": "hex",
+      "sizeBytes": 1,
+      "original": "20",
+      "target": "80",
+      "addresses": [
+        "0x28F2B7",
+        "0x28F2D1",
+        "0x28F2F9",
+        "0x28F324",
+        "0x28F454",
+        "0x28F47F",
+        "0x28F487",
+        "0x28F496"
+      ],
+      "evidence": "codex-clipboard-41830f15-ecc4-4f29-8e7e-2beda020784b.png"
+    }
+  ],
+  "supplementalCandidates": [
+    {
+      "name": "Expose Item Level to Clients",
+      "group": "TCP/IP and UI",
+      "status": "not-applicable",
+      "decision": "Cancelled by Vincent on 2026-07-17; do not port.",
+      "description": "Allows non-hosts in TCP/IP games to see item levels via the loot filter.",
+      "uiType": "Boolean",
+      "format": "hex",
+      "sizeBytes": 1,
+      "original": "75",
+      "target": "EB",
+      "addresses": ["0x205E25"],
+      "evidence": "codex-clipboard-eff85739-2c2c-456d-b835-e250c0aa9715.png"
+    },
+    {
+      "name": "Display Player Names When Trading",
+      "group": "TCP/IP and UI",
+      "status": "native-redesign-no-patch-required",
+      "description": "Shows player names in the trade window.",
+      "uiType": "Boolean",
+      "format": "hex",
+      "sizeBytes": 1,
+      "original": "FF",
+      "target": "00",
+      "addresses": ["0xBBFCF9"],
+      "evidence": "codex-clipboard-6ccd0caf-947e-4305-9a74-f0a5e953bf35.png"
+    },
+    {
+      "name": "Allow Character Levels 100+",
+      "group": "Progression",
+      "status": "implemented-awaiting-game-validation",
+      "description": "Prevents the Failed to Join error when entering a game with a level 100 or higher character.",
+      "uiType": "Adjustable",
+      "format": "hex",
+      "sizeBytes": 1,
+      "original": "62",
+      "target": "FF",
+      "addresses": ["0x27B835"],
+      "evidence": "codex-clipboard-c9ec84b8-170f-493e-bc8e-be46f9ab7821.png"
+    },
+    {
+      "name": "-Enemy Res% affects immunes",
+      "group": "Combat",
+      "status": "implemented-awaiting-game-validation",
+      "description": "Allows the -Enemy Resistance% stat on items and skills to affect immune monsters.",
+      "uiType": "Boolean",
+      "format": "hex",
+      "sizeBytes": 1,
+      "original": "7C",
+      "target": "EB",
+      "addresses": ["0x325068"],
+      "risk": "Audit against the native D2R 3.2 Sunder and immunity rules before deciding whether this behavior is still wanted.",
+      "evidence": "codex-clipboard-5df968d0-4d12-4f70-95c8-839adc8ccaec.png"
+    },
+    {
+      "name": "Autogold: skip first distance check",
+      "group": "Autogold",
+      "status": "implemented-awaiting-game-validation",
+      "description": "Disables the first distance check in the gold pickup function.",
+      "uiType": "Boolean",
+      "format": "hex",
+      "sizeBytes": 6,
+      "original": "0F8746010000",
+      "target": "909090909090",
+      "addresses": ["0xCCC37"],
+      "evidence": "codex-clipboard-b005007f-44c7-465f-8c19-4b0aea35ddcf.png"
+    },
+    {
+      "name": "Autogold: skip second distance check",
+      "group": "Autogold",
+      "status": "implemented-awaiting-game-validation",
+      "description": "Disables the second distance check in the same gold pickup function.",
+      "uiType": "Boolean",
+      "format": "hex",
+      "sizeBytes": 6,
+      "original": "0F8735010000",
+      "target": "909090909090",
+      "addresses": ["0xCCC48"],
+      "evidence": "codex-clipboard-d05c7697-5685-4171-9e68-68b37c7409ba.png"
+    },
+    {
+      "name": "ITD applies to Champs/Uniques",
+      "group": "Combat",
+      "status": "implemented-awaiting-game-validation",
+      "description": "Allows Ignore Target Defense to apply to Champion and Unique monsters.",
+      "uiType": "Boolean",
+      "format": "hex",
+      "sizeBytes": 2,
+      "original": "7539",
+      "target": "9090",
+      "addresses": ["0x329575"],
+      "evidence": "codex-clipboard-2ba38c80-7ce2-4a5d-9f54-5caeeb1229fb.png"
+    },
+    {
+      "name": "Player Difficulty Scaling Override (Actual)",
+      "group": "Player difficulty",
+      "status": "implemented-awaiting-game-validation",
+      "description": "Controls the maximum player difficulty on the server side.",
+      "uiType": "Boolean",
+      "format": "hex",
+      "sizeBytes": 3,
+      "original": null,
+      "target": "89C890",
+      "addresses": ["0x136910"],
+      "evidenceGap": "The legacy UI displays the original value as ???; strict expected bytes must be recovered before any port.",
+      "evidence": "codex-clipboard-05de9e0e-0c86-490b-82ea-62a55bbbe488.png"
+    },
+    {
+      "name": "Player Difficulty Scaling Override (Command)",
+      "group": "Player difficulty",
+      "status": "implemented-awaiting-game-validation",
+      "description": "Controls the maximum player difficulty for the player command.",
+      "uiType": "Boolean",
+      "format": "hex",
+      "sizeBytes": 17,
+      "original": null,
+      "target": "4189C49090909090909090909090909090",
+      "addresses": ["0x11FE12"],
+      "evidenceGap": "The legacy UI displays the original value as ???; strict expected bytes must be recovered before any port.",
+      "evidence": "codex-clipboard-05de9e0e-0c86-490b-82ea-62a55bbbe488.png"
+    },
+    {
+      "name": "Autogold: always pass cost (data)",
+      "group": "Autogold",
+      "status": "absorbed-by-code-sites-no-patch-required",
+      "description": "Sets the stored maximum-range cost value to 2147483647.",
+      "uiType": "Adjustable",
+      "format": "hex",
+      "sizeBytes": 4,
+      "original": "00000000",
+      "target": "FFFFFF7F",
+      "addresses": ["0x1E00890"],
+      "evidence": "codex-clipboard-117c1d68-adce-4036-931a-390d14c8b74f.png"
+    },
+    {
+      "name": "Player Difficulty Scaling Override (Max/UI)",
+      "group": "Player difficulty",
+      "status": "implemented-awaiting-game-validation",
+      "description": "Controls the maximum player difficulty for UI and client checks.",
+      "uiType": "Adjustable",
+      "format": "integer",
+      "sizeBytes": 4,
+      "original": "8",
+      "target": "65535",
+      "addresses": [
+        "0x135EF8",
+        "0x135F16",
+        "0x1E31CCC",
+        "0x1E31D64"
+      ],
+      "evidence": "codex-clipboard-e3fda68b-5699-45f5-b5f8-dd7a5fd7904d.png"
+    },
+    {
+      "name": "Hireling Follow Distance (Moving Owner)",
+      "group": "Hirelings",
+      "status": "implemented-awaiting-game-validation",
+      "description": "Makes Hireable AI follow a walking or running owner from a shorter distance.",
+      "legacyBuild": "D2R 1.2.69270",
+      "uiType": "Adjustable",
+      "format": "integer",
+      "sizeBytes": 4,
+      "original": "16",
+      "target": "8",
+      "addresses": ["0x40999D"],
+      "evidence": "codex-clipboard-e172b2d6-aa67-4df1-8772-c0dd9814a2ce.png"
+    },
+    {
+      "name": "Hireling Forced Catch-Up Distance",
+      "group": "Hirelings",
+      "status": "implemented-awaiting-game-validation",
+      "description": "Forces Hireable AI to run back to its owner before it wanders too far.",
+      "legacyBuild": "D2R 1.2.69270",
+      "uiType": "Adjustable",
+      "format": "integer",
+      "sizeBytes": 4,
+      "original": "24",
+      "target": "16",
+      "addresses": ["0x4099B0"],
+      "evidence": "codex-clipboard-e172b2d6-aa67-4df1-8772-c0dd9814a2ce.png"
+    },
+    {
+      "name": "Ranged Hireling Activity Cap",
+      "group": "Hirelings",
+      "status": "implemented-awaiting-game-validation",
+      "description": "Raises the non-melee Hireable action chance cap to match melee hirelings.",
+      "legacyBuild": "D2R 1.2.69270",
+      "uiType": "Adjustable",
+      "format": "integer",
+      "sizeBytes": 1,
+      "original": "95",
+      "target": "98",
+      "addresses": ["0x4095B3"],
+      "evidence": "codex-clipboard-e172b2d6-aa67-4df1-8772-c0dd9814a2ce.png"
+    },
+    {
+      "name": "Ranged Hireling Activity Formula Offset",
+      "group": "Hirelings",
+      "status": "implemented-awaiting-game-validation",
+      "description": "Sets the level-formula offset; 49 makes non-melee Hireable AI reach the configured activity cap at every hireling level.",
+      "legacyBuild": "D2R 1.2.69270",
+      "uiType": "Adjustable",
+      "format": "integer",
+      "sizeBytes": 1,
+      "original": "20",
+      "target": "49",
+      "addresses": ["0x4095AE"],
+      "evidence": "codex-clipboard-e172b2d6-aa67-4df1-8772-c0dd9814a2ce.png"
+    },
+    {
+      "name": "Ranged Hireling Retreat Chance",
+      "group": "Hirelings",
+      "status": "implemented-awaiting-game-validation",
+      "description": "Increases the chance for ranged Hireable AI to retreat from a nearby enemy.",
+      "legacyBuild": "D2R 1.2.69270",
+      "uiType": "Adjustable",
+      "format": "integer",
+      "sizeBytes": 1,
+      "original": "50",
+      "target": "80",
+      "addresses": ["0x4096B9"],
+      "evidence": "codex-clipboard-e172b2d6-aa67-4df1-8772-c0dd9814a2ce.png"
+    },
+    {
+      "name": "Ranged Hireling Retreat Distance",
+      "group": "Hirelings",
+      "status": "implemented-awaiting-game-validation",
+      "description": "Starts the ranged Hireable retreat response farther from nearby enemies.",
+      "legacyBuild": "D2R 1.2.69270",
+      "uiType": "Adjustable",
+      "format": "integer",
+      "sizeBytes": 1,
+      "original": "4",
+      "target": "6",
+      "addresses": ["0x40967B"],
+      "evidence": "codex-clipboard-e172b2d6-aa67-4df1-8772-c0dd9814a2ce.png"
+    },
+    {
+      "name": "Allow CTC while Uninterruptible (On Position)",
+      "group": "Skills",
+      "status": "implemented-awaiting-game-validation",
+      "description": "Removes the Uninterruptible-state check from the SkillOnPosition function.",
+      "uiType": "Boolean",
+      "format": "hex",
+      "sizeBytes": 6,
+      "original": "0F852B010000",
+      "target": "909090909090",
+      "addresses": ["0x3656AB"],
+      "evidence": "codex-clipboard-edb46694-f5e0-4855-94e8-49c06a7d6682.png"
+    },
+    {
+      "name": "Allow CTC while Uninterruptible (On Target)",
+      "group": "Skills",
+      "status": "implemented-awaiting-game-validation",
+      "description": "Removes the Uninterruptible-state check from the SkillOnTarget function.",
+      "uiType": "Boolean",
+      "format": "hex",
+      "sizeBytes": 6,
+      "original": "0F8542010000",
+      "target": "909090909090",
+      "addresses": ["0x3654E0"],
+      "evidence": "codex-clipboard-edb46694-f5e0-4855-94e8-49c06a7d6682.png"
+    }
+  ],
+  "targetAnalysis": {
+    "analyzedAt": "2026-07-18",
+    "targetBuild": 92777,
+    "legacyBuild": 69270,
+    "method": "Static comparison of the plaintext 1.2.69270 executable with a read-only process-memory reconstruction of D2R 3.2.92777, followed by manual control-flow and gameplay-semantic review. No process memory was written.",
+    "snapshots": {
+      "legacySha256": "E4E13570E60C0A65CB0469D6659BE8A6008F9433AC50DB1C4F94501D7D9016F8",
+      "targetDecryptedSha256": "CC59119DC2A6C7D43D088098FC162EAFA4AE1299B2079126AEF43C1ACA914715"
+    },
+    "coverage": {
+      "trackedEntries": 48,
+      "analyzedEntries": 48,
+      "entriesWithOwnConcreteSites": 42,
+      "entriesAbsorbedByOtherConcreteSites": 1,
+      "cancelledEntries": 4,
+      "nativeRedesignWithoutPatchSite": 1
+    },
+    "entries": [
+      {
+        "name": "Sundered MonUMods Patch",
+        "classification": "not-applicable",
+        "confidence": "high",
+        "decision": "Cancelled. Use the native D2R 3.2 Sunder implementation instead of the legacy custom >=99 threshold."
+      },
+      {
+        "name": "Customize Save File Limit",
+        "classification": "native-already-satisfied",
+        "confidence": "high",
+        "sites": [
+          {
+            "rva": "0x483AE1",
+            "expected": "48817CC8F000800000",
+            "instruction": "cmp qword ptr [rax + rcx*8 - 0x10], 0x8000"
+          }
+        ],
+        "decision": "D2R 3.2 centralizes the old eight writes and already uses the requested 0x8000 limit. No patch is required."
+      },
+      {
+        "name": "Make monsters scale off area level on normal",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x543D35", "expected": "7419", "futureIntent": "NOP the conditional branch." }]
+      },
+      {
+        "name": "Make umon field in levels.txt work on all difficulties",
+        "classification": "not-applicable",
+        "confidence": "user-decision",
+        "sites": [{ "rva": "0x419EB7", "expected": "7537", "source": "analysis-evidence-only" }],
+        "decision": "Removed from the BKVince 3.2 patch set at Vincent's request; preserve vanilla behavior outside Normal."
+      },
+      {
+        "name": "Disable item quantity",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x43921F", "expected": "FF", "futureIntent": "Change the LEA delta from -1 to 0." }]
+      },
+      {
+        "name": "Infinite Town Portal and Identify Tomes",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x4F5849", "expected": "458D41FF", "futureIntent": "Change the shared post-cast quantity delta from -1 to 0." }]
+      },
+      {
+        "name": "Hit Chance % (Display Fix)",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x14E801A", "expected": "7537", "futureIntent": "Make the branch unconditional so a 0% value can be displayed." }]
+      },
+      {
+        "name": "Autogold: send higher cost to pickup function",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x4BA0DA", "expected": "04", "futureIntent": "Change the integer argument from 4 to 20 (raw byte 0x14)." }]
+      },
+      {
+        "name": "Customize Max Character Gold",
+        "classification": "centralized-multi-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x34B332", "expected": "10270000", "futureIntent": "Change the per-level multiplier from 10000 to 100000 (A0860100)." }],
+        "decision": "One 3.2 operand replaces the eighteen historical write sites."
+      },
+      {
+        "name": "Customize Max Stash Gold",
+        "classification": "centralized-multi-site-located",
+        "confidence": "high",
+        "sites": [
+          { "rva": "0x133963", "expected": "A0252600" },
+          { "rva": "0x34B2FB", "expected": "A0252600" },
+          { "rva": "0x34B311", "expected": "A0252600" }
+        ],
+        "futureIntent": "Change 2500000 to 25000000 (40787D01) at all three operands.",
+        "decision": "Three 3.2 operands replace the fifteen historical write sites."
+      },
+      {
+        "name": "Change ethereal drop rate",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x4434DF", "expected": "05", "futureIntent": "Use Vincent's requested value 6 (06), not vanilla 7." }]
+      },
+      {
+        "name": "Force max crafted affixes",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x58A1F8", "expected": "03000000", "futureIntent": "Change the fixed base count from 3 to 4." }]
+      },
+      {
+        "name": "Force max crafted affixes (part 2)",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x58A1FF", "expected": "0F9FC3FFC3", "futureIntent": "Replace setg bl; inc ebx with mov ebx, 4 (BB04000000)." }]
+      },
+      {
+        "name": "Force max rare affixes",
+        "classification": "implemented-awaiting-game-validation",
+        "confidence": "high",
+        "sites": [{ "rva": "0x58BCAA", "expected": "458B248C", "implemented": "6A06415C" }],
+        "decision": "Replace the table result with push 6; pop r12. The four-byte replacement preserves the adjacent xor ebx, ebx initialization."
+      },
+      {
+        "name": "Force max rare jewel affixes",
+        "classification": "multi-site-located",
+        "confidence": "high",
+        "sites": [
+          { "rva": "0x58BC86", "expected": "01", "futureIntent": "Change the random mask to 0." },
+          { "rva": "0x58BC8D", "expected": "03", "futureIntent": "Change the fixed addend to 4." }
+        ]
+      },
+      {
+        "name": "Enable ethereal set item drops",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x443315", "expected": "0F843D020000", "futureIntent": "NOP the six-byte branch." }]
+      },
+      {
+        "name": "Force magic prefix",
+        "classification": "ported",
+        "confidence": "validated-in-game",
+        "sites": [{ "rva": "0x442C78", "expected": "8B82A8000000", "implemented": "B80100000090" }],
+        "targetPatch": "data-BKVince/d2rloader/patches/force-magic-prefix-suffix.json"
+      },
+      {
+        "name": "Force magic suffix",
+        "classification": "ported",
+        "confidence": "validated-in-game",
+        "sites": [{ "rva": "0x442CF0", "expected": "0F4FEB", "implemented": "8BEB90" }],
+        "targetPatch": "data-BKVince/d2rloader/patches/force-magic-prefix-suffix.json"
+      },
+      {
+        "name": "Force max staffmod affixes",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x58AFCA", "expected": "7E0B", "futureIntent": "NOP the branch." }]
+      },
+      {
+        "name": "Force max staffmod affixes (part 2)",
+        "classification": "not-applicable",
+        "confidence": "user-decision",
+        "sites": [{ "rva": "0x58B61A", "expected": "7C07", "source": "analysis-evidence-only" }],
+        "decision": "Do not patch this branch. It selects the +1 to +3 staffmod bonus magnitude; preserving it keeps the vanilla bonus roll while the first edit separately forces three staffmods."
+      },
+      {
+        "name": "Infinite Anya personalize",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x547C87", "expected": "E874DFDDFF", "futureIntent": "NOP the quest-state set call." }]
+      },
+      {
+        "name": "Infinite Anya personalize (part 2)",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x547C98", "expected": "E8F3DCDDFF", "futureIntent": "NOP the quest-state clear call." }],
+        "legacyEvidenceCorrection": "The legacy binary contains 80604CFD; the old manifest says 8060ACFD."
+      },
+      {
+        "name": "Infinite Charsi imbue",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x5DA20F", "expected": "E8ECB9D4FF", "futureIntent": "NOP the Horadric Malus quest-state set call." }]
+      },
+      {
+        "name": "Infinite Charsi imbue (part 2)",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x5DA220", "expected": "E86BB7D4FF", "futureIntent": "NOP the Horadric Malus quest-state clear call." }]
+      },
+      {
+        "name": "Infinite Larzuk socketing",
+        "classification": "multi-site-located",
+        "confidence": "high",
+        "sites": [
+          { "rva": "0x4FD1E6", "expected": "E875B90400", "futureIntent": "NOP the first call to the quest 35 completion helper." },
+          { "rva": "0x4FD598", "expected": "E8C3B50400", "futureIntent": "NOP the second call to the quest 35 completion helper." }
+        ],
+        "decision": "The single legacy caller split into two 3.2 paths."
+      },
+      {
+        "name": "Hit Chance % (Lower Bound)",
+        "classification": "multi-site-located",
+        "confidence": "high",
+        "sites": [
+          { "rva": "0x44BD57", "expected": "05000000" },
+          { "rva": "0x14E8068", "expected": "05" },
+          { "rva": "0x15149C2", "expected": "05" }
+        ],
+        "futureIntent": "Change all lower bounds from 5 to 0."
+      },
+      {
+        "name": "Hit Chance % (Upper Bound)",
+        "classification": "multi-site-located",
+        "confidence": "high",
+        "sites": [
+          { "rva": "0x44BD45", "expected": "5F000000" },
+          { "rva": "0x14E8073", "expected": "5F000000" },
+          { "rva": "0x15149CD", "expected": "5F000000" }
+        ],
+        "futureIntent": "Change all upper bounds from 95 to 100 (64000000)."
+      },
+      {
+        "name": "Autogold: allow higher cost in server check",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x4BA0B3", "expected": "04", "futureIntent": "Change the integer limit from 4 to 20 (raw byte 0x14)." }]
+      },
+      {
+        "name": "Auto-Collect Player Corpse",
+        "classification": "ported",
+        "confidence": "validated-in-game",
+        "sites": [
+          { "rva": "0x42A689", "expected": "E8821A0000", "implemented": "NOP5" },
+          { "rva": "0x42E24E", "expected": "E8BDDEFFFF", "implemented": "NOP5" }
+        ],
+        "targetPatch": "data-BKVince/d2rloader/patches/Auto-Collect Player Corpse.json"
+      },
+      {
+        "name": "Expose Item Level to Clients",
+        "classification": "not-applicable",
+        "confidence": "user-decision",
+        "decision": "Cancelled by Vincent; do not research or port."
+      },
+      {
+        "name": "Display Player Names When Trading",
+        "classification": "native-redesign-no-patch-site",
+        "confidence": "high",
+        "evidenceRvas": ["0x2E4FD3", "0x2E4FE7"],
+        "decision": "D2R 3.2 obtains the player name through the accessor at 0x134FC0. The legacy raw +0xFF structure displacement no longer exists, so there is no honest one-byte equivalent."
+      },
+      {
+        "name": "Allow Character Levels 100+",
+        "classification": "implemented-awaiting-game-validation",
+        "confidence": "high",
+        "sites": [{ "rva": "0x404D50", "expected": "0F860FFEFFFF", "implemented": "NOP6" }],
+        "decision": "Bypass the rewritten invalid-level rejection branch; the old one-byte 0x62 threshold is no longer structurally equivalent."
+      },
+      {
+        "name": "-Enemy Res% affects immunes",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x44F8F1", "expected": "7C0A", "futureIntent": "Make the branch unconditional (EB0A) so the -Enemy Resistance path also runs at resistance >=100." }],
+        "decision": "The immunity check moved into the 0x44F8B0 helper; the branch semantics are otherwise identical to 1.2.69270."
+      },
+      {
+        "name": "Autogold: skip first distance check",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x18B06C", "expected": "0F873D010000", "futureIntent": "NOP the six-byte branch." }]
+      },
+      {
+        "name": "Autogold: skip second distance check",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x18B07F", "expected": "0F872A010000", "futureIntent": "NOP the six-byte branch." }]
+      },
+      {
+        "name": "ITD applies to Champs/Uniques",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x450410", "expected": "751D", "futureIntent": "NOP the Champion/Unique exclusion branch." }]
+      },
+      {
+        "name": "Player Difficulty Scaling Override (Actual)",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x425A69", "expected": "0F46C1", "futureIntent": "Replace cmovbe eax, ecx with mov eax, ecx; nop (89C890)." }],
+        "decision": "This exact 3.2 function writes the shared server difficulty global at RVA 0x2AA6A30."
+      },
+      {
+        "name": "Player Difficulty Scaling Override (Command)",
+        "classification": "implemented-awaiting-game-validation",
+        "confidence": "high",
+        "sites": [{ "rva": "0x188860", "expected": "41BF01000000413BC7440F4FF8453BFC450F4CE7", "implemented": "4189C4 plus NOP17" }],
+        "decision": "The legacy 17-byte window expanded to 20 bytes because the 3.2 compiler uses r15d/r12d."
+      },
+      {
+        "name": "Autogold: always pass cost (data)",
+        "classification": "absorbed-by-code-sites",
+        "confidence": "high",
+        "absorbedBy": ["0x4BA0B3", "0x4BA0DA"],
+        "decision": "The old RVA 0x1E00890 is an unreferenced runtime/BSS write, not a portable code symbol. In 3.2 the behavior is represented by the explicit server limit and pickup-function argument, so a third blind BSS write would be redundant and unsafe."
+      },
+      {
+        "name": "Player Difficulty Scaling Override (Max/UI)",
+        "classification": "implemented-awaiting-game-validation",
+        "confidence": "high",
+        "sites": [
+          { "rva": "0x346ED", "expected": "BA01000000488BCF448D4207E892A6CF00", "implemented": "6A015A488BCF41B8FFFF0000E892A6CF00", "role": "primary initialized-path range 1..65535" },
+          { "rva": "0x3474E", "expected": "BA08000000", "implemented": "BAFFFF0000", "role": "primary fallback maximum 65535" },
+          { "rva": "0xE1A09", "expected": "BA01000000488D0D5B1E9502448D4207E872D3C400", "implemented": "6A015A41B8FFFF0000488D0D571E9502E872D3C400", "role": "secondary initialized-path range 1..65535" },
+          { "rva": "0xE1A57", "expected": "BA08000000", "implemented": "BAFFFF0000", "role": "secondary fallback maximum 65535" }
+        ],
+        "decision": "Patch both lazy initializer paths and both fallback descriptors in code. This preserves the minimum of 1, raises the maximum to 65535, and avoids fragile writes to live BSS objects."
+      },
+      {
+        "name": "Hireling Follow Distance (Moving Owner)",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x5BEC27", "expected": "10000000", "futureIntent": "Change 16 to 8." }]
+      },
+      {
+        "name": "Hireling Forced Catch-Up Distance",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x5BEC21", "expected": "18000000", "futureIntent": "Change 24 to 16." }]
+      },
+      {
+        "name": "Ranged Hireling Activity Cap",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x5BF734", "expected": "5F000000", "futureIntent": "Change 95 to 98." }]
+      },
+      {
+        "name": "Ranged Hireling Activity Formula Offset",
+        "classification": "implemented-awaiting-game-validation",
+        "confidence": "high",
+        "sites": [{ "rva": "0x5BF732", "expected": "28", "implemented": "62" }],
+        "decision": "The 3.2 compiler folds the legacy offset through a subsequent x2. The legacy requested value 49 therefore becomes the compiled immediate 98 (0x62), preserving the intended formula."
+      },
+      {
+        "name": "Ranged Hireling Retreat Chance",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x5BF83B", "expected": "32", "futureIntent": "Change 50 to 80 (raw byte 0x50)." }]
+      },
+      {
+        "name": "Ranged Hireling Retreat Distance",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x5BF7FD", "expected": "04", "futureIntent": "Change 4 to 6." }]
+      },
+      {
+        "name": "Allow CTC while Uninterruptible (On Position)",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x58986B", "expected": "0F85A4000000", "futureIntent": "NOP the six-byte branch." }]
+      },
+      {
+        "name": "Allow CTC while Uninterruptible (On Target)",
+        "classification": "patch-site-located",
+        "confidence": "high",
+        "sites": [{ "rva": "0x589736", "expected": "0F85C1000000", "futureIntent": "NOP the six-byte branch." }]
+      }
+    ]
+  },
+  "deliveredOutsideLegacyManifest": [
+    {
+      "name": "Disable Run Defense and Block Penalties",
+      "status": "ported",
+      "targetPatch": "data-BKVince/d2rloader/patches/Disable Run Defense and Block Penalties.json"
+    }
+  ]
+}

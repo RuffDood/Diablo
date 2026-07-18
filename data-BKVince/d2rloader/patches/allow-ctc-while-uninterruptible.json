@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "name": "Allow Chance to Cast During Uninterruptible Actions",
+  "description": "Allows item-based Chance to Cast effects to trigger even while the character is performing an action that cannot normally be interrupted.",
+  "patches": [
+    {
+      "description": "Allow location-targeted Chance to Cast effects during uninterruptible actions",
+      "op": "nop",
+      "rva": "0x58986B",
+      "size": 6,
+      "expected": "0F 85 A4 00 00 00"
+    },
+    {
+      "description": "Allow unit-targeted Chance to Cast effects during uninterruptible actions",
+      "op": "nop",
+      "rva": "0x589736",
+      "size": 6,
+      "expected": "0F 85 C1 00 00 00"
+    }
+  ]
+}

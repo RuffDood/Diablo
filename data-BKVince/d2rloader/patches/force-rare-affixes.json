@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "name": "Force Maximum Rare Affixes",
+  "description": "Forces six affixes on regular rare items and four affixes on rare jewels.",
+  "patches": [
+    {
+      "description": "Replace the regular rare-affix table result with a fixed R12 value of 6",
+      "op": "bytes",
+      "rva": "0x58BCAA",
+      "expected": "45 8B 24 8C",
+      "bytes": "6A 06 41 5C"
+    },
+    {
+      "description": "Remove the rare-jewel random one-bit component",
+      "op": "write-u8",
+      "rva": "0x58BC86",
+      "value": "0x00",
+      "expected": "01"
+    },
+    {
+      "description": "Raise the rare-jewel fixed addend from 3 to 4",
+      "op": "write-u8",
+      "rva": "0x58BC8D",
+      "value": "0x04",
+      "expected": "03"
+    }
+  ]
+}
