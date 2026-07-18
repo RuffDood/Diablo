@@ -39761,5 +39761,39 @@
     "ruRU": "%d заморозки стрелы",
     "zhCN": "％d冻结箭头",
     "zhTW": "％d凍結箭頭"
+  },
+  {
+    "id": 28106,
+    "Key": "command",
+    "enUS": "Command",
+    "zhTW": "Command",
+    "deDE": "Command",
+    "esES": "Command",
+    "frFR": "Command",
+    "itIT": "Command",
+    "koKR": "지시",
+    "plPL": "Command",
+    "esMX": "Command",
+    "jaJP": "Command",
+    "ptBR": "Command",
+    "ruRU": "Command",
+    "zhCN": "Command"
+  },
+  {
+    "id": 28107,
+    "Key": "commanddesc",
+    "enUS": "moves your mercenary\n to the targeted location",
+    "zhTW": "moves your mercenary\n to the targeted location",
+    "deDE": "moves your mercenary\n to the targeted location",
+    "esES": "moves your mercenary\n to the targeted location",
+    "frFR": "moves your mercenary\n to the targeted location",
+    "itIT": "moves your mercenary\n to the targeted location",
+    "koKR": "용병을 시야 내의 목적지로\n 즉시 이동시킵니다.",
+    "plPL": "moves your mercenary\n to the targeted location",
+    "esMX": "moves your mercenary\n to the targeted location",
+    "jaJP": "moves your mercenary\n to the targeted location",
+    "ptBR": "moves your mercenary\n to the targeted location",
+    "ruRU": "moves your mercenary\n to the targeted location",
+    "zhCN": "moves your mercenary\n to the targeted location"
   }
 ]

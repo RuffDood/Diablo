@@ -1,0 +1,44 @@
+{
+    "dependencies": {
+        "particles": [],
+        "models": [],
+        "skeletons": [],
+        "animations": [],
+        "textures": [],
+        "physics": [],
+        "json": [],
+        "variantdata": [],
+        "objecteffects": [],
+        "other": []
+    },
+    "type": "OverlayDefinition",
+    "name": "command",
+    "entities": [
+        {
+            "type": "Entity",
+            "name": "entity_root",
+            "id": 2739895672,
+            "components": [
+                {
+                    "type": "VfxDefinitionComponent",
+                    "name": "component_vfx",
+                    "filename": "data/hd/vfx/particles/overlays/common/healing/fx_healing.particles",
+                    "hardKillOnDestroy": false
+                }
+            ]
+        },
+        {
+            "type": "Entity",
+            "name": "entity_root",
+            "id": 1277062057,
+            "components": [
+                {
+                    "type": "VfxDefinitionComponent",
+                    "name": "entity_root_VfxDefinition",
+                    "filename": "data/hd/vfx/particles/overlays/assassin/shadowwarriorappear/shadow_warrior_appear.particles",
+                    "hardKillOnDestroy": false
+                }
+            ]
+        }
+    ]
+}
