@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "name": "Dynamic and Configurable Staffmod Skill Pools",
+  "description": "Uses the engine's existing dynamic class-skill pools for every class and classifies exact configurable reqlevel values without a fixed 30-skill or five-skills-per-tier layout.",
+  "patches": [
+    {
+      "description": "Build dynamic staffmod tier pools for every class",
+      "op": "bytes",
+      "rva": "0x58B0CC",
+      "expected": "E8 DF 8F E7 FF",
+      "bytes": "B0 01 90 90 90"
+    },
+    {
+      "description": "Select staffmods from dynamic pools for every class",
+      "op": "bytes",
+      "rva": "0x58B358",
+      "expected": "E8 53 8D E7 FF",
+      "bytes": "B0 01 90 90 90"
+    },
+    {
+      "description": "Accept configured reqlevel indices through 255",
+      "op": "bytes",
+      "rva": "0x58B226",
+      "expected": "83 F8 1D",
+      "bytes": "3C FE 90"
+    },
+    {
+      "description": "Redirect the reqlevel selector to the generated table",
+      "op": "bytes",
+      "rva": "0x58B23C",
+      "expected": "A0 B7 58 00",
+      "bytes": "05 76 85 00"
+    },
+    {
+      "description": "Generated exact reqlevel-to-tier selector",
+      "op": "bytes",
+      "rva": "0x857605",
+      "expected": "CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC",
+      "bytes": "00 06 06 06 06 01 06 06 06 06 06 02 06 06 06 06 06 03 06 06 06 06 06 04 06 06 06 06 06 05 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06"
+    }
+  ]
+}

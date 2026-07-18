@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "target": {
+    "game": "D2R 3.2",
+    "build": 92777,
+    "loader": "D2RLoader 1.0.1-beta"
+  },
+  "activeTierReqLevels": [
+    [1],
+    [6],
+    [12],
+    [18],
+    [24],
+    [30]
+  ],
+  "extendedProgressionExample": [
+    [1],
+    [30],
+    [60],
+    [90],
+    [120],
+    [150]
+  ],
+  "maximumSupportedReqLevel": 255,
+  "analysis": {
+    "staffmodFunction": "0x58AF50",
+    "caller": "0x58A103",
+    "classSkillCountAccessor": "0x33CB30",
+    "classSkillStartAccessor": "0x33DDE0",
+    "paladinPredicate": "0x4040B0",
+    "tierDispatchRange": "0x58B21D..0x58B339",
+    "vanillaSelectorTable": "0x58B7A0",
+    "dynamicPoolBuildCall": "0x58B0CC",
+    "dynamicPoolSelectionCall": "0x58B358",
+    "fallbackFivePerTierFormula": "0x58B494..0x58B4B4",
+    "selectorCodeCave": "0x857605",
+    "selectorCodeCaveSize": 353,
+    "conclusions": [
+      "The original 30-byte selector accepts only reqlevel 1, 6, 12, 18, 24 and 30.",
+      "The non-Paladin fallback computes class start + tier * 5 + random(0..4).",
+      "The existing Paladin path builds six pools by scanning the runtime class start and class skill count, so it can represent more than 30 skills and non-uniform tier sizes.",
+      "Forcing the existing dynamic path for every class removes the five-skills-per-tier assumption without replacing the staffmod bonus magnitude roll."
+    ]
+  },
+  "implementation": {
+    "status": "reference-only-not-active-in-bkvince",
+    "implementedAt": "2026-07-18",
+    "generator": "scripts/migrate-bkvince/generate-staffmod-patch.mjs",
+    "patch": "Mission/staffmod-skill-pools.reference.json",
+    "patchSha256": "ED44A0DAFDEA186664088C3D7C453B91E40807DB4986571515D81BEEE136324B",
+    "patchSites": [
+      "0x58B0CC",
+      "0x58B358",
+      "0x58B226",
+      "0x58B23C",
+      "0x857605"
+    ],
+    "validation": {
+      "governedGeneratorCheck": "passed",
+      "allPatchFilesStaticValidation": "61/61 sites passed with zero overlap",
+      "coldStart": "20/20 patches applied; 1/1 plugin active; startup reached 24/24",
+      "runtimeBytesVerified": true,
+      "sourceRuntimePatchSha256Match": true,
+      "gameplayMatrix": "not scheduled: the investigation was for a friend and the patch is intentionally excluded from the active BKVince mod",
+      "activeRuntime": false
+    }
+  }
+}

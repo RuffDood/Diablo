@@ -21,7 +21,9 @@
     "generate:bkvince-storage-bag": "node scripts/migrate-bkvince/port-storage-bag.js",
     "test:bkvince-storage-bag": "node scripts/migrate-bkvince/port-storage-bag.js --check",
     "generate:bkvince-itemtypes": "node scripts/migrate-bkvince/rebuild-itemtypes.js",
-    "test:bkvince-itemtypes": "node scripts/migrate-bkvince/rebuild-itemtypes.js --check"
+    "test:bkvince-itemtypes": "node scripts/migrate-bkvince/rebuild-itemtypes.js --check",
+    "generate:bkvince-staffmods": "node scripts/migrate-bkvince/generate-staffmod-patch.mjs",
+    "test:bkvince-staffmods": "node scripts/migrate-bkvince/generate-staffmod-patch.mjs --check"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",

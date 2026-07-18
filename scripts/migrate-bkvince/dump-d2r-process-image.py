@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import ctypes
 import hashlib
+import json
 from pathlib import Path
 from ctypes import wintypes
 
@@ -73,6 +74,14 @@ def main() -> int:
         default=".text,.rdata",
         help="Comma-separated PE section names to recover from memory.",
     )
+    parser.add_argument(
+        "--restore-patch-dir",
+        type=Path,
+        help=(
+            "Restore each D2RLoader patch's expected bytes in the analysis copy "
+            "after reading process memory."
+        ),
+    )
     args = parser.parse_args()
 
     source_bytes = bytearray(args.source.read_bytes())
@@ -116,6 +125,17 @@ def main() -> int:
     finally:
         kernel32.CloseHandle(handle)
 
+    restored_patch_sites = 0
+    if args.restore_patch_dir:
+        for patch_path in sorted(args.restore_patch_dir.glob("*.json")):
+            document = json.loads(patch_path.read_text(encoding="utf-8"))
+            for patch in document.get("patches", []):
+                expected = bytes.fromhex(patch["expected"])
+                rva = int(patch["rva"], 16)
+                file_offset = pe.get_offset_from_rva(rva)
+                source_bytes[file_offset : file_offset + len(expected)] = expected
+                restored_patch_sites += 1
+
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_bytes(source_bytes)
     print(f"output={args.output}")
@@ -125,6 +145,8 @@ def main() -> int:
             f"section={item['name']} rva={item['rva']} size={item['size']} "
             f"sha256={item['sha256']}"
         )
+    if args.restore_patch_dir:
+        print(f"restoredPatchSites={restored_patch_sites}")
     return 0
 
 

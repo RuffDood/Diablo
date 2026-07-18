@@ -55,5 +55,7 @@ data-vanilla3.2/data/data/global/*
 # Divers
 .DS_Store
 desktop.ini
+__pycache__/
+*.pyc
 *.log
 !data-vanilla3.2/data/data/global/excel/**/*.log
