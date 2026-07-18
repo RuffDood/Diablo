@@ -21,6 +21,8 @@
     "test:bkvince-monstats-lots": "node scripts/migrate-bkvince/apply-monstats-lots.js",
     "generate:bkvince-storage-bag": "node scripts/migrate-bkvince/port-storage-bag.js",
     "test:bkvince-storage-bag": "node scripts/migrate-bkvince/port-storage-bag.js --check",
+    "generate:bkvince-enhanced-effects": "node scripts/migrate-bkvince/import-enhanced-effects.js",
+    "test:bkvince-enhanced-effects": "node scripts/migrate-bkvince/import-enhanced-effects.js --check",
     "generate:bkvince-itemtypes": "node scripts/migrate-bkvince/rebuild-itemtypes.js",
     "test:bkvince-itemtypes": "node scripts/migrate-bkvince/rebuild-itemtypes.js --check",
     "generate:bkvince-staffmods": "node scripts/migrate-bkvince/generate-staffmod-patch.mjs",

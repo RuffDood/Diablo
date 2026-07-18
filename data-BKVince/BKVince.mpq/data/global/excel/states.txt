@@ -61,7 +61,7 @@ lifetap	58						1	1																																			cursereversevampire					cu
 confuse	59	8					1	1																			1																curseconfuse					curse_hit														necromancer_confuse												0
 decrepify	60						1	1													1																						cursedecrepify					curse_hit		skill_decrepify												necromancer_decrepify									1			0
 lowerresist	61						1	1															1	1	1	1																	curselowerresist					curse_hit		lightresist																								0
-openwounds	62								1																										1																																	85						0
+openwounds	62								1																										1													openwounds									255	100				object_goopile_1						85						0
 dopplezon	63				1						1																		1	1	1			1						1																								2	0									0
 criticalstrike	64			1																																																																						0
 dodge	65			1																																																																						0
@@ -90,7 +90,7 @@ slowmissiles	87																																										innersight							skill_
 shiverarmor	88	1							1					1																													shiverarmor							skill_armor_percent																		87						0
 battlecry	89												1	1																													battlecry							skill_armor_percent												barbarian_battlecry_state												0
 blue	90																																																								100	108	150	215	255													0
-red	91																																																								70	100	255	255	255													0
+red	91																																																																									0
 death_delay	92																																																																									0
 valkyrie	93				1						1																																valkyrie					valkyriestart																2	0									0
 frenzy	94																																											frenzy						skill_frenzy																								0

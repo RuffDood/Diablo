@@ -1349,7 +1349,7 @@
         {
             "type": "AnimationItem",
             "name": "hth_walk",
-            "filename": "data/hd/character/player/barbarian/animation/hth_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/hth_walk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1369,7 +1369,7 @@
         {
             "type": "AnimationItem",
             "name": "hth_townwalk",
-            "filename": "data/hd/character/player/barbarian/animation/hth_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/hth_townwalk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1414,7 +1414,7 @@
         {
             "type": "AnimationItem",
             "name": "1ht_walk",
-            "filename": "data/hd/character/player/barbarian/animation/1ht_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/1ht_walk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1434,7 +1434,7 @@
         {
             "type": "AnimationItem",
             "name": "1ht_townwalk",
-            "filename": "data/hd/character/player/barbarian/animation/1ht_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/1ht_townwalk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1484,7 +1484,7 @@
         {
             "type": "AnimationItem",
             "name": "2ht_walk",
-            "filename": "data/hd/character/player/barbarian/animation/2ht_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/2ht_walk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1504,7 +1504,7 @@
         {
             "type": "AnimationItem",
             "name": "2ht_townwalk",
-            "filename": "data/hd/character/player/barbarian/animation/2ht_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/2ht_townwalk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1539,7 +1539,7 @@
         {
             "type": "AnimationItem",
             "name": "1hs_walk",
-            "filename": "data/hd/character/player/barbarian/animation/1hs_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/1hs_walk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1559,7 +1559,7 @@
         {
             "type": "AnimationItem",
             "name": "1hs_townwalk",
-            "filename": "data/hd/character/player/barbarian/animation/1hs_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/1hs_townwalk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1604,7 +1604,7 @@
         {
             "type": "AnimationItem",
             "name": "2hs_walk",
-            "filename": "data/hd/character/player/barbarian/animation/2hs_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/2hs_walk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1624,7 +1624,7 @@
         {
             "type": "AnimationItem",
             "name": "2hs_townwalk",
-            "filename": "data/hd/character/player/barbarian/animation/2hs_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/2hs_townwalk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1659,7 +1659,7 @@
         {
             "type": "AnimationItem",
             "name": "bow_walk",
-            "filename": "data/hd/character/player/barbarian/animation/bow_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/bow_walk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1679,7 +1679,7 @@
         {
             "type": "AnimationItem",
             "name": "bow_townwalk",
-            "filename": "data/hd/character/player/barbarian/animation/bow_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/bow_townwalk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1709,7 +1709,7 @@
         {
             "type": "AnimationItem",
             "name": "xbw_walk",
-            "filename": "data/hd/character/player/barbarian/animation/xbw_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/xbw_walk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1729,7 +1729,7 @@
         {
             "type": "AnimationItem",
             "name": "xbw_townwalk",
-            "filename": "data/hd/character/player/barbarian/animation/xbw_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/xbw_townwalk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1759,7 +1759,7 @@
         {
             "type": "AnimationItem",
             "name": "stf_walk",
-            "filename": "data/hd/character/player/barbarian/animation/stf_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/stf_walk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1779,7 +1779,7 @@
         {
             "type": "AnimationItem",
             "name": "stf_townwalk",
-            "filename": "data/hd/character/player/barbarian/animation/stf_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/stf_townwalk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1814,7 +1814,7 @@
         {
             "type": "AnimationItem",
             "name": "1js_walk",
-            "filename": "data/hd/character/player/barbarian/animation/1js_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/1js_walk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1834,7 +1834,7 @@
         {
             "type": "AnimationItem",
             "name": "1js_townwalk",
-            "filename": "data/hd/character/player/barbarian/animation/1js_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/1js_townwalk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1884,7 +1884,7 @@
         {
             "type": "AnimationItem",
             "name": "1jt_walk",
-            "filename": "data/hd/character/player/barbarian/animation/1jt_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/1jt_walk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1904,7 +1904,7 @@
         {
             "type": "AnimationItem",
             "name": "1jt_townwalk",
-            "filename": "data/hd/character/player/barbarian/animation/1jt_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/1jt_townwalk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1954,7 +1954,7 @@
         {
             "type": "AnimationItem",
             "name": "1ss_walk",
-            "filename": "data/hd/character/player/barbarian/animation/1ss_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/1ss_walk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1974,7 +1974,7 @@
         {
             "type": "AnimationItem",
             "name": "1ss_townwalk",
-            "filename": "data/hd/character/player/barbarian/animation/1ss_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/1ss_townwalk.animation"
         },
         {
             "type": "AnimationItem",
@@ -2024,7 +2024,7 @@
         {
             "type": "AnimationItem",
             "name": "1st_walk",
-            "filename": "data/hd/character/player/barbarian/animation/1st_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/1st_walk.animation"
         },
         {
             "type": "AnimationItem",
@@ -2044,7 +2044,7 @@
         {
             "type": "AnimationItem",
             "name": "1st_townwalk",
-            "filename": "data/hd/character/player/barbarian/animation/1st_run.animation"
+            "filename": "data/hd/character/player/barbarian/animation/1st_townwalk.animation"
         },
         {
             "type": "AnimationItem",
@@ -3880,34 +3880,43 @@
                     "bow_attack1"
                 ],
                 "1hs": [
-                    "1hs_attack1"
+                    "1hs_attack1",
+                    "1hs_attack2"
                 ],
                 "1ht": [
-                    "1ht_attack1"
+                    "1ht_attack1",
+                    "1ht_attack2"
                 ],
                 "stf": [
-                    "stf_attack1"
+                    "stf_attack1",
+                    "stf_attack2"
                 ],
                 "2hs": [
-                    "2hs_attack1"
+                    "2hs_attack1",
+                    "2hs_attack2"
                 ],
                 "2ht": [
-                    "2ht_attack1"
+                    "2ht_attack1",
+                    "2ht_attack2"
                 ],
                 "xbw": [
                     "xbw_attack1"
                 ],
                 "1js": [
-                    "1js_attack1"
+                    "1js_attack1",
+                    "1js_attack2"
                 ],
                 "1jt": [
-                    "1jt_attack1"
+                    "1jt_attack1",
+                    "1jt_attack2"
                 ],
                 "1ss": [
-                    "1ss_attack1"
+                    "1ss_attack1",
+                    "1ss_attack2"
                 ],
                 "1st": [
-                    "1st_attack1"
+                    "1st_attack1",
+                    "1st_attack2"
                 ]
             },
             "enterEvents": [],
@@ -3924,31 +3933,49 @@
             "skillIndex": -1,
             "stepIndex": 0,
             "animationBindings": {
+                "hth": [
+                    "hth_attack1"
+                ],
+                "bow": [
+                    "bow_attack1"
+                ],
                 "1hs": [
+                    "1hs_attack1",
                     "1hs_attack2"
                 ],
                 "1ht": [
+                    "1ht_attack1",
                     "1ht_attack2"
                 ],
                 "stf": [
+                    "stf_attack1",
                     "stf_attack2"
                 ],
                 "2hs": [
+                    "2hs_attack1",
                     "2hs_attack2"
                 ],
                 "2ht": [
+                    "2ht_attack1",
                     "2ht_attack2"
                 ],
+                "xbw": [
+                    "xbw_attack1"
+                ],
                 "1js": [
+                    "1js_attack1",
                     "1js_attack2"
                 ],
                 "1jt": [
+                    "1jt_attack1",
                     "1jt_attack2"
                 ],
                 "1ss": [
+                    "1ss_attack1",
                     "1ss_attack2"
                 ],
                 "1st": [
+                    "1st_attack1",
                     "1st_attack2"
                 ]
             },
@@ -4447,40 +4474,40 @@
             "stepIndex": 0,
             "animationBindings": {
                 "hth": [
-                    "hth_cast"
+                    "1hs_attack2"
                 ],
                 "bow": [
-                    "bow_cast"
+                    "1hs_attack2"
                 ],
                 "1hs": [
-                    "1hs_cast"
+                    "1hs_attack2"
                 ],
                 "1ht": [
-                    "1ht_cast"
+                    "1hs_attack2"
                 ],
                 "stf": [
-                    "stf_cast"
+                    "stf_attack2"
                 ],
                 "2hs": [
-                    "2hs_cast"
+                    "2hs_attack2"
                 ],
                 "2ht": [
-                    "2ht_cast"
+                    "stf_attack2"
                 ],
                 "xbw": [
-                    "xbw_cast"
+                    "1hs_attack2"
                 ],
                 "1js": [
-                    "1js_cast"
+                    "1js_attack2"
                 ],
                 "1jt": [
-                    "1jt_cast"
+                    "1js_attack2"
                 ],
                 "1ss": [
-                    "1ss_cast"
+                    "1ss_attack2"
                 ],
                 "1st": [
-                    "1st_cast"
+                    "1hs_attack2"
                 ]
             },
             "enterEvents": [],
@@ -4498,40 +4525,40 @@
             "stepIndex": 0,
             "animationBindings": {
                 "hth": [
-                    "hth_cast"
+                    "1hs_attack2"
                 ],
                 "bow": [
-                    "bow_cast"
+                    "1hs_attack2"
                 ],
                 "1hs": [
-                    "1ht_cast"
+                    "1hs_attack2"
                 ],
                 "1ht": [
-                    "1ht_cast"
+                    "1hs_attack2"
                 ],
                 "stf": [
-                    "stf_cast"
+                    "stf_attack2"
                 ],
                 "2hs": [
-                    "2hs_cast"
+                    "2hs_attack2"
                 ],
                 "2ht": [
-                    "2ht_cast"
+                    "stf_attack2"
                 ],
                 "xbw": [
-                    "xbw_cast"
+                    "1hs_attack2"
                 ],
                 "1js": [
-                    "1js_cast"
+                    "1js_attack2"
                 ],
                 "1jt": [
-                    "1jt_cast"
+                    "1js_attack2"
                 ],
                 "1ss": [
-                    "1ss_cast"
+                    "1ss_attack2"
                 ],
                 "1st": [
-                    "1st_cast"
+                    "1hs_attack2"
                 ]
             },
             "enterEvents": [],
@@ -5011,40 +5038,40 @@
             "stepIndex": 3,
             "animationBindings": {
                 "hth": [
-                    "hth_leap_land"
+                    "hth_leap_land_attack"
                 ],
                 "bow": [
-                    "bow_leap_land"
+                    "hth_leap_rise_fall_land"
                 ],
                 "1hs": [
-                    "1hs_leap_land"
+                    "1hs_leap_land_attack"
                 ],
                 "1ht": [
-                    "1ht_leap_land"
+                    "1ht_leap_land_attack"
                 ],
                 "stf": [
-                    "stf_leap_land"
+                    "stf_leap_land_attack"
                 ],
                 "2hs": [
-                    "2hs_leap_land"
+                    "2hs_leap_land_attack"
                 ],
                 "2ht": [
-                    "2ht_leap_land"
+                    "2ht_leap_land_attack"
                 ],
                 "xbw": [
-                    "xbw_leap_rise_fall_land"
+                    "hth_leap_rise_fall_land"
                 ],
                 "1js": [
-                    "1js_leap_land"
+                    "1js_leap_land_attack"
                 ],
                 "1jt": [
-                    "1jt_leap_land"
+                    "1jt_leap_land_attack"
                 ],
                 "1ss": [
-                    "1ss_leap_land"
+                    "1ss_leap_land_attack"
                 ],
                 "1st": [
-                    "1st_leap_land"
+                    "1st_leap_land_attack"
                 ],
                 "ht1": [
                     "hth_leap_rise_fall_land"
@@ -6222,7 +6249,7 @@
                     "2hs_attack2"
                 ],
                 "2ht": [
-                    "2ht_attack1",
+                    "2ht_attack2",
                     "2ht_attack2"
                 ],
                 "1js": [
@@ -6261,7 +6288,7 @@
                     "2hs_attack2"
                 ],
                 "2ht": [
-                    "2ht_attack1",
+                    "2ht_attack2",
                     "2ht_attack2"
                 ],
                 "1js": [
@@ -6272,6 +6299,57 @@
                 ],
                 "1st": [
                     "1st_attack1"
+                ]
+            },
+            "enterEvents": [],
+            "exitEvents": []
+        },
+        {
+            "type": "AnimationState",
+            "name": "AnimationState003",
+            "_name": "SKILL_GRIMWARD",
+            "audioId": "",
+            "loopCount": 1,
+            "stateId": 66,
+            "modeId": 18,
+            "skillIndex": 150,
+            "stepIndex": 0,
+            "animationBindings": {
+                "hth": [
+                    "1hs_attack2"
+                ],
+                "bow": [
+                    "1hs_attack2"
+                ],
+                "1hs": [
+                    "1hs_attack2"
+                ],
+                "1ht": [
+                    "1hs_attack2"
+                ],
+                "stf": [
+                    "stf_attack2"
+                ],
+                "2hs": [
+                    "2hs_attack2"
+                ],
+                "2ht": [
+                    "stf_attack2"
+                ],
+                "xbw": [
+                    "1hs_attack2"
+                ],
+                "1js": [
+                    "1js_attack2"
+                ],
+                "1jt": [
+                    "1js_attack2"
+                ],
+                "1ss": [
+                    "1ss_attack2"
+                ],
+                "1st": [
+                    "1hs_attack2"
                 ]
             },
             "enterEvents": [],

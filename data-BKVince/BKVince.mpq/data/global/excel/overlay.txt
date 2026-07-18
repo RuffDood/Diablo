@@ -335,3 +335,4 @@ colossal_lightning	331	ShockHitSm	0	20	common	0	1	0	0	0	0	0	0	16	0	3	11	11	255	2
 warlock_shadow_cast_2	332	warlock_shadow_cast_1	100	15	warlock	1	1	0	0	0	0	0	0	16	0	3	0	0	0	0	0	1	0			
 herald	333	expansion\succcurseoverlay2	100	10	common	0	1	0	0	14	0	-14	-60	16	0	3	0	0	0	0	0	1	0			
 mconvictionfront	334	mconvictionfront	0	12	paladin	0	1	0	0	0	0	0	0	16	0	3	0	0	255	255	255	1	0			
+openwounds	9999	Charge	0	18	common	0	1	0	0	0	0	0	0	8	0	3	0	0	255	255	255	1	0			

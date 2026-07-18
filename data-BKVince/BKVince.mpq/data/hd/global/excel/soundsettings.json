@@ -1,0 +1,67 @@
+{
+    "listener": {
+        "position": {
+            "x": 0,
+            "y": 280,
+            "z": 0
+        },
+        "forwarddirection": {
+            "x": 0,
+            "y": -0.4,
+            "z": 0
+        }
+    },
+    "factors": {
+        "pixels-per-soundunit": 320,
+        "soundunit-per-meter": 20,
+        "audiorolloff": 8,
+        "maxaudibledistance": 2500,
+        "2dmindistance": 2,
+        "global-LFE-multiplier": 0,
+        "2dmaxdistance": 100
+    },
+    "system": {
+        "sd-transition-fade-ticks": 20,
+        "2d-voice-count": 8,
+        "3d-voice-count": 80,
+        "hd-emitter-fade-in-seconds": 2,
+        "hd-emitter-fade-out-seconds": 0.5
+    },
+    "falloffdimensions": [
+        {
+            "name": "ESOUNDFALLOFF_SHORT - 0",
+            "mindistance": 200,
+            "maxdistance": 20000
+        },
+        {
+            "name": "ESOUNDFALLOFF_MEDIUM - 1",
+            "mindistance": 450,
+            "maxdistance": 20000
+        },
+        {
+            "name": "ESOUNDFALLOFF_LARGE - 2",
+            "mindistance": 500,
+            "maxdistance": 20000
+        },
+        {
+            "name": "ESOUNDFALLOFF_AMBIENT - 3",
+            "mindistance": 750,
+            "maxdistance": 20000
+        },
+        {
+            "name": "ESOUNDFALLOFF_VOICE - 4",
+            "mindistance": 1000,
+            "maxdistance": 20000
+        },
+        {
+            "name": "ESOUNDFALLOFF_SUPERSHORT - 5",
+            "mindistance": 150,
+            "maxdistance": 20000
+        },
+        {
+            "name": "ESOUNDFALLOFF_MEDSHORT - 6",
+            "mindistance": 300,
+            "maxdistance": 20000
+        }
+    ]
+}

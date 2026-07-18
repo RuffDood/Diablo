@@ -1349,72 +1349,72 @@
         {
             "type": "AnimationItem",
             "name": "hth_walk",
-            "filename": "data/hd/character/player/assassin/animation/hth_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/hth_walk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "bow_walk",
-            "filename": "data/hd/character/player/assassin/animation/bow_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/bow_walk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "1hs_walk",
-            "filename": "data/hd/character/player/assassin/animation/1hs_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/1hs_walk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "1ht_walk",
-            "filename": "data/hd/character/player/assassin/animation/1ht_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/1ht_walk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "stf_walk",
-            "filename": "data/hd/character/player/assassin/animation/stf_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/stf_walk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "2hs_walk",
-            "filename": "data/hd/character/player/assassin/animation/2hs_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/2hs_walk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "2ht_walk",
-            "filename": "data/hd/character/player/assassin/animation/2ht_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/2ht_walk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "xbw_walk",
-            "filename": "data/hd/character/player/assassin/animation/xbw_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/xbw_walk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "1js_walk",
-            "filename": "data/hd/character/player/assassin/animation/1js_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/1js_walk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "1jt_walk",
-            "filename": "data/hd/character/player/assassin/animation/1jt_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/1jt_walk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "1ss_walk",
-            "filename": "data/hd/character/player/assassin/animation/1ss_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/1ss_walk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "1st_walk",
-            "filename": "data/hd/character/player/assassin/animation/1st_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/1st_walk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "ht1_walk",
-            "filename": "data/hd/character/player/assassin/animation/ht1_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/ht1_walk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "ht2_walk",
-            "filename": "data/hd/character/player/assassin/animation/ht2_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/ht2_walk.animation"
         },
         {
             "type": "AnimationItem",
@@ -1579,72 +1579,72 @@
         {
             "type": "AnimationItem",
             "name": "hth_townwalk",
-            "filename": "data/hd/character/player/assassin/animation/hth_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/hth_townwalk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "bow_townwalk",
-            "filename": "data/hd/character/player/assassin/animation/bow_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/bow_townwalk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "1hs_townwalk",
-            "filename": "data/hd/character/player/assassin/animation/1hs_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/1hs_townwalk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "1ht_townwalk",
-            "filename": "data/hd/character/player/assassin/animation/1ht_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/1ht_townwalk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "stf_townwalk",
-            "filename": "data/hd/character/player/assassin/animation/stf_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/stf_townwalk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "2hs_townwalk",
-            "filename": "data/hd/character/player/assassin/animation/2hs_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/2hs_townwalk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "2ht_townwalk",
-            "filename": "data/hd/character/player/assassin/animation/2ht_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/2ht_townwalk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "xbw_townwalk",
-            "filename": "data/hd/character/player/assassin/animation/xbw_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/xbw_townwalk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "1js_townwalk",
-            "filename": "data/hd/character/player/assassin/animation/1js_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/1js_townwalk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "1jt_townwalk",
-            "filename": "data/hd/character/player/assassin/animation/1jt_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/1jt_townwalk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "1ss_townwalk",
-            "filename": "data/hd/character/player/assassin/animation/1ss_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/1ss_townwalk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "1st_townwalk",
-            "filename": "data/hd/character/player/assassin/animation/1st_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/1st_townwalk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "ht1_townwalk",
-            "filename": "data/hd/character/player/assassin/animation/ht1_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/ht1_townwalk.animation"
         },
         {
             "type": "AnimationItem",
             "name": "ht2_townwalk",
-            "filename": "data/hd/character/player/assassin/animation/ht2_run.animation"
+            "filename": "data/hd/character/player/assassin/animation/ht2_townwalk.animation"
         },
         {
             "type": "AnimationItem",
@@ -5193,34 +5193,34 @@
             "stepIndex": 1,
             "animationBindings": {
                 "hth": [
-                    "hth_dragontalon_loop"
+                    "hth_dragonflight_kick"
                 ],
                 "bow": [
-                    "bow_dragontalon_loop"
+                    "bow_dragonflight_kick"
                 ],
                 "1hs": [
-                    "1hs_dragontalon_loop"
+                    "1hs_dragonflight_kick"
                 ],
                 "1ht": [
-                    "1ht_dragontalon_loop"
+                    "1ht_dragonflight_kick"
                 ],
                 "stf": [
-                    "stf_dragontalon_loop"
+                    "stf_dragonflight_kick"
                 ],
                 "2hs": [
-                    "2hs_dragontalon_loop"
+                    "2hs_dragonflight_kick"
                 ],
                 "2ht": [
-                    "2ht_dragontalon_loop"
+                    "2ht_dragonflight_kick"
                 ],
                 "xbw": [
-                    "xbw_dragontalon_loop"
+                    "xbw_dragonflight_kick"
                 ],
                 "ht1": [
-                    "ht1_dragontalon_loop"
+                    "ht1_dragonflight_kick"
                 ],
                 "ht2": [
-                    "ht2_dragontalon_loop"
+                    "ht2_dragonflight_kick"
                 ]
             },
             "enterEvents": [],
@@ -6019,6 +6019,24 @@
                 "2ht": [
                     "2ht_attack1",
                     "2ht_attack2"
+                ]
+            },
+            "enterEvents": [],
+            "exitEvents": []
+        },
+        {
+            "type": "AnimationState",
+            "name": "AnimationState015",
+            "_name": "Skill_DragonClaw",
+            "audioId": "",
+            "loopCount": 1,
+            "stateId": 67,
+            "modeId": 18,
+            "skillIndex": 386,
+            "stepIndex": 0,
+            "animationBindings": {
+                "ht2": [
+                    "ht2_sequence"
                 ]
             },
             "enterEvents": [],
@@ -18839,7 +18857,7 @@
                 },
                 {
                     "type": "AnimationTransitionItem",
-                    "name": "AnimationState014_transitiongroup_transition017",
+                    "name": "_transitiongroup_transition017",
                     "crossfadeSeconds": 0.2,
                     "to": 18
                 },
@@ -24169,7 +24187,7 @@
                 {
                     "type": "AnimationTransitionItem",
                     "name": "AnimationState027_transitiongroup_transition045",
-                    "crossfadeSeconds": 0.1,
+                    "crossfadeSeconds": 0.0,
                     "to": 46
                 },
                 {
