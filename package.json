@@ -16,7 +16,8 @@
     "generate:cube-guide": "node scripts/build-data/cube-guide.js",
     "test:cube-guide": "node scripts/build-data/cube-guide.js --check",
     "test:itemstatcost": "node scripts/build-data/audit-itemstatcost.js",
-    "test:bkvince-startup-refs": "node scripts/migrate-bkvince/validate-startup-references.js"
+    "test:bkvince-startup-refs": "node scripts/migrate-bkvince/validate-startup-references.js",
+    "test:bkvince-monstats-lots": "node scripts/migrate-bkvince/apply-monstats-lots.js"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",
