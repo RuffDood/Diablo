@@ -40,6 +40,7 @@ En clair : côté **données et runtime**, `data-TCP` demeure la source historiq
 - **Encodage & intégrité des `.txt`** : UTF-8 sans BOM pour le code ; les tables `.txt` D2R sont en **CRLF** (épinglé par `.gitattributes`). Toute réécriture doit préserver le **format TSV exact**, les **CRLF** et l'**encodage**, sinon D2RLAN casse. Le parseur/écrivain `scripts/build-data/tsv.js` garantit un round-trip **byte-exact** — passe toujours par lui.
 - **Assets versionnés** : `data-TCP/hd`, `data-TCP/local`, `data-BK/hd` et `data-BK/local` sont dans Git. Les formats HD binaires de TCP/BK passent par Git LFS ; les backups `*.bak` restent exclus.
 - **Git** : ne change **jamais** de branche, et ne commit ni ne push jamais, sans un `GO` dédié et explicite de Guillaume.
+- **Runtime Diablo** : lorsqu'une opération sur Diablo, D2RLoader ou le profil BKVince exige de libérer des fichiers verrouillés, ferme toi-même les instances concernées du jeu. Ne demande pas à Vincent de fermer le jeu. Relance ensuite une seule instance si la validation de la tâche l'exige.
 
 ## Développement de la plateforme
 

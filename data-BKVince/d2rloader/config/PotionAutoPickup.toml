@@ -1,5 +1,6 @@
 # BKVince preset for the mod-local PotionAutoPickup plugin.
 enabled = true
+# Vanilla automatic gold pickup uses a server distance-cost limit of 4.
 pickup_distance = 4
 minimum_interval_frames = 3
 family_priority = ["rejuvenation", "healing", "mana"]

@@ -1,5 +1,13 @@
 # PotionAutoPickup
 
-D2RLoader mod-local plugin source for BKVince. The policy core supports every healing, mana and rejuvenation tier, ordered belt columns and per-family inventory overflow.
+D2RLoader mod-local plugin source for BKVince. The native adapter targets `D2R.exe 3.2.92777`, scans server-side ground items and invokes the same server pickup routine used by vanilla automatic gold pickup.
 
-The current native adapter is deliberately fail-closed: it does not install gameplay hooks until every required target has a verified signature for `D2R.exe 3.2.92777`. Never deploy a DLL built from this revision as if automatic pickup were active.
+The runtime signature is checked by D2RLoader before the hook is installed. Pickup distance is capped at the vanilla gold value of `4`; collision and ground-mode checks are performed before pickup. Healing (`hp1`-`hp5`), mana (`mp1`-`mp5`) and rejuvenation (`rvs`/`rvl`) tiers are read from `PotionAutoPickup.toml`.
+
+Build and policy tests:
+
+```powershell
+cmake -S . -B build -A x64
+cmake --build build --config Release
+ctest --test-dir build -C Release --output-on-failure
+```
