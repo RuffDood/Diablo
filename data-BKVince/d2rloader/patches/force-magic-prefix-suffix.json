@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "name": "Force Magic Prefix and Suffix",
+  "description": "Forces magic items to roll both a prefix and a suffix on D2R build 92777.",
+  "patches": [
+    {
+      "description": "Force the magic prefix roll count to one.",
+      "op": "bytes",
+      "rva": "0x00442C78",
+      "expected": "8B 82 A8 00 00 00",
+      "bytes": "B8 01 00 00 00 90"
+    },
+    {
+      "description": "Force the magic suffix minimum roll count to one.",
+      "op": "bytes",
+      "rva": "0x00442CF0",
+      "expected": "0F 4F EB",
+      "bytes": "8B EB 90"
+    }
+  ]
+}
