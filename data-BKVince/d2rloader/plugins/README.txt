@@ -150,3 +150,25 @@ Prefer D2RLoader-provided typed hooks when they are available.
 Keep `D2RLoaderUnloadPlugin` quick and `noexcept`.
 
 Use it to release resources owned by the plugin. D2RLoader calls unload callbacks during shutdown in reverse load order, but plugin DLLs stay loaded for the lifetime of the process.
+
+## Installed D2RL-Plugins pack
+
+The BKVince profile includes D2RL-Plugins 2.0.1, built in Release x64 from the
+official repository at commit `dc75b49ffbb67b887d7757ee00ee9a03bcde5d8a`:
+
+https://github.com/eezstreet/D2RL-Plugins
+
+The installed runtime DLLs are:
+
+* `plugin-items.dll`
+* `plugin-levels.dll`
+* `plugin-misc.dll`
+* `plugin-quests.dll`
+* `plugin-skills.dll`
+
+Starting with upstream commit `2111a354`, `plugin-shared` is a static library.
+Its code is embedded in the five plugin DLLs, so there is no separate
+`plugin-shared.dll` to install with D2RLoader 1.0.x.
+
+The pack reads its feature configuration from
+`BKVince.mpq/D2RPlugins.json`. All optional behavior starts disabled.
