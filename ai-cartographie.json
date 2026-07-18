@@ -1,6 +1,6 @@
 {
     "schemaVersion":  "1.1.0",
-    "generatedAt":  "2026-07-18T00:00:59.6338582+00:00",
+    "generatedAt":  "2026-07-18T00:10:05.1096475+00:00",
     "root":  {
                  "name":  "Diablo",
                  "path":  ".",
@@ -14455,6 +14455,21 @@
                                       "name":  "data-vanilla3.2",
                                       "path":  "data-vanilla3.2",
                                       "kind":  "directory",
+                                      "meta":  {
+                                                   "role":  "vanilla-reference",
+                                                   "summary":  "Extraction locale CASCView de Diablo II Resurrected 3.2.92777; seule la branche data/data/global/excel est versionnée.",
+                                                   "agentAccess":  "read-only",
+                                                   "status":  "reference",
+                                                   "provenance":  {
+                                                                      "source":  "CASCView — installation officielle Diablo II Resurrected",
+                                                                      "version":  "3.2.92777"
+                                                                  },
+                                                   "policy":  {
+                                                                  "editable":  false,
+                                                                  "canonical":  true,
+                                                                  "generated":  false
+                                                              }
+                                               },
                                       "children":  [
                                                        {
                                                            "name":  "data",
@@ -14475,6 +14490,16 @@
                                                                                                                           "name":  "excel",
                                                                                                                           "path":  "data-vanilla3.2/data/data/global/excel",
                                                                                                                           "kind":  "directory",
+                                                                                                                          "meta":  {
+                                                                                                                                       "role":  "gameplay-data",
+                                                                                                                                       "summary":  "Tables Excel vanilla de D2R 3.2 extraites de CASC et versionnées comme référence byte-exacte en lecture seule.",
+                                                                                                                                       "agentAccess":  "read-only",
+                                                                                                                                       "policy":  {
+                                                                                                                                                      "editable":  false,
+                                                                                                                                                      "canonical":  true,
+                                                                                                                                                      "generated":  false
+                                                                                                                                                  }
+                                                                                                                                   },
                                                                                                                           "children":  [
                                                                                                                                            {
                                                                                                                                                "name":  "base",
