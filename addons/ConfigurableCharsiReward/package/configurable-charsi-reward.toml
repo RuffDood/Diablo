@@ -1,0 +1,21 @@
+# Tweaked Charsi Imbue Reward
+# Grants the native Charsi quest service
+
+[reward]
+# Set to true to activate this plugin.
+enabled = false
+# target_type accepted values: "superunique" or "boss".
+target_type = "superunique"
+# "superunique": exact Superunique value from superuniques.txt, like "Bishibosh".
+# "boss": exact Id value of an Act boss, Uber, or mini-Uber from monstats.txt. Example: "andariel", "uberandariel", etc.
+target = ""
+# Accepted values: 1, 2 or 3 additional native Imbues per kill.
+reward_count = 3
+# reward_count = 1: three kills grant 1 -> 2 -> 3 pending Imbues.
+# reward_count = 2: the first kill grants 2; the second raises the total to 3.
+# reward_count = 3: the first kill immediately fills the reward queue.
+
+[difficulties]
+normal = true
+nightmare = true
+hell = true
