@@ -15,7 +15,8 @@
     "test:pandemonium-storage": "node scripts/build-data/pandemonium-storage.js --check",
     "generate:cube-guide": "node scripts/build-data/cube-guide.js",
     "test:cube-guide": "node scripts/build-data/cube-guide.js --check",
-    "test:itemstatcost": "node scripts/build-data/audit-itemstatcost.js"
+    "test:itemstatcost": "node scripts/build-data/audit-itemstatcost.js",
+    "test:bkvince-startup-refs": "node scripts/migrate-bkvince/validate-startup-references.js"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",

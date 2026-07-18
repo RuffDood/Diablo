@@ -21,6 +21,14 @@ leurs identifiants ont été déplacés de `+11000`, sans modifier leurs clés n
 leurs textes. Une relance à froid confirme les onglets `Extensions` et `About`
 ainsi que les sections `Plugins` et `Patches`.
 
+Deux références de données BK invalides au démarrage ont ensuite été corrigées
+sélectivement : la formule de portée d'Eruption utilise maintenant le missile
+réel `erruption center`, et la classe non-quest `Andariel Essence (H)` existe
+avec son drop `tes`. Le contrôle read-only correspondant s'exécute avec
+`npm run test:bkvince-startup-refs`. Une relance à froid confirme la disparition
+de ces deux assertions; elle révèle l'écart suivant à auditer dans la chaîne des
+Treasure Classes : `Rift Crafts (N) Premium`.
+
 La commande `d2rl unpack BKVince` n'est pas une étape de build du mod : elle
 extrait temporairement les données de référence embarquées par D2RLoader dans
 `mods/BKVince/d2rloader/data/`. D2RLoader ne génère pas les tables gameplay
