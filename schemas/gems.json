@@ -2,177 +2,334 @@
   "table": "gems",
   "category": "items",
   "file": "global/excel/gems.txt",
-  "description": "Table gems du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 4,
+  "description": "This file controls the item modifiers of gems and runes for each item type. This file is used by the following files: armor, weapons, misc. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 40,
   "columns": [
     {
       "name": "name",
       "type": "text",
       "description": "This is a reference field to define the gem/rune name",
-      "guideType": "[O]"
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#name"
     },
     {
       "name": "letter",
       "type": "text",
       "description": "Defines the string that is concatenated together in the item tooltip when a rune is socketed into an item",
-      "guideType": "[O]"
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#letter"
     },
     {
       "name": "transform",
       "type": "number",
-      "description": "Controls the color change of the item after being socketed by the gem/rune. Referenced from the",
-      "guideType": "[N]"
+      "description": "Controls the color change of the item after being socketed by the gem/rune. (Corresponds to colors.Code)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#transform"
     },
     {
       "name": "code",
       "type": "text",
-      "description": "Defines the unique item code used to create the gem/rune",
-      "guideType": "[O]"
+      "description": "Links this entry to a specific item's code.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#code"
     },
     {
       "name": "weaponMod1Code",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties that the gem/rune provides when socketed into an item with a misc.gemapplytype value that equals (weapon=0, helm=1, shield=2) References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Code"
     },
     {
       "name": "weaponMod1Param",
-      "type": "number"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the listed property. Usage depends on the property function (See properties.func#) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Param"
     },
     {
       "name": "weaponMod1Min",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Min"
     },
     {
       "name": "weaponMod1Max",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Max"
     },
     {
       "name": "weaponMod2Code",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties that the gem/rune provides when socketed into an item with a misc.gemapplytype value that equals (weapon=0, helm=1, shield=2) References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Code"
     },
     {
       "name": "weaponMod2Param",
-      "type": "number"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the listed property. Usage depends on the property function (See properties.func#) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Param"
     },
     {
       "name": "weaponMod2Min",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Min"
     },
     {
       "name": "weaponMod2Max",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Max"
     },
     {
       "name": "weaponMod3Code",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties that the gem/rune provides when socketed into an item with a misc.gemapplytype value that equals (weapon=0, helm=1, shield=2) References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Code"
     },
     {
       "name": "weaponMod3Param",
-      "type": "number"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the listed property. Usage depends on the property function (See properties.func#) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Param"
     },
     {
       "name": "weaponMod3Min",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Min"
     },
     {
       "name": "weaponMod3Max",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Max"
     },
     {
       "name": "helmMod1Code",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties that the gem/rune provides when socketed into an item with a misc.gemapplytype value that equals (weapon=0, helm=1, shield=2) References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Code"
     },
     {
       "name": "helmMod1Param",
-      "type": "number"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the listed property. Usage depends on the property function (See properties.func#) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Param"
     },
     {
       "name": "helmMod1Min",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Min"
     },
     {
       "name": "helmMod1Max",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Max"
     },
     {
       "name": "helmMod2Code",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties that the gem/rune provides when socketed into an item with a misc.gemapplytype value that equals (weapon=0, helm=1, shield=2) References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Code"
     },
     {
       "name": "helmMod2Param",
-      "type": "number"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the listed property. Usage depends on the property function (See properties.func#) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Param"
     },
     {
       "name": "helmMod2Min",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Min"
     },
     {
       "name": "helmMod2Max",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Max"
     },
     {
       "name": "helmMod3Code",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties that the gem/rune provides when socketed into an item with a misc.gemapplytype value that equals (weapon=0, helm=1, shield=2) References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Code"
     },
     {
       "name": "helmMod3Param",
-      "type": "number"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the listed property. Usage depends on the property function (See properties.func#) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Param"
     },
     {
       "name": "helmMod3Min",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Min"
     },
     {
       "name": "helmMod3Max",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Max"
     },
     {
       "name": "shieldMod1Code",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties that the gem/rune provides when socketed into an item with a misc.gemapplytype value that equals (weapon=0, helm=1, shield=2) References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Code"
     },
     {
       "name": "shieldMod1Param",
-      "type": "number"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the listed property. Usage depends on the property function (See properties.func#) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Param"
     },
     {
       "name": "shieldMod1Min",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Min"
     },
     {
       "name": "shieldMod1Max",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Max"
     },
     {
       "name": "shieldMod2Code",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties that the gem/rune provides when socketed into an item with a misc.gemapplytype value that equals (weapon=0, helm=1, shield=2) References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Code"
     },
     {
       "name": "shieldMod2Param",
-      "type": "number"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the listed property. Usage depends on the property function (See properties.func#) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Param"
     },
     {
       "name": "shieldMod2Min",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Min"
     },
     {
       "name": "shieldMod2Max",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Max"
     },
     {
       "name": "shieldMod3Code",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties that the gem/rune provides when socketed into an item with a misc.gemapplytype value that equals (weapon=0, helm=1, shield=2) References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Code"
     },
     {
       "name": "shieldMod3Param",
-      "type": "number"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the listed property. Usage depends on the property function (See properties.func#) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Param"
     },
     {
       "name": "shieldMod3Min",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Min"
     },
     {
       "name": "shieldMod3Max",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value associated with the listed property. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gems.html#Mod%23Max"
     }
   ]
 }

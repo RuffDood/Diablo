@@ -2,83 +2,134 @@
   "table": "lvlwarp",
   "category": "system",
   "file": "global/excel/lvlwarp.txt",
-  "description": "Table lvlwarp du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 7,
+  "description": "This file controls how the player is moved to different area levels, such as entrances and exits between different areas. This player transportation of between levels is defined as a Level Warp. Level Warps function as special tiles that are added to the area for controlling the location for where to transport the player. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 15,
   "columns": [
     {
       "name": "Name",
       "type": "text",
       "description": "This is a reference field to define the Level Warp",
-      "guideType": "[O]"
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlwarp.html#Name"
     },
     {
       "name": "Id",
       "type": "number",
-      "description": "Defines the numeric ID for the type of Level Warp. This ID can be shared between multiple Level Warps if those Level Warps want to use the same functionality. This is referenced in other files",
-      "guideType": "[N]"
+      "description": "Defines the numeric ID for the type of Level Warp. This ID can be shared between multiple Level Warps if those Level Warps want to use the same functionality. This is referenced in other files.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlwarp.html#Id"
     },
     {
       "name": "SelectX",
-      "type": "number"
+      "type": "number",
+      "description": "These values define the horizontal and vertical offsets (respectively) of the starting left corner position of the Level Warp area. This is treated as the starting position to select the interactable Level Warp area in the area level. This value is measured in pixels.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlwarp.html#SelectX"
     },
     {
       "name": "SelectY",
-      "type": "number"
+      "type": "number",
+      "description": "These values define the horizontal and vertical offsets (respectively) of the starting left corner position of the Level Warp area. This is treated as the starting position to select the interactable Level Warp area in the area level. This value is measured in pixels.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlwarp.html#SelectX"
     },
     {
       "name": "SelectDX",
-      "type": "number"
+      "type": "number",
+      "description": "These values define the horizontal and vertical offsets (respectively) of the offset from the starting position of the Level Warp area. This is added with the .SelectX & .SelectY fields (respectively) to determine the overall size and position of the Level Warp in the area level. This value is measured in pixels.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlwarp.html#SelectDX"
     },
     {
       "name": "SelectDY",
-      "type": "number"
+      "type": "number",
+      "description": "These values define the horizontal and vertical offsets (respectively) of the offset from the starting position of the Level Warp area. This is added with the .SelectX & .SelectY fields (respectively) to determine the overall size and position of the Level Warp in the area level. This value is measured in pixels.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlwarp.html#SelectDX"
     },
     {
       "name": "ExitWalkX",
-      "type": "number"
+      "type": "number",
+      "description": "These values define the horizontal and vertical positions (respectively) of the destination location where the player will walk to after exiting to this Level Warp. This value is measured with a sub-tile offset from the base position of the Level Warp. One full tile on a level is composed of a grid of 5x5 sub-tiles.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlwarp.html#ExitWalkX"
     },
     {
       "name": "ExitWalkY",
-      "type": "number"
+      "type": "number",
+      "description": "These values define the horizontal and vertical positions (respectively) of the destination location where the player will walk to after exiting to this Level Warp. This value is measured with a sub-tile offset from the base position of the Level Warp. One full tile on a level is composed of a grid of 5x5 sub-tiles.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlwarp.html#ExitWalkX"
     },
     {
       "name": "OffsetX",
-      "type": "number"
+      "type": "number",
+      "description": "These values define the horizontal and vertical positions (respectively) of the sub-tile for the Level Warp, where the player will appear when exiting to this area level. This value is measured with a sub-tile offset from the base position of the Level Warp. One full tile on a level is composed of a grid of 5x5 sub-tiles.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlwarp.html#OffsetX"
     },
     {
       "name": "OffsetY",
-      "type": "number"
+      "type": "number",
+      "description": "These values define the horizontal and vertical positions (respectively) of the sub-tile for the Level Warp, where the player will appear when exiting to this area level. This value is measured with a sub-tile offset from the base position of the Level Warp. One full tile on a level is composed of a grid of 5x5 sub-tiles.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlwarp.html#OffsetX"
     },
     {
       "name": "LitVersion",
-      "type": "boolean",
-      "description": "If equals 1, then Level Warp tiles will change their appearance when highlighted. If equals 0, then the Level Warp tiles will not change appearance when highlighted",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then Level Warp tiles will change their appearance when highlighted. If equals 0, then the Level Warp tiles will not change appearance when highlighted.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlwarp.html#LitVersion"
     },
     {
       "name": "Tiles",
       "type": "number",
-      "description": "Defines an index offset to determine which tile to use in the tile set for the highlighted version of the Level Warp. These tiles are loaded and hidden/revealed when the player mouse hovers over the Level Warp tiles. This relies on",
-      "guideType": "[N]"
+      "description": "Defines an index offset to determine which tile to use in the tile set for the highlighted version of the Level Warp. These tiles are loaded and hidden/revealed when the player mouse hovers over the Level Warp tiles. This relies on .LitVersion being enabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlwarp.html#Tiles"
     },
     {
       "name": "NoInteract",
-      "type": "boolean",
-      "description": "If equals 1, then the Level War cannot be directly interacted by the player. If equals 0, then the player can interact with the Level Warp",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the Level Warp cannot be directly interacted by the player. If equals 0, then the player can interact with the Level Warp.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlwarp.html#NoInteract"
     },
     {
       "name": "Direction",
       "type": "text",
       "description": "Defines the orientation of the Level Warp. Uses a specific string code.",
-      "guideType": "[O]"
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlwarp.html#Direction"
     },
     {
       "name": "UniqueId",
       "type": "number",
       "description": "Defines the unique numeric ID for the Level Warp. Each Level Warp should have a unique ID so that the game can handle loading that specific Level Warp's related files.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlwarp.html#UniqueId"
     }
   ]
 }

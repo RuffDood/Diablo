@@ -2,511 +2,966 @@
   "table": "skilldesc",
   "category": "skills",
   "file": "global/excel/skilldesc.txt",
-  "description": "Table skilldesc du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 13,
+  "description": "This file controls a skill's tooltip description and how it is displayed on the Skill Tree. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 119,
   "columns": [
     {
       "name": "skilldesc",
       "type": "text",
       "description": "The name of the skill description, as a reference for associated Data files",
-      "guideType": "[O]"
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#skilldesc"
     },
     {
       "name": "SkillPage",
       "type": "number",
       "description": "Determines which page on the Skill tree to display the skill",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#SkillPage"
     },
     {
       "name": "SkillRow",
       "type": "number",
       "description": "Determines which row on the Skill tree page to display the skill",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#SkillRow"
     },
     {
       "name": "SkillColumn",
       "type": "number",
       "description": "Determines which column on the Skill tree page to display the skill",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#SkillColumn"
     },
     {
       "name": "ListRow",
       "type": "number",
       "description": "Determines which row the skill will be listed in, for the skill select UI.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#ListRow"
     },
     {
       "name": "IconCel",
       "type": "number",
-      "description": "Determines the icon asset for displaying the skill, using the Frame# of the",
-      "guideType": "[N]"
+      "description": "Determines the icon asset for displaying the skill. This requires an ID value based on the skillicon files. Class specific skills use their designated class skillicon files (controlled by the skills.charclass), and non-class skills use the global skillicon file. This will use the value as the standard icon to display, and the next value (value + 1) as the button pressed icon display.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#IconCel"
     },
     {
       "name": "HireableIconCel",
       "type": "number",
-      "description": "Determines the icon asset for displaying the skill, using the Frame# of the",
-      "guideType": "[N]"
+      "description": "Determines the icon asset for displaying the skill on a hireable (mercenary). This requires an ID value based on the hireable skillicon files. This will use the value as the standard icon to display, and the next value (value + 1) as the button pressed icon display.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#HireableIconCel"
     },
     {
       "name": "str name",
       "type": "text",
       "description": "Uses a string to display as the skill name",
-      "guideType": "[O]"
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#str%20name"
     },
     {
       "name": "str short",
       "type": "text",
       "description": "Uses a string to display as the skill description in shortcuts or when selecting a skill",
-      "guideType": "[O]"
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#str%20short"
     },
     {
       "name": "str long",
       "type": "text",
       "description": "Uses a string to display as the skill description on the Skill Tree",
-      "guideType": "[O]"
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#str%20long"
     },
     {
       "name": "str alt",
       "type": "text",
       "description": "Uses a string to display the skill name on the Character Screen when the skill is selected",
-      "guideType": "[O]"
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#str%20alt"
     },
     {
       "name": "descdam",
       "type": "number",
       "description": "Use a function to calculate a skill's damage and determine how to display it. These functions sometimes require certain skill fields, especially the damage related fields.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#descdam"
     },
     {
       "name": "ddam calc1",
-      "type": "text"
+      "type": "text",
+      "description": "Integer calc value used as a possible parameter for the .descdam function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#ddam%20calc%23"
     },
     {
       "name": "ddam calc2",
-      "type": "text"
+      "type": "text",
+      "description": "Integer calc value used as a possible parameter for the .descdam function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#ddam%20calc%23"
     },
     {
       "name": "p1dmelem",
-      "type": "text"
+      "type": "text",
+      "description": "Used for skills that have charge-ups to display the damage on the Character Screen, controls the elemental type for that charge",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#p%23dmelem"
     },
     {
       "name": "p1dmmin",
-      "type": "text"
+      "type": "text",
+      "description": "Used for skills that have charge-ups to display the damage on the Character Screen, controls the minimum damage for that charge Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#p%23dmmin"
     },
     {
       "name": "p1dmmax",
-      "type": "text"
+      "type": "text",
+      "description": "Used for skills that have charge-ups to display the damage on the Character Screen, controls the maximum damage for that charge Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#p%23dmmax"
     },
     {
       "name": "p2dmelem",
-      "type": "text"
+      "type": "text",
+      "description": "Used for skills that have charge-ups to display the damage on the Character Screen, controls the elemental type for that charge",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#p%23dmelem"
     },
     {
       "name": "p2dmmin",
-      "type": "text"
+      "type": "text",
+      "description": "Used for skills that have charge-ups to display the damage on the Character Screen, controls the minimum damage for that charge Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#p%23dmmin"
     },
     {
       "name": "p2dmmax",
-      "type": "text"
+      "type": "text",
+      "description": "Used for skills that have charge-ups to display the damage on the Character Screen, controls the maximum damage for that charge Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#p%23dmmax"
     },
     {
       "name": "p3dmelem",
-      "type": "text"
+      "type": "text",
+      "description": "Used for skills that have charge-ups to display the damage on the Character Screen, controls the elemental type for that charge",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#p%23dmelem"
     },
     {
       "name": "p3dmmin",
-      "type": "text"
+      "type": "text",
+      "description": "Used for skills that have charge-ups to display the damage on the Character Screen, controls the minimum damage for that charge Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#p%23dmmin"
     },
     {
       "name": "p3dmmax",
-      "type": "text"
+      "type": "text",
+      "description": "Used for skills that have charge-ups to display the damage on the Character Screen, controls the maximum damage for that charge Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#p%23dmmax"
     },
     {
       "name": "descatt",
       "type": "number",
       "description": "Used to display the overall Attack Rating of the skill in the Character Screen",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#descatt"
     },
     {
       "name": "descmissile1",
-      "type": "text"
+      "type": "text",
+      "description": "Links a missile to be used as a reference value for calculations",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#descmissile%23"
     },
     {
       "name": "descmissile2",
-      "type": "text"
+      "type": "text",
+      "description": "Links a missile to be used as a reference value for calculations",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#descmissile%23"
     },
     {
       "name": "descmissile3",
-      "type": "text"
+      "type": "text",
+      "description": "Links a missile to be used as a reference value for calculations",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#descmissile%23"
     },
     {
       "name": "descline1",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as the current level and next level description lines in the skill tooltip.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#descline%23"
     },
     {
       "name": "desctexta1",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .descline# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desctexta%23"
     },
     {
       "name": "desctextb1",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .descline# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desctextb%23"
     },
     {
       "name": "desccalca1",
-      "type": "text"
+      "type": "text",
+      "description": "Integer calculation value used as the first possible numeric parameter for the .descline# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desccalca%23"
     },
     {
       "name": "desccalcb1",
-      "type": "text"
+      "type": "text",
+      "description": "Integer calculation value used as the second possible numeric parameter for the .descline# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desccalcb%23"
     },
     {
       "name": "descline2",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as the current level and next level description lines in the skill tooltip.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#descline%23"
     },
     {
       "name": "desctexta2",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .descline# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desctexta%23"
     },
     {
       "name": "desctextb2",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .descline# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desctextb%23"
     },
     {
       "name": "desccalca2",
-      "type": "text"
+      "type": "text",
+      "description": "Integer calculation value used as the first possible numeric parameter for the .descline# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desccalca%23"
     },
     {
       "name": "desccalcb2",
-      "type": "text"
+      "type": "text",
+      "description": "Integer calculation value used as the second possible numeric parameter for the .descline# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desccalcb%23"
     },
     {
       "name": "descline3",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as the current level and next level description lines in the skill tooltip.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#descline%23"
     },
     {
       "name": "desctexta3",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .descline# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desctexta%23"
     },
     {
       "name": "desctextb3",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .descline# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desctextb%23"
     },
     {
       "name": "desccalca3",
-      "type": "text"
+      "type": "text",
+      "description": "Integer calculation value used as the first possible numeric parameter for the .descline# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desccalca%23"
     },
     {
       "name": "desccalcb3",
-      "type": "text"
+      "type": "text",
+      "description": "Integer calculation value used as the second possible numeric parameter for the .descline# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desccalcb%23"
     },
     {
       "name": "descline4",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as the current level and next level description lines in the skill tooltip.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#descline%23"
     },
     {
       "name": "desctexta4",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .descline# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desctexta%23"
     },
     {
       "name": "desctextb4",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .descline# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desctextb%23"
     },
     {
       "name": "desccalca4",
-      "type": "text"
+      "type": "text",
+      "description": "Integer calculation value used as the first possible numeric parameter for the .descline# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desccalca%23"
     },
     {
       "name": "desccalcb4",
-      "type": "text"
+      "type": "text",
+      "description": "Integer calculation value used as the second possible numeric parameter for the .descline# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desccalcb%23"
     },
     {
       "name": "descline5",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as the current level and next level description lines in the skill tooltip.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#descline%23"
     },
     {
       "name": "desctexta5",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .descline# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desctexta%23"
     },
     {
       "name": "desctextb5",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .descline# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desctextb%23"
     },
     {
       "name": "desccalca5",
-      "type": "text"
+      "type": "text",
+      "description": "Integer calculation value used as the first possible numeric parameter for the .descline# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desccalca%23"
     },
     {
       "name": "desccalcb5",
-      "type": "text"
+      "type": "text",
+      "description": "Integer calculation value used as the second possible numeric parameter for the .descline# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desccalcb%23"
     },
     {
       "name": "descline6",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as the current level and next level description lines in the skill tooltip.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#descline%23"
     },
     {
       "name": "desctexta6",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .descline# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desctexta%23"
     },
     {
       "name": "desctextb6",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .descline# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desctextb%23"
     },
     {
       "name": "desccalca6",
-      "type": "text"
+      "type": "text",
+      "description": "Integer calculation value used as the first possible numeric parameter for the .descline# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desccalca%23"
     },
     {
       "name": "desccalcb6",
-      "type": "text"
+      "type": "text",
+      "description": "Integer calculation value used as the second possible numeric parameter for the .descline# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#desccalcb%23"
     },
     {
       "name": "dsc2line1",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as a pinned line, after the skill description. (Uses the same function codes as .descline#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2line%23"
     },
     {
       "name": "dsc2texta1",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .dsc2line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2texta%23"
     },
     {
       "name": "dsc2textb1",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .dsc2line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2textb%23"
     },
     {
       "name": "dsc2calca1",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the first possible numeric parameter for the .dsc2line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2calca%23"
     },
     {
       "name": "dsc2calcb1",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the second possible numeric parameter for the .dsc2line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2calcb%23"
     },
     {
       "name": "dsc2line2",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as a pinned line, after the skill description. (Uses the same function codes as .descline#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2line%23"
     },
     {
       "name": "dsc2texta2",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .dsc2line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2texta%23"
     },
     {
       "name": "dsc2textb2",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .dsc2line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2textb%23"
     },
     {
       "name": "dsc2calca2",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the first possible numeric parameter for the .dsc2line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2calca%23"
     },
     {
       "name": "dsc2calcb2",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the second possible numeric parameter for the .dsc2line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2calcb%23"
     },
     {
       "name": "dsc2line3",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as a pinned line, after the skill description. (Uses the same function codes as .descline#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2line%23"
     },
     {
       "name": "dsc2texta3",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .dsc2line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2texta%23"
     },
     {
       "name": "dsc2textb3",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .dsc2line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2textb%23"
     },
     {
       "name": "dsc2calca3",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the first possible numeric parameter for the .dsc2line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2calca%23"
     },
     {
       "name": "dsc2calcb3",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the second possible numeric parameter for the .dsc2line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2calcb%23"
     },
     {
       "name": "dsc2line4",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as a pinned line, after the skill description. (Uses the same function codes as .descline#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2line%23"
     },
     {
       "name": "dsc2texta4",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .dsc2line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2texta%23"
     },
     {
       "name": "dsc2textb4",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .dsc2line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2textb%23"
     },
     {
       "name": "dsc2calca4",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the first possible numeric parameter for the .dsc2line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2calca%23"
     },
     {
       "name": "dsc2calcb4",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the second possible numeric parameter for the .dsc2line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2calcb%23"
     },
     {
       "name": "dsc2line5",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as a pinned line, after the skill description. (Uses the same function codes as .descline#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2line%23"
     },
     {
       "name": "dsc2texta5",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .dsc2line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2texta%23"
     },
     {
       "name": "dsc2textb5",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .dsc2line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2textb%23"
     },
     {
       "name": "dsc2calca5",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the first possible numeric parameter for the .dsc2line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2calca%23"
     },
     {
       "name": "dsc2calcb5",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the second possible numeric parameter for the .dsc2line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc2calcb%23"
     },
     {
       "name": "dsc3line1",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as a pinned line at the bottom of the skill tooltip. (Uses the same function codes as .descline#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3line%23"
     },
     {
       "name": "dsc3texta1",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .dsc3line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3texta%23"
     },
     {
       "name": "dsc3textb1",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .dsc3line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3textb%23"
     },
     {
       "name": "dsc3calca1",
-      "type": "number"
+      "type": "text",
+      "description": "Integer Calc value used as the first possible numeric parameter for the .dsc3line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3calca%23"
     },
     {
       "name": "dsc3calcb1",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the second possible numeric parameter for the .dsc3line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3calcb%23"
     },
     {
       "name": "dsc3line2",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as a pinned line at the bottom of the skill tooltip. (Uses the same function codes as .descline#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3line%23"
     },
     {
       "name": "dsc3texta2",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .dsc3line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3texta%23"
     },
     {
       "name": "dsc3textb2",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .dsc3line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3textb%23"
     },
     {
       "name": "dsc3calca2",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the first possible numeric parameter for the .dsc3line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3calca%23"
     },
     {
       "name": "dsc3calcb2",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the second possible numeric parameter for the .dsc3line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3calcb%23"
     },
     {
       "name": "dsc3line3",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as a pinned line at the bottom of the skill tooltip. (Uses the same function codes as .descline#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3line%23"
     },
     {
       "name": "dsc3texta3",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .dsc3line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3texta%23"
     },
     {
       "name": "dsc3textb3",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .dsc3line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3textb%23"
     },
     {
       "name": "dsc3calca3",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the first possible numeric parameter for the .dsc3line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3calca%23"
     },
     {
       "name": "dsc3calcb3",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the second possible numeric parameter for the .dsc3line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3calcb%23"
     },
     {
       "name": "dsc3line4",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as a pinned line at the bottom of the skill tooltip. (Uses the same function codes as .descline#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3line%23"
     },
     {
       "name": "dsc3texta4",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .dsc3line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3texta%23"
     },
     {
       "name": "dsc3textb4",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .dsc3line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3textb%23"
     },
     {
       "name": "dsc3calca4",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the first possible numeric parameter for the .dsc3line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3calca%23"
     },
     {
       "name": "dsc3calcb4",
-      "type": "number"
+      "type": "text",
+      "description": "Integer Calc value used as the second possible numeric parameter for the .dsc3line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3calcb%23"
     },
     {
       "name": "dsc3line5",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as a pinned line at the bottom of the skill tooltip. (Uses the same function codes as .descline#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3line%23"
     },
     {
       "name": "dsc3texta5",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .dsc3line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3texta%23"
     },
     {
       "name": "dsc3textb5",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .dsc3line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3textb%23"
     },
     {
       "name": "dsc3calca5",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the first possible numeric parameter for the .dsc3line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3calca%23"
     },
     {
       "name": "dsc3calcb5",
-      "type": "number"
+      "type": "text",
+      "description": "Integer Calc value used as the second possible numeric parameter for the .dsc3line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3calcb%23"
     },
     {
       "name": "dsc3line6",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as a pinned line at the bottom of the skill tooltip. (Uses the same function codes as .descline#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3line%23"
     },
     {
       "name": "dsc3texta6",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .dsc3line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3texta%23"
     },
     {
       "name": "dsc3textb6",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .dsc3line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3textb%23"
     },
     {
       "name": "dsc3calca6",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the first possible numeric parameter for the .dsc3line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3calca%23"
     },
     {
       "name": "dsc3calcb6",
-      "type": "number"
+      "type": "text",
+      "description": "Integer Calc value used as the second possible numeric parameter for the .dsc3line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3calcb%23"
     },
     {
       "name": "dsc3line7",
-      "type": "number"
+      "type": "number",
+      "description": "Uses an ID value to select a description function to format the string value. Displays this text as a pinned line at the bottom of the skill tooltip. (Uses the same function codes as .descline#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3line%23"
     },
     {
       "name": "dsc3texta7",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the first possible string parameter for the .dsc3line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3texta%23"
     },
     {
       "name": "dsc3textb7",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as the second possible string parameter for the .dsc3line# function",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3textb%23"
     },
     {
       "name": "dsc3calca7",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the first possible numeric parameter for the .dsc3line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3calca%23"
     },
     {
       "name": "dsc3calcb7",
-      "type": "text"
+      "type": "text",
+      "description": "Integer Calc value used as the second possible numeric parameter for the .dsc3line# function Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#dsc3calcb%23"
     },
     {
       "name": "item proc text",
-      "type": "text"
+      "type": "text",
+      "description": "String value used as an override format for when the skill appears as a \"chance to cast\" property on an item. Can be formatted to include .descline# in the string using \"%s\" entries. Leave blank to ignore and use the string format in itemstatcost.",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#item%20proc%20text"
     },
     {
       "name": "item proc descline count",
-      "type": "number"
+      "type": "number",
+      "description": "Integer value for how many .descline# entries should be formatted into the .item proc text string.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skilldesc.html#item%20proc%20descline%20count"
     },
     {
       "name": "*eol",

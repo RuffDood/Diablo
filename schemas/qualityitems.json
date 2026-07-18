@@ -1,0 +1,159 @@
+{
+  "table": "qualityitems",
+  "category": "items",
+  "file": "global/excel/qualityitems.txt",
+  "description": "This file controls the groups item modifiers for High Quality (Superior) item types. The game will randomly choose between one of these High Quality groups, if it is allowed for the item type. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 18,
+  "columns": [
+    {
+      "name": "mod1code",
+      "type": "text",
+      "description": "Controls the item properties that are added to the item Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#mod%23code"
+    },
+    {
+      "name": "mod1param",
+      "type": "number",
+      "description": "The stat's \"parameter\" value associated with the related property (.mod#code). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#mod%23param"
+    },
+    {
+      "name": "mod1min",
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.mod#code). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#mod%23min"
+    },
+    {
+      "name": "mod1max",
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.mod#code). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#mod%23max"
+    },
+    {
+      "name": "mod2code",
+      "type": "text",
+      "description": "Controls the item properties that are added to the item Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#mod%23code"
+    },
+    {
+      "name": "mod2param",
+      "type": "number",
+      "description": "The stat's \"parameter\" value associated with the related property (.mod#code). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#mod%23param"
+    },
+    {
+      "name": "mod2min",
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.mod#code). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#mod%23min"
+    },
+    {
+      "name": "mod2max",
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.mod#code). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#mod%23max"
+    },
+    {
+      "name": "armor",
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then allow this High Quality (Superior) modifier to be applied on both torso armor and helmet item types. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#armor"
+    },
+    {
+      "name": "weapon",
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then allow this High Quality (Superior) modifier to be applied on melee weapon item types (except scepters, wands, and staves). If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#weapon"
+    },
+    {
+      "name": "shield",
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then allow this High Quality (Superior) modifier to be applied on shield item types. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#shield"
+    },
+    {
+      "name": "scepter",
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then allow this High Quality (Superior) modifier to be applied on scepter item types. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#scepter"
+    },
+    {
+      "name": "wand",
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then allow this High Quality (Superior) modifier to be applied on wand item types. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#wand"
+    },
+    {
+      "name": "staff",
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then allow this High Quality (Superior) modifier to be applied on staff item types. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#staff"
+    },
+    {
+      "name": "bow",
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then allow this High Quality (Superior) modifier to be applied on bow or crossbow item types. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#bow"
+    },
+    {
+      "name": "boots",
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then allow this High Quality (Superior) modifier to be applied on boots item types. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#boots"
+    },
+    {
+      "name": "gloves",
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then allow this High Quality (Superior) modifier to be applied on gloves item types. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#gloves"
+    },
+    {
+      "name": "belt",
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then allow this High Quality (Superior) modifier to be applied on belt item types. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/qualityitems.html#belt"
+    }
+  ]
+}

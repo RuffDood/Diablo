@@ -1,0 +1,23 @@
+{
+  "table": "uniqueprefix",
+  "category": "items",
+  "file": "global/excel/uniqueprefix.txt",
+  "description": "This file controls the list of strings that are randomly selected to be used as the prefix when generating unique monster names. This is always added to every unique monster name. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 1,
+  "columns": [
+    {
+      "name": "Name",
+      "type": "text",
+      "description": "A string key, which is used as a potential selection for generating a unique monster's name",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueprefix.html#Name"
+    }
+  ]
+}

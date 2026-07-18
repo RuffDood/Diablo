@@ -1,0 +1,31 @@
+{
+  "table": "monpreset",
+  "category": "characters",
+  "file": "global/excel/monpreset.txt",
+  "description": "This file controls which monsters are preloaded in a preset, based on the Act number. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 2,
+  "columns": [
+    {
+      "name": "Act",
+      "type": "number",
+      "description": "Defines the Act number used for each Monster Preset. Uses values between 1 to 5.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monpreset.html#Act"
+    },
+    {
+      "name": "Place",
+      "type": "text",
+      "description": "This defines the Monster Preset which is used for preloading, such as during level transitions Reference of a superuniques.Superunique, monstats.Id, or MonPlace.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monpreset.html#Place"
+    }
+  ]
+}

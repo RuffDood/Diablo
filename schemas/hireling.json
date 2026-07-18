@@ -2,15 +2,22 @@
   "table": "hireling",
   "category": "characters",
   "file": "global/excel/hireling.txt",
-  "description": "Mercenaires : type, stats de base, progression par niveau et competences.",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
+  "description": "This file controls the unit statistics for player mercenaries and their related functions. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
   "columnsDocumented": 77,
   "columns": [
     {
       "name": "Hireling",
       "type": "text",
-      "description": "Nom/identifiant du type de mercenaire (ex. Rogue Scout).",
-      "guideType": "[O]",
+      "description": "This is a reference field to define the Hireling name",
+      "guideType": "[comment]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Hireling",
       "key": true
     },
     {
@@ -22,424 +29,612 @@
     {
       "name": "Version",
       "type": "number",
-      "description": "0 = classic, 100 = expansion.",
-      "guideType": "[N]"
+      "description": "Defines which game version to use this hireling (0 = Classic mode | 100 = Expansion mode)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Version"
     },
     {
       "name": "Id",
       "type": "number",
-      "description": "Identifiant numerique du mercenaire.",
-      "guideType": "[N]"
+      "description": "The unique identification number to define each hireling type",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Id"
     },
     {
       "name": "Class",
       "type": "number",
-      "description": "Classe de monstre associee (reference monstats).",
-      "guideType": "[N]",
+      "description": "This refers to the index in monstats for the base type of unit to use for the hireling",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Class",
       "ref": "monstats"
     },
     {
       "name": "Act",
       "type": "number",
-      "description": "Acte ou le mercenaire est vendu (1-5).",
-      "guideType": "[N]"
+      "description": "The Act that the hireling belongs to (values 1 to 5 equal Act 1 to Act 5, respectively)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Act"
     },
     {
       "name": "Difficulty",
       "type": "number",
-      "description": "Difficulte (1=Normal, 2=Cauchemar, 3=Enfer).",
-      "guideType": "[N]"
+      "description": "The difficulty mode associated with the hireling (1 = Normal | 2 = Nightmare | 3 = Hell)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Difficulty"
     },
     {
       "name": "Level",
       "type": "number",
-      "description": "Niveau de depart.",
-      "guideType": "[N]"
+      "description": "The starting level of the unit",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Level"
     },
     {
       "name": "Seller",
       "type": "number",
-      "description": "Type de vendeur.",
-      "guideType": "[N]"
+      "description": "This refers to the index in monstats which defines the unit NPC that sells this hireling",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Seller"
     },
     {
       "name": "NameFirst",
       "type": "text",
-      "description": "Cle de chaine du prenom (ex. merc01).",
+      "description": "Defines a string key which the game uses as a sequential range of string IDs from .NameFirst to .NameLast to randomly generate as hireling names. (Max name length is 48 characters)",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#NameFirst",
       "ref": "strings"
     },
     {
       "name": "NameLast",
       "type": "text",
-      "description": "Cle de chaine du nom (ex. merc41).",
+      "description": "Defines a string key which the game uses as a sequential range of string IDs from .NameFirst to .NameLast to randomly generate as hireling names. (Max name length is 48 characters)",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#NameFirst",
       "ref": "strings"
     },
     {
       "name": "Gold",
       "type": "number",
-      "description": "Or de base.",
-      "guideType": "[N]"
+      "description": "The initial cost of the hireling. This is used in the following calculation to generate the full hire price: Cost = [.Gold] * (100 + 15 * [Difference of Current Level and .Level]) / 100",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Gold"
     },
     {
       "name": "Exp/Lvl",
       "type": "number",
-      "description": "Experience requise par niveau.",
-      "guideType": "[N]"
+      "description": "This modifier is used in the following calculation to determine the amount of Experience need for the hireling's next level: [Current Level] + [Current Level] * [Current Level + 1] * [.Exp/Lvl]",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Exp%2FLvl"
     },
     {
       "name": "HP",
       "type": "number",
-      "description": "Points de vie de base.",
-      "guideType": "[N]"
+      "description": "The starting amount of Life at base Level",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#HP"
     },
     {
       "name": "HP/Lvl",
       "type": "number",
-      "description": "Gain de PV par niveau.",
-      "guideType": "[N]"
+      "description": "The amount of Life gained per Level",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#HP%2FLvl"
     },
     {
       "name": "Defense",
       "type": "number",
-      "description": "Defense de base.",
-      "guideType": "[N]"
+      "description": "The starting amount of Defense at base Level",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Defense"
     },
     {
       "name": "Def/Lvl",
       "type": "number",
-      "description": "Gain de defense par niveau.",
-      "guideType": "[N]"
+      "description": "The amount of Defense gained per Level",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Def%2FLvl"
     },
     {
       "name": "Str",
       "type": "number",
-      "description": "Force de base.",
-      "guideType": "[N]"
+      "description": "The starting amount of Strength at base Level",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Str"
     },
     {
       "name": "Str/Lvl",
       "type": "number",
-      "description": "Gain de force par niveau.",
-      "guideType": "[N]"
+      "description": "The amount of Strength gained per Level (Calculated in 8ths)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Str%2FLvl"
     },
     {
       "name": "Dex",
       "type": "number",
-      "description": "Dexterite de base.",
-      "guideType": "[N]"
+      "description": "The starting amount of Dexterity at base Level",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Dex"
     },
     {
       "name": "Dex/Lvl",
       "type": "number",
-      "description": "Gain de dexterite par niveau.",
-      "guideType": "[N]"
+      "description": "The amount of Dexterity gained per Level (Calculated in 8ths)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Dex%2FLvl"
     },
     {
       "name": "AR",
       "type": "number",
-      "description": "Attack Rating de base.",
-      "guideType": "[N]"
+      "description": "The starting amount of Attack Rating at base Level",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#AR"
     },
     {
       "name": "AR/Lvl",
       "type": "number",
-      "description": "Gain d'Attack Rating par niveau.",
-      "guideType": "[N]"
+      "description": "The amount of Attack Rating gained per Level",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#AR%2FLvl"
     },
     {
       "name": "Dmg-Min",
       "type": "number",
-      "description": "Degats minimum de base.",
-      "guideType": "[N]"
+      "description": "The starting amount of minimum Physical Damage for attacks",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Dmg-Min"
     },
     {
       "name": "Dmg-Max",
       "type": "number",
-      "description": "Degats maximum de base.",
-      "guideType": "[N]"
+      "description": "The starting amount of maximum Physical Damage for attacks",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Dmg-Max"
     },
     {
       "name": "Dmg/Lvl",
       "type": "number",
-      "description": "Gain de degats par niveau.",
-      "guideType": "[N]"
+      "description": "The amount of Physical Damage gained per level, to be added to .Dmg-Min and .Dmg-Max (Calculated in 8ths)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Dmg%2FLvl"
     },
     {
       "name": "ResistFire",
       "type": "number",
-      "description": "Resistance feu de base.",
-      "guideType": "[N]"
+      "description": "The starting amount of Fire Resistance at base Level",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#ResistFire"
     },
     {
       "name": "ResistFire/Lvl",
       "type": "number",
-      "description": "Gain de resistance feu par niveau.",
-      "guideType": "[N]"
+      "description": "The amount of Fire Resistance gained per Level (Calculated in 4ths)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#ResistFire%2FLvl"
     },
     {
       "name": "ResistCold",
       "type": "number",
-      "description": "Resistance froid de base.",
-      "guideType": "[N]"
+      "description": "The starting amount of Cold Resistance at base Level",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#ResistCold"
     },
     {
       "name": "ResistCold/Lvl",
       "type": "number",
-      "description": "Gain de resistance froid par niveau.",
-      "guideType": "[N]"
+      "description": "The amount of Cold Resistance gained per Level (Calculated in 4ths)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#ResistCold%2FLvl"
     },
     {
       "name": "ResistLightning",
       "type": "number",
-      "description": "Resistance foudre de base.",
-      "guideType": "[N]"
+      "description": "The starting amount of Lightning Resistance at base Level",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#ResistLightning"
     },
     {
       "name": "ResistLightning/Lvl",
       "type": "number",
-      "description": "Gain de resistance foudre par niveau.",
-      "guideType": "[N]"
+      "description": "The amount of Lightning Resistance gained per Level (Calculated in 4ths)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#ResistLightning%2FLvl"
     },
     {
       "name": "ResistPoison",
       "type": "number",
-      "description": "Resistance poison de base.",
-      "guideType": "[N]"
+      "description": "The starting amount of Poison Resistance at base Level",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#ResistPoison"
     },
     {
       "name": "ResistPoison/Lvl",
       "type": "number",
-      "description": "Gain de resistance poison par niveau.",
-      "guideType": "[N]"
+      "description": "The amount of Poison Resistance gained per Level (Calculated in 4ths)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#ResistPoison%2FLvl"
     },
     {
       "name": "HireDesc",
       "type": "text",
-      "description": "Cle de chaine de la description (ex. strhirespecial1).",
-      "guideType": "[O]",
+      "description": "This accepts a string key, which is used to display as the special description of the hireling in the hire UI window",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#HireDesc",
       "ref": "strings"
     },
     {
       "name": "DefaultChance",
       "type": "number",
-      "description": "Chance par defaut d'utiliser une competence normale.",
-      "guideType": "[N]"
+      "description": "This is the chance for the hireling to attack with their weapon instead of using a Skill. All Chance values are summed together as a denominator value for a random roll to determine which skill to use.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#DefaultChance"
     },
     {
       "name": "Skill1",
       "type": "text",
-      "description": "Competence 1 (reference skills).",
+      "description": "This gives the hireling a Skill to use (requires .Mode#, .Chance#, .ChancePerLvl#)",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Skill%23",
       "ref": "skills"
     },
     {
       "name": "Mode1",
       "type": "number",
-      "description": "Mode d'animation de la competence 1."
+      "description": "Uses a monster mode to determine the hireling's behavior when using the related Skill (Corresponds to MonMode.name, use the numeric ID)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Mode%23"
     },
     {
       "name": "Chance1",
       "type": "number",
-      "description": "Chance de base de la competence 1."
+      "description": "This is the base chance for the hireling to use the related Skill. All Chance values are summed together as a denominator value for a random roll to determine which skill to use.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Chance%23"
     },
     {
       "name": "ChancePerLvl1",
       "type": "number",
-      "description": "Chance additionnelle par niveau (competence 1)."
+      "description": "This is the chance for the hireling to use the related Skill, affected by the difference in the hireling's current Level and the hireling's .Level field. All Chance values are summed together as a denominator value for a random roll to determine which skill to use. Each skill Chance is calculated with the following formula: [.Chance#] + [.ChancePerLvl#] * [Difference of Current Level and .Level] / 4",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#ChancePerLvl%23"
     },
     {
       "name": "Level1",
       "type": "number",
-      "description": "Niveau de base de la competence 1."
+      "description": "The starting Level for the related Skill.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Level%23"
     },
     {
       "name": "LvlPerLvl1",
       "type": "number",
-      "description": "Gain de niveau de competence par niveau (competence 1)."
+      "description": "A modifier to increase the related Skill level for every Level gained. This is used in the following calculated to determine the current skill level: [Current Skill Level] = FLOOR([.Level#] + (([.LvlPerLvl#] * [Difference of Current Level and .Level]) / 32))",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#LvlPerLvl%23"
     },
     {
       "name": "Skill2",
       "type": "text",
-      "description": "Competence 2 (reference skills).",
+      "description": "This gives the hireling a Skill to use (requires .Mode#, .Chance#, .ChancePerLvl#)",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Skill%23",
       "ref": "skills"
     },
     {
       "name": "Mode2",
       "type": "number",
-      "description": "Mode d'animation de la competence 2."
+      "description": "Uses a monster mode to determine the hireling's behavior when using the related Skill (Corresponds to MonMode.name, use the numeric ID)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Mode%23"
     },
     {
       "name": "Chance2",
       "type": "number",
-      "description": "Chance de base de la competence 2."
+      "description": "This is the base chance for the hireling to use the related Skill. All Chance values are summed together as a denominator value for a random roll to determine which skill to use.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Chance%23"
     },
     {
       "name": "ChancePerLvl2",
       "type": "number",
-      "description": "Chance additionnelle par niveau (competence 2)."
+      "description": "This is the chance for the hireling to use the related Skill, affected by the difference in the hireling's current Level and the hireling's .Level field. All Chance values are summed together as a denominator value for a random roll to determine which skill to use. Each skill Chance is calculated with the following formula: [.Chance#] + [.ChancePerLvl#] * [Difference of Current Level and .Level] / 4",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#ChancePerLvl%23"
     },
     {
       "name": "Level2",
       "type": "number",
-      "description": "Niveau de base de la competence 2."
+      "description": "The starting Level for the related Skill.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Level%23"
     },
     {
       "name": "LvlPerLvl2",
       "type": "number",
-      "description": "Gain de niveau de competence par niveau (competence 2)."
+      "description": "A modifier to increase the related Skill level for every Level gained. This is used in the following calculated to determine the current skill level: [Current Skill Level] = FLOOR([.Level#] + (([.LvlPerLvl#] * [Difference of Current Level and .Level]) / 32))",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#LvlPerLvl%23"
     },
     {
       "name": "Skill3",
       "type": "text",
-      "description": "Competence 3 (reference skills).",
+      "description": "This gives the hireling a Skill to use (requires .Mode#, .Chance#, .ChancePerLvl#)",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Skill%23",
       "ref": "skills"
     },
     {
       "name": "Mode3",
       "type": "number",
-      "description": "Mode d'animation de la competence 3."
+      "description": "Uses a monster mode to determine the hireling's behavior when using the related Skill (Corresponds to MonMode.name, use the numeric ID)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Mode%23"
     },
     {
       "name": "Chance3",
       "type": "number",
-      "description": "Chance de base de la competence 3."
+      "description": "This is the base chance for the hireling to use the related Skill. All Chance values are summed together as a denominator value for a random roll to determine which skill to use.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Chance%23"
     },
     {
       "name": "ChancePerLvl3",
       "type": "number",
-      "description": "Chance additionnelle par niveau (competence 3)."
+      "description": "This is the chance for the hireling to use the related Skill, affected by the difference in the hireling's current Level and the hireling's .Level field. All Chance values are summed together as a denominator value for a random roll to determine which skill to use. Each skill Chance is calculated with the following formula: [.Chance#] + [.ChancePerLvl#] * [Difference of Current Level and .Level] / 4",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#ChancePerLvl%23"
     },
     {
       "name": "Level3",
       "type": "number",
-      "description": "Niveau de base de la competence 3."
+      "description": "The starting Level for the related Skill.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Level%23"
     },
     {
       "name": "LvlPerLvl3",
       "type": "number",
-      "description": "Gain de niveau de competence par niveau (competence 3)."
+      "description": "A modifier to increase the related Skill level for every Level gained. This is used in the following calculated to determine the current skill level: [Current Skill Level] = FLOOR([.Level#] + (([.LvlPerLvl#] * [Difference of Current Level and .Level]) / 32))",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#LvlPerLvl%23"
     },
     {
       "name": "Skill4",
       "type": "text",
-      "description": "Competence 4 (reference skills).",
+      "description": "This gives the hireling a Skill to use (requires .Mode#, .Chance#, .ChancePerLvl#)",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Skill%23",
       "ref": "skills"
     },
     {
       "name": "Mode4",
       "type": "number",
-      "description": "Mode d'animation de la competence 4."
+      "description": "Uses a monster mode to determine the hireling's behavior when using the related Skill (Corresponds to MonMode.name, use the numeric ID)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Mode%23"
     },
     {
       "name": "Chance4",
       "type": "number",
-      "description": "Chance de base de la competence 4."
+      "description": "This is the base chance for the hireling to use the related Skill. All Chance values are summed together as a denominator value for a random roll to determine which skill to use.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Chance%23"
     },
     {
       "name": "ChancePerLvl4",
       "type": "number",
-      "description": "Chance additionnelle par niveau (competence 4)."
+      "description": "This is the chance for the hireling to use the related Skill, affected by the difference in the hireling's current Level and the hireling's .Level field. All Chance values are summed together as a denominator value for a random roll to determine which skill to use. Each skill Chance is calculated with the following formula: [.Chance#] + [.ChancePerLvl#] * [Difference of Current Level and .Level] / 4",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#ChancePerLvl%23"
     },
     {
       "name": "Level4",
       "type": "number",
-      "description": "Niveau de base de la competence 4."
+      "description": "The starting Level for the related Skill.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Level%23"
     },
     {
       "name": "LvlPerLvl4",
       "type": "number",
-      "description": "Gain de niveau de competence par niveau (competence 4)."
+      "description": "A modifier to increase the related Skill level for every Level gained. This is used in the following calculated to determine the current skill level: [Current Skill Level] = FLOOR([.Level#] + (([.LvlPerLvl#] * [Difference of Current Level and .Level]) / 32))",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#LvlPerLvl%23"
     },
     {
       "name": "Skill5",
       "type": "text",
-      "description": "Competence 5 (reference skills).",
+      "description": "This gives the hireling a Skill to use (requires .Mode#, .Chance#, .ChancePerLvl#)",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Skill%23",
       "ref": "skills"
     },
     {
       "name": "Mode5",
       "type": "number",
-      "description": "Mode d'animation de la competence 5."
+      "description": "Uses a monster mode to determine the hireling's behavior when using the related Skill (Corresponds to MonMode.name, use the numeric ID)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Mode%23"
     },
     {
       "name": "Chance5",
       "type": "number",
-      "description": "Chance de base de la competence 5."
+      "description": "This is the base chance for the hireling to use the related Skill. All Chance values are summed together as a denominator value for a random roll to determine which skill to use.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Chance%23"
     },
     {
       "name": "ChancePerLvl5",
       "type": "number",
-      "description": "Chance additionnelle par niveau (competence 5)."
+      "description": "This is the chance for the hireling to use the related Skill, affected by the difference in the hireling's current Level and the hireling's .Level field. All Chance values are summed together as a denominator value for a random roll to determine which skill to use. Each skill Chance is calculated with the following formula: [.Chance#] + [.ChancePerLvl#] * [Difference of Current Level and .Level] / 4",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#ChancePerLvl%23"
     },
     {
       "name": "Level5",
       "type": "number",
-      "description": "Niveau de base de la competence 5."
+      "description": "The starting Level for the related Skill.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Level%23"
     },
     {
       "name": "LvlPerLvl5",
       "type": "number",
-      "description": "Gain de niveau de competence par niveau (competence 5)."
+      "description": "A modifier to increase the related Skill level for every Level gained. This is used in the following calculated to determine the current skill level: [Current Skill Level] = FLOOR([.Level#] + (([.LvlPerLvl#] * [Difference of Current Level and .Level]) / 32))",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#LvlPerLvl%23"
     },
     {
       "name": "Skill6",
       "type": "text",
-      "description": "Competence 6 (reference skills).",
+      "description": "This gives the hireling a Skill to use (requires .Mode#, .Chance#, .ChancePerLvl#)",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Skill%23",
       "ref": "skills"
     },
     {
       "name": "Mode6",
       "type": "number",
-      "description": "Mode d'animation de la competence 6."
+      "description": "Uses a monster mode to determine the hireling's behavior when using the related Skill (Corresponds to MonMode.name, use the numeric ID)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Mode%23"
     },
     {
       "name": "Chance6",
       "type": "number",
-      "description": "Chance de base de la competence 6."
+      "description": "This is the base chance for the hireling to use the related Skill. All Chance values are summed together as a denominator value for a random roll to determine which skill to use.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Chance%23"
     },
     {
       "name": "ChancePerLvl6",
       "type": "number",
-      "description": "Chance additionnelle par niveau (competence 6)."
+      "description": "This is the chance for the hireling to use the related Skill, affected by the difference in the hireling's current Level and the hireling's .Level field. All Chance values are summed together as a denominator value for a random roll to determine which skill to use. Each skill Chance is calculated with the following formula: [.Chance#] + [.ChancePerLvl#] * [Difference of Current Level and .Level] / 4",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#ChancePerLvl%23"
     },
     {
       "name": "Level6",
       "type": "number",
-      "description": "Niveau de base de la competence 6."
+      "description": "The starting Level for the related Skill.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#Level%23"
     },
     {
       "name": "LvlPerLvl6",
       "type": "number",
-      "description": "Gain de niveau de competence par niveau (competence 6)."
+      "description": "A modifier to increase the related Skill level for every Level gained. This is used in the following calculated to determine the current skill level: [Current Skill Level] = FLOOR([.Level#] + (([.LvlPerLvl#] * [Difference of Current Level and .Level]) / 32))",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#LvlPerLvl%23"
     },
     {
       "name": "HiringMaxLevelDifference",
       "type": "number",
-      "description": "Ecart de niveau max a l'embauche.",
-      "guideType": "[N]"
+      "description": "This is used to generate a range with this value plus and minus with the player's current Level. In the hiring UI window, hirelings start with a random Level that is between this range.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#HiringMaxLevelDifference"
     },
     {
       "name": "resurrectcostmultiplier",
       "type": "number",
-      "description": "Multiplicateur du cout de resurrection.",
-      "guideType": "[N]"
+      "description": "A modifier used to calculate the hireling's current resurrect cost. Used in the following formula: [Resurrect Cost] = [Current Level] * [Current Level] / [.resurrectcostdivisor] * [.resurrectcostmultiplier]",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#resurrectcostmultiplier"
     },
     {
       "name": "resurrectcostdivisor",
       "type": "number",
-      "description": "Diviseur du cout de resurrection.",
-      "guideType": "[N]"
+      "description": "A modifier used to calculate the hireling's current resurrect cost. Used in the following formula: [Resurrect Cost] = [Current Level] * [Current Level] / [.resurrectcostdivisor] * [.resurrectcostmultiplier]",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#resurrectcostdivisor"
     },
     {
       "name": "resurrectcostmax",
       "type": "number",
-      "description": "Cout de resurrection maximum.",
-      "guideType": "[N]"
+      "description": "This is the maximum Gold cost to resurrect this hireling",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#resurrectcostmax"
     },
     {
       "name": "equivalentcharclass",
       "type": "text",
-      "description": "Classe de personnage equivalente (ex. ama).",
-      "guideType": "[O]",
+      "description": "Determines what class this hireling is treated like under the hood when calculating skill level bonuses and gear restrictions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/hireling.html#equivalentcharclass",
       "ref": "charstats"
     }
   ],

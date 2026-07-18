@@ -2,67 +2,94 @@
   "table": "experience",
   "category": "system",
   "file": "global/excel/experience.txt",
-  "description": "Table experience du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 9,
+  "description": "This file controls the experience required for each level by each class. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 10,
   "columns": [
     {
       "name": "Level",
       "type": "text",
       "description": "This is a reference field to define the level",
-      "guideType": "[O]"
+      "guideType": "[comment]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/experience.html#Level"
     },
     {
       "name": "Amazon",
       "type": "number",
-      "description": "Controls the Experience required for each level with the Amazon class",
-      "guideType": "[N]"
+      "description": "Controls the experience required for each level with the Amazon class",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/experience.html#Amazon"
     },
     {
       "name": "Sorceress",
       "type": "number",
-      "description": "Controls the Experience required for each level with the Sorceress class",
-      "guideType": "[N]"
+      "description": "Controls the experience required for each level with the Sorceress class",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/experience.html#Sorceress"
     },
     {
       "name": "Necromancer",
       "type": "number",
-      "description": "Controls the Experience required for each level with the Necromancer class",
-      "guideType": "[N]"
+      "description": "Controls the experience required for each level with the Necromancer class",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/experience.html#Necromancer"
     },
     {
       "name": "Paladin",
       "type": "number",
-      "description": "Controls the Experience required for each level with the Paladin class",
-      "guideType": "[N]"
+      "description": "Controls the experience required for each level with the Paladin class",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/experience.html#Paladin"
     },
     {
       "name": "Barbarian",
       "type": "number",
-      "description": "Controls the Experience required for each level with the Barbarian class",
-      "guideType": "[N]"
+      "description": "Controls the experience required for each level with the Barbarian class",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/experience.html#Barbarian"
     },
     {
       "name": "Druid",
       "type": "number",
-      "description": "Controls the Experience required for each level with the Druid class",
-      "guideType": "[N]"
+      "description": "Controls the experience required for each level with the Druid class",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/experience.html#Druid"
     },
     {
       "name": "Assassin",
       "type": "number",
-      "description": "Controls the Experience required for each level with the Assassin class",
-      "guideType": "[N]"
+      "description": "Controls the experience required for each level with the Assassin class",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/experience.html#Assassin"
     },
     {
       "name": "Warlock",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the experience required for each level with the Warlock class",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/experience.html#Warlock"
     },
     {
       "name": "ExpRatio",
       "type": "number",
-      "description": "This multiplier affects the percentage of Experienced earned, based on the level (Calculated in 1024ths by default, but this can be changed by updating the \"10\" value in the \"Maxlvl\" row)",
-      "guideType": "[N]"
+      "description": "This multiplier affects the percentage of experienced earned, based on the level (Calculated in 1024ths by default, but this can be changed by updating the \"10\" value in the \"Maxlvl\" row)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/experience.html#ExpRatio"
     }
   ]
 }

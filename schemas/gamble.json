@@ -1,0 +1,31 @@
+{
+  "table": "gamble",
+  "category": "items",
+  "file": "global/excel/gamble.txt",
+  "description": "This file controls what Item Types will appear as possible items to purchase in the Gambling UI. Item Types can be added to this list as a potential option for the Gambling system. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 2,
+  "columns": [
+    {
+      "name": "name",
+      "type": "text",
+      "description": "This is a reference field to describe the Item",
+      "guideType": "[comment]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gamble.html#name"
+    },
+    {
+      "name": "code",
+      "type": "text",
+      "description": "This is a pointer to armor.code, weapons.code, or misc.code",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/gamble.html#code"
+    }
+  ]
+}

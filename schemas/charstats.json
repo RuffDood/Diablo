@@ -2,81 +2,110 @@
   "table": "charstats",
   "category": "characters",
   "file": "global/excel/charstats.txt",
-  "description": "Table charstats du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 28,
+  "description": "This file controls the starting stats for each of the classes. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 84,
   "columns": [
     {
       "name": "class",
       "type": "text",
-      "description": "The name of the character class (this cannot be changed)",
-      "guideType": "[O]"
+      "description": "The name of the character class (this cannot be changed).",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#class"
     },
     {
       "name": "str",
       "type": "number",
-      "description": "Starting amount of the Strength attribute",
-      "guideType": "[N]"
+      "description": "Starting amount of the Strength attribute.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#str"
     },
     {
       "name": "dex",
       "type": "number",
-      "description": "Starting amount of the Dexterity attribute",
-      "guideType": "[N]"
+      "description": "Starting amount of the Dexterity attribute.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#dex"
     },
     {
       "name": "int",
       "type": "number",
-      "description": "Starting amount of the Energy attribute",
-      "guideType": "[N]"
+      "description": "Starting amount of the Energy attribute.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#int"
     },
     {
       "name": "vit",
       "type": "number",
-      "description": "Starting amount of the Vitality attribute",
-      "guideType": "[N]"
+      "description": "Starting amount of the Vitality attribute.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#vit"
     },
     {
       "name": "stamina",
       "type": "number",
-      "description": "Starting amount of Stamina",
-      "guideType": "[N]"
+      "description": "Starting amount of Stamina.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#stamina"
     },
     {
       "name": "hpadd",
       "type": "number",
-      "description": "Bonus starting Life value (This value gets added with the",
-      "guideType": "[N]"
+      "description": "Bonus starting Life value (This value gets added with the .vit field value to determine the overall starting amount of Life).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#hpadd"
     },
     {
       "name": "ManaRegen",
       "type": "number",
-      "description": "Number of seconds to regain max Mana. (If this equals 0 then it will default to 300 seconds)",
-      "guideType": "[N]"
+      "description": "Number of seconds to regain max Mana (If this equals 0 then it will default to 300 seconds).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#ManaRegen"
     },
     {
       "name": "ToHitFactor",
       "type": "number",
-      "description": "Starting amount of Attack Rating",
-      "guideType": "[N]"
+      "description": "Starting amount of Attack Rating.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#ToHitFactor"
     },
     {
       "name": "WalkVelocity",
       "type": "number",
-      "description": "Base Walk movement speed",
-      "guideType": "[N]"
+      "description": "Base Walk movement speed.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#WalkVelocity"
     },
     {
       "name": "RunVelocity",
       "type": "number",
-      "description": "Base Run movement speed",
-      "guideType": "[N]"
+      "description": "Base Run movement speed.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#RunVelocity"
     },
     {
       "name": "RunDrain",
       "type": "number",
-      "description": "Rate at which Stamina is lost while running",
-      "guideType": "[N]"
+      "description": "Rate at which Stamina is lost while running.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#RunDrain"
     },
     {
       "name": "*Comment",
@@ -86,322 +115,578 @@
     {
       "name": "LifePerLevel",
       "type": "number",
-      "description": "Amount of Life added for each level gained (Calculated in fourths and is divided by 256)",
-      "guideType": "[N]"
+      "description": "Amount of Life added for each level gained (Calculated in fourths and is divided by 256).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#LifePerLevel"
     },
     {
       "name": "StaminaPerLevel",
       "type": "number",
-      "description": "Amount of Stamina added for each level gained (Calculated in fourths and is divided by 256)",
-      "guideType": "[N]"
+      "description": "Amount of Stamina added for each level gained (Calculated in fourths and is divided by 256).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#StaminaPerLevel"
     },
     {
       "name": "ManaPerLevel",
-      "type": "number"
+      "type": "number",
+      "description": "Amount of Mana added for each level gained (Calculated in fourths and is divided by 256).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#ManaPerLevel"
     },
     {
       "name": "LifePerVitality",
       "type": "number",
-      "description": "Amount of Life added for each point in Vitality (Calculated in fourths and is divided by 256)",
-      "guideType": "[N]"
+      "description": "Amount of Life added for each point in Vitality (Calculated in fourths and is divided by 256).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#LifePerVitality"
     },
     {
       "name": "StaminaPerVitality",
       "type": "number",
-      "description": "Amount of Stamina added for each point in Vitality (Calculated in fourths and is divided by 256)",
-      "guideType": "[N]"
+      "description": "Amount of Stamina added for each point in Vitality (Calculated in fourths and is divided by 256).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#StaminaPerVitality"
     },
     {
       "name": "ManaPerMagic",
       "type": "number",
-      "description": "Amount of Mana added for each point in Energy (Calculated in fourths and is divided by 256)",
-      "guideType": "[N]"
+      "description": "Amount of Mana added for each point in Energy (Calculated in fourths and is divided by 256).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#ManaPerMagic"
     },
     {
       "name": "StatPerLevel",
       "type": "number",
-      "description": "Amount of Attribute stat points earned for each level gained",
-      "guideType": "[N]"
+      "description": "Amount of Attribute stat points earned for each level gained.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#StatPerLevel"
     },
     {
       "name": "SkillsPerLevel",
       "type": "number",
-      "description": "Amount of Skill points earned for each level gained",
-      "guideType": "[N]"
+      "description": "Amount of Skill points earned for each level gained.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#SkillsPerLevel"
     },
     {
       "name": "LightRadius",
       "type": "number",
-      "description": "Baseline radius size of the character's Light Radius",
-      "guideType": "[N]"
+      "description": "Baseline radius size of the character's Light Radius.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#LightRadius"
     },
     {
       "name": "BlockFactor",
       "type": "number",
-      "description": "Baseline percent chance for Blocking",
-      "guideType": "[N]"
+      "description": "Baseline percent chance for Blocking.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#BlockFactor"
     },
     {
       "name": "MinimumCastingDelay",
       "type": "number",
-      "description": "Global delay on all Skills after using a Skill with a Casting Delay (Calculated in Frames, where 25 Frames = 1 Second)",
-      "guideType": "[N]"
+      "description": "Minimum casting delay on all Skills after using a Skill with a skills.localdelay or skills.globaldelay (Calculated in Frames, where 25 Frames = 1 Second).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#MinimumCastingDelay"
     },
     {
       "name": "StartSkill",
       "type": "text",
-      "description": "Controls what skill will be added by default to the character's starting weapon and will be slotted in the Right Skill selection (Uses the",
-      "guideType": "[O]"
+      "description": "Controls what skill will be added by default to the character's starting weapon and will be slotted in the Right Skill selection.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#StartSkill"
     },
     {
       "name": "Skill 1",
-      "type": "text"
+      "type": "text",
+      "description": "Skill that the character starts with and will always have available.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#Skill%20%23"
     },
     {
       "name": "Skill 2",
-      "type": "text"
+      "type": "text",
+      "description": "Skill that the character starts with and will always have available.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#Skill%20%23"
     },
     {
       "name": "Skill 3",
-      "type": "text"
+      "type": "text",
+      "description": "Skill that the character starts with and will always have available.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#Skill%20%23"
     },
     {
       "name": "Skill 4",
-      "type": "text"
+      "type": "text",
+      "description": "Skill that the character starts with and will always have available.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#Skill%20%23"
     },
     {
       "name": "Skill 5",
-      "type": "text"
+      "type": "text",
+      "description": "Skill that the character starts with and will always have available.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#Skill%20%23"
     },
     {
       "name": "Skill 6",
-      "type": "text"
+      "type": "text",
+      "description": "Skill that the character starts with and will always have available.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#Skill%20%23"
     },
     {
       "name": "Skill 7",
-      "type": "text"
+      "type": "text",
+      "description": "Skill that the character starts with and will always have available.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#Skill%20%23"
     },
     {
       "name": "Skill 8",
-      "type": "text"
+      "type": "text",
+      "description": "Skill that the character starts with and will always have available.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#Skill%20%23"
     },
     {
       "name": "Skill 9",
-      "type": "text"
+      "type": "text",
+      "description": "Skill that the character starts with and will always have available.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#Skill%20%23"
     },
     {
       "name": "Skill 10",
-      "type": "text"
+      "type": "text",
+      "description": "Skill that the character starts with and will always have available.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#Skill%20%23"
     },
     {
       "name": "StrAllSkills",
       "type": "text",
-      "description": "String key for displaying the item modifier bonus to all skills for the class (Ex: \"+1 to Barbarian Skill Levels\")",
-      "guideType": "[O]"
+      "description": "String key for displaying the item modifier bonus to all skills for the class (Ex: \"+1 to Barbarian Skill Levels\").",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#StrAllSkills"
     },
     {
       "name": "StrSkillTab1",
-      "type": "text"
+      "type": "text",
+      "description": "String key for displaying the item modifier bonus to all skills for the class's skill tabs (Ex: Tab 1 is \"+1 to Warcries\", tab 2 is \"+1 to Combat Skills\", tab 3 is \"+1 to Masteries\").",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#StrSkillTab%23"
     },
     {
       "name": "StrSkillTab2",
-      "type": "text"
+      "type": "text",
+      "description": "String key for displaying the item modifier bonus to all skills for the class's skill tabs (Ex: Tab 1 is \"+1 to Warcries\", tab 2 is \"+1 to Combat Skills\", tab 3 is \"+1 to Masteries\").",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#StrSkillTab%23"
     },
     {
       "name": "StrSkillTab3",
-      "type": "text"
+      "type": "text",
+      "description": "String key for displaying the item modifier bonus to all skills for the class's skill tabs (Ex: Tab 1 is \"+1 to Warcries\", tab 2 is \"+1 to Combat Skills\", tab 3 is \"+1 to Masteries\").",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#StrSkillTab%23"
     },
     {
       "name": "StrClassOnly",
       "type": "text",
-      "description": "String key for displaying on item modifier exclusive to the class or for class specific items (Ex: \"Barbarian only\")",
-      "guideType": "[O]"
+      "description": "String key for displaying on item modifier exclusive to the class or for class specific items (Ex: \"Barbarian only\").",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#StrClassOnly"
     },
     {
       "name": "HealthPotionPercent",
       "type": "number",
-      "description": "This scales the amount of Life that a Healing potion will restore based on the class",
-      "guideType": "[N]"
+      "description": "This scales the amount of Life that a Healing potion will restore based on the class.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#HealthPotionPercent"
     },
     {
       "name": "ManaPotionPercent",
       "type": "number",
-      "description": "This scales the amount of Mana that a Mana potion will restore based on the class",
-      "guideType": "[N]"
+      "description": "This scales the amount of Mana that a Mana potion will restore based on the class.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#ManaPotionPercent"
     },
     {
       "name": "baseWClass",
       "type": "text",
-      "description": "Base weapon class that the character will use by default when no weapon is equipped. Referenced by the",
-      "guideType": "[O]"
+      "description": "Base weapon class that the character will use by default when no weapon is equipped. Defaults to \"hth\". Corresponds to enums.EWEAPONCLASS.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#baseWClass"
     },
     {
       "name": "item1",
-      "type": "text"
+      "type": "text",
+      "description": "Item code that the character starts with.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23"
     },
     {
       "name": "item1loc",
-      "type": "text"
+      "type": "text",
+      "description": "Location where the related item will be placed in the character's inventory.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23loc"
     },
     {
       "name": "item1count",
-      "type": "number"
+      "type": "number",
+      "description": "The amount of the related item that the character starts with.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23count"
     },
     {
       "name": "item1quality",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the quality level of the related item. Corresponds to enums.EITEMMODTYPE.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23quality"
     },
     {
       "name": "item2",
-      "type": "text"
+      "type": "text",
+      "description": "Item code that the character starts with.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23"
     },
     {
       "name": "item2loc",
-      "type": "text"
+      "type": "text",
+      "description": "Location where the related item will be placed in the character's inventory.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23loc"
     },
     {
       "name": "item2count",
-      "type": "number"
+      "type": "number",
+      "description": "The amount of the related item that the character starts with.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23count"
     },
     {
       "name": "item2quality",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the quality level of the related item. Corresponds to enums.EITEMMODTYPE.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23quality"
     },
     {
       "name": "item3",
-      "type": "text"
+      "type": "text",
+      "description": "Item code that the character starts with.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23"
     },
     {
       "name": "item3loc",
-      "type": "text"
+      "type": "text",
+      "description": "Location where the related item will be placed in the character's inventory.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23loc"
     },
     {
       "name": "item3count",
-      "type": "number"
+      "type": "number",
+      "description": "The amount of the related item that the character starts with.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23count"
     },
     {
       "name": "item3quality",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the quality level of the related item. Corresponds to enums.EITEMMODTYPE.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23quality"
     },
     {
       "name": "item4",
-      "type": "text"
+      "type": "text",
+      "description": "Item code that the character starts with.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23"
     },
     {
       "name": "item4loc",
-      "type": "text"
+      "type": "text",
+      "description": "Location where the related item will be placed in the character's inventory.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23loc"
     },
     {
       "name": "item4count",
-      "type": "number"
+      "type": "number",
+      "description": "The amount of the related item that the character starts with.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23count"
     },
     {
       "name": "item4quality",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the quality level of the related item. Corresponds to enums.EITEMMODTYPE.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23quality"
     },
     {
       "name": "item5",
-      "type": "text"
+      "type": "text",
+      "description": "Item code that the character starts with.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23"
     },
     {
       "name": "item5loc",
-      "type": "text"
+      "type": "text",
+      "description": "Location where the related item will be placed in the character's inventory.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23loc"
     },
     {
       "name": "item5count",
-      "type": "number"
+      "type": "number",
+      "description": "The amount of the related item that the character starts with.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23count"
     },
     {
       "name": "item5quality",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the quality level of the related item. Corresponds to enums.EITEMMODTYPE.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23quality"
     },
     {
       "name": "item6",
-      "type": "number"
+      "type": "text",
+      "description": "Item code that the character starts with.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23"
     },
     {
       "name": "item6loc",
-      "type": "text"
+      "type": "text",
+      "description": "Location where the related item will be placed in the character's inventory.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23loc"
     },
     {
       "name": "item6count",
-      "type": "number"
+      "type": "number",
+      "description": "The amount of the related item that the character starts with.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23count"
     },
     {
       "name": "item6quality",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the quality level of the related item. Corresponds to enums.EITEMMODTYPE.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23quality"
     },
     {
       "name": "item7",
-      "type": "number"
+      "type": "text",
+      "description": "Item code that the character starts with.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23"
     },
     {
       "name": "item7loc",
-      "type": "text"
+      "type": "text",
+      "description": "Location where the related item will be placed in the character's inventory.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23loc"
     },
     {
       "name": "item7count",
-      "type": "number"
+      "type": "number",
+      "description": "The amount of the related item that the character starts with.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23count"
     },
     {
       "name": "item7quality",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the quality level of the related item. Corresponds to enums.EITEMMODTYPE.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23quality"
     },
     {
       "name": "item8",
-      "type": "number"
+      "type": "text",
+      "description": "Item code that the character starts with.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23"
     },
     {
       "name": "item8loc",
-      "type": "text"
+      "type": "text",
+      "description": "Location where the related item will be placed in the character's inventory.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23loc"
     },
     {
       "name": "item8count",
-      "type": "number"
+      "type": "number",
+      "description": "The amount of the related item that the character starts with.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23count"
     },
     {
       "name": "item8quality",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the quality level of the related item. Corresponds to enums.EITEMMODTYPE.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23quality"
     },
     {
       "name": "item9",
-      "type": "number"
+      "type": "text",
+      "description": "Item code that the character starts with.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23"
     },
     {
       "name": "item9loc",
-      "type": "text"
+      "type": "text",
+      "description": "Location where the related item will be placed in the character's inventory.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23loc"
     },
     {
       "name": "item9count",
-      "type": "number"
+      "type": "number",
+      "description": "The amount of the related item that the character starts with.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23count"
     },
     {
       "name": "item9quality",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the quality level of the related item. Corresponds to enums.EITEMMODTYPE.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23quality"
     },
     {
       "name": "item10",
-      "type": "number"
+      "type": "text",
+      "description": "Item code that the character starts with.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23"
     },
     {
       "name": "item10loc",
-      "type": "text"
+      "type": "text",
+      "description": "Location where the related item will be placed in the character's inventory.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23loc"
     },
     {
       "name": "item10count",
-      "type": "number"
+      "type": "number",
+      "description": "The amount of the related item that the character starts with.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23count"
     },
     {
       "name": "item10quality",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the quality level of the related item. Corresponds to enums.EITEMMODTYPE.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#item%23quality"
     },
     {
       "name": "TwoHandedOffHandRestrictItemType",
-      "type": "text"
+      "type": "text",
+      "description": "Optional item type to restrict off-hand item to when a two-handed weapon is currently equipped.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#TwoHandedOffHandRestrictItemType"
     },
     {
       "name": "TwoHandedDamageAsOneHanded",
-      "type": "text"
+      "type": "number",
+      "description": "If greater than 0, use one-handed damage values for two-handed equipped weapons.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/charstats.html#TwoHandedDamageAsOneHanded"
     }
   ]
 }

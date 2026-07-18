@@ -163,6 +163,7 @@ th.comment { color: #d0965a; font-style: italic; }
 .col-tooltip strong { display: block; color: #fff; margin-bottom: 4px; }
 .col-tooltip-type { display: inline-block; color: #7bb8e8; font-size: 11px; margin-bottom: 6px; }
 .col-tooltip p { margin: 0; color: #c8ccd6; line-height: 1.4; }
+.col-tooltip-source { display: inline-block; margin-top: 7px; color: #7bb8e8; font-size: 11px; }
 
 td { cursor: text; }
 td.num { text-align: right; }

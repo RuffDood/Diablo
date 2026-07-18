@@ -1,0 +1,68 @@
+{
+  "table": "monai",
+  "category": "characters",
+  "file": "global/excel/monai.txt",
+  "description": "Reference file that defines AI behaviors that monsters can use. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 1,
+  "columns": [
+    {
+      "name": "AI",
+      "type": "text",
+      "description": "Name of the AI behavior",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monai.html#AI"
+    },
+    {
+      "name": "*aip1",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "*aip2",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "*aip3",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "*aip4",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "*aip5",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "*aip6",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "*aip7",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "*aip8",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "*eol",
+      "type": "number",
+      "comment": true
+    }
+  ]
+}

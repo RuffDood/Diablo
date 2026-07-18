@@ -2,283 +2,558 @@
   "table": "sets",
   "category": "items",
   "file": "global/excel/sets.txt",
-  "description": "Table sets du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 3,
+  "description": "This file controls the item modifiers for Set bonus statistics when the player has equipped enough Set Items. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 68,
   "columns": [
     {
       "name": "index",
       "type": "text",
       "description": "Defines the specific Set ID",
-      "guideType": "[O]"
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#index"
     },
     {
       "name": "name",
       "type": "text",
       "description": "Uses a string for displaying the Set name in the inventory tooltip",
-      "guideType": "[O]"
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#name"
     },
     {
       "name": "version",
       "type": "number",
       "description": "Defines which game version to use this Set bonus (0 = Classic mode | 100 = Expansion mode)",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#version"
     },
     {
       "name": "PCode2a",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the each of the different pairs of Partial Set item properties. These are applied when the player has equipped the related # of Set items. \"a\" and \"b\" fields are paired together for each Partial Set bonus. Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PCode%23"
     },
     {
       "name": "PParam2a",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.PCode#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PParam%23"
     },
     {
       "name": "PMin2a",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.PCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PMin%23"
     },
     {
       "name": "PMax2a",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.PCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PMax%23"
     },
     {
       "name": "PCode2b",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the each of the different pairs of Partial Set item properties. These are applied when the player has equipped the related # of Set items. \"a\" and \"b\" fields are paired together for each Partial Set bonus. Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PCode%23"
     },
     {
       "name": "PParam2b",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.PCode#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PParam%23"
     },
     {
       "name": "PMin2b",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.PCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PMin%23"
     },
     {
       "name": "PMax2b",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.PCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PMax%23"
     },
     {
       "name": "PCode3a",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the each of the different pairs of Partial Set item properties. These are applied when the player has equipped the related # of Set items. \"a\" and \"b\" fields are paired together for each Partial Set bonus. Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PCode%23"
     },
     {
       "name": "PParam3a",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.PCode#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PParam%23"
     },
     {
       "name": "PMin3a",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.PCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PMin%23"
     },
     {
       "name": "PMax3a",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.PCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PMax%23"
     },
     {
       "name": "PCode3b",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the each of the different pairs of Partial Set item properties. These are applied when the player has equipped the related # of Set items. \"a\" and \"b\" fields are paired together for each Partial Set bonus. Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PCode%23"
     },
     {
       "name": "PParam3b",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.PCode#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PParam%23"
     },
     {
       "name": "PMin3b",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.PCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PMin%23"
     },
     {
       "name": "PMax3b",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.PCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PMax%23"
     },
     {
       "name": "PCode4a",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the each of the different pairs of Partial Set item properties. These are applied when the player has equipped the related # of Set items. \"a\" and \"b\" fields are paired together for each Partial Set bonus. Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PCode%23"
     },
     {
       "name": "PParam4a",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.PCode#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PParam%23"
     },
     {
       "name": "PMin4a",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.PCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PMin%23"
     },
     {
       "name": "PMax4a",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.PCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PMax%23"
     },
     {
       "name": "PCode4b",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the each of the different pairs of Partial Set item properties. These are applied when the player has equipped the related # of Set items. \"a\" and \"b\" fields are paired together for each Partial Set bonus. Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PCode%23"
     },
     {
       "name": "PParam4b",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.PCode#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PParam%23"
     },
     {
       "name": "PMin4b",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.PCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PMin%23"
     },
     {
       "name": "PMax4b",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.PCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PMax%23"
     },
     {
       "name": "PCode5a",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the each of the different pairs of Partial Set item properties. These are applied when the player has equipped the related # of Set items. \"a\" and \"b\" fields are paired together for each Partial Set bonus. Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PCode%23"
     },
     {
       "name": "PParam5a",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.PCode#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PParam%23"
     },
     {
       "name": "PMin5a",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.PCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PMin%23"
     },
     {
       "name": "PMax5a",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.PCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PMax%23"
     },
     {
       "name": "PCode5b",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the each of the different pairs of Partial Set item properties. These are applied when the player has equipped the related # of Set items. \"a\" and \"b\" fields are paired together for each Partial Set bonus. Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PCode%23"
     },
     {
       "name": "PParam5b",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.PCode#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PParam%23"
     },
     {
       "name": "PMin5b",
-      "type": "text"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.PCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PMin%23"
     },
     {
       "name": "PMax5b",
-      "type": "text"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.PCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#PMax%23"
     },
     {
       "name": "FCode1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the each of the different Full Set item properties. These are applied when the player has all Set item pieces equipped Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FCode%23"
     },
     {
       "name": "FParam1",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.FCode#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FParam%23"
     },
     {
       "name": "FMin1",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.FCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FMin%23"
     },
     {
       "name": "FMax1",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.FCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FMax%23"
     },
     {
       "name": "FCode2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the each of the different Full Set item properties. These are applied when the player has all Set item pieces equipped Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FCode%23"
     },
     {
       "name": "FParam2",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.FCode#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FParam%23"
     },
     {
       "name": "FMin2",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.FCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FMin%23"
     },
     {
       "name": "FMax2",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.FCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FMax%23"
     },
     {
       "name": "FCode3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the each of the different Full Set item properties. These are applied when the player has all Set item pieces equipped Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FCode%23"
     },
     {
       "name": "FParam3",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.FCode#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FParam%23"
     },
     {
       "name": "FMin3",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.FCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FMin%23"
     },
     {
       "name": "FMax3",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.FCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FMax%23"
     },
     {
       "name": "FCode4",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the each of the different Full Set item properties. These are applied when the player has all Set item pieces equipped Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FCode%23"
     },
     {
       "name": "FParam4",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.FCode#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FParam%23"
     },
     {
       "name": "FMin4",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.FCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FMin%23"
     },
     {
       "name": "FMax4",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.FCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FMax%23"
     },
     {
       "name": "FCode5",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the each of the different Full Set item properties. These are applied when the player has all Set item pieces equipped Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FCode%23"
     },
     {
       "name": "FParam5",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.FCode#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FParam%23"
     },
     {
       "name": "FMin5",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.FCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FMin%23"
     },
     {
       "name": "FMax5",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.FCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FMax%23"
     },
     {
       "name": "FCode6",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the each of the different Full Set item properties. These are applied when the player has all Set item pieces equipped Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FCode%23"
     },
     {
       "name": "FParam6",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.FCode#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FParam%23"
     },
     {
       "name": "FMin6",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.FCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FMin%23"
     },
     {
       "name": "FMax6",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.FCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FMax%23"
     },
     {
       "name": "FCode7",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the each of the different Full Set item properties. These are applied when the player has all Set item pieces equipped Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FCode%23"
     },
     {
       "name": "FParam7",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.FCode#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FParam%23"
     },
     {
       "name": "FMin7",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.FCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FMin%23"
     },
     {
       "name": "FMax7",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.FCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FMax%23"
     },
     {
       "name": "FCode8",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the each of the different Full Set item properties. These are applied when the player has all Set item pieces equipped Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FCode%23"
     },
     {
       "name": "FParam8",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.FCode#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FParam%23"
     },
     {
       "name": "FMin8",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.FCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FMin%23"
     },
     {
       "name": "FMax8",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.FCode#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#FMax%23"
+    },
+    {
+      "name": "UIClass",
+      "type": "text",
+      "description": "Three letter code which defines the player class category the set is assigned to. Is used in the Chronicle sets page to filter different sets by different player classes.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/sets.html#UIClass"
     },
     {
       "name": "*eol",

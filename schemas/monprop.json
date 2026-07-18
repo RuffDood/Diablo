@@ -1,0 +1,748 @@
+{
+  "table": "monprop",
+  "category": "characters",
+  "file": "global/excel/monprop.txt",
+  "description": "This file controls special properties that can be added to a monster, based on the game difficulty. The \"(N)\" text in field names signifies to use that specific value for games in Nightmare difficulty. The \"(H)\" text in field names signifies to use that specific value for games in Hell difficulty. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 91,
+  "columns": [
+    {
+      "name": "Id",
+      "type": "text",
+      "description": "Defines the monster property that is reference by other data files.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#Id"
+    },
+    {
+      "name": "prop1",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance1",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par1",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min1",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max1",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "prop2",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance2",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par2",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min2",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max2",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "prop3",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance3",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par3",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min3",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max3",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "prop4",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance4",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par4",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min4",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max4",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "prop5",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance5",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par5",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min5",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max5",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "prop6",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance6",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par6",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min6",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max6",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "prop1 (N)",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance1 (N)",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par1 (N)",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min1 (N)",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max1 (N)",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "prop2 (N)",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance2 (N)",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par2 (N)",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min2 (N)",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max2 (N)",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "prop3 (N)",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance3 (N)",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par3 (N)",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min3 (N)",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max3 (N)",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "prop4 (N)",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance4 (N)",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par4 (N)",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min4 (N)",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max4 (N)",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "prop5 (N)",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance5 (N)",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par5 (N)",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min5 (N)",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max5 (N)",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "prop6 (N)",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance6 (N)",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par6 (N)",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min6 (N)",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max6 (N)",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "prop1 (H)",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance1 (H)",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par1 (H)",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min1 (H)",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max1 (H)",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "prop2 (H)",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance2 (H)",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par2 (H)",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min2 (H)",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max2 (H)",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "prop3 (H)",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance3 (H)",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par3 (H)",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min3 (H)",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max3 (H)",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "prop4 (H)",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance4 (H)",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par4 (H)",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min4 (H)",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max4 (H)",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "prop5 (H)",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance5 (H)",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par5 (H)",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min5 (H)",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max5 (H)",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "prop6 (H)",
+      "type": "text",
+      "description": "Defines which Property to apply to the monster Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#prop%23"
+    },
+    {
+      "name": "chance6 (H)",
+      "type": "number",
+      "description": "The percent chance that the related .prop# will be assigned. If this value equals 0, then the Property will always be applied.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#chance%23"
+    },
+    {
+      "name": "par6 (H)",
+      "type": "number",
+      "description": "The \"parameter\" value associated with the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#par%23"
+    },
+    {
+      "name": "min6 (H)",
+      "type": "number",
+      "description": "The \"min\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#min%23"
+    },
+    {
+      "name": "max6 (H)",
+      "type": "number",
+      "description": "The \"max\" value to assign to the related .prop#. Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monprop.html#max%23"
+    },
+    {
+      "name": "*eol",
+      "type": "number",
+      "comment": true
+    }
+  ]
+}

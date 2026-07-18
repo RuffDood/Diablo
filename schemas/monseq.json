@@ -1,0 +1,60 @@
+{
+  "table": "monseq",
+  "category": "characters",
+  "file": "global/excel/monseq.txt",
+  "description": "This file controls the sequence table used for specifying events during certain animation frames, such as when using skills. A sequence is divided into multiple lines in this file to define each frame in the animation and to determine which event to use during a specific frame. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 5,
+  "columns": [
+    {
+      "name": "sequence",
+      "type": "text",
+      "description": "Establishes the Monster Sequence index. An entire monster sequence can be composed of multiple sequence lines, which means that each line needs to have matching .sequence fields and must be in contiguous order.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monseq.html#sequence"
+    },
+    {
+      "name": "mode",
+      "type": "text",
+      "description": "Defines which monster mode animation to use for the sequence. (Corresponds to MonMode.code)",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monseq.html#mode"
+    },
+    {
+      "name": "frame",
+      "type": "number",
+      "description": "The in-game frame number for the animation. For the first line in the sequence, this value will establish where the starting frame for the animation. These values should be in contiguous order for the sequence.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monseq.html#frame"
+    },
+    {
+      "name": "dir",
+      "type": "number",
+      "description": "Defines the numeric animation direction that the frame use. Most animations have between 8 to 64 maximum directions.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monseq.html#dir"
+    },
+    {
+      "name": "event",
+      "type": "number",
+      "description": "Defines what type of event will be used when the frame triggers",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monseq.html#event"
+    },
+    {
+      "name": "*eol",
+      "type": "number",
+      "comment": true
+    }
+  ]
+}

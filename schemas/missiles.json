@@ -2,15 +2,22 @@
   "table": "missiles",
   "category": "skills",
   "file": "global/excel/missiles.txt",
-  "description": "Table missiles du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 83,
+  "description": "This file controls the different functions for all missiles and their statistics. Missiles are projectiles used throughout the game for attacks, skills, and special effects. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 147,
   "columns": [
     {
       "name": "Missile",
       "type": "text",
-      "description": "Defines the unique name ID for the missile, which is how other files can reference the missile. The order of defined missiles will determine their ID numbers, so they should not be reordered",
-      "guideType": "[O]"
+      "description": "Defines the unique name ID for the missile, which is how other files can reference the missile. The order of defined missiles will determine their ID numbers, so they should not be reordered.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Missile"
     },
     {
       "name": "*ID",
@@ -20,38 +27,50 @@
     {
       "name": "pCltDoFunc",
       "type": "number",
-      "description": "Uses an ID value from the below table, to select a function for the missile's behavior that will be active every frame on the client side. This is more about handling the local graphics while the missile is moving.",
-      "guideType": "[N]"
+      "description": "Uses an ID value to select a function for the missile's behavior while active every frame on the client side. This is more about handling the local graphics while the missile is moving.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#pCltDoFunc"
     },
     {
       "name": "pCltHitFunc",
       "type": "number",
-      "description": "Uses an ID value from the below table, to select a specialized function for the missile's behavior when hitting something on the client side. This is more about handling the local graphics at the moment of missile collision.",
-      "guideType": "[N]"
+      "description": "Uses an ID value to select a specialized function for the missile's behavior when hitting something on the client side. This is more about handling the local graphics at the moment of missile collision.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#pCltHitFunc"
     },
     {
       "name": "pSrvDoFunc",
       "type": "number",
-      "description": "Uses an ID value from the below table, to select a specialized function for the missile's behavior while active every frame on the server side",
-      "guideType": "[N]"
+      "description": "Uses an ID value to select a specialized function for the missile's behavior while active every frame on the server side",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#pSrvDoFunc"
     },
     {
       "name": "pSrvHitFunc",
       "type": "number",
-      "description": "Uses an ID value from the below table, to select a specialized function for the missile's behavior when hitting something on the server side",
-      "guideType": "[N]"
+      "description": "Uses an ID value to select a specialized function for the missile's behavior when hitting something on the server side",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#pSrvHitFunc"
     },
     {
       "name": "pSrvDmgFunc",
       "type": "number",
-      "description": "Uses an ID value from the below table, to select a specialized function that gets called before damaging a unit on the server side",
-      "guideType": "[N]"
+      "description": "Uses an ID value to select a specialized function that gets called before damaging a unit on the server side",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#pSrvDmgFunc"
     },
     {
       "name": "SrvCalc1",
       "type": "text",
-      "description": "Used as a parameter for the",
-      "guideType": "[C]"
+      "description": "Numeric calculation field. Used as a parameter for the .pSrvDoFunc field. Missile scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#SrvCalc1"
     },
     {
       "name": "*srv calc 1 desc",
@@ -60,7 +79,11 @@
     },
     {
       "name": "Param1",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pSrvDoFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Param%23"
     },
     {
       "name": "*param1 desc",
@@ -69,7 +92,11 @@
     },
     {
       "name": "Param2",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pSrvDoFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Param%23"
     },
     {
       "name": "*param2 desc",
@@ -78,7 +105,11 @@
     },
     {
       "name": "Param3",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pSrvDoFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Param%23"
     },
     {
       "name": "*param3 desc",
@@ -87,7 +118,11 @@
     },
     {
       "name": "Param4",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pSrvDoFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Param%23"
     },
     {
       "name": "*param4 desc",
@@ -96,7 +131,11 @@
     },
     {
       "name": "Param5",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pSrvDoFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Param%23"
     },
     {
       "name": "*param5 desc",
@@ -106,8 +145,10 @@
     {
       "name": "CltCalc1",
       "type": "text",
-      "description": "Used as a parameter for the",
-      "guideType": "[C]"
+      "description": "Numeric calculation field. Used as a parameter for the .pCltDoFunc field. Missile scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CltCalc1"
     },
     {
       "name": "*client calc 1 desc",
@@ -116,7 +157,11 @@
     },
     {
       "name": "CltParam1",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pCltDoFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CltParam%23"
     },
     {
       "name": "*client param1 desc",
@@ -125,7 +170,11 @@
     },
     {
       "name": "CltParam2",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pCltDoFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CltParam%23"
     },
     {
       "name": "*client param2 desc",
@@ -134,7 +183,11 @@
     },
     {
       "name": "CltParam3",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pCltDoFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CltParam%23"
     },
     {
       "name": "*client param3 desc",
@@ -143,7 +196,11 @@
     },
     {
       "name": "CltParam4",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pCltDoFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CltParam%23"
     },
     {
       "name": "*client param4 desc",
@@ -152,7 +209,11 @@
     },
     {
       "name": "CltParam5",
-      "type": "text"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pCltDoFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CltParam%23"
     },
     {
       "name": "*client param5 desc",
@@ -162,8 +223,10 @@
     {
       "name": "SHitCalc1",
       "type": "text",
-      "description": "Used as a parameter for the",
-      "guideType": "[C]"
+      "description": "Numeric calculation field. Used as a parameter for the .pSrvHitFunc field. Missile scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#SHitCalc1"
     },
     {
       "name": "*server hit calc 1 desc",
@@ -172,7 +235,11 @@
     },
     {
       "name": "sHitPar1",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pSrvHitFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#sHitPar%23"
     },
     {
       "name": "*server hit param1 desc",
@@ -181,7 +248,11 @@
     },
     {
       "name": "sHitPar2",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pSrvHitFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#sHitPar%23"
     },
     {
       "name": "*server hit param2 desc",
@@ -190,7 +261,11 @@
     },
     {
       "name": "sHitPar3",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pSrvHitFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#sHitPar%23"
     },
     {
       "name": "*server hit param3 desc",
@@ -200,8 +275,10 @@
     {
       "name": "CHitCalc1",
       "type": "text",
-      "description": "Used as a parameter for the",
-      "guideType": "[C]"
+      "description": "Numeric calculation field. Used as a parameter for the .pCltHitFunc field. Missile scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CHitCalc1"
     },
     {
       "name": "*client hit calc1 desc",
@@ -210,7 +287,11 @@
     },
     {
       "name": "cHitPar1",
-      "type": "text"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pCltHitFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#cHitPar%23"
     },
     {
       "name": "*client hit param1 desc",
@@ -219,7 +300,11 @@
     },
     {
       "name": "cHitPar2",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pCltHitFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#cHitPar%23"
     },
     {
       "name": "*client hit param2 desc",
@@ -228,7 +313,11 @@
     },
     {
       "name": "cHitPar3",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pCltHitFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#cHitPar%23"
     },
     {
       "name": "*client hit param3 desc",
@@ -238,8 +327,10 @@
     {
       "name": "DmgCalc1",
       "type": "text",
-      "description": "Used as a parameter for the",
-      "guideType": "[C]"
+      "description": "Numeric calculation field. Used as a parameter for the .pSrvDmgFunc field. Missile scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#DmgCalc1"
     },
     {
       "name": "*damage calc 1",
@@ -248,7 +339,11 @@
     },
     {
       "name": "dParam1",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pSrvDmgFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#dParam%23"
     },
     {
       "name": "*damage param1 desc",
@@ -257,7 +352,11 @@
     },
     {
       "name": "dParam2",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. Used as a parameter for the .pSrvDmgFunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#dParam%23"
     },
     {
       "name": "*damage param2 desc",
@@ -267,618 +366,946 @@
     {
       "name": "Vel",
       "type": "number",
-      "description": "The baseline velocity of the missile, which is the speed at which the missile moves in the game world. This is measured by distance in pixels traveled per frame",
-      "guideType": "[N]"
+      "description": "The baseline velocity of the missile, which is the speed at which the missile moves in the game world. This is measured by distance in pixels traveled per frame.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Vel"
     },
     {
       "name": "MaxVel",
       "type": "number",
-      "description": "The maximum velocity of the missile. If the missile's current velocity increases (based on other fields), then this field controls how high the velocity is allowed to go",
-      "guideType": "[N]"
+      "description": "The maximum velocity of the missile. If the missile's current velocity increases (based on other fields), then this field controls how high the velocity is allowed to go.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MaxVel"
     },
     {
       "name": "VelLev",
       "type": "number",
-      "description": "Adds extra velocity based on the caster unit's level. Each level gained beyond level 1 will add this value to the baseline",
-      "guideType": "[N]"
+      "description": "Adds extra velocity based on the caster unit's level. Each level gained beyond level 1 will add this value to the baseline .Vel field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#VelLev"
     },
     {
       "name": "Accel",
       "type": "number",
-      "description": "Controls the acceleration of the missile's movement. A positive value will increase the missile's velocity per frame. A negative value will decrease the missile's velocity per frame. The bigger positive or negative values will cause the velocity to change faster per frame",
-      "guideType": "[N]"
+      "description": "Controls the acceleration of the missile's movement. A positive value will increase the missile's velocity per frame. A negative value will decrease the missile's velocity per frame. The bigger positive or negative values will cause the velocity to change faster per frame.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Accel"
     },
     {
       "name": "Range",
-      "type": "number",
-      "description": "Controls the baseline duration that the missile will exist for after it is created. This is measured in frames where 25 Frames = 1 second",
-      "guideType": "[N]"
+      "type": "text",
+      "description": "Controls the duration that the missile will exist for after it is created. This is measured in frames where 25 Frames = 1 second. Note that there are some instances where a skill function will overwrite this. Missile scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Range"
     },
     {
       "name": "Radius",
-      "type": "text"
+      "type": "text",
+      "description": "Specify the radius of the missile. This is different from its size. The radius is used for missile function searches and for vfx rendering. The size is used for collision and overlap checks. Missile scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Radius"
     },
     {
       "name": "Light",
       "type": "number",
       "description": "Controls the missile's Light Radius size (measured in grid sub-tiles)",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Light"
     },
     {
       "name": "Flicker",
       "type": "number",
       "description": "If greater than 0, then every 4th frame while the missile is active, the Light Radius will randomly change in size between base size to its base size plus this value (measured in grid sub-tiles)",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Flicker"
     },
     {
       "name": "Red",
       "type": "number",
       "description": "Controls the red color value of the missile's Light Radius (Uses a value from 0 to 255)",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Red"
     },
     {
       "name": "Green",
       "type": "number",
       "description": "Controls the green color value of the monster's Light Radius (Uses a value from 0 to 255)",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Green"
     },
     {
       "name": "Blue",
       "type": "number",
       "description": "Controls the blue color value of the monster's Light Radius (Uses a value from 0 to 255)",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Blue"
     },
     {
       "name": "InitSteps",
       "type": "number",
-      "description": "The number of frames the missile needs to be alive until it becomes visible on the game client. If the missile's current duration in frame count is less than this value, then the missile will appear invisible",
-      "guideType": "[N]"
+      "description": "The number of frames the missile needs to be alive until it becomes visible on the game client. If the missile's current duration in frame count is less than this value, then the missile will appear invisible.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#InitSteps"
     },
     {
       "name": "Activate",
       "type": "number",
-      "description": "The number of frames the missile needs to be alive until it becomes active. If the missile's current duration in frame count is less than this value, then the missile will not collide",
-      "guideType": "[N]"
+      "description": "The number of frames the missile needs to be alive until it becomes active. If the missile's current duration in frame count is less than this value, then the missile will not collide.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Activate"
     },
     {
       "name": "LoopAnim",
-      "type": "boolean",
-      "description": "If equals 1, then the missile's animation will repeat once the previous animation finishes. If equals 0, then the missile's animation will only play once, which can cause the missile to appear invisible at the end of the animation, but it will still be alive",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the missile's animation will repeat once the previous animation finishes. If equals 0, then the missile's animation will only play once, which can cause the missile to appear invisible at the end of the animation, but it will still be alive.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#LoopAnim"
     },
     {
       "name": "CelFile",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which DCC missile file to use for the visual graphics of the missile",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CelFile"
     },
     {
       "name": "animrate",
       "type": "number",
-      "description": "Controls the visual speed of the missile's animation graphics. The overall missile animation rate is calculated as the following: 256 * [\"animrate\"] / 1024",
-      "guideType": "[N]"
+      "description": "Controls the visual speed of the missile's animation graphics. The overall missile animation rate is calculated as the following: 256 * [.animrate] / 1024",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#animrate"
     },
     {
       "name": "AnimLen",
       "type": "number",
-      "description": "Defines the length of the missile's animation in frames where 25 Frames = 1 second. This field can sometimes be used to calculate the missile animation rate, depending on the missile function used",
-      "guideType": "[N]"
+      "description": "Defines the length of the missile's animation in frames where 25 Frames = 1 second. This field can sometimes be used to calculate the missile animation rate, depending on the missile function used.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#AnimLen"
     },
     {
       "name": "AnimSpeed",
       "type": "number",
-      "description": "Controls the visual speed of the missile's animation graphics on the client side (Measured in 16ths, where 16 equals 1 frame per second). This can be overridden by certain missile functions",
-      "guideType": "[N]"
+      "description": "Controls the visual speed of the missile's animation graphics on the client side (Measured in 16ths, where 16 equals 1 frame per second). This can be overridden by certain missile functions.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#AnimSpeed"
     },
     {
       "name": "RandStart",
       "type": "number",
-      "description": "If this value is greater than 0, then the missile will start at a random frame between 0 and this value when it begins its animation",
-      "guideType": "[N]"
+      "description": "If this value is greater than 0, then the missile will start at a random frame between 0 and this value when it begins its animation.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#RandStart"
     },
     {
       "name": "SubLoop",
-      "type": "boolean",
-      "description": "If equals 1, then the missile will use a specific sequence of its animation while it is alive, depending on its creation. If equals 0, then the missile will not use a sequenced animation",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the missile will use a specific sequence of its animation while it is alive, depending on its creation. If equals 0, then the missile will not use a sequenced animation.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#SubLoop"
     },
     {
       "name": "SubStart",
       "type": "number",
-      "description": "The starting frame of the sequence animation. This requires that the",
-      "guideType": "[N]"
+      "description": "The starting frame of the sequence animation. This requires that the .SubLoop field is enabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#SubStart"
     },
     {
       "name": "SubStop",
       "type": "number",
-      "description": "The ending frame of the sequence animation. After reaching this frame, then the sequenced animation will loop back to the",
-      "guideType": "[N]"
+      "description": "The ending frame of the sequence animation. After reaching this frame, then the sequenced animation will loop back to the .SubStart frame. This requires that the .SubLoop field is enabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#SubStop"
     },
     {
       "name": "CollideType",
       "type": "number",
       "description": "Defines the missile's collision type, which controls what units, objects, or parts of the environment that the missile can impact",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CollideType"
     },
     {
       "name": "CollideKill",
-      "type": "boolean",
-      "description": "If equals 1, then the missile will be destroyed when it collides with something. If equals 0, then the missile will not be destroyed when it collides with something",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the missile will be destroyed when it collides with something. If equals 0, then the missile will not be destroyed when it collides with something.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CollideKill"
     },
     {
       "name": "CollideFriend",
-      "type": "boolean",
-      "description": "If equals 1, then the missile can collide with friendly units, including the caster. If equals 0, then the missile will ignore friendly units",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the missile can collide with friendly units, including the caster. If equals 0, then the missile will ignore friendly units.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CollideFriend"
     },
     {
       "name": "LastCollide",
       "type": "boolean",
-      "description": "If equals 1, then the missile will track the last unit that it collided with, which is useful for making sure the missile does not hit the same unit twice. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the missile will track the last unit that it collided with, which is useful for making sure the missile does not hit the same unit twice. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#LastCollide"
     },
     {
       "name": "Collision",
-      "type": "boolean",
-      "description": "If equals 1, then the missile will have a missile type path placement collision mask when it is initialized or moved. If equals 0, then the missile will have no placement collision mask when it is created or moved",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the missile will have a missile type path placement collision mask when it is initialized or moved. If equals 0, then the missile will have no placement collision mask when it is created or moved.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Collision"
     },
     {
       "name": "ClientCol",
-      "type": "boolean",
-      "description": "If equals 1, then the missile will check collision on the client, depending on the missile's",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the missile will check collision on the client, depending on the missile's .CollideType field. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#ClientCol"
     },
     {
       "name": "CollisionOverlap",
-      "type": "number"
+      "type": "boolean",
+      "description": "Boolean Field. If equals 1, then an overlap collision check is done on the current missile location before stepping the missile on its next path location.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CollisionOverlap"
     },
     {
       "name": "ClientSend",
       "type": "boolean",
-      "description": "If equals 1, then the server will create the missile on the client. This can be used when reloading area levels or transitioning units between areas. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the server will create the missile on the client. This can be used when reloading area levels or transitioning units between areas. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#ClientSend"
     },
     {
       "name": "NextHit",
-      "type": "boolean",
-      "description": "If equals 1, then the missile will use the next delay. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the missile will use the next delay. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#NextHit"
     },
     {
       "name": "NextDelay",
       "type": "number",
-      "description": "Controls the delay in frame length until the missile is allowed to hit the same unit again. This field relies on the",
-      "guideType": "[N]"
+      "description": "Controls the delay in frame length until this and any other missiles from the same skill cast are allowed to hit the same unit again. This field relies on the .NextHit field being enabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#NextDelay"
     },
     {
       "name": "xoffset",
-      "type": "text"
+      "type": "number",
+      "description": "Specifies the X, Y, and Z location coordinates (measured in pixels) to offset to visually draw the missile based on its actual location. This will only offset the visual graphics of the missile, not the missile itself. The Z axis controls the visual height of the missile.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#xoffset"
     },
     {
       "name": "yoffset",
-      "type": "number"
+      "type": "number",
+      "description": "Specifies the X, Y, and Z location coordinates (measured in pixels) to offset to visually draw the missile based on its actual location. This will only offset the visual graphics of the missile, not the missile itself. The Z axis controls the visual height of the missile.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#xoffset"
     },
     {
       "name": "zoffset",
-      "type": "number"
+      "type": "number",
+      "description": "Specifies the X, Y, and Z location coordinates (measured in pixels) to offset to visually draw the missile based on its actual location. This will only offset the visual graphics of the missile, not the missile itself. The Z axis controls the visual height of the missile.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#xoffset"
     },
     {
       "name": "Size",
       "type": "number",
-      "description": "Defines the diameter in sub-tiles (for both the X and Y axis) that the missile will occupy. This affects how the missile will collide with something or how the game will handle placement for the missile",
-      "guideType": "[N]"
+      "description": "Defines the diameter in sub-tiles (for both the X and Y axis) that the missile will occupy. This affects how the missile will collide with something or how the game will handle placement for the missile.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Size"
     },
     {
       "name": "SrcTown",
       "type": "boolean",
-      "description": "If equals 1, then the missile will be destroyed if the caster unit is located in an act town. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the missile will be destroyed if the caster unit is located in an act town. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#SrcTown"
     },
     {
       "name": "CltSrcTown",
       "type": "number",
-      "description": "If this value is greater than 0 and the",
-      "guideType": "[N]"
+      "description": "If this value is greater than 0 and the .LoopAnim field is disabled, then this field will control which frame to set the missile's animation when the player is in town. This value gets subtracted from the .AnimLen value to determine the frame to set the missile's animation.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CltSrcTown"
     },
     {
       "name": "CanDestroy",
       "type": "boolean",
-      "description": "If equals 1, then the missile can be attacked and destroyed. If equals 0, then the missile cannot be attacked",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the missile can be attacked and destroyed. If equals 0, then the missile cannot be attacked.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CanDestroy"
     },
     {
       "name": "ToHit",
-      "type": "boolean",
-      "description": "If equals 1, then this missile will use the caster's Attack Rating stat to determine if the missile should hit its target. If equals 0, then the missile will always hit its target",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this missile will use the caster's Attack Rating stat to determine if the missile should hit its target. If equals 0, then the missile will always hit its target.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#ToHit"
     },
     {
       "name": "AlwaysExplode",
-      "type": "boolean",
-      "description": "If equals 1, then the missile will always process an explosion when it is killed, which can use the",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the missile will always process an explosion when it is killed, which can use a server hit function (See .pSrvHitFunc) and can use the .HitSound and .ExplosionMissile fields on the client side. If equals 0, then the missile will only rely on proper collision hits to process an explosion.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#AlwaysExplode"
     },
     {
       "name": "Explosion",
       "type": "boolean",
-      "description": "If equals 1, then the missile will be classified as an explosion which will make it use different handlers for finding nearby units and dealing damage. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the missile will be classified as an explosion which will make it use different handlers for finding nearby units and dealing damage. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Explosion"
     },
     {
       "name": "Town",
       "type": "boolean",
-      "description": "If equals 1, then the missile is allowed to be alive when in a town area. If equals 0, then the missile will be immediately destroyed when located within a town area",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the missile is allowed to be alive when in a town area. If equals 0, then the missile will be immediately destroyed when located within a town area.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Town"
     },
     {
       "name": "NoUniqueMod",
       "type": "boolean",
-      "description": "If equals 1, then the missile will not receive bonuses from Unique monster modifiers. If equals 0, then the missile will receive bonuses from Unique monster modifiers",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the missile will not receive bonuses from Unique monster modifiers. If equals 0, then the missile will receive bonuses from Unique monster modifiers.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#NoUniqueMod"
     },
     {
       "name": "NoMultiShot",
       "type": "boolean",
-      "description": "If equals 1, then the missile will not be affected by the Multi-Shot monster modifier. If equals 0, then the missile will be affected by theMulti-Shot monster modifier",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the missile will not be affected by the Multi-Shot monster modifier. If equals 0, then the missile will be affected by the Multi-Shot monster modifier.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#NoMultiShot"
     },
     {
       "name": "Holy",
       "type": "number",
-      "description": "Controls a bit field flag where each value is a code to allow the missile to damage a certain type of monster",
-      "guideType": "[N]"
+      "description": "Controls a bit field flag where each value is a code to allow the missile to damage a certain type of monster. Leave blank to damage all units.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Holy"
     },
     {
       "name": "CanSlow",
       "type": "boolean",
-      "description": "If equals 1, then the missile can be affected by the \"slowmissiles\" state (",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the missile can be affected by the \"slowmissiles\" state (See states). If equals 0, then the missile will ignore the \"slowmissiles\" state.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CanSlow"
     },
     {
       "name": "ReturnFire",
       "type": "boolean",
-      "description": "If equals 1, then missile can trigger the Sorceress Chilling Armor event function. If equals 0, then this missile will not trigger that function",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then missile can trigger the Sorceress Chilling Armor event function. If equals 0, then this missile will not trigger that function.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#ReturnFire"
     },
     {
       "name": "GetHit",
       "type": "boolean",
-      "description": "If equals 1, then the missile will cause the target unit to enter the Get Hit mode (GH), which acts as the hit recovery mode. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the missile will cause the target unit to enter the Get Hit mode (GH), which acts as the hit recovery mode. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#GetHit"
     },
     {
       "name": "SoftHit",
       "type": "boolean",
-      "description": "If equals 1, then the missile will cause a soft hit on the unit, which can trigger a blood splatter effect, hit flash, and/or a hit sound. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the missile will cause a soft hit on the unit, which can trigger a blood splatter effect, hit flash, and/or a hit sound. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#SoftHit"
     },
     {
       "name": "KnockBack",
       "type": "number",
       "description": "Controls the percentage chance (out of 100) that the target unit will be knocked back when hit by the missile",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#KnockBack"
     },
     {
       "name": "Trans",
       "type": "number",
       "description": "Controls the alpha mode for how the missile is displayed, which can affect transparency and blending",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Trans"
     },
     {
       "name": "Pierce",
       "type": "boolean",
-      "description": "If equals 1, then allow the Pierce modifier function to work with this missile. If equals 0, then do not allow Pierce to work with this missile",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then allow the Pierce modifier function to work with this missile. If equals 0, then do not allow Pierce to work with this missile.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Pierce"
     },
     {
       "name": "MissileSkill",
       "type": "boolean",
-      "description": "If equals 1, then the missile will look up the skill that created it and use that skill's damage instead of the missile damage. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the missile will look up the skill that created it and use that skill's damage instead of the missile damage. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MissileSkill"
     },
     {
       "name": "Skill",
       "type": "text",
-      "description": "Links to the \"skill\" field from the",
-      "guideType": "[O]"
+      "description": "This will look up the specified skill's damage and use it for the missile instead of using the missile's defined damage.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Skill"
     },
     {
       "name": "ResultFlags",
-      "type": "number"
+      "type": "number",
+      "description": "Controls different flags that can affect how the target reacts after being hit by the missile. Uses an integer value to check against different bit fields by using the \"&\" operator. For example, if the value equals 5 (binary = 101) then that returns true for both the 4 (binary = 100) and 1 (binary = 1) bit field values.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#ResultFlags"
     },
     {
       "name": "HitFlags",
       "type": "number",
-      "description": "Controls different flags that can affect the damage dealt when the target is hit by the missile. Uses an integer value to check against different bit fields by using the \"&\" operator. For example, if the value equals 6 (binary = 110) then that returns true for both the 4 (binary = 100) and 2 (binary = 10) bit field values. Referenced by the",
-      "guideType": "[N]"
+      "description": "Controls different flags that can affect the damage dealt when the target is hit by the missile. Uses an integer value to check against different bit fields by using the \"&\" operator. For example, if the value equals 6 (binary = 110) then that returns true for both the 4 (binary = 100) and 2 (binary = 10) bit field values.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#HitFlags"
     },
     {
       "name": "HitShift",
       "type": "number",
-      "description": "Controls the percentage modifier for the missile's damage. This value cannot be less than 0 or greater than 8. This is calculated in 256ths, where 8=256/256, 7=128/256, 6=64/256, 5=32/256, 4=16/256, 3=8/256, 2=4/256, 1=2/256, and 0=1/256",
-      "guideType": "[N]"
+      "description": "Controls the percentage modifier for the missile's damage. This value cannot be less than 0 or greater than 8. This is calculated in 256ths, where 8=256/256, 7=128/256, 6=64/256, 5=32/256, 4=16/256, 3=8/256, 2=4/256, 1=2/256, and 0=1/256.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#HitShift"
     },
     {
       "name": "ApplyMastery",
       "type": "boolean",
-      "description": "If equals 1, then apply the caster's elemental mastery bonus modifiers to the missile's elemental damage. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then apply the caster's elemental mastery bonus modifiers to the missile's elemental damage. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#ApplyMastery"
     },
     {
       "name": "SrcDamage",
       "type": "number",
-      "description": "Controls how much of the source unit's damage should be added to the missile's damage. This is calculated in 128ths and acts as a percentage modifier for the source unit's damage that added to the missile. If equals -1 or 0, then the source damage is not included",
-      "guideType": "[N]"
+      "description": "Controls how much of the source unit's damage should be added to the missile's damage. This is calculated in 128ths and acts as a percentage modifier for the source unit's damage that added to the missile. If equals -1 or 0, then the source damage is not included.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#SrcDamage"
     },
     {
       "name": "Half2HSrc",
       "type": "boolean",
-      "description": "If equals 1 and the source unit is currently wielding a 2-Handed weapon, then the",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1 and the source unit is currently wielding a 2-Handed weapon, then the source damage (see .SrcDamage) is reduced by 50%. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#Half2HSrc"
     },
     {
       "name": "SrcMissDmg",
       "type": "number",
-      "description": "If the missile was created by another missile, then this controls how much of the source missile's damage should be added to this missile's damage. This is calculated in 128ths and acts as a percentage modifier for the source missile's damage that added to this missile. If equals 0, then the source damage is not included",
-      "guideType": "[N]"
+      "description": "If the missile was created by another missile, then this controls how much of the source missile's damage should be added to this missile's damage. This is calculated in 128ths and acts as a percentage modifier for the source missile's damage that added to this missile. If equals 0, then the source damage is not included.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#SrcMissDmg"
     },
     {
       "name": "MinDamage",
       "type": "number",
       "description": "Minimum baseline physical damage dealt by the missile",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MinDamage"
     },
     {
       "name": "MinLevDam1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum physical damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MinLevDam%23"
     },
     {
       "name": "MinLevDam2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum physical damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MinLevDam%23"
     },
     {
       "name": "MinLevDam3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum physical damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MinLevDam%23"
     },
     {
       "name": "MinLevDam4",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum physical damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MinLevDam%23"
     },
     {
       "name": "MinLevDam5",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum physical damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MinLevDam%23"
     },
     {
       "name": "MaxDamage",
       "type": "number",
       "description": "Maximum baseline physical damage dealt by the missile",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MaxDamage"
     },
     {
       "name": "MaxLevDam1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum physical damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MaxLevDam%23"
     },
     {
       "name": "MaxLevDam2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum physical damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MaxLevDam%23"
     },
     {
       "name": "MaxLevDam3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum physical damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MaxLevDam%23"
     },
     {
       "name": "MaxLevDam4",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum physical damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MaxLevDam%23"
     },
     {
       "name": "MaxLevDam5",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum physical damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MaxLevDam%23"
     },
     {
       "name": "DmgSymPerCalc",
       "type": "text",
-      "description": "Determines the percentage increase to the physical damage dealt by the missile based on specified skill levels",
-      "guideType": "[C]"
+      "description": "Calculation Field. Determines the percentage increase to the physical damage dealt by the missile based on specified skill levels. Missile scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#DmgSymPerCalc"
     },
     {
       "name": "EType",
       "type": "text",
-      "description": "Defines the type of elemental damage dealt by the missile. If this field is empty, then the related elemental fields below will not be used. Referenced by the",
-      "guideType": "[O]"
+      "description": "Defines the type of elemental damage dealt by the missile. If this field is empty, then the related elemental fields below will not be used. Any type that has length uses the .ELen field.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#EType"
     },
     {
       "name": "EMin",
       "type": "number",
       "description": "Minimum baseline elemental damage dealt by the missile",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#EMin"
     },
     {
       "name": "MinELev1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum elemental damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MinELev%23"
     },
     {
       "name": "MinELev2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum elemental damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MinELev%23"
     },
     {
       "name": "MinELev3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum elemental damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MinELev%23"
     },
     {
       "name": "MinELev4",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum elemental damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MinELev%23"
     },
     {
       "name": "MinELev5",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum elemental damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MinELev%23"
     },
     {
       "name": "EMax",
       "type": "number",
       "description": "Maximum baseline elemental damage dealt by the missile",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#EMax"
     },
     {
       "name": "MaxELev1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum elemental damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MaxELev%23"
     },
     {
       "name": "MaxELev2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum elemental damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MaxELev%23"
     },
     {
       "name": "MaxELev3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum elemental damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MaxELev%23"
     },
     {
       "name": "MaxELev4",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum elemental damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MaxELev%23"
     },
     {
       "name": "MaxELev5",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum elemental damage dealt by the missile, calculated using the leveling formula between 5 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MaxELev%23"
     },
     {
       "name": "EDmgSymPerCalc",
       "type": "text",
-      "description": "Determines the percentage increase to the elemental damage dealt by the missile based on specified skill levels",
-      "guideType": "[C]"
+      "description": "Calculation Field. Determines the percentage increase to the elemental damage dealt by the missile based on specified skill levels. Missile scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#EDmgSymPerCalc"
     },
     {
       "name": "ELen",
       "type": "number",
-      "description": "The baseline elemental duration dealt by the missile. This is calculated in frame lengths where 25 Frames = 1 second. These fields only apply to appropriate elemental types with a duration",
-      "guideType": "[N]"
+      "description": "The baseline elemental duration dealt by the missile. This is calculated in frame lengths where 25 Frames = 1 second. These fields only apply to appropriate elemental types with a duration.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#ELen"
     },
     {
       "name": "ELevLen1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional elemental duration added by the missile, calculated using the leveling formula between 3 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17 and beyond. These 3 level thresholds correlate to each field. These fields only apply to appropriate elemental types with a duration.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#ELevLen%23"
     },
     {
       "name": "ELevLen2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional elemental duration added by the missile, calculated using the leveling formula between 3 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17 and beyond. These 3 level thresholds correlate to each field. These fields only apply to appropriate elemental types with a duration.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#ELevLen%23"
     },
     {
       "name": "ELevLen3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional elemental duration added by the missile, calculated using the leveling formula between 3 level thresholds of the missile's current level. The level thresholds are levels 2-8, 9-16, 17 and beyond. These 3 level thresholds correlate to each field. These fields only apply to appropriate elemental types with a duration.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#ELevLen%23"
     },
     {
       "name": "HitClass",
       "type": "number",
-      "description": "Defines the missile's own hit class into the damage routines, mainly used for determining hit sound effects and overlays. This field only handles the hit class layers, so values beyond these defined bits are ignored. Uses an integer value to check against different bit fields by using the \"&\" operator. For example, if the value equals 6 (binary = 110) then that returns true for both the 4 (binary = 100) and 2 (binary = 10) bit field values.",
-      "guideType": "[N]"
+      "description": "Defines the missil's own hit class into the damage routines, mainly used for determining hit sound effects and overlays. This field only handles the hit class layers, so values beyond these defined bits are ignored. Uses an integer value to check against different bit fields by using the \"&\" operator. For example, if the value equals 6 (binary = 110) then that returns true for both the 4 (binary = 100) and 2 (binary = 10) bit field values.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#HitClass"
     },
     {
       "name": "NumDirections",
       "type": "number",
-      "description": "The number of directions allowed by the missile, based on the DCC file used (",
-      "guideType": "[N]"
+      "description": "The number of directions allowed by the missile, based on the DCC file used (see .CelFile). This value should be within the power of 2, with a minimum value of 1 or up to a maximum value of 64.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#NumDirections"
     },
     {
       "name": "LocalBlood",
-      "type": "boolean",
-      "description": "If equals 1, then change the color of blood missiles to green. If equals 0, then keep the blood missiles colored the default red",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then change the color of blood missiles to green. If equals 0, then keep the blood missiles colored the default red.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#LocalBlood"
     },
     {
       "name": "DamageRate",
       "type": "number",
-      "description": "Controls the \"damage_framerate\" stat (Calculated in 1024ths), which acts as a percentage multiplier for the physical damage reduction and magic damage reduction stat modifiers, when performing damage resistance calculations. This is only enabled if the value is greater than 0",
-      "guideType": "[N]"
+      "description": "Controls the \"damage_framerate\" stat (Calculated in 1024ths), which acts as a percentage multiplier for the physical damage reduction and magic damage reduction stat modifiers, when performing damage resistance calculations. This is only enabled if the value is greater than 0.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#DamageRate"
     },
     {
       "name": "TravelSound",
       "type": "text",
-      "description": "Points to a",
-      "guideType": "[O]"
+      "description": "Used when the missile is created and while it is alive.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#TravelSound"
     },
     {
       "name": "HitSound",
       "type": "text",
-      "description": "Points to a",
-      "guideType": "[O]"
+      "description": "Used when the collides with a target.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#HitSound"
     },
     {
       "name": "OnDiedSound",
-      "type": "text"
+      "type": "text",
+      "description": "Optional sound to play when the missile dies.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#OnDiedSound"
     },
     {
       "name": "ProgSound",
       "type": "text",
-      "description": "Points to a",
-      "guideType": "[O]"
+      "description": "Used for a programmed special event based on the client function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#ProgSound"
     },
     {
       "name": "ProgOverlay",
       "type": "text",
-      "description": "Points to the",
-      "guideType": "[O]"
+      "description": "Used for a programmed special event based on the server or client function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#ProgOverlay"
     },
     {
       "name": "ExplosionMissile",
       "type": "text",
-      "description": "Points to the",
-      "guideType": "[O]"
+      "description": "Used for the missile created on the client when this missile explodes.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#ExplosionMissile"
     },
     {
       "name": "SubMissile1",
-      "type": "text"
+      "type": "text",
+      "description": "Used for creating a new missile based on the server function used.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#SubMissile%23"
     },
     {
       "name": "SubMissile2",
-      "type": "text"
+      "type": "text",
+      "description": "Used for creating a new missile based on the server function used.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#SubMissile%23"
     },
     {
       "name": "SubMissile3",
-      "type": "text"
+      "type": "text",
+      "description": "Used for creating a new missile based on the server function used.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#SubMissile%23"
     },
     {
       "name": "HitSubMissile1",
-      "type": "text"
+      "type": "text",
+      "description": "Used for a new missile after a collision, based on the server function used.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#HitSubMissile%23"
     },
     {
       "name": "HitSubMissile2",
-      "type": "text"
+      "type": "text",
+      "description": "Used for a new missile after a collision, based on the server function used.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#HitSubMissile%23"
     },
     {
       "name": "HitSubMissile3",
-      "type": "text"
+      "type": "text",
+      "description": "Used for a new missile after a collision, based on the server function used.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#HitSubMissile%23"
     },
     {
       "name": "HitSubMissile4",
-      "type": "text"
+      "type": "text",
+      "description": "Used for a new missile after a collision, based on the server function used.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#HitSubMissile%23"
     },
     {
       "name": "CltSubMissile1",
-      "type": "text"
+      "type": "text",
+      "description": "Used for creating a new missile based on the client function used.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CltSubMissile%23"
     },
     {
       "name": "CltSubMissile2",
-      "type": "text"
+      "type": "text",
+      "description": "Used for creating a new missile based on the client function used.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CltSubMissile%23"
     },
     {
       "name": "CltSubMissile3",
-      "type": "text"
+      "type": "text",
+      "description": "Used for creating a new missile based on the client function used.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CltSubMissile%23"
     },
     {
       "name": "CltHitSubMissile1",
-      "type": "text"
+      "type": "text",
+      "description": "Used for a new missile after a collision, based on the client function used.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CltHitSubMissile%23"
     },
     {
       "name": "CltHitSubMissile2",
-      "type": "text"
+      "type": "text",
+      "description": "Used for a new missile after a collision, based on the client function used.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CltHitSubMissile%23"
     },
     {
       "name": "CltHitSubMissile3",
-      "type": "text"
+      "type": "text",
+      "description": "Used for a new missile after a collision, based on the client function used.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CltHitSubMissile%23"
     },
     {
       "name": "CltHitSubMissile4",
-      "type": "text"
+      "type": "text",
+      "description": "Used for a new missile after a collision, based on the client function used.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#CltHitSubMissile%23"
     },
     {
       "name": "MissileWeaponVFX",
-      "type": "number"
+      "type": "boolean",
+      "description": "Boolean Field. If equals 1, then the missile is being represented by a weapon or a vfx based on a weapon.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/missiles.html#MissileWeaponVFX"
     },
     {
       "name": "*eol",

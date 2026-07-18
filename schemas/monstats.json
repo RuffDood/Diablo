@@ -2,15 +2,22 @@
   "table": "monstats",
   "category": "characters",
   "file": "global/excel/monstats.txt",
-  "description": "Table monstats du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 91,
+  "description": "This file controls the main functionalities and statistics for every monster in the game. This includes enemy monsters, pets, and NPC units. The \"(N)\" text in field names signifies to use that specific value for games in Nightmare difficulty. The \"(H)\" text in field names signifies to use that specific value for games in Hell difficulty. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 271,
   "columns": [
     {
       "name": "Id",
-      "type": "number",
-      "description": "Controls the unique name ID to define the monster",
-      "guideType": "[N]"
+      "type": "text",
+      "description": "Controls the unique name ID to define the monster.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Id"
     },
     {
       "name": "*hcIdx",
@@ -20,1238 +27,2162 @@
     {
       "name": "BaseId",
       "type": "text",
-      "description": "Points to the",
-      "guideType": "[O]"
+      "description": "Points to the .Id of another monster to define the monster's base type. This is to create groups of monsters which are considered the same type.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#BaseId"
     },
     {
       "name": "NextInClass",
       "type": "text",
-      "description": "Points to the",
-      "guideType": "[O]"
+      "description": "Points to the .Id of another monster to signify the next monster in the group of this monster's type. This is to continue the groups of monsters which are considered the same type. The order should be contiguous.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#NextInClass"
     },
     {
       "name": "TransLvl",
       "type": "number",
       "description": "Defines the color transform level to use for this monster, which affects what color palette that the monster will use",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TransLvl"
     },
     {
       "name": "NameStr",
-      "type": "text"
+      "type": "text",
+      "description": "String Key. Used to define the monster's name, such as in the Life bar UI when it is being targeted.",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#NameStr"
     },
     {
       "name": "MonStatsEx",
       "type": "text",
-      "description": "Controls a pointer to the",
-      "guideType": "[O]"
+      "description": "Controls a pointer to the monstats2 entry to use for this monster.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#MonStatsEx"
     },
     {
       "name": "MonProp",
       "type": "text",
-      "description": "Points to the",
-      "guideType": "[O]"
+      "description": "Points to a MonProp.Id field. Used to add special modifiers to the monster.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#MonProp"
     },
     {
       "name": "MonType",
       "type": "text",
-      "description": "Points to the",
-      "guideType": "[O]"
+      "description": "Points to a montype.type field. Used to handle the monster's classification.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#montype"
     },
     {
       "name": "AI",
       "type": "text",
-      "description": "Points to a type of AI script to use for the monster (",
-      "guideType": "[O]"
+      "description": "Points to a type of AI script to use for the monster (See monai).",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#AI"
     },
     {
       "name": "DescStr",
-      "type": "text"
+      "type": "text",
+      "description": "String Key. Used to add a string to appear as an additional description below the Life bar UI when the monster is being targeted.",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#DescStr"
     },
     {
       "name": "Code",
       "type": "text",
       "description": "Controls the token used for choosing the proper cells to display the monster's graphics",
-      "guideType": "[O]"
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Code"
     },
     {
       "name": "enabled",
       "type": "boolean",
-      "description": "If equals 1, then this monster is allowed to spawn in the game. If equals 0, then this monster will never spawn in the game",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then this monster is allowed to spawn in the game. If equals 0, then this monster will never spawn in the game.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#enabled"
     },
     {
       "name": "rangedtype",
       "type": "boolean",
-      "description": "If equals 1, then the monster will be classified as a ranged type. If equals 0, then the monster will be classified as a melee type",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster will be classified as a ranged type. If equals 0, then the monster will be classified as a melee type.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#rangedtype"
     },
     {
       "name": "placespawn",
       "type": "boolean",
-      "description": "If equals 1, then this monster will be treated as a spawner, so monsters that spawn can be initially placed within this monster. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then this monster will be treated as a spawner, so monsters that spawn can be initially placed within this monster. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#placespawn"
     },
     {
       "name": "spawn",
       "type": "text",
-      "description": "Points to the",
-      "guideType": "[O]"
+      "description": "Points to the .Id of another monster to control what kind of monster is spawned from this monster. This is only used if the .placespawn field is enabled.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#spawn"
     },
     {
       "name": "spawnx",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the X & Y offsets for where another monster is displaced when being spawned by this monster.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#spawnx"
     },
     {
       "name": "spawny",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the X & Y offsets for where another monster is displaced when being spawned by this monster.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#spawnx"
     },
     {
       "name": "spawnmode",
       "type": "text",
-      "description": "Defines the animation mode that the spawned monsters will be initiated with. Referenced from the",
-      "guideType": "[O]"
+      "description": "Defines the animation mode that the spawned monsters will be initiated with. Uses MonMode.code",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#spawnmode"
     },
     {
       "name": "minion1",
-      "type": "text"
+      "type": "text",
+      "description": "Points to the .Id of another monster to control what kind of monster is spawned with this monster when it is spawned, like a monster pack. The .minion1 field is also used for spawning a monster when this monster is killed while it has the .SplEndDeath field enabled.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#minion%23"
     },
     {
       "name": "minion2",
-      "type": "text"
+      "type": "text",
+      "description": "Points to the .Id of another monster to control what kind of monster is spawned with this monster when it is spawned, like a monster pack. The .minion1 field is also used for spawning a monster when this monster is killed while it has the .SplEndDeath field enabled.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#minion%23"
     },
     {
       "name": "SetBoss",
       "type": "boolean",
-      "description": "If equals 1, then set the monster AI to use the Boss AI type, which can affect the monster's behaviors. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then set the monster AI to use the Boss AI type, which can affect the monster's behaviors. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#SetBoss"
     },
     {
       "name": "BossXfer",
       "type": "boolean",
-      "description": "If equals 1, then the monster's AI will transfer its boss recognition to another monster, which can affect the minion monster behaviors after this boss is killed. If equals 0, then ignore no boss AI will transfer and minion monsters will behave differently after the boss is killed. This field relies on the",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monste's AI will transfer its boss recognition to another monster, which can affect the minion monster behaviors after this boss is killed. If equals 0, then ignore no boss AI will transfer and minion monsters will behave differently after the boss is killed. This field relies on the .SetBoss field being enabled.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#BossXfer"
     },
     {
       "name": "PartyMin",
       "type": "number",
-      "description": "The minimum number of minions that can spawn with this monster. Uses the",
-      "guideType": "[N]"
+      "description": "The minimum and maximum number of minions that can spawn with this monster. Uses the .minion# fields. The actual number is a random value chosen between the .PartyMin and .PartyMax field values.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#PartyMin"
     },
     {
       "name": "PartyMax",
       "type": "number",
-      "description": "The maximum number of minions that can spawn with this monster. Uses the",
-      "guideType": "[N]"
+      "description": "The minimum and maximum number of minions that can spawn with this monster. Uses the .minion# fields. The actual number is a random value chosen between the .PartyMin and .PartyMax field values.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#PartyMin"
     },
     {
       "name": "MinGrp",
       "type": "number",
-      "description": "The minimum number of duplicates of this monster that can spawn together. The actual number is a random value chosen between the \"MinGrp\" and \"MaxGrp\" field values",
-      "guideType": "[N]"
+      "description": "The minimum and maximum number of duplicates of this monster that can spawn together. The actual number is a random value chosen between the .MinGrp and #$#MaxGrp!$ field values.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#MinGrp"
     },
     {
       "name": "MaxGrp",
       "type": "number",
-      "description": "The maximum number of duplicates of this monster that can spawn together. The actual number is a random value chosen between the \"MinGrp\" and \"MaxGrp\" field values",
-      "guideType": "[N]"
+      "description": "The minimum and maximum number of duplicates of this monster that can spawn together. The actual number is a random value chosen between the .MinGrp and #$#MaxGrp!$ field values.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#MinGrp"
     },
     {
       "name": "sparsePopulate",
       "type": "number",
       "description": "If this value is greater than 0, then it controls the percent chance that this monster does not spawn, and another monster will spawn in its place. (Out of 100)",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#sparsePopulate"
     },
     {
       "name": "Velocity",
       "type": "number",
-      "description": "Determines the movement velocity of the monster, which can be the monster's baseline walk speed",
-      "guideType": "[N]"
+      "description": "Determines the movement velocity of the monster, which can be the monster's baseline walk speed.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Velocity"
     },
     {
       "name": "Run",
       "type": "number",
-      "description": "Determines the run speed of the monster as opposed to walk speed. This is only used if the monster has a Run mode",
-      "guideType": "[N]"
+      "description": "Determines the run speed of the monster as opposed to walk speed. This is only used if the monster has a Run mode.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Run"
     },
     {
       "name": "Rarity",
       "type": "number",
-      "description": "Modifies the chance that this monster will be chosen to spawn in the area level. The higher the value is, then the more likely this monster will be chosen. This value acts as a numerator and a denominator. All \"Rarity\" values of possible monsters get summed together to give a total denominator, used for the random roll. For example, if there are 3 possible monsters that can spawn, and their \"Rarity\" values are 1, 2, 2, then their chances to be chosen are 1/5, 2/5, and 2/5 respectively. If this value equals 0, then this monster is never randomly selected to spawn in an area level",
-      "guideType": "[N]"
+      "description": "Modifies the chance that this monster will be chosen to spawn in the area level. The higher the value is, then the more likely this monster will be chosen. This value acts as a numerator and a denominator. All .Rarity values of possible monsters get summed together to give a total denominator, used for the random roll. For example, if there are 3 possible monsters that can spawn, and their .Rarity values are 1, 2, 2, then their chances to be chosen are 1/5, 2/5, and 2/5 respectively. If this value equals 0, then this monster is never randomly selected to spawn in an area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Rarity"
     },
     {
       "name": "Level",
       "type": "number",
-      "description": "Determines the monster's level. This value for Nightmare and Hell difficulty can be overridden by the area level's",
-      "guideType": "[N]"
+      "description": "Determines the monster's level. This value for Nightmare and Hell difficulty can be overridden by the area level's levels.MonLvl or levels.MonLvlEx value, unless the monster's .boss and .noRatio fields are enabled or the monster is desecrated (terrorized).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Level"
     },
     {
       "name": "Level(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Determines the monster's level. This value for Nightmare and Hell difficulty can be overridden by the area level's levels.MonLvl or levels.MonLvlEx value, unless the monster's .boss and .noRatio fields are enabled or the monster is desecrated (terrorized).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Level"
     },
     {
       "name": "Level(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Determines the monster's level. This value for Nightmare and Hell difficulty can be overridden by the area level's levels.MonLvl or levels.MonLvlEx value, unless the monster's .boss and .noRatio fields are enabled or the monster is desecrated (terrorized).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Level"
     },
     {
       "name": "MonSound",
       "type": "text",
-      "description": "Points to the",
-      "guideType": "[O]"
+      "description": "Points to a monsounds.Id. This is used to control the monsters assigned sounds, when the monster is spawned as a Normal monster.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#MonSound"
     },
     {
       "name": "UMonSound",
       "type": "text",
-      "description": "Points to the",
-      "guideType": "[O]"
+      "description": "Points to a monsounds.Id. This is used to control the monsters assigned sounds, when the monster is spawned as a Unique or Champion monster.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#UMonSound"
     },
     {
       "name": "threat",
       "type": "number",
-      "description": "Controls the AI threat value of the monster which can affect the targeting priorities of enemy Ais for this monster. The higher this value is, then the more likely that enemy AI will target this monster",
-      "guideType": "[N]"
+      "description": "Controls the AI threat value of the monster which can affect the targeting priorities of enemy Ais for this monster. The higher this value is, then the more likely that enemy AI will target this monster.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#threat"
     },
     {
       "name": "aidel",
       "type": "number",
-      "description": "Controls the delay in frame length for how often the monster's AI will update its commands. A lower delay means that the monster will perform commands more often without as long of a pause in between",
-      "guideType": "[N]"
+      "description": "Controls the delay in frame length for how often the monster's AI will update its commands. A lower delay means that the monster will perform commands more often without as long of a pause in between.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aidel"
     },
     {
       "name": "aidel(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the delay in frame length for how often the monster's AI will update its commands. A lower delay means that the monster will perform commands more often without as long of a pause in between.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aidel"
     },
     {
       "name": "aidel(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the delay in frame length for how often the monster's AI will update its commands. A lower delay means that the monster will perform commands more often without as long of a pause in between.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aidel"
     },
     {
       "name": "aidist",
       "type": "number",
-      "description": "Controls the maximum distance (measured in tiles) between the monster and an enemy until the monster's AI becomes aggressive. If equals 0, then default to 35",
-      "guideType": "[N]"
+      "description": "Controls the maximum distance (measured in tiles) between the monster and an enemy until the monster's AI becomes aggressive. If equals 0, then default to 35.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aidist"
     },
     {
       "name": "aidist(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the maximum distance (measured in tiles) between the monster and an enemy until the monster's AI becomes aggressive. If equals 0, then default to 35.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aidist"
     },
     {
       "name": "aidist(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the maximum distance (measured in tiles) between the monster and an enemy until the monster's AI becomes aggressive. If equals 0, then default to 35.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aidist"
     },
     {
       "name": "aip1",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip1(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip1(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip2",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip2(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip2(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip3",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip3(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip3(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip4",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip4(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip4(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip5",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip5(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip5(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip6",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip6(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip6(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip7",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip7(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip7(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip8",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip8(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "aip8(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines numeric parameters used to control various functions of the monster's AI. These fields depend on which AI script is being used (See monai, and the .AI field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#aip%23"
     },
     {
       "name": "MissA1",
-      "type": "text"
+      "type": "text",
+      "description": "Which missile to use when the monster is in the corresponding mode",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Miss"
     },
     {
       "name": "MissA2",
-      "type": "text"
+      "type": "text",
+      "description": "Which missile to use when the monster is in the corresponding mode",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Miss"
     },
     {
       "name": "MissS1",
-      "type": "text"
+      "type": "text",
+      "description": "Which missile to use when the monster is in the corresponding mode",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Miss"
     },
     {
       "name": "MissS2",
-      "type": "text"
+      "type": "text",
+      "description": "Which missile to use when the monster is in the corresponding mode",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Miss"
     },
     {
       "name": "MissS3",
-      "type": "text"
+      "type": "text",
+      "description": "Which missile to use when the monster is in the corresponding mode",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Miss"
     },
     {
       "name": "MissS4",
-      "type": "text"
+      "type": "text",
+      "description": "Which missile to use when the monster is in the corresponding mode",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Miss"
     },
     {
       "name": "MissC",
       "type": "text",
-      "description": "Points to the",
-      "guideType": "[O]"
+      "description": "Which missile to use when the monster is in the corresponding mode",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Miss"
     },
     {
       "name": "MissSQ",
       "type": "text",
-      "description": "Points to the",
-      "guideType": "[O]"
+      "description": "Which missile to use when the monster is in the corresponding mode",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Miss"
     },
     {
       "name": "Align",
       "type": "number",
       "description": "Controls the monster's alignment, which determines if the monster will be an enemy, ally, or neutral party to the player.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Align"
     },
     {
       "name": "isSpawn",
       "type": "boolean",
-      "description": "If equals 1, then the monster is allowed to spawn in an area level. If equals 0, then the monster will not be spawned automatically in an area level",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster is allowed to spawn in an area level. If equals 0, then the monster will not be spawned automatically in an area level.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#isSpawn"
     },
     {
       "name": "isMelee",
       "type": "boolean",
-      "description": "If equals 1, then the monster is classified as a melee only type, which can affect its AI behaviors and what monster modifiers are allowed on the monster. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster is classified as a melee only type, which can affect its AI behaviors and what monster modifiers are allowed on the monster. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#isMelee"
     },
     {
       "name": "npc",
       "type": "boolean",
-      "description": "If equals 1, then the monster is classified as an NPC (Non-Playable Character), which can affect its AI behaviors and how the player treats this monster. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster is classified as an NPC (Non-Playable Character), which can affect its AI behaviors and how the player treats this monster. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#npc"
     },
     {
       "name": "interact",
       "type": "boolean",
-      "description": "If equals 1, then the monster is interactable, meaning that the player can click on the monster to perform an interact command instead of attacking. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster is interactable, meaning that the player can click on the monster to perform an interact command instead of attacking. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#interact"
     },
     {
       "name": "inventory",
       "type": "boolean",
-      "description": "If equals 1, then monster will have an inventory with randomly generated items, such as an NPC with shop items (if the",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then monster will have an inventory with randomly generated items, such as an NPC with shop items (if the .interact field is enabled) or a summoned unit with random equipped items (also see monequip). If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#inventory"
     },
     {
       "name": "inTown",
       "type": "boolean",
-      "description": "If equals 1, then the monster is allowed to be in town. If equals 0, then the monster is not allowed to be in town, which can affect or disable their AI or collision from entering towns",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster is allowed to be in town. If equals 0, then the monster is not allowed to be in town, which can affect or disable their AI or collision from entering towns.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#inTown"
     },
     {
       "name": "lUndead",
       "type": "boolean",
-      "description": "If equals 1, then the monster is treated as a Low Undead, meaning that the monster is classified as an Undead type and can be resurrected by certain AI. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster is treated as a Low Undead, meaning that the monster is classified as an Undead type and can be resurrected by certain AI. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#lUndead"
     },
     {
       "name": "hUndead",
       "type": "boolean",
-      "description": "If equals 1, then the monster is treated as a High Undead, meaning that the monster is classified as an Undead type but cannot be resurrected by certain AI. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster is treated as a High Undead, meaning that the monster is classified as an Undead type but cannot be resurrected by certain AI. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#hUndead"
     },
     {
       "name": "demon",
       "type": "boolean",
-      "description": "If equals 1, then the monster is classified as a Demon type. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster is classified as a Demon type. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#demon"
     },
     {
       "name": "flying",
       "type": "boolean",
-      "description": "If equals 1, then the monster is flagged as a flying type, which can affect its collision with the area level and how it is spawned. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster is flagged as a flying type, which can affect its collision with the area level and how it is spawned. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#flying"
     },
     {
       "name": "opendoors",
       "type": "boolean",
-      "description": "If equals 1, then the monster will use its AI to open doors if necessary. If equals 0, then the monster cannot open doors and will treat doors as another type of collision",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster will use its AI to open doors if necessary. If equals 0, then the monster cannot open doors and will treat doors as another type of collision.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#opendoors"
     },
     {
       "name": "boss",
       "type": "boolean",
-      "description": "If equals 1, then the monster is classified as a Boss type, which can affect boss related AI and functions. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster is classified as a Boss type, which can affect boss related AI and functions. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#boss"
     },
     {
       "name": "primeevil",
       "type": "boolean",
-      "description": "If equals 1, then the monster is classified as a Prime Evil type, or an Act End boss, which can affect various skills, AI, and damage related functions. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster is classified as a Prime Evil type, or an Act End boss, which can affect various skills, AI, and damage related functions. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#primeevil"
     },
     {
       "name": "killable",
       "type": "boolean",
-      "description": "If equals 1, then the monster can be killed, damage, and be put in a Death or Dead mode. If equals 0, then the monster cannot be damaged or killed",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster can be killed, damage, and be put in a Death or Dead mode. If equals 0, then the monster cannot be damaged or killed.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#killable"
     },
     {
       "name": "switchai",
       "type": "boolean",
-      "description": "If equals 1, then monster's AI can switched, such as by the Assassin's Mind Blast ability. If equals 0, then the monster AI cannot be switched",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then monster's AI can switched, such as by the Assassin's Mind Blast ability. If equals 0, then the monster AI cannot be switched.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#switchai"
     },
     {
       "name": "noAura",
       "type": "boolean",
-      "description": "If equals 1, then the monster cannot be affected by friendly auras. If equals 0, then the monster can be affected by friendly auras",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster cannot be affected by friendly auras. If equals 0, then the monster can be affected by friendly auras.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#noAura"
     },
     {
       "name": "nomultishot",
       "type": "boolean",
-      "description": "If equals 1, then the monster is not allowed to spawn with the Multi-Shot unique monster modifier (",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster is not allowed to spawn with the Multi-Shot unique monster modifier (See monumod). If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#nomultishot"
+    },
+    {
+      "name": "nopreventmonsterheal",
+      "type": "boolean",
+      "description": "Boolean Field. Prevents the \"item_preventheal\" stat from working on this monster.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#nopreventmonsterheal"
     },
     {
       "name": "neverCount",
       "type": "boolean",
-      "description": "If equals 1, then the monster is not counted on the list of the active monsters in the area, which affects spawning and saving functions. If equals 0, then the monster will be accounted for, and can be part of the active or inactive list functions",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster is not counted on the list of the active monsters in the area, which affects spawning and saving functions. If equals 0, then the monster will be accounted for, and can be part of the active or inactive list functions.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#neverCount"
     },
     {
       "name": "petIgnore",
       "type": "boolean",
-      "description": "If equals 1, then pet AI scripts will ignore this monster (",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then pet AI scripts will ignore this monster (See monai.txt). If equals 0, then pet AI will attack this monster.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#petIgnore"
     },
     {
       "name": "deathDmg",
       "type": "boolean",
-      "description": "If equals 1, then the monster will explode on death. This has special cases for the \"bonefetish1\" and \"siegebeast1\" monster classes, otherwise the monster will use a general death damage function to damage nearby units based on the monster's health percentage. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster will explode on death. This has special cases for the \"bonefetish1\" and \"siegebeast1\" monster classes, otherwise the monster will use a general death damage function to damage nearby units based on the monster's health percentage. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#deathDmg"
     },
     {
       "name": "genericSpawn",
       "type": "boolean",
-      "description": "If equals 1, the monster is flagged as a possible selection for the AI generic spawner function. There are defaults for using the If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, the monster is flagged as a possible selection for the AI generic spawner function. There are defaults for using the If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#genericSpawn"
     },
     {
       "name": "zoo",
       "type": "boolean",
-      "description": "If equals 1, then the monster will be flagged as a zoo type monster, which will give it the AI zoo behavior. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster will be flagged as a zoo type monster, which will give it the AI zoo behavior. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#zoo"
+    },
+    {
+      "name": "CannotDesecrate",
+      "type": "boolean",
+      "description": "Boolean Field. If equals 1, then the monster will not be able to be desecrated when inside a desecrated level. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#CannotDesecrate"
+    },
+    {
+      "name": "CannotHerald",
+      "type": "boolean",
+      "description": "Boolean Field. If equals 1, then the monster will not be able to be a base monster for a Herald. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#CannotHerald"
     },
     {
       "name": "rightArmItemType",
       "type": "text",
-      "description": "Determines what type of items the monster is allowed to hold in its right arm (",
-      "guideType": "[O]"
+      "description": "Determines what type of items the monster is allowed to hold in the corresponding arm (see itemtypes). A blank value means it can hold any item.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#rightArmItemType"
     },
     {
       "name": "leftArmItemType",
       "type": "text",
-      "description": "Determines what type of items the monster is allowed to hold in its left arm (",
-      "guideType": "[O]"
+      "description": "Determines what type of items the monster is allowed to hold in the corresponding arm (see itemtypes). A blank value means it can hold any item.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#rightArmItemType"
     },
     {
       "name": "canNotUseTwoHandedItems",
       "type": "boolean",
-      "description": "If equals 1, then the monster can not items marked as two handed (",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the monster can not items marked as two handed (see weapons)",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#canNotUseTwoHandedItems"
     },
     {
       "name": "SendSkills",
       "type": "number",
-      "description": "Determines which of the monster's skill's level should be sent to the client. Uses a byte value, where the code tests each bit to determine which of the monster's skills to check",
-      "guideType": "[N]"
+      "description": "Determines which of the monster's skill's level should be sent to the client. Uses a byte value, where the code tests each bit to determine which of the monster's skills to check.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#SendSkills"
     },
     {
       "name": "Skill1",
-      "type": "text"
+      "type": "text",
+      "description": "Points to a skill. This gives the monster the skill to use (requires .Sk#mode)",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Skill%23"
     },
     {
       "name": "Sk1mode",
-      "type": "text"
+      "type": "text",
+      "description": "Determines the monster's animation mode when using the related skill. Outside of the standard animation mode inputs from MonMode.code, the field can also point to a monseq.sequence, which handle a specific set of frames to place a sequence animation. References a MonMode.code or a monseq.sequence",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Sk%23mode"
     },
     {
       "name": "Sk1lvl",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the base skill level of the related skill on the monster",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Sk%23lvl"
     },
     {
       "name": "Skill2",
-      "type": "text"
+      "type": "text",
+      "description": "Points to a skill. This gives the monster the skill to use (requires .Sk#mode)",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Skill%23"
     },
     {
       "name": "Sk2mode",
-      "type": "text"
+      "type": "text",
+      "description": "Determines the monster's animation mode when using the related skill. Outside of the standard animation mode inputs from MonMode.code, the field can also point to a monseq.sequence, which handle a specific set of frames to place a sequence animation. References a MonMode.code or a monseq.sequence",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Sk%23mode"
     },
     {
       "name": "Sk2lvl",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the base skill level of the related skill on the monster",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Sk%23lvl"
     },
     {
       "name": "Skill3",
-      "type": "text"
+      "type": "text",
+      "description": "Points to a skill. This gives the monster the skill to use (requires .Sk#mode)",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Skill%23"
     },
     {
       "name": "Sk3mode",
-      "type": "text"
+      "type": "text",
+      "description": "Determines the monster's animation mode when using the related skill. Outside of the standard animation mode inputs from MonMode.code, the field can also point to a monseq.sequence, which handle a specific set of frames to place a sequence animation. References a MonMode.code or a monseq.sequence",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Sk%23mode"
     },
     {
       "name": "Sk3lvl",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the base skill level of the related skill on the monster",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Sk%23lvl"
     },
     {
       "name": "Skill4",
-      "type": "text"
+      "type": "text",
+      "description": "Points to a skill. This gives the monster the skill to use (requires .Sk#mode)",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Skill%23"
     },
     {
       "name": "Sk4mode",
-      "type": "text"
+      "type": "text",
+      "description": "Determines the monster's animation mode when using the related skill. Outside of the standard animation mode inputs from MonMode.code, the field can also point to a monseq.sequence, which handle a specific set of frames to place a sequence animation. References a MonMode.code or a monseq.sequence",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Sk%23mode"
     },
     {
       "name": "Sk4lvl",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the base skill level of the related skill on the monster",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Sk%23lvl"
     },
     {
       "name": "Skill5",
-      "type": "text"
+      "type": "text",
+      "description": "Points to a skill. This gives the monster the skill to use (requires .Sk#mode)",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Skill%23"
     },
     {
       "name": "Sk5mode",
-      "type": "text"
+      "type": "text",
+      "description": "Determines the monster's animation mode when using the related skill. Outside of the standard animation mode inputs from MonMode.code, the field can also point to a monseq.sequence, which handle a specific set of frames to place a sequence animation. References a MonMode.code or a monseq.sequence",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Sk%23mode"
     },
     {
       "name": "Sk5lvl",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the base skill level of the related skill on the monster",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Sk%23lvl"
     },
     {
       "name": "Skill6",
-      "type": "text"
+      "type": "text",
+      "description": "Points to a skill. This gives the monster the skill to use (requires .Sk#mode)",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Skill%23"
     },
     {
       "name": "Sk6mode",
-      "type": "text"
+      "type": "text",
+      "description": "Determines the monster's animation mode when using the related skill. Outside of the standard animation mode inputs from MonMode.code, the field can also point to a monseq.sequence, which handle a specific set of frames to place a sequence animation. References a MonMode.code or a monseq.sequence",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Sk%23mode"
     },
     {
       "name": "Sk6lvl",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the base skill level of the related skill on the monster",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Sk%23lvl"
     },
     {
       "name": "Skill7",
-      "type": "text"
+      "type": "text",
+      "description": "Points to a skill. This gives the monster the skill to use (requires .Sk#mode)",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Skill%23"
     },
     {
       "name": "Sk7mode",
-      "type": "text"
+      "type": "text",
+      "description": "Determines the monster's animation mode when using the related skill. Outside of the standard animation mode inputs from MonMode.code, the field can also point to a monseq.sequence, which handle a specific set of frames to place a sequence animation. References a MonMode.code or a monseq.sequence",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Sk%23mode"
     },
     {
       "name": "Sk7lvl",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the base skill level of the related skill on the monster",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Sk%23lvl"
     },
     {
       "name": "Skill8",
-      "type": "text"
+      "type": "text",
+      "description": "Points to a skill. This gives the monster the skill to use (requires .Sk#mode)",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Skill%23"
     },
     {
       "name": "Sk8mode",
-      "type": "text"
+      "type": "text",
+      "description": "Determines the monster's animation mode when using the related skill. Outside of the standard animation mode inputs from MonMode.code, the field can also point to a monseq.sequence, which handle a specific set of frames to place a sequence animation. References a MonMode.code or a monseq.sequence",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Sk%23mode"
     },
     {
       "name": "Sk8lvl",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the base skill level of the related skill on the monster",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Sk%23lvl"
     },
     {
       "name": "Drain",
       "type": "number",
-      "description": "Controls the monster's overall Life and Mana steal percentage. This can also be affected by the",
-      "guideType": "[N]"
+      "description": "Controls the monster's overall Life and Mana steal percentage. This can also be affected by the difficultylevels.LifeStealDivisor and difficultylevels.ManaStealDivisor fields from the difficultylevels.txt file. If equals 0, then the monster will not have Life or Mana steal.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Drain"
     },
     {
       "name": "Drain(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the monster's overall Life and Mana steal percentage. This can also be affected by the difficultylevels.LifeStealDivisor and difficultylevels.ManaStealDivisor fields from the difficultylevels.txt file. If equals 0, then the monster will not have Life or Mana steal.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Drain"
     },
     {
       "name": "Drain(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the monster's overall Life and Mana steal percentage. This can also be affected by the difficultylevels.LifeStealDivisor and difficultylevels.ManaStealDivisor fields from the difficultylevels.txt file. If equals 0, then the monster will not have Life or Mana steal.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Drain"
     },
     {
       "name": "coldeffect",
       "type": "number",
-      "description": "Sets the percentage change in movement speed and attack rate when the monster if chilled by a cold effect. If this equals 0, then the monster will be immune to the cold effect",
-      "guideType": "[N]"
+      "description": "Sets the percentage change in movement speed and attack rate when the monster if chilled by a cold effect. If this equals 0, then the monster will be immune to the cold effect.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#coldeffect"
     },
     {
       "name": "coldeffect(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Sets the percentage change in movement speed and attack rate when the monster if chilled by a cold effect. If this equals 0, then the monster will be immune to the cold effect.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#coldeffect"
     },
     {
       "name": "coldeffect(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Sets the percentage change in movement speed and attack rate when the monster if chilled by a cold effect. If this equals 0, then the monster will be immune to the cold effect.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#coldeffect"
     },
     {
       "name": "ResDm",
       "type": "number",
       "description": "Sets the monster's Physical Damage Resistance stat",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResDm"
     },
     {
       "name": "ResMa",
       "type": "number",
       "description": "Sets the monster's Magic Resistance stat",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResMa"
     },
     {
       "name": "ResFi",
       "type": "number",
       "description": "Sets the monster's Fire Resistance stat",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResFi"
     },
     {
       "name": "ResLi",
       "type": "number",
       "description": "Sets the monster's Lightning Resistance stat",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResLi"
     },
     {
       "name": "ResCo",
       "type": "number",
       "description": "Sets the monster's Cold Resistance stat",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResCo"
     },
     {
       "name": "ResPo",
       "type": "number",
       "description": "Sets the monster's Poison Resistance stat",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResPo"
     },
     {
       "name": "ResDm(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Sets the monster's Physical Damage Resistance stat",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResDm"
     },
     {
       "name": "ResMa(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Sets the monster's Magic Resistance stat",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResMa"
     },
     {
       "name": "ResFi(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Sets the monster's Fire Resistance stat",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResFi"
     },
     {
       "name": "ResLi(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Sets the monster's Lightning Resistance stat",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResLi"
     },
     {
       "name": "ResCo(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Sets the monster's Cold Resistance stat",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResCo"
     },
     {
       "name": "ResPo(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Sets the monster's Poison Resistance stat",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResPo"
     },
     {
       "name": "ResDm(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Sets the monster's Physical Damage Resistance stat",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResDm"
     },
     {
       "name": "ResMa(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Sets the monster's Magic Resistance stat",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResMa"
     },
     {
       "name": "ResFi(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Sets the monster's Fire Resistance stat",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResFi"
     },
     {
       "name": "ResLi(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Sets the monster's Lightning Resistance stat",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResLi"
     },
     {
       "name": "ResCo(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Sets the monster's Cold Resistance stat",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResCo"
     },
     {
       "name": "ResPo(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Sets the monster's Poison Resistance stat",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ResPo"
     },
     {
       "name": "DamageRegen",
       "type": "number",
-      "description": "Controls the monster's Life regeneration per frame. This is calculated based on the monster's maximum life: Regeneration Rate = (Life * \"DamageRegen\") / 16",
-      "guideType": "[N]"
+      "description": "Controls the monster's Life regeneration per frame. This is calculated based on the monster's maximum life: Regeneration Rate = (Life * .DamageRegen) / 16",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#DamageRegen"
     },
     {
       "name": "SkillDamage",
-      "type": "number",
-      "description": "Points to a skill from the \"skill\" field in the",
-      "guideType": "[N]"
+      "type": "text",
+      "description": "This changes the monster's min physical damage, max physical damage, and Attack Rating to be based off the values from the linked skill and its current level from the monster's owner (usually the player who summoned the monster).",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#SkillDamage"
     },
     {
       "name": "noRatio",
       "type": "boolean",
-      "description": "If equals 1, then use this file's fields to determine the monster's baseline stats (",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then use this file's fields to determine the monster's baseline stats (.minHP, .maxHP, .AC, .Exp, .A1MinD, .A1MaxD, .A1TH, .A2MinD, .A2MaxD, .A2TH, .S1MinD, .S1MaxD, .S1TH). If equals 0, then use the monlvl file to determine the monster's baseline stats.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#noRatio"
     },
     {
-      "name": "NoShldBlock",
-      "type": "number"
+      "name": "ShieldBlockOverride",
+      "type": "number",
+      "description": "If equals 1, then the monster can block without a shield (the block chance stat will take effect even without a shield equipped). If equals 2, then the monster cannot block at all, even with a shield equipped. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ShieldBlockOverride"
     },
     {
       "name": "ToBlock",
       "type": "number",
       "description": "The monster's percent chance to block an attack",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ToBlock"
     },
     {
       "name": "ToBlock(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The monster's percent chance to block an attack",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ToBlock"
     },
     {
       "name": "ToBlock(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The monster's percent chance to block an attack",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#ToBlock"
     },
     {
       "name": "Crit",
       "type": "number",
       "description": "The percent chance for the monster to score a critical hit when attacking an enemy, which causes the attack to deal double damage",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Crit"
     },
     {
       "name": "minHP",
       "type": "number",
       "description": "The monster's minimum amount of Life when spawned",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#minHP"
     },
     {
       "name": "maxHP",
       "type": "number",
       "description": "The monster's maximum amount of Life when spawned",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#maxHP"
     },
     {
       "name": "AC",
       "type": "number",
       "description": "The monster's Defense value",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#AC"
     },
     {
       "name": "Exp",
       "type": "number",
       "description": "The amount of Experience that is rewarded to the player when the monster is killed",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Exp"
     },
     {
       "name": "A1MinD",
       "type": "number",
       "description": "The minimum damage dealt by the monster when it is using the Attack 1 (A1) animation mode",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A1MinD"
     },
     {
       "name": "A1MaxD",
       "type": "number",
       "description": "The maximum damage dealt by the monster when it is using the Attack 1 (A1) animation mode",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A1MaxD"
     },
     {
       "name": "A1TH",
       "type": "number",
       "description": "The monster's Attack Rating when it is using the Attack 1 (A1) animation mode",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A1TH"
     },
     {
       "name": "A2MinD",
       "type": "number",
       "description": "The minimum damage dealt by the monster when it is using the Attack 2 (A2) animation mode",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A2MinD"
     },
     {
       "name": "A2MaxD",
       "type": "number",
       "description": "The maximum damage dealt by the monster when it is using the Attack 2 (A2) animation mode",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A2MaxD"
     },
     {
       "name": "A2TH",
       "type": "number",
       "description": "The monster's Attack Rating when it is using the Attack 2 (A2) animation mode",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A2TH"
     },
     {
       "name": "S1MinD",
       "type": "number",
       "description": "The minimum damage dealt by the monster when it is using the Skill 1 (S1) animation mode",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#S1MinD"
     },
     {
       "name": "S1MaxD",
       "type": "number",
       "description": "The maximum damage dealt by the monster when it is using the Skill 1 (S1) animation mode",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#S1MaxD"
     },
     {
       "name": "S1TH",
       "type": "number",
       "description": "The monster's Attack Rating when it is using the Skill 1 (S1) animation mode",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#S1TH"
     },
     {
       "name": "MinHP(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The monster's minimum amount of Life when spawned",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#minHP"
     },
     {
       "name": "MaxHP(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The monster's maximum amount of Life when spawned",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#maxHP"
     },
     {
       "name": "AC(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The monster's Defense value",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#AC"
     },
     {
       "name": "Exp(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The amount of Experience that is rewarded to the player when the monster is killed",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Exp"
     },
     {
       "name": "A1MinD(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The minimum damage dealt by the monster when it is using the Attack 1 (A1) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A1MinD"
     },
     {
       "name": "A1MaxD(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The maximum damage dealt by the monster when it is using the Attack 1 (A1) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A1MaxD"
     },
     {
       "name": "A1TH(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The monster's Attack Rating when it is using the Attack 1 (A1) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A1TH"
     },
     {
       "name": "A2MinD(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The minimum damage dealt by the monster when it is using the Attack 2 (A2) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A2MinD"
     },
     {
       "name": "A2MaxD(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The maximum damage dealt by the monster when it is using the Attack 2 (A2) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A2MaxD"
     },
     {
       "name": "A2TH(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The monster's Attack Rating when it is using the Attack 2 (A2) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A2TH"
     },
     {
       "name": "S1MinD(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The minimum damage dealt by the monster when it is using the Skill 1 (S1) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#S1MinD"
     },
     {
       "name": "S1MaxD(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The maximum damage dealt by the monster when it is using the Skill 1 (S1) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#S1MaxD"
     },
     {
       "name": "S1TH(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The monster's Attack Rating when it is using the Skill 1 (S1) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#S1TH"
     },
     {
       "name": "MinHP(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The monster's minimum amount of Life when spawned",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#minHP"
     },
     {
       "name": "MaxHP(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The monster's maximum amount of Life when spawned",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#maxHP"
     },
     {
       "name": "AC(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The monster's Defense value",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#AC"
     },
     {
       "name": "Exp(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The amount of Experience that is rewarded to the player when the monster is killed",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#Exp"
     },
     {
       "name": "A1MinD(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The minimum damage dealt by the monster when it is using the Attack 1 (A1) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A1MinD"
     },
     {
       "name": "A1MaxD(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The maximum damage dealt by the monster when it is using the Attack 1 (A1) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A1MaxD"
     },
     {
       "name": "A1TH(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The monster's Attack Rating when it is using the Attack 1 (A1) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A1TH"
     },
     {
       "name": "A2MinD(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The minimum damage dealt by the monster when it is using the Attack 2 (A2) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A2MinD"
     },
     {
       "name": "A2MaxD(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The maximum damage dealt by the monster when it is using the Attack 2 (A2) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A2MaxD"
     },
     {
       "name": "A2TH(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The monster's Attack Rating when it is using the Attack 2 (A2) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#A2TH"
     },
     {
       "name": "S1MinD(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The minimum damage dealt by the monster when it is using the Skill 1 (S1) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#S1MinD"
     },
     {
       "name": "S1MaxD(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The maximum damage dealt by the monster when it is using the Skill 1 (S1) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#S1MaxD"
     },
     {
       "name": "S1TH(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The monster's Attack Rating when it is using the Skill 1 (S1) animation mode",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#S1TH"
     },
     {
       "name": "El1Mode",
-      "type": "text"
+      "type": "text",
+      "description": "Determines which animation mode will trigger an additional elemental damage type when used",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Mode"
     },
     {
       "name": "El1Type",
-      "type": "text"
+      "type": "text",
+      "description": "Defines the type of elemental damage. This field is used when .El#Mode is not null.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Type"
     },
     {
       "name": "El1Pct",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the random percent chance (out of 100) that the monster will append the element damage to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Pct"
     },
     {
       "name": "El1MinD",
-      "type": "number"
+      "type": "number",
+      "description": "The minimum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MinD"
     },
     {
       "name": "El1MaxD",
-      "type": "number"
+      "type": "number",
+      "description": "The maximum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MaxD"
     },
     {
       "name": "El1Dur",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the duration of the related element mode in frame lengths (25 Frames = 1 Second). This is only applicable for the Cold, Poison, Stun, Burning, Freeze elements. There are special cases when evaluating the elements, where Poison min and max damage are multiplied by 10, and Poison duration is multiplied by 2. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Dur"
     },
     {
       "name": "El1Pct(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the random percent chance (out of 100) that the monster will append the element damage to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Pct"
     },
     {
       "name": "El1MinD(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The minimum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MinD"
     },
     {
       "name": "El1MaxD(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The maximum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MaxD"
     },
     {
       "name": "El1Dur(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the duration of the related element mode in frame lengths (25 Frames = 1 Second). This is only applicable for the Cold, Poison, Stun, Burning, Freeze elements. There are special cases when evaluating the elements, where Poison min and max damage are multiplied by 10, and Poison duration is multiplied by 2. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Dur"
     },
     {
       "name": "El1Pct(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the random percent chance (out of 100) that the monster will append the element damage to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Pct"
     },
     {
       "name": "El1MinD(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The minimum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MinD"
     },
     {
       "name": "El1MaxD(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The maximum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MaxD"
     },
     {
       "name": "El1Dur(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the duration of the related element mode in frame lengths (25 Frames = 1 Second). This is only applicable for the Cold, Poison, Stun, Burning, Freeze elements. There are special cases when evaluating the elements, where Poison min and max damage are multiplied by 10, and Poison duration is multiplied by 2. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Dur"
     },
     {
       "name": "El2Mode",
-      "type": "text"
+      "type": "text",
+      "description": "Determines which animation mode will trigger an additional elemental damage type when used",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Mode"
     },
     {
       "name": "El2Type",
-      "type": "text"
+      "type": "text",
+      "description": "Defines the type of elemental damage. This field is used when .El#Mode is not null.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Type"
     },
     {
       "name": "El2Pct",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the random percent chance (out of 100) that the monster will append the element damage to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Pct"
     },
     {
       "name": "El2MinD",
-      "type": "number"
+      "type": "number",
+      "description": "The minimum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MinD"
     },
     {
       "name": "El2MaxD",
-      "type": "number"
+      "type": "number",
+      "description": "The maximum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MaxD"
     },
     {
       "name": "El2Dur",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the duration of the related element mode in frame lengths (25 Frames = 1 Second). This is only applicable for the Cold, Poison, Stun, Burning, Freeze elements. There are special cases when evaluating the elements, where Poison min and max damage are multiplied by 10, and Poison duration is multiplied by 2. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Dur"
     },
     {
       "name": "El2Pct(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the random percent chance (out of 100) that the monster will append the element damage to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Pct"
     },
     {
       "name": "El2MinD(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The minimum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MinD"
     },
     {
       "name": "El2MaxD(N)",
-      "type": "number"
+      "type": "number",
+      "description": "The maximum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MaxD"
     },
     {
       "name": "El2Dur(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the duration of the related element mode in frame lengths (25 Frames = 1 Second). This is only applicable for the Cold, Poison, Stun, Burning, Freeze elements. There are special cases when evaluating the elements, where Poison min and max damage are multiplied by 10, and Poison duration is multiplied by 2. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Dur"
     },
     {
       "name": "El2Pct(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the random percent chance (out of 100) that the monster will append the element damage to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Pct"
     },
     {
       "name": "El2MinD(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The minimum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MinD"
     },
     {
       "name": "El2MaxD(H)",
-      "type": "number"
+      "type": "number",
+      "description": "The maximum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MaxD"
     },
     {
       "name": "El2Dur(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the duration of the related element mode in frame lengths (25 Frames = 1 Second). This is only applicable for the Cold, Poison, Stun, Burning, Freeze elements. There are special cases when evaluating the elements, where Poison min and max damage are multiplied by 10, and Poison duration is multiplied by 2. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Dur"
     },
     {
       "name": "El3Mode",
-      "type": "text"
+      "type": "text",
+      "description": "Determines which animation mode will trigger an additional elemental damage type when used",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Mode"
     },
     {
       "name": "El3Type",
-      "type": "text"
+      "type": "text",
+      "description": "Defines the type of elemental damage. This field is used when .El#Mode is not null.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Type"
     },
     {
       "name": "El3Pct",
-      "type": "text"
+      "type": "number",
+      "description": "Controls the random percent chance (out of 100) that the monster will append the element damage to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Pct"
     },
     {
       "name": "El3MinD",
-      "type": "text"
+      "type": "number",
+      "description": "The minimum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MinD"
     },
     {
       "name": "El3MaxD",
-      "type": "text"
+      "type": "number",
+      "description": "The maximum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MaxD"
     },
     {
       "name": "El3Dur",
-      "type": "text"
+      "type": "number",
+      "description": "Controls the duration of the related element mode in frame lengths (25 Frames = 1 Second). This is only applicable for the Cold, Poison, Stun, Burning, Freeze elements. There are special cases when evaluating the elements, where Poison min and max damage are multiplied by 10, and Poison duration is multiplied by 2. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Dur"
     },
     {
       "name": "El3Pct(N)",
-      "type": "text"
+      "type": "number",
+      "description": "Controls the random percent chance (out of 100) that the monster will append the element damage to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Pct"
     },
     {
       "name": "El3MinD(N)",
-      "type": "text"
+      "type": "number",
+      "description": "The minimum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MinD"
     },
     {
       "name": "El3MaxD(N)",
-      "type": "text"
+      "type": "number",
+      "description": "The maximum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MaxD"
     },
     {
       "name": "El3Dur(N)",
-      "type": "text"
+      "type": "number",
+      "description": "Controls the duration of the related element mode in frame lengths (25 Frames = 1 Second). This is only applicable for the Cold, Poison, Stun, Burning, Freeze elements. There are special cases when evaluating the elements, where Poison min and max damage are multiplied by 10, and Poison duration is multiplied by 2. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Dur"
     },
     {
       "name": "El3Pct(H)",
-      "type": "text"
+      "type": "number",
+      "description": "Controls the random percent chance (out of 100) that the monster will append the element damage to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Pct"
     },
     {
       "name": "El3MinD(H)",
-      "type": "text"
+      "type": "number",
+      "description": "The minimum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MinD"
     },
     {
       "name": "El3MaxD(H)",
-      "type": "text"
+      "type": "number",
+      "description": "The maximum element damage applied to the attack. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23MaxD"
     },
     {
       "name": "El3Dur(H)",
-      "type": "text"
+      "type": "number",
+      "description": "Controls the duration of the related element mode in frame lengths (25 Frames = 1 Second). This is only applicable for the Cold, Poison, Stun, Burning, Freeze elements. There are special cases when evaluating the elements, where Poison min and max damage are multiplied by 10, and Poison duration is multiplied by 2. This field is used when .El#Mode is not null.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#El%23Dur"
     },
     {
-      "name": "TreasureClass1",
-      "type": "text"
+      "name": "TreasureClass",
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed. Used for normal monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClass"
     },
     {
-      "name": "TreasureClass2",
-      "type": "text"
+      "name": "TreasureClassChamp",
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed. Used for Champion monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassChamp"
     },
     {
-      "name": "TreasureClass3",
-      "type": "text"
+      "name": "TreasureClassUnique",
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed. Used for Unique monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassUnique"
     },
     {
-      "name": "TreasureClass4",
-      "type": "text"
+      "name": "TreasureClassQuest",
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed. Used for quest related monster drops (See .TCQuestId and .TCQuestCP).",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassQuest"
     },
     {
       "name": "TreasureClassDesecrated",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed while desecrated (Terrorized). Used for normal monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassDesecrated"
     },
     {
       "name": "TreasureClassDesecratedChamp",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed while desecrated (Terrorized). Used for Champion monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassDesecratedChamp"
     },
     {
       "name": "TreasureClassDesecratedUnique",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed while desecrated (Terrorized). Used for Unique monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassDesecratedUnique"
     },
     {
-      "name": "TreasureClass1(N)",
-      "type": "text"
+      "name": "TreasureClassHerald",
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed. Used for Herald monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassHerald"
     },
     {
-      "name": "TreasureClass2(N)",
-      "type": "text"
+      "name": "TreasureClass(N)",
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed. Used for normal monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClass"
     },
     {
-      "name": "TreasureClass3(N)",
-      "type": "text"
+      "name": "TreasureClassChamp(N)",
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed. Used for Champion monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassChamp"
     },
     {
-      "name": "TreasureClass4(N)",
-      "type": "text"
+      "name": "TreasureClassUnique(N)",
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed. Used for Unique monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassUnique"
+    },
+    {
+      "name": "TreasureClassQuest(N)",
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed. Used for quest related monster drops (See .TCQuestId and .TCQuestCP).",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassQuest"
     },
     {
       "name": "TreasureClassDesecrated(N)",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed while desecrated (Terrorized). Used for normal monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassDesecrated"
     },
     {
       "name": "TreasureClassDesecratedChamp(N)",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed while desecrated (Terrorized). Used for Champion monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassDesecratedChamp"
     },
     {
       "name": "TreasureClassDesecratedUnique(N)",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed while desecrated (Terrorized). Used for Unique monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassDesecratedUnique"
     },
     {
-      "name": "TreasureClass1(H)",
-      "type": "text"
+      "name": "TreasureClassHerald(N)",
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed. Used for Herald monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassHerald"
     },
     {
-      "name": "TreasureClass2(H)",
-      "type": "text"
+      "name": "TreasureClass(H)",
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed. Used for normal monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClass"
     },
     {
-      "name": "TreasureClass3(H)",
-      "type": "text"
+      "name": "TreasureClassChamp(H)",
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed. Used for Champion monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassChamp"
     },
     {
-      "name": "TreasureClass4(H)",
-      "type": "text"
+      "name": "TreasureClassUnique(H)",
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed. Used for Unique monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassUnique"
+    },
+    {
+      "name": "TreasureClassQuest(H)",
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed. Used for quest related monster drops (See .TCQuestId and .TCQuestCP).",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassQuest"
     },
     {
       "name": "TreasureClassDesecrated(H)",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed while desecrated (Terrorized). Used for normal monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassDesecrated"
     },
     {
       "name": "TreasureClassDesecratedChamp(H)",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed while desecrated (Terrorized). Used for Champion monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassDesecratedChamp"
     },
     {
       "name": "TreasureClassDesecratedUnique(H)",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed while desecrated (Terrorized). Used for Unique monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassDesecratedUnique"
+    },
+    {
+      "name": "TreasureClassHerald(H)",
+      "type": "text",
+      "description": "Defines which Treasure Class is used by the monster when it is killed. Used for Herald monster types.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TreasureClassHerald"
     },
     {
       "name": "TCQuestId",
       "type": "number",
-      "description": "Checks to see if the player has does not have a quest flag progress. If not, then use the",
-      "guideType": "[N]"
+      "description": "Checks to see if the player has does not have a quest flag progress. If not, then use the .TreasureClassQuest field, based on the game's current difficulty.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TCQuestId"
     },
     {
       "name": "TCQuestCP",
       "type": "number",
-      "description": "Controls which Quest Checkpoint, or current progress within a quest (based on the",
-      "guideType": "[N]"
+      "description": "Controls which Quest Checkpoint, or current progress within a quest (based on the .TCQuestId value), is needed to use the .TreasureClassQuest field, based on the game's current difficulty",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#TCQuestCP"
     },
     {
       "name": "SplEndDeath",
       "type": "number",
       "description": "Controls a special case death handler for the monster that is ran on the server side",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#SplEndDeath"
     },
     {
       "name": "SplGetModeChart",
-      "type": "boolean",
-      "description": "If equals 1, then check special case handlers of certain monsters with specific",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then check special case handlers of certain monsters with specific .BaseId fields while they are using certain a mode and perform a function. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#SplGetModeChart"
     },
     {
       "name": "SplEndGeneric",
-      "type": "boolean",
-      "description": "If equals 1, then check special case handlers of monsters with specific",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then check special case handlers of monsters with specific .BaseId fields while they are ending certain modes and perform a function. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#SplEndGeneric"
     },
     {
       "name": "SplClientEnd",
-      "type": "boolean",
-      "description": "If equals 1, then on the client side, check special case handlers of monsters with specific",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then on the client side, check special case handlers of monsters with specific .BaseId fields while they are ending certain modes and perform a function. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monstats.html#SplClientEnd"
     },
     {
       "name": "*eol",

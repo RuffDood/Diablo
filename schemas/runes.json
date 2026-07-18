@@ -2,15 +2,22 @@
   "table": "runes",
   "category": "items",
   "file": "global/excel/runes.txt",
-  "description": "Table runes du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 2,
+  "description": "This file controls the creation of Rune Words and their various modifiers. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 49,
   "columns": [
     {
       "name": "Name",
       "type": "text",
       "description": "Controls the string key that is used to the display the name of the item when the Rune Word is complete",
-      "guideType": "[O]"
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#Name"
     },
     {
       "name": "*Rune Name",
@@ -19,13 +26,43 @@
     },
     {
       "name": "complete",
-      "type": "boolean",
-      "description": "If equals 1, then the Rune Word can be crafted in-game. If equals 0, then the Rune Word cannot be crafted in-game",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean field. If equals 1, then the Rune Word can be crafted in-game. If equals 0, then the Rune Word cannot be crafted in-game.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#complete"
     },
     {
-      "name": "ladder",
-      "type": "number"
+      "name": "disallowCraftingInLadder",
+      "type": "boolean",
+      "description": "If 1, then the Rune Word cannot be crafted in online-ladder games. This does not affect already-crafted Rune Words. See also: .disallowCraftingInNonLadder",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#disallowCraftingInLadder"
+    },
+    {
+      "name": "disallowCraftingInNonLadder",
+      "type": "boolean",
+      "description": "If 1, then the Rune Word cannot be crafted in online-nonladder or offline games. This does not affect already-crafted Rune Words. See also: .disallowCraftingInLadder",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#disallowCraftingInNonLadder"
+    },
+    {
+      "name": "firstLadderSeason",
+      "type": "number",
+      "description": "The first ladder season the Rune Word can be made on (inclusive). If blank or 0 then it is available in non-ladder.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#firstLadderSeason"
+    },
+    {
+      "name": "lastLadderSeason",
+      "type": "number",
+      "description": "The last ladder season the Rune Word is ladder-only (inclusive). Must be used in conjunction with .firstLadderSeason.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#lastLadderSeason"
     },
     {
       "name": "*Patch Release",
@@ -34,39 +71,75 @@
     },
     {
       "name": "itype1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what item types are allowed for this Rune Word.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#itype%23"
     },
     {
       "name": "itype2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what item types are allowed for this Rune Word.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#itype%23"
     },
     {
       "name": "itype3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what item types are allowed for this Rune Word.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#itype%23"
     },
     {
       "name": "itype4",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what item types are allowed for this Rune Word.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#itype%23"
     },
     {
       "name": "itype5",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what item types are allowed for this Rune Word.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#itype%23"
     },
     {
       "name": "itype6",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what item types are allowed for this Rune Word.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#itype%23"
     },
     {
       "name": "etype1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what item types are excluded for this Rune Word.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#etype%23"
     },
     {
       "name": "etype2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what item types are excluded for this Rune Word.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#etype%23"
     },
     {
       "name": "etype3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what item types are excluded for this Rune Word.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#etype%23"
     },
     {
       "name": "*RunesUsed",
@@ -75,139 +148,275 @@
     },
     {
       "name": "Rune1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what runes are required to make the Rune Word. The order of each of these fields matters.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#Rune%23"
     },
     {
       "name": "Rune2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what runes are required to make the Rune Word. The order of each of these fields matters.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#Rune%23"
     },
     {
       "name": "Rune3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what runes are required to make the Rune Word. The order of each of these fields matters.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#Rune%23"
     },
     {
       "name": "Rune4",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what runes are required to make the Rune Word. The order of each of these fields matters.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#Rune%23"
     },
     {
       "name": "Rune5",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what runes are required to make the Rune Word. The order of each of these fields matters.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#Rune%23"
     },
     {
       "name": "Rune6",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what runes are required to make the Rune Word. The order of each of these fields matters.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#Rune%23"
     },
     {
       "name": "T1Code1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties that the Rune Word provides Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Code%23"
     },
     {
       "name": "T1Param1",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.T1Code#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Param%23"
     },
     {
       "name": "T1Min1",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.T1Code#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Min%23"
     },
     {
       "name": "T1Max1",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.T1Code#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Max%23"
     },
     {
       "name": "T1Code2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties that the Rune Word provides Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Code%23"
     },
     {
       "name": "T1Param2",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.T1Code#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Param%23"
     },
     {
       "name": "T1Min2",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.T1Code#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Min%23"
     },
     {
       "name": "T1Max2",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.T1Code#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Max%23"
     },
     {
       "name": "T1Code3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties that the Rune Word provides Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Code%23"
     },
     {
       "name": "T1Param3",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.T1Code#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Param%23"
     },
     {
       "name": "T1Min3",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.T1Code#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Min%23"
     },
     {
       "name": "T1Max3",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.T1Code#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Max%23"
     },
     {
       "name": "T1Code4",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties that the Rune Word provides Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Code%23"
     },
     {
       "name": "T1Param4",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.T1Code#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Param%23"
     },
     {
       "name": "T1Min4",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.T1Code#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Min%23"
     },
     {
       "name": "T1Max4",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.T1Code#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Max%23"
     },
     {
       "name": "T1Code5",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties that the Rune Word provides Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Code%23"
     },
     {
       "name": "T1Param5",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.T1Code#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Param%23"
     },
     {
       "name": "T1Min5",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.T1Code#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Min%23"
     },
     {
       "name": "T1Max5",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.T1Code#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Max%23"
     },
     {
       "name": "T1Code6",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties that the Rune Word provides Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Code%23"
     },
     {
       "name": "T1Param6",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.T1Code#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Param%23"
     },
     {
       "name": "T1Min6",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.T1Code#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Min%23"
     },
     {
       "name": "T1Max6",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.T1Code#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Max%23"
     },
     {
       "name": "T1Code7",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties that the Rune Word provides Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Code%23"
     },
     {
       "name": "T1Param7",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.T1Code#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Param%23"
     },
     {
       "name": "T1Min7",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.T1Code#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Min%23"
     },
     {
       "name": "T1Max7",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.T1Code#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/runes.html#T1Max%23"
     },
     {
       "name": "*eol",

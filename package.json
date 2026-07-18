@@ -9,6 +9,7 @@
     "dev": "concurrently -n api,web -c blue,green \"node scripts/dev-server.js\" \"npm run dev -w apps/admin\"",
     "build": "turbo run build",
     "preview": "turbo run preview",
+    "generate:schemas": "node scripts/build-data/gen-schemas.js",
     "generate:gem-storage": "node scripts/build-data/gem-storage.js",
     "test:gem-storage": "node scripts/build-data/gem-storage.js --check",
     "generate:pandemonium-storage": "node scripts/build-data/pandemonium-storage.js",

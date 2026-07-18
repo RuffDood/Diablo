@@ -2,15 +2,27 @@
   "table": "properties",
   "category": "items",
   "file": "global/excel/properties.txt",
-  "description": "Table properties du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 1,
+  "description": "This file defines how item modifiers work. It takes a stat defined from itemstatcost and uses a function to handle the stat's \"min\", \"max\" and \"parameter\" values. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 30,
   "columns": [
     {
       "name": "code",
       "type": "text",
-      "description": "Defines the property ID. Used as a reference in other data files",
-      "guideType": "[O]"
+      "description": "Defines the property ID. Used as a reference in other data files (this should not be changed)",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#code"
+    },
+    {
+      "name": "*Id",
+      "type": "number",
+      "comment": true
     },
     {
       "name": "*Enabled",
@@ -19,115 +31,235 @@
     },
     {
       "name": "func1",
-      "type": "number"
+      "type": "number",
+      "description": "Code function used to define the Property. Uses numeric ID values to define what function to use.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#func%23"
     },
     {
       "name": "stat1",
-      "type": "text"
+      "type": "text",
+      "description": "Stat applied by the property. Used by the .func# field as a possible parameter. A stat is comprised of a \"min\" and \"max\" value which it uses to calculate the actual numeric value. Stats also can have a \"parameter\" value, depending on its function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#stat%23"
     },
     {
       "name": "set1",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean field. Used by the .func# field as a possible parameter. If equals 1, then set the stat value regardless of its current value. If equals 0, then add to the stat value.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#set%23"
     },
     {
       "name": "val1",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. sed by the .func# field as a possible input parameter for additional function calculations",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#val%23"
     },
     {
       "name": "func2",
-      "type": "number"
+      "type": "number",
+      "description": "Code function used to define the Property. Uses numeric ID values to define what function to use.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#func%23"
     },
     {
       "name": "stat2",
-      "type": "text"
+      "type": "text",
+      "description": "Stat applied by the property. Used by the .func# field as a possible parameter. A stat is comprised of a \"min\" and \"max\" value which it uses to calculate the actual numeric value. Stats also can have a \"parameter\" value, depending on its function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#stat%23"
     },
     {
       "name": "set2",
-      "type": "text"
+      "type": "number",
+      "description": "Boolean field. Used by the .func# field as a possible parameter. If equals 1, then set the stat value regardless of its current value. If equals 0, then add to the stat value.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#set%23"
     },
     {
       "name": "val2",
-      "type": "text"
+      "type": "number",
+      "description": "Integer field. sed by the .func# field as a possible input parameter for additional function calculations",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#val%23"
     },
     {
       "name": "func3",
-      "type": "number"
+      "type": "number",
+      "description": "Code function used to define the Property. Uses numeric ID values to define what function to use.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#func%23"
     },
     {
       "name": "stat3",
-      "type": "text"
+      "type": "text",
+      "description": "Stat applied by the property. Used by the .func# field as a possible parameter. A stat is comprised of a \"min\" and \"max\" value which it uses to calculate the actual numeric value. Stats also can have a \"parameter\" value, depending on its function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#stat%23"
     },
     {
       "name": "set3",
-      "type": "text"
+      "type": "number",
+      "description": "Boolean field. Used by the .func# field as a possible parameter. If equals 1, then set the stat value regardless of its current value. If equals 0, then add to the stat value.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#set%23"
     },
     {
       "name": "val3",
-      "type": "text"
+      "type": "number",
+      "description": "Integer field. sed by the .func# field as a possible input parameter for additional function calculations",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#val%23"
     },
     {
       "name": "func4",
-      "type": "number"
+      "type": "number",
+      "description": "Code function used to define the Property. Uses numeric ID values to define what function to use.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#func%23"
     },
     {
       "name": "stat4",
-      "type": "text"
+      "type": "text",
+      "description": "Stat applied by the property. Used by the .func# field as a possible parameter. A stat is comprised of a \"min\" and \"max\" value which it uses to calculate the actual numeric value. Stats also can have a \"parameter\" value, depending on its function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#stat%23"
     },
     {
       "name": "set4",
-      "type": "text"
+      "type": "number",
+      "description": "Boolean field. Used by the .func# field as a possible parameter. If equals 1, then set the stat value regardless of its current value. If equals 0, then add to the stat value.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#set%23"
     },
     {
       "name": "val4",
-      "type": "text"
+      "type": "number",
+      "description": "Integer field. sed by the .func# field as a possible input parameter for additional function calculations",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#val%23"
     },
     {
       "name": "func5",
-      "type": "number"
+      "type": "number",
+      "description": "Code function used to define the Property. Uses numeric ID values to define what function to use.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#func%23"
     },
     {
       "name": "stat5",
-      "type": "text"
+      "type": "text",
+      "description": "Stat applied by the property. Used by the .func# field as a possible parameter. A stat is comprised of a \"min\" and \"max\" value which it uses to calculate the actual numeric value. Stats also can have a \"parameter\" value, depending on its function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#stat%23"
     },
     {
       "name": "set5",
-      "type": "text"
+      "type": "number",
+      "description": "Boolean field. Used by the .func# field as a possible parameter. If equals 1, then set the stat value regardless of its current value. If equals 0, then add to the stat value.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#set%23"
     },
     {
       "name": "val5",
-      "type": "text"
+      "type": "number",
+      "description": "Integer field. sed by the .func# field as a possible input parameter for additional function calculations",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#val%23"
     },
     {
       "name": "func6",
-      "type": "number"
+      "type": "number",
+      "description": "Code function used to define the Property. Uses numeric ID values to define what function to use.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#func%23"
     },
     {
       "name": "stat6",
-      "type": "text"
+      "type": "text",
+      "description": "Stat applied by the property. Used by the .func# field as a possible parameter. A stat is comprised of a \"min\" and \"max\" value which it uses to calculate the actual numeric value. Stats also can have a \"parameter\" value, depending on its function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#stat%23"
     },
     {
       "name": "set6",
-      "type": "text"
+      "type": "number",
+      "description": "Boolean field. Used by the .func# field as a possible parameter. If equals 1, then set the stat value regardless of its current value. If equals 0, then add to the stat value.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#set%23"
     },
     {
       "name": "val6",
-      "type": "text"
+      "type": "number",
+      "description": "Integer field. sed by the .func# field as a possible input parameter for additional function calculations",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#val%23"
     },
     {
       "name": "func7",
-      "type": "number"
+      "type": "number",
+      "description": "Code function used to define the Property. Uses numeric ID values to define what function to use.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#func%23"
     },
     {
       "name": "stat7",
-      "type": "text"
+      "type": "text",
+      "description": "Stat applied by the property. Used by the .func# field as a possible parameter. A stat is comprised of a \"min\" and \"max\" value which it uses to calculate the actual numeric value. Stats also can have a \"parameter\" value, depending on its function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#stat%23"
     },
     {
       "name": "set7",
-      "type": "text"
+      "type": "number",
+      "description": "Boolean field. Used by the .func# field as a possible parameter. If equals 1, then set the stat value regardless of its current value. If equals 0, then add to the stat value.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#set%23"
     },
     {
       "name": "val7",
-      "type": "text"
+      "type": "number",
+      "description": "Integer field. sed by the .func# field as a possible input parameter for additional function calculations",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#val%23"
+    },
+    {
+      "name": "uiRangeType",
+      "type": "number",
+      "description": "Range type associated with the property. Is used in the Chronicle when defining the min/max stat values based on the Property's Min/Max and Param values",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/properties.html#uiRangeType"
     },
     {
       "name": "*Tooltip",

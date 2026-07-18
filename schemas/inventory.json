@@ -2,445 +2,598 @@
   "table": "inventory",
   "category": "system",
   "file": "global/excel/inventory.txt",
-  "description": "Table inventory du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 72,
+  "description": "This file controls the grid sizes of the inventory slots for the game's various UI windows. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 73,
   "columns": [
     {
       "name": "class",
       "type": "text",
       "description": "This is a reference field to define the type of inventory screen",
-      "guideType": "[O]"
+      "guideType": "[comment]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#class"
     },
     {
       "name": "invLeft",
       "type": "number",
       "description": "Starting X coordinate pixel position of the inventory panel",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#invLeft"
     },
     {
       "name": "invRight",
       "type": "number",
-      "description": "Ending X coordinate pixel position of the inventory panel (Includes the \"invLeft\" value with the inventory width size)",
-      "guideType": "[N]"
+      "description": "Ending X coordinate pixel position of the inventory panel (Includes the .invLeft value with the inventory width size)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#invRight"
     },
     {
       "name": "invTop",
       "type": "number",
       "description": "Starting Y coordinate pixel position of the inventory panel",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#invTop"
     },
     {
       "name": "invBottom",
       "type": "number",
-      "description": "Ending Y coordinate pixel position of the inventory panel (Includes the \"invTop\" value with the inventory height size)",
-      "guideType": "[N]"
+      "description": "Ending Y coordinate pixel position of the inventory panel (Includes the .invTop value with the inventory height size)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#invBottom"
     },
     {
       "name": "gridX",
       "type": "number",
       "description": "Column number size of the inventory grid, measured in the number of grid boxes to use",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#gridX"
     },
     {
       "name": "gridY",
       "type": "number",
       "description": "Column row size of the inventory grid, measured in the number of grid boxes to use",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#gridY"
     },
     {
       "name": "gridLeft",
       "type": "number",
       "description": "Starting X coordinate location of the inventory's left grid side",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#gridLeft"
     },
     {
       "name": "gridRight",
       "type": "number",
-      "description": "Ending X coordinate location of the inventory's right grid side (Includes the \"gridLeft\" value with the grid width size)",
-      "guideType": "[N]"
+      "description": "Ending X coordinate location of the inventory's right grid side (Includes the .gridLeft value with the grid width size)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#gridRight"
     },
     {
       "name": "gridTop",
       "type": "number",
       "description": "Starting Y coordinate location of the inventory's top grid side",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#gridTop"
     },
     {
       "name": "gridBottom",
       "type": "number",
-      "description": "Ending Y coordinate location of the inventory's bottom grid side (Includes the \"gridTop\" value with the grid height size)",
-      "guideType": "[N]"
+      "description": "Ending Y coordinate location of the inventory's bottom grid side (Includes the .gridTop value with the grid height size)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#gridBottom"
     },
     {
       "name": "gridBoxWidth",
       "type": "number",
       "description": "Width size of an inventory's box cell",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#gridBoxWidth"
     },
     {
       "name": "gridBoxHeight",
       "type": "number",
       "description": "Height size of an inventory's box cell",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#gridBoxHeight"
     },
     {
       "name": "rArmLeft",
       "type": "number",
-      "description": "Starting X coordinate location of the Right Weapon Slot",
-      "guideType": "[N]"
+      "description": "Starting X coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Left"
     },
     {
       "name": "rArmRight",
       "type": "number",
-      "description": "Ending X coordinate location of the Right Weapon Slot (Includes the \"rArmLeft\" value with the \"rArmWidth\" value)",
-      "guideType": "[N]"
+      "description": "Ending X coordinate location of the associated slot (Includes the .Left value with the .Width value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Right"
     },
     {
       "name": "rArmTop",
       "type": "number",
-      "description": "Starting Y coordinate location of the Right Weapon Slot",
-      "guideType": "[N]"
+      "description": "Starting Y coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Top"
     },
     {
       "name": "rArmBottom",
       "type": "number",
-      "description": "Ending Y coordinate location of the Right Weapon Slot (Includes the \"rArmTop\" value with the \"rArmHeight\" value)",
-      "guideType": "[N]"
+      "description": "Ending Y coordinate location of the associated slot (Includes the .Top value with the .Height value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Bottom"
     },
     {
       "name": "rArmWidth",
       "type": "number",
-      "description": "The pixel width of the Right Weapon Slot",
-      "guideType": "[N]"
+      "description": "The pixel width of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Width"
     },
     {
       "name": "rArmHeight",
       "type": "number",
-      "description": "The pixel Height of the Right Weapon Slot",
-      "guideType": "[N]"
+      "description": "The pixel Height of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Height"
     },
     {
       "name": "torsoLeft",
       "type": "number",
-      "description": "Starting X coordinate location of the Body Armor Slot",
-      "guideType": "[N]"
+      "description": "Starting X coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Left"
     },
     {
       "name": "torsoRight",
       "type": "number",
-      "description": "Ending X coordinate location of the Body Armor Slot (Includes the \"torsoLeft\" value with the \"torsoWidth\" value)",
-      "guideType": "[N]"
+      "description": "Ending X coordinate location of the associated slot (Includes the .Left value with the .Width value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Right"
     },
     {
       "name": "torsoTop",
       "type": "number",
-      "description": "Starting Y coordinate location of the Body Armor Slot",
-      "guideType": "[N]"
+      "description": "Starting Y coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Top"
     },
     {
       "name": "torsoBottom",
       "type": "number",
-      "description": "Ending Y coordinate location of the Body Armor Slot (Includes the \"torsoTop\" value with the \"torsoHeight\" value)",
-      "guideType": "[N]"
+      "description": "Ending Y coordinate location of the associated slot (Includes the .Top value with the .Height value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Bottom"
     },
     {
       "name": "torsoWidth",
       "type": "number",
-      "description": "The pixel width of the Body Armor Slot",
-      "guideType": "[N]"
+      "description": "The pixel width of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Width"
     },
     {
       "name": "torsoHeight",
       "type": "number",
-      "description": "The pixel Height of the Body Armor Slot",
-      "guideType": "[N]"
+      "description": "The pixel Height of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Height"
     },
     {
       "name": "lArmLeft",
       "type": "number",
-      "description": "Starting X coordinate location of the Left Weapon Slot",
-      "guideType": "[N]"
+      "description": "Starting X coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Left"
     },
     {
       "name": "lArmRight",
       "type": "number",
-      "description": "Ending X coordinate location of the Left Weapon Slot (Includes the \"lArmLeft\" value with the \"lArmWidth\" value)",
-      "guideType": "[N]"
+      "description": "Ending X coordinate location of the associated slot (Includes the .Left value with the .Width value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Right"
     },
     {
       "name": "lArmTop",
       "type": "number",
-      "description": "Starting Y coordinate location of the Left Weapon Slot",
-      "guideType": "[N]"
+      "description": "Starting Y coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Top"
     },
     {
       "name": "lArmBottom",
       "type": "number",
-      "description": "Ending Y coordinate location of the Left Weapon Slot (Includes the \"lArmTop\" value with the \"lArmHeight\" value)",
-      "guideType": "[N]"
+      "description": "Ending Y coordinate location of the associated slot (Includes the .Top value with the .Height value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Bottom"
     },
     {
       "name": "lArmWidth",
       "type": "number",
-      "description": "The pixel width of the Left Weapon Slot",
-      "guideType": "[N]"
+      "description": "The pixel width of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Width"
     },
     {
       "name": "lArmHeight",
       "type": "number",
-      "description": "The pixel Height of the Left Weapon Slot",
-      "guideType": "[N]"
+      "description": "The pixel Height of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Height"
     },
     {
       "name": "headLeft",
       "type": "number",
-      "description": "Starting X coordinate location of the Helm Slot",
-      "guideType": "[N]"
+      "description": "Starting X coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Left"
     },
     {
       "name": "headRight",
       "type": "number",
-      "description": "Ending X coordinate location of the Helm Slot (Includes the \"headLeft\" value with the \"headWidth\" value)",
-      "guideType": "[N]"
+      "description": "Ending X coordinate location of the associated slot (Includes the .Left value with the .Width value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Right"
     },
     {
       "name": "headTop",
       "type": "number",
-      "description": "Starting Y coordinate location of the Helm Slot",
-      "guideType": "[N]"
+      "description": "Starting Y coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Top"
     },
     {
       "name": "headBottom",
       "type": "number",
-      "description": "Ending Y coordinate location of the Helm Slot (Includes the \"headTop\" value with the \"headHeight\" value)",
-      "guideType": "[N]"
+      "description": "Ending Y coordinate location of the associated slot (Includes the .Top value with the .Height value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Bottom"
     },
     {
       "name": "headWidth",
       "type": "number",
-      "description": "The pixel width of the Helm Slot",
-      "guideType": "[N]"
+      "description": "The pixel width of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Width"
     },
     {
       "name": "headHeight",
       "type": "number",
-      "description": "The pixel Height of the Helm Slot",
-      "guideType": "[N]"
+      "description": "The pixel Height of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Height"
     },
     {
       "name": "neckLeft",
       "type": "number",
-      "description": "Starting X coordinate location of the Amulet Slot",
-      "guideType": "[N]"
+      "description": "Starting X coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Left"
     },
     {
       "name": "neckRight",
       "type": "number",
-      "description": "Ending X coordinate location of the Amulet Slot (Includes the \"neckLeft\" value with the \"neckWidth\" value)",
-      "guideType": "[N]"
+      "description": "Ending X coordinate location of the associated slot (Includes the .Left value with the .Width value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Right"
     },
     {
       "name": "neckTop",
       "type": "number",
-      "description": "Starting Y coordinate location of the Amulet Slot",
-      "guideType": "[N]"
+      "description": "Starting Y coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Top"
     },
     {
       "name": "neckBottom",
       "type": "number",
-      "description": "Ending Y coordinate location of the Amulet Slot (Includes the \"neckTop\" value with the \"neckHeight\" value)",
-      "guideType": "[N]"
+      "description": "Ending Y coordinate location of the associated slot (Includes the .Top value with the .Height value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Bottom"
     },
     {
       "name": "neckWidth",
       "type": "number",
-      "description": "The pixel width of the Amulet Slot",
-      "guideType": "[N]"
+      "description": "The pixel width of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Width"
     },
     {
       "name": "neckHeight",
       "type": "number",
-      "description": "The pixel Height of the Amulet Slot",
-      "guideType": "[N]"
+      "description": "The pixel Height of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Height"
     },
     {
       "name": "rHandLeft",
       "type": "number",
-      "description": "Ending X coordinate location of the Right Ring Slot (Includes the \"rHandLeft\" value with the \"rHandWidth\" value)",
-      "guideType": "[N]"
+      "description": "Starting X coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Left"
     },
     {
       "name": "rHandRight",
-      "type": "number"
+      "type": "number",
+      "description": "Ending X coordinate location of the associated slot (Includes the .Left value with the .Width value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Right"
     },
     {
       "name": "rHandTop",
       "type": "number",
-      "description": "Starting Y coordinate location of the Right Ring Slot",
-      "guideType": "[N]"
+      "description": "Starting Y coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Top"
     },
     {
       "name": "rHandBottom",
       "type": "number",
-      "description": "Ending Y coordinate location of the Right Ring Slot (Includes the \"rHandTop\" value with the \"rHandHeight\" value)",
-      "guideType": "[N]"
+      "description": "Ending Y coordinate location of the associated slot (Includes the .Top value with the .Height value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Bottom"
     },
     {
       "name": "rHandWidth",
       "type": "number",
-      "description": "The pixel width of the Right Ring Slot",
-      "guideType": "[N]"
+      "description": "The pixel width of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Width"
     },
     {
       "name": "rHandHeight",
       "type": "number",
-      "description": "The pixel Height of the Right Ring Slot",
-      "guideType": "[N]"
+      "description": "The pixel Height of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Height"
     },
     {
       "name": "lHandLeft",
       "type": "number",
-      "description": "Starting X coordinate location of the Left Ring Slot",
-      "guideType": "[N]"
+      "description": "Starting X coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Left"
     },
     {
       "name": "lHandRight",
       "type": "number",
-      "description": "Ending X coordinate location of the Left Ring Slot (Includes the \"lHandLeft\" value with the \"lHandWidth\" value)",
-      "guideType": "[N]"
+      "description": "Ending X coordinate location of the associated slot (Includes the .Left value with the .Width value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Right"
     },
     {
       "name": "lHandTop",
       "type": "number",
-      "description": "Starting Y coordinate location of the Left Ring Slot",
-      "guideType": "[N]"
+      "description": "Starting Y coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Top"
     },
     {
       "name": "lHandBottom",
       "type": "number",
-      "description": "Ending Y coordinate location of the Left Ring Slot (Includes the \"lHandTop\" value with the \"lHandHeight\" value)",
-      "guideType": "[N]"
+      "description": "Ending Y coordinate location of the associated slot (Includes the .Top value with the .Height value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Bottom"
     },
     {
       "name": "lHandWidth",
       "type": "number",
-      "description": "The pixel width of the Left Ring Slot",
-      "guideType": "[N]"
+      "description": "The pixel width of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Width"
     },
     {
       "name": "lHandHeight",
       "type": "number",
-      "description": "The pixel Height of the Left Ring Slot",
-      "guideType": "[N]"
+      "description": "The pixel Height of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Height"
     },
     {
       "name": "beltLeft",
       "type": "number",
-      "description": "Starting X coordinate location of the Belt Slot",
-      "guideType": "[N]"
+      "description": "Starting X coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Left"
     },
     {
       "name": "beltRight",
       "type": "number",
-      "description": "Ending X coordinate location of the Belt Slot (Includes the \"beltLeft\" value with the \"beltWidth\" value)",
-      "guideType": "[N]"
+      "description": "Ending X coordinate location of the associated slot (Includes the .Left value with the .Width value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Right"
     },
     {
       "name": "beltTop",
       "type": "number",
-      "description": "Starting Y coordinate location of the Belt Slot",
-      "guideType": "[N]"
+      "description": "Starting Y coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Top"
     },
     {
       "name": "beltBottom",
       "type": "number",
-      "description": "Ending Y coordinate location of the Belt Slot (Includes the \"beltTop\" value with the \"beltHeight\" value)",
-      "guideType": "[N]"
+      "description": "Ending Y coordinate location of the associated slot (Includes the .Top value with the .Height value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Bottom"
     },
     {
       "name": "beltWidth",
       "type": "number",
-      "description": "The pixel width of the Belt Slot",
-      "guideType": "[N]"
+      "description": "The pixel width of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Width"
     },
     {
       "name": "beltHeight",
       "type": "number",
-      "description": "The pixel Height of the Belt Slot",
-      "guideType": "[N]"
+      "description": "The pixel Height of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Height"
     },
     {
       "name": "feetLeft",
       "type": "number",
-      "description": "Starting X coordinate location of the Boots Slot",
-      "guideType": "[N]"
+      "description": "Starting X coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Left"
     },
     {
       "name": "feetRight",
       "type": "number",
-      "description": "Ending X coordinate location of the Boots Slot (Includes the \"feetLeft\" value with the \"feetWidth\" value)",
-      "guideType": "[N]"
+      "description": "Ending X coordinate location of the associated slot (Includes the .Left value with the .Width value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Right"
     },
     {
       "name": "feetTop",
       "type": "number",
-      "description": "Starting Y coordinate location of the Boots Slot",
-      "guideType": "[N]"
+      "description": "Starting Y coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Top"
     },
     {
       "name": "feetBottom",
       "type": "number",
-      "description": "Ending Y coordinate location of the Boots Slot (Includes the \"feetTop\" value with the \"feetHeight\" value)",
-      "guideType": "[N]"
+      "description": "Ending Y coordinate location of the associated slot (Includes the .Top value with the .Height value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Bottom"
     },
     {
       "name": "feetWidth",
       "type": "number",
-      "description": "The pixel width of the Boots Slot",
-      "guideType": "[N]"
+      "description": "The pixel width of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Width"
     },
     {
       "name": "feetHeight",
       "type": "number",
-      "description": "The pixel Height of the Boots Slot",
-      "guideType": "[N]"
+      "description": "The pixel Height of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Height"
     },
     {
       "name": "glovesLeft",
       "type": "number",
-      "description": "Starting X coordinate location of the Gloves Slot",
-      "guideType": "[N]"
+      "description": "Starting X coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Left"
     },
     {
       "name": "glovesRight",
       "type": "number",
-      "description": "Ending X coordinate location of the Gloves Slot (Includes the \"glovesLeft\" value with the \"glovesWidth\" value)",
-      "guideType": "[N]"
+      "description": "Ending X coordinate location of the associated slot (Includes the .Left value with the .Width value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Right"
     },
     {
       "name": "glovesTop",
       "type": "number",
-      "description": "Starting Y coordinate location of the Gloves Slot",
-      "guideType": "[N]"
+      "description": "Starting Y coordinate location of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Top"
     },
     {
       "name": "glovesBottom",
       "type": "number",
-      "description": "Ending Y coordinate location of the Gloves Slot (Includes the \"glovesTop\" value with the \"glovesHeight\" value)",
-      "guideType": "[N]"
+      "description": "Ending Y coordinate location of the associated slot (Includes the .Top value with the .Height value)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Bottom"
     },
     {
       "name": "glovesWidth",
       "type": "number",
-      "description": "The pixel width of the Gloves Slot",
-      "guideType": "[N]"
+      "description": "The pixel width of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Width"
     },
     {
       "name": "glovesHeight",
       "type": "number",
-      "description": "The pixel Height of the Gloves Slot",
-      "guideType": "[N]"
+      "description": "The pixel Height of the associated slot",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/inventory.html#Height"
     }
   ]
 }

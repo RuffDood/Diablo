@@ -2,15 +2,22 @@
   "table": "levels",
   "category": "system",
   "file": "global/excel/levels.txt",
-  "description": "Table levels du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 42,
+  "description": "This file controls how the game controls the area levels, including how the level is built, what rules are allowed on the level, and what monsters/objects can spawn on the level.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 186,
   "columns": [
     {
       "name": "Name",
       "type": "text",
       "description": "Defines the unique name pointer for the area level, which is used in other files",
-      "guideType": "[O]"
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Name"
     },
     {
       "name": "*StringName",
@@ -21,123 +28,193 @@
       "name": "Id",
       "type": "number",
       "description": "Defines the unique numeric ID for the area level, which is used in other files",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Id"
     },
     {
       "name": "Pal",
       "type": "number",
-      "description": "Defines which palette file to use for the area level. This uses index values from 0 to 4 to convey Act 1 to Act 5",
-      "guideType": "[N]"
+      "description": "Defines which palette file to use for the area level. This uses index values from 0 to 4 to convey Act 1 to Act 5.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Pal"
     },
     {
       "name": "Act",
       "type": "number",
-      "description": "Defines the Act number that the area level is a part of. This uses index values from 0 to 4 to convey Act 1 to Act 5",
-      "guideType": "[N]"
+      "description": "Defines the Act number that the area level is a part of. This uses index values from 0 to 4 to convey Act 1 to Act 5.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Act"
     },
     {
       "name": "QuestFlag",
       "type": "number",
-      "description": "Controls what quest record that the player needs to have completed before being allowed to enter this area level, while playing in Classic Mode. Each quest can have multiple quest records, and this field is looking for a specific quest record from a quest. Referenced by the",
-      "guideType": "[N]"
+      "description": "Controls what quest record that the player needs to have completed before being allowed to enter this area level, while playing in Classic Mode. Each quest can have multiple quest records, and this field is looking for a specific quest record from a quest.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#QuestFlag"
     },
     {
       "name": "QuestFlagEx",
       "type": "number",
-      "description": "Controls what quest record that the player needs to have completed before being allowed to enter this area level, while playing in Expansion Mode. Each quest can have multiple quest records, and this field is looking for a specific quest record from a quest. Referenced by the",
-      "guideType": "[N]"
+      "description": "Controls what quest record that the player needs to have completed before being allowed to enter this area level, while playing in Expansion Mode. Each quest can have multiple quest records, and this field is looking for a specific quest record from a quest.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#QuestFlagEx"
     },
     {
       "name": "Layer",
       "type": "number",
-      "description": "Defines a unique numeric ID that is used to identify which Automap data belongs to which area level when saving and loading data from the character save",
-      "guideType": "[N]"
+      "description": "Defines a unique numeric ID that is used to identify which Automap data belongs to which area level when saving and loading data from the character save.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Layer"
     },
     {
       "name": "SizeX",
-      "type": "number"
+      "type": "number",
+      "description": "Specifies the Length tile size values of an entire area level, which are used for determining how to build the level, for Normal, Nightmare, and Hell Difficulty, respectively.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#SizeX"
     },
     {
       "name": "SizeY",
-      "type": "number"
+      "type": "number",
+      "description": "Specifies the Width tile size values of an entire area level, which are used for determining how to build the level, for Normal, Nightmare, and Hell Difficulty, respectively.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#SizeY"
     },
     {
       "name": "SizeX(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Specifies the Length tile size values of an entire area level, which are used for determining how to build the level, for Normal, Nightmare, and Hell Difficulty, respectively.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#SizeX"
     },
     {
       "name": "SizeY(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Specifies the Width tile size values of an entire area level, which are used for determining how to build the level, for Normal, Nightmare, and Hell Difficulty, respectively.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#SizeY"
     },
     {
       "name": "SizeX(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Specifies the Length tile size values of an entire area level, which are used for determining how to build the level, for Normal, Nightmare, and Hell Difficulty, respectively.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#SizeX"
     },
     {
       "name": "SizeY(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Specifies the Width tile size values of an entire area level, which are used for determining how to build the level, for Normal, Nightmare, and Hell Difficulty, respectively.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#SizeY"
     },
     {
       "name": "OffsetX",
-      "type": "number"
+      "type": "number",
+      "description": "Specifies the location X offset coordinate (measured in tile size) for the origin point of the area level in the world.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#OffsetX"
     },
     {
       "name": "OffsetY",
-      "type": "number"
+      "type": "number",
+      "description": "Specifies the location offset Y coordinate (measured in tile size) for the origin point of the area level in the world.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#OffsetY"
+    },
+    {
+      "name": "CompletionTotalRoomsOverride",
+      "type": "number",
+      "description": "If > 0, use this value as the total number of rooms in the level for calculating its level completion percentage. Otherwise, use the total amount of populateable rooms.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#CompletionTotalRoomsOverride"
     },
     {
       "name": "Depend",
       "type": "number",
-      "description": "Assigns another level to be this area level's depended level, which controls this area level's position and how it starts building its tiles. Uses the level",
-      "guideType": "[N]"
+      "description": "Assigns another level to be this area level's depended level, which controls this area level's position and how it starts building its tiles. Uses the .Id field. If this equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Depend"
     },
     {
       "name": "Teleport",
       "type": "number",
-      "description": "Controls the functionality of the Sorceress Teleport skill and the Assassin Dragon Flight skill on the area level",
-      "guideType": "[N]"
+      "description": "Controls the functionality of teleport skills like Sorceress Teleport and Assassin Dragon Flight on the area level",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Teleport"
     },
     {
       "name": "Rain",
-      "type": "boolean",
-      "description": "If equals 1, then allow rain to play its effects on the area level. If the level is part of Act 5, then it will snow on the area level, instead of rain. If equals 0, then it will never rain on the area level",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then allow rain to play its effects on the area level. If the level is part of Act 5, then it will snow on the area level, instead of rain. If equals 0, then it will never rain on the area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Rain"
     },
     {
       "name": "Mud",
-      "type": "boolean",
-      "description": "If equals 1, then random bubbles will animate on the tiles that are flagged as water tiles. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then random bubbles will animate on the tiles that are flagged as water tiles. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Mud"
     },
     {
       "name": "NoPer",
-      "type": "boolean",
-      "description": "If equals 1, then allow the use of display option of Perspective Mode while the player is in the level. If equals 0, then disable the option of Perspective Mode and force the player to use Orthographic Mode while the player is in the level",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then allow the use of display option of Perspective Mode while the player is in the level. If equals 0, then disable the option of Perspective Mode and force the player to use Orthographic Mode while the player is in the level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#NoPer"
     },
     {
       "name": "LOSDraw",
-      "type": "boolean",
-      "description": "If equals 1, then the level will check the player's line of sight before drawing monsters. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean field. If equals 1, then the level will check the player's line of sight before drawing monsters. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#LOSDraw"
     },
     {
       "name": "FloorFilter",
-      "type": "boolean",
-      "description": "If equals 1 and if the floor's layer in the area level equals 1, then draw the floor tiles with a linear texture sampler. If equals 0, then draw the floor tiles with a nearest texture sampler",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean field. If equals 1 and if the floor's layer in the area level equals 1, then draw the floor tiles with a linear texture sampler. If equals 0, then draw the floor tiles with a nearest texture sampler.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#FloorFilter"
     },
     {
       "name": "BlankScreen",
-      "type": "boolean",
-      "description": "If equals 1, then draw the area level screen. If equals 0, then do not draw the area level screen, meaning that the level will be a blank screen",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean field. If equals 1, then draw the area level screen. If equals 0, then do not draw the area level screen, meaning that the level will be a blank screen.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#BlankScreen"
     },
     {
       "name": "DrawEdges",
-      "type": "boolean",
-      "description": "If equals 1, then draw the areas in levels that are not covered by floor tiles. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean field. If equals 1, then draw the areas in levels that are not covered by floor tiles. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#DrawEdges"
     },
     {
       "name": "*IsInside",
@@ -147,698 +224,1290 @@
     {
       "name": "DrlgType",
       "type": "number",
-      "description": "Determines the type of Dynamic Random Level Generation used for building and handling different elements of the area level. Uses the",
-      "guideType": "[N]"
+      "description": "Determines the type of Dynamic Random Level Generation used for building and handling different elements of the area level. Uses a numeric code to handle which type of DRLG is used.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#DrlgType"
     },
     {
       "name": "LevelType",
       "type": "number",
-      "description": "Defines the Level Type used for this area level. Uses the",
-      "guideType": "[N]"
+      "description": "Defines the Level Type used for this area level. Uses lvltypes.Id, which is determined by what order it is defined in the lvltypes file.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#LevelType"
     },
     {
       "name": "SubType",
       "type": "number",
-      "description": "Controls the group of tile substitutions for the area level (",
-      "guideType": "[N]"
+      "description": "Controls the group of tile substitutions for the area level (see lvlsub). There are defined sub types to choose from.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#SubType"
     },
     {
       "name": "SubTheme",
       "type": "number",
-      "description": "Controls which theme number to use in a Level Substitution. The allowed values are 0 to 4, which convey which",
-      "guideType": "[N]"
+      "description": "Controls which theme number to use in a Level Substitution (See lvlsub). The allowed values are 0 to 4, which convey which lvlsub.Prob#, lvlsub.Trials#, and lvlsub.Max# field to use. If this equals -1, then there is no sub theme for the area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#SubTheme"
     },
     {
       "name": "SubWaypoint",
       "type": "number",
-      "description": "Controls the level substitutions for adding waypoints in the area level (",
-      "guideType": "[N]"
+      "description": "Controls the level substitutions for adding waypoints in the area level (see lvlsub). This uses a defined sub type to choose from (See .SubType). This will depend on the room having a waypoint tile.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#SubWaypoint"
     },
     {
       "name": "SubShrine",
       "type": "number",
-      "description": "Controls the level substitutions for adding Shrines in the area level (",
-      "guideType": "[N]"
+      "description": "Controls the level substitutions for adding shrines in the area level (see lvlsub). This uses a defined sub type to choose from (See .SubType). This will depend on the room allowing for a shrine to spawn.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#SubShrine"
     },
     {
       "name": "Vis0",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the visibility of other area levels involved with this area level, allowing for travel functionalities between levels. This uses the .Id field of another defined area level to link with this area level. If this equals 0, then no area level is specified.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Vis%23"
     },
     {
       "name": "Vis1",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the visibility of other area levels involved with this area level, allowing for travel functionalities between levels. This uses the .Id field of another defined area level to link with this area level. If this equals 0, then no area level is specified.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Vis%23"
     },
     {
       "name": "Vis2",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the visibility of other area levels involved with this area level, allowing for travel functionalities between levels. This uses the .Id field of another defined area level to link with this area level. If this equals 0, then no area level is specified.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Vis%23"
     },
     {
       "name": "Vis3",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the visibility of other area levels involved with this area level, allowing for travel functionalities between levels. This uses the .Id field of another defined area level to link with this area level. If this equals 0, then no area level is specified.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Vis%23"
     },
     {
       "name": "Vis4",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the visibility of other area levels involved with this area level, allowing for travel functionalities between levels. This uses the .Id field of another defined area level to link with this area level. If this equals 0, then no area level is specified.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Vis%23"
     },
     {
       "name": "Vis5",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the visibility of other area levels involved with this area level, allowing for travel functionalities between levels. This uses the .Id field of another defined area level to link with this area level. If this equals 0, then no area level is specified.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Vis%23"
     },
     {
       "name": "Vis6",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the visibility of other area levels involved with this area level, allowing for travel functionalities between levels. This uses the .Id field of another defined area level to link with this area level. If this equals 0, then no area level is specified.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Vis%23"
     },
     {
       "name": "Vis7",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the visibility of other area levels involved with this area level, allowing for travel functionalities between levels. This uses the .Id field of another defined area level to link with this area level. If this equals 0, then no area level is specified.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Vis%23"
     },
     {
       "name": "Warp0",
-      "type": "number"
+      "type": "number",
+      "description": "Uses the lvlwarp.Id field, which defines which Level Warp to use when exiting the area level. This is connected with the definition of the related .Vis# field. If this equals -1, then no Level Warp is specified which should also mean that the related .Vis# field is not defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Warp%23"
     },
     {
       "name": "Warp1",
-      "type": "number"
+      "type": "number",
+      "description": "Uses the lvlwarp.Id field, which defines which Level Warp to use when exiting the area level. This is connected with the definition of the related .Vis# field. If this equals -1, then no Level Warp is specified which should also mean that the related .Vis# field is not defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Warp%23"
     },
     {
       "name": "Warp2",
-      "type": "number"
+      "type": "number",
+      "description": "Uses the lvlwarp.Id field, which defines which Level Warp to use when exiting the area level. This is connected with the definition of the related .Vis# field. If this equals -1, then no Level Warp is specified which should also mean that the related .Vis# field is not defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Warp%23"
     },
     {
       "name": "Warp3",
-      "type": "number"
+      "type": "number",
+      "description": "Uses the lvlwarp.Id field, which defines which Level Warp to use when exiting the area level. This is connected with the definition of the related .Vis# field. If this equals -1, then no Level Warp is specified which should also mean that the related .Vis# field is not defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Warp%23"
     },
     {
       "name": "Warp4",
-      "type": "number"
+      "type": "number",
+      "description": "Uses the lvlwarp.Id field, which defines which Level Warp to use when exiting the area level. This is connected with the definition of the related .Vis# field. If this equals -1, then no Level Warp is specified which should also mean that the related .Vis# field is not defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Warp%23"
     },
     {
       "name": "Warp5",
-      "type": "number"
+      "type": "number",
+      "description": "Uses the lvlwarp.Id field, which defines which Level Warp to use when exiting the area level. This is connected with the definition of the related .Vis# field. If this equals -1, then no Level Warp is specified which should also mean that the related .Vis# field is not defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Warp%23"
     },
     {
       "name": "Warp6",
-      "type": "number"
+      "type": "number",
+      "description": "Uses the lvlwarp.Id field, which defines which Level Warp to use when exiting the area level. This is connected with the definition of the related .Vis# field. If this equals -1, then no Level Warp is specified which should also mean that the related .Vis# field is not defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Warp%23"
     },
     {
       "name": "Warp7",
-      "type": "number"
+      "type": "number",
+      "description": "Uses the lvlwarp.Id field, which defines which Level Warp to use when exiting the area level. This is connected with the definition of the related .Vis# field. If this equals -1, then no Level Warp is specified which should also mean that the related .Vis# field is not defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Warp%23"
     },
     {
       "name": "Intensity",
       "type": "number",
-      "description": "Controls the intensity value of the area level's ambient colors. This affects brightness of the room's RGB colors. Uses a value between 0 and 255. If all these related fields equal 0, then the game ignores setting the area level's ambient colors",
-      "guideType": "[N]"
+      "description": "Controls the intensity value of the area level's ambient colors. This affects brightness of the room's RGB colors. Uses a value between 0 and 128. If all these related fields equal 0, then the game ignores setting the area level's ambient colors.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Intensity"
     },
     {
       "name": "Red",
       "type": "number",
-      "description": "Controls the red value of the area level's ambient colors. Uses a value between 0 and 255",
-      "guideType": "[N]"
+      "description": "Controls the red value of the area level's ambient colors. Uses a value between 0 and 255.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Red"
     },
     {
       "name": "Green",
       "type": "number",
-      "description": "Controls the green value of the area level's ambient colors. Uses a value between 0 and 255",
-      "guideType": "[N]"
+      "description": "Controls the green value of the area level's ambient colors. Uses a value between 0 and 255.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Green"
     },
     {
       "name": "Blue",
       "type": "number",
-      "description": "Controls the blue value of the area level's ambient colors. Uses a value between 0 and 255",
-      "guideType": "[N]"
+      "description": "Controls the blue value of the area level's ambient colors. Uses a value between 0 and 255.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Blue"
     },
     {
       "name": "Portal",
-      "type": "boolean",
-      "description": "If equals 1, then this area level will be flagged as a portal level, which is saved in the player's information and can be used for keeping track of the player's portal functionalities. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this area level will be flagged as a portal level, which is saved in the player's information and can be used for keeping track of the player's portal functionalities. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Portal"
     },
     {
       "name": "Position",
-      "type": "boolean",
-      "description": "If equals 1, then enable special casing for positioning the player on the area level. This can mean that the player could spawn on a different location on the area level, depending on the level room's position type. An example can be when the player spawns in a town when loading the game, or using a waypoint, or using a town portal. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then enable special casing for positioning the player on the area level. This can mean that the player could spawn on a different location on the area level, depending on the level room's position type. An example can be when the player spawns in a town when loading the game, or using a waypoint, or using a town portal. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Position"
     },
     {
       "name": "SaveMonsters",
-      "type": "boolean",
-      "description": "If equals 1, then the game will save the monsters in the area level, such as when all players leave the area level. If equals 0, then monsters will not be saved and will be removed. This is usually disabled for areas where monsters do not spawn",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the game will save the monsters in the area level, such as when all players leave the area level. If equals 0, then monsters will not be saved and will be removed. This is usually disabled for areas where monsters do not spawn.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#SaveMonsters"
     },
     {
       "name": "Quest",
       "type": "number",
-      "description": "Controls what quest record is attached to monsters that spawn in this area level. This is used for specific quests handling lists of monsters in the area level. Referenced by the",
-      "guideType": "[N]"
+      "description": "Controls what quest record is attached to monsters that spawn in this area level. This is used for specific quests handling lists of monsters in the area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Quest"
     },
     {
       "name": "WarpDist",
       "type": "number",
-      "description": "Defines the minimum pixel distance from a Level Warp that a monster is allowed to spawn near. Tile distance values are converted to game pixel distance values by multiplying the tile distance value by 160 / 32, where 160 is the width of pixels of a tile",
-      "guideType": "[N]"
+      "description": "Defines the minimum pixel distance from a Level Warp that a monster is allowed to spawn near. Tile distance values are converted to game pixel distance values by multiplying the tile distance value by 160 / 32, where 160 is the width of pixels of a tile.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#WarpDist"
     },
     {
       "name": "MonLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the overall monster level for the area level for Normal, Nightmare, and Hell Difficulty, respectively. This is for Classic mode only. This can affect the highest item level allowed to drop in this area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#monlvl"
     },
     {
       "name": "MonLvl(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the overall monster level for the area level for Normal, Nightmare, and Hell Difficulty, respectively. This is for Classic mode only. This can affect the highest item level allowed to drop in this area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#monlvl"
     },
     {
       "name": "MonLvl(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the overall monster level for the area level for Normal, Nightmare, and Hell Difficulty, respectively. This is for Classic mode only. This can affect the highest item level allowed to drop in this area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#monlvl"
     },
     {
       "name": "MonLvlEx",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the overall monster level for the area level for Normal, Nightmare, and Hell Difficulty, respectively. This is for Expansion mode only. This can affect the highest item level allowed to drop in this area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#MonLvlEx"
     },
     {
       "name": "MonLvlEx(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the overall monster level for the area level for Normal, Nightmare, and Hell Difficulty, respectively. This is for Expansion mode only. This can affect the highest item level allowed to drop in this area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#MonLvlEx"
     },
     {
       "name": "MonLvlEx(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the overall monster level for the area level for Normal, Nightmare, and Hell Difficulty, respectively. This is for Expansion mode only. This can affect the highest item level allowed to drop in this area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#MonLvlEx"
     },
     {
       "name": "MonDen",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the monster density on the area level for Normal, Nightmare, and Hell Difficulty, respectively. This is a random value out of 100000, which will determine whether to spawn or not spawn a monster pack in the room of the area level. If this value equals 0, then no random monsters will populate on the area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#MonDen"
     },
     {
       "name": "MonDen(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the monster density on the area level for Normal, Nightmare, and Hell Difficulty, respectively. This is a random value out of 100000, which will determine whether to spawn or not spawn a monster pack in the room of the area level. If this value equals 0, then no random monsters will populate on the area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#MonDen"
     },
     {
       "name": "MonDen(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the monster density on the area level for Normal, Nightmare, and Hell Difficulty, respectively. This is a random value out of 100000, which will determine whether to spawn or not spawn a monster pack in the room of the area level. If this value equals 0, then no random monsters will populate on the area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#MonDen"
     },
     {
       "name": "MonUMin",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the minimum number of Unique Monsters that can spawn in the area level for Normal, Nightmare, and Hell Difficulty, respectively. This field depends on the related .MonDen field being defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#MonUMin"
     },
     {
       "name": "MonUMax",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the maximum number of Unique Monsters that can spawn in the area level for Normal, Nightmare, and Hell Difficulty, respectively. This field depends on the related .MonDen field being defined. Each room in the area level will attempt to spawn a Unique Monster with a 5/100 random chance, and this field's value will cap the number of successful attempts for the entire area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#MonUMax"
     },
     {
       "name": "MonUMin(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the minimum number of Unique Monsters that can spawn in the area level for Normal, Nightmare, and Hell Difficulty, respectively. This field depends on the related .MonDen field being defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#MonUMin"
     },
     {
       "name": "MonUMax(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the maximum number of Unique Monsters that can spawn in the area level for Normal, Nightmare, and Hell Difficulty, respectively. This field depends on the related .MonDen field being defined. Each room in the area level will attempt to spawn a Unique Monster with a 5/100 random chance, and this field's value will cap the number of successful attempts for the entire area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#MonUMax"
     },
     {
       "name": "MonUMin(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the minimum number of Unique Monsters that can spawn in the area level for Normal, Nightmare, and Hell Difficulty, respectively. This field depends on the related .MonDen field being defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#MonUMin"
     },
     {
       "name": "MonUMax(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the maximum number of Unique Monsters that can spawn in the area level for Normal, Nightmare, and Hell Difficulty, respectively. This field depends on the related .MonDen field being defined. Each room in the area level will attempt to spawn a Unique Monster with a 5/100 random chance, and this field's value will cap the number of successful attempts for the entire area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#MonUMax"
     },
     {
       "name": "MonWndr",
-      "type": "boolean",
-      "description": "If equals 1, then allow Wandering Monsters to spawn on this area level (",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then allow Wandering Monsters to spawn on this area level (see wanderingmon). This field depends on the related .MonDen field being defined. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#MonWndr"
     },
     {
       "name": "MonSpcWalk",
       "type": "number",
-      "description": "Defines a distance value, used to handle monster pathing AI when the level has certain pathing blockers, such as jail bars or rivers. In these cases, monsters will walk randomly until a player is located within this distance value or when the monsters find a possible path to target the player. If this equals 0, then ignore this field",
-      "guideType": "[N]"
+      "description": "Defines a distance value, used to handle monster pathing AI when the level has certain pathing blockers, such as jail bars or rivers. In these cases, monsters will walk randomly until a player is located within this distance value or when the monsters find a possible path to target the player. If this equals 0, then ignore this field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#MonSpcWalk"
     },
     {
       "name": "NumMon",
       "type": "number",
-      "description": "Controls the number of different monsters randomly spawn in the area level. The maximum value is 13. This controls the number of random selections from the 25 related",
-      "guideType": "[N]"
+      "description": "Controls the number of different monsters randomly spawn in the area level. The maximum value is 13. This controls the number of random selections from the 25 related .mon# and .umon# fields or .nmon# fields, depending on the game difficulty.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#NumMon"
     },
     {
       "name": "mon1",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon2",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon3",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon4",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon5",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon6",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon7",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon8",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon9",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon10",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon11",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon12",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon13",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon14",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon15",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon16",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon17",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon18",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon19",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon20",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon21",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon22",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon23",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon24",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "mon25",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Normal Difficulty. Community note: In the legacy version of the game, only mon1-mon10 are present in the MPQ but the columns mon11-mon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#mon%23"
     },
     {
       "name": "rangedspawn",
-      "type": "boolean",
-      "description": "If equals 1, then for the first monster, try to pick a ranged type. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then for the first monster, try to pick a ranged type. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#rangedspawn"
     },
     {
       "name": "nmon1",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon2",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon3",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon4",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon5",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon6",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon7",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon8",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon9",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon10",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon11",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon12",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon13",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon14",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon15",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon16",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon17",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon18",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon19",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon20",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon21",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon22",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon23",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon24",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "nmon25",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn on the area level for Nightmare Difficulty and Hell Difficulty. Community note: In the legacy version of the game, only nmon1-nmon10 are present in the MPQ but the columns nmon11-nmon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#nmon%23"
     },
     {
       "name": "umon1",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon2",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon3",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon4",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon5",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon6",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon7",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon8",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon9",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon10",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon11",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon12",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon13",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon14",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon15",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon16",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon17",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon18",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon19",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon20",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon21",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon22",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon23",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon24",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "umon25",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which monsters can spawn as Unique monsters on this area level for Normal Difficulty. Community note: In the legacy version of the game, only umon1-umon10 are present in the MPQ but the columns umon11-umon25 can be added to the file and work correctly. In Resurrected, all 25 columns are present in Blizzard's files.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#umon%23"
     },
     {
       "name": "cmon1",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which Critter monsters can spawn on the area level. Critter monsters are determined by the monstats2.critter field.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#cmon%23"
     },
     {
       "name": "cmon2",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which Critter monsters can spawn on the area level. Critter monsters are determined by the monstats2.critter field.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#cmon%23"
     },
     {
       "name": "cmon3",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which Critter monsters can spawn on the area level. Critter monsters are determined by the monstats2.critter field.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#cmon%23"
     },
     {
       "name": "cmon4",
-      "type": "text"
+      "type": "text",
+      "description": "Defines which Critter monsters can spawn on the area level. Critter monsters are determined by the monstats2.critter field.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#cmon%23"
     },
     {
       "name": "cpct1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the percent chance (out of 100) to spawn a Critter monster on the area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#cpct%23"
     },
     {
       "name": "cpct2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the percent chance (out of 100) to spawn a Critter monster on the area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#cpct%23"
     },
     {
       "name": "cpct3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the percent chance (out of 100) to spawn a Critter monster on the area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#cpct%23"
     },
     {
       "name": "cpct4",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the percent chance (out of 100) to spawn a Critter monster on the area level.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#cpct%23"
     },
     {
       "name": "camt1",
-      "type": "text"
+      "type": "number",
+      "description": "Controls the amount of Critter monsters to spawn on the area level after they succeeded their random spawn chance from the related .cpct# field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#camt%23"
     },
     {
       "name": "camt2",
-      "type": "text"
+      "type": "number",
+      "description": "Controls the amount of Critter monsters to spawn on the area level after they succeeded their random spawn chance from the related .cpct# field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#camt%23"
     },
     {
       "name": "camt3",
-      "type": "text"
+      "type": "number",
+      "description": "Controls the amount of Critter monsters to spawn on the area level after they succeeded their random spawn chance from the related .cpct# field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#camt%23"
     },
     {
       "name": "camt4",
-      "type": "text"
+      "type": "number",
+      "description": "Controls the amount of Critter monsters to spawn on the area level after they succeeded their random spawn chance from the related .cpct# field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#camt%23"
     },
     {
       "name": "Themes",
       "type": "number",
       "description": "Controls the type of theme when building a level room. This value is a summation of possible values to build a bit mask for determining which themes to use when building a level room. For example, a value of 60 means that the area level can have the following themes: 32, 16, 8, 4.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Themes"
     },
     {
       "name": "SoundEnv",
       "type": "number",
-      "description": "Uses the",
-      "guideType": "[N]"
+      "description": "Uses the index of an entry from soundenviron, which controls what music is played while the player is in the area level",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#SoundEnv"
     },
     {
       "name": "Waypoint",
       "type": "number",
-      "description": "Defines the unique numeric ID for the Waypoint in the area level. If this value is greater than or equal to 255, then ignore this field",
-      "guideType": "[N]"
+      "description": "Defines the unique numeric ID for the Waypoint in the area level. If this value is greater than or equal to 255, then ignore this field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#Waypoint"
     },
     {
       "name": "LevelName",
       "type": "text",
-      "description": "Used for displaying the name of the area level, such as when in the UI when the Automap is being viewed",
-      "guideType": "[O]"
+      "description": "String Field. Used for displaying the name of the area level, such as when in the UI when the Automap is being viewed.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#LevelName"
     },
     {
       "name": "LevelWarp",
       "type": "text",
-      "description": "Used for displaying the entrance name of the area level on Level Warp tiles that link to this area level. For example, when the player mouse hovers over a tile to warp to the area level, then this string is displayed",
-      "guideType": "[O]"
+      "description": "String Field. Used displaying the entrance name of the area level on Level Warp tiles that link to this area level. For example, when the player mouse hovers over a tile to warp to the area level, then this string is displayed.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#LevelWarp"
     },
     {
       "name": "LevelEntry",
       "type": "text",
-      "description": "Used for displaying the UI popup title string when the player enters the area level",
-      "guideType": "[O]"
+      "description": "String Field. Used for displaying the UI popup title string when the player enters the area level.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#LevelEntry"
     },
     {
       "name": "ObjGrp0",
-      "type": "number"
+      "type": "number",
+      "description": "Uses a numeric ID to define which possible Object Groups to spawn in this area level (See objgroup). The game will go through each of these fields, so there can be more than 1 Object Group used in an area level. If this value equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#ObjGrp%23"
     },
     {
       "name": "ObjGrp1",
-      "type": "number"
+      "type": "number",
+      "description": "Uses a numeric ID to define which possible Object Groups to spawn in this area level (See objgroup). The game will go through each of these fields, so there can be more than 1 Object Group used in an area level. If this value equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#ObjGrp%23"
     },
     {
       "name": "ObjGrp2",
-      "type": "number"
+      "type": "number",
+      "description": "Uses a numeric ID to define which possible Object Groups to spawn in this area level (See objgroup). The game will go through each of these fields, so there can be more than 1 Object Group used in an area level. If this value equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#ObjGrp%23"
     },
     {
       "name": "ObjGrp3",
-      "type": "number"
+      "type": "number",
+      "description": "Uses a numeric ID to define which possible Object Groups to spawn in this area level (See objgroup). The game will go through each of these fields, so there can be more than 1 Object Group used in an area level. If this value equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#ObjGrp%23"
     },
     {
       "name": "ObjGrp4",
-      "type": "number"
+      "type": "number",
+      "description": "Uses a numeric ID to define which possible Object Groups to spawn in this area level (See objgroup). The game will go through each of these fields, so there can be more than 1 Object Group used in an area level. If this value equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#ObjGrp%23"
     },
     {
       "name": "ObjGrp5",
-      "type": "number"
+      "type": "number",
+      "description": "Uses a numeric ID to define which possible Object Groups to spawn in this area level (See objgroup). The game will go through each of these fields, so there can be more than 1 Object Group used in an area level. If this value equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#ObjGrp%23"
     },
     {
       "name": "ObjGrp6",
-      "type": "number"
+      "type": "number",
+      "description": "Uses a numeric ID to define which possible Object Groups to spawn in this area level (See objgroup). The game will go through each of these fields, so there can be more than 1 Object Group used in an area level. If this value equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#ObjGrp%23"
     },
     {
       "name": "ObjGrp7",
-      "type": "number"
+      "type": "number",
+      "description": "Uses a numeric ID to define which possible Object Groups to spawn in this area level (See objgroup). The game will go through each of these fields, so there can be more than 1 Object Group used in an area level. If this value equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#ObjGrp%23"
     },
     {
       "name": "ObjPrb0",
-      "type": "number"
+      "type": "number",
+      "description": "Determines the random chance (out of 100) for each Object Group to spawn in the area level. This field depends on the related .ObjGrp# field being defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#ObjPrb%23"
     },
     {
       "name": "ObjPrb1",
-      "type": "number"
+      "type": "number",
+      "description": "Determines the random chance (out of 100) for each Object Group to spawn in the area level. This field depends on the related .ObjGrp# field being defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#ObjPrb%23"
     },
     {
       "name": "ObjPrb2",
-      "type": "number"
+      "type": "number",
+      "description": "Determines the random chance (out of 100) for each Object Group to spawn in the area level. This field depends on the related .ObjGrp# field being defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#ObjPrb%23"
     },
     {
       "name": "ObjPrb3",
-      "type": "number"
+      "type": "number",
+      "description": "Determines the random chance (out of 100) for each Object Group to spawn in the area level. This field depends on the related .ObjGrp# field being defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#ObjPrb%23"
     },
     {
       "name": "ObjPrb4",
-      "type": "number"
+      "type": "number",
+      "description": "Determines the random chance (out of 100) for each Object Group to spawn in the area level. This field depends on the related .ObjGrp# field being defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#ObjPrb%23"
     },
     {
       "name": "ObjPrb5",
-      "type": "number"
+      "type": "number",
+      "description": "Determines the random chance (out of 100) for each Object Group to spawn in the area level. This field depends on the related .ObjGrp# field being defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#ObjPrb%23"
     },
     {
       "name": "ObjPrb6",
-      "type": "number"
+      "type": "number",
+      "description": "Determines the random chance (out of 100) for each Object Group to spawn in the area level. This field depends on the related .ObjGrp# field being defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#ObjPrb%23"
     },
     {
       "name": "ObjPrb7",
-      "type": "number"
+      "type": "number",
+      "description": "Determines the random chance (out of 100) for each Object Group to spawn in the area level. This field depends on the related .ObjGrp# field being defined.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#ObjPrb%23"
     },
     {
       "name": "LevelGroup",
       "type": "text",
-      "description": "Defines what group this level belongs to. Used for condensing level names in desecrated (terror) zones messaging. See LevelGroups.txt.",
-      "guideType": "[O]"
+      "description": "Defines what group this level belongs to. Used for condensing level names in desecrated (terror) zones messaging.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#LevelGroup"
     },
     {
       "name": "PreventTownPortal",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then prevent town portals from being opened while in this level. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/levels.html#PreventTownPortal"
     }
   ]
 }

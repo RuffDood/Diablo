@@ -1,0 +1,79 @@
+{
+  "table": "lvlmaze",
+  "category": "system",
+  "file": "global/excel/lvlmaze.txt",
+  "description": "This file controls the sizes of the underground area levels. This file uses the levels from levels and specifies the sizes for each room, which can mean how many Level Presets to use to build out the entire randomly generated area. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 8,
+  "columns": [
+    {
+      "name": "Name",
+      "type": "text",
+      "description": "This is a reference field to describe the area level. Ideally this should match the name of the area level from the levels file.",
+      "guideType": "[comment]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlmaze.html#Name"
+    },
+    {
+      "name": "Level",
+      "type": "number",
+      "description": "This refers to the level area's levels.Id",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlmaze.html#Level"
+    },
+    {
+      "name": "Rooms",
+      "type": "number",
+      "description": "Controls the total number of rooms that a Level Maze will generate when playing the game in Normal Difficulty, Nightmare Difficulty, and Hell Difficulty, respectively.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlmaze.html#Rooms"
+    },
+    {
+      "name": "Rooms(N)",
+      "type": "number",
+      "description": "Controls the total number of rooms that a Level Maze will generate when playing the game in Normal Difficulty, Nightmare Difficulty, and Hell Difficulty, respectively.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlmaze.html#Rooms"
+    },
+    {
+      "name": "Rooms(H)",
+      "type": "number",
+      "description": "Controls the total number of rooms that a Level Maze will generate when playing the game in Normal Difficulty, Nightmare Difficulty, and Hell Difficulty, respectively.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlmaze.html#Rooms"
+    },
+    {
+      "name": "SizeX",
+      "type": "number",
+      "description": "Controls the length and width sizes of each room (ds1 map files) that is added to the Level Maze. This is measured in tile sizes.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlmaze.html#SizeX"
+    },
+    {
+      "name": "SizeY",
+      "type": "number",
+      "description": "Controls the length and width sizes of each room (ds1 map files) that is added to the Level Maze. This is measured in tile sizes.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlmaze.html#SizeX"
+    },
+    {
+      "name": "Merge",
+      "type": "number",
+      "description": "This value affects the probability that a room gets an adjacent room linked next to it. This is a random chance out of 1000.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlmaze.html#Merge"
+    }
+  ]
+}

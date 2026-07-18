@@ -2,19 +2,30 @@
   "table": "objects",
   "category": "system",
   "file": "global/excel/objects.txt",
-  "description": "Table objects du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 45,
+  "description": "This file controls the functionalities of all objects found in area levels. The order of each object defined in this file will convey what ID value it has, and thus should not be changed. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 145,
   "columns": [
     {
       "name": "Class",
       "type": "text",
-      "description": "Defines the unique type class of the object which is used to reference this object. These are also defined in the objpreset.txt file",
-      "guideType": "[O]"
+      "description": "Defines the unique type class of the object which is used to reference this object.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Class"
     },
     {
       "name": "Name",
-      "type": "text"
+      "type": "text",
+      "description": "String key. Used as the display name of the object when being highlighted by the player.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Name"
     },
     {
       "name": "*Description",
@@ -29,662 +40,1146 @@
     {
       "name": "Token",
       "type": "text",
-      "description": "Determines what files to use to display the graphics of the object. These are defined by the",
-      "guideType": "[O]"
+      "description": "Determines what files to use to display the graphics of the object.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Token"
     },
     {
       "name": "Selectable0",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object can be selected by the player and highlighted when hovered on by the mouse cursor. If equals 0, then the object cannot be selected and will not highlight when the player hovers the mouse over it. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Selectable%23"
     },
     {
       "name": "Selectable1",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object can be selected by the player and highlighted when hovered on by the mouse cursor. If equals 0, then the object cannot be selected and will not highlight when the player hovers the mouse over it. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Selectable%23"
     },
     {
       "name": "Selectable2",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object can be selected by the player and highlighted when hovered on by the mouse cursor. If equals 0, then the object cannot be selected and will not highlight when the player hovers the mouse over it. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Selectable%23"
     },
     {
       "name": "Selectable3",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object can be selected by the player and highlighted when hovered on by the mouse cursor. If equals 0, then the object cannot be selected and will not highlight when the player hovers the mouse over it. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Selectable%23"
     },
     {
       "name": "Selectable4",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object can be selected by the player and highlighted when hovered on by the mouse cursor. If equals 0, then the object cannot be selected and will not highlight when the player hovers the mouse over it. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Selectable%23"
     },
     {
       "name": "Selectable5",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object can be selected by the player and highlighted when hovered on by the mouse cursor. If equals 0, then the object cannot be selected and will not highlight when the player hovers the mouse over it. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Selectable%23"
     },
     {
       "name": "Selectable6",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object can be selected by the player and highlighted when hovered on by the mouse cursor. If equals 0, then the object cannot be selected and will not highlight when the player hovers the mouse over it. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Selectable%23"
     },
     {
       "name": "Selectable7",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object can be selected by the player and highlighted when hovered on by the mouse cursor. If equals 0, then the object cannot be selected and will not highlight when the player hovers the mouse over it. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Selectable%23"
     },
     {
       "name": "SizeX",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the amount of sub tiles that the object occupies using X and Y coordinates. This is generally used for measuring the object's size when trying to spawn objects in rooms and controlling their distances apart.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#SizeX"
     },
     {
       "name": "SizeY",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the amount of sub tiles that the object occupies using X and Y coordinates. This is generally used for measuring the object's size when trying to spawn objects in rooms and controlling their distances apart.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#SizeX"
     },
     {
       "name": "FrameCnt0",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the frame length of the object's mode. If this equals 0, then that mode will be skipped. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#FrameCnt%23"
     },
     {
       "name": "FrameCnt1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the frame length of the object's mode. If this equals 0, then that mode will be skipped. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#FrameCnt%23"
     },
     {
       "name": "FrameCnt2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the frame length of the object's mode. If this equals 0, then that mode will be skipped. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#FrameCnt%23"
     },
     {
       "name": "FrameCnt3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the frame length of the object's mode. If this equals 0, then that mode will be skipped. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#FrameCnt%23"
     },
     {
       "name": "FrameCnt4",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the frame length of the object's mode. If this equals 0, then that mode will be skipped. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#FrameCnt%23"
     },
     {
       "name": "FrameCnt5",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the frame length of the object's mode. If this equals 0, then that mode will be skipped. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#FrameCnt%23"
     },
     {
       "name": "FrameCnt6",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the frame length of the object's mode. If this equals 0, then that mode will be skipped. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#FrameCnt%23"
     },
     {
       "name": "FrameCnt7",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the frame length of the object's mode. If this equals 0, then that mode will be skipped. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#FrameCnt%23"
     },
     {
       "name": "FrameDelta0",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the animation frame rate of how many frames to update per delta (Measured in 256ths). Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#FrameDelta%23"
     },
     {
       "name": "FrameDelta1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the animation frame rate of how many frames to update per delta (Measured in 256ths). Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#FrameDelta%23"
     },
     {
       "name": "FrameDelta2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the animation frame rate of how many frames to update per delta (Measured in 256ths). Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#FrameDelta%23"
     },
     {
       "name": "FrameDelta3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the animation frame rate of how many frames to update per delta (Measured in 256ths). Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#FrameDelta%23"
     },
     {
       "name": "FrameDelta4",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the animation frame rate of how many frames to update per delta (Measured in 256ths). Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#FrameDelta%23"
     },
     {
       "name": "FrameDelta5",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the animation frame rate of how many frames to update per delta (Measured in 256ths). Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#FrameDelta%23"
     },
     {
       "name": "FrameDelta6",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the animation frame rate of how many frames to update per delta (Measured in 256ths). Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#FrameDelta%23"
     },
     {
       "name": "FrameDelta7",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the animation frame rate of how many frames to update per delta (Measured in 256ths). Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#FrameDelta%23"
     },
     {
       "name": "CycleAnim0",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object's current animation will loop back to play again when it finishes. If equals 0, then the object will generally play the Opened mode after playing the Operating mode. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#CycleAnim%23"
     },
     {
       "name": "CycleAnim1",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object's current animation will loop back to play again when it finishes. If equals 0, then the object will generally play the Opened mode after playing the Operating mode. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#CycleAnim%23"
     },
     {
       "name": "CycleAnim2",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object's current animation will loop back to play again when it finishes. If equals 0, then the object will generally play the Opened mode after playing the Operating mode. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#CycleAnim%23"
     },
     {
       "name": "CycleAnim3",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object's current animation will loop back to play again when it finishes. If equals 0, then the object will generally play the Opened mode after playing the Operating mode. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#CycleAnim%23"
     },
     {
       "name": "CycleAnim4",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object's current animation will loop back to play again when it finishes. If equals 0, then the object will generally play the Opened mode after playing the Operating mode. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#CycleAnim%23"
     },
     {
       "name": "CycleAnim5",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object's current animation will loop back to play again when it finishes. If equals 0, then the object will generally play the Opened mode after playing the Operating mode. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#CycleAnim%23"
     },
     {
       "name": "CycleAnim6",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object's current animation will loop back to play again when it finishes. If equals 0, then the object will generally play the Opened mode after playing the Operating mode. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#CycleAnim%23"
     },
     {
       "name": "CycleAnim7",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object's current animation will loop back to play again when it finishes. If equals 0, then the object will generally play the Opened mode after playing the Operating mode. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#CycleAnim%23"
     },
     {
       "name": "Lit0",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the Light Radius distance value for the object. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Lit%23"
     },
     {
       "name": "Lit1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the Light Radius distance value for the object. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Lit%23"
     },
     {
       "name": "Lit2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the Light Radius distance value for the object. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Lit%23"
     },
     {
       "name": "Lit3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the Light Radius distance value for the object. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Lit%23"
     },
     {
       "name": "Lit4",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the Light Radius distance value for the object. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Lit%23"
     },
     {
       "name": "Lit5",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the Light Radius distance value for the object. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Lit%23"
     },
     {
       "name": "Lit6",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the Light Radius distance value for the object. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Lit%23"
     },
     {
       "name": "Lit7",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the Light Radius distance value for the object. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Lit%23"
     },
     {
       "name": "BlocksLight0",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will draw a shadow. If equals 0, then the object will not draw a shadow. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#BlocksLight%23"
     },
     {
       "name": "BlocksLight1",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will draw a shadow. If equals 0, then the object will not draw a shadow. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#BlocksLight%23"
     },
     {
       "name": "BlocksLight2",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will draw a shadow. If equals 0, then the object will not draw a shadow. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#BlocksLight%23"
     },
     {
       "name": "BlocksLight3",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will draw a shadow. If equals 0, then the object will not draw a shadow. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#BlocksLight%23"
     },
     {
       "name": "BlocksLight4",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will draw a shadow. If equals 0, then the object will not draw a shadow. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#BlocksLight%23"
     },
     {
       "name": "BlocksLight5",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will draw a shadow. If equals 0, then the object will not draw a shadow. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#BlocksLight%23"
     },
     {
       "name": "BlocksLight6",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will draw a shadow. If equals 0, then the object will not draw a shadow. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#BlocksLight%23"
     },
     {
       "name": "BlocksLight7",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will draw a shadow. If equals 0, then the object will not draw a shadow. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#BlocksLight%23"
     },
     {
       "name": "HasCollision0",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will have collision. If equals 0, then the object will not have collision, and units can walk through it. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#HasCollision%23"
     },
     {
       "name": "HasCollision1",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will have collision. If equals 0, then the object will not have collision, and units can walk through it. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#HasCollision%23"
     },
     {
       "name": "HasCollision2",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will have collision. If equals 0, then the object will not have collision, and units can walk through it. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#HasCollision%23"
     },
     {
       "name": "HasCollision3",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will have collision. If equals 0, then the object will not have collision, and units can walk through it. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#HasCollision%23"
     },
     {
       "name": "HasCollision4",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will have collision. If equals 0, then the object will not have collision, and units can walk through it. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#HasCollision%23"
     },
     {
       "name": "HasCollision5",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will have collision. If equals 0, then the object will not have collision, and units can walk through it. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#HasCollision%23"
     },
     {
       "name": "HasCollision6",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will have collision. If equals 0, then the object will not have collision, and units can walk through it. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#HasCollision%23"
     },
     {
       "name": "HasCollision7",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will have collision. If equals 0, then the object will not have collision, and units can walk through it. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#HasCollision%23"
     },
     {
       "name": "IsAttackable0",
-      "type": "boolean",
-      "description": "If equals 1, then the player can target this object to be attacked, and the player will use the Kick skill when operating the object. If the object has the Class equal to \"CompellingOrb\" or \"SoulStoneForge\", then instead of using the Kick skill, players will use the Attack skill when operating the object. If equals 0, then ignore this, and the player will not use a skill or animation when operating the object",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the player can target this object to be attacked, and the player will use the Kick skill when operating the object. If the object has the Class equal to \"CompellingOrb\" or \"SoulStoneForge\", then instead of using the Kick skill, players will use the Attack skill when operating the object. If equals 0, then ignore this, and the player will not use a skill or animation when operating the object.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#IsAttackable0"
     },
     {
       "name": "Start0",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the frame for where the object will start playing the next animation.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Start%23"
     },
     {
       "name": "Start1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the frame for where the object will start playing the next animation.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Start%23"
     },
     {
       "name": "Start2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the frame for where the object will start playing the next animation.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Start%23"
     },
     {
       "name": "Start3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the frame for where the object will start playing the next animation.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Start%23"
     },
     {
       "name": "Start4",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the frame for where the object will start playing the next animation.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Start%23"
     },
     {
       "name": "Start5",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the frame for where the object will start playing the next animation.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Start%23"
     },
     {
       "name": "Start6",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the frame for where the object will start playing the next animation.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Start%23"
     },
     {
       "name": "Start7",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the frame for where the object will start playing the next animation.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Start%23"
     },
     {
       "name": "EnvEffect",
-      "type": "boolean",
-      "description": "If equals 1, then enable the object to update its mode based on the game's time of day. This can mean that when the object is spawned, and it is current day time and the object is in Opened or Operating mode, then it will reset back to Neutral mode. Also, if the current time is dusk, night, or dawn and the object is in Neutral mode, then it will change to Operating mode. If equals 0, then the object will not update its mode based on the time of day",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then enable the object to update its mode based on the game's time of day. This can mean that when the object is spawned, and it is current day time and the object is in Opened or Operating mode, then it will reset back to Neutral mode. Also, if the current time is dusk, night, or dawn and the object is in Neutral mode, then it will change to Operating mode. If equals 0, then the object will not update its mode based on the time of day.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#EnvEffect"
     },
     {
       "name": "IsDoor",
-      "type": "boolean",
-      "description": "If equals 1, then the object will be treated as a door when the game handles its collision, animation properties, tooltips, and commands. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will be treated as a door when the game handles its collision, animation properties, tooltips, and commands. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#IsDoor"
     },
     {
       "name": "BlocksVis",
-      "type": "boolean",
-      "description": "If equals 1, then the object will block the player's line of sight to see anything beyond the object. If equals 0, then ignore this. This field relies on the",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will block the player's line of sight to see anything beyond the object. If equals 0, then ignore this. This field relies on the .IsDoor field being enabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#BlocksVis"
     },
     {
       "name": "Orientation",
       "type": "number",
       "description": "Determines the object's orientation type, which can affect mouse selection priority of the object when a unit is being rendered in front of or behind the object (such as a door object covering a unit and how the mouse selection should handle that). This also affects the randomization of the coordinates when spawning the object near the edge of a room.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Orientation"
     },
     {
       "name": "OrderFlag0",
-      "type": "number"
+      "type": "number",
+      "description": "Controls how the object's sprite is drawn, which can affect how it is displayed in Perspective game camera mode. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#OrderFlag%23"
     },
     {
       "name": "OrderFlag1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls how the object's sprite is drawn, which can affect how it is displayed in Perspective game camera mode. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#OrderFlag%23"
     },
     {
       "name": "OrderFlag2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls how the object's sprite is drawn, which can affect how it is displayed in Perspective game camera mode. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#OrderFlag%23"
     },
     {
       "name": "OrderFlag3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls how the object's sprite is drawn, which can affect how it is displayed in Perspective game camera mode. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#OrderFlag%23"
     },
     {
       "name": "OrderFlag4",
-      "type": "number"
+      "type": "number",
+      "description": "Controls how the object's sprite is drawn, which can affect how it is displayed in Perspective game camera mode. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#OrderFlag%23"
     },
     {
       "name": "OrderFlag5",
-      "type": "number"
+      "type": "number",
+      "description": "Controls how the object's sprite is drawn, which can affect how it is displayed in Perspective game camera mode. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#OrderFlag%23"
     },
     {
       "name": "OrderFlag6",
-      "type": "number"
+      "type": "number",
+      "description": "Controls how the object's sprite is drawn, which can affect how it is displayed in Perspective game camera mode. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#OrderFlag%23"
     },
     {
       "name": "OrderFlag7",
-      "type": "number"
+      "type": "number",
+      "description": "Controls how the object's sprite is drawn, which can affect how it is displayed in Perspective game camera mode. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#OrderFlag%23"
     },
     {
       "name": "PreOperate",
-      "type": "boolean",
-      "description": "If equals 1, then enable a random chance that the object will spawn in already in Opened mode. The game will choose a 1/14 chance that this can happen when the object is spawned. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then enable a random chance that the object will spawn in already in Opened mode. The game will choose a 1/14 chance that this can happen when the object is spawned. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#PreOperate"
     },
     {
       "name": "Mode0",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then confirm that this object has the correlating mode. If equals 0, then this object will not have the correlating mode. This flag can affect how the object functions work. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Mode%23"
     },
     {
       "name": "Mode1",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then confirm that this object has the correlating mode. If equals 0, then this object will not have the correlating mode. This flag can affect how the object functions work. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Mode%23"
     },
     {
       "name": "Mode2",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then confirm that this object has the correlating mode. If equals 0, then this object will not have the correlating mode. This flag can affect how the object functions work. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Mode%23"
     },
     {
       "name": "Mode3",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then confirm that this object has the correlating mode. If equals 0, then this object will not have the correlating mode. This flag can affect how the object functions work. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Mode%23"
     },
     {
       "name": "Mode4",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then confirm that this object has the correlating mode. If equals 0, then this object will not have the correlating mode. This flag can affect how the object functions work. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Mode%23"
     },
     {
       "name": "Mode5",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then confirm that this object has the correlating mode. If equals 0, then this object will not have the correlating mode. This flag can affect how the object functions work. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Mode%23"
     },
     {
       "name": "Mode6",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then confirm that this object has the correlating mode. If equals 0, then this object will not have the correlating mode. This flag can affect how the object functions work. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Mode%23"
     },
     {
       "name": "Mode7",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then confirm that this object has the correlating mode. If equals 0, then this object will not have the correlating mode. This flag can affect how the object functions work. Each field is numbered, correlating to 1 of 8 Object Modes that the object uses (See ObjMode.Token).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Mode%23"
     },
     {
       "name": "Yoffset",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the offset values in the X and Y directions for the object's visual graphics. This is measured in game pixels.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Xoffset"
     },
     {
       "name": "Xoffset",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the offset values in the X and Y directions for the object's visual graphics. This is measured in game pixels.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Xoffset"
     },
     {
       "name": "Draw",
-      "type": "boolean",
-      "description": "If equals 1, then draw the object's shadows. If equal's 0, then do not draw the object's shadows",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then draw the object's shadows. If equal's 0, then do not draw the object's shadows.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Draw"
     },
     {
       "name": "Red",
       "type": "number",
-      "description": "Controls the Red color gradient of the object's Light Radius. This field depends on the",
-      "guideType": "[N]"
+      "description": "Controls the Red color gradient of the object's Light Radius. This field depends on the .Lit# field having a value greater than 0.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Red"
     },
     {
       "name": "Green",
       "type": "number",
-      "description": "Controls the Green color gradient of the object's Light Radius. This field depends on the",
-      "guideType": "[N]"
+      "description": "Controls the Green color gradient of the object's Light Radius. This field depends on the .Lit# field having a value greater than 0.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Green"
     },
     {
       "name": "Blue",
       "type": "number",
-      "description": "Controls the Blue color gradient of the object's Light Radius. This field depends on the",
-      "guideType": "[N]"
+      "description": "Controls the Blue color gradient of the object's Light Radius. This field depends on the .Lit# field having a value greater than 0.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Blue"
     },
     {
       "name": "HD",
-      "type": "boolean",
-      "description": "If equals 1, then the object will be flagged to have a Head composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will be flagged to have a specific composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#COMP"
     },
     {
       "name": "TR",
-      "type": "boolean",
-      "description": "If equals 1, then the object will be flagged to have a Torso composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will be flagged to have a specific composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#COMP"
     },
     {
       "name": "LG",
-      "type": "boolean",
-      "description": "If equals 1, then the object will be flagged to have a Legs composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will be flagged to have a specific composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#COMP"
     },
     {
       "name": "RA",
-      "type": "boolean",
-      "description": "If equals 1, then the object will be flagged to have a Right Arm composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will be flagged to have a specific composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#COMP"
     },
     {
       "name": "LA",
-      "type": "boolean",
-      "description": "If equals 1, then the object will be flagged to have a Left Arm composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will be flagged to have a specific composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#COMP"
     },
     {
       "name": "RH",
-      "type": "boolean",
-      "description": "If equals 1, then the object will be flagged to have a Right Hand composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will be flagged to have a specific composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#COMP"
     },
     {
       "name": "LH",
-      "type": "boolean",
-      "description": "If equals 1, then the object will be flagged to have a Left Hand composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will be flagged to have a specific composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#COMP"
     },
     {
       "name": "SH",
-      "type": "boolean",
-      "description": "If equals 1, then the object will be flagged to have a Shield composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will be flagged to have a specific composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#COMP"
     },
     {
       "name": "S1",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will be flagged to have a specific composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#COMP"
     },
     {
       "name": "S2",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will be flagged to have a specific composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#COMP"
     },
     {
       "name": "S3",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will be flagged to have a specific composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#COMP"
     },
     {
       "name": "S4",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will be flagged to have a specific composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#COMP"
     },
     {
       "name": "S5",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will be flagged to have a specific composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#COMP"
     },
     {
       "name": "S6",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will be flagged to have a specific composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#COMP"
     },
     {
       "name": "S7",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will be flagged to have a specific composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#COMP"
     },
     {
       "name": "S8",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will be flagged to have a specific composite piece, and the game will use the component system to handle the object's mouse selection collision box. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#COMP"
     },
     {
       "name": "TotalPieces",
       "type": "number",
-      "description": "Defines the total amount of composite pieces. If this value is greater than 1, then the game will treat the object with the multiple composite piece system, and the player can hover the mouse over and select the object's different components",
-      "guideType": "[N]"
+      "description": "Defines the total amount of composite pieces. If this value is greater than 1, then the game will treat the object with the multiple composite piece system, and the player can hover the mouse over and select the object's different components.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#TotalPieces"
     },
     {
       "name": "SubClass",
       "type": "number",
-      "description": "Determines the object's class type by declaring a specific value. This is used by the various functions (",
-      "guideType": "[N]"
+      "description": "Determines the object's class type by declaring a specific value. This is used by the various functions (.InitFn, .OperateFn, .PopulateFn) for knowing how to handle specific types of objects.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#SubClass"
     },
     {
       "name": "Xspace",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the X and Y distance delta values between adjacent objects when they are being populated together. This field is only used by the Populate Function (.PopulateFn) values 3 and 4, for the Add Barrels and Add Crates functions.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Xspace"
     },
     {
       "name": "Yspace",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the X and Y distance delta values between adjacent objects when they are being populated together. This field is only used by the Populate Function (.PopulateFn) values 3 and 4, for the Add Barrels and Add Crates functions.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Xspace"
     },
     {
       "name": "NameOffset",
       "type": "number",
-      "description": "Controls the vertical offset of the name tooltip's position above the object when the object is being selected. This is measured in pixels",
-      "guideType": "[N]"
+      "description": "Controls the vertical offset of the name tooltip's position above the object when the object is being selected. This is measured in pixels.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#NameOffset"
     },
     {
       "name": "MonsterOK",
-      "type": "boolean",
-      "description": "If equals 1, then if a monster operates the object, then the object will run its operate function. If equals 0, then then if a monster operates the object, then the object will not run its operate function",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then if a monster operates the object, then the object will run its operate function. If equals 0, then then if a monster operates the object, then the object will not run its operate function.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#MonsterOK"
     },
     {
       "name": "ShrineFunction",
       "type": "number",
-      "description": "Controls what shrine function to use (",
-      "guideType": "[N]"
+      "description": "Controls what shrine function to use (See the shrines.Code field) when the object is told to do its Skill command.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#ShrineFunction"
     },
     {
       "name": "Restore",
-      "type": "boolean",
-      "description": "If equals 1, the game will restore the object in an inactive state when the area level repopulates after a player loads back into it. If equals 0, then the game will not restore the object",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, the game will restore the object in an inactive state when the area level repopulates after a player loads back into it. If equals 0, then the game will not restore the object.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Restore"
     },
     {
       "name": "Parm0",
-      "type": "number"
+      "type": "number",
+      "description": "Used as possible parameters for various functions for the object",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Parm%23"
     },
     {
       "name": "Parm1",
-      "type": "number"
+      "type": "number",
+      "description": "Used as possible parameters for various functions for the object",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Parm%23"
     },
     {
       "name": "Parm2",
-      "type": "number"
+      "type": "number",
+      "description": "Used as possible parameters for various functions for the object",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Parm%23"
     },
     {
       "name": "Parm3",
-      "type": "number"
+      "type": "number",
+      "description": "Used as possible parameters for various functions for the object",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Parm%23"
     },
     {
       "name": "Parm4",
-      "type": "number"
+      "type": "number",
+      "description": "Used as possible parameters for various functions for the object",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Parm%23"
     },
     {
       "name": "Lockable",
-      "type": "boolean",
-      "description": "If equals 1, then the object will have a random chance to spawn with the locked attribute and have a display tooltip name with the \"lockedchest\"",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object will have a random chance to spawn with the locked attribute and have a display tooltip name with the \"lockedchest\" string key. This only works when the object has the Init Function (.InitFn) value equal to 3. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Lockable"
     },
     {
       "name": "Gore",
       "type": "number",
-      "description": "Controls if an object should call its",
-      "guideType": "[N]"
+      "description": "Controls if an object should call its Populate function (.PopulateFn) when it is chosen as an object that can spawn in a room. Objects with a gore value greater than 2 will not be populated in rooms.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Gore"
     },
     {
       "name": "Sync",
-      "type": "boolean",
-      "description": "If equals 1, then the object's animation rate will always match the",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the object's animation rate will always match the .FrameDelta# field (depending on the object's mode) which means the client and server will have synced animations. If equals 0, then the animation rate will have random visual variation.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Sync"
     },
     {
       "name": "Damage",
       "type": "number",
-      "description": "Controls the amount of damage dealt by the object when it performs an",
-      "guideType": "[N]"
+      "description": "Controls the amount of damage dealt by the object when it performs an Operate Function (.OperateFn) that deals damage such as triggering a pulse trap or an explosion.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Damage"
     },
     {
       "name": "Overlay",
-      "type": "boolean",
-      "description": "If equals 1, then add and remove an overlay on the object based on its current mode. If equals 0, then ignore this. This field will only work with specific object Classes and will use specific Overlays for those objects.",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then add and remove an overlay on the object based on its current mode. If equals 0, then ignore this. This field will only work with specific object Classes and will use specific Overlays for those objects.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#overlay"
     },
     {
       "name": "CollisionSubst",
-      "type": "boolean",
-      "description": "If equals 1, then the game will handle the bounding box around the object for mouse selection. The game will use the object's pixel size and",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the game will handle the bounding box around the object for mouse selection. The game will use the object's pixel size and .Left, .Top, .Width, .Height field values to determine the collision size. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#CollisionSubst"
     },
     {
       "name": "Left",
       "type": "number",
-      "description": "Controls the starting X position offset value for drawing the bounding collision box around the object for mouse selection. Depends on the",
-      "guideType": "[N]"
+      "description": "Controls the starting X position offset value for drawing the bounding collision box around the object for mouse selection. This field depends on the .CollisionSubst field being enabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Left"
     },
     {
       "name": "Top",
       "type": "number",
-      "description": "Controls the starting Y position offset value for drawing the bounding collision box around the object for mouse selection. Depends on the",
-      "guideType": "[N]"
+      "description": "Controls the starting Y position offset value for drawing the bounding collision box around the object for mouse selection. This field depends on the .CollisionSubst field being enabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Top"
     },
     {
       "name": "Width",
       "type": "number",
-      "description": "Controls the ending X position offset value for drawing the bounding collision box around the object for mouse selection. Depends on the",
-      "guideType": "[N]"
+      "description": "Controls the ending X position offset value for drawing the bounding collision box around the object for mouse selection. This field depends on the .CollisionSubst field being enabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Width"
     },
     {
       "name": "Height",
       "type": "number",
-      "description": "Controls the ending Y position offset value for drawing the bounding collision box around the object for mouse selection. Depends on the",
-      "guideType": "[N]"
+      "description": "Controls the ending Y position offset value for drawing the bounding collision box around the object for mouse selection. This field depends on the .CollisionSubst field being enabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#Height"
     },
     {
       "name": "OperateFn",
       "type": "number",
       "description": "Defines a function that the game will use when the player clicks on the object",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#OperateFn"
     },
     {
       "name": "PopulateFn",
       "type": "number",
       "description": "Defines a function that the game will use to spawn this object",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#PopulateFn"
     },
     {
       "name": "InitFn",
       "type": "number",
       "description": "Defines a function to control how the object works while active and when initially activated by a player",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#InitFn"
     },
     {
       "name": "ClientFn",
       "type": "number",
       "description": "Defines a function that runs on the object from the game's client side.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#ClientFn"
     },
     {
       "name": "RestoreVirgins",
-      "type": "boolean",
-      "description": "If equals 1, then when the object has been used, the game will not restore the object in an inactive state when the area level repopulates after a player loads back into it. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then when the object has been used, the game will not restore the object in an inactive state when the area level repopulates after a player loads back into it. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#RestoreVirgins"
     },
     {
       "name": "BlockMissile",
-      "type": "boolean",
-      "description": "If equals 1, then missiles can collide with this object. If equals 0, then missiles will ignore and fly through this object",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then missiles can collide with this object. If equals 0, then missiles will ignore and fly through this object.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#BlockMissile"
     },
     {
       "name": "DrawUnder",
       "type": "number",
       "description": "Controls the targeting priority of the object",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#DrawUnder"
     },
     {
       "name": "OpenWarp",
-      "type": "boolean",
-      "description": "If equals 1, then this object will be classified as an object that can be opened to warp to another area, and the UI will be notified to display a tooltip for opening or entering, based on the object's mode. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this object will be classified as an object that can be opened to warp to another area, and the UI will be notified to display a tooltip for opening or entering, based on the object's mode. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#OpenWarp"
     },
     {
       "name": "AutoMap",
       "type": "number",
-      "description": "Used to display a tile in the Automap to represent the object. Defines which cell number to use in the tile list for the Automap. If this value equals 0, then this object will not display on the Automap. (Automap.txt)",
-      "guideType": "[N]"
+      "description": "Used to display a tile in the Automap to represent the object. Defines which cell number to use in the tile list for the Automap. If this value equals 0, then this object will not display on the Automap. (See automap)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/objects.html#automap"
     }
   ]
 }

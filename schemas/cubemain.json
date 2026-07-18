@@ -2,447 +2,854 @@
   "table": "cubemain",
   "category": "system",
   "file": "global/excel/cubemain.txt",
-  "description": "Table cubemain du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 9,
+  "description": "This file controls the recipes for the Horadric Cubetems structure. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 105,
   "columns": [
     {
       "name": "description",
       "type": "text",
       "description": "This is a reference field to define the cube recipe",
-      "guideType": "[O]"
+      "guideType": "[comment]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#description"
     },
     {
       "name": "enabled",
-      "type": "boolean",
-      "description": "If equals 1, then the recipe can be used in-game. If equals 0, then the recipe cannot be used in-game",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean field. If equals 1, then the recipe can be used in-game. If equals 0, then the recipe cannot be used in-game.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#enabled"
     },
     {
       "name": "firstLadderSeason",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. The first ladder season this cube recipe can be made on (inclusive). If blank or 0 then it is available in non-ladder.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#firstLadderSeason"
     },
     {
       "name": "lastLadderSeason",
-      "type": "number"
+      "type": "number",
+      "description": "Integer field. The last ladder season this cube recipe is ladder-only (inclusive). Must be used in conjunction with firstLadderSeason.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#lastLadderSeason"
     },
     {
       "name": "min diff",
       "type": "number",
       "description": "The minimum game difficulty to use the recipe (0 = All Game Difficulties | 1 = Nightmare and Hell Difficulty only | 2 = Hell Difficulty only)",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#min%20diff"
     },
     {
       "name": "version",
       "type": "number",
       "description": "Defines which game version to use this recipe (0 = Classic mode | 100 = Expansion mode)",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#version"
     },
     {
       "name": "op",
       "type": "number",
-      "description": "Uses a function as an additional input requirement for the recipe. (See",
-      "guideType": "[N]"
+      "description": "Uses a function as an additional input requirement for the recipe",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#op"
     },
     {
       "name": "param",
       "type": "number",
-      "description": "Integer value used as a possible parameter for the",
-      "guideType": "[N]"
+      "description": "Integer value used as a possible parameter for the \"op\" function",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#param"
     },
     {
       "name": "value",
       "type": "number",
-      "description": "Integer value used as a possible parameter for the",
-      "guideType": "[N]"
+      "description": "Integer value used as a possible parameter for the \"op\" function",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#value"
     },
     {
       "name": "class",
       "type": "text",
-      "description": "Defines the recipe to be only usable by a defined class. Referenced from the",
-      "guideType": "[O]"
+      "description": "Defines the recipe to be only usable by a defined class.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#class"
     },
     {
       "name": "numinputs",
       "type": "number",
       "description": "Controls the number of items that need to be inside the cube for the recipe",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#numinputs"
     },
     {
       "name": "input 1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what items are required for the recipe. Uses the item's unique code. Users can also add input modifiers by adding a comma \",\" to the input and using a code. References an itemtypes.ItemType, item code, uniqueitems.index, sets.index, or one of the modifiers described below",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#input%20%23"
     },
     {
       "name": "input 2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what items are required for the recipe. Uses the item's unique code. Users can also add input modifiers by adding a comma \",\" to the input and using a code. References an itemtypes.ItemType, item code, uniqueitems.index, sets.index, or one of the modifiers described below",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#input%20%23"
     },
     {
       "name": "input 3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what items are required for the recipe. Uses the item's unique code. Users can also add input modifiers by adding a comma \",\" to the input and using a code. References an itemtypes.ItemType, item code, uniqueitems.index, sets.index, or one of the modifiers described below",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#input%20%23"
     },
     {
       "name": "input 4",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what items are required for the recipe. Uses the item's unique code. Users can also add input modifiers by adding a comma \",\" to the input and using a code. References an itemtypes.ItemType, item code, uniqueitems.index, sets.index, or one of the modifiers described below",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#input%20%23"
     },
     {
       "name": "input 5",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what items are required for the recipe. Uses the item's unique code. Users can also add input modifiers by adding a comma \",\" to the input and using a code. References an itemtypes.ItemType, item code, uniqueitems.index, sets.index, or one of the modifiers described below",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#input%20%23"
     },
     {
       "name": "input 6",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what items are required for the recipe. Uses the item's unique code. Users can also add input modifiers by adding a comma \",\" to the input and using a code. References an itemtypes.ItemType, item code, uniqueitems.index, sets.index, or one of the modifiers described below",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#input%20%23"
     },
     {
       "name": "input 7",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what items are required for the recipe. Uses the item's unique code. Users can also add input modifiers by adding a comma \",\" to the input and using a code. References an itemtypes.ItemType, item code, uniqueitems.index, sets.index, or one of the modifiers described below",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#input%20%23"
     },
     {
       "name": "output",
-      "type": "text"
+      "type": "text",
+      "description": "Controls an output item. Uses the item's unique code. Users can also add output modifiers by adding a comma \",\" to the output and using a code. References an itemtypes.ItemType, item code, uniqueitems.index, sets.index, or one of the modifiers described below",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#output"
     },
     {
       "name": "lvl",
-      "type": "number"
+      "type": "number",
+      "description": "Forces the output item level to be a specific level. If this field is used, then ignore the .plvl and .ilvl fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#lvl"
     },
     {
       "name": "plvl",
-      "type": "number"
+      "type": "number",
+      "description": "This is a numeric ratio that gets multiplied with the current player's level, to add to the output item's level requirement",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#plvl"
     },
     {
       "name": "ilvl",
-      "type": "text"
+      "type": "number",
+      "description": "This is a numeric ratio that gets multiplied with .input 1 item's level, to add to the output item's level requirement",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#ilvl"
     },
     {
       "name": "mod 1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the output item properties Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23"
     },
     {
       "name": "mod 1 chance",
-      "type": "number"
+      "type": "number",
+      "description": "The percent chance that the property will be assigned. If this equals 0, then the Property will always be assigned.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20chance"
     },
     {
       "name": "mod 1 param",
-      "type": "number"
+      "type": "number",
+      "description": "The \"parameter\" value associated with the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20param"
     },
     {
       "name": "mod 1 min",
-      "type": "number"
+      "type": "number",
+      "description": "The \"min\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20min"
     },
     {
       "name": "mod 1 max",
-      "type": "text"
+      "type": "number",
+      "description": "The \"max\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20max"
     },
     {
       "name": "mod 2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the output item properties Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23"
     },
     {
       "name": "mod 2 chance",
-      "type": "number"
+      "type": "number",
+      "description": "The percent chance that the property will be assigned. If this equals 0, then the Property will always be assigned.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20chance"
     },
     {
       "name": "mod 2 param",
-      "type": "number"
+      "type": "number",
+      "description": "The \"parameter\" value associated with the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20param"
     },
     {
       "name": "mod 2 min",
-      "type": "number"
+      "type": "number",
+      "description": "The \"min\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20min"
     },
     {
       "name": "mod 2 max",
-      "type": "number"
+      "type": "number",
+      "description": "The \"max\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20max"
     },
     {
       "name": "mod 3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the output item properties Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23"
     },
     {
       "name": "mod 3 chance",
-      "type": "number"
+      "type": "number",
+      "description": "The percent chance that the property will be assigned. If this equals 0, then the Property will always be assigned.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20chance"
     },
     {
       "name": "mod 3 param",
-      "type": "number"
+      "type": "number",
+      "description": "The \"parameter\" value associated with the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20param"
     },
     {
       "name": "mod 3 min",
-      "type": "number"
+      "type": "number",
+      "description": "The \"min\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20min"
     },
     {
       "name": "mod 3 max",
-      "type": "number"
+      "type": "number",
+      "description": "The \"max\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20max"
     },
     {
       "name": "mod 4",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the output item properties Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23"
     },
     {
       "name": "mod 4 chance",
-      "type": "number"
+      "type": "number",
+      "description": "The percent chance that the property will be assigned. If this equals 0, then the Property will always be assigned.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20chance"
     },
     {
       "name": "mod 4 param",
-      "type": "number"
+      "type": "number",
+      "description": "The \"parameter\" value associated with the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20param"
     },
     {
       "name": "mod 4 min",
-      "type": "number"
+      "type": "number",
+      "description": "The \"min\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20min"
     },
     {
       "name": "mod 4 max",
-      "type": "number"
+      "type": "number",
+      "description": "The \"max\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20max"
     },
     {
       "name": "mod 5",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the output item properties Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23"
     },
     {
       "name": "mod 5 chance",
-      "type": "number"
+      "type": "number",
+      "description": "The percent chance that the property will be assigned. If this equals 0, then the Property will always be assigned.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20chance"
     },
     {
       "name": "mod 5 param",
-      "type": "number"
+      "type": "number",
+      "description": "The \"parameter\" value associated with the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20param"
     },
     {
       "name": "mod 5 min",
-      "type": "number"
+      "type": "number",
+      "description": "The \"min\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20min"
     },
     {
       "name": "mod 5 max",
-      "type": "text"
+      "type": "number",
+      "description": "The \"max\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20max"
     },
     {
       "name": "output b",
-      "type": "text"
+      "type": "text",
+      "description": "Controls an output item. Uses the item's unique code. Users can also add output modifiers by adding a comma \",\" to the output and using a code. References an itemtypes.ItemType, item code, uniqueitems.index, sets.index, or one of the modifiers described below",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#output"
     },
     {
       "name": "b lvl",
-      "type": "number"
+      "type": "number",
+      "description": "Forces the output item level to be a specific level. If this field is used, then ignore the .plvl and .ilvl fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#lvl"
     },
     {
       "name": "b plvl",
-      "type": "text"
+      "type": "number",
+      "description": "This is a numeric ratio that gets multiplied with the current player's level, to add to the output item's level requirement",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#plvl"
     },
     {
       "name": "b ilvl",
-      "type": "number"
+      "type": "number",
+      "description": "This is a numeric ratio that gets multiplied with .input 1 item's level, to add to the output item's level requirement",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#ilvl"
     },
     {
       "name": "b mod 1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the output item properties Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23"
     },
     {
       "name": "b mod 1 chance",
-      "type": "text"
+      "type": "number",
+      "description": "The percent chance that the property will be assigned. If this equals 0, then the Property will always be assigned.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20chance"
     },
     {
       "name": "b mod 1 param",
-      "type": "text"
+      "type": "number",
+      "description": "The \"parameter\" value associated with the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20param"
     },
     {
       "name": "b mod 1 min",
-      "type": "text"
+      "type": "number",
+      "description": "The \"min\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20min"
     },
     {
       "name": "b mod 1 max",
-      "type": "text"
+      "type": "number",
+      "description": "The \"max\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20max"
     },
     {
       "name": "b mod 2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the output item properties Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23"
     },
     {
       "name": "b mod 2 chance",
-      "type": "text"
+      "type": "number",
+      "description": "The percent chance that the property will be assigned. If this equals 0, then the Property will always be assigned.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20chance"
     },
     {
       "name": "b mod 2 param",
-      "type": "text"
+      "type": "number",
+      "description": "The \"parameter\" value associated with the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20param"
     },
     {
       "name": "b mod 2 min",
-      "type": "text"
+      "type": "number",
+      "description": "The \"min\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20min"
     },
     {
       "name": "b mod 2 max",
-      "type": "text"
+      "type": "number",
+      "description": "The \"max\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20max"
     },
     {
       "name": "b mod 3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the output item properties Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23"
     },
     {
       "name": "b mod 3 chance",
-      "type": "text"
+      "type": "number",
+      "description": "The percent chance that the property will be assigned. If this equals 0, then the Property will always be assigned.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20chance"
     },
     {
       "name": "b mod 3 param",
-      "type": "text"
+      "type": "number",
+      "description": "The \"parameter\" value associated with the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20param"
     },
     {
       "name": "b mod 3 min",
-      "type": "text"
+      "type": "number",
+      "description": "The \"min\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20min"
     },
     {
       "name": "b mod 3 max",
-      "type": "text"
+      "type": "number",
+      "description": "The \"max\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20max"
     },
     {
       "name": "b mod 4",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the output item properties Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23"
     },
     {
       "name": "b mod 4 chance",
-      "type": "text"
+      "type": "number",
+      "description": "The percent chance that the property will be assigned. If this equals 0, then the Property will always be assigned.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20chance"
     },
     {
       "name": "b mod 4 param",
-      "type": "text"
+      "type": "number",
+      "description": "The \"parameter\" value associated with the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20param"
     },
     {
       "name": "b mod 4 min",
-      "type": "text"
+      "type": "number",
+      "description": "The \"min\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20min"
     },
     {
       "name": "b mod 4 max",
-      "type": "text"
+      "type": "number",
+      "description": "The \"max\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20max"
     },
     {
       "name": "b mod 5",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the output item properties Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23"
     },
     {
       "name": "b mod 5 chance",
-      "type": "text"
+      "type": "number",
+      "description": "The percent chance that the property will be assigned. If this equals 0, then the Property will always be assigned.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20chance"
     },
     {
       "name": "b mod 5 param",
-      "type": "text"
+      "type": "number",
+      "description": "The \"parameter\" value associated with the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20param"
     },
     {
       "name": "b mod 5 min",
-      "type": "text"
+      "type": "number",
+      "description": "The \"min\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20min"
     },
     {
       "name": "b mod 5 max",
-      "type": "text"
+      "type": "number",
+      "description": "The \"max\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20max"
     },
     {
       "name": "output c",
-      "type": "text"
+      "type": "text",
+      "description": "Controls an output item. Uses the item's unique code. Users can also add output modifiers by adding a comma \",\" to the output and using a code. References an itemtypes.ItemType, item code, uniqueitems.index, sets.index, or one of the modifiers described below",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#output"
     },
     {
       "name": "c lvl",
-      "type": "number"
+      "type": "number",
+      "description": "Forces the output item level to be a specific level. If this field is used, then ignore the .plvl and .ilvl fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#lvl"
     },
     {
       "name": "c plvl",
-      "type": "text"
+      "type": "number",
+      "description": "This is a numeric ratio that gets multiplied with the current player's level, to add to the output item's level requirement",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#plvl"
     },
     {
       "name": "c ilvl",
-      "type": "number"
+      "type": "number",
+      "description": "This is a numeric ratio that gets multiplied with .input 1 item's level, to add to the output item's level requirement",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#ilvl"
     },
     {
       "name": "c mod 1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the output item properties Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23"
     },
     {
       "name": "c mod 1 chance",
-      "type": "text"
+      "type": "number",
+      "description": "The percent chance that the property will be assigned. If this equals 0, then the Property will always be assigned.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20chance"
     },
     {
       "name": "c mod 1 param",
-      "type": "text"
+      "type": "number",
+      "description": "The \"parameter\" value associated with the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20param"
     },
     {
       "name": "c mod 1 min",
-      "type": "text"
+      "type": "number",
+      "description": "The \"min\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20min"
     },
     {
       "name": "c mod 1 max",
-      "type": "text"
+      "type": "number",
+      "description": "The \"max\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20max"
     },
     {
       "name": "c mod 2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the output item properties Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23"
     },
     {
       "name": "c mod 2 chance",
-      "type": "text"
+      "type": "number",
+      "description": "The percent chance that the property will be assigned. If this equals 0, then the Property will always be assigned.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20chance"
     },
     {
       "name": "c mod 2 param",
-      "type": "text"
+      "type": "number",
+      "description": "The \"parameter\" value associated with the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20param"
     },
     {
       "name": "c mod 2 min",
-      "type": "text"
+      "type": "number",
+      "description": "The \"min\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20min"
     },
     {
       "name": "c mod 2 max",
-      "type": "text"
+      "type": "number",
+      "description": "The \"max\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20max"
     },
     {
       "name": "c mod 3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the output item properties Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23"
     },
     {
       "name": "c mod 3 chance",
-      "type": "text"
+      "type": "number",
+      "description": "The percent chance that the property will be assigned. If this equals 0, then the Property will always be assigned.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20chance"
     },
     {
       "name": "c mod 3 param",
-      "type": "text"
+      "type": "number",
+      "description": "The \"parameter\" value associated with the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20param"
     },
     {
       "name": "c mod 3 min",
-      "type": "text"
+      "type": "number",
+      "description": "The \"min\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20min"
     },
     {
       "name": "c mod 3 max",
-      "type": "text"
+      "type": "number",
+      "description": "The \"max\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20max"
     },
     {
       "name": "c mod 4",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the output item properties Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23"
     },
     {
       "name": "c mod 4 chance",
-      "type": "text"
+      "type": "number",
+      "description": "The percent chance that the property will be assigned. If this equals 0, then the Property will always be assigned.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20chance"
     },
     {
       "name": "c mod 4 param",
-      "type": "text"
+      "type": "number",
+      "description": "The \"parameter\" value associated with the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20param"
     },
     {
       "name": "c mod 4 min",
-      "type": "text"
+      "type": "number",
+      "description": "The \"min\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20min"
     },
     {
       "name": "c mod 4 max",
-      "type": "text"
+      "type": "number",
+      "description": "The \"max\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20max"
     },
     {
       "name": "c mod 5",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the output item properties Reference of properties.code or PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23"
     },
     {
       "name": "c mod 5 chance",
-      "type": "text"
+      "type": "number",
+      "description": "The percent chance that the property will be assigned. If this equals 0, then the Property will always be assigned.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20chance"
     },
     {
       "name": "c mod 5 param",
-      "type": "text"
+      "type": "number",
+      "description": "The \"parameter\" value associated with the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20param"
     },
     {
       "name": "c mod 5 min",
-      "type": "text"
+      "type": "number",
+      "description": "The \"min\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20min"
     },
     {
       "name": "c mod 5 max",
-      "type": "number"
+      "type": "number",
+      "description": "The \"max\" value to assign to the listed property (mod). Usage depends on the property function (See properties.func#)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/cubemain.html#mod%20%23%20max"
     },
     {
       "name": "*eol",

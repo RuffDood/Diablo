@@ -2,863 +2,1422 @@
   "table": "misc",
   "category": "items",
   "file": "global/excel/misc.txt",
-  "description": "Table misc du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 75,
+  "description": "This file controls the functionalities for miscellaneous type items, such as the non-weapons and non-armor items. This file is loaded together with other similar files in the following order: weapons, armor, misc. These combined files form the items structure. Technically these files share the same fields, but some fields are exclusive for specific item types, so they are not displayed in the data files that do not need them. These are the fields exclusive to this file. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 176,
   "columns": [
     {
       "name": "name",
       "type": "text",
-      "description": "This is a reference field to define the item; it does not need to be uniquely named",
-      "guideType": "[O]"
+      "description": "Reference field to define the item.",
+      "guideType": "[comment]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#name"
     },
     {
       "name": "compactsave",
-      "type": "boolean",
-      "description": "If equals 1, then only the item's base stats will be stored in the character save, but not any modifiers or additional stats. If equals 0, then all of the items stats will be saved.",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then only the item's base stats will be stored in the character save, but not any modifiers or additional stats. If equals 0, then all of the items stats will be saved.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#compactsave"
     },
     {
       "name": "version",
       "type": "number",
-      "description": "Defines which game version to create this item (0 = Classic mode | 100 = Expansion mode)",
-      "guideType": "[N]"
+      "description": "Defines which game version to create this item (0 = Classic mode | 100 = Expansion mode).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#version"
     },
     {
       "name": "level",
       "type": "number",
       "description": "Controls the base item level. This is used for determining when the item is allowed to drop, such as making sure that the item level is not greater than the monster's level or the area level.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#level"
     },
     {
       "name": "ShowLevel",
-      "type": "boolean",
-      "description": "If equals 1, then display the item level next to the item name. If equals 0, then ignore this.",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then display the item level next to the item name. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#ShowLevel"
     },
     {
       "name": "levelreq",
       "type": "number",
-      "description": "Controls the player level requirement for being able to use the item",
-      "guideType": "[N]"
+      "description": "Controls the player level requirement for being able to use the item.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#levelreq"
     },
     {
       "name": "reqstr",
       "type": "number",
-      "description": "Defines the amount of the Strength attribute needed to use the item",
-      "guideType": "[N]"
+      "description": "Defines the amount of the Strength attribute needed to use the item.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#reqstr"
     },
     {
       "name": "reqdex",
       "type": "number",
-      "description": "Defines the amount of the Dexterity attribute needed to use the item",
-      "guideType": "[N]"
+      "description": "Defines the amount of the Dexterity attribute needed to use the item.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#reqdex"
     },
     {
       "name": "rarity",
       "type": "number",
-      "description": "Determines the chance that the item will randomly spawn (1 / N) . The higher the value then the rarer the item will be. This field depends on the spawnable field being enabled, the quest field being disabled, and the item level being less than or equal to the area level. This value is also affected by the relative Act number that the item is dropping in, where the higher the Act number, then the more common the item will drop.",
-      "guideType": "[N]"
+      "description": "Determines the chance that the item will randomly spawn (1/#). The higher the value then the rarer the item will be. This field depends on the .spawnable field being enabled, the .quest field being disabled, and the item level being less than or equal to the area level. This value is also affected by the relative Act number that the item is dropping in, where the higher the Act number, then the more common the item will drop.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#rarity"
     },
     {
       "name": "spawnable",
-      "type": "boolean",
-      "description": "If equals 1, then this item can be randomly spawned. If equals 0, then this item will never randomly spawn.",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this item can be randomly spawned. If equals 0, then this item will never randomly spawn. Community note: If this field is enabled, the item can still be created using the Horadric Cube.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#spawnable"
+    },
+    {
+      "name": "DropConditionCalc",
+      "type": "text",
+      "description": "If the evaluated result of this condition is 0, then prevent the item from being randomly dropped in treasure classes. Treasure Class scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#DropConditionCalc"
     },
     {
       "name": "speed",
       "type": "number",
-      "description": "For Armors: Controls the Walk/Run Speed reduction when wearing the item. For Weapons: Controls the Attack Speed reduction when wearing the item.",
-      "guideType": "[N]"
+      "description": "If the item type is an armor, then this will affect the Walk/Run Speed reduction when wearing the armor. If the item type is a weapon, then this will affect the Attack Speed reduction when wearing the weapon.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#speed"
     },
     {
       "name": "nodurability",
-      "type": "boolean",
-      "description": "If equals 1, then the item will not have durability. If equals 0, then the item will have durability.",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the item will not have durability. If equals 0, then the item will have durability.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#nodurability"
     },
     {
       "name": "cost",
       "type": "number",
-      "description": "Defines the base gold cost of the item when being sold by an NPC. This can be affected by item modifiers and the rarity of the item.",
-      "guideType": "[N]"
+      "description": "Defines the base gold cost of the item when being sold by an NPC. This can be affected by item modifiers and the rarity of the item. Community note: The rarity of the item has no bearing on the cost. This base cost is modified by the 'Reduced Vendor Costs' property and the costs of each stat as defined in itemstatcost.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#cost"
     },
     {
       "name": "gamble cost",
       "type": "number",
-      "description": "Defines the gambling gold cost of the item on the Gambling UI. Only functions for rings and amulets.",
-      "guideType": "[N]"
+      "description": "Defines the gambling gold cost of the item on the Gambling UI.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#gamble%20cost"
     },
     {
       "name": "code",
       "type": "text",
-      "description": "Defines a unique 3* letter/number identifier code for the item. This code is case sensitive, so a69 and A69 are considered different. *Can technically use 4 characters instead of 3, but Items.json will not process it (no visuals).",
-      "guideType": "[O]"
+      "description": "Defines a unique 3 letter/number code for the item. This is used as an identifier to reference the item.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#code"
     },
     {
       "name": "alternategfx",
       "type": "text",
-      "description": "Uses a unique 3 letter/number code similar to the defined code fields to determine what in-game graphics to display on the player character when the item is equipped",
-      "guideType": "[O]"
+      "description": "Uses a unique 3 letter/number code similar to the defined .code fields to determine what in-game graphics to display on the player character when the item is equipped.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#alternategfx"
     },
     {
       "name": "namestr",
       "type": "text",
-      "description": "String Key that is used for the base item name. Reference string files found in local/lng/strings, such as item-names.json",
-      "guideType": "[O]"
+      "description": "String Key that is used for the base item name.",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#namestr"
     },
     {
-      "name": "auto prefix",
-      "type": "number",
-      "description": "Automatically picks an item affix name from a designated group value from AutoMagic.txt . Applies to all item qualities, excluding sets and uniques.",
-      "guideType": "[N]"
+      "name": "normcode",
+      "type": "text",
+      "description": "Links to a .code field to determine the normal version of the item Community note: This column doesn't exist by default in misc.txt. It can be safely added. An item must have an entry in this column if it can be gambled, otherwise the game will crash. (Rings and amulets are a hardcoded exception.)",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#normcode"
+    },
+    {
+      "name": "ubercode",
+      "type": "text",
+      "description": "Links to a .code field to determine the Exceptional version of the item Community note: This column doesn't exist by default in misc.txt. It can be safely added. An item must have an entry in this column if it can be gambled, otherwise the game will crash. (Rings and amulets are a hardcoded exception.)",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#ubercode"
+    },
+    {
+      "name": "ultracode",
+      "type": "text",
+      "description": "Links to a .code field to determine the Elite version of the item Community note: This column doesn't exist by default in misc.txt. It can be safely added. An item must have an entry in this column if it can be gambled, otherwise the game will crash. (Rings and amulets are a hardcoded exception.)",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#ultracode"
     },
     {
       "name": "component",
       "type": "number",
-      "description": "Determines the layer of player animation when the item is equipped. This uses a Token entry from Composit.txt",
-      "guideType": "[N]"
+      "description": "Determines the layer of player animation when the item is equipped. This uses a code referenced from the Composit file.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#component"
     },
     {
       "name": "invwidth",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the width of grid cells that the item occupies in the player inventory.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#invwidth"
     },
     {
       "name": "invheight",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the height of grid cells that the item occupies in the player inventory.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#invheight"
     },
     {
       "name": "hasinv",
-      "type": "boolean",
-      "description": "Determines if an item can be socketed with runes, jewels or Gems. (1 = Socketable | 0 = Not Socketable)",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the item will have its own inventory allowing for the capability to socket gems, runes, or jewels. If equals 0, then the item cannot have sockets.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#hasinv"
     },
     {
       "name": "gemsockets",
       "type": "number",
-      "description": "Controls the maximum number of sockets allowed on this item. This is limited by the item's size based on the invwidth and invheight fields. This also compares with the MaxSockets1 field(s) in the ItemTypes.txt file.",
-      "guideType": "[N]"
+      "description": "Controls the maximum number of sockets allowed on this item. This is limited by the item's size based on the .invwidth and .invheight fields. This also compares with itemtypes.MaxSockets#.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#gemsockets"
     },
     {
       "name": "gemapplytype",
       "type": "number",
-      "description": "Determines which affect from a gem or rune will be applied when it is socketed into this item ( Gems.txt )",
-      "guideType": "[N]"
+      "description": "Determines which affect from a gem or rune will be applied when it is socketed into this item (See gems).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#gemapplytype"
     },
     {
       "name": "flippyfile",
       "type": "text",
-      "description": "Controls which DC6 file to use for displaying the item in the game world when it is dropped on the ground (uses the file name as the input). *Legacy View Only",
-      "guideType": "[O]"
+      "description": "Controls which DC6 file to use for displaying the item in the game world when it is dropped on the ground (uses the file name as the input).",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#flippyfile"
     },
     {
       "name": "invfile",
       "type": "text",
-      "description": "Controls which DC6 file to use for displaying the item graphics in the inventory (uses the file name as the input). *Legacy View Only",
-      "guideType": "[O]"
+      "description": "Controls which DC6 file to use for displaying the item graphics in the inventory (uses the file name as the input).",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#invfile"
     },
     {
       "name": "uniqueinvfile",
       "type": "text",
-      "description": "Controls which DC6 file to use for displaying the item graphics in the inventory when it is a Unique quality item (uses the file name as the input). *Legacy View Only (Any text required in field to use entry from uniques.JSON for D2R view)",
-      "guideType": "[O]"
+      "description": "Controls which DC6 file to use for displaying the item graphics in the inventory when it is a Unique quality item (uses the file name as the input).",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#uniqueinvfile"
     },
     {
       "name": "Transmogrify",
-      "type": "boolean",
-      "description": "If equals 1, then the item will use the transmogrify function. If equals 0, then ignore this. This field depends on the \"useable\" field being enabled. Does not function at all",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the item will use the transmogrify function. If equals 0, then ignore this. This field depends on the .useable field being enabled. Community note: The Transmogrify behavior is unused in the base game, and is a relic from the alpha version of Diablo II, which allowed for the conversion of organs (dropped items) into various utility items. When Transmogrify is enabled, the item will get a piece of text in its tooltip, stating 'Right Click to Convert to X' and it will transform into another item. **Transmogrify only works on legacy versions of the game.**",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#Transmogrify"
     },
     {
       "name": "TMogType",
       "type": "text",
-      "description": "Links to a \"code\" field to determine which item is chosen to transmogrify this item to. Does not function at all",
-      "guideType": "[O]"
+      "description": "Links to a .code field to determine which item is chosen to transmogrify this item to.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#TMogType"
     },
     {
       "name": "TMogMin",
       "type": "number",
-      "description": "Controls the minimum quantity that the transmogrify item will have. This depends on what item was chosen in the \"TMogType\" field, and that the transmogrify item has quantity. Does not function at all",
-      "guideType": "[N]"
+      "description": "Controls the minimum quantity that the transmogrify item will have. This depends on what item was chosen in the .TMogType field, and that the transmogrify item has quantity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#TMogMin"
     },
     {
       "name": "TMogMax",
       "type": "number",
-      "description": "Controls the minimum quantity that the transmogrify item will have. This depends on what item was chosen in the \"TMogType\" field, and that the transmogrify item has quantity. Does not function at all",
-      "guideType": "[N]"
+      "description": "Controls the maximum quantity that the transmogrify item will have. This depends on what item was chosen in the .TMogType field, and that the transmogrify item has quantity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#TMogMax"
     },
     {
       "name": "useable",
-      "type": "boolean",
-      "description": "If equals 1, then the item can be used with the right-click mouse button command (this only works with specific belt items or quest items). If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the item can be used with the right-click mouse button command (this only works with specific belt items or quest items). If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#useable"
     },
     {
       "name": "type",
       "type": "text",
-      "description": "Points to an Code defined in the ItemTypes.txt file, which controls how the item functions",
-      "guideType": "[O]"
+      "description": "This is the item's type, which controls how the item functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#type"
     },
     {
       "name": "type2",
       "type": "text",
-      "description": "Points to a secondary Item Type defined in the ItemTypes.txt file, which controls how the item functions. This is optional but can add more functionalities and possibilities with the item",
-      "guideType": "[O]"
+      "description": "Secondary item type. This is optional but can add more functionalities and possibilities with the item.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#type2"
     },
     {
       "name": "dropsound",
       "type": "text",
-      "description": "Points to a sound defined in the Sounds.txt file. Used when the item is dropped on the ground",
-      "guideType": "[O]"
+      "description": "Sound used when the item is dropped on the ground.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#dropsound"
     },
     {
       "name": "dropsfxframe",
       "type": "number",
-      "description": "Defines which frame in the flippyfile animation to play the dropsound when the item is dropped on the ground",
-      "guideType": "[N]"
+      "description": "Defines which frame in the .flippyfile animation to play the .dropsound sound when the item is dropped on the ground.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#dropsfxframe"
     },
     {
       "name": "usesound",
       "type": "text",
-      "description": "Points to sound defined in the Sounds.txt file. Used when the item is moved in the inventory or used",
-      "guideType": "[O]"
+      "description": "Sound used when the item is moved in the inventory or used.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#usesound"
     },
     {
       "name": "unique",
-      "type": "boolean",
-      "description": "If equals 1, then the item can only spawn as a Unique quality type. If equals 0, then the item can spawn as other quality types",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the item can only spawn as a Unique quality type. If equals 0, then the item can spawn as other quality types.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#unique"
     },
     {
       "name": "transparent",
-      "type": "boolean",
-      "description": "If equals 1, then the item will be drawn transparent on the player model (similar to ethereal models). If equals 0, then the item will appear solid on the player model",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the item will be drawn transparent on the player model (similar to ethereal models). If equals 0, then the item will appear solid on the player model.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#transparent"
     },
     {
       "name": "transtbl",
       "type": "number",
-      "description": "Controls what type of transparency to use (if the above transparent field is enabled). Referenced by the Code value of the Transparency Table",
-      "guideType": "[N]"
+      "description": "Controls what type of transparency to use, based on the .transparent field being enabled. Corresponds to a enums.ETRANSTYPE.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#transtbl"
     },
     {
       "name": "lightradius",
       "type": "number",
-      "description": "Controls the value of the light radius that this item can apply on the monster. This only affects monsters with this item equipped, not other types of units. This is ignored if the item's component on the monster is \"lit\", \"med\", or \"hvy\"",
-      "guideType": "[N]"
+      "description": "Controls the value of the light radius that this item can apply on the monster. This only affects monsters with this item equipped, not other types of units. This is ignored if the item's component on the monster is \"lit\", \"med\", or \"hvy\".",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#lightradius"
     },
     {
       "name": "belt",
       "type": "number",
-      "description": "Controls which belt type to use for belt items only. This field determines what index entry in the Belts.txt file to use",
-      "guideType": "[N]"
+      "description": "Controls which belt type to use for belt items only. This field determines what index entry in the belts file to use.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#belt"
     },
     {
       "name": "autobelt",
-      "type": "boolean",
-      "description": "If equals 1, then the item will automatically be placed is a free slot in the belt when picked up, if possible. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the item will automatically be placed is a free slot in the belt when picked up, if possible. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#autobelt"
     },
     {
       "name": "stackable",
-      "type": "boolean",
-      "description": "If equals 1, then the item will use a quantity field and handle stacking functionality. This can depend on if the item type is throwable, is a type of ammunition, or is some other kind of miscellaneous item. If equals 0, then the item cannot be stacked",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the item will use a quantity field and handle stacking functionality. This can depend on if the item type is throwable, is a type of ammunition, or is some other kind of miscellaneous item. If equals 0, then the item cannot be stacked. Community note: Not all items can be stacked if this property is turned on. Notably, gems/runes will crash the game if they are inserted into an item while they have a quantity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#stackable"
     },
     {
       "name": "minstack",
       "type": "number",
-      "description": "Controls the minimum stack count or quantity that is allowed on the item. This field depends on the stackable field being enabled",
-      "guideType": "[N]"
+      "description": "Controls the minimum stack count or quantity that is allowed on the item. This field depends on the .stackable field being enabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#minstack"
     },
     {
       "name": "maxstack",
       "type": "number",
-      "description": "Controls the maximum stack count or quantity that is allowed on the item. This field depends on the stackable field being enabled",
-      "guideType": "[N]"
+      "description": "Controls the maximum stack count or quantity that is allowed on the item. This field depends on the .stackable field being enabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#maxstack"
     },
     {
       "name": "spawnstack",
       "type": "number",
-      "description": "Controls the stack count or quantity that the item can spawn with. This field depends on the stackable field being enabled",
-      "guideType": "[N]"
+      "description": "Controls the stack count or quantity that the item can spawn with. This field depends on the .stackable field being enabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#spawnstack"
     },
     {
       "name": "quest",
       "type": "number",
-      "description": "Controls what quest class is tied to the item which can enable certain item functionalities for a specific quest. Any value greater than 0 will also mean the item is flagged as a quest item, which can affect how it is displayed in tooltips, how it is traded with other players, its item rarity, and how it cannot be sold to an NPC. If equals 0, then the item will not be flagged as a quest item. Referenced by the Code value of the Quests Table",
-      "guideType": "[N]"
+      "description": "Controls what quest class is tied to the item which can enable certain item functionalities for a specific quest. Any value greater than 0 will also mean the item is flagged as a quest item, which can affect how it is displayed in tooltips, how it is traded with other players, its item rarity, and how it cannot be sold to an NPC. If equals 0, then the item will not be flagged as a quest item.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#quest"
     },
     {
       "name": "questdiffcheck",
-      "type": "boolean",
-      "description": "If equals 1 and the quest field is enabled, then the game will check the current difficulty setting and will tie that difficulty setting to the quest item. This means that the player can have more than 1 of the same quest item as long each they are obtained per difficulty mode (Normal / Nightmare / Hell). If equals 0 and the \"quest\" field is enabled, then the player can only have 1 count of the quest item in the inventory, regardless of difficulty",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1 and the .quest field is enabled, then the game will check the current difficulty setting and will tie that difficulty setting to the quest item. This means that the player can have more than 1 of the same quest item as long each they are obtained per difficulty mode (Normal / Nightmare / Hell). If equals 0 and the .quest field is enabled, then the player can only have 1 count of the quest item in the inventory, regardless of difficulty.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#questdiffcheck"
     },
     {
       "name": "missiletype",
-      "type": "text",
-      "description": "Points to the *ID field from the Missiles.txt file, which determines what type of missile is used when using the throwing weapons",
-      "guideType": "[O]"
+      "type": "number",
+      "description": "Points to an entry's index in missiles, which determines what type of missile is used when using the throwing weapons",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#missiletype"
     },
     {
       "name": "spellicon",
       "type": "number",
-      "description": "Determines the icon asset for displaying the item's spell. This uses an ID value based on the global skillicon file. If this value equals -1, then the item's spell will not display an icon. Used as a parameter for a PSpell function",
-      "guideType": "[N]"
+      "description": "Determines the icon asset for displaying the item's spell. This uses an ID value based on the global skillicon file. If this value equals -1, then the item's spell will not display an icon. Used as a parameter for a .pSpell function.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#spellicon"
     },
     {
       "name": "pSpell",
       "type": "number",
-      "description": "Uses the Code value to select a spell from the Player Spell Table when the item is used. This depends on the item type.",
-      "guideType": "[N]"
+      "description": "Uses an ID value to select a spell function when the item is used. This depends on the item type.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#pSpell"
     },
     {
       "name": "state",
       "type": "text",
-      "description": "Links to a State field defined in the States.txt file. It signifies what state will be applied to the player when the item is used. Used as a parameter for a PSpell function",
-      "guideType": "[O]"
+      "description": "Signifies what state will be applied to the player when the item is used. Used as a parameter for a .pSpell function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#state"
     },
     {
       "name": "cstate1",
-      "type": "text"
+      "type": "text",
+      "description": "Signifies what state will be removed from the player when the item is used. Used as a parameter for a .pSpell function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#cstate%23"
     },
     {
       "name": "cstate2",
-      "type": "text"
+      "type": "text",
+      "description": "Signifies what state will be removed from the player when the item is used. Used as a parameter for a .pSpell function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#cstate%23"
     },
     {
       "name": "len",
-      "type": "number",
-      "description": "Calculates the frame length of a state. Used as a parameter for a PSpell function",
-      "guideType": "[N]"
+      "type": "text",
+      "description": "Calculates the frame length of a state. Used as a parameter for a .pSpell function. Item scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#len"
     },
     {
       "name": "stat1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the stat modifier when the item is used. Used as a parameter for a .pSpell function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#stat%23"
     },
     {
       "name": "calc1",
-      "type": "text"
+      "type": "text",
+      "description": "Calculates the value of the relative .stat# field. Used as a parameter for a .pSpell function. Item scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#calc%23"
     },
     {
       "name": "stat2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the stat modifier when the item is used. Used as a parameter for a .pSpell function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#stat%23"
     },
     {
       "name": "calc2",
-      "type": "number"
+      "type": "text",
+      "description": "Calculates the value of the relative .stat# field. Used as a parameter for a .pSpell function. Item scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#calc%23"
     },
     {
       "name": "stat3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the stat modifier when the item is used. Used as a parameter for a .pSpell function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#stat%23"
     },
     {
       "name": "calc3",
-      "type": "text"
+      "type": "text",
+      "description": "Calculates the value of the relative .stat# field. Used as a parameter for a .pSpell function. Item scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#calc%23"
     },
     {
       "name": "spelldesc",
       "type": "number",
-      "description": "Uses the code value from the below table to format and display string for the item's tooltip:",
-      "guideType": "[N]"
+      "description": "Uses an ID value to select a function to format a string and add this string to the item's tooltip",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#spelldesc"
     },
     {
       "name": "spelldescstr",
-      "type": "text"
+      "type": "text",
+      "description": "String Key. Used as a parameter for the .spelldesc function.",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#spelldescstr"
     },
     {
       "name": "spelldescstr2",
       "type": "text",
-      "description": "Defines the secondary string key used by the above spelldesc table",
-      "guideType": "[O]"
+      "description": "String Key. Used as a parameter for the .spelldesc function.",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#spelldescstr"
     },
     {
       "name": "spelldesccalc",
       "type": "text",
-      "description": "Value applied or used by the above spelldesc table",
-      "guideType": "[C]"
+      "description": "Calculates the numeric equation. Used as a parameter for the .spelldesc function. Item scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#spelldesccalc"
     },
     {
       "name": "spelldesccolor",
       "type": "number",
-      "description": "Uses the Code value from the below table, for the above spelldesc table.",
-      "guideType": "[N]"
+      "description": "Uses a code number to change the color of the string used in the .spelldesc function.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#spelldesccolor"
+    },
+    {
+      "name": "auto prefix",
+      "type": "number",
+      "description": "Automatically picks an item affix name from a designated automagic.group value, instead of using random prefixes. This is only used when the item is Magical quality. Community note: This description is inaccurate - it applies to normal (white/grey) items as well, and it doesn't replace random prefixes - it adds to them. This column needs to be set in order for automagic to work properly.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#auto%20prefix"
     },
     {
       "name": "durwarning",
       "type": "number",
-      "description": "Controls the threshold value for durability to display the low durability warning UI. This is only used if the item has durability",
-      "guideType": "[N]"
+      "description": "Controls the threshold value for durability to display the low durability warning UI. This is only used if the item has durability.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#durwarning"
     },
     {
       "name": "qntwarning",
       "type": "number",
-      "description": "Controls the threshold value for quantity to display the low quantity warning UI. This is only used if the item has stacks",
-      "guideType": "[N]"
+      "description": "Controls the threshold value for quantity to display the low quantity warning UI. This is only used if the item has stacks.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#qntwarning"
     },
     {
       "name": "gemoffset",
       "type": "number",
-      "description": "Determines the starting index of possible gem/rune options based on the gemapplytype field and the Gems.txt entries. For example, if this value equals 9, then the game will start with index 9 (\"Chipped Emerald\") and ignore lower-indexed entries, meaning the item cannot roll these options",
-      "guideType": "[N]"
+      "description": "Determines the starting index offset for reading the gems file when determining what effects gems or runes will have the item based on the .gemapplytype field. For example, if this value equals 9, then the game will start with index 9 (\"Chipped Emerald\") and ignore the previously defined gems in the gems.txt file, which can mean that those ignored gems will not apply modifiers when socketed into the item.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#gemoffset"
     },
     {
       "name": "BetterGem",
       "type": "text",
-      "description": "Links to another item's Code field. Also used by Function 18 from the Code field in Shrines.txt to specify which gem is the upgraded version",
-      "guideType": "[O]"
+      "description": "Links to another item's \"code\" field. Used by the function 18 in the shrines.Code field to know what a selected gem's upgrade will be when the player uses the gem shrine.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#BetterGem"
     },
     {
       "name": "bitfield1",
       "type": "number",
-      "description": "Controls different flags that can affect the item. Uses an integer value to check against different bit fields by using the \"&\" operator. For example, if the value equals 5 (binary = 101) then that returns true for both the 4 (binary = 100) and 1 (binary = 1) bit field values.",
-      "guideType": "[N]"
+      "description": "Controls different flags that can affect the item. Uses an integer value to check against different bit fields by using the \"&\" operator. For example, if the value equals 5 (binary = 101) then that returns true for both the 4 (binary = 100) and 1 (binary = 1) bit field values. Community note: This can be used to control which items can be consumed to make an Iron Golem.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#bitfield1"
     },
     {
       "name": "CharsiMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Normal rarity that the NPC can sell at once.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMin"
     },
     {
       "name": "CharsiMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Normal rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMax"
     },
     {
       "name": "CharsiMagicMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Magical rarity that the NPC can sell at once",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMin"
     },
     {
       "name": "CharsiMagicMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Magical rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMax"
     },
     {
       "name": "CharsiMagicLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum magic level allowed for this item type in Magical rarity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicLvl"
     },
     {
       "name": "GheedMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Normal rarity that the NPC can sell at once.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMin"
     },
     {
       "name": "GheedMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Normal rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMax"
     },
     {
       "name": "GheedMagicMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Magical rarity that the NPC can sell at once",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMin"
     },
     {
       "name": "GheedMagicMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Magical rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMax"
     },
     {
       "name": "GheedMagicLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum magic level allowed for this item type in Magical rarity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicLvl"
     },
     {
       "name": "AkaraMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Normal rarity that the NPC can sell at once.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMin"
     },
     {
       "name": "AkaraMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Normal rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMax"
     },
     {
       "name": "AkaraMagicMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Magical rarity that the NPC can sell at once",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMin"
     },
     {
       "name": "AkaraMagicMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Magical rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMax"
     },
     {
       "name": "AkaraMagicLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum magic level allowed for this item type in Magical rarity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicLvl"
     },
     {
       "name": "FaraMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Normal rarity that the NPC can sell at once.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMin"
     },
     {
       "name": "FaraMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Normal rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMax"
     },
     {
       "name": "FaraMagicMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Magical rarity that the NPC can sell at once",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMin"
     },
     {
       "name": "FaraMagicMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Magical rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMax"
     },
     {
       "name": "FaraMagicLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum magic level allowed for this item type in Magical rarity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicLvl"
     },
     {
       "name": "LysanderMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Normal rarity that the NPC can sell at once.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMin"
     },
     {
       "name": "LysanderMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Normal rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMax"
     },
     {
       "name": "LysanderMagicMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Magical rarity that the NPC can sell at once",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMin"
     },
     {
       "name": "LysanderMagicMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Magical rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMax"
     },
     {
       "name": "LysanderMagicLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum magic level allowed for this item type in Magical rarity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicLvl"
     },
     {
       "name": "DrognanMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Normal rarity that the NPC can sell at once.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMin"
     },
     {
       "name": "DrognanMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Normal rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMax"
     },
     {
       "name": "DrognanMagicMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Magical rarity that the NPC can sell at once",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMin"
     },
     {
       "name": "DrognanMagicMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Magical rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMax"
     },
     {
       "name": "DrognanMagicLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum magic level allowed for this item type in Magical rarity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicLvl"
     },
     {
       "name": "HratliMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Normal rarity that the NPC can sell at once.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMin"
     },
     {
       "name": "HratliMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Normal rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMax"
     },
     {
       "name": "HratliMagicMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Magical rarity that the NPC can sell at once",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMin"
     },
     {
       "name": "HratliMagicMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Magical rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMax"
     },
     {
       "name": "HratliMagicLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum magic level allowed for this item type in Magical rarity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicLvl"
     },
     {
       "name": "AlkorMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Normal rarity that the NPC can sell at once.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMin"
     },
     {
       "name": "AlkorMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Normal rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMax"
     },
     {
       "name": "AlkorMagicMin",
-      "type": "text"
+      "type": "number",
+      "description": "Minimum amount of this item type in Magical rarity that the NPC can sell at once",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMin"
     },
     {
       "name": "AlkorMagicMax",
-      "type": "text"
+      "type": "number",
+      "description": "Maximum amount of this item type in Magical rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMax"
     },
     {
       "name": "AlkorMagicLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum magic level allowed for this item type in Magical rarity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicLvl"
     },
     {
       "name": "OrmusMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Normal rarity that the NPC can sell at once.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMin"
     },
     {
       "name": "OrmusMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Normal rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMax"
     },
     {
       "name": "OrmusMagicMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Magical rarity that the NPC can sell at once",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMin"
     },
     {
       "name": "OrmusMagicMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Magical rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMax"
     },
     {
       "name": "OrmusMagicLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum magic level allowed for this item type in Magical rarity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicLvl"
     },
     {
       "name": "ElzixMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Normal rarity that the NPC can sell at once.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMin"
     },
     {
       "name": "ElzixMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Normal rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMax"
     },
     {
       "name": "ElzixMagicMin",
-      "type": "text"
+      "type": "number",
+      "description": "Minimum amount of this item type in Magical rarity that the NPC can sell at once",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMin"
     },
     {
       "name": "ElzixMagicMax",
-      "type": "text"
+      "type": "number",
+      "description": "Maximum amount of this item type in Magical rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMax"
     },
     {
       "name": "ElzixMagicLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum magic level allowed for this item type in Magical rarity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicLvl"
     },
     {
       "name": "AshearaMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Normal rarity that the NPC can sell at once.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMin"
     },
     {
       "name": "AshearaMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Normal rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMax"
     },
     {
       "name": "AshearaMagicMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Magical rarity that the NPC can sell at once",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMin"
     },
     {
       "name": "AshearaMagicMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Magical rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMax"
     },
     {
       "name": "AshearaMagicLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum magic level allowed for this item type in Magical rarity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicLvl"
     },
     {
       "name": "CainMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Normal rarity that the NPC can sell at once.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMin"
     },
     {
       "name": "CainMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Normal rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMax"
     },
     {
       "name": "CainMagicMin",
-      "type": "text"
+      "type": "number",
+      "description": "Minimum amount of this item type in Magical rarity that the NPC can sell at once",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMin"
     },
     {
       "name": "CainMagicMax",
-      "type": "text"
+      "type": "number",
+      "description": "Maximum amount of this item type in Magical rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMax"
     },
     {
       "name": "CainMagicLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum magic level allowed for this item type in Magical rarity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicLvl"
     },
     {
       "name": "HalbuMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Normal rarity that the NPC can sell at once.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMin"
     },
     {
       "name": "HalbuMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Normal rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMax"
     },
     {
       "name": "HalbuMagicMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Magical rarity that the NPC can sell at once",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMin"
     },
     {
       "name": "HalbuMagicMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Magical rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMax"
     },
     {
       "name": "HalbuMagicLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum magic level allowed for this item type in Magical rarity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicLvl"
     },
     {
       "name": "MalahMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Normal rarity that the NPC can sell at once.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMin"
     },
     {
       "name": "MalahMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Normal rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMax"
     },
     {
       "name": "MalahMagicMin",
-      "type": "text"
+      "type": "number",
+      "description": "Minimum amount of this item type in Magical rarity that the NPC can sell at once",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMin"
     },
     {
       "name": "MalahMagicMax",
-      "type": "text"
+      "type": "number",
+      "description": "Maximum amount of this item type in Magical rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMax"
     },
     {
       "name": "MalahMagicLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum magic level allowed for this item type in Magical rarity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicLvl"
     },
     {
       "name": "LarzukMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Normal rarity that the NPC can sell at once.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMin"
     },
     {
       "name": "LarzukMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Normal rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMax"
     },
     {
       "name": "LarzukMagicMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Magical rarity that the NPC can sell at once",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMin"
     },
     {
       "name": "LarzukMagicMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Magical rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMax"
     },
     {
       "name": "LarzukMagicLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum magic level allowed for this item type in Magical rarity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicLvl"
     },
     {
       "name": "AnyaMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Normal rarity that the NPC can sell at once.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMin"
     },
     {
       "name": "AnyaMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Normal rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMax"
     },
     {
       "name": "AnyaMagicMin",
-      "type": "text"
+      "type": "number",
+      "description": "Minimum amount of this item type in Magical rarity that the NPC can sell at once",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMin"
     },
     {
       "name": "AnyaMagicMax",
-      "type": "text"
+      "type": "number",
+      "description": "Maximum amount of this item type in Magical rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMax"
     },
     {
       "name": "AnyaMagicLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum magic level allowed for this item type in Magical rarity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicLvl"
     },
     {
       "name": "JamellaMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Normal rarity that the NPC can sell at once.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMin"
     },
     {
       "name": "JamellaMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Normal rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMax"
     },
     {
       "name": "JamellaMagicMin",
-      "type": "number"
+      "type": "number",
+      "description": "Minimum amount of this item type in Magical rarity that the NPC can sell at once",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMin"
     },
     {
       "name": "JamellaMagicMax",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum amount of this item type in Magical rarity that the NPC can sell at once. This must be equal to or greater than the minimum amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicMax"
     },
     {
       "name": "JamellaMagicLvl",
-      "type": "number"
+      "type": "number",
+      "description": "Maximum magic level allowed for this item type in Magical rarity.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NPCMagicLvl"
     },
     {
       "name": "Transform",
-      "type": "text",
-      "description": "Controls the color palette change of the item for the character model graphics. Referenced by the Code value of the Inventory Transform Table",
-      "guideType": "[O]"
+      "type": "number",
+      "description": "Controls the color palette change of the item for the character model graphics. Corresponds to a enums.EITRANSFORMCLASS.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#Transform"
     },
     {
       "name": "InvTrans",
       "type": "number",
-      "description": "Controls the color palette change of the item for the inventory graphics. Referenced by the Code value of the Inventory Transform Table",
-      "guideType": "[N]"
+      "description": "Controls the color palette change of the item for the inventory graphics. Corresponds to a enums.EITRANSFORMCLASS.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#InvTrans"
     },
     {
       "name": "SkipName",
-      "type": "boolean",
-      "description": "If equals 1 and the item is Unique rarity, then skip adding the item's base name in its title. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1 and the item is Unique rarity, then skip adding the item's base name in its title. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#SkipName"
     },
     {
       "name": "NightmareUpgrade",
       "type": "text",
-      "description": "Links to another item's Code field. Used to determine which item will replace this item when being generated in the NPC's store while the game is playing in Nightmare difficulty. If this field's code equals \"xxx\", then this item will not change in this difficulty",
-      "guideType": "[O]"
+      "description": "Links to another item's .code field. Used to determine which item will replace this item when being generated in the NPC's store while the game is playing in Nightmare difficulty. If this field's .code equals \"xxx\", then this item will not change in this difficulty.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#NightmareUpgrade"
     },
     {
       "name": "HellUpgrade",
       "type": "text",
-      "description": "Links to another item's Code field. Used to determine which item will replace this item when being generated in the NPC's store while the game is playing in Hell difficulty. If this field's code equals \"xxx\", then this item will not change in this difficulty",
-      "guideType": "[O]"
+      "description": "Links to another item's .code field. Used to determine which item will replace this item when being generated in the NPC's store while the game is playing in Hell difficulty. If this field's .code equals \"xxx\", then this item will not change in this difficulty.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#HellUpgrade"
     },
     {
       "name": "mindam",
       "type": "number",
-      "description": "The minimum physical damage provided by the item",
-      "guideType": "[N]"
+      "description": "The minimum physical damage provided by the item.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#mindam"
     },
     {
       "name": "maxdam",
       "type": "number",
-      "description": "The maximum physical damage provided by the item",
-      "guideType": "[N]"
+      "description": "The maximum physical damage provided by the item.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#maxdam"
     },
     {
       "name": "PermStoreItem",
-      "type": "boolean",
-      "description": "If equals 1, then this item will always appear on the NPC's store. If equals 0, then the item will randomly appear on the NPC's store when appropriate",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this item will always appear on the NPC's store. If equals 0, then the item will randomly appear on the NPC's store when appropriate.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#PermStoreItem"
     },
     {
       "name": "multibuy",
-      "type": "boolean",
-      "description": "If equals 1, then use the multi-buy transaction function when holding the shift key and buying this item from an NPC store. This multi-buy function will automatically purchase enough of the item to fill up to a full quantity stack or fill the available belt slots if the item is has the autobelt field enabled. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then use the multi-buy transaction function when holding the shift key and buying this item from an NPC store. This multi-buy function will automatically purchase enough of the item to fill up to a full quantity stack or fill the available belt slots if the item is has the .autobelt field enabled. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#multibuy"
     },
     {
       "name": "Nameable",
-      "type": "boolean",
-      "description": "If equals 1, then the item's name can be personalized by Anya for the Act 5 Betrayal of Harrogath quest reward. If equals 0, then the item cannot be used for the personalized name reward",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the item's name can be personalized by Anya for the Act 5 Betrayal of Harrogath quest reward. If equals 0, then the item cannot be used for the personalized name reward.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#Nameable"
+    },
+    {
+      "name": "EventItem",
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this item will have its named colored with the enums.FONTCOLOR \"EventItemsColor\".",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#EventItem"
+    },
+    {
+      "name": "UICatOverride",
+      "type": "text",
+      "description": "Allows this item to override what UI Category it should use (for loot filter and chronicle uniques page). If there's no override, this item will belong to the category that its type1 field uses. If Null, this item will be excluded from lootfilter / chronicle. If a valid UI Category, this item will belong to that UI category instead of the one its type would usually put it in.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#UICatOverride"
     },
     {
       "name": "diablocloneweight",
       "type": "number",
       "description": "The amount of weight added to the diablo clone progress when this item is sold. When offline, selling this item will instead immediately spawn diablo clone.",
-      "guideType": "[N]"
-    },
-    {
-      "name": "DropConditionCalc",
-      "type": "text"
-    },
-    {
-      "name": "normcode",
-      "type": "text",
-      "description": "Links to the Code field to determine the normal version of the item",
-      "guideType": "[O]"
-    },
-    {
-      "name": "ubercode",
-      "type": "text",
-      "description": "Links to a Code field to determine the Exceptional version of the item",
-      "guideType": "[O]"
-    },
-    {
-      "name": "ultracode",
-      "type": "text",
-      "description": "Links to a Code field to determine the Elite version of the item",
-      "guideType": "[O]"
-    },
-    {
-      "name": "EventItem",
-      "type": "number"
-    },
-    {
-      "name": "UICatOverride",
-      "type": "text"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#diablocloneweight"
     },
     {
       "name": "AdvancedStashStackable",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then marks the item as being stackable in the dedicated shared stash tab. Community note: According to Phrozen Keep member Yupgoolg, you need to also edit layout/bankexpansionlayouthd.json in order for the item to actually show up in the stash tab.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#AdvancedStashStackable"
     },
     {
       "name": "UsageConditionCalc",
-      "type": "text"
+      "type": "text",
+      "description": "If the evaluated result of this BBE is 0, then prevent the item from being used and display the name in red. Item scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/misc.html#UsageConditionCalc"
     }
   ]
 }

@@ -2,15 +2,22 @@
   "table": "itemstatcost",
   "category": "items",
   "file": "global/excel/itemstatcost.txt",
-  "description": "Table itemstatcost du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 43,
+  "description": "This file controls the functionalities for each possible stat on a unit. These defined stats are used to form modifiers for the properties and PropertyGroups files. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 50,
   "columns": [
     {
       "name": "Stat",
       "type": "text",
       "description": "Defines the unique pointer for this stat, which is used in other files",
-      "guideType": "[O]"
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#Stat"
     },
     {
       "name": "*ID",
@@ -20,282 +27,394 @@
     {
       "name": "Send Other",
       "type": "boolean",
-      "description": "If equals 1, then only add the stat to a new monster if the that has no state and has an item mask. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then only add the stat to a new monster if the that has no state and has an item mask. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#Send%20Other"
     },
     {
       "name": "Signed",
       "type": "boolean",
-      "description": "If equals 1, then the stat will be treated as a signed integer, meaning that it can be either a positive or negative value. If equals 0, then stat will be treated as an unsigned integer, meaning that it can only be a positive value. This only affects stats with state bits",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the stat will be treated as a signed integer, meaning that it can be either a positive or negative value. If equals 0, then stat will be treated as an unsigned integer, meaning that it can only be a positive value. This only affects stats with state bits.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#Signed"
     },
     {
       "name": "Send Bits",
       "type": "number",
-      "description": "Controls how many bits of data for the stat to send to the game client, essentially controlling the max value possible for the stat. Signed values should have less than 32 bits, otherwise they will be treated as unsigned values",
-      "guideType": "[N]"
+      "description": "Controls how many bits of data for the stat to send to the game client, essentially controlling the max value possible for the stat. Signed values should have less than 32 bits, otherwise they will be treated as unsigned values.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#Send%20Bits"
     },
     {
       "name": "Send Param Bits",
       "type": "number",
-      "description": "Controls how many bits of data for the stat's parameter value to send to the client for a unit. This value is always treated as a signed integer",
-      "guideType": "[N]"
+      "description": "Controls how many bits of data for the stat's parameter value to send to the client for a unit. This value is always treated as a signed integer.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#Send%20Param%20Bits"
     },
     {
       "name": "UpdateAnimRate",
       "type": "boolean",
-      "description": "If equals 1, then the stat will notify that game to handle and adjust the speed of the unit when the stat changes. If equals 0, then ignore this. This is only checked for stats with States or for specific skill server functions including 30, 61, 71",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the stat will notify that game to handle and adjust the speed of the unit when the stat changes. If equals 0, then ignore this. This is only checked for stats with states or for specific skill server functions including 30, 61, 71.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#UpdateAnimRate"
     },
     {
       "name": "Saved",
       "type": "boolean",
-      "description": "If equals 1, then this state will be inserted in the change list to be stored in the Character Save file. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then this state will be inserted in the change list to be stored in the Character Save file. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#Saved"
     },
     {
       "name": "CSvSigned",
       "type": "boolean",
-      "description": "If equals 1, then the stat will be saved as a signed integer in the Character Save file. If equals 0, then the stat will be saved as an unsigned integer in the Character Save file. This is only used if the \"Saved\" field is enabled",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the stat will be saved as a signed integer in the Character Save file. If equals 0, then the stat will be saved as an unsigned integer in the Character Save file. This is only used if the .Saved field is enabled.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#CSvSigned"
     },
     {
       "name": "CSvBits",
       "type": "number",
-      "description": "Controls how many bits of data for the stat to send to save in the Character Save file. Signed values should have less than 32 bits, otherwise they will be treated as unsigned values. This is only used if the \"Saved\" field is enabled",
-      "guideType": "[N]"
+      "description": "Controls how many bits of data for the stat to send to save in the Character Save file. Signed values should have less than 32 bits, otherwise they will be treated as unsigned values. This is only used if the .Saved field is enabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#CSvBits"
     },
     {
       "name": "CSvParam",
       "type": "number",
-      "description": "Controls how many bits of data for the stat's parameter value to save in the Character Save file. This value is always treated as a signed integer. This is only used if the \"Saved\" field is enabled",
-      "guideType": "[N]"
+      "description": "Controls how many bits of data for the stat's parameter value to save in the Character Save file. This value is always treated as a signed integer. This is only used if the .Saved field is enabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#CSvParam"
     },
     {
       "name": "fCallback",
       "type": "boolean",
-      "description": "If equals 1, then any changes to the stat will call the Callback function which will update thgecharacter's States, skills, or item events based on the changed stat value. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then any changes to the stat will call the Callback function which will update the character's states, skills, or item events based on the changed stat value. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#fCallback"
     },
     {
       "name": "fMin",
       "type": "boolean",
-      "description": "If equals 1, then the stat will have a minimum value that cannot be reduced further than that value (\"MinAccr\" field). If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the stat will have a minimum value that cannot be reduced further than that value (See .MinAccr field). If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#fMin"
     },
     {
       "name": "MinAccr",
       "type": "number",
-      "description": "The minimum value of a stat. This is only used if the \"fMin\" field is enabled",
-      "guideType": "[N]"
+      "description": "The minimum value of a stat. This is only used if the .fMin field is enabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#MinAccr"
     },
     {
       "name": "Encode",
       "type": "number",
-      "description": "Controls how the stat will modify an item's buy, sell, and repair costs. This field uses a code value to select a function to handle the calculations. This field relies on the \"Add\", \"Multiply\" and \"ValShift\" fields. The baseline Stat Value is first modified using the \"ValShift\" field to shift the bits. This Stat Value is then used in the calculations by one of the selected functions.",
-      "guideType": "[N]"
+      "description": "Controls how the stat will modify an item's buy, sell, and repair costs. This field uses a code value to select a function to handle the calculations. This field relies on the .Add, .Multiply and .ValShift fields. The baseline Stat Value is first modified using the .ValShift field to shift the bits. This Stat Value is then used in the calculations by one of the selected functions.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#Encode"
     },
     {
       "name": "Add",
       "type": "number",
-      "description": "Used as a possible parameter value for the \"Encode\" function. Flat integer modification to the Unique item's buy, sell, and repair costs. This is added after the \"Multiply\" field has modified the costs",
-      "guideType": "[N]"
+      "description": "Used as a possible parameter value for the .Encode function. Flat integer modification to the Unique item's buy, sell, and repair costs. This is added after the .Multiply field has modified the costs.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#Add"
     },
     {
       "name": "Multiply",
       "type": "number",
-      "description": "Used as a possible parameter value for the \"Encode\" function.",
-      "guideType": "[N]"
+      "description": "Used as a possible parameter value for the .Encode function. Multiplicative modifier for the item's buy, sell, and repair costs. The way this value is used depends on the .Encode function selected.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#Multiply"
     },
     {
       "name": "ValShift",
       "type": "number",
-      "description": "Used to shift the stat's input value by a number of bits to obtain the actual value when performing calculations (such as for the \"Encode\" function)",
-      "guideType": "[N]"
+      "description": "Used to shift the stat's input value by a number of bits to obtain the actual value when performing calculations (such as for the .Encode function).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#ValShift"
     },
     {
       "name": "1.09-Save Bits",
       "type": "number",
-      "description": "Controls how many bits of data are allocated for the overall size of the stat when saving/reading an item from a Character Save. This value can be treated as a signed or unsigned integer, depending on the stat. This field is only used for items saved in a game version of Patch 1.09d or older",
-      "guideType": "[N]"
+      "description": "Controls how many bits of data are allocated for the overall size of the stat when saving/reading an item from a Character Save. This value can be treated as a signed or unsigned integer, depending on the stat. This field is only used for items saved in a game version of Patch 1.09d or older.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#1.09-Save%20Bits"
     },
     {
       "name": "1.09-Save Add",
       "type": "number",
-      "description": "Controls how many bits of data are allocated for the stat's value when saving/reading an item from a Character Save. This value is treated as a signed integer. This field is only used for items saved in a game version of Patch 1.09d or older",
-      "guideType": "[N]"
+      "description": "Controls how many bits of data are allocated for the stat's value when saving/reading an item from a Character Save. This value is treated as a signed integer. This field is only used for items saved in a game version of Patch 1.09d or older.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#1.09-Save%20Add"
     },
     {
       "name": "Save Bits",
       "type": "number",
-      "description": "Controls how many bits of data are allocated for the overall size of the stat when saving/reading an item from a Character Save. This value can be treated as a signed or unsigned integer, depending on the stat",
-      "guideType": "[N]"
+      "description": "Controls how many bits of data are allocated for the overall size of the stat when saving/reading an item from a Character Save. This value can be treated as a signed or unsigned integer, depending on the stat.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#Save%20Bits"
     },
     {
       "name": "Save Add",
       "type": "number",
-      "description": "Controls how many bits of data are allocated for the stat's value when saving/reading an item from a Character Save. This value is treated as a signed integer",
-      "guideType": "[N]"
+      "description": "Controls how many bits of data are allocated for the stat's value when saving/reading an item from a Character Save. This value is treated as a signed integer.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#Save%20Add"
     },
     {
       "name": "Save Param Bits",
       "type": "number",
-      "description": "Controls how many bits of data for the stat's parameter value to use when saving/reading an item from a Character Save. This value is always treated asan unsigned integer",
-      "guideType": "[N]"
+      "description": "Controls how many bits of data for the stat's parameter value to use when saving/reading an item from a Character Save. This value is always treated as an unsigned integer.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#Save%20Param%20Bits"
     },
     {
       "name": "keepzero",
-      "type": "boolean",
-      "description": "If equals 1, then this stat will remain on the stat change list, when being updated, even if that stat value is 0. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this stat will remain on the stat change list, when being updated, even if that stat value is 0. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#keepzero"
     },
     {
       "name": "op",
       "type": "number",
       "description": "This is the stat operator, used for advanced stat modification when calculating the value of a stat. This can involves using this stat and its value to modify another stat's value. This use a function ID to determine what to calculate.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#op"
     },
     {
       "name": "op param",
       "type": "number",
-      "description": "Used as a possible parameter value for the \"op\" function",
-      "guideType": "[N]"
+      "description": "Used as a possible parameter value for the .op function.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#op%20param"
     },
     {
       "name": "op base",
-      "type": "number",
-      "description": "Used as a possible parameter value for the \"op\" function",
-      "guideType": "[N]"
+      "type": "text",
+      "description": "Used as a possible parameter value for the .op function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#op%20base"
     },
     {
       "name": "op stat1",
-      "type": "text"
+      "type": "text",
+      "description": "Used as a possible parameter value for the .op function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#op%20stat%23"
     },
     {
       "name": "op stat2",
-      "type": "text"
+      "type": "text",
+      "description": "Used as a possible parameter value for the .op function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#op%20stat%23"
     },
     {
       "name": "op stat3",
-      "type": "text"
+      "type": "text",
+      "description": "Used as a possible parameter value for the .op function.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#op%20stat%23"
     },
     {
       "name": "direct",
       "type": "boolean",
-      "description": "If equals 1, then when the stat is being updated in certain skill functions having to do with state changes, the stat will update in relation to its \"maxstat\" field to ensure that it never exceeds that value. If equals 0, then ignore this, and the stat will simply update in these cases. This only applies to skills that use skill server function 65, 66, 81, and 82",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then when the stat is being updated in certain skill functions having to do with state changes, the stat will update in relation to its .maxstat field to ensure that it never exceeds that value. If equals 0, then ignore this, and the stat will simply update in these cases. This only applies to skills that use skill server function 65, 66, 81, and 82.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#direct"
     },
     {
       "name": "maxstat",
       "type": "text",
-      "description": "Controls which stat is associated with this stat to be treated as the maximum version of this stat. This means that 2 stats are essentially linked so that there can be a current version of the stat and a maximum version to control the cap of stat's value. This is used for Life, Mana, Stamina, and Durability. This field relies on the \"direct\" field to be enabled unless it is being used for the healing potion item spell",
-      "guideType": "[O]"
+      "description": "Controls which stat is associated with this stat to be treated as the maximum version of this stat. This means that 2 stats are essentially linked so that there can be a current version of the stat and a maximum version to control the cap of stat's value. This is used for Life, Mana, Stamina, and Durability. This field relies on the .direct field to be enabled unless it is being used for the healing potion item spell.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#maxstat"
     },
     {
       "name": "damagerelated",
       "type": "boolean",
-      "description": "If equals 1, then this stat will be exclusive to the item and will not add to the unit. If equals 0, then ignore this, and the stat will always add to the unit. This is typically used for weapons and is important when dual wielding weapons so that when a unit attacks, then one weapon's stats do not stack with another weapon's stats",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then this stat will be exclusive to the item and will not add to the unit. If equals 0, then ignore this, and the stat will always add to the unit. This is typically used for weapons and is important when dual wielding weapons so that when a unit attacks, then one weapon's stats do not stack with another weapon's stats.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#damagerelated"
     },
     {
       "name": "itemevent1",
-      "type": "text"
+      "type": "text",
+      "description": "Uses an event that will activate the specified function defined by .itemeventfunc#. This points to the ID of an event defined in the events.txt file.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#itemevent%23"
     },
     {
       "name": "itemeventfunc1",
-      "type": "number"
+      "type": "number",
+      "description": "Specifies the functiion to use after the related item event occurred. Functions are defined by a numeric ID code and correspond to enums.Server Event Functions. This is only applied based on the .itemevent# field definition.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#itemeventfunc%23"
     },
     {
       "name": "itemevent2",
-      "type": "text"
+      "type": "text",
+      "description": "Uses an event that will activate the specified function defined by .itemeventfunc#. This points to the ID of an event defined in the events.txt file.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#itemevent%23"
     },
     {
       "name": "itemeventfunc2",
-      "type": "number"
+      "type": "number",
+      "description": "Specifies the functiion to use after the related item event occurred. Functions are defined by a numeric ID code and correspond to enums.Server Event Functions. This is only applied based on the .itemevent# field definition.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#itemeventfunc%23"
     },
     {
       "name": "descpriority",
       "type": "number",
-      "description": "Controls how this stat is sorted in item tooltips. This field is compared to the same field on other stats to determine how to order the stats. The higher the value means that the stat will be sorted higher than other stats. If more than 1 stat has the same \"descpriority\" value, then they will be listed in the order defined in this data file",
-      "guideType": "[N]"
+      "description": "Controls how this stat is sorted in item tooltips. This field is compared to the same field on other stats to determine how to order the stats. The higher the value means that the stat will be sorted higher than other stats. If more than 1 stat has the same .descpriority value, then they will be listed in the order defined in this data file.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#descpriority"
     },
     {
       "name": "descfunc",
       "type": "number",
-      "description": "Controls how the stat is displayed in tooltips. Uses the",
-      "guideType": "[N]"
+      "description": "Controls how the stat is displayed in tooltips. Uses an ID value to select a description function to format the string value.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#descfunc"
     },
     {
       "name": "descval",
       "type": "number",
-      "description": "Used as a possible parameter value for the",
-      "guideType": "[N]"
+      "description": "Used as a possible parameter value for the .descfunc function. This controls the how the value of the stat is displayed.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#descval"
     },
     {
       "name": "descstrpos",
       "type": "text",
-      "description": "Used as a possible parameter value for the",
-      "guideType": "[O]"
+      "description": "Used as a possible parameter value for the .descfunc function. This uses a string to display the item stat in a tooltip when its value is positive.",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#descstrpos"
     },
     {
       "name": "descstrneg",
       "type": "text",
-      "description": "Used as a possible parameter value for the",
-      "guideType": "[O]"
+      "description": "Used as a possible parameter value for the .descfunc function. This uses a string to display the item stat in a tooltip when its value is negative.",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#descstrneg"
     },
     {
       "name": "descstr2",
       "type": "text",
-      "description": "Used as a possible parameter value for the",
-      "guideType": "[O]"
+      "description": "Used as a possible parameter value for the .descfunc function. This uses a string to append to an item stat's string in a tooltip.",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#descstr2"
     },
     {
       "name": "dgrp",
       "type": "number",
-      "description": "Assigns the stat to a group ID value. If all stats with a matching \"dgrp\" value are applied on the unit, then instead of displaying each stat individually, the group description will be applied instead (",
-      "guideType": "[N]"
+      "description": "Assigns the stat to a group ID value. If all stats with a matching .dgrp value are applied on the unit, then instead of displaying each stat individually, the group description will be applied instead (see .dgrpfunc field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#dgrp"
     },
     {
       "name": "dgrpfunc",
       "type": "number",
-      "description": "Controls how the shared group of stats is displayed in tooltips. Uses an ID value to select a description function to format the string value. This function IDs are exactly the same as the",
-      "guideType": "[N]"
+      "description": "Controls how the shared group of stats is displayed in tooltips. Uses an ID value to select a description function to format the string value. This function IDs are exactly the same as the .descfunc field, see that description for more details.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#dgrpfunc"
     },
     {
       "name": "dgrpval",
       "type": "number",
-      "description": "Used as a possible parameter value for the",
-      "guideType": "[N]"
+      "description": "Used as a possible parameter value for the .dgrpfunc function. This controls the how the value of the stat is displayed. (Functions the same as the .descval field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#dgrpval"
     },
     {
       "name": "dgrpstrpos",
       "type": "text",
-      "description": "Used as a possible parameter value for the",
-      "guideType": "[O]"
+      "description": "Used as a possible parameter value for the .dgrpfunc function. This uses a string to display the item stat in a tooltip when its value is positive.",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#dgrpstrpos"
     },
     {
       "name": "dgrpstrneg",
       "type": "text",
-      "description": "Used as a possible parameter value for the",
-      "guideType": "[O]"
+      "description": "Used as a possible parameter value for the .dgrpfunc function. This uses a string to display the item stat in a tooltip when its value is negative.",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#dgrpstrneg"
     },
     {
       "name": "dgrpstr2",
       "type": "text",
-      "description": "Used as a possible parameter value for the",
-      "guideType": "[O]"
+      "description": "Used as a possible parameter value for the .dgrpfunc function. This uses a string to append to an item stat's string in a tooltip.",
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#dgrpstr2"
     },
     {
       "name": "stuff",
       "type": "number",
-      "description": "Used as a bit shift value for handling the conversion of skill IDs and skill levels to bit values for the stat. Controls the numeric range of possible skill IDs and skill levels for charge based items. This value cannot be less than or equal to 0, or greater than 8, otherwise it will default to 6. The row that this value appears in the data file is unrelated, since this is a universally applied value",
-      "guideType": "[N]"
+      "description": "Used as a bit shift value for handling the conversion of skill IDs and skill levels to bit values for the stat. Controls the numeric range of possible skill IDs and skill levels for charge based items. This value cannot be less than or equal to 0, or greater than 8, otherwise it will default to 6. The row that this value appears in the data file is unrelated, since this is a universally applied value.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#stuff"
     },
     {
       "name": "advdisplay",
       "type": "number",
       "description": "Controls how the stat appears in the Advanced Stats UI",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemstatcost.html#advdisplay"
     },
     {
       "name": "*eol",

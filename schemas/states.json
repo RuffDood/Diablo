@@ -2,15 +2,22 @@
   "table": "states",
   "category": "skills",
   "file": "global/excel/states.txt",
-  "description": "Table states du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 67,
+  "description": "This file defines the different states used by the game and controls how they function. States are basically passive behaviors applied to units that can apply various effects. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 73,
   "columns": [
     {
       "name": "state",
       "type": "text",
       "description": "Defines the unique name ID for the state",
-      "guideType": "[O]"
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#state"
     },
     {
       "name": "*ID",
@@ -20,422 +27,578 @@
     {
       "name": "group",
       "type": "number",
-      "description": "Assigns the state to a group ID value. This means that only 1 state with that group ID can be active at any time on a unit. If this value is empty, then ignore this",
-      "guideType": "[N]"
+      "description": "Assigns the state to a group ID value. This means that only 1 state with that group ID can be active at any time on a unit. If this value is empty, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#group"
     },
     {
       "name": "remhit",
       "type": "boolean",
-      "description": "If equals 1, then this state will be removed when the unit is hit. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then this state will be removed when the unit is hit. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#remhit"
     },
     {
       "name": "nosend",
       "type": "boolean",
-      "description": "If equals 1, then this state change will not be sent to the client. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then this state change will not be sent to the client. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#nosend"
     },
     {
       "name": "transform",
       "type": "boolean",
-      "description": "If equals 1, then this state will be flagged to change the unit's appearance and reset its animations when it is applied. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then this state will be flagged to change the unit's appearance and reset its animations when it is applied. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#transform"
     },
     {
       "name": "aura",
       "type": "boolean",
-      "description": "If equals 1, then this state will be treated as an aura. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then this state will be treated as an aura. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#aura"
     },
     {
       "name": "curable",
       "type": "boolean",
-      "description": "If equals 1, then this state can be cured (This can be checked by NPC healing or the Paladin Cleansing skill). If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then this state can be cured (This can be checked by NPC healing or the Paladin Cleansing skill). If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#curable"
     },
     {
       "name": "curse",
       "type": "boolean",
-      "description": "If equals 1, then this state will be flagged as a curse. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then this state will be flagged as a curse. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#curse"
     },
     {
       "name": "active",
       "type": "boolean",
-      "description": "If equals 1, then the state will be classified as an active state which enables the",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will be classified as an active state which enables the .cltactivefunc and .srvactivefunc fields. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#active"
     },
     {
       "name": "restrict",
       "type": "boolean",
-      "description": "If equals 1, then this state will restrict the usage of certain skills (This connects with the",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then this state will restrict the usage of certain skills (This connects with the skills.restrict field). If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#restrict"
     },
     {
       "name": "disguise",
       "type": "boolean",
-      "description": "If equals 1, then this state will be flagged as a disguise, meaning that the unit's appearance is changed, which can affect how the animations are treated when being used. If equals 0, then ignored this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then this state will be flagged as a disguise, meaning that the unit's appearance is changed, which can affect how the animations are treated when being used. If equals 0, then ignored this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#disguise"
     },
     {
       "name": "attblue",
       "type": "boolean",
-      "description": "If equals 1, then the state will make the related Attack Rating value in the character screen be colored blue. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will make the related Attack Rating value in the character screen be colored blue. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#attblue"
     },
     {
       "name": "damblue",
       "type": "boolean",
-      "description": "If equals 1, then the state will make related Damage value in the character screen be colored blue. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will make related Damage value in the character screen be colored blue. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#damblue"
     },
     {
       "name": "armblue",
       "type": "boolean",
-      "description": "If equals 1, then the state will make Defense value (Armor) in the character screen be colored blue. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will make Defense value (Armor) in the character screen be colored blue. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#armblue"
     },
     {
       "name": "rfblue",
       "type": "boolean",
-      "description": "If equals 1, then the state will make Fire Resistance value in the character screen be colored blue. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will make Fire Resistance value in the character screen be colored blue. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#rfblue"
     },
     {
       "name": "rlblue",
       "type": "boolean",
-      "description": "If equals 1, then the state will make Lightning Resistance value in the character screen be colored blue. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will make Lightning Resistance value in the character screen be colored blue. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#rlblue"
     },
     {
       "name": "rcblue",
       "type": "boolean",
-      "description": "If equals 1, then the state will make Cold Resistance value in the character screen be colored blue. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will make Cold Resistance value in the character screen be colored blue. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#rcblue"
     },
     {
       "name": "stambarblue",
       "type": "boolean",
-      "description": "If equals 1, then the state will make the Stamina Bar UI in the HUD be colored blue. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will make the Stamina Bar UI in the HUD be colored blue. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#stambarblue"
     },
     {
       "name": "rpblue",
       "type": "boolean",
-      "description": "If equals 1, then the state will make Poison Resistance value in the character screen be colored blue. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will make Poison Resistance value in the character screen be colored blue. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#rpblue"
     },
     {
       "name": "attred",
       "type": "boolean",
-      "description": "If equals 1, then the state will make the related Attack Rating value in the character screen be colored red. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will make the related Attack Rating value in the character screen be colored red. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#attred"
     },
     {
       "name": "damred",
       "type": "boolean",
-      "description": "If equals 1, then the state will make related Damage value in the character screen be colored red. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will make related Damage value in the character screen be colored red. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#damred"
     },
     {
       "name": "armred",
       "type": "boolean",
-      "description": "If equals 1, then the state will make Defense value (Armor) in the character screen be colored red. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will make Defense value (Armor) in the character screen be colored red. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#armred"
     },
     {
       "name": "rfred",
       "type": "boolean",
-      "description": "If equals 1, then the state will make Fire Resistance value in the character screen be colored red. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will make Fire Resistance value in the character screen be colored red. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#rfred"
     },
     {
       "name": "rlred",
       "type": "boolean",
-      "description": "If equals 1, then the state will make Lightning Resistance value in the character screen be colored red. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will make Lightning Resistance value in the character screen be colored red. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#rlred"
     },
     {
       "name": "rcred",
       "type": "boolean",
-      "description": "If equals 1, then the state will make Cold Resistance value in the character screen be colored red. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will make Cold Resistance value in the character screen be colored red. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#rcred"
     },
     {
       "name": "rpred",
       "type": "boolean",
-      "description": "If equals 1, then the state will make Poison Resistance value in the character screen be colored red. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will make Poison Resistance value in the character screen be colored red. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#rpred"
     },
     {
       "name": "exp",
       "type": "boolean",
-      "description": "If equals 1, then a unit with this state will give exp when killed or will gain exp when killing another unit. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then a unit with this state will give exp when killed or will gain exp when killing another unit. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#exp"
     },
     {
       "name": "plrstaydeath",
       "type": "boolean",
-      "description": "If equals 1, then the state will persist on the player after that player is killed. If equals 0, then ignore this. state stays after death",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will persist on the player after that player is killed. If equals 0, then ignore this. state stays after death",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#plrstaydeath"
     },
     {
       "name": "monstaydeath",
       "type": "boolean",
-      "description": "If equals 1, then the state will persist on the monster (non-boss) after that monster is killed. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will persist on the monster (non-boss) after that monster is killed. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#monstaydeath"
     },
     {
       "name": "bossstaydeath",
       "type": "boolean",
-      "description": "If equals 1, then the state will persist on the boss after that boss is killed. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will persist on the boss after that boss is killed. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#bossstaydeath"
     },
     {
       "name": "hide",
       "type": "boolean",
-      "description": "If equals 1, then the state will hide the unit when dead (corpse and death animations will not be drawn). If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will hide the unit when dead (corpse and death animations will not be drawn). If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#hide"
     },
     {
       "name": "hidedead",
       "type": "boolean",
-      "description": "If equals 1, then the state will be used to destroy units with invisible corpses. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will be used to destroy units with invisible corpses. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#hidedead"
     },
     {
       "name": "shatter",
       "type": "boolean",
-      "description": "If equals 1, then the state causes ice shatter missiles to create when the unit dies. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state causes ice shatter missiles to create when the unit dies. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#shatter"
     },
     {
       "name": "udead",
       "type": "boolean",
-      "description": "If equals 1, then the state flags the unit as a used dead corpse and the unit cannot be targeted for corpse skills. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state flags the unit as a used dead corpse and the unit cannot be targeted for corpse skills. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#udead"
     },
     {
       "name": "life",
       "type": "boolean",
-      "description": "If equals 1, then this state will cancel out the monster's normal life regeneration. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then this state will cancel out the monster's normal life regeneration. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#life"
     },
     {
       "name": "green",
       "type": "boolean",
-      "description": "If equals 1, then the state overrides the color changes the unit and the unit will be colored green. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state overrides the color changes the unit and the unit will be colored green. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#green"
     },
     {
       "name": "pgsv",
       "type": "boolean",
-      "description": "If equals 1, then the state is flagged as part of a progressive skill which relates to charge-up skill functionalities. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state is flagged as part of a progressive skill which relates to charge-up skill functionalities. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#pgsv"
     },
     {
       "name": "nooverlays",
       "type": "boolean",
-      "description": "If equals 1, then the standard way for States to add overlays will be disabled. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the standard way for states to add overlays will be disabled. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#nooverlays"
     },
     {
       "name": "noclear",
       "type": "boolean",
-      "description": "If equals 1, then when this state is applied on the unit, it will not clear stats that have this state from the state's previous application. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then when this state is applied on the unit, it will not clear stats that have this state from the state's previous application. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#noclear"
     },
     {
       "name": "bossinv",
       "type": "boolean",
-      "description": "If equals 1, then the unit with this state will use the state's source unit's (in this case, the unit's boss) inventory for generating the unit's equipped item graphics. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the unit with this state will use the state's source unit's (in this case, the unit's boss) inventory for generating the unit's equipped item graphics. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#bossinv"
     },
     {
       "name": "meleeonly",
       "type": "boolean",
-      "description": "If equals 1, then the state will make the all the unit's attack become melee attacks. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will make the all the unit's attack become melee attacks. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#meleeonly"
     },
     {
       "name": "notondead",
       "type": "boolean",
-      "description": "If equals 1, then the state will not play its On function (function that happens when the state is applied) if the unit is dead. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean field. If equals 1, then the state will not play its On function (function that happens when the state is applied) if the unit is dead. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#notondead"
     },
     {
       "name": "overlay1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls which overlay to use for normally displaying the state. The usage depends on the specific state defined and/or the function using the state. Typically, states use .overlay1 for the Front overlay and .overlay2 for the Back overlay. Other cases can have states use each overlay field as the Front Start, Front End, Back Start, and Back End, respectively.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#overlay%23"
     },
     {
       "name": "overlay2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls which overlay to use for normally displaying the state. The usage depends on the specific state defined and/or the function using the state. Typically, states use .overlay1 for the Front overlay and .overlay2 for the Back overlay. Other cases can have states use each overlay field as the Front Start, Front End, Back Start, and Back End, respectively.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#overlay%23"
     },
     {
       "name": "overlay3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls which overlay to use for normally displaying the state. The usage depends on the specific state defined and/or the function using the state. Typically, states use .overlay1 for the Front overlay and .overlay2 for the Back overlay. Other cases can have states use each overlay field as the Front Start, Front End, Back Start, and Back End, respectively.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#overlay%23"
     },
     {
       "name": "overlay4",
-      "type": "text"
+      "type": "text",
+      "description": "Controls which overlay to use for normally displaying the state. The usage depends on the specific state defined and/or the function using the state. Typically, states use .overlay1 for the Front overlay and .overlay2 for the Back overlay. Other cases can have states use each overlay field as the Front Start, Front End, Back Start, and Back End, respectively.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#overlay%23"
     },
     {
       "name": "pgsvoverlay",
       "type": "text",
-      "description": "Controls which overlay to use when the state has progressive charges on the unit, such as for the charge-up stat when using Assassin Martial Arts charge-up skills (Uses the",
-      "guideType": "[O]"
+      "description": "Controls which overlay to use when the state has progressive charges on the unit, such as for the charge-up stat when using Assassin Martial Arts charge-up skills",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#pgsvoverlay"
     },
     {
       "name": "castoverlay",
       "type": "text",
-      "description": "Controls which overlay to use when the state is initially applied on the unit (Uses the",
-      "guideType": "[O]"
+      "description": "Controls which overlay to use when the state is initially applied on the unit",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#castoverlay"
     },
     {
       "name": "removerlay",
       "type": "text",
-      "description": "Controls which overlay to use when the state is removed from the unit (Uses the",
-      "guideType": "[O]"
+      "description": "Controls which overlay to use when the state is removed from the unit",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#removerlay"
     },
     {
       "name": "stat",
       "type": "text",
-      "description": "Controls the stat associated with the stat. This is also used when determining how to add the progressive overlay (Uses the",
-      "guideType": "[O]"
+      "description": "Controls the stat associated with the state. This is also used when determining how to add the .pgsvoverlay",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#stat"
     },
     {
       "name": "setfunc",
       "type": "number",
       "description": "Controls the client side set functions for when the state is initially applied on the unit",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#setfunc"
     },
     {
       "name": "remfunc",
       "type": "number",
       "description": "Controls the client side remove functions for when the state is removed from the unit",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#remfunc"
     },
     {
       "name": "missile",
       "type": "text",
-      "description": "Used as a possible parameter for the",
-      "guideType": "[O]"
+      "description": "Used as a possible parameter for the .setfunc field",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#missile"
     },
     {
       "name": "skill",
       "type": "text",
-      "description": "Used as a possible parameter for the",
-      "guideType": "[O]"
+      "description": "Used as a possible parameter for the .setfunc field",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#skill"
     },
     {
       "name": "itemtype",
       "type": "text",
-      "description": "Defines a potential",
-      "guideType": "[O]"
+      "description": "Defines a potential Item Type that can be affected by the state's color change",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#itemtype"
     },
     {
       "name": "itemtrans",
       "type": "text",
-      "description": "Controls the color change of the item when the unit has this state. Referenced from the",
-      "guideType": "[O]"
+      "description": "Controls the color change of the item when the unit has this state",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#itemtrans"
     },
     {
       "name": "colorpri",
       "type": "number",
-      "description": "Defines the priority of the state's color change, when compared to other current sates on the unit. The current state that has the highest color priority on the unit will be used and other state colors will be ignored. If multiple current States share the same color priority value, then the game will choose the state with the lower ID value (based on where in the list of States in the data file that the state is defined)",
-      "guideType": "[N]"
+      "description": "Defines the priority of the state's color change, when compared to other current sates on the unit. The current state that has the highest color priority on the unit will be used and other state colors will be ignored. If multiple current states share the same color priority value, then the game will choose the state with the lower ID value (based on where in the list of states in the data file that the state is defined)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#colorpri"
     },
     {
       "name": "colorshift",
       "type": "number",
       "description": "Controls which index of the color shift palette to use.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#colorshift"
     },
     {
       "name": "light-r",
       "type": "number",
       "description": "Controls the state's change of the red color value of the Light radius (Uses a value from 0 to 255)",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#light-r"
     },
     {
       "name": "light-g",
       "type": "number",
       "description": "Controls the state's change of the green color value of the Light radius (Uses a value from 0 to 255)",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#light-g"
     },
     {
       "name": "light-b",
       "type": "number",
       "description": "Controls the state's change of the blue color value of the Light radius (Uses a value from 0 to 255)",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#light-b"
     },
     {
       "name": "onsound",
       "type": "text",
-      "description": "Plays a sound when the state is initially applied to the unit. Links to a",
-      "guideType": "[O]"
+      "description": "Plays a sound when the state is initially applied to the unit.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#onsound"
     },
     {
       "name": "offsound",
       "type": "text",
-      "description": "Plays a sound when the state is removed from the unit. Links to a",
-      "guideType": "[O]"
+      "description": "Plays a sound when the state is removed from the unit.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#offsound"
     },
     {
       "name": "gfxtype",
       "type": "number",
-      "description": "Controls the how to handle the unit graphics transformation based on the unit type (This relies on the",
-      "guideType": "[N]"
+      "description": "Controls the how to handle the unit graphics transformation based on the unit type (This relies on the .disguise field being enabled). If equals 1, then use this on a monster type unit. If equals 2, then use this on a player type unit. Otherwise, ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#gfxtype"
     },
     {
       "name": "gfxclass",
       "type": "number",
-      "description": "Control's the unit class used for handling the unit graphics transformation. This field relies on what unit type was used in the",
-      "guideType": "[N]"
+      "description": "Controls the unit class used for handling the unit graphics transformation. This field relies on what unit type was used in the .gfxtype field. If .gfxtype equals 1 for monster type units, then this field will rely on the index of an entry from monstats. If .gfxtype equals 2, then this field will use the index of an entry from PlayerClass.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#gfxclass"
     },
     {
       "name": "cltevent",
-      "type": "number",
-      "description": "Controls the event to check on the client side to determine when to use the function defined in the",
-      "guideType": "[N]"
+      "type": "text",
+      "description": "Controls the event to check on the client side to determine when to use the function defined in the .clteventfunc field",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#cltevent"
     },
     {
       "name": "clteventfunc",
       "type": "number",
-      "description": "Controls the client Unit event function that is called when the event is determined in the",
-      "guideType": "[N]"
+      "description": "Controls the client Unit event function that is called when the event is determined in the .cltevent field. Corresponds to a enums.Client Event Functions.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#clteventfunc"
     },
     {
       "name": "cltactivefunc",
       "type": "number",
-      "description": "Controls the Client Do function that is called every frame while the state is active (the",
-      "guideType": "[N]"
+      "description": "Controls the Client Do function that is called every frame while the state is active (see the skills.cltdofunc field). This relies on the .active field being enabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#cltactivefunc"
     },
     {
       "name": "srvactivefunc",
       "type": "number",
-      "description": "Controls the Server Do function that is called every frame while the state is active (the",
-      "guideType": "[N]"
+      "description": "Controls the Server Do function that is called every frame while the state is active (see the skills.srvdofunc field). This relies on the .active field being enabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#srvactivefunc"
     },
     {
       "name": "canstack",
-      "type": "boolean",
-      "description": "If equals 1, then this state can stack with duplicate forms of itself (This is only usable with the \"poison\" state). If equals 0, then ignore this.",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this state can stack with duplicate forms of itself (This is only usable with the \"poison\" state). If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#canstack"
     },
     {
       "name": "sunderfull",
-      "type": "number",
-      "description": "If equals 1, then this state will reapply any negative resistance stats at full potential when calculating pierce immunity if the immunity was broken. If equals 0, then reapply at the normal reduced efficiency (currently 1/5).",
-      "guideType": "[B]"
+      "type": "boolean",
+      "description": "Boolean Field. If equals 1, then this state will reapply any negative resistance stats at full potential when calculating pierce immunity if the immunity was broken. If equals 0, then reapply at the normal reduced efficiency (currently 1/5).",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#sunderfull"
     },
     {
       "name": "sunder-res-reduce",
-      "type": "number"
+      "type": "boolean",
+      "description": "Boolean Field. If equals 1, then this state will apply pierce resistance at reduced effectiveness (currently 1/5) when calculating pierce resistance if an immunity was broken. If equals 0, then apply pierce resistance at normal effectiveness.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#sunder-res-reduce"
     },
     {
       "name": "vfxweaponstate",
-      "type": "number"
+      "type": "number",
+      "description": "Specifies which weapon state to set on the vfx.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/states.html#vfxweaponstate"
     },
     {
       "name": "*eol",

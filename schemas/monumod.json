@@ -2,89 +2,142 @@
   "table": "monumod",
   "category": "characters",
   "file": "global/excel/monumod.txt",
-  "description": "Table monumod du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 8,
+  "description": "This file controls the different monster modifiers for special monsters, including Unique and Champion monsters. The \"(N)\" text in field names signifies to use that specific value for games in Nightmare difficulty. The \"(H)\" text in field names signifies to use that specific value for games in Hell difficulty. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 16,
   "columns": [
     {
       "name": "uniquemod",
       "type": "text",
       "description": "This is a reference field to define the monster modifier",
-      "guideType": "[O]"
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monumod.html#uniquemod"
     },
     {
       "name": "id",
-      "type": "number",
-      "description": "Defines the unique numeric ID for the monster modifier. Used as a reference in other data files",
-      "guideType": "[N]"
+      "type": "text",
+      "description": "Defines the unique numeric ID for the monster modifier. Used as a reference in other data files.",
+      "guideType": "[comment]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monumod.html#id"
     },
     {
       "name": "enabled",
-      "type": "boolean",
-      "description": "If equals 1, then this monster modifier will be an available option for monsters to spawn with. If equals 0, then this monster modifier will never be used",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this monster modifier will be an available option for monsters to spawn with. If equals 0, then this monster modifier will never be used.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monumod.html#enabled"
     },
     {
       "name": "version",
       "type": "number",
-      "description": "Defines which game version to use this monster modifier (&lt;100 = Classic mode | 100 = Expansion mode)",
-      "guideType": "[N]"
+      "description": "Defines which game version to use this monster modifier (<100 = Classic mode | 100 = Expansion mode)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monumod.html#version"
     },
     {
       "name": "xfer",
-      "type": "boolean",
-      "description": "If equals 1, then this monster modifier can be transferred from the Boss monster to his Minion monsters, including auras. If equals 0, then the monster modifier will never be transferred",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this monster modifier can be transferred from the Boss monster to his Minion monsters, including auras. If equals 0, then the monster modifier will never be transferred.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monumod.html#xfer"
     },
     {
       "name": "champion",
-      "type": "boolean",
-      "description": "If equals 1, then this monster modifier will only be used by Champion monsters. If equals 0, then the monster modifier can be used by any type of special monster",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this monster modifier will only be used by Champion monsters. If equals 0, then the monster modifier can be used by any type of special monster.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monumod.html#champion"
     },
     {
       "name": "fPick",
       "type": "number",
       "description": "Controls if this monster modifier is allowed on the monster based on the function code and the parameters it checks.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monumod.html#fPick"
     },
     {
       "name": "exclude1",
-      "type": "text"
+      "type": "text",
+      "description": "This controls which Monster Types should not have this monster modifier (Uses the montype.type field)",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monumod.html#exclude%23"
     },
     {
       "name": "exclude2",
-      "type": "text"
+      "type": "text",
+      "description": "This controls which Monster Types should not have this monster modifier (Uses the montype.type field)",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monumod.html#exclude%23"
     },
     {
       "name": "cpick",
-      "type": "number"
+      "type": "number",
+      "description": "Modifies the chances that this monster modifier will be chosen for a Champion monster, compared to other monster modifiers. The higher the value is, then the more likely this modifier will be chosen. This value acts as a numerator and a denominator. All .cpick values get summed together to give a total denominator, used for the random roll. For example, if there are 3 possible monster modifiers, and their .cpick values are 3, 4, 6, then their chances to be chosen are 3/13, 4/13, and 6/13 respectively.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monumod.html#cpick"
     },
     {
       "name": "cpick (N)",
-      "type": "number"
+      "type": "number",
+      "description": "Modifies the chances that this monster modifier will be chosen for a Champion monster, compared to other monster modifiers. The higher the value is, then the more likely this modifier will be chosen. This value acts as a numerator and a denominator. All .cpick values get summed together to give a total denominator, used for the random roll. For example, if there are 3 possible monster modifiers, and their .cpick values are 3, 4, 6, then their chances to be chosen are 3/13, 4/13, and 6/13 respectively.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monumod.html#cpick"
     },
     {
       "name": "cpick (H)",
-      "type": "number"
+      "type": "number",
+      "description": "Modifies the chances that this monster modifier will be chosen for a Champion monster, compared to other monster modifiers. The higher the value is, then the more likely this modifier will be chosen. This value acts as a numerator and a denominator. All .cpick values get summed together to give a total denominator, used for the random roll. For example, if there are 3 possible monster modifiers, and their .cpick values are 3, 4, 6, then their chances to be chosen are 3/13, 4/13, and 6/13 respectively.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monumod.html#cpick"
     },
     {
       "name": "upick",
-      "type": "number"
+      "type": "number",
+      "description": "Modifies the chances that this monster modifier will be chosen for a Unique monster, compared to other monster modifiers. The higher the value is, then the more likely this modifier will be chosen. This value acts as a numerator and a denominator. All .upick values get summed together to give a total denominator, used for the random roll. For example, if there are 3 possible monster modifiers, and their .upick values are 3, 4, 6, then their chances to be chosen are 3/13, 4/13, and 6/13 respectively.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monumod.html#upick"
     },
     {
       "name": "upick (N)",
-      "type": "number"
+      "type": "number",
+      "description": "Modifies the chances that this monster modifier will be chosen for a Unique monster, compared to other monster modifiers. The higher the value is, then the more likely this modifier will be chosen. This value acts as a numerator and a denominator. All .upick values get summed together to give a total denominator, used for the random roll. For example, if there are 3 possible monster modifiers, and their .upick values are 3, 4, 6, then their chances to be chosen are 3/13, 4/13, and 6/13 respectively.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monumod.html#upick"
     },
     {
       "name": "upick (H)",
-      "type": "number"
+      "type": "number",
+      "description": "Modifies the chances that this monster modifier will be chosen for a Unique monster, compared to other monster modifiers. The higher the value is, then the more likely this modifier will be chosen. This value acts as a numerator and a denominator. All .upick values get summed together to give a total denominator, used for the random roll. For example, if there are 3 possible monster modifiers, and their .upick values are 3, 4, 6, then their chances to be chosen are 3/13, 4/13, and 6/13 respectively.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monumod.html#upick"
     },
     {
       "name": "constants",
       "type": "number",
       "description": "These values control a special list of numeric parameters for special monsters. The row that each constant appears in the data file is unrelated. You can treat this column almost like a separate data file that controls other aspects of special monsters. See the description next to each value for more specific clarification on each constant.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monumod.html#constants"
     },
     {
       "name": "*constant desc",

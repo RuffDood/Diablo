@@ -2,15 +2,22 @@
   "table": "uniqueitems",
   "category": "items",
   "file": "global/excel/uniqueitems.txt",
-  "description": "Table uniqueitems du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 19,
+  "description": "This file defines each Unique item and controls their item modifiers. The row order of items should not be changed because it defines their ID value. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 72,
   "columns": [
     {
       "name": "index",
       "type": "text",
       "description": "Points to a string key value to use as the Unique item's name",
-      "guideType": "[O]"
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#index"
     },
     {
       "name": "*ID",
@@ -20,48 +27,98 @@
     {
       "name": "version",
       "type": "number",
-      "description": "Defines which game version to create this item (0 = Classic mode | 100 = Expansion mode)",
-      "guideType": "[N]"
+      "description": "Defines which game version to create this item (<100 = Classic mode | 100 = Expansion mode)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#version"
     },
     {
-      "name": "enabled",
+      "name": "disabled",
       "type": "boolean",
-      "description": "If equals 1, then this item can be created and dropped. If equals 0, then this item cannot be dropped",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, this unique is fully disabled and cannot be dropped randomly or explicitly from a treasure class.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#disabled"
     },
     {
-      "name": "ladder",
+      "name": "spawnable",
       "type": "boolean",
-      "description": "If equals 1, then this item can only be created and dropped in online Battle.net Ladder games. If equals 0, then this item can be created and dropped in any game mode",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then this item can be rolled as a choice when randomly dropping a unique. If equals 0, then this item cannot be dropped randomly, but can still be drop explicitly from a treasure class.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#spawnable"
+    },
+    {
+      "name": "disableChronicle",
+      "type": "boolean",
+      "description": "Boolean Field. If equals 1, this unique item will not appear in the chronicle.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#disableChronicle"
+    },
+    {
+      "name": "DropConditionCalc",
+      "type": "text",
+      "description": "If the evaluated result of this condition is 0, then prevent the unique from being rolled as a choice when randomly dropping a unique. Treasure Class scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#DropConditionCalc"
+    },
+    {
+      "name": "firstLadderSeason",
+      "type": "number",
+      "description": "Integer field. The first ladder season the unique item can be Dropped or created on (inclusive). If blank or 0 then it is available in non-ladder.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#firstLadderSeason"
+    },
+    {
+      "name": "lastLadderSeason",
+      "type": "number",
+      "description": "Integer field. The last ladder season the unique item is ladder-only (inclusive). Must be used in conjunction with .firstLadderSeason.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#lastLadderSeason"
     },
     {
       "name": "rarity",
       "type": "number",
-      "description": "Modifies the chances that this Unique item will spawn compared to the other Unique items. This value acts as a numerator and a denominator. Each \"rarity\" value gets summed together to give a total denominator, used for the random roll for the item. For example, if there are 3 possible Unique items, and their \"rarity\" values are 3, 5, 7, then their chances to be chosen are 3/15, 5/15, and 7/15 respectively. (The minimum \"rarity\" value equals 1) (Only works for games in Expansion mode)",
-      "guideType": "[N]"
+      "description": "Modifies the chances that this Unique item will spawn compared to the other Unique items. This value acts as a numerator and a denominator. Each .rarity value gets summed together to give a total denominator, used for the random roll for the item. For example, if there are 3 possible Unique items, and their .rarity values are 3, 5, 7, then their chances to be chosen are 3/15, 5/15, and 7/15 respectively. (The minimum .rarity value equals 1) (Only works for games in Expansion mode)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#rarity"
     },
     {
       "name": "nolimit",
       "type": "boolean",
-      "description": "Requires the",
-      "guideType": "[B]"
+      "description": "Boolean Field. Requires the misc.quest field to be enabled. If equals 1, then this item can be created and will automatically be identified. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#nolimit"
     },
     {
       "name": "lvl",
       "type": "number",
       "description": "The item level for the item, which controls what object or monster needs to be in order to drop this item",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#lvl"
     },
     {
       "name": "lvl req",
-      "type": "number"
+      "type": "number",
+      "description": "The minimum character level required to equip the item",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#lvl%20req"
     },
     {
       "name": "code",
       "type": "text",
-      "description": "Defines the baseline item code to use for this Unique item (must match the",
-      "guideType": "[O]"
+      "description": "Defines the baseline item code to use for this Unique item (must match the armor.code, weapons.code, or misc.code field)",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#code"
     },
     {
       "name": "*ItemName",
@@ -70,261 +127,475 @@
     },
     {
       "name": "carry1",
-      "type": "boolean",
-      "description": "If equals 1, then players can only carry one of these items in their inventory. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Assigns the Unique item to a group. Players can only carry one item from each group in their inventory.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#carry1"
     },
     {
       "name": "cost mult",
       "type": "number",
       "description": "Multiplicative modifier for the Unique item's buy, sell, and repair costs",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#cost%20mult"
     },
     {
       "name": "cost add",
       "type": "number",
-      "description": "Flat integer modification to the Unique item's buy, sell, and repair costs. This is added after the",
-      "guideType": "[N]"
+      "description": "Flat integer modification to the Unique item's buy, sell, and repair costs. This is added after the .cost mult has modified the costs.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#cost%20add"
     },
     {
       "name": "chrtransform",
       "type": "text",
-      "description": "Controls the color change of the item when equipped on a character or dropped on the ground. If empty, then the item will have the default item color. Referenced from the",
-      "guideType": "[O]"
+      "description": "Controls the color change of the item when equipped on a character or dropped on the ground. If empty, then the item will have the default item color.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#chrtransform"
     },
     {
       "name": "invtransform",
       "type": "text",
-      "description": "Controls the color change of the item in the inventory UI. If empty, then the item will have the default item color. Referenced from the",
-      "guideType": "[O]"
+      "description": "Controls the color change of the item in the inventory UI. If empty, then the item will have the default item color.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#invtransform"
     },
     {
       "name": "flippyfile",
       "type": "text",
-      "description": "An override for the \"flippyfile\" field from the weapon.txt, Armor.txt, or Misc.txt files. By default, the Unique item will use what was defined by the baseline item from the \"item\" field",
-      "guideType": "[O]"
+      "description": "An override for the armor.flippyfile, weapons.flippyfile, or misc.flippyfile field. By default, the Unique item will use what was defined by the baseline item from the .code field.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#flippyfile"
     },
     {
       "name": "invfile",
       "type": "text",
-      "description": "An override for the",
-      "guideType": "[O]"
+      "description": "An override for the armor.invfile, weapons.invfile, or misc.invfile field. By default, the Unique item will use what was defined by the baseline item from the .code field.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#invfile"
     },
     {
       "name": "dropsound",
       "type": "text",
-      "description": "An override for the \"dropsound\" field from the weapon.txt, Armor.txt, or Misc.txt files. By default, the Unique item will use what was defined by the baseline item from the \"item\" field",
-      "guideType": "[O]"
+      "description": "An override for the armor.dropsound, weapons.dropsound, or misc.dropsound field. By default, the Unique item will use what was defined by the baseline item from the .code field.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#dropsound"
     },
     {
       "name": "dropsfxframe",
       "type": "number",
-      "description": "An override for the \"dropsfxframe\" field from the weapon.txt, Armor.txt, or Misc.txt files. By default, the Unique item will use what was defined by the baseline item from the \"item\" field",
-      "guideType": "[N]"
+      "description": "An override for the armor.dropsfxframe, weapons.dropsfxframe, or misc.dropsfxframe field. By default, the Unique item will use what was defined by the baseline item from the .code field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#dropsfxframe"
     },
     {
       "name": "usesound",
       "type": "text",
-      "description": "An override for the \"usesound\" field from the weapon.txt, Armor.txt, or Misc.txt files. By default, the Unique item will use what was defined by the baseline item from the \"item\" field",
-      "guideType": "[O]"
+      "description": "An override for the armor.usesound, weapons.usesound, or misc.usesound field. By default, the Unique item will use what was defined by the baseline item from the .code field.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#usesound"
     },
     {
       "name": "prop1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties for the Unique item References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#prop%23"
     },
     {
       "name": "par1",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.prop#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#par%23"
     },
     {
       "name": "min1",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#min%23"
     },
     {
       "name": "max1",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#max%23"
     },
     {
       "name": "prop2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties for the Unique item References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#prop%23"
     },
     {
       "name": "par2",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.prop#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#par%23"
     },
     {
       "name": "min2",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#min%23"
     },
     {
       "name": "max2",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#max%23"
     },
     {
       "name": "prop3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties for the Unique item References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#prop%23"
     },
     {
       "name": "par3",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.prop#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#par%23"
     },
     {
       "name": "min3",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#min%23"
     },
     {
       "name": "max3",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#max%23"
     },
     {
       "name": "prop4",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties for the Unique item References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#prop%23"
     },
     {
       "name": "par4",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.prop#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#par%23"
     },
     {
       "name": "min4",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#min%23"
     },
     {
       "name": "max4",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#max%23"
     },
     {
       "name": "prop5",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties for the Unique item References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#prop%23"
     },
     {
       "name": "par5",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.prop#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#par%23"
     },
     {
       "name": "min5",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#min%23"
     },
     {
       "name": "max5",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#max%23"
     },
     {
       "name": "prop6",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties for the Unique item References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#prop%23"
     },
     {
       "name": "par6",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.prop#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#par%23"
     },
     {
       "name": "min6",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#min%23"
     },
     {
       "name": "max6",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#max%23"
     },
     {
       "name": "prop7",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties for the Unique item References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#prop%23"
     },
     {
       "name": "par7",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.prop#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#par%23"
     },
     {
       "name": "min7",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#min%23"
     },
     {
       "name": "max7",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#max%23"
     },
     {
       "name": "prop8",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties for the Unique item References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#prop%23"
     },
     {
       "name": "par8",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.prop#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#par%23"
     },
     {
       "name": "min8",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#min%23"
     },
     {
       "name": "max8",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#max%23"
     },
     {
       "name": "prop9",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties for the Unique item References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#prop%23"
     },
     {
       "name": "par9",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.prop#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#par%23"
     },
     {
       "name": "min9",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#min%23"
     },
     {
       "name": "max9",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#max%23"
     },
     {
       "name": "prop10",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties for the Unique item References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#prop%23"
     },
     {
       "name": "par10",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.prop#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#par%23"
     },
     {
       "name": "min10",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#min%23"
     },
     {
       "name": "max10",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#max%23"
     },
     {
       "name": "prop11",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties for the Unique item References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#prop%23"
     },
     {
       "name": "par11",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.prop#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#par%23"
     },
     {
       "name": "min11",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#min%23"
     },
     {
       "name": "max11",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#max%23"
     },
     {
       "name": "prop12",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties for the Unique item References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#prop%23"
     },
     {
       "name": "par12",
-      "type": "text"
+      "type": "text",
+      "description": "The stat's \"parameter\" value associated with the related property (.prop#). Usage depends on the property function (See the properties.func# field) A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#par%23"
     },
     {
       "name": "min12",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"min\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#min%23"
     },
     {
       "name": "max12",
-      "type": "number"
+      "type": "number",
+      "description": "The stat's \"max\" value to assign to the related property (.prop#). Usage depends on the property function (See the properties.func# field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#max%23"
     },
     {
       "name": "diablocloneweight",
       "type": "number",
       "description": "The amount of weight added to the diablo clone progress when this item is sold. When offline, selling this item will instead immediately spawn diablo clone.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/uniqueitems.html#diablocloneweight"
     },
     {
       "name": "*eol",

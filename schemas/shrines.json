@@ -2,15 +2,22 @@
   "table": "shrines",
   "category": "system",
   "file": "global/excel/shrines.txt",
-  "description": "Table shrines du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 8,
+  "description": "This file controls the functionalities of shrine objects found in area levels. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 10,
   "columns": [
     {
       "name": "Name",
       "type": "text",
-      "description": "This is a reference field to define the Shrine index",
-      "guideType": "[O]"
+      "description": "Name of the shrine",
+      "guideType": "[comment]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/shrines.html#Name"
     },
     {
       "name": "*Shrine Type",
@@ -25,28 +32,42 @@
     {
       "name": "Code",
       "type": "number",
-      "description": "Code function used to define the Shrine's function. Uses ID values listed below to define what function to use.",
-      "guideType": "[N]"
+      "description": "Code function used to define the Shrine's function. Uses ID values to define what function to use.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/shrines.html#Code"
     },
     {
       "name": "Arg0",
-      "type": "number"
+      "type": "number",
+      "description": "Integer value used as a possible parameter for the .Code function",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/shrines.html#Arg%23"
     },
     {
       "name": "Arg1",
-      "type": "number"
+      "type": "number",
+      "description": "Integer value used as a possible parameter for the .Code function",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/shrines.html#Arg%23"
     },
     {
       "name": "Duration in frames",
       "type": "number",
       "description": "Duration of the effects of the Shrine (Calculated in Frames, where 25 Frames = 1 Second)",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/shrines.html#Duration%20in%20frames"
     },
     {
       "name": "reset time in minutes",
       "type": "number",
-      "description": "Controls the amount of time before the Shrine is available to use again. Each value of 1 equals 1200 Frames or 48 seconds. A value of 0 means that the Shrine is a one-time use",
-      "guideType": "[N]"
+      "description": "Controls the amount of time before the Shrine is available to use again. Each value of 1 equals 1200 Frames or 48 seconds. A value of 0 means that the Shrine is a one-time use.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/shrines.html#reset%20time%20in%20minutes"
     },
     {
       "name": "rarity",
@@ -56,25 +77,33 @@
       "name": "StringName",
       "type": "text",
       "description": "Uses a string to display as the Shrine's name",
-      "guideType": "[O]"
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/shrines.html#StringName"
     },
     {
       "name": "StringPhrase",
       "type": "text",
       "description": "Uses a string to display as the Shrine's activation phrase when it is used",
-      "guideType": "[O]"
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/shrines.html#StringPhrase"
     },
     {
       "name": "effectclass",
       "type": "number",
       "description": "Used to define the Shrine's archetype which is involved with calculating region stats",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/shrines.html#effectclass"
     },
     {
       "name": "LevelMin",
       "type": "number",
-      "description": "Define the earliest area level where the Shrine can spawn. Area levels are determined from Levels.txt",
-      "guideType": "[N]"
+      "description": "Define the earliest area level where the Shrine can spawn. Corresponds to an index for an area level from levels",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/shrines.html#LevelMin"
     }
   ]
 }

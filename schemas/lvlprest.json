@@ -2,131 +2,198 @@
   "table": "lvlprest",
   "category": "system",
   "file": "global/excel/lvlprest.txt",
-  "description": "Table lvlprest du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 15,
+  "description": "This file controls the values for each Level Preset. A Level Preset is a static area composed of tiles that is used to construct entire area levels found in the game. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 23,
   "columns": [
     {
       "name": "Name",
       "type": "text",
       "description": "This is a reference field to define the Level Preset",
-      "guideType": "[O]"
+      "guideType": "[comment]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#Name"
     },
     {
       "name": "Def",
       "type": "number",
-      "description": "Defines the unique numeric ID for the Level Preset. This is referenced in other files",
-      "guideType": "[N]"
+      "description": "Defines the unique numeric ID for the Level Preset. This is referenced in other files.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#Def"
     },
     {
       "name": "LevelId",
       "type": "number",
-      "description": "This refers to the",
-      "guideType": "[N]"
+      "description": "This refers to the area level's levels.Id field. If this value is not equal to 0, then this Level Preset is used to build that entire area level. If this value is equal to 0, then the Level Preset does not define the entire area level and is used as a part of constructing area levels.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#LevelId"
     },
     {
       "name": "Populate",
-      "type": "boolean",
-      "description": "If equals 1, then units are allowed to spawn in the Level Preset. If equals 0, then units will never spawn in the Level Preset",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then units are allowed to spawn in the Level Preset. If equals 0, then units will never spawn in the Level Preset.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#Populate"
     },
     {
       "name": "Logicals",
-      "type": "boolean",
-      "description": "If equals 1, then the Level Preset allow for wall transparency to function. If equals 0, then walls will always appear solid",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the Level Preset allow for wall transparency to function. If equals 0, then walls will always appear solid.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#Logicals"
     },
     {
       "name": "Outdoors",
-      "type": "boolean",
-      "description": "If equals 1, then the Level Preset will be classified as an outdoor area, which can mean that lighting will function differently. If equals 0, then the Level Preset will be classified as an indoor area",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the Level Preset will be classified as an outdoor area, which can mean that lighting will function differently. If equals 0, then the Level Preset will be classified as an indoor area.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#Outdoors"
     },
     {
       "name": "Animate",
-      "type": "boolean",
-      "description": "If equals 1, then the game will animate the tiles in the Level Preset. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the game will animate the tiles in the Level Preset. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#Animate"
     },
     {
       "name": "KillEdge",
-      "type": "boolean",
-      "description": "If equals 1, then the game will remove tiles that border the size of the Level Preset. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the game will remove tiles that border the size of the Level Preset. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#KillEdge"
     },
     {
       "name": "FillBlanks",
-      "type": "boolean",
-      "description": "If equals 1, then all blank tiles in the Level Preset will be filled with unwalkable tiles. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then all blank tiles in the Level Preset will be filled with unwalkable tiles. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#FillBlanks"
     },
     {
       "name": "SizeX",
-      "type": "number"
+      "type": "number",
+      "description": "Specifies the Length and Width tile size values of the Level Preset, which are used for determining how big to build area levels. These values are equal to 0 for Level Presets that are static.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#SizeX"
     },
     {
       "name": "SizeY",
-      "type": "number"
+      "type": "number",
+      "description": "Specifies the Length and Width tile size values of the Level Preset, which are used for determining how big to build area levels. These values are equal to 0 for Level Presets that are static.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#SizeX"
     },
     {
       "name": "AutoMap",
-      "type": "boolean",
-      "description": "If equals 1, then this Level Preset will be automatically completely revealed on the Automap. If equals 0, then this Level Preset will be hidden on the Automap and will need to be explored",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this Level Preset will be automatically completely revealed on the Automap. If equals 0, then this Level Preset will be hidden on the Automap and will need to be explored.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#automap"
     },
     {
       "name": "Scan",
-      "type": "boolean",
-      "description": "If equals 1, then this Level Preset will allow the usage of warping with waypoints (This requires that the Level Preset has a waypoint object). If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this Level Preset will allow the usage of warping with waypoints (This requires that the Level Preset has a waypoint object). If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#Scan"
     },
     {
       "name": "Pops",
       "type": "number",
-      "description": "Defines how many Pop tiles are defined in the Level Preset file. These Pop tiles are mainly used for controlling the roof and wall popping when a player enters a building in an area",
-      "guideType": "[N]"
+      "description": "Defines how many Pop tiles are defined in the Level Preset file. These Pop tiles are mainly used for controlling the roof and wall popping when a player enters a building in an area.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#Pops"
     },
     {
       "name": "PopPad",
       "type": "number",
-      "description": "Determines the size of the Pop tile area, by using an offset value. This offset value can increase or decrease the size of the Pop tile size if it has a positive or negative value",
-      "guideType": "[N]"
+      "description": "Determines the size of the Pop tile area, by using an offset value. This offset value can increase or decrease the size of the Pop tile size if it has a positive or negative value.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#PopPad"
     },
     {
       "name": "Files",
       "type": "number",
-      "description": "Determines the number of different versions to use for the Level Preset. This value acts as a range, which the game will use for randomly choosing one of the",
-      "guideType": "[N]"
+      "description": "Determines the number of different versions to use for the Level Preset. This value acts as a range, which the game will use for randomly choosing one of the .File# fields to build the Level Preset. This is how the Level Presets have variety when the area level is being built.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#Files"
     },
     {
       "name": "File1",
-      "type": "text"
+      "type": "text",
+      "description": "Specifies the name of which ds1 file to use. The ds1 files contain data for building Level Presets. If this value equals 0, then this field will be ignored. The number of these defined fields should match the value used in the .Files field.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#File%23"
     },
     {
       "name": "File2",
-      "type": "text"
+      "type": "text",
+      "description": "Specifies the name of which ds1 file to use. The ds1 files contain data for building Level Presets. If this value equals 0, then this field will be ignored. The number of these defined fields should match the value used in the .Files field.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#File%23"
     },
     {
       "name": "File3",
-      "type": "text"
+      "type": "text",
+      "description": "Specifies the name of which ds1 file to use. The ds1 files contain data for building Level Presets. If this value equals 0, then this field will be ignored. The number of these defined fields should match the value used in the .Files field.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#File%23"
     },
     {
       "name": "File4",
-      "type": "text"
+      "type": "text",
+      "description": "Specifies the name of which ds1 file to use. The ds1 files contain data for building Level Presets. If this value equals 0, then this field will be ignored. The number of these defined fields should match the value used in the .Files field.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#File%23"
     },
     {
       "name": "File5",
-      "type": "text"
+      "type": "text",
+      "description": "Specifies the name of which ds1 file to use. The ds1 files contain data for building Level Presets. If this value equals 0, then this field will be ignored. The number of these defined fields should match the value used in the .Files field.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#File%23"
     },
     {
       "name": "File6",
-      "type": "text"
+      "type": "text",
+      "description": "Specifies the name of which ds1 file to use. The ds1 files contain data for building Level Presets. If this value equals 0, then this field will be ignored. The number of these defined fields should match the value used in the .Files field.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#File%23"
     },
     {
       "name": "Dt1Mask",
       "type": "number",
-      "description": "This functions as a bit field mask with a size of a 32 bit value. This explains to the ds1 file which of the 32 dt1 tile files to use from a Level Type when assembling the Level Preset. Each",
-      "guideType": "[N]"
+      "description": "This functions as a bit field mask with a size of a 32 bit value. This explains to the ds1 file which of the 32 dt1 tile 1, File2=2, File3 = 4, File4=8, File5=16...File32 = 2147483648). To build the .Dt1Mask, you would select which lvltypes.File # fields to use from and add their associated bit values together for a total value. This total value is the bitmask value.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/lvlprest.html#Dt1Mask"
     }
   ]
 }

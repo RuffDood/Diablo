@@ -2,187 +2,294 @@
   "table": "itemtypes",
   "category": "items",
   "file": "global/excel/itemtypes.txt",
-  "description": "Table itemtypes du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 19,
+  "description": "This file controls the general statistics for each type of item, which is then used for the item type fields in other files. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 39,
   "columns": [
     {
       "name": "ItemType",
       "type": "text",
       "description": "This is a reference field to define the Item Type name",
-      "guideType": "[O]"
+      "guideType": "[comment]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#ItemType"
     },
     {
       "name": "Code",
       "type": "text",
-      "description": "Defines the unique pointer for this Item Type, which is used by various data files",
-      "guideType": "[O]"
+      "description": "Defines the unique pointer for this Item Type, which is used by other data files",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#Code"
     },
     {
       "name": "Equiv1",
-      "type": "text"
+      "type": "text",
+      "description": "Points to the index of another Item Type to reference as a parent. This is used to create a hierarchy for Item Types where the parents will have more universal settings shared across the related children",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#Equiv%23"
     },
     {
       "name": "Equiv2",
-      "type": "text"
+      "type": "text",
+      "description": "Points to the index of another Item Type to reference as a parent. This is used to create a hierarchy for Item Types where the parents will have more universal settings shared across the related children",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#Equiv%23"
     },
     {
       "name": "Repair",
-      "type": "boolean",
-      "description": "If equals 1, then the item can be repaired by an NPC in the shop UI. If equals 0, then the item cannot be repaired",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the item can be repaired by an NPC in the shop UI. If equals 0, then the item cannot be repaired.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#Repair"
     },
     {
       "name": "Body",
-      "type": "boolean",
-      "description": "If equals 1, then the item can be equipped by a character (Also uses the",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the item can be equipped by a character (also will require the .BodyLoc# fields as parameters). If equals 0, then the item can only be carried in the inventory, stash, or Horadric Cube.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#Body"
     },
     {
       "name": "BodyLoc1",
-      "type": "text"
+      "type": "text",
+      "description": "These are required parameters if the .Body field is enabled. These fields specify the inventory slots where the item can be equipped.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#BodyLoc%23"
     },
     {
       "name": "BodyLoc2",
-      "type": "text"
+      "type": "text",
+      "description": "These are required parameters if the .Body field is enabled. These fields specify the inventory slots where the item can be equipped.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#BodyLoc%23"
     },
     {
       "name": "Shoots",
-      "type": "number",
+      "type": "text",
       "description": "Points to the index of another Item Type as the required equipped Item Type to be used as ammo",
-      "guideType": "[N]"
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#Shoots"
     },
     {
       "name": "Quiver",
-      "type": "number",
-      "description": "Points to the index of another Item Type as the required equipped Item Type to be used as this ammo's weapon",
-      "guideType": "[N]"
+      "type": "text",
+      "description": "Points to the index of another Item Type as the required equipped Item Type to be used as this ammos weapon",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#Quiver"
     },
     {
       "name": "Throwable",
-      "type": "number"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then it determines that this item is a throwing weapon. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#Throwable"
     },
     {
       "name": "Reload",
-      "type": "boolean",
-      "description": "If equals 1, then the item (considered ammo in this case) will be automatically transferred from the inventory to the required",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the item (considered ammo in this case) will be automatically transferred from the inventory to the required .BodyLoc# when another item runs out of that specific ammo. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#Reload"
     },
     {
       "name": "ReEquip",
-      "type": "boolean",
-      "description": "If equals 1, then the item in the inventory will replace a matching equipped item if that equipped item was destroyed. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the item in the inventory will replace a matching equipped item if that equipped item was destroyed. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#ReEquip"
     },
     {
       "name": "AutoStack",
-      "type": "boolean",
-      "description": "If equals 1, then if the player picks up a matching Item Type, then they will try to automatically stack together. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then if the player picks up a matching Item Type, then they will try to automatically stack together. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#AutoStack"
     },
     {
       "name": "Magic",
-      "type": "boolean",
-      "description": "If equals 1, then this item will always have the Magic quality (unless it is a Quest item). If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this item will always have the Magic quality (unless it is a Quest item). If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#Magic"
     },
     {
       "name": "Rare",
-      "type": "boolean",
-      "description": "If equals 1, then this item can spawn as a Rare quality. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this item can spawn as a Rare quality. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#Rare"
     },
     {
       "name": "Normal",
-      "type": "boolean",
-      "description": "If equals 1, then this item will always have the Normal quality. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this item will always have the Normal quality. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#Normal"
     },
     {
       "name": "Beltable",
-      "type": "boolean",
-      "description": "If equals 1, then this item can be placed in the character's belt slots. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this item can be placed in the character's belt slots. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#Beltable"
     },
     {
       "name": "MaxSockets1",
-      "type": "number"
+      "type": "number",
+      "description": "Determines the maximum possible number of sockets that can be spawned on the item when the item level is greater than or equal to 1 and less than or equal to the .MaxSocketsLevelThreshold# value. The number of sockets is capped by the armor.gemsockets, weapons.gemsockets, misc.gemsockets value.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#MaxSockets%23"
     },
     {
       "name": "MaxSocketsLevelThreshold1",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the item level threshold between successive .MaxSockets# fields. Ex: If .MaxSocketsLevelThreshold1 is met, use .MaxSockets2. If .MaxSocketsLevelThreshold2 is met, use .MaxSockets3.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#MaxSocketsLevelThreshold%23"
     },
     {
       "name": "MaxSockets2",
-      "type": "number"
+      "type": "number",
+      "description": "Determines the maximum possible number of sockets that can be spawned on the item when the item level is greater than or equal to 1 and less than or equal to the .MaxSocketsLevelThreshold# value. The number of sockets is capped by the armor.gemsockets, weapons.gemsockets, misc.gemsockets value.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#MaxSockets%23"
     },
     {
       "name": "MaxSocketsLevelThreshold2",
-      "type": "number"
+      "type": "number",
+      "description": "Defines the item level threshold between successive .MaxSockets# fields. Ex: If .MaxSocketsLevelThreshold1 is met, use .MaxSockets2. If .MaxSocketsLevelThreshold2 is met, use .MaxSockets3.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#MaxSocketsLevelThreshold%23"
     },
     {
       "name": "MaxSockets3",
-      "type": "number"
+      "type": "number",
+      "description": "Determines the maximum possible number of sockets that can be spawned on the item when the item level is greater than or equal to 1 and less than or equal to the .MaxSocketsLevelThreshold# value. The number of sockets is capped by the armor.gemsockets, weapons.gemsockets, misc.gemsockets value.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#MaxSockets%23"
     },
     {
       "name": "TreasureClass",
-      "type": "boolean",
-      "description": "If equals 1, then allow this Item Type to be used in default treasure classes. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then allow this Item Type to be used in default treasure classes. If equals 0, then ignore this.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#TreasureClass"
     },
     {
       "name": "Rarity",
       "type": "number",
-      "description": "Determines the chance for the item to spawn with stats, when created as a random Weapon/Armor/Misc item. Used in the following formula:",
-      "guideType": "[N]"
+      "description": "Determines the chance for the item to spawn with stats, when created as a random Weapon/Armor/Misc item. Used in the following formula: IF RANDOM(0, ([.Rarity] - [Current Act Level])) > 0, THEN spawn stats",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#Rarity"
     },
     {
       "name": "StaffMods",
       "type": "text",
-      "description": "Determines if the Item Type should have class specific item skill modifiers. Grants skills to the class listed using the",
-      "guideType": "[O]"
+      "description": "Determines if the Item Type should have class specific item skill modifiers",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#StaffMods"
     },
     {
       "name": "Class",
       "type": "text",
-      "description": "Determines if this item should be useable only by a specific class. Referenced from the",
-      "guideType": "[O]"
+      "description": "Determines if this item should be useable only by a specific class",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#Class"
     },
     {
       "name": "VarInvGfx",
       "type": "number",
-      "description": "Tracks the number of inventory graphics used for this item type. This number much match the number of",
-      "guideType": "[N]"
+      "description": "Tracks the number of inventory graphics used for this item type. This number much match the number of .InvGfx# fields used.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#VarInvGfx"
     },
     {
       "name": "InvGfx1",
-      "type": "text"
+      "type": "text",
+      "description": "Defines a DC6 file to use for the item's inventory graphics. The amount of this fields used should match the value used in .VarInvGfx",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#InvGfx%23"
     },
     {
       "name": "InvGfx2",
-      "type": "text"
+      "type": "text",
+      "description": "Defines a DC6 file to use for the item's inventory graphics. The amount of this fields used should match the value used in .VarInvGfx",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#InvGfx%23"
     },
     {
       "name": "InvGfx3",
-      "type": "text"
+      "type": "text",
+      "description": "Defines a DC6 file to use for the item's inventory graphics. The amount of this fields used should match the value used in .VarInvGfx",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#InvGfx%23"
     },
     {
       "name": "InvGfx4",
-      "type": "text"
+      "type": "text",
+      "description": "Defines a DC6 file to use for the item's inventory graphics. The amount of this fields used should match the value used in .VarInvGfx",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#InvGfx%23"
     },
     {
       "name": "InvGfx5",
-      "type": "text"
+      "type": "text",
+      "description": "Defines a DC6 file to use for the item's inventory graphics. The amount of this fields used should match the value used in .VarInvGfx",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#InvGfx%23"
     },
     {
       "name": "InvGfx6",
-      "type": "text"
+      "type": "text",
+      "description": "Defines a DC6 file to use for the item's inventory graphics. The amount of this fields used should match the value used in .VarInvGfx",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#InvGfx%23"
     },
     {
       "name": "StorePage",
       "type": "text",
-      "description": "Uses a code to determine which UI tab page on the NPC shop UI to display this Item Type, such as after it is sold to the NPC. Referenced from the",
-      "guideType": "[O]"
+      "description": "Uses a code to determine which UI tab page on the NPC shop UI to display this Item Type, such as after it is sold to the NPC.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#StorePage"
     },
     {
       "name": "*eol",
@@ -190,30 +297,36 @@
       "comment": true
     },
     {
-      "name": "*skillID",
-      "type": "number",
-      "comment": true
-    },
-    {
-      "name": "*CTC",
-      "type": "text",
-      "comment": true
-    },
-    {
       "name": "UICategory",
-      "type": "text"
+      "type": "text",
+      "description": "Determines what UI Category this item type will be displayed in (used for loot filter and chronicle uniques page). All items that have this type as their type1 will display in the loot filter under this category, unless the item overrides it in misc/armor/weapon files",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#UICategory"
     },
     {
       "name": "RunewordCategory1",
-      "type": "text"
+      "type": "text",
+      "description": "Determines what Runeword UI Category this item type will be displayed in (used the chronicle runewords page). Different item types have different runeword UI categories assigned to them. This is then used in the Chronicle runewords page, where it checks each runeword's runes.itype#, and then the associated .RunewordCategory# for each valid itype to decide which runewords should be filtered on each category",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#RunewordCategory%23"
     },
     {
       "name": "RunewordCategory2",
-      "type": "text"
+      "type": "text",
+      "description": "Determines what Runeword UI Category this item type will be displayed in (used the chronicle runewords page). Different item types have different runeword UI categories assigned to them. This is then used in the Chronicle runewords page, where it checks each runeword's runes.itype#, and then the associated .RunewordCategory# for each valid itype to decide which runewords should be filtered on each category",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#RunewordCategory%23"
     },
     {
       "name": "Restricted",
-      "type": "text"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, this item type is now restricted. Only one item of a given restricted type may be present across all equipped + socketed items. Multiple different restricted types are allowed.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/itemtypes.html#Restricted"
     }
   ]
 }

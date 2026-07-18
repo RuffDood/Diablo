@@ -1,0 +1,263 @@
+{
+  "table": "monlvl",
+  "category": "characters",
+  "file": "global/excel/monlvl.txt",
+  "description": "This file controls how monster statistics increase per level based on the current game type and difficulty. The \"(N\" text in field names signifies to use that specific value for games in Nightmare difficulty. The \"(H)\" text in field names signifies to use that specific value for games in Hell difficulty. \"L-\" signifies the field is used for Ladder Battle.net game types, otherwise its used for Non-Ladder Battle.net / Singleplay / Open Battle.net / TCP. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 31,
+  "columns": [
+    {
+      "name": "Level",
+      "type": "text",
+      "description": "An integer value to determine how to scale the monster's statistics when at a specific level",
+      "guideType": "[comment]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#Level"
+    },
+    {
+      "name": "AC",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Defense (multiplies with the monstats.AC).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#AC"
+    },
+    {
+      "name": "AC(N)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Defense (multiplies with the monstats.AC).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#AC"
+    },
+    {
+      "name": "AC(H)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Defense (multiplies with the monstats.AC).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#AC"
+    },
+    {
+      "name": "L-AC",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Defense (multiplies with the monstats.AC).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#AC"
+    },
+    {
+      "name": "L-AC(N)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Defense (multiplies with the monstats.AC).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#AC"
+    },
+    {
+      "name": "L-AC(H)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Defense (multiplies with the monstats.AC).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#AC"
+    },
+    {
+      "name": "TH",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Attack Rating (multiplies with the monstats.A1TH and monstats.A2TH fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#TH"
+    },
+    {
+      "name": "TH(N)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Attack Rating (multiplies with the monstats.A1TH and monstats.A2TH fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#TH"
+    },
+    {
+      "name": "TH(H)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Attack Rating (multiplies with the monstats.A1TH and monstats.A2TH fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#TH"
+    },
+    {
+      "name": "L-TH",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Attack Rating (multiplies with the monstats.A1TH and monstats.A2TH fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#TH"
+    },
+    {
+      "name": "L-TH(N)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Attack Rating (multiplies with the monstats.A1TH and monstats.A2TH fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#TH"
+    },
+    {
+      "name": "L-TH(H)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Attack Rating (multiplies with the monstats.A1TH and monstats.A2TH fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#TH"
+    },
+    {
+      "name": "HP",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Life (multiplies with the monstats.minHP and monstats.maxHP fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#HP"
+    },
+    {
+      "name": "HP(N)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Life (multiplies with the monstats.minHP and monstats.maxHP fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#HP"
+    },
+    {
+      "name": "HP(H)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Life (multiplies with the monstats.minHP and monstats.maxHP fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#HP"
+    },
+    {
+      "name": "L-HP",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Life (multiplies with the monstats.minHP and monstats.maxHP fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#HP"
+    },
+    {
+      "name": "L-HP(N)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Life (multiplies with the monstats.minHP and monstats.maxHP fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#HP"
+    },
+    {
+      "name": "L-HP(H)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Life (multiplies with the monstats.minHP and monstats.maxHP fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#HP"
+    },
+    {
+      "name": "DM",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Damage (multiplies with the monstats.A1MinD, monstats.A2MinD, monstats.S1MinD and monstats.A1MaxD, monstats.A2MaxD, monstats.S1MaxD fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#DM"
+    },
+    {
+      "name": "DM(N)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Damage (multiplies with the monstats.A1MinD, monstats.A2MinD, monstats.S1MinD and monstats.A1MaxD, monstats.A2MaxD, monstats.S1MaxD fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#DM"
+    },
+    {
+      "name": "DM(H)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Damage (multiplies with the monstats.A1MinD, monstats.A2MinD, monstats.S1MinD and monstats.A1MaxD, monstats.A2MaxD, monstats.S1MaxD fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#DM"
+    },
+    {
+      "name": "L-DM",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Damage (multiplies with the monstats.A1MinD, monstats.A2MinD, monstats.S1MinD and monstats.A1MaxD, monstats.A2MaxD, monstats.S1MaxD fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#DM"
+    },
+    {
+      "name": "L-DM(N)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Damage (multiplies with the monstats.A1MinD, monstats.A2MinD, monstats.S1MinD and monstats.A1MaxD, monstats.A2MaxD, monstats.S1MaxD fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#DM"
+    },
+    {
+      "name": "L-DM(H)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Monster's Damage (multiplies with the monstats.A1MinD, monstats.A2MinD, monstats.S1MinD and monstats.A1MaxD, monstats.A2MaxD, monstats.S1MaxD fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#DM"
+    },
+    {
+      "name": "XP",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Experience provided to the player when killing the Monster (multiplies with the monstats.Exp fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#XP"
+    },
+    {
+      "name": "XP(N)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Experience provided to the player when killing the Monster (multiplies with the monstats.Exp fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#XP"
+    },
+    {
+      "name": "XP(H)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Experience provided to the player when killing the Monster (multiplies with the monstats.Exp fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#XP"
+    },
+    {
+      "name": "L-XP",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Experience provided to the player when killing the Monster (multiplies with the monstats.Exp fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#XP"
+    },
+    {
+      "name": "L-XP(N)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Experience provided to the player when killing the Monster (multiplies with the monstats.Exp fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#XP"
+    },
+    {
+      "name": "L-XP(H)",
+      "type": "number",
+      "description": "Percentage multiplier for increasing the Experience provided to the player when killing the Monster (multiplies with the monstats.Exp fields)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/monlvl.html#XP"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 Deux choses dans un même dépôt :
 
-1. Les **données** du mod Diablo II Resurrected de Vincent (**TCP**), plus ses références (**BK**, **BT**, **VNP**) et le vanilla — des tables `.txt` (TSV) lues par le launcher **D2RLAN**.
+1. Les **données** des mods Diablo II Resurrected de Vincent — **BKVince 3.2** comme cible active sous D2RLoader, **TCP 2.4** comme source historique, plus les références **BK**, **BT**, **VNP** et vanilla.
 2. Une **plateforme web** (monorepo **npm + turbo**) par-dessus : un **éditeur** pour modifier ces tables confortablement, et (à venir) un **wiki** de comparaison des 3 mods.
 
 Les `.txt` restent la **source de vérité** ; pas de base de données — git est la « base ».
@@ -20,9 +20,10 @@ Les `.txt` restent la **source de vérité** ; pas de base de données — git e
 - `excel-vanilla2.4/` — tables du jeu de base D2 2.4 (référence, lecture seule)
 - `data-vanilla3.2/` — extraction CASCView du jeu de base D2R 3.2 (référence, lecture seule) ; seul `data/data/global/excel/` est versionné, les autres branches demeurent locales
 - `apps/admin/` — **éditeur web** des tables (Vite + React)
-- `schemas/` — schémas de colonnes des tables (typage + validation de l'éditeur)
+- `schemas/` — schémas de colonnes des tables BKVince 3.2 (typage, descriptions et validation de l'éditeur), générés depuis le guide TXT courant
 - `scripts/` — `dev-server.js` (API locale de lecture/écriture des `.txt`), `build-data/` (parseur/écrivain TSV), `generate-architecture.ps1` (cadastre), `validate-cartographie/` (validateur), `publish-tcp.ps1`
-- `guide/` — guide D2R communautaire (clone local, **non versionné**)
+- `guide/d2rdoc/` — clone local non versionné de [`eezstreet/d2rdoc`](https://eezstreet.github.io/d2rdoc/), référence primaire des `.txt` D2R 3.2 et des descriptions de headers
+- `guide/legacy/` — ancien D2R Data Guide, conservé localement uniquement pour les assets et certains JSON
 - `wiki-template/` — références pour le futur wiki (dont l'index du wiki BT)
 - `Mission/` — besoins et intentions du mod
 - `ai-cartographie.json` (+ `.schema.json`) — **cadastre** gouverné du dépôt (arbre + rôles + accès agents)
@@ -36,6 +37,18 @@ npm run dev
 ```
 
 Lance le serveur local (port 4000, lit/écrit les `.txt`) et l'éditeur sur **http://localhost:5173**. Clique une cellule pour l'éditer ; « Sauvegarder » réécrit le `.txt` en **préservant son format exact** (colonnes, CRLF, encodage).
+
+## Guide TXT D2R 3.2
+
+Le guide [`eezstreet/d2rdoc`](https://eezstreet.github.io/d2rdoc/) est la référence primaire pour les tables `.txt` 3.2. Son clone demeure local et gitignoré :
+
+```powershell
+git clone https://github.com/eezstreet/d2rdoc.git guide/d2rdoc   # première installation
+git -C guide/d2rdoc pull --ff-only                               # mises à jour suivantes
+npm run generate:schemas                                         # régénère les tooltips/schémas BKVince
+```
+
+L'ancien guide peut être conservé sous `guide/legacy/` pour les assets et certains JSON, mais il n'est plus normatif pour les headers `.txt` 3.2.
 
 ## Cadastre
 

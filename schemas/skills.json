@@ -2,15 +2,22 @@
   "table": "skills",
   "category": "skills",
   "file": "global/excel/skills.txt",
-  "description": "Table skills du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 130,
+  "description": "This file controls all skill functionalities. Skills are abilities used by all units in the game. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 287,
   "columns": [
     {
       "name": "skill",
       "type": "text",
-      "description": "Defines the unique name ID for the skill, which is how other files can reference the skill. The order of the defined skills will determine their ID numbers, so they should not be reordered",
-      "guideType": "[O]"
+      "description": "Defines the unique name ID for the skill, which is how other files can reference the skill. The order of the defined skills will determine their ID numbers, so they should not be reordered.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#skill"
     },
     {
       "name": "*Id",
@@ -20,496 +27,970 @@
     {
       "name": "charclass",
       "type": "text",
-      "description": "Assigns the skill to a specific character class which affects how skill item modifiers work and what skills the class can learn. Referenced from the Code column in PlayerClass.txt",
-      "guideType": "[O]"
+      "description": "Assigns the skill to a specific character class which affects how skill item modifiers work and what skills the class can learn.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#charclass"
     },
     {
       "name": "skilldesc",
       "type": "text",
-      "description": "Controls the skill's tooltip and general UI display. Points to the SkillDesc field from SkillDesc.txt",
-      "guideType": "[O]"
+      "description": "Pointer to data that controls the skill's tooltip and general UI display.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#skilldesc"
     },
     {
       "name": "srvstfunc",
       "type": "number",
       "description": "Server Start function. This controls how the skill works when it is starting to cast, on the server side. This uses a code value to call a function, affecting how certain fields are used.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#srvstfunc"
     },
     {
       "name": "srvdofunc",
       "type": "number",
       "description": "Server Do function. This controls how the skill works when it finishes being cast, on the server side. This uses a code value to call a function, affecting how certain fields are used.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#srvdofunc"
     },
     {
       "name": "srvstopfunc",
       "type": "number",
-      "description": "Server Stop function. This controls how the skill cleans up after ending. This uses a code value to call a function, affecting how certain fields are used. Only used by \"Whirlwind\".",
-      "guideType": "[N]"
+      "description": "Server Stop function. This controls how the skill cleans up after ending. This uses a code value to call a function, affecting how certain fields are used.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#srvstopfunc"
     },
     {
       "name": "prgstack",
       "type": "boolean",
-      "description": "If equals 1, then all srvprgfunc1 functions will execute, based on the current number of progressive charges. If equals 0, then only the relative srvprgfunc1 function will execute, based on the current number of progressive charges",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then all .srvprgfunc# functions will execute, based on the current number of progressive charges. If equals 0, then only the relative .srvprgfunc# function will execute, based on the current number of progressive charges.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#prgstack"
     },
     {
       "name": "srvprgfunc1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls what Server Do function is used when executing the progressive skill with a charge number equal to 1, 2, and 3, respectively. This field uses the same functions as the .srvdofunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#srvprgfunc%23"
     },
     {
       "name": "srvprgfunc2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls what Server Do function is used when executing the progressive skill with a charge number equal to 1, 2, and 3, respectively. This field uses the same functions as the .srvdofunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#srvprgfunc%23"
     },
     {
       "name": "srvprgfunc3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls what Server Do function is used when executing the progressive skill with a charge number equal to 1, 2, and 3, respectively. This field uses the same functions as the .srvdofunc field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#srvprgfunc%23"
     },
     {
       "name": "prgcalc1",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Used as a possible parameter for calculating values when executing the progressive skill with a charge number equal to 1, 2, and 3, respectively. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#prgcalc%23"
     },
     {
       "name": "prgcalc2",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Used as a possible parameter for calculating values when executing the progressive skill with a charge number equal to 1, 2, and 3, respectively. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#prgcalc%23"
     },
     {
       "name": "prgcalc3",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Used as a possible parameter for calculating values when executing the progressive skill with a charge number equal to 1, 2, and 3, respectively. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#prgcalc%23"
     },
     {
       "name": "prgdam",
       "type": "number",
       "description": "Calls a function to modify the progressive damage dealt",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#prgdam"
     },
     {
       "name": "srvmissile",
       "type": "text",
-      "description": "Used as a parameter for controlling what main missile is used for the server functions used ( Missile field from Missiles.txt )",
-      "guideType": "[O]"
+      "description": "Used as a parameter for controlling the main missile used by the server functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#srvmissile"
     },
     {
       "name": "decquant",
       "type": "boolean",
-      "description": "If equals 1, then the unit's ammo quantity will be updated each time the skill's srvdofunc is called. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the unit's ammo quantity will be updated each time the skill's .srvdofunc is called. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#decquant"
     },
     {
       "name": "lob",
       "type": "boolean",
-      "description": "If equals 1, then missiles created by the skill's functions will use the missile lobbing function, which will cause the missile fly in an arc pattern. If equals 0, then missiles that are created will use the normal linear function",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then missiles created by the skill's functions will use the missile lobbing function, which will cause the missile fly in an arc pattern. If equals 0, then missiles that are created will use the normal linear function.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#lob"
     },
     {
       "name": "srvmissilea",
-      "type": "text"
+      "type": "text",
+      "description": "Used as a parameter for controlling the secondary missiles used by the server functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#srvmissile%23"
     },
     {
       "name": "srvmissileb",
-      "type": "text"
+      "type": "text",
+      "description": "Used as a parameter for controlling the secondary missiles used by the server functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#srvmissile%23"
     },
     {
       "name": "srvmissilec",
-      "type": "text"
+      "type": "text",
+      "description": "Used as a parameter for controlling the secondary missiles used by the server functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#srvmissile%23"
     },
     {
       "name": "useServerMissilesOnRemoteClients",
       "type": "number",
-      "description": "Control new missile changes per player skill. Values of 1 will force enable it for that skill. Skills that have matching server/client missiles sets for the skill get auto enabled. Setting this to a value greater than 1 will force it to skip this auto enable logic. If equals 0, then ignore this. Note: this feature is disabled",
-      "guideType": "[N]"
+      "description": "Control new missile changes per player skill. Values of 1 will force enable it for that skill. Skills that have matching server/client missiles sets for the skill get auto enabled. Setting this to a value greater than 1 will force it to skip this auto enable logic. If equals 0, then ignore this. Note: this feature is disabled.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#useServerMissilesOnRemoteClients"
     },
     {
       "name": "srvoverlay",
       "type": "text",
-      "description": "Creates an overlay on the target unit when the skill is used. This is a possible parameter used by various skill functions ( overlay field from Overlay.txt )",
-      "guideType": "[O]"
+      "description": "Used as a possible parameter used by various skill functions to create an overlay on units.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#srvoverlay"
     },
     {
       "name": "aurafilter",
       "type": "number",
-      "description": "Controls different flags that affect how the skill's aura will affect the different types of units. Uses an integer value to check against different bit fields. For example, if the value equals 4354 (binary = 1000100000010) then that returns true for the 4096 (binary = 1000000000000), 256 (binary = 0000100000000), and 2 (binary = 0000000000010) bit field values. (See SuperCalc for a helpful calculator for this)",
-      "guideType": "[N]"
+      "description": "Controls different flags that affect how the skill's aura will affect the different types of units. Uses an integer value to check against different bit fields. For example, if the value equals 4354 (binary = 1000100000010) then that returns true for the 4096 (binary = 1000000000000), 256 (binary = 0000100000000), and 2 (binary = 0000000000010) bit field values.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aurafilter"
     },
     {
       "name": "aurastate",
       "type": "text",
-      "description": "Links to a state that can be applied to the caster unit when casting the skill, depending on the skill function used ( state field from States.txt )",
-      "guideType": "[O]"
+      "description": "A state applied to the caster unit. Used as a possible parameter used by various skill functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aurastate"
     },
     {
       "name": "auratargetstate",
       "type": "text",
-      "description": "Links to a state that can be applied to the target unit when using the skill, depending on the skill function used ( state field from States.txt )",
-      "guideType": "[O]"
+      "description": "A state applied to the target unit. Used as a possible parameter used by various skill functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#auratargetstate"
     },
     {
       "name": "auralencalc",
       "type": "text",
-      "description": "Controls the aura state duration on the unit (where 25 Frames = 1 second). If this value is empty, then the state duration will be controlled by other functions, or it will last forever. This can also be used as a parameter for certain skill functions",
-      "guideType": "[C]"
+      "description": "Calculation Field. Controls the state duration on the unit (where 25 Frames = 1 second). If this value is empty, then the state duration will be controlled by other functions, or it will last forever. Used as a possible parameter used by various skill functions. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#auralencalc"
     },
     {
       "name": "aurarangecalc",
       "type": "text",
-      "description": "Controls the aura state's area radius size, measured in grid sub-tiles. This can also be used as a parameter for certain skill functions",
-      "guideType": "[C]"
+      "description": "Calculation Field. Controls the area radius size for auras and other effects, measured in grid sub-tiles. Used as a possible parameter used by various skill functions. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aurarangecalc"
     },
     {
       "name": "aurastat1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls which stat modifiers will be altered or added by the skill. Used as a possible parameter used by various skill functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aurastat%23"
     },
     {
       "name": "aurastatcalc1",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .aurastat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aurastatcalc%23"
     },
     {
       "name": "aurastat2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls which stat modifiers will be altered or added by the skill. Used as a possible parameter used by various skill functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aurastat%23"
     },
     {
       "name": "aurastatcalc2",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .aurastat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aurastatcalc%23"
     },
     {
       "name": "aurastat3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls which stat modifiers will be altered or added by the skill. Used as a possible parameter used by various skill functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aurastat%23"
     },
     {
       "name": "aurastatcalc3",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .aurastat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aurastatcalc%23"
     },
     {
       "name": "aurastat4",
-      "type": "text"
+      "type": "text",
+      "description": "Controls which stat modifiers will be altered or added by the skill. Used as a possible parameter used by various skill functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aurastat%23"
     },
     {
       "name": "aurastatcalc4",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .aurastat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aurastatcalc%23"
     },
     {
       "name": "aurastat5",
-      "type": "text"
+      "type": "text",
+      "description": "Controls which stat modifiers will be altered or added by the skill. Used as a possible parameter used by various skill functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aurastat%23"
     },
     {
       "name": "aurastatcalc5",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .aurastat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aurastatcalc%23"
     },
     {
       "name": "aurastat6",
-      "type": "text"
+      "type": "text",
+      "description": "Controls which stat modifiers will be altered or added by the skill. Used as a possible parameter used by various skill functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aurastat%23"
     },
     {
       "name": "aurastatcalc6",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .aurastat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aurastatcalc%23"
     },
     {
       "name": "auraevent1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what event will trigger the relative .auraeventfunc# field function. Used as a possible parameter used by various skill functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#auraevent%23"
     },
     {
       "name": "auraeventfunc1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the function used when the relative .auraevent# event is triggered. Corresponds to a enums.Server Event Functions.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#auraeventfunc%23"
     },
     {
       "name": "auraevent2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what event will trigger the relative .auraeventfunc# field function. Used as a possible parameter used by various skill functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#auraevent%23"
     },
     {
       "name": "auraeventfunc2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the function used when the relative .auraevent# event is triggered. Corresponds to a enums.Server Event Functions.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#auraeventfunc%23"
     },
     {
       "name": "auraevent3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what event will trigger the relative .auraeventfunc# field function. Used as a possible parameter used by various skill functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#auraevent%23"
     },
     {
       "name": "auraeventfunc3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the function used when the relative .auraevent# event is triggered. Corresponds to a enums.Server Event Functions.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#auraeventfunc%23"
+    },
+    {
+      "name": "auraevent4",
+      "type": "text",
+      "description": "Controls what event will trigger the relative .auraeventfunc# field function. Used as a possible parameter used by various skill functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#auraevent%23"
+    },
+    {
+      "name": "auraeventfunc4",
+      "type": "number",
+      "description": "Controls the function used when the relative .auraevent# event is triggered. Corresponds to a enums.Server Event Functions.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#auraeventfunc%23"
     },
     {
       "name": "passivestate",
       "type": "text",
-      "description": "Links to a state that can be applied by the passive skill, depending on the skill function used ( state field from States.txt )",
-      "guideType": "[O]"
+      "description": "Links to a state that is automatically applied as a passive when the skill gains levels.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivestate"
     },
     {
       "name": "passiveitype",
       "type": "text",
-      "description": "Links to an Item Type to define what type of item needs to be equipped in order to enable the passive state ( Code field from Itemtypes.txt )",
-      "guideType": "[O]"
+      "description": "Links to an Item Type to define what type of item needs to be equipped in order to enable the .passivestate. Not all stats support this behavior, usually only ones with \"mastery\" in the name.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passiveitype"
     },
     {
       "name": "passivereqweaponcount",
       "type": "number",
-      "description": "Controls how many equipped weapons are needed for this passive state to be enabled. If the value equals 1, then the player must have 1 weapon equipped for this passive state to be enabled. If the value equals 2, then the player must be dual wielding weapons for this passive state to be enabled. If the value equals 0, then ignore this field",
-      "guideType": "[N]"
+      "description": "Controls how many equipped weapons are needed for the .passivestate to be enabled. If the value equals 1, then the player must have 1 weapon equipped for the .passivestate to be enabled. If the value equals 2, then the player must be dual wielding weapons for the .passivestate to be enabled. If the value equals 0, then ignore this field. Not all stats support this behavior, usually only ones with \"mastery\" in the name.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivereqweaponcount"
     },
     {
       "name": "passivestat1",
-      "type": "text"
+      "type": "text",
+      "description": "Assigns stat modifiers to the .passivestate.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivestat%23"
     },
     {
       "name": "passivecalc1",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .passivestat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivecalc%23"
     },
     {
       "name": "passivestat2",
-      "type": "text"
+      "type": "text",
+      "description": "Assigns stat modifiers to the .passivestate.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivestat%23"
     },
     {
       "name": "passivecalc2",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .passivestat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivecalc%23"
     },
     {
       "name": "passivestat3",
-      "type": "text"
+      "type": "text",
+      "description": "Assigns stat modifiers to the .passivestate.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivestat%23"
     },
     {
       "name": "passivecalc3",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .passivestat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivecalc%23"
     },
     {
       "name": "passivestat4",
-      "type": "text"
+      "type": "text",
+      "description": "Assigns stat modifiers to the .passivestate.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivestat%23"
     },
     {
       "name": "passivecalc4",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .passivestat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivecalc%23"
     },
     {
       "name": "passivestat5",
-      "type": "text"
+      "type": "text",
+      "description": "Assigns stat modifiers to the .passivestate.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivestat%23"
     },
     {
       "name": "passivecalc5",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .passivestat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivecalc%23"
     },
     {
       "name": "passivestat6",
-      "type": "text"
+      "type": "text",
+      "description": "Assigns stat modifiers to the .passivestate.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivestat%23"
     },
     {
       "name": "passivecalc6",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .passivestat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivecalc%23"
+    },
+    {
+      "name": "passivestat7",
+      "type": "text",
+      "description": "Assigns stat modifiers to the .passivestate.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivestat%23"
+    },
+    {
+      "name": "passivecalc7",
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .passivestat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivecalc%23"
+    },
+    {
+      "name": "passivestat8",
+      "type": "text",
+      "description": "Assigns stat modifiers to the .passivestate.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivestat%23"
+    },
+    {
+      "name": "passivecalc8",
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .passivestat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivecalc%23"
+    },
+    {
+      "name": "passivestat9",
+      "type": "text",
+      "description": "Assigns stat modifiers to the .passivestate.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivestat%23"
+    },
+    {
+      "name": "passivecalc9",
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .passivestat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivecalc%23"
+    },
+    {
+      "name": "passivestat10",
+      "type": "text",
+      "description": "Assigns stat modifiers to the .passivestate.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivestat%23"
+    },
+    {
+      "name": "passivecalc10",
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .passivestat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivecalc%23"
+    },
+    {
+      "name": "passivestat11",
+      "type": "text",
+      "description": "Assigns stat modifiers to the .passivestate.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivestat%23"
+    },
+    {
+      "name": "passivecalc11",
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .passivestat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivecalc%23"
+    },
+    {
+      "name": "passivestat12",
+      "type": "text",
+      "description": "Assigns stat modifiers to the .passivestate.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivestat%23"
+    },
+    {
+      "name": "passivecalc12",
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .passivestat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivecalc%23"
+    },
+    {
+      "name": "passivestat13",
+      "type": "text",
+      "description": "Assigns stat modifiers to the .passivestate.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivestat%23"
+    },
+    {
+      "name": "passivecalc13",
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .passivestat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivecalc%23"
+    },
+    {
+      "name": "passivestat14",
+      "type": "text",
+      "description": "Assigns stat modifiers to the .passivestate.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivestat%23"
+    },
+    {
+      "name": "passivecalc14",
+      "type": "text",
+      "description": "Calculation Field. Controls the value for the relative .passivestat# field. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passivecalc%23"
     },
     {
       "name": "summon",
       "type": "text",
-      "description": "Controls what monster is summoned by the skill ( ID field from MonStats.txt ). This field's usage will depend on the skill function used. This field can also be used as reference for AI behaviors and for SkillDesc.txt",
-      "guideType": "[O]"
+      "description": "Controls what monster is summoned by the skill. This field's usage will depend on the skill function used. This field can also be used as reference for AI behaviors and for the skilldesc file.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#summon"
     },
     {
       "name": "pettype",
       "type": "text",
-      "description": "Links to a pet type data to control how the summoned unit is displayed on the UI ( PetType column in PetType.txt )",
-      "guideType": "[O]"
+      "description": "Links to a pet type data to control how the summoned unit is displayed on the UI",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#pettype"
     },
     {
       "name": "petmax",
       "type": "text",
-      "description": "Used skill functions that summon pets to control how many summon units are allowed at a time",
-      "guideType": "[C]"
+      "description": "Calculation Field. Used skill functions that summon pets to control how many summon units are allowed at a time. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#petmax"
     },
     {
       "name": "requirespettype",
-      "type": "number"
+      "type": "boolean",
+      "description": "Boolean Field. If equals 1, then the skill requires at least one pet of the pettype to cast.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#requirespettype"
     },
     {
       "name": "summode",
       "type": "text",
-      "description": "Defines the animation mode that the summoned monster will be initiated with. Referenced from the Code column in MonMode.txt",
-      "guideType": "[O]"
+      "description": "Defines the animation mode that the summoned monster will be initiated with. Uses a MonMode.code.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#summode"
     },
     {
       "name": "sumskill1",
-      "type": "text"
+      "type": "text",
+      "description": "Assigns a skill to the summoned monster. This can be useful for adding a skill to a monster to transition its synergy bonuses.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#sumskill%23"
     },
     {
       "name": "sumsk1calc",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Controls the skill level for the designated .sumskill# field when the skill is assigned to the monster. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#sumsk%23calc"
     },
     {
       "name": "sumskill2",
-      "type": "text"
+      "type": "text",
+      "description": "Assigns a skill to the summoned monster. This can be useful for adding a skill to a monster to transition its synergy bonuses.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#sumskill%23"
     },
     {
       "name": "sumsk2calc",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Controls the skill level for the designated .sumskill# field when the skill is assigned to the monster. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#sumsk%23calc"
     },
     {
       "name": "sumskill3",
-      "type": "text"
+      "type": "text",
+      "description": "Assigns a skill to the summoned monster. This can be useful for adding a skill to a monster to transition its synergy bonuses.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#sumskill%23"
     },
     {
       "name": "sumsk3calc",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Controls the skill level for the designated .sumskill# field when the skill is assigned to the monster. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#sumsk%23calc"
     },
     {
       "name": "sumskill4",
-      "type": "text"
+      "type": "text",
+      "description": "Assigns a skill to the summoned monster. This can be useful for adding a skill to a monster to transition its synergy bonuses.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#sumskill%23"
     },
     {
       "name": "sumsk4calc",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Controls the skill level for the designated .sumskill# field when the skill is assigned to the monster. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#sumsk%23calc"
     },
     {
       "name": "sumskill5",
-      "type": "text"
+      "type": "text",
+      "description": "Assigns a skill to the summoned monster. This can be useful for adding a skill to a monster to transition its synergy bonuses.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#sumskill%23"
     },
     {
       "name": "sumsk5calc",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Controls the skill level for the designated .sumskill# field when the skill is assigned to the monster. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#sumsk%23calc"
     },
     {
       "name": "sumumod",
-      "type": "number",
-      "description": "Assigns a monster modifier to the summoned monster ( ID field from MonUMod.txt )",
-      "guideType": "[N]"
+      "type": "text",
+      "description": "Assigns a monster modifier to the summoned monster. Uses the index of an entry in monumod Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#sumumod"
     },
     {
       "name": "sumoverlay",
       "type": "text",
-      "description": "Creates an overlay on the summoned monster when it is first created ( overlay field from Overlay.txt )",
-      "guideType": "[O]"
+      "description": "Creates an overlay on the summoned monster when it is first created.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#sumoverlay"
     },
     {
       "name": "stsuccessonly",
       "type": "boolean",
-      "description": "If equals 1, then the following sound and overlay fields will only play when the skill is successfully cast, instead of always being used even when the skill cast is interrupted. If equals 0, then the following sound and overlay fields will always be used when the skill is cast, regardless if the skill was interrupted or not",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the following sound and overlay fields will only play when the skill is successfully cast, instead of always being used even when the skill cast is interrupted. If equals 0, then the following sound and overlay fields will always be used when the skill is cast, regardless if the skill was interrupted or not.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#stsuccessonly"
     },
     {
       "name": "stsound",
       "type": "text",
-      "description": "Controls what client sound is played when the skill is used, based on the client starting function ( Sound field from Sounds.txt )",
-      "guideType": "[O]"
+      "description": "Controls what client sound is played when the skill is used, based on the client starting function",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#stsound"
     },
     {
       "name": "stsoundclass",
       "type": "text",
-      "description": "Controls what client sound is played when the skill is used by the skill's assigned class ( charclass ), based on the client starting function ( Sound field from Sounds.txt ). If the unit using the skill is not the same class as the \"charclass\" value for the skill, then this sound will not play",
-      "guideType": "[O]"
+      "description": "Controls what client sound is played when the skill is used by the skill's assigned class (See .charclass field), based on the client starting function. If the unit using the skill is not the same class as the .charclass value for the skill, then this sound will not play.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#stsoundclass"
     },
     {
       "name": "stsounddelay",
       "type": "boolean",
-      "description": "If equals 1, then use the weapon's hit class to determine the delay in frames (where 25 frames = 1 second) before playing the skill's start sound. If equals 0, then the skill's start sound will play immediately.",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then use the weapon's hit class to determine the delay in frames (where 25 frames = 1 second) before playing the skill's start sound. If equals 0, then the skill's start sound will play immediately.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#stsounddelay"
     },
     {
       "name": "weaponsnd",
       "type": "boolean",
-      "description": "If equals 1, then play the weapon's hit sound when hitting an enemy with this skill. The sound chosen is based on the weapon's hit class. Also use the sound delay based on the weapon's hit class to determine the delay in frames (where 25 frames = 1 second) before playing the weapon hit sound ( stsounddelay for the types of hit class sounds and delays used). If equals 0, then do not play the weapon hit sound when hitting an enemy with the skill attack",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then play the weapon's hit sound when hitting an enemy with this skill. The sound chosen is based on the weapon's hit class. Also use the sound delay based on the weapon's hit class to determine the delay in frames (where 25 frames = 1 second) before playing the weapon hit sound (See .stsounddelay for the types of hit class sounds and delays used). If equals 0, then do not play the weapon hit sound when hitting an enemy with the skill attack.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#weaponsnd"
     },
     {
       "name": "dosound",
       "type": "text",
-      "description": "Controls the sound for the skill each time the cltdofunc is used ( Sound field from Sounds.txt )",
-      "guideType": "[O]"
+      "description": "Controls the sound for the skill each time the .cltdofunc is used",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#dosound"
     },
     {
       "name": "dosound a",
-      "type": "text"
+      "type": "text",
+      "description": "Used as a possible parameter for playing additional sounds based on the .cltdofunc used",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#dosound%20a"
     },
     {
       "name": "dosound b",
-      "type": "text"
+      "type": "text",
+      "description": "Used as a possible parameter for playing additional sounds based on the .cltdofunc used",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#dosound%20a"
     },
     {
       "name": "tgtoverlay",
       "type": "text",
-      "description": "Used as a possible parameter for adding an Overlay on the target unit, based on the cltdofunc used ( overlay field from Overlay.txt )",
-      "guideType": "[O]"
+      "description": "Used as a possible parameter for adding an Overlay on the target unit, based on the .cltdofunc used",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#tgtoverlay"
     },
     {
       "name": "tgtsound",
       "type": "text",
-      "description": "Used as a possible parameter for playing a sound located on the target unit, based on the cltdofunc used ( Sound field from Sounds.txt )",
-      "guideType": "[O]"
+      "description": "Used as a possible parameter for playing a sound located on the target unit, based on the .cltdofunc used",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#tgtsound"
     },
     {
       "name": "prgoverlay",
       "type": "text",
-      "description": "Used as a possible parameter for adding an Overlay on the caster unit for progressive charge-up skill functions, based on the cltdofunc used and how many progressive charges the caster unit has ( overlay field from Overlay.txt )",
-      "guideType": "[O]"
+      "description": "Used as a possible parameter for adding an Overlay on the caster unit for progressive charge-up skill functions, based on the .cltdofunc used and how many progressive charges the caster unit has",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#prgoverlay"
     },
     {
       "name": "prgsound",
       "type": "text",
-      "description": "Used as a possible parameter for playing a sound when using the skill for progressive charge-up skill functions, based on the cltdofunc used and how many progressive charges the caster unit has ( Sound field from Sounds.txt )",
-      "guideType": "[O]"
+      "description": "Used as a possible parameter for playing a sound when using the skill for progressive charge-up skill functions, based on the .cltdofunc used and how many progressive charges the caster unit has",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#prgsound"
     },
     {
       "name": "castoverlay",
       "type": "text",
-      "description": "Used as a possible parameter for adding an Overlay on the caster unit when using the skill, based on the Client Start/Do function used ( overlay field from Overlay.txt )",
-      "guideType": "[O]"
+      "description": "Used as a possible parameter for adding an Overlay on the caster unit when using the skill, based on the .cltstfunc / .cltdofunc used",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#castoverlay"
     },
     {
       "name": "cltoverlaya",
-      "type": "text"
+      "type": "text",
+      "description": "Used as a possible parameter for adding additional Overlays on the caster unit, based on the .cltstfunc / .cltdofunc used",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cltoverlaya"
     },
     {
       "name": "cltoverlayb",
-      "type": "text"
+      "type": "text",
+      "description": "Used as a possible parameter for adding additional Overlays on the caster unit, based on the .cltstfunc / .cltdofunc used",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cltoverlaya"
     },
     {
       "name": "cltstfunc",
       "type": "number",
       "description": "Client Start function. This controls how the skill works when it is starting to cast, on the client side. This uses a code value to call a function, affecting how certain fields are used.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cltstfunc"
     },
     {
       "name": "cltdofunc",
       "type": "number",
       "description": "Client Do function. This controls how the skill works when it finishes being cast, on the client side. This uses a code value to call a function, affecting how certain fields are used.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cltdofunc"
     },
     {
       "name": "cltstopfunc",
       "type": "number",
-      "description": "Client Stop function. This controls how the skill cleans up after ending. This uses a code value to call a function, affecting how certain fields are used. Only used for \"Whirlwind\"",
-      "guideType": "[N]"
+      "description": "Client Stop function. This controls how the skill cleans up after ending. This uses a code value to call a function, affecting how certain fields are used.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cltstopfunc"
     },
     {
       "name": "cltprgfunc1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls which Client Do function is used when the skill is executed while having a progressive charge number equal to 1, 2, and 3, respectively. (uses .cltdofunc values)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cltprgfunc%23"
     },
     {
       "name": "cltprgfunc2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls which Client Do function is used when the skill is executed while having a progressive charge number equal to 1, 2, and 3, respectively. (uses .cltdofunc values)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cltprgfunc%23"
     },
     {
       "name": "cltprgfunc3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls which Client Do function is used when the skill is executed while having a progressive charge number equal to 1, 2, and 3, respectively. (uses .cltdofunc values)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cltprgfunc%23"
     },
     {
       "name": "cltmissile",
       "type": "text",
-      "description": "Used as a parameter for controlling what main missile is used for the client functions used ( Missile field from Missiles.txt )",
-      "guideType": "[O]"
+      "description": "Used as a parameter for controlling the main missile by the client functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cltmissile"
     },
     {
       "name": "cltmissilea",
-      "type": "text"
+      "type": "text",
+      "description": "Used as a parameter for controlling the secondary missiles used by the client functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cltmissile%23"
     },
     {
       "name": "cltmissileb",
-      "type": "text"
+      "type": "text",
+      "description": "Used as a parameter for controlling the secondary missiles used by the client functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cltmissile%23"
     },
     {
       "name": "cltmissilec",
-      "type": "text"
+      "type": "text",
+      "description": "Used as a parameter for controlling the secondary missiles used by the client functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cltmissile%23"
     },
     {
       "name": "cltmissiled",
-      "type": "text"
+      "type": "text",
+      "description": "Used as a parameter for controlling the secondary missiles used by the client functions.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cltmissile%23"
     },
     {
       "name": "cltcalc1",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Use as a possible parameter for controlling values for the client functions. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cltcalc%23"
     },
     {
       "name": "*cltcalc1 desc",
@@ -518,7 +999,11 @@
     },
     {
       "name": "cltcalc2",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. Use as a possible parameter for controlling values for the client functions. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cltcalc%23"
     },
     {
       "name": "*cltcalc2 desc",
@@ -527,7 +1012,11 @@
     },
     {
       "name": "cltcalc3",
-      "type": "number"
+      "type": "text",
+      "description": "Calculation Field. Use as a possible parameter for controlling values for the client functions. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cltcalc%23"
     },
     {
       "name": "*cltcalc3 desc",
@@ -537,474 +1026,706 @@
     {
       "name": "warp",
       "type": "boolean",
-      "description": "If equals 1 and the skill uses a function that involves warping/teleporting, then check for a scene transition loading screen, if necessary. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1 and the skill uses a function that involves warping/teleporting, then check for a scene transition loading screen, if necessary. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#warp"
     },
     {
       "name": "immediate",
       "type": "boolean",
-      "description": "If equals 1 and the skill has a periodic function, then immediately perform the skill's function when the periodic skill is activated. If equals 0, then wait until the skill's first periodic delay before performing the skill's function",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1 and the skill has a periodic function, then immediately perform the skill's function when the periodic skill is activated. If equals 0, then wait until the skill's first periodic delay before performing the skill's function.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#immediate"
     },
     {
       "name": "enhanceable",
       "type": "boolean",
-      "description": "If equals 1, then the skill will be included in the plus to all skills item modifier. If equals 0, then the skill will not be included in the plus to all skills item modifier attackrank - Controls the skill's AI score value for determining what is the best target for the AI. The higher the value, then the more likely the AI will select a target with this skill equipped",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill will be included in the plus to all skills item modifier. If equals 0, then the skill will not be included in the plus to all skills item modifier.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#enhanceable"
     },
     {
       "name": "attackrank",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the skill's AI score value for determining what is the best target for the AI. The higher the value, then the more likely the AI will select a target with this skill equipped.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#attackrank"
     },
     {
       "name": "noammo",
       "type": "boolean",
-      "description": "If equals 1, then the skill will not check that weapon's ammo when performing an attack. This relies on the Shoots field from ItemTypes.txt . If equals 0, then the weapon will consume its ammo when being used by the skill range - Determines how the unit uses the skill, which affects the weapon requirements and the type of attack used",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill will not check that weapon's ammo when performing an attack. This relies on the itemtypes.Shoots field. If equals 0, then the weapon will consume its ammo when being used by the skill.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#noammo"
     },
     {
       "name": "range",
-      "type": "text"
+      "type": "text",
+      "description": "Determines how the unit uses the skill, which affects the weapon requirements and the type of attack used.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#range"
     },
     {
       "name": "weapsel",
       "type": "number",
       "description": "If the unit can dual wield weapons, then this field will control how the weapons are used for the skill",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#weapsel"
+    },
+    {
+      "name": "requiresweapon",
+      "type": "boolean",
+      "description": "Boolean Field. If equals 1, then the skill requires an equiped weapon to cast.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#requiresweapon"
     },
     {
       "name": "itypea1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what Item Types are included, or allowed, when determining if this skill can be used",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#itypea%23"
     },
     {
       "name": "itypea2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what Item Types are included, or allowed, when determining if this skill can be used",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#itypea%23"
     },
     {
       "name": "itypea3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what Item Types are included, or allowed, when determining if this skill can be used",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#itypea%23"
     },
     {
       "name": "etypea1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what Item Types are excluded, or not allowed, when determining if this skill can be used",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#etypea%23"
     },
     {
       "name": "etypea2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what Item Types are excluded, or not allowed, when determining if this skill can be used",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#etypea%23"
     },
     {
       "name": "itypeb1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what alternate Item Types are included, or allowed, when determining if this skill can be used. This acts as a second set of Item Types to check.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#itypeb%23"
     },
     {
       "name": "itypeb2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what alternate Item Types are included, or allowed, when determining if this skill can be used. This acts as a second set of Item Types to check.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#itypeb%23"
     },
     {
       "name": "itypeb3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what alternate Item Types are included, or allowed, when determining if this skill can be used. This acts as a second set of Item Types to check.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#itypeb%23"
     },
     {
       "name": "etypeb1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what alternate Item Types are excluded, or not allowed, when determining if this skill can be used. This acts as a second set of Item Types to check.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#etypeb%23"
     },
     {
       "name": "etypeb2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what alternate Item Types are excluded, or not allowed, when determining if this skill can be used. This acts as a second set of Item Types to check.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#etypeb%23"
     },
     {
       "name": "anim",
       "type": "text",
-      "description": "Controls the animation mode that the player character will use when using this skill. Setting the mode to Sequence (SQ) will cause the player character to play a time controlled animation sequence, utilizing certain sequence fields. Referenced from the Token column in PlrMode.txt",
-      "guideType": "[O]"
+      "description": "Controls the animation mode that the player character will use when using this skill. Setting the mode to Sequence (SQ) will cause the player character to play a time controlled animation sequence, utilizing certain sequence fields. Uses a PlrMode.Code",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#anim"
     },
     {
       "name": "seqtrans",
       "type": "text",
-      "description": "Uses the same inputs as the anim field. If the \"anim\" field equals SQ (Sequence) and this field equals SC (Cast), then the sequence animation speed can be modified by the faster cast rate stat modifier",
-      "guideType": "[O]"
+      "description": "If the .anim field equals SQ (Sequence) and this field equals SC (Cast), then the sequence animation speed can be modified by the faster cast rate stat modifier. Uses a PlrMode.Code",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#seqtrans"
     },
     {
       "name": "monanim",
       "type": "text",
-      "description": "Controls the animat on mode that the monster will use when using this skill. This is similar to the anim field except with monster units using the skill instead of player units. Referenced from the Token column in MonMode.txt",
-      "guideType": "[O]"
+      "description": "Controls the animation mode that the monster will use when using this skill. This is similar to the .anim field except with monster units using the skill instead of player units. Uses a MonMode.code",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#monanim"
     },
     {
       "name": "seqnum",
       "type": "number",
-      "description": "If the unit is a player and the anim used for the skill is a Sequence, then this field will control the index of which sequence animation to use. These sequences are specifically designed for certain skills, and each sequence has a set number of frames using certain animations.",
-      "guideType": "[N]"
+      "description": "If the unit is a player and the .anim used for the skill is a Sequence, then this field will control the index of which sequence animation to use. These sequences are specifically designed for certain skills, and each sequence has a set number of frames using certain animations.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#seqnum"
     },
     {
       "name": "seqinput",
       "type": "number",
-      "description": "For skills that can repeat, this controls the number of frames to wait before the \"Do\" frame in the sequence. This acts as a delay in frames (25 Frames = 1 second) to wait within the sequence animation before it is allowed to be cast again or for looping back to the start of the sequence, such as for the Sorceress Inferno skill",
-      "guideType": "[N]"
+      "description": "For skills that can repeat, this controls the number of frames to wait before the \"Do\" frame in the sequence. This acts as a delay in frames (25 Frames = 1 second) to wait within the sequence animation before it is allowed to be cast again or for looping back to the start of the sequence, such as for the Sorceress Inferno skill.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#seqinput"
     },
     {
       "name": "durability",
       "type": "boolean",
-      "description": "If equals 1 and when the player character ends an animation mode that was not Attack 1, Attack 2, or Throw, then check the quantity and durability of the player's items to see if the valid weapons are out of ammo or are broken. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1 and when the player character ends an animation mode that was not Attack 1, Attack 2, or Throw, then check the quantity and durability of the player's items to see if the valid weapons are out of ammo or are broken. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#durability"
     },
     {
       "name": "UseAttackRate",
       "type": "boolean",
-      "description": "If equals 1, then the current attack speed should be updated after using the skill, relative to the \"attackrate\" stat ( ItemStatCost.txt ), and if the skill was an attacking skill. If equals 0, then the attack speed will not be updated after using the skill",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the current attack speed should be updated after using the skill, relative to the \"attackrate\" stat (See itemstatcost), and if the skill was an attacking skill. If equals 0, then the attack speed will not be updated after using the skill.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#UseAttackRate"
     },
     {
       "name": "LineOfSight",
       "type": "number",
       "description": "Controls the skill's collision filters for valid target locations when it is being cast",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#LineOfSight"
     },
     {
       "name": "TargetableOnly",
       "type": "boolean",
-      "description": "If equals 1, then the skill will require a target unit in order to be used. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill will require a target unit in order to be used. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#TargetableOnly"
     },
     {
       "name": "SearchEnemyXY",
       "type": "boolean",
-      "description": "If equals 1, then when the skill is cast on a target location, it will automatically search in different directions in the target area to find the first available enemy target. If equals 0, then ignore this. This field can be overridden if the SearchEnemyNear field is enabled",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then when the skill is cast on a target location, it will automatically search in different directions in the target area to find the first available enemy target. If equals 0, then ignore this. This field can be overridden if the .SearchEnemyNear field is enabled.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#SearchEnemyXY"
     },
     {
       "name": "SearchEnemyNear",
       "type": "boolean",
-      "description": "If equals 1, then when the skill is cast on a target location, it will automatically find the nearest enemy target. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then when the skill is cast on a target location, it will automatically find the nearest enemy target. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#SearchEnemyNear"
     },
     {
       "name": "SearchOpenXY",
       "type": "boolean",
-      "description": "If equals 1, then automatically search in a radius of size 7 in around the clicked target location to find an available unoccupied location to use the skill, testing for collision. If equals 0, then ignore this. This field can be overridden if the SearchEnemyNear or SearchEnemyXY field is enabled",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then automatically search in a radius of size 7 in around the clicked target location to find an available unoccupied location to use the skill, testing for collision. If equals 0, then ignore this. This field can be overridden if the .SearchEnemyNear or .SearchEnemyXY field is enabled.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#SearchOpenXY"
     },
     {
       "name": "SelectProc",
       "type": "number",
       "description": "Uses a function to check that the target is a corpse with various parameters before validating the usage of the skill",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#SelectProc"
     },
     {
       "name": "TargetCorpse",
       "type": "boolean",
-      "description": "If equals 1, then the skill is allowed to target corpses. If equals 0, then skill cannot target corpses",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill is allowed to target corpses. If equals 0, then skill cannot target corpses.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#TargetCorpse"
     },
     {
       "name": "TargetPet",
       "type": "boolean",
-      "description": "If equals 1, then the skill is allowed to target pets (summons and mercenaries). If equals 0, then the skill cannot target pets",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill is allowed to target pets (summons and mercenaries). If equals 0, then the skill cannot target pets.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#TargetPet"
     },
     {
       "name": "TargetAlly",
       "type": "boolean",
-      "description": "If equals 1, then the skill is allowed to target ally units. If equals 0, then the skill cannot target ally units",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill is allowed to target ally units. If equals 0, then the skill cannot target ally units.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#TargetAlly"
     },
     {
       "name": "TargetItem",
       "type": "boolean",
-      "description": "If equals 1, then the skill is allowed to target items on the ground. If equals 0, then the skill cannot target items",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill is allowed to target items on the ground. If equals 0, then the skill cannot target items.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#TargetItem"
     },
     {
       "name": "AttackNoMana",
       "type": "boolean",
-      "description": "If equals 1, then then when the caster does not have enough mana to cast the skill and attempts to use the skill, the caster will default to using the Attack skill. If equals 0, then attempting to use the skill without enough mana will do nothing",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then then when the caster does not have enough mana to cast the skill and attempts to use the skill, the caster will default to using the Attack skill. If equals 0, then attempting to use the skill without enough mana will do nothing.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#AttackNoMana"
     },
     {
       "name": "TgtPlaceCheck",
       "type": "boolean",
-      "description": "If equals 1, then check that the target location is available for spawning a unit, testing collision. If equals 0, then ignore this. This is only used for skills that monsters use to spawn new units",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then check that the target location is available for spawning a unit, testing collision. If equals 0, then ignore this. This is only used for skills that monsters use to spawn new units.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#TgtPlaceCheck"
     },
     {
       "name": "KeepCursorStateOnKill",
       "type": "boolean",
-      "description": "If equals 1, then the mouse click hold state will continue to stay active after killing a selected target. If equals 0, then after killing the target, the mouse click hold state will reset",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the mouse click hold state will continue to stay active after killing a selected target. If equals 0, then after killing the target, the mouse click hold state will reset.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#KeepCursorStateOnKill"
     },
     {
       "name": "ContinueCastUnselected",
       "type": "boolean",
-      "description": "If equals 1, then while the mouse is held down and there is no more target selected, then the skill will continue being used at the mouse's location. If equals 0, then while the mouse is held down and there is no more target selected, then the player character will cancel the skill and move to the mouse location",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then while the mouse is held down and there is no more target selected, then the skill will continue being used at the mouse's location. If equals 0, then while the mouse is held down and there is no more target selected, then the player character will cancel the skill and move to the mouse location.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ContinueCastUnselected"
     },
     {
       "name": "ClearSelectedOnHold",
       "type": "boolean",
-      "description": "If equals 1, then when the mouse is held down, the target selection will be cleared. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then when the mouse is held down, the target selection will be cleared. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ClearSelectedOnHold"
     },
     {
       "name": "ItemEffect",
       "type": "number",
-      "description": "Uses a Server Do function (\"srvdofunc\") for handling how the skill is used when it is triggered by an item, on the server side",
-      "guideType": "[N]"
+      "description": "Uses a Server Do function (See .srvdofunc) for handling how the skill is used when it is triggered by an item, on the server side.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ItemEffect"
     },
     {
       "name": "ItemCltEffect",
       "type": "number",
-      "description": "Uses a Client Do function (\"cltdofunc\") for handling how the skill is used when it is triggered by an item, on the client side",
-      "guideType": "[N]"
+      "description": "Uses a Client Do function (See .cltdofunc) for handling how the skill is used when it is triggered by an item, on the client side.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ItemCltEffect"
     },
     {
       "name": "ItemTgtDo",
       "type": "boolean",
-      "description": "If equals 1, then use the skill from the enemy target instead of the caster. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then use the skill from the enemy target instead of the caster. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ItemTgtDo"
     },
     {
       "name": "ItemTarget",
       "type": "number",
       "description": "Controls the targeting behavior of the skill when it is triggered by an item.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ItemTarget"
+    },
+    {
+      "name": "ItemUseRestrict",
+      "type": "boolean",
+      "description": "Boolean Field. If equals 1, then use the state restriction defined in the .restrict field when being triggered by an item.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ItemUseRestrict"
     },
     {
       "name": "ItemCheckStart",
       "type": "boolean",
-      "description": "If equals 1, then use the skill's srvstfunc when the skill is trigged by an item. If equals 0, then the skill's Server Start function is ignored",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then use the skill's Server Start function (See .srvstfunc) when the skill is trigged by an item. If equals 0, then the skill's Server Start function is ignored.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ItemCheckStart"
     },
     {
       "name": "ItemCltCheckStart",
       "type": "boolean",
-      "description": "If equals 1, then when the skill is triggered by an item, and if the target is dead and the skill has a cltstfunc , then add the \"corpse_noselect\" to the target. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then when the skill is triggered by an item, and if the target is dead and the skill has a Client Start function (See .cltstfunc), then add the \"corpse_noselect\" flag to the target. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ItemCltCheckStart"
     },
     {
       "name": "ItemCastSound",
       "type": "text",
-      "description": "Play a sound when the skill is used by an item event. ( Sound field from Sounds.txt )",
-      "guideType": "[O]"
+      "description": "Play a sound when the skill is used by an item event.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ItemCastSound"
     },
     {
       "name": "ItemCastOverlay",
       "type": "text",
-      "description": "Add a cast overlay when the skill is used by an item event. ( overlay field from Overlay.txt )",
-      "guideType": "[O]"
+      "description": "Add a cast overlay when the skill is used by an item event.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ItemCastOverlay"
     },
     {
       "name": "skpoints",
       "type": "text",
-      "description": "Controls the number of Skill Points needed to level up the skill",
-      "guideType": "[C]"
+      "description": "Controls the number of Skill Points needed to level up the skill Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#skpoints"
     },
     {
       "name": "reqlevel",
       "type": "number",
-      "description": "Minimum character level required to be allowed to spend Skill Points on this skill",
-      "guideType": "[N]"
+      "description": "Minimum character level required to be allowed to spend Skill Points on this skill. For Reign of the Warlock mode games, also use this to calculate an item's staff mods, using the following level tiers: {1, 6, 12, 18, 24, 30}.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#reqlevel"
     },
     {
       "name": "maxlvl",
       "type": "number",
-      "description": "Maximum base level for the skill from spending Skill Points. Skill levels can be increased beyond this through item modifiers",
-      "guideType": "[N]"
+      "description": "Maximum base level for the skill from spending Skill Points. Skill levels can be increased beyond this through item modifiers.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#maxlvl"
     },
     {
       "name": "reqstr",
       "type": "number",
       "description": "Minimum Strength attribute required to be allowed to spend Skill Points on this skill",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#reqstr"
     },
     {
       "name": "reqdex",
       "type": "number",
       "description": "Minimum Dexterity attribute required to be allowed to spend Skill Points on this skill",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#reqdex"
     },
     {
       "name": "reqint",
       "type": "number",
       "description": "Minimum Intelligence attribute required to be allowed to spend Skill Points on this skill",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#reqint"
     },
     {
       "name": "reqvit",
       "type": "number",
       "description": "Minimum Vitality attribute required to be allowed to spend Skill Points on this skill",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#reqvit"
     },
     {
       "name": "reqskill1",
-      "type": "text"
+      "type": "text",
+      "description": "Points to a .skill field to act as a prerequisite skill. The prerequisite skill must be least base level 1 before the player is allowed to spend Skill Points on this skill.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#reqskill%23"
     },
     {
       "name": "reqskill2",
-      "type": "text"
+      "type": "text",
+      "description": "Points to a .skill field to act as a prerequisite skill. The prerequisite skill must be least base level 1 before the player is allowed to spend Skill Points on this skill.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#reqskill%23"
     },
     {
       "name": "reqskill3",
-      "type": "text"
+      "type": "text",
+      "description": "Points to a .skill field to act as a prerequisite skill. The prerequisite skill must be least base level 1 before the player is allowed to spend Skill Points on this skill.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#reqskill%23"
     },
     {
       "name": "restrict",
       "type": "number",
-      "description": "Controls how the skill is used when the unit has a restricted state ( restrict field from States.txt )",
-      "guideType": "[N]"
+      "description": "Controls how the skill is used when the unit has a restricted state (See the states.restrict field)",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#restrict"
     },
     {
       "name": "State1",
-      "type": "text"
+      "type": "text",
+      "description": "Used as parameters for the .restrict field to control what specific states will restrict the usage of the skill.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#State%23"
     },
     {
       "name": "State2",
-      "type": "text"
+      "type": "text",
+      "description": "Used as parameters for the .restrict field to control what specific states will restrict the usage of the skill.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#State%23"
     },
     {
       "name": "State3",
-      "type": "text"
+      "type": "text",
+      "description": "Used as parameters for the .restrict field to control what specific states will restrict the usage of the skill.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#State%23"
     },
     {
       "name": "localdelay",
       "type": "text",
-      "description": "Controls the Casting Delay duration for this skill after it is used (25 frames = 1 second)",
-      "guideType": "[C]"
+      "description": "Controls the Casting Delay duration for this skill after it is used (25 frames = 1 second) Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#localdelay"
     },
     {
       "name": "globaldelay",
       "type": "text",
-      "description": "Controls the Casting Delay duration for all other skills with Casting Delays after this skill is used (25 frames = 1 second)",
-      "guideType": "[C]"
+      "description": "Controls the Casting Delay duration for all other skills with Casting Delays after this skill is used (25 frames = 1 second) Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#globaldelay"
     },
     {
       "name": "leftskill",
       "type": "boolean",
-      "description": "If equals 1, then the skill will appear on the list of skills to assign for the Left Mouse Button. If equals 0, then the skill will not appear on the Left Mouse Button skill list",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill will appear on the list of skills to assign for the Left Mouse Button. If equals 0, then the skill will not appear on the Left Mouse Button skill list.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#leftskill"
     },
     {
       "name": "rightskill",
       "type": "boolean",
-      "description": "If equals 1, then the skill will appear on the list of skills to assign for the Right Mouse Button. If equals 0, then the skill will not appear on the Right Mouse Button skill list",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill will appear on the list of skills to assign for the Right Mouse Button. If equals 0, then the skill will not appear on the Right Mouse Button skill list.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#rightskill"
     },
     {
       "name": "repeat",
       "type": "boolean",
-      "description": "If equals 1 and the skill has no \"anim\" mode declared, then on the client side, the unit's mode will repeat its current mode (this can also happen if the unit has the \"inferno\" state). If equals 0, then the unit will have its mode set to Neutral when starting to use the skill",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1 and the skill has no .anim mode declared, then on the client side, the unit's mode will repeat its current mode (this can also happen if the unit has the \"inferno\" state). If equals 0, then the unit will have its mode set to Neutral when starting to use the skill. Also is used to mark the skill as repeatable in some AIs, like the generic pet ai.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#repeat"
     },
     {
       "name": "alwayshit",
       "type": "boolean",
-      "description": "If equals 1, then skills that rely on attack rating and defense will ignore those stats and will always hit enemies. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then skills that rely on attack rating and defense will ignore those stats and will always hit enemies. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#alwayshit"
     },
     {
       "name": "usemanaondo",
       "type": "boolean",
-      "description": "If equals 1, then the skill will consume mana on its do function instead of its start function. If equals 0, then the skill will consume mana on its start function, which is the general case for skills",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill will consume mana on its do function instead of its start function. If equals 0, then the skill will consume mana on its start function, which is the general case for skills.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#usemanaondo"
     },
     {
       "name": "startmana",
       "type": "number",
-      "description": "Controls the required amount of mana to start using the skill. This can control skills that reduce in mana cost per level to not fall below this amount. (srvst routine)",
-      "guideType": "[N]"
+      "description": "Controls the required amount of mana to start using the skill. This only works with certain .srvstfunc functions such as .srv-SorStartInferno (Code = 11) or .srv-AssStartBladeFury (Code = 26).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#startmana"
     },
     {
       "name": "minmana",
       "type": "number",
-      "description": "Controls the minimum amount of mana to use the skill. This can control skills that reduce in mana cost per level to not fall below this amount. (srvdo routine)",
-      "guideType": "[N]"
+      "description": "Controls the minimum amount of mana to use the skill. This can control skills that reduce in mana cost per level to not fall below this amount.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#minmana"
     },
     {
       "name": "manashift",
       "type": "number",
-      "description": "This acts as a multiplicative modifier to control the precision of the mana cost after calculating the total mana cost with the mana and lvlmana fields. Mana is calculated in 256ths in code which equals 8 bits. This field acts as a bitwise shift value, which means it will modify the mana value by the power of 2. For example, if this value equals 5 then that means divide the mana value of 256ths by 2^5 = 32 (or multiply the mana by 32/256). A value equal to 8 means 256/256 which means that the mana of 256ths value is not shifted",
-      "guideType": "[N]"
+      "description": "This acts as a multiplicative modifier to control the precision of the mana cost after calculating the total mana cost with the .mana and .lvlmana. Mana is calculated in 256ths in code which equals 8 bits. This field acts as a bitwise shift value, which means it will modify the mana value by the power of 2. For example, if this value equals 5 then that means divide the mana value of 256ths by 2^5 = 32 (or multiply the mana by 32/256). A value equal to 8 means 256/256 which means that the mana of 256ths value is not shifted.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#manashift"
     },
     {
       "name": "mana",
       "type": "number",
       "description": "Defines the base mana cost to use the skill at level 1",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#mana"
     },
     {
       "name": "lvlmana",
       "type": "number",
       "description": "Defines the change in mana cost per skill level gained",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#lvlmana"
     },
     {
       "name": "interrupt",
       "type": "boolean",
-      "description": "If equals 1, then the casting the skill will be interruptible such as when the player is getting hit while casting a skill. If equals 0, then the skill should be uninterruptible",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the casting the skill will be interruptible such as when the player is getting hit while casting a skill. If equals 0, then the skill should be uninterruptible.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#interrupt"
     },
     {
       "name": "InTown",
       "type": "boolean",
-      "description": "If equals 1, then the skill can be used while the unit is in town. If equals 0, then the skill cannot be used in town",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill can be used while the unit is in town. If equals 0, then the skill cannot be used in town.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#InTown"
     },
     {
       "name": "aura",
       "type": "boolean",
-      "description": "If equals 1, then the skill will be classified as an aura, which will make the skill execute its function periodically ( perdelay ), based on the if the aurastate state is active. Aura skills will also override a preexisting state if that state matches the skill's \"aurastate\" state. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill will be classified as an aura, which will make the skill execute its function periodically (using the .perdelay field), based on the if the .aurastate state is active. Aura skills will also override a preexisting state if that state matches the skill's .aurastate state. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aura"
     },
     {
       "name": "periodic",
       "type": "boolean",
-      "description": "If equals 1, then the skill will execute its function periodically ( perdelay ), based on the if the aurastate state is active. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill will execute its function periodically (using the .perdelay field), based on the if the .aurastate state is active. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#periodic"
     },
     {
       "name": "perdelay",
       "type": "text",
-      "description": "Controls the periodic rate that the skill continuously executes its function. Minimum value equals 5. This field requires periodic or aura field to be enabled",
-      "guideType": "[C]"
+      "description": "Calculation Field. Controls the periodic rate that the skill continuously executes its function. Minimum value equals 5. This field requires .periodic or .aura field to be enabled. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#perdelay"
+    },
+    {
+      "name": "periodicClearAura",
+      "type": "boolean",
+      "description": "Boolean Field. If equals 1, then upon removal of the registered periodic event, the associated .aurastate will be cleared.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#periodicClearAura"
     },
     {
       "name": "finishing",
       "type": "boolean",
-      "description": "If equals 1, then the skill will be classified as a finishing move, which can affect how progressive charges are consumed when using the skill and how the skill's description tooltip is displayed. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill will be classified as a finishing move, which can affect how progressive charges are consumed when using the skill and how the skill's description tooltip is displayed. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#finishing"
     },
     {
       "name": "prgchargestocast",
       "type": "number",
       "description": "Controls how many progressive charges are required to cast the skill",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#prgchargestocast"
     },
     {
       "name": "prgchargesconsumed",
       "type": "number",
       "description": "Controls how many progressive charges are consumed when the skill attack hits an enemy",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#prgchargesconsumed"
     },
     {
       "name": "passive",
       "type": "boolean",
-      "description": "If equals 1, then the skill will be treated as a passive, which can mean that the skill will not show up in the skill selection menu and will not run a server do function. If equals 0, then the skill is an active skill that can be used",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill will be treated as a passive, which can mean that the skill will not show up in the skill selection menu and will not run a server do function. If equals 0, then the skill is an active skill that can be used.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#passive"
     },
     {
       "name": "progressive",
       "type": "boolean",
-      "description": "If equals 1, then the skill will use the progressive calculations to act as a charge-up skill that will add charges. This is only used for certain skill functions and will generally require the usage of the prgcalc1 and aurastat fields. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill will use the progressive calculations to act as a charge-up skill that will add charges. This is only used for certain skill functions and will generally require the usage of the .prgcalc# fields and the .aurastat# fields. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#progressive"
     },
     {
       "name": "scroll",
       "type": "boolean",
-      "description": "If equals 1, then the skill can appear as a scroll version in the skill selection UI, if the skill allows for the scroll mechanics and if the player has the skill's scroll item in the inventory. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill can appear as a scroll version in the skill selection UI, if the skill allows for the scroll mechanics and if the player has the skill's scroll item in the inventory. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#scroll"
     },
     {
       "name": "calc1",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#calc%23"
     },
     {
       "name": "*calc1 desc",
@@ -1013,7 +1734,11 @@
     },
     {
       "name": "calc2",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#calc%23"
     },
     {
       "name": "*calc2 desc",
@@ -1022,7 +1747,11 @@
     },
     {
       "name": "calc3",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#calc%23"
     },
     {
       "name": "*calc3 desc",
@@ -1031,7 +1760,11 @@
     },
     {
       "name": "calc4",
-      "type": "text"
+      "type": "text",
+      "description": "Calculation Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#calc%23"
     },
     {
       "name": "*calc4 desc",
@@ -1040,7 +1773,11 @@
     },
     {
       "name": "calc5",
-      "type": "number"
+      "type": "text",
+      "description": "Calculation Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#calc%23"
     },
     {
       "name": "*calc5 desc",
@@ -1049,7 +1786,11 @@
     },
     {
       "name": "calc6",
-      "type": "number"
+      "type": "text",
+      "description": "Calculation Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#calc%23"
     },
     {
       "name": "*calc6 desc",
@@ -1057,8 +1798,64 @@
       "comment": true
     },
     {
+      "name": "calc7",
+      "type": "text",
+      "description": "Calculation Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#calc%23"
+    },
+    {
+      "name": "*calc7desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "calc8",
+      "type": "text",
+      "description": "Calculation Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#calc%23"
+    },
+    {
+      "name": "*calc8desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "calc9",
+      "type": "text",
+      "description": "Calculation Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#calc%23"
+    },
+    {
+      "name": "*calc9desc",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "calc10",
+      "type": "text",
+      "description": "Calculation Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#calc%23"
+    },
+    {
+      "name": "*calc10desc",
+      "type": "text",
+      "comment": true
+    },
+    {
       "name": "Param1",
-      "type": "number"
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
     },
     {
       "name": "*Param1 Description",
@@ -1067,7 +1864,11 @@
     },
     {
       "name": "Param2",
-      "type": "number"
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
     },
     {
       "name": "*Param2 Description",
@@ -1076,7 +1877,11 @@
     },
     {
       "name": "Param3",
-      "type": "number"
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
     },
     {
       "name": "*Param3 Description",
@@ -1085,7 +1890,11 @@
     },
     {
       "name": "Param4",
-      "type": "number"
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
     },
     {
       "name": "*Param4 Description",
@@ -1094,7 +1903,11 @@
     },
     {
       "name": "Param5",
-      "type": "number"
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
     },
     {
       "name": "*Param5 Description",
@@ -1103,7 +1916,11 @@
     },
     {
       "name": "Param6",
-      "type": "number"
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
     },
     {
       "name": "*Param6 Description",
@@ -1112,7 +1929,11 @@
     },
     {
       "name": "Param7",
-      "type": "number"
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
     },
     {
       "name": "*Param7 Description",
@@ -1121,7 +1942,11 @@
     },
     {
       "name": "Param8",
-      "type": "number"
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
     },
     {
       "name": "*Param8 Description",
@@ -1130,7 +1955,11 @@
     },
     {
       "name": "Param9",
-      "type": "number"
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
     },
     {
       "name": "*Param9 Description",
@@ -1139,7 +1968,11 @@
     },
     {
       "name": "Param10",
-      "type": "number"
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
     },
     {
       "name": "*Param10 Description2",
@@ -1148,7 +1981,11 @@
     },
     {
       "name": "Param11",
-      "type": "number"
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
     },
     {
       "name": "*Param11 Description",
@@ -1157,7 +1994,11 @@
     },
     {
       "name": "Param12",
-      "type": "number"
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
     },
     {
       "name": "*Param12 Description",
@@ -1165,232 +2006,476 @@
       "comment": true
     },
     {
+      "name": "Param13",
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
+    },
+    {
+      "name": "*Param13Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param14",
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
+    },
+    {
+      "name": "*Param14Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param15",
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
+    },
+    {
+      "name": "*Param15Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param16",
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
+    },
+    {
+      "name": "*Param16Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param17",
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
+    },
+    {
+      "name": "*Param17Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param18",
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
+    },
+    {
+      "name": "*Param18Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param19",
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
+    },
+    {
+      "name": "*Param19Description",
+      "type": "text",
+      "comment": true
+    },
+    {
+      "name": "Param20",
+      "type": "number",
+      "description": "Integer Field. It is used as a possible parameter for skill functions or as a numeric input for other calculation fields.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Param%23"
+    },
+    {
+      "name": "*Param20Description",
+      "type": "text",
+      "comment": true
+    },
+    {
       "name": "InGame",
       "type": "boolean",
-      "description": "If equals 1, then the skill is enabled to be used in-game. If equals 0, then the skill will be disabled in-game",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then the skill is enabled to be used in-game. If equals 0, then the skill will be disabled in-game.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#InGame"
     },
     {
       "name": "ToHit",
       "type": "number",
       "description": "Baseline bonus Attack Rating that is added to the attack when using this skill at level 1",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ToHit"
     },
     {
       "name": "LevToHit",
       "type": "number",
       "description": "Additional bonus Attack Rating when using this skill, calculated per skill level",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#LevToHit"
     },
     {
       "name": "ToHitCalc",
       "type": "text",
-      "description": "Calculates the bonus Attack Rating when using the skill. This will override the ToHit and LevToHit fields if it is not blank ResultFlags - [N] - Controls different flags that can affect how the target reacts after being hit by the missile. Uses an integer value to check against different bit fields by using the \"&\" operator. For example, if the value equals 5 (binary = 101) then that returns true for both the 4 (binary = 100) and 1 (binary = 1) bit field values. Referenced by the Bit Field Value of the Result Flags Table",
-      "guideType": "[C]"
+      "description": "Calculation Field. Calculates the bonus Attack Rating when using the skill. This will override the .ToHit and .LevToHit fields if it is not blank. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ToHitCalc"
     },
     {
       "name": "ResultFlags",
-      "type": "number"
+      "type": "number",
+      "description": "Controls different flags that can affect how the target reacts after being hit by the skill attack. Uses an integer value to check against different bit fields by using the \"&\" operator. For example, if the value equals 5 (binary = 101) then that returns true for both the 4 (binary = 100) and 1 (binary = 1) bit field values.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ResultFlags"
     },
     {
       "name": "HitFlags",
       "type": "number",
-      "description": "Controls different flags that can affect the damage dealt when the target is hit by the missile. Uses an integer value to check against different bit fields by using the \"&\" operator. For example, if the value equals 6 (binary = 110) then that returns true for both the 4 (binary = 100) and 2 (binary = 10) bit field values. Referenced by the Bit Field Value of the Hit Flags Table",
-      "guideType": "[N]"
+      "description": "Controls different flags that can affect the damage dealt when the target is hit by the skill. Uses an integer value to check against different bit fields by using the \"&\" operator. For example, if the value equals 6 (binary = 110) then that returns true for both the 4 (binary = 100) and 2 (binary = 10) bit field values.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#HitFlags"
     },
     {
       "name": "HitClass",
       "type": "number",
       "description": "Defines the skill's damage routines when hitting, mainly used for determining hit sound effects and overlays. Uses an integer value to check against different bit fields by using the \"&\" operator. For example, if the value equals 6 (binary = 110) then that returns true for both the 4 (binary = 100) and 2 (binary = 10) bit field values. There are binary masks to check between Base Hit Classes and Hit Class Layers, which can distinguish bewteen overlays or sounds are displayed.",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#HitClass"
     },
     {
       "name": "Kick",
       "type": "boolean",
-      "description": "If equals 1, then a separate function is used to calculate the physical damage dealt by the skill, ignoring the following damage fields. This function will factor in the player character's Strength and Dexterity attributes (or Monster's level) to determine the baseline damage dealt. If equals 0, then ignore this",
-      "guideType": "[B]"
+      "description": "Boolean Field. If equals 1, then a separate function is used to calculate the physical damage dealt by the skill, ignoring the following damage fields. This function will factor in the player character's Strength and Dexterity attributes (or Monster's level) to determine the baseline damage dealt. If equals 0, then ignore this.",
+      "guideType": "[boolean]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#Kick"
     },
     {
       "name": "HitShift",
       "type": "number",
-      "description": "Controls the percentage modifier for the skill's damage. This value cannot be less than 0 or greater than 8. This is calculated in 256ths.",
-      "guideType": "[N]"
+      "description": "Controls the percentage modifier for the skill's damage. This value cannot be less than 0 or greater than 8. This is calculated in 256ths. Used like so: \"damage << .HitShift\"",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#HitShift"
     },
     {
       "name": "SrcDam",
       "type": "number",
-      "description": "Controls the percentage modifier for how much weapon damage is transferred to the skill's damage (Out of 128). For example, if the value equals 64, then 50% (64/128) of the weapon's damage will be added to the skill's damage",
-      "guideType": "[N]"
+      "description": "Controls the percentage modifier for how much weapon damage is transferred to the skill's damage (Out of 128). For example, if the value equals 64, then 50% (64/128) of the weapon's damage will be added to the skill's damage.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#SrcDam"
     },
     {
       "name": "MinDam",
       "type": "number",
       "description": "Minimum baseline physical damage dealt by the skill",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#MinDam"
     },
     {
       "name": "MinLevDam1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum physical damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#MinLevDam%23"
     },
     {
       "name": "MinLevDam2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum physical damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#MinLevDam%23"
     },
     {
       "name": "MinLevDam3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum physical damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#MinLevDam%23"
     },
     {
       "name": "MinLevDam4",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum physical damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#MinLevDam%23"
     },
     {
       "name": "MinLevDam5",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum physical damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#MinLevDam%23"
     },
     {
       "name": "MaxDam",
       "type": "number",
       "description": "Maximum baseline physical damage dealt by the skill",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#MaxDam"
     },
     {
       "name": "MaxLevDam1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum physical damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#MaxLevDam%23"
     },
     {
       "name": "MaxLevDam2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum physical damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#MaxLevDam%23"
     },
     {
       "name": "MaxLevDam3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum physical damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#MaxLevDam%23"
     },
     {
       "name": "MaxLevDam4",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum physical damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#MaxLevDam%23"
     },
     {
       "name": "MaxLevDam5",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum physical damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#MaxLevDam%23"
     },
     {
       "name": "DmgSymPerCalc",
       "type": "text",
-      "description": "Determines the percentage increase to the physical damage dealt by the skill",
-      "guideType": "[C]"
+      "description": "Calculation Field. Determines the percentage increase to the physical damage dealt by the skill. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#DmgSymPerCalc"
     },
     {
       "name": "EType",
       "type": "text",
-      "description": "Defines the type of elemental damage dealt by the skill. If this field is empty, then the related elemental fields below will not be used. Referenced by the Code value of the Elemental Types Table",
-      "guideType": "[O]"
+      "description": "Defines the type of elemental damage dealt by the skill. If this field is empty, then the related elemental fields below will not be used. Types with length use .ELen",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#EType"
     },
     {
       "name": "EMin",
       "type": "number",
       "description": "Minimum baseline elemental damage dealt by the skill",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#EMin"
     },
     {
       "name": "EMinLev1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum elemental damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#EMinLev%23"
     },
     {
       "name": "EMinLev2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum elemental damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#EMinLev%23"
     },
     {
       "name": "EMinLev3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum elemental damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#EMinLev%23"
     },
     {
       "name": "EMinLev4",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum elemental damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#EMinLev%23"
     },
     {
       "name": "EMinLev5",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional minimum elemental damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field number.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#EMinLev%23"
     },
     {
       "name": "EMax",
       "type": "number",
       "description": "Maximum baseline elemental damage dealt by the skill",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#EMax"
     },
     {
       "name": "EMaxLev1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum elemental damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#EMaxLev%23"
     },
     {
       "name": "EMaxLev2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum elemental damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#EMaxLev%23"
     },
     {
       "name": "EMaxLev3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum elemental damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#EMaxLev%23"
     },
     {
       "name": "EMaxLev4",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum elemental damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#EMaxLev%23"
     },
     {
       "name": "EMaxLev5",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional maximum elemental damage dealt by the skill, calculated using the leveling formula between 5 level thresholds of the skill's current level. The level thresholds are levels 2-8, 9-16, 17-22, 23-28, 29 and beyond. These 5 level thresholds correlate to each field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#EMaxLev%23"
     },
     {
       "name": "EDmgSymPerCalc",
       "type": "text",
-      "description": "Determines the percentage increase to the total elemental damage dealt by the skill",
-      "guideType": "[C]"
+      "description": "Calculation Field. Determines the percentage increase to the total elemental damage dealt by the skill. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#EDmgSymPerCalc"
     },
     {
       "name": "ELen",
       "type": "number",
-      "description": "The baseline elemental duration dealt by the skill. This is calculated in frame lengths where 25 Frames = 1 second. These fields only apply to appropriate elemental types with a duration",
-      "guideType": "[N]"
+      "description": "The baseline elemental duration dealt by the skill. This is calculated in frame lengths where 25 Frames = 1 second. These fields only apply to appropriate elemental types with a duration.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ELen"
     },
     {
       "name": "ELevLen1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional elemental duration added by the skill, calculated using the leveling formula between 3 level thresholds of the skills current level. The level thresholds are levels 2-8, 9-16, 17 and beyond. These 3 level thresholds correlate to each field number. These fields only apply to appropriate elemental types with a duration.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ELevLen%23"
     },
     {
       "name": "ELevLen2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional elemental duration added by the skill, calculated using the leveling formula between 3 level thresholds of the skills current level. The level thresholds are levels 2-8, 9-16, 17 and beyond. These 3 level thresholds correlate to each field number. These fields only apply to appropriate elemental types with a duration.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ELevLen%23"
     },
     {
       "name": "ELevLen3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls the additional elemental duration added by the skill, calculated using the leveling formula between 3 level thresholds of the skills current level. The level thresholds are levels 2-8, 9-16, 17 and beyond. These 3 level thresholds correlate to each field number. These fields only apply to appropriate elemental types with a duration.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ELevLen%23"
     },
     {
       "name": "ELenSymPerCalc",
       "type": "text",
-      "description": "Determines the percentage increase to the total elemental duration dealt by the skill",
-      "guideType": "[C]"
+      "description": "Calculation Field. Determines the percentage increase to the total elemental duration dealt by the skill. Skill scope BBE. See BBE/Calc Fields",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#ELenSymPerCalc"
     },
     {
       "name": "aitype",
       "type": "number",
-      "description": "Controls what the skill's archetype for how the AI will handle using this skill. This mostly affects the mercenary AI and Shadow Warrior AI, but some types are used for general AI.",
-      "guideType": "[N]"
+      "description": "Controls what the skill's archetype for how the AI will handle using this skill. This mostly affects the mercenary AI, Shadow Warrior AI, and generic pet ai, but some types are used for general AI.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aitype"
     },
     {
       "name": "aibonus",
       "type": "number",
-      "description": "This is only used with the Shadow Master AI. This value is a flat integer rating that gets added to the AI's parameters when deciding which skill is most likely to be used next. The higher this value, then the more likely this skill will be used by the AI",
-      "guideType": "[N]"
+      "description": "This is only used with the Shadow Master AI and generic pet ai. This value is a flat integer rating that gets added to the AI's parameters when deciding which skill is most likely to be used next. The higher this value, then the more likely this skill will be used by the AI.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#aibonus"
     },
     {
       "name": "cost mult",
       "type": "number",
-      "description": "Multiplicative modifier of an item's gold cost, only when the item has a stat modifier with this skill. This will affect the item's buy, sell, and repair costs (Calculated in 1024ths)",
-      "guideType": "[N]"
+      "description": "Multiplicative modifier of an item's gold cost, only when the item has a stat modifier with this skill. This will affect the item's buy, sell, and repair costs (Calculated in 1024ths).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cost%20mult"
     },
     {
       "name": "cost add",
       "type": "number",
-      "description": "Flat integer modification of an item's gold cost, only when the item has a stat modifier with this skill. This will affect the item's buy, sell, and repair costs. This is added after the cost mult has modified the costs.",
-      "guideType": "[N]"
+      "description": "Flat integer modification of an item's gold cost, only when the item has a stat modifier with this skill. This will affect the item's buy, sell, and repair costs. This is added after the .cost mult has modified the costs.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/skills.html#cost%20add"
     },
     {
       "name": "*eol",

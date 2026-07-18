@@ -2,93 +2,166 @@
   "table": "npc",
   "category": "characters",
   "file": "global/excel/npc.txt",
-  "description": "Table npc du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 4,
+  "description": "This file controls how each town NPC manipulates their store prices. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 19,
   "columns": [
     {
       "name": "npc",
       "type": "text",
-      "description": "Points to the matching \"ID\" value in the monstats.txt file. This should not be changed",
-      "guideType": "[O]"
+      "description": "Points to the matching monstats.Id value. This should not be changed.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#npc"
     },
     {
       "name": "buy mult",
       "type": "number",
-      "description": "Used to calculate the item's price when it is bought by the NPC from the player. This number is a fraction of 1024 in the following formula: [cost] * [buy mult] / 1024",
-      "guideType": "[N]"
+      "description": "Used to calculate the item's price when it is bought by the NPC from the player. This number is a fraction of 1024 in the following formula: [cost] * [.buy mult] / 1024",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#buy%20mult"
     },
     {
       "name": "sell mult",
       "type": "number",
-      "description": "Used to calculate the item's price when it is sold by the NPC to the player. This number is a fraction of 1024 in the following formula: [cost] * [sell mult] / 1024",
-      "guideType": "[N]"
+      "description": "Used to calculate the item's price when it is sold by the NPC to the player. This number is a fraction of 1024 in the following formula: [cost] * [.sell mult] / 1024",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#sell%20mult"
     },
     {
       "name": "rep mult",
       "type": "number",
-      "description": "Used to calculate the cost to repair an item. This number is a fraction of 1024 in the following formula: [cost] * [rep mult] / 1024. This is then used to influence the repair cost based on the item durability and charges",
-      "guideType": "[N]"
+      "description": "Used to calculate the cost to repair an item. This number is a fraction of 1024 in the following formula: [cost] * [.rep mult] / 1024. This is then used to influence the repair cost based on the item durability and charges.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#rep%20mult"
     },
     {
       "name": "questflag A",
-      "type": "number"
+      "type": "number",
+      "description": "If the player has this quest flag progress, then apply the relative additional price calculations",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#questflag"
     },
     {
       "name": "questbuymult A",
-      "type": "number"
+      "type": "number",
+      "description": "Same functionality as the .buy mult field, except this relies on the .questflag field and applies after the .buy mult field calculation",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#questbuymult"
     },
     {
       "name": "questsellmult A",
-      "type": "number"
+      "type": "number",
+      "description": "Same functionality as the .sell mult field, except this relies on the .questflag field and applies after the .sell mult field calculation",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#questsellmult"
     },
     {
       "name": "questrepmult A",
-      "type": "number"
+      "type": "number",
+      "description": "Same functionality as the .rep mult field, except this relies on the .questflag field and applies after the .rep mult field calculation",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#questrepmult"
     },
     {
       "name": "questflag B",
-      "type": "text"
+      "type": "number",
+      "description": "If the player has this quest flag progress, then apply the relative additional price calculations",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#questflag"
     },
     {
       "name": "questbuymult B",
-      "type": "text"
+      "type": "number",
+      "description": "Same functionality as the .buy mult field, except this relies on the .questflag field and applies after the .buy mult field calculation",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#questbuymult"
     },
     {
       "name": "questsellmult B",
-      "type": "text"
+      "type": "number",
+      "description": "Same functionality as the .sell mult field, except this relies on the .questflag field and applies after the .sell mult field calculation",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#questsellmult"
     },
     {
       "name": "questrepmult B",
-      "type": "text"
+      "type": "number",
+      "description": "Same functionality as the .rep mult field, except this relies on the .questflag field and applies after the .rep mult field calculation",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#questrepmult"
     },
     {
       "name": "questflag C",
-      "type": "text"
+      "type": "number",
+      "description": "If the player has this quest flag progress, then apply the relative additional price calculations",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#questflag"
     },
     {
       "name": "questbuymult C",
-      "type": "text"
+      "type": "number",
+      "description": "Same functionality as the .buy mult field, except this relies on the .questflag field and applies after the .buy mult field calculation",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#questbuymult"
     },
     {
       "name": "questsellmult C",
-      "type": "text"
+      "type": "number",
+      "description": "Same functionality as the .sell mult field, except this relies on the .questflag field and applies after the .sell mult field calculation",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#questsellmult"
     },
     {
       "name": "questrepmult C",
-      "type": "text"
+      "type": "number",
+      "description": "Same functionality as the .rep mult field, except this relies on the .questflag field and applies after the .rep mult field calculation",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#questrepmult"
     },
     {
       "name": "max buy",
-      "type": "number"
+      "type": "number",
+      "description": "Sets the maximum price that the NPC will pay, when the player sells an item in Normal Difficulty, Nightmare Difficulty, and Hell Difficulty, respectively",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#max%20buy"
     },
     {
       "name": "max buy (N)",
-      "type": "number"
+      "type": "number",
+      "description": "Sets the maximum price that the NPC will pay, when the player sells an item in Normal Difficulty, Nightmare Difficulty, and Hell Difficulty, respectively",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#max%20buy"
     },
     {
       "name": "max buy (H)",
-      "type": "number"
+      "type": "number",
+      "description": "Sets the maximum price that the NPC will pay, when the player sells an item in Normal Difficulty, Nightmare Difficulty, and Hell Difficulty, respectively",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/npc.html#max%20buy"
     }
   ]
 }

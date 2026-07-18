@@ -2,193 +2,326 @@
   "table": "magicprefix",
   "category": "items",
   "file": "global/excel/magicprefix.txt",
-  "description": "Table magicprefix du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 14,
+  "description": "This file controls what item affixes (groups of item modifiers) are applied as the prefix for an itemThese item affixes will appear at the start of an item's name. This file is loaded together with other similar files in the following order: MagicSuffix, magicprefix, automagic. These combined files form the Item Mods structure. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 39,
   "columns": [
     {
       "name": "Name",
       "type": "text",
-      "description": "Defines the item affix name",
-      "guideType": "[O]"
+      "description": "Defines the item affix name.",
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#Name"
     },
     {
       "name": "version",
       "type": "number",
-      "description": "Defines which game version to use this item affix (&lt;100 = Classic mode | 100 = Expansion mode)",
-      "guideType": "[N]"
+      "description": "Defines which game version to use this item affix (<100 = Classic mode | 100 = Expansion mode).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#version"
     },
     {
       "name": "spawnable",
-      "type": "boolean",
-      "description": "If equals 1, then this item affix is used as part of the game's randomizer for assigning item modifiers when an item spawns. If equals 0, then this item affix is never used",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this item affix is used as part of the game's randomizer for assigning item modifiers when an item spawns. If equals 0, then this item affix is never used.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#spawnable"
     },
     {
       "name": "rare",
-      "type": "boolean",
-      "description": "If equals 1, then this item affix can be used when randomly assigning item modifiers when a rare item spawns. If equals 0, then this item affix is not used for rare items",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this item affix can be used when randomly assigning item modifiers when a rare item spawns. If equals 0, then this item affix is not used for rare items.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#rare"
     },
     {
       "name": "level",
       "type": "number",
-      "description": "The minimum item level required for this item affix to spawn on the item. If the item level is below this value, then the item affix will not spawn on the item",
-      "guideType": "[N]"
+      "description": "The minimum item level required for this item affix to spawn on the item. If the item level is below this value, then the item affix will not spawn on the item.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#level"
     },
     {
       "name": "maxlevel",
       "type": "number",
-      "description": "The maximum item level required for this item affix to spawn on the item. If the item level is above this value, then the item affix will not spawn on the item",
-      "guideType": "[N]"
+      "description": "The maximum item level required for this item affix to spawn on the item. If the item level is above this value, then the item affix will not spawn on the item.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#maxlevel"
     },
     {
       "name": "levelreq",
       "type": "number",
       "description": "The minimum character level required to equip an item that has this item affix",
-      "guideType": "[N]"
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#levelreq"
     },
     {
       "name": "classspecific",
       "type": "text",
-      "description": "Controls if this item affix should only be used for class specific items. This relies on the",
-      "guideType": "[O]"
+      "description": "Controls if this item affix should only be used for class specific items. This relies on the class code specified in itemtypes.Class, for the specific item.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#classspecific"
     },
     {
       "name": "class",
       "type": "text",
-      "description": "Controls which character class is required for the class specific level requirement (",
-      "guideType": "[O]"
+      "description": "Controls which character class is required for the class specific level requirement defined by .classlevelreq.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#class"
     },
     {
       "name": "classlevelreq",
       "type": "number",
-      "description": "The minimum character level required for a specific class in order to equip an item that has this item affix. This relies on the",
-      "guideType": "[N]"
+      "description": "The minimum character level required for a specific class in order to equip an item that has this item affix. This relies on the class specified in the .class field. If equals null, then the class will default to using the .levelreq field.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#classlevelreq"
     },
     {
       "name": "frequency",
       "type": "number",
-      "description": "Controls the probability that the affix appears on the item (a higher value means that the item affix will appear on the item more often). This value gets summed together with other \"frequency\" values from all possible item affixes that can spawn on the item, and then is used as a denominator value for the randomizer. Whichever item affix is randomly selected will be the one to appear on the item. The formula is calculated as the following: [Item Affix Selected] = [\"frequency\"] / [Total Frequency]. If the item has a magic level (from the \"magic lvl\" field in Weapons.txt/Armor.txt/Misc.txt) then the magic level value is multiplied with this value. If equals 0, then this item affix will never appear on an item",
-      "guideType": "[N]"
+      "description": "Controls the probability that the affix appears on the item (a higher value means that the item affix will appear on the item more often). This value gets summed together with other .frequency values from all possible item affixes that can spawn on the item, and then is used as a denominator value for the randomizer. Whichever item affix is randomly selected will be the one to appear on the item. The formula is calculated as the following: [Item Affix Selected] = [.frequency] / [Total Frequency]. If the item has a magic level (from armor.magic lvl, weapons.magic lvl, or misc.magic lvl) then the magic level value is multiplied with this value. If equals 0, then this item affix will never appear on an item.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#frequency"
     },
     {
       "name": "group",
       "type": "number",
-      "description": "Assigns an item affix to a specific group number. Items cannot spawn with more than 1 item affix with the same group number. This is used to guarantee that certain item affixes do not overlap on the same item. If this field is null, then the group number will default to group 0",
-      "guideType": "[N]"
+      "description": "Assigns an item affix to a specific group number. Items cannot spawn with more than 1 item affix with the same group number. This is used to guarantee that certain item affixes do not overlap on the same item. If this field is null, then the group number will default to group 0.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#group"
     },
     {
       "name": "mod1code",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties for the item affix. References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#mod%23code"
     },
     {
       "name": "mod1param",
-      "type": "number"
+      "type": "text",
+      "description": "The parameter value associated with the related property (.mod#code). Usage depends on the property function (See properties.func#). A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#mod%23param"
     },
     {
       "name": "mod1min",
-      "type": "number"
+      "type": "number",
+      "description": "The min value to assign to the listed related (.mod#code). Usage depends on the property function (See properties.func#).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#mod%23min"
     },
     {
       "name": "mod1max",
-      "type": "number"
+      "type": "number",
+      "description": "The max value to assign to the listed related (.mod#code). Usage depends on the property function (See properties.func#).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#mod%23max"
     },
     {
       "name": "mod2code",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties for the item affix. References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#mod%23code"
     },
     {
       "name": "mod2param",
-      "type": "number"
+      "type": "text",
+      "description": "The parameter value associated with the related property (.mod#code). Usage depends on the property function (See properties.func#). A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#mod%23param"
     },
     {
       "name": "mod2min",
-      "type": "number"
+      "type": "number",
+      "description": "The min value to assign to the listed related (.mod#code). Usage depends on the property function (See properties.func#).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#mod%23min"
     },
     {
       "name": "mod2max",
-      "type": "number"
+      "type": "number",
+      "description": "The max value to assign to the listed related (.mod#code). Usage depends on the property function (See properties.func#).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#mod%23max"
     },
     {
       "name": "mod3code",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the item properties for the item affix. References a properties.code or a PropertyGroups.code",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#mod%23code"
     },
     {
       "name": "mod3param",
-      "type": "text"
+      "type": "text",
+      "description": "The parameter value associated with the related property (.mod#code). Usage depends on the property function (See properties.func#). A number or references skills.skill, montype.type, or states.state",
+      "guideType": "[parse]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#mod%23param"
     },
     {
       "name": "mod3min",
-      "type": "number"
+      "type": "number",
+      "description": "The min value to assign to the listed related (.mod#code). Usage depends on the property function (See properties.func#).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#mod%23min"
     },
     {
       "name": "mod3max",
-      "type": "number"
+      "type": "number",
+      "description": "The max value to assign to the listed related (.mod#code). Usage depends on the property function (See properties.func#).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#mod%23max"
     },
     {
       "name": "transformcolor",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the color change of the item after spawning with this item affix. If empty, then the item affix will not change the item's color.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#transformcolor"
     },
     {
       "name": "itype1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what Item Types are allowed to spawn with this item affix.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#itype%23"
     },
     {
       "name": "itype2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what Item Types are allowed to spawn with this item affix.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#itype%23"
     },
     {
       "name": "itype3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what Item Types are allowed to spawn with this item affix.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#itype%23"
     },
     {
       "name": "itype4",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what Item Types are allowed to spawn with this item affix.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#itype%23"
     },
     {
       "name": "itype5",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what Item Types are allowed to spawn with this item affix.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#itype%23"
     },
     {
       "name": "itype6",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what Item Types are allowed to spawn with this item affix.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#itype%23"
     },
     {
       "name": "itype7",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what Item Types are allowed to spawn with this item affix.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#itype%23"
     },
     {
       "name": "etype1",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what Item Types are forbidden to spawn with this item affix.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#etype%23"
     },
     {
       "name": "etype2",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what Item Types are forbidden to spawn with this item affix.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#etype%23"
     },
     {
       "name": "etype3",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what Item Types are forbidden to spawn with this item affix.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#etype%23"
     },
     {
       "name": "etype4",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what Item Types are forbidden to spawn with this item affix.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#etype%23"
     },
     {
       "name": "etype5",
-      "type": "text"
+      "type": "text",
+      "description": "Controls what Item Types are forbidden to spawn with this item affix.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#etype%23"
     },
     {
       "name": "multiply",
       "type": "number",
-      "description": "Multiplicative modifier for the item's buy and sell costs, based on the item affix (",
-      "guideType": "[N]"
+      "description": "Multiplicative modifier for the item's buy and sell costs, based on the item affix (Calculated in 1024ths for buy cost and 4096ths for sell cost).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#multiply"
     },
     {
       "name": "add",
       "type": "number",
-      "description": "Flat integer modification to the item's buy and sell costs, based on the item affix",
-      "guideType": "[N]"
+      "description": "Flat integer modification to the item's buy and sell costs, based on the item affix.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/magicprefix.html#add"
     }
   ]
 }

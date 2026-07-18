@@ -2,117 +2,190 @@
   "table": "superuniques",
   "category": "characters",
   "file": "global/excel/superuniques.txt",
-  "description": "Table superuniques du mod TCP (colonnes documentees via le D2R Data Guide).",
-  "source": "Colonnes du .txt (mod TCP) ; types/descriptions du D2R Data Guide (guide/).",
-  "columnsDocumented": 10,
+  "description": "This file defines the Super Unique monsters and their properties. Super Unique monsters are considered the special boss monsters that have static encounters in the game. Any column field name starting with \"*\" is considered a comment field and is not used by the game.",
+  "source": "Colonnes du .txt (BKVince 3.2) ; types/descriptions du guide TXT eezstreet-d2rdoc.",
+  "documentation": {
+    "primary": "eezstreet-d2rdoc",
+    "url": "https://eezstreet.github.io/d2rdoc",
+    "target": "BKVince 3.2"
+  },
+  "columnsDocumented": 22,
   "columns": [
     {
       "name": "Superunique",
       "type": "text",
       "description": "Defines the unique name ID for the Super Unique monster",
-      "guideType": "[O]"
+      "guideType": "[text]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#Superunique"
     },
     {
       "name": "Name",
       "type": "text",
       "description": "Uses a string for the Super Unique monster's name",
-      "guideType": "[O]"
+      "guideType": "[string]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#Name"
     },
     {
       "name": "Class",
       "type": "text",
-      "description": "Defines the baseline monster type for the Super Unique monster, which this monster will use for default values. This uses the",
-      "guideType": "[O]"
+      "description": "Defines the baseline monster type for the Super Unique monster, which this monster will use for default values.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#Class"
     },
     {
       "name": "hcIdx",
       "type": "number",
-      "description": "Defines the unique numeric ID for the Super Unique monster. The existing IDs are hardcoded for specific scripts with the specified Super Unique monsters",
-      "guideType": "[N]"
+      "description": "Defines the unique numeric ID for the Super Unique monster. The existing IDs are hardcoded for specific scripts with the specified Super Unique monsters.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#hcIdx"
     },
     {
       "name": "MonSound",
       "type": "text",
-      "description": "Defines what set of sounds to use for the Super Unique monster. Uses the",
-      "guideType": "[O]"
+      "description": "Defines what set of sounds to use for the Super Unique monster. If this field is empty, then the Super Unique monster will default to using the monster class sounds.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#MonSound"
     },
     {
       "name": "Mod1",
-      "type": "number"
+      "type": "number",
+      "description": "Controls which monster modifier to assign to the Super Unique monster. Uses the index of an entry from monumod (See that file for details on the available modifiers).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#Mod%23"
     },
     {
       "name": "Mod2",
-      "type": "number"
+      "type": "number",
+      "description": "Controls which monster modifier to assign to the Super Unique monster. Uses the index of an entry from monumod (See that file for details on the available modifiers).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#Mod%23"
     },
     {
       "name": "Mod3",
-      "type": "number"
+      "type": "number",
+      "description": "Controls which monster modifier to assign to the Super Unique monster. Uses the index of an entry from monumod (See that file for details on the available modifiers).",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#Mod%23"
     },
     {
       "name": "MinGrp",
       "type": "number",
-      "description": "Controls the min amount of Minion monsters that will spawn with the Super Unique monster",
-      "guideType": "[N]"
+      "description": "Controls the min amount of Minion monsters that will spawn with the Super Unique monster.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#MinGrp"
     },
     {
       "name": "MaxGrp",
       "type": "number",
-      "description": "Controls the max amount of Minion monsters that will spawn with the Super Unique monster. This value must be equal to or higher than",
-      "guideType": "[N]"
+      "description": "Controls the max amount of Minion monsters that will spawn with the Super Unique monster. This value must be equal to or higher than .MinGrp. If this value is greater than .MinGrp then a random number will be chosen between the .MinGrp and .MaxGrp values.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#MaxGrp"
     },
     {
       "name": "AutoPos",
-      "type": "boolean",
-      "description": "If equals 1, then the Super Unique monster will randomly spawn within a radius of its designated position. If equals 0, then the Super Unique monster will spawn at exact coordinates of its designated position",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the Super Unique monster will randomly spawn within a radius of its designated position. If equals 0, then the Super Unique monster will spawn at exact coordinates of its designated position.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#AutoPos"
     },
     {
       "name": "Stacks",
-      "type": "boolean",
-      "description": "If equals 1, then this Super Unique monster can spawn more than once in the same game. If equals 0, then this Super Unique monster can only spawn once in the same game",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then this Super Unique monster can spawn more than once in the same game. If equals 0, then this Super Unique monster can only spawn once in the same game.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#Stacks"
     },
     {
       "name": "Replaceable",
-      "type": "boolean",
-      "description": "If equals 1, then the room where the Super Unique monster spawns in can be replaced during the creation of a level preset. If equals 0, then the room cannot be replaced and will remain static",
-      "guideType": "[B]"
+      "type": "number",
+      "description": "Boolean Field. If equals 1, then the room where the Super Unique monster spawns in can be replaced during the creation of a level preset. If equals 0, then the room cannot be replaced and will remain static.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#Replaceable"
     },
     {
       "name": "Utrans",
-      "type": "number"
+      "type": "number",
+      "description": "Modifies the color transform for the unique monster respectively in Normal, Nightmare, or Hell difficulty. If this value is greater than or equal to 30, then the value will default to 2, which is the monster's default color palette shift. If the value is 0 or is empty, then a random value will be chosen.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#Utrans"
     },
     {
       "name": "Utrans(N)",
-      "type": "number"
+      "type": "number",
+      "description": "Modifies the color transform for the unique monster respectively in Normal, Nightmare, or Hell difficulty. If this value is greater than or equal to 30, then the value will default to 2, which is the monster's default color palette shift. If the value is 0 or is empty, then a random value will be chosen.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#Utrans"
     },
     {
       "name": "Utrans(H)",
-      "type": "number"
+      "type": "number",
+      "description": "Modifies the color transform for the unique monster respectively in Normal, Nightmare, or Hell difficulty. If this value is greater than or equal to 30, then the value will default to 2, which is the monster's default color palette shift. If the value is 0 or is empty, then a random value will be chosen.",
+      "guideType": "[int]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#Utrans"
     },
     {
       "name": "TC",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the Treasure Class to use when the Super Unique monster is killed respectively in Normal, Nightmare, or Hell difficulty.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#TC"
     },
     {
       "name": "TC Desecrated",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the Treasure Class to use when the Super Unique monster is desecrated (Terrorized) and killed respectively in Normal, Nightmare, or Hell difficulty.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#TC%20Desecrated"
     },
     {
       "name": "TC(N)",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the Treasure Class to use when the Super Unique monster is killed respectively in Normal, Nightmare, or Hell difficulty.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#TC"
     },
     {
       "name": "TC(N) Desecrated",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the Treasure Class to use when the Super Unique monster is desecrated (Terrorized) and killed respectively in Normal, Nightmare, or Hell difficulty.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#TC%20Desecrated"
     },
     {
       "name": "TC(H)",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the Treasure Class to use when the Super Unique monster is killed respectively in Normal, Nightmare, or Hell difficulty.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#TC"
     },
     {
       "name": "TC(H) Desecrated",
-      "type": "text"
+      "type": "text",
+      "description": "Controls the Treasure Class to use when the Super Unique monster is desecrated (Terrorized) and killed respectively in Normal, Nightmare, or Hell difficulty.",
+      "guideType": "[reference]",
+      "documentationSource": "eezstreet-d2rdoc",
+      "guideUrl": "https://eezstreet.github.io/d2rdoc/files/superuniques.html#TC%20Desecrated"
     },
     {
       "name": "*eol",
