@@ -83,9 +83,26 @@ function main() {
   assert(value(andarielHell, treasureIndexes, 'Prob1', 'treasureclassex.txt') === '1',
     'treasureclassex.txt: probabilite de la classe essence invalide pour Andariel (H)');
 
+  const riftNightmare = uniqueRow(
+    treasureClasses,
+    'Rift Crafts (N) Premium',
+    'treasureclassex.txt',
+  );
+  const riftBase = uniqueRow(
+    treasureClasses,
+    'Rift Crafts Premium',
+    'treasureclassex.txt',
+  );
+  assert(treasureClasses.rows.indexOf(riftNightmare) < treasureClasses.rows.indexOf(riftBase),
+    'treasureclassex.txt: Rift Crafts (N) Premium doit preceder son appelant');
+  assert(value(riftBase, treasureIndexes, 'Item1', 'treasureclassex.txt')
+    === 'Rift Crafts (N) Premium',
+  'treasureclassex.txt: la progression Normal -> Nightmare des crafts Rift est invalide');
+
   console.log('VALID : references BKVince de demarrage resolues');
   console.log(`  Eruption -> ${missileMatch[1]}`);
   console.log('  Andariel (H) -> Andariel Essence (H) -> tes');
+  console.log('  Rift Crafts (N) Premium precede Rift Crafts Premium');
 }
 
 main();

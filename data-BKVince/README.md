@@ -25,9 +25,11 @@ Deux références de données BK invalides au démarrage ont ensuite été corri
 sélectivement : la formule de portée d'Eruption utilise maintenant le missile
 réel `erruption center`, et la classe non-quest `Andariel Essence (H)` existe
 avec son drop `tes`. Le contrôle read-only correspondant s'exécute avec
-`npm run test:bkvince-startup-refs`. Une relance à froid confirme la disparition
-de ces deux assertions; elle révèle l'écart suivant à auditer dans la chaîne des
-Treasure Classes : `Rift Crafts (N) Premium`.
+`npm run test:bkvince-startup-refs`. Le forward reference hérité de BK entre
+`Rift Crafts Premium` et `Rift Crafts (N) Premium` est également corrigé en
+plaçant la classe Nightmare avant son appelant, sans changer les probabilités.
+Une relance à froid finale atteint le menu avec zéro assertion dans la nouvelle
+session D2RLoader.
 
 La commande `d2rl unpack BKVince` n'est pas une étape de build du mod : elle
 extrait temporairement les données de référence embarquées par D2RLoader dans

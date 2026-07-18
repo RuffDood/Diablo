@@ -1373,8 +1373,8 @@ Uber Diablo			1				1024	0	cm2	1																												0
 Uber Baal			1	800			1024	0	cm3	1																												0
 Snapchip (H)			5	900	900	900	1024	19	gld,mul=2048	10	Act 5 (H) Equip C	19	Act 5 (H) Junk	9	Act 5 (H) Good	3	pk1	2																				0
 Rift Gold			1					0	gld,mul=5000	1	AND	15																										0
-Rift Crafts Premium			1					300	Rift Crafts (N) Premium	5	brk	1	std	1	AND	190																						0
 Rift Crafts (N) Premium			1					300	brk	12	std	12	Ultrarare consumable	2	All Acts Terrorize Consumable	1	Ancient Statue Random	1	AND	175																		0
+Rift Crafts Premium			1					300	Rift Crafts (N) Premium	5	brk	1	std	1	AND	190																						0
 Rift Crafts (H) Premium			1					150	brk	20	std	23	Ultrarare consumable	5	All Acts Terrorize Consumable	10	Ancient Statue Random	10	AND	150																		0
 Rift Good			1					75	Flawed Gem	15	Normal Gem	1	Runes 5	4	Runes 6	2	Craft	3	AND	360																		0
 Rift Good Low			1					60	Chipped Gem	12	Flawed Gem	3	Runes 4	3	Craft	2	AND	380																				0
