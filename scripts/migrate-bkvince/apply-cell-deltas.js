@@ -50,43 +50,76 @@ function sameValues(left, right) {
   return left.length === right.length && left.every((value, index) => value === right[index]);
 }
 
-function prepare(name) {
+function lastHeaderIndexes(headers) {
+  return new Map(headers.map((header, index) => [header, index]));
+}
+
+function prepare(name, selectedColumns = null) {
   assert(path.basename(name) === name, `Nom de table invalide: ${name}`);
   const bk = load('bk', name);
   const tcp = load('tcp', name);
   const target = load('target', name);
 
-  assert(
-    sameValues(bk.table.headers, tcp.table.headers),
-    `${name}: structure de colonnes BK/TCP differente`,
-  );
+  if (!selectedColumns) {
+    assert(
+      sameValues(bk.table.headers, tcp.table.headers),
+      `${name}: structure de colonnes BK/TCP differente`,
+    );
+  }
 
   const bkRows = indexedRows(bk.table);
   const tcpRows = indexedRows(tcp.table);
   const targetRows = indexedRows(target.table);
-  assert(
-    sameValues([...bkRows.keys()], [...tcpRows.keys()]),
-    `${name}: structure de lignes BK/TCP differente`,
-  );
+  if (!selectedColumns) {
+    assert(
+      sameValues([...bkRows.keys()], [...tcpRows.keys()]),
+      `${name}: structure de lignes BK/TCP differente`,
+    );
+  }
 
-  const targetHeaders = new Map(target.table.headers.map((header, index) => [header, index]));
-  for (const header of bk.table.headers) {
-    assert(targetHeaders.has(header), `${name}: colonne BKVince absente: ${header}`);
+  const bkHeaders = lastHeaderIndexes(bk.table.headers);
+  const tcpHeaders = lastHeaderIndexes(tcp.table.headers);
+  const targetHeaders = lastHeaderIndexes(target.table.headers);
+  if (selectedColumns) {
+    for (const header of selectedColumns) {
+      assert(bk.table.headers.includes(header), `${name}: colonne filtree absente: ${header}`);
+      assert(tcp.table.headers.includes(header), `${name}: colonne TCP absente: ${header}`);
+      assert(targetHeaders.has(header), `${name}: colonne BKVince absente: ${header}`);
+    }
+  } else {
+    for (const header of bk.table.headers) {
+      assert(targetHeaders.has(header), `${name}: colonne BKVince absente: ${header}`);
+    }
   }
 
   const changes = [];
+  const comparisonColumns = selectedColumns
+    ? [...selectedColumns].map((header) => ({
+      header,
+      bkIndex: bkHeaders.get(header),
+      tcpIndex: tcpHeaders.get(header),
+      targetIndex: targetHeaders.get(header),
+    }))
+    : bk.table.headers.map((header, index) => ({
+      header,
+      bkIndex: index,
+      tcpIndex: index,
+      targetIndex: targetHeaders.get(header),
+    }));
+
   for (const [key, tcpRow] of tcpRows) {
     const bkRow = bkRows.get(key);
+    if (selectedColumns && !bkRow) continue;
     const targetRow = targetRows.get(key);
     assert(targetRow, `${name}: ligne BKVince absente: ${key.replace('\u0000', ' #')}`);
 
-    for (let sourceIndex = 0; sourceIndex < bk.table.headers.length; sourceIndex += 1) {
-      const bkValue = bkRow[sourceIndex] ?? '';
-      const tcpValue = tcpRow[sourceIndex] ?? '';
+    for (const {
+      header, bkIndex, tcpIndex, targetIndex,
+    } of comparisonColumns) {
+      const bkValue = bkRow[bkIndex] ?? '';
+      const tcpValue = tcpRow[tcpIndex] ?? '';
       if (bkValue === tcpValue) continue;
 
-      const header = bk.table.headers[sourceIndex];
-      const targetIndex = targetHeaders.get(header);
       const targetValue = targetRow[targetIndex] ?? '';
       let disposition;
       if (targetValue === bkValue) disposition = 'applicable';
@@ -114,12 +147,31 @@ function prepare(name) {
 function main() {
   const args = process.argv.slice(2);
   const apply = args.includes('--apply');
-  const names = args.filter((arg) => arg !== '--apply').map((name) => (
+  const columnsOption = args.find((arg) => arg.startsWith('--columns='));
+  const expectOption = args.find((arg) => arg.startsWith('--expect-applicable='));
+  const selectedColumns = columnsOption
+    ? new Set(columnsOption.slice('--columns='.length).split(',').filter(Boolean))
+    : null;
+  assert(!columnsOption || selectedColumns.size > 0, 'Le filtre --columns est vide');
+  const names = args.filter((arg) => (
+    arg !== '--apply' && arg !== columnsOption && arg !== expectOption
+  )).map((name) => (
     name.toLowerCase().endsWith('.txt') ? name.toLowerCase() : `${name.toLowerCase()}.txt`
   ));
-  assert(names.length > 0, 'Usage: node apply-cell-deltas.js [--apply] <table...>');
+  assert(
+    names.length > 0,
+    'Usage: node apply-cell-deltas.js [--apply] [--columns=a,b] [--expect-applicable=n] <table...>',
+  );
 
-  const prepared = names.map(prepare);
+  const prepared = names.map((name) => prepare(name, selectedColumns));
+  const applicable = prepared.reduce((count, result) => (
+    count + result.changes.filter((change) => change.disposition === 'applicable').length
+  ), 0);
+  if (expectOption) {
+    const expected = Number(expectOption.slice('--expect-applicable='.length));
+    assert(Number.isSafeInteger(expected) && expected >= 0, 'Valeur --expect-applicable invalide');
+    assert(applicable === expected, `attendu ${expected} cellule(s) applicable(s), obtenu ${applicable}`);
+  }
   for (const result of prepared) {
     const report = result.changes.map(({ targetRow, targetIndex, ...change }) => change);
     console.log(`\n${result.name}`);

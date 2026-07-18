@@ -17,7 +17,11 @@
     "test:cube-guide": "node scripts/build-data/cube-guide.js --check",
     "test:itemstatcost": "node scripts/build-data/audit-itemstatcost.js",
     "test:bkvince-startup-refs": "node scripts/migrate-bkvince/validate-startup-references.js",
-    "test:bkvince-monstats-lots": "node scripts/migrate-bkvince/apply-monstats-lots.js"
+    "test:bkvince-monstats-lots": "node scripts/migrate-bkvince/apply-monstats-lots.js",
+    "generate:bkvince-storage-bag": "node scripts/migrate-bkvince/port-storage-bag.js",
+    "test:bkvince-storage-bag": "node scripts/migrate-bkvince/port-storage-bag.js --check",
+    "generate:bkvince-itemtypes": "node scripts/migrate-bkvince/rebuild-itemtypes.js",
+    "test:bkvince-itemtypes": "node scripts/migrate-bkvince/rebuild-itemtypes.js --check"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",

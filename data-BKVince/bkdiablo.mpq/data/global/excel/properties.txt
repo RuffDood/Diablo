@@ -303,3 +303,7 @@ dex%	299	1	1	item_dex_percent																												+#% Dexterity		Min %	Ma
 vit%	300	1	1	item_vit_percent																												+#% Vitality		Min %	Max %		0
 enr%	301	1	1	item_enr_percent																												+#% Energy		100	1		0
 splash	302	1	11	item_splashonhit																												splash	proc_SplashDamage				0
+GB-Total	304	1	17	GB_Total																																none	0
+RB-Low	305	1	17	RB_Low																																	0
+RB-Mid	306	1	17	RB_Mid																																	0
+RB-High	307	1	17	RB_High																																	0

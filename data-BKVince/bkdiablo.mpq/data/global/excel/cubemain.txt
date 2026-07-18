@@ -1560,3 +1560,762 @@ UPGRADE SPLASH CHARM TIER - T5 Splash Charm & Fal-Rune & Perfect Skull = T6 Spla
 UPGRADE SPLASH CHARM TIER - T6 Splash Charm & Pul-Rune & Eth-Rune & Perfect Skull = T7 Splash Charm	0				100	15	386	1		3	Ravaging T6	r21	r05					Ravaging T7	41		99																										Ravaging T7	41																																																									0
 UPGRADE SPLASH CHARM TIER - T7 Splash Charm & Mal-Rune & Tal-Rune & Perfect Skull = T8 Splash Charm	0				100	15	386	1		3	Ravaging T7	r23	r07					Ravaging T8	45		99																										Ravaging T8	45																																																									0
 UPGRADE SPLASH CHARM TIER - T8 Splash Charm & Ohm-Rune & Ral-Rune & Charsi Malus & Larzuk Malus = T9 Splash Charm	0				100	15	386	1		5	Ravaging T8	r27	r08	mls	lmr			Ravaging T9	49		99																										Ravaging T9	49																																																									0
+Cycle Gem Remover Quality - Chipped Amethyst	1				100					2	y63	isc						y70																													isc																																																										0
+Cycle Gem Remover Quality - Chipped Topaz	1				100					2	y64	isc						y71																													isc																																																										0
+Cycle Gem Remover Quality - Chipped Sapphire	1				100					2	y65	isc						y72																													isc																																																										0
+Cycle Gem Remover Quality - Chipped Emerald	1				100					2	y66	isc						y73																													isc																																																										0
+Cycle Gem Remover Quality - Chipped Ruby	1				100					2	y67	isc						y74																													isc																																																										0
+Cycle Gem Remover Quality - Chipped Diamond	1				100					2	y68	isc						y75																													isc																																																										0
+Cycle Gem Remover Quality - Chipped Skull	1				100					2	y69	isc						y76																													isc																																																										0
+Cycle Gem Remover Quality - Flawed Amethyst	1				100					2	y70	isc						y77																													isc																																																										0
+Cycle Gem Remover Quality - Flawed Topaz	1				100					2	y71	isc						y78																													isc																																																										0
+Cycle Gem Remover Quality - Flawed Sapphire	1				100					2	y72	isc						y79																													isc																																																										0
+Cycle Gem Remover Quality - Flawed Emerald	1				100					2	y73	isc						y80																													isc																																																										0
+Cycle Gem Remover Quality - Flawed Ruby	1				100					2	y74	isc						y81																													isc																																																										0
+Cycle Gem Remover Quality - Flawed Diamond	1				100					2	y75	isc						y82																													isc																																																										0
+Cycle Gem Remover Quality - Flawed Skull	1				100					2	y76	isc						y83																													isc																																																										0
+Cycle Gem Remover Quality - Standard Amethyst	1				100					2	y77	isc						y84																													isc																																																										0
+Cycle Gem Remover Quality - Standard Topaz	1				100					2	y78	isc						y85																													isc																																																										0
+Cycle Gem Remover Quality - Standard Sapphire	1				100					2	y79	isc						y86																													isc																																																										0
+Cycle Gem Remover Quality - Standard Emerald	1				100					2	y80	isc						y87																													isc																																																										0
+Cycle Gem Remover Quality - Standard Ruby	1				100					2	y81	isc						y88																													isc																																																										0
+Cycle Gem Remover Quality - Standard Diamond	1				100					2	y82	isc						y89																													isc																																																										0
+Cycle Gem Remover Quality - Standard Skull	1				100					2	y83	isc						y90																													isc																																																										0
+Cycle Gem Remover Quality - Flawless Amethyst	1				100					2	y84	isc						y02																													isc																																																										0
+Cycle Gem Remover Quality - Flawless Topaz	1				100					2	y85	isc						y03																													isc																																																										0
+Cycle Gem Remover Quality - Flawless Sapphire	1				100					2	y86	isc						y04																													isc																																																										0
+Cycle Gem Remover Quality - Flawless Emerald	1				100					2	y87	isc						y05																													isc																																																										0
+Cycle Gem Remover Quality - Flawless Ruby	1				100					2	y88	isc						y06																													isc																																																										0
+Cycle Gem Remover Quality - Flawless Diamond	1				100					2	y89	isc						y07																													isc																																																										0
+Cycle Gem Remover Quality - Flawless Skull	1				100					2	y90	isc						y08																													isc																																																										0
+Cycle Gem Remover Quality - Perfect Amethyst	1				100					2	y02	isc						y63																													isc																																																										0
+Cycle Gem Remover Quality - Perfect Topaz	1				100					2	y03	isc						y64																													isc																																																										0
+Cycle Gem Remover Quality - Perfect Sapphire	1				100					2	y04	isc						y65																													isc																																																										0
+Cycle Gem Remover Quality - Perfect Emerald	1				100					2	y05	isc						y66																													isc																																																										0
+Cycle Gem Remover Quality - Perfect Ruby	1				100					2	y06	isc						y67																													isc																																																										0
+Cycle Gem Remover Quality - Perfect Diamond	1				100					2	y07	isc						y68																													isc																																																										0
+Cycle Gem Remover Quality - Perfect Skull	1				100					2	y08	isc						y69																													isc																																																										0
+Add Rune - El	1				100					2	y01	r01						useitem				RB-Low			1	1																																																																															0
+Add Rune - Eld	1				100					2	y01	r02						useitem				RB-Low			2	2																																																																															0
+Add Rune - Tir	1				100					2	y01	r03						useitem				RB-Low			4	4																																																																															0
+Add Rune - Nef	1				100					2	y01	r04						useitem				RB-Low			8	8																																																																															0
+Add Rune - Eth	1				100					2	y01	r05						useitem				RB-Low			16	16																																																																															0
+Add Rune - Ith	1				100					2	y01	r06						useitem				RB-Low			32	32																																																																															0
+Add Rune - Tal	1				100					2	y01	r07						useitem				RB-Low			64	64																																																																															0
+Add Rune - Ral	1				100					2	y01	r08						useitem				RB-Low			128	128																																																																															0
+Add Rune - Ort	1				100					2	y01	r09						useitem				RB-Low			256	256																																																																															0
+Add Rune - Thul	1				100					2	y01	r10						useitem				RB-Low			512	512																																																																															0
+Add Rune - Amn	1				100					2	y01	r11						useitem				RB-Low			1024	1024																																																																															0
+Add Rune - Sol	1				100					2	y01	r12						useitem				RB-Mid			1	1																																																																															0
+Add Rune - Shael	1				100					2	y01	r13						useitem				RB-Mid			2	2																																																																															0
+Add Rune - Dol	1				100					2	y01	r14						useitem				RB-Mid			4	4																																																																															0
+Add Rune - Hel	1				100					2	y01	r15						useitem				RB-Mid			8	8																																																																															0
+Add Rune - Io	1				100					2	y01	r16						useitem				RB-Mid			16	16																																																																															0
+Add Rune - Lum	1				100					2	y01	r17						useitem				RB-Mid			32	32																																																																															0
+Add Rune - Ko	1				100					2	y01	r18						useitem				RB-Mid			64	64																																																																															0
+Add Rune - Fal	1				100					2	y01	r19						useitem				RB-Mid			128	128																																																																															0
+Add Rune - Lem	1				100					2	y01	r20						useitem				RB-Mid			256	256																																																																															0
+Add Rune - Pul	1				100					2	y01	r21						useitem				RB-Mid			512	512																																																																															0
+Add Rune - Um	1				100					2	y01	r22						useitem				RB-Mid			1024	1024																																																																															0
+Add Rune - Mal	1				100					2	y01	r23						useitem				RB-High			1	1																																																																															0
+Add Rune - Ist	1				100					2	y01	r24						useitem				RB-High			2	2																																																																															0
+Add Rune - Gul	1				100					2	y01	r25						useitem				RB-High			4	4																																																																															0
+Add Rune - Vex	1				100					2	y01	r26						useitem				RB-High			8	8																																																																															0
+Add Rune - Ohm	1				100					2	y01	r27						useitem				RB-High			16	16																																																																															0
+Add Rune - Lo	1				100					2	y01	r28						useitem				RB-High			32	32																																																																															0
+Add Rune - Sur	1				100					2	y01	r29						useitem				RB-High			64	64																																																																															0
+Add Rune - Ber	1				100					2	y01	r30						useitem				RB-High			128	128																																																																															0
+Add Rune - Jah	1				100					2	y01	r31						useitem				RB-High			256	256																																																																															0
+Add Rune - Cham	1				100					2	y01	r32						useitem				RB-High			512	512																																																																															0
+Add Rune - Zod	1				100					2	y01	r33						useitem				RB-High			1024	1024																																																																															0
+Add Rune - El x2	1				100					3	y01	"r01,qty=2"						useitem				RB-Low			2	2																																																																															0
+Add Rune - Eld x2	1				100					3	y01	"r02,qty=2"						useitem				RB-Low			4	4																																																																															0
+Add Rune - Tir x2	1				100					3	y01	"r03,qty=2"						useitem				RB-Low			8	8																																																																															0
+Add Rune - Nef x2	1				100					3	y01	"r04,qty=2"						useitem				RB-Low			16	16																																																																															0
+Add Rune - Eth x2	1				100					3	y01	"r05,qty=2"						useitem				RB-Low			32	32																																																																															0
+Add Rune - Ith x2	1				100					3	y01	"r06,qty=2"						useitem				RB-Low			64	64																																																																															0
+Add Rune - Tal x2	1				100					3	y01	"r07,qty=2"						useitem				RB-Low			128	128																																																																															0
+Add Rune - Ral x2	1				100					3	y01	"r08,qty=2"						useitem				RB-Low			256	256																																																																															0
+Add Rune - Ort x2	1				100					3	y01	"r09,qty=2"						useitem				RB-Low			512	512																																																																															0
+Add Rune - Thul x2	1				100					3	y01	"r10,qty=2"						useitem				RB-Low			1024	1024																																																																															0
+Add Rune - Amn x2	1				100					3	y01	"r11,qty=2"						useitem				RB-Low			2048	2048																																																																															0
+Add Rune - Sol x2	1				100					3	y01	"r12,qty=2"						useitem				RB-Mid			2	2																																																																															0
+Add Rune - Shael x2	1				100					3	y01	"r13,qty=2"						useitem				RB-Mid			4	4																																																																															0
+Add Rune - Dol x2	1				100					3	y01	"r14,qty=2"						useitem				RB-Mid			8	8																																																																															0
+Add Rune - Hel x2	1				100					3	y01	"r15,qty=2"						useitem				RB-Mid			16	16																																																																															0
+Add Rune - Io x2	1				100					3	y01	"r16,qty=2"						useitem				RB-Mid			32	32																																																																															0
+Add Rune - Lum x2	1				100					3	y01	"r17,qty=2"						useitem				RB-Mid			64	64																																																																															0
+Add Rune - Ko x2	1				100					3	y01	"r18,qty=2"						useitem				RB-Mid			128	128																																																																															0
+Add Rune - Fal x2	1				100					3	y01	"r19,qty=2"						useitem				RB-Mid			256	256																																																																															0
+Add Rune - Lem x2	1				100					3	y01	"r20,qty=2"						useitem				RB-Mid			512	512																																																																															0
+Add Rune - Pul x2	1				100					3	y01	"r21,qty=2"						useitem				RB-Mid			1024	1024																																																																															0
+Add Rune - Um x2	1				100					3	y01	"r22,qty=2"						useitem				RB-Mid			2048	2048																																																																															0
+Add Rune - Mal x2	1				100					3	y01	"r23,qty=2"						useitem				RB-High			2	2																																																																															0
+Add Rune - Ist x2	1				100					3	y01	"r24,qty=2"						useitem				RB-High			4	4																																																																															0
+Add Rune - Gul x2	1				100					3	y01	"r25,qty=2"						useitem				RB-High			8	8																																																																															0
+Add Rune - Vex x2	1				100					3	y01	"r26,qty=2"						useitem				RB-High			16	16																																																																															0
+Add Rune - Ohm x2	1				100					3	y01	"r27,qty=2"						useitem				RB-High			32	32																																																																															0
+Add Rune - Lo x2	1				100					3	y01	"r28,qty=2"						useitem				RB-High			64	64																																																																															0
+Add Rune - Sur x2	1				100					3	y01	"r29,qty=2"						useitem				RB-High			128	128																																																																															0
+Add Rune - Ber x2	1				100					3	y01	"r30,qty=2"						useitem				RB-High			256	256																																																																															0
+Add Rune - Jah x2	1				100					3	y01	"r31,qty=2"						useitem				RB-High			512	512																																																																															0
+Add Rune - Cham x2	1				100					3	y01	"r32,qty=2"						useitem				RB-High			1024	1024																																																																															0
+Add Rune - Zod x2	1				100					3	y01	"r33,qty=2"						useitem				RB-High			2048	2048																																																																															0
+Add Rune - El x3	1				100					4	y01	"r01,qty=3"						useitem				RB-Low			3	3																																																																															0
+Add Rune - Eld x3	1				100					4	y01	"r02,qty=3"						useitem				RB-Low			6	6																																																																															0
+Add Rune - Tir x3	1				100					4	y01	"r03,qty=3"						useitem				RB-Low			12	12																																																																															0
+Add Rune - Nef x3	1				100					4	y01	"r04,qty=3"						useitem				RB-Low			24	24																																																																															0
+Add Rune - Eth x3	1				100					4	y01	"r05,qty=3"						useitem				RB-Low			48	48																																																																															0
+Add Rune - Ith x3	1				100					4	y01	"r06,qty=3"						useitem				RB-Low			96	96																																																																															0
+Add Rune - Tal x3	1				100					4	y01	"r07,qty=3"						useitem				RB-Low			192	192																																																																															0
+Add Rune - Ral x3	1				100					4	y01	"r08,qty=3"						useitem				RB-Low			384	384																																																																															0
+Add Rune - Ort x3	1				100					4	y01	"r09,qty=3"						useitem				RB-Low			768	768																																																																															0
+Add Rune - Thul x3	1				100					4	y01	"r10,qty=3"						useitem				RB-Low			1536	1536																																																																															0
+Add Rune - Amn x3	1				100					4	y01	"r11,qty=3"						useitem				RB-Low			3072	3072																																																																															0
+Add Rune - Sol x3	1				100					4	y01	"r12,qty=3"						useitem				RB-Mid			3	3																																																																															0
+Add Rune - Shael x3	1				100					4	y01	"r13,qty=3"						useitem				RB-Mid			6	6																																																																															0
+Add Rune - Dol x3	1				100					4	y01	"r14,qty=3"						useitem				RB-Mid			12	12																																																																															0
+Add Rune - Hel x3	1				100					4	y01	"r15,qty=3"						useitem				RB-Mid			24	24																																																																															0
+Add Rune - Io x3	1				100					4	y01	"r16,qty=3"						useitem				RB-Mid			48	48																																																																															0
+Add Rune - Lum x3	1				100					4	y01	"r17,qty=3"						useitem				RB-Mid			96	96																																																																															0
+Add Rune - Ko x3	1				100					4	y01	"r18,qty=3"						useitem				RB-Mid			192	192																																																																															0
+Add Rune - Fal x3	1				100					4	y01	"r19,qty=3"						useitem				RB-Mid			384	384																																																																															0
+Add Rune - Lem x3	1				100					4	y01	"r20,qty=3"						useitem				RB-Mid			768	768																																																																															0
+Add Rune - Pul x3	1				100					4	y01	"r21,qty=3"						useitem				RB-Mid			1536	1536																																																																															0
+Add Rune - Um x3	1				100					4	y01	"r22,qty=3"						useitem				RB-Mid			3072	3072																																																																															0
+Add Rune - Mal x3	1				100					4	y01	"r23,qty=3"						useitem				RB-High			3	3																																																																															0
+Add Rune - Ist x3	1				100					4	y01	"r24,qty=3"						useitem				RB-High			6	6																																																																															0
+Add Rune - Gul x3	1				100					4	y01	"r25,qty=3"						useitem				RB-High			12	12																																																																															0
+Add Rune - Vex x3	1				100					4	y01	"r26,qty=3"						useitem				RB-High			24	24																																																																															0
+Add Rune - Ohm x3	1				100					4	y01	"r27,qty=3"						useitem				RB-High			48	48																																																																															0
+Add Rune - Lo x3	1				100					4	y01	"r28,qty=3"						useitem				RB-High			96	96																																																																															0
+Add Rune - Sur x3	1				100					4	y01	"r29,qty=3"						useitem				RB-High			192	192																																																																															0
+Add Rune - Ber x3	1				100					4	y01	"r30,qty=3"						useitem				RB-High			384	384																																																																															0
+Add Rune - Jah x3	1				100					4	y01	"r31,qty=3"						useitem				RB-High			768	768																																																																															0
+Add Rune - Cham x3	1				100					4	y01	"r32,qty=3"						useitem				RB-High			1536	1536																																																																															0
+Add Rune - Zod x3	1				100					4	y01	"r33,qty=3"						useitem				RB-High			3072	3072																																																																															0
+Add Rune - El x4	1				100					5	y01	"r01,qty=4"						useitem				RB-Low			4	4																																																																															0
+Add Rune - Eld x4	1				100					5	y01	"r02,qty=4"						useitem				RB-Low			8	8																																																																															0
+Add Rune - Tir x4	1				100					5	y01	"r03,qty=4"						useitem				RB-Low			16	16																																																																															0
+Add Rune - Nef x4	1				100					5	y01	"r04,qty=4"						useitem				RB-Low			32	32																																																																															0
+Add Rune - Eth x4	1				100					5	y01	"r05,qty=4"						useitem				RB-Low			64	64																																																																															0
+Add Rune - Ith x4	1				100					5	y01	"r06,qty=4"						useitem				RB-Low			128	128																																																																															0
+Add Rune - Tal x4	1				100					5	y01	"r07,qty=4"						useitem				RB-Low			256	256																																																																															0
+Add Rune - Ral x4	1				100					5	y01	"r08,qty=4"						useitem				RB-Low			512	512																																																																															0
+Add Rune - Ort x4	1				100					5	y01	"r09,qty=4"						useitem				RB-Low			1024	1024																																																																															0
+Add Rune - Thul x4	1				100					5	y01	"r10,qty=4"						useitem				RB-Low			2048	2048																																																																															0
+Add Rune - Amn x4	1				100					5	y01	"r11,qty=4"						useitem				RB-Low			4096	4096																																																																															0
+Add Rune - Sol x4	1				100					5	y01	"r12,qty=4"						useitem				RB-Mid			4	4																																																																															0
+Add Rune - Shael x4	1				100					5	y01	"r13,qty=4"						useitem				RB-Mid			8	8																																																																															0
+Add Rune - Dol x4	1				100					5	y01	"r14,qty=4"						useitem				RB-Mid			16	16																																																																															0
+Add Rune - Hel x4	1				100					5	y01	"r15,qty=4"						useitem				RB-Mid			32	32																																																																															0
+Add Rune - Io x4	1				100					5	y01	"r16,qty=4"						useitem				RB-Mid			64	64																																																																															0
+Add Rune - Lum x4	1				100					5	y01	"r17,qty=4"						useitem				RB-Mid			128	128																																																																															0
+Add Rune - Ko x4	1				100					5	y01	"r18,qty=4"						useitem				RB-Mid			256	256																																																																															0
+Add Rune - Fal x4	1				100					5	y01	"r19,qty=4"						useitem				RB-Mid			512	512																																																																															0
+Add Rune - Lem x4	1				100					5	y01	"r20,qty=4"						useitem				RB-Mid			1024	1024																																																																															0
+Add Rune - Pul x4	1				100					5	y01	"r21,qty=4"						useitem				RB-Mid			2048	2048																																																																															0
+Add Rune - Um x4	1				100					5	y01	"r22,qty=4"						useitem				RB-Mid			4096	4096																																																																															0
+Add Rune - Mal x4	1				100					5	y01	"r23,qty=4"						useitem				RB-High			4	4																																																																															0
+Add Rune - Ist x4	1				100					5	y01	"r24,qty=4"						useitem				RB-High			8	8																																																																															0
+Add Rune - Gul x4	1				100					5	y01	"r25,qty=4"						useitem				RB-High			16	16																																																																															0
+Add Rune - Vex x4	1				100					5	y01	"r26,qty=4"						useitem				RB-High			32	32																																																																															0
+Add Rune - Ohm x4	1				100					5	y01	"r27,qty=4"						useitem				RB-High			64	64																																																																															0
+Add Rune - Lo x4	1				100					5	y01	"r28,qty=4"						useitem				RB-High			128	128																																																																															0
+Add Rune - Sur x4	1				100					5	y01	"r29,qty=4"						useitem				RB-High			256	256																																																																															0
+Add Rune - Ber x4	1				100					5	y01	"r30,qty=4"						useitem				RB-High			512	512																																																																															0
+Add Rune - Jah x4	1				100					5	y01	"r31,qty=4"						useitem				RB-High			1024	1024																																																																															0
+Add Rune - Cham x4	1				100					5	y01	"r32,qty=4"						useitem				RB-High			2048	2048																																																																															0
+Add Rune - Zod x4	1				100					5	y01	"r33,qty=4"						useitem				RB-High			4096	4096																																																																															0
+Add Rune - El x5	1				100					6	y01	"r01,qty=5"						useitem				RB-Low			5	5																																																																															0
+Add Rune - Eld x5	1				100					6	y01	"r02,qty=5"						useitem				RB-Low			10	10																																																																															0
+Add Rune - Tir x5	1				100					6	y01	"r03,qty=5"						useitem				RB-Low			20	20																																																																															0
+Add Rune - Nef x5	1				100					6	y01	"r04,qty=5"						useitem				RB-Low			40	40																																																																															0
+Add Rune - Eth x5	1				100					6	y01	"r05,qty=5"						useitem				RB-Low			80	80																																																																															0
+Add Rune - Ith x5	1				100					6	y01	"r06,qty=5"						useitem				RB-Low			160	160																																																																															0
+Add Rune - Tal x5	1				100					6	y01	"r07,qty=5"						useitem				RB-Low			320	320																																																																															0
+Add Rune - Ral x5	1				100					6	y01	"r08,qty=5"						useitem				RB-Low			640	640																																																																															0
+Add Rune - Ort x5	1				100					6	y01	"r09,qty=5"						useitem				RB-Low			1280	1280																																																																															0
+Add Rune - Thul x5	1				100					6	y01	"r10,qty=5"						useitem				RB-Low			2560	2560																																																																															0
+Add Rune - Amn x5	1				100					6	y01	"r11,qty=5"						useitem				RB-Low			5120	5120																																																																															0
+Add Rune - Sol x5	1				100					6	y01	"r12,qty=5"						useitem				RB-Mid			5	5																																																																															0
+Add Rune - Shael x5	1				100					6	y01	"r13,qty=5"						useitem				RB-Mid			10	10																																																																															0
+Add Rune - Dol x5	1				100					6	y01	"r14,qty=5"						useitem				RB-Mid			20	20																																																																															0
+Add Rune - Hel x5	1				100					6	y01	"r15,qty=5"						useitem				RB-Mid			40	40																																																																															0
+Add Rune - Io x5	1				100					6	y01	"r16,qty=5"						useitem				RB-Mid			80	80																																																																															0
+Add Rune - Lum x5	1				100					6	y01	"r17,qty=5"						useitem				RB-Mid			160	160																																																																															0
+Add Rune - Ko x5	1				100					6	y01	"r18,qty=5"						useitem				RB-Mid			320	320																																																																															0
+Add Rune - Fal x5	1				100					6	y01	"r19,qty=5"						useitem				RB-Mid			640	640																																																																															0
+Add Rune - Lem x5	1				100					6	y01	"r20,qty=5"						useitem				RB-Mid			1280	1280																																																																															0
+Add Rune - Pul x5	1				100					6	y01	"r21,qty=5"						useitem				RB-Mid			2560	2560																																																																															0
+Add Rune - Um x5	1				100					6	y01	"r22,qty=5"						useitem				RB-Mid			5120	5120																																																																															0
+Add Rune - Mal x5	1				100					6	y01	"r23,qty=5"						useitem				RB-High			5	5																																																																															0
+Add Rune - Ist x5	1				100					6	y01	"r24,qty=5"						useitem				RB-High			10	10																																																																															0
+Add Rune - Gul x5	1				100					6	y01	"r25,qty=5"						useitem				RB-High			20	20																																																																															0
+Add Rune - Vex x5	1				100					6	y01	"r26,qty=5"						useitem				RB-High			40	40																																																																															0
+Add Rune - Ohm x5	1				100					6	y01	"r27,qty=5"						useitem				RB-High			80	80																																																																															0
+Add Rune - Lo x5	1				100					6	y01	"r28,qty=5"						useitem				RB-High			160	160																																																																															0
+Add Rune - Sur x5	1				100					6	y01	"r29,qty=5"						useitem				RB-High			320	320																																																																															0
+Add Rune - Ber x5	1				100					6	y01	"r30,qty=5"						useitem				RB-High			640	640																																																																															0
+Add Rune - Jah x5	1				100					6	y01	"r31,qty=5"						useitem				RB-High			1280	1280																																																																															0
+Add Rune - Cham x5	1				100					6	y01	"r32,qty=5"						useitem				RB-High			2560	2560																																																																															0
+Add Rune - Zod x5	1				100					6	y01	"r33,qty=5"						useitem				RB-High			5120	5120																																																																															0
+Add Rune - El x6	1				100					7	y01	"r01,qty=6"						useitem				RB-Low			6	6																																																																															0
+Add Rune - Eld x6	1				100					7	y01	"r02,qty=6"						useitem				RB-Low			12	12																																																																															0
+Add Rune - Tir x6	1				100					7	y01	"r03,qty=6"						useitem				RB-Low			24	24																																																																															0
+Add Rune - Nef x6	1				100					7	y01	"r04,qty=6"						useitem				RB-Low			48	48																																																																															0
+Add Rune - Eth x6	1				100					7	y01	"r05,qty=6"						useitem				RB-Low			96	96																																																																															0
+Add Rune - Ith x6	1				100					7	y01	"r06,qty=6"						useitem				RB-Low			192	192																																																																															0
+Add Rune - Tal x6	1				100					7	y01	"r07,qty=6"						useitem				RB-Low			384	384																																																																															0
+Add Rune - Ral x6	1				100					7	y01	"r08,qty=6"						useitem				RB-Low			768	768																																																																															0
+Add Rune - Ort x6	1				100					7	y01	"r09,qty=6"						useitem				RB-Low			1536	1536																																																																															0
+Add Rune - Thul x6	1				100					7	y01	"r10,qty=6"						useitem				RB-Low			3072	3072																																																																															0
+Add Rune - Amn x6	1				100					7	y01	"r11,qty=6"						useitem				RB-Low			6144	6144																																																																															0
+Add Rune - Sol x6	1				100					7	y01	"r12,qty=6"						useitem				RB-Mid			6	6																																																																															0
+Add Rune - Shael x6	1				100					7	y01	"r13,qty=6"						useitem				RB-Mid			12	12																																																																															0
+Add Rune - Dol x6	1				100					7	y01	"r14,qty=6"						useitem				RB-Mid			24	24																																																																															0
+Add Rune - Hel x6	1				100					7	y01	"r15,qty=6"						useitem				RB-Mid			48	48																																																																															0
+Add Rune - Io x6	1				100					7	y01	"r16,qty=6"						useitem				RB-Mid			96	96																																																																															0
+Add Rune - Lum x6	1				100					7	y01	"r17,qty=6"						useitem				RB-Mid			192	192																																																																															0
+Add Rune - Ko x6	1				100					7	y01	"r18,qty=6"						useitem				RB-Mid			384	384																																																																															0
+Add Rune - Fal x6	1				100					7	y01	"r19,qty=6"						useitem				RB-Mid			768	768																																																																															0
+Add Rune - Lem x6	1				100					7	y01	"r20,qty=6"						useitem				RB-Mid			1536	1536																																																																															0
+Add Rune - Pul x6	1				100					7	y01	"r21,qty=6"						useitem				RB-Mid			3072	3072																																																																															0
+Add Rune - Um x6	1				100					7	y01	"r22,qty=6"						useitem				RB-Mid			6144	6144																																																																															0
+Add Rune - Mal x6	1				100					7	y01	"r23,qty=6"						useitem				RB-High			6	6																																																																															0
+Add Rune - Ist x6	1				100					7	y01	"r24,qty=6"						useitem				RB-High			12	12																																																																															0
+Add Rune - Gul x6	1				100					7	y01	"r25,qty=6"						useitem				RB-High			24	24																																																																															0
+Add Rune - Vex x6	1				100					7	y01	"r26,qty=6"						useitem				RB-High			48	48																																																																															0
+Add Rune - Ohm x6	1				100					7	y01	"r27,qty=6"						useitem				RB-High			96	96																																																																															0
+Add Rune - Lo x6	1				100					7	y01	"r28,qty=6"						useitem				RB-High			192	192																																																																															0
+Add Rune - Sur x6	1				100					7	y01	"r29,qty=6"						useitem				RB-High			384	384																																																																															0
+Add Rune - Ber x6	1				100					7	y01	"r30,qty=6"						useitem				RB-High			768	768																																																																															0
+Add Rune - Jah x6	1				100					7	y01	"r31,qty=6"						useitem				RB-High			1536	1536																																																																															0
+Add Rune - Cham x6	1				100					7	y01	"r32,qty=6"						useitem				RB-High			3072	3072																																																																															0
+Add Rune - Zod x6	1				100					7	y01	"r33,qty=6"						useitem				RB-High			6144	6144																																																																															0
+Add Rune - El x7	1				100					8	y01	"r01,qty=7"						useitem				RB-Low			7	7																																																																															0
+Add Rune - Eld x7	1				100					8	y01	"r02,qty=7"						useitem				RB-Low			14	14																																																																															0
+Add Rune - Tir x7	1				100					8	y01	"r03,qty=7"						useitem				RB-Low			28	28																																																																															0
+Add Rune - Nef x7	1				100					8	y01	"r04,qty=7"						useitem				RB-Low			56	56																																																																															0
+Add Rune - Eth x7	1				100					8	y01	"r05,qty=7"						useitem				RB-Low			112	112																																																																															0
+Add Rune - Ith x7	1				100					8	y01	"r06,qty=7"						useitem				RB-Low			224	224																																																																															0
+Add Rune - Tal x7	1				100					8	y01	"r07,qty=7"						useitem				RB-Low			448	448																																																																															0
+Add Rune - Ral x7	1				100					8	y01	"r08,qty=7"						useitem				RB-Low			896	896																																																																															0
+Add Rune - Ort x7	1				100					8	y01	"r09,qty=7"						useitem				RB-Low			1792	1792																																																																															0
+Add Rune - Thul x7	1				100					8	y01	"r10,qty=7"						useitem				RB-Low			3584	3584																																																																															0
+Add Rune - Amn x7	1				100					8	y01	"r11,qty=7"						useitem				RB-Low			7168	7168																																																																															0
+Add Rune - Sol x7	1				100					8	y01	"r12,qty=7"						useitem				RB-Mid			7	7																																																																															0
+Add Rune - Shael x7	1				100					8	y01	"r13,qty=7"						useitem				RB-Mid			14	14																																																																															0
+Add Rune - Dol x7	1				100					8	y01	"r14,qty=7"						useitem				RB-Mid			28	28																																																																															0
+Add Rune - Hel x7	1				100					8	y01	"r15,qty=7"						useitem				RB-Mid			56	56																																																																															0
+Add Rune - Io x7	1				100					8	y01	"r16,qty=7"						useitem				RB-Mid			112	112																																																																															0
+Add Rune - Lum x7	1				100					8	y01	"r17,qty=7"						useitem				RB-Mid			224	224																																																																															0
+Add Rune - Ko x7	1				100					8	y01	"r18,qty=7"						useitem				RB-Mid			448	448																																																																															0
+Add Rune - Fal x7	1				100					8	y01	"r19,qty=7"						useitem				RB-Mid			896	896																																																																															0
+Add Rune - Lem x7	1				100					8	y01	"r20,qty=7"						useitem				RB-Mid			1792	1792																																																																															0
+Add Rune - Pul x7	1				100					8	y01	"r21,qty=7"						useitem				RB-Mid			3584	3584																																																																															0
+Add Rune - Um x7	1				100					8	y01	"r22,qty=7"						useitem				RB-Mid			7168	7168																																																																															0
+Add Rune - Mal x7	1				100					8	y01	"r23,qty=7"						useitem				RB-High			7	7																																																																															0
+Add Rune - Ist x7	1				100					8	y01	"r24,qty=7"						useitem				RB-High			14	14																																																																															0
+Add Rune - Gul x7	1				100					8	y01	"r25,qty=7"						useitem				RB-High			28	28																																																																															0
+Add Rune - Vex x7	1				100					8	y01	"r26,qty=7"						useitem				RB-High			56	56																																																																															0
+Add Rune - Ohm x7	1				100					8	y01	"r27,qty=7"						useitem				RB-High			112	112																																																																															0
+Add Rune - Lo x7	1				100					8	y01	"r28,qty=7"						useitem				RB-High			224	224																																																																															0
+Add Rune - Sur x7	1				100					8	y01	"r29,qty=7"						useitem				RB-High			448	448																																																																															0
+Add Rune - Ber x7	1				100					8	y01	"r30,qty=7"						useitem				RB-High			896	896																																																																															0
+Add Rune - Jah x7	1				100					8	y01	"r31,qty=7"						useitem				RB-High			1792	1792																																																																															0
+Add Rune - Cham x7	1				100					8	y01	"r32,qty=7"						useitem				RB-High			3584	3584																																																																															0
+Add Rune - Zod x7	1				100					8	y01	"r33,qty=7"						useitem				RB-High			7168	7168																																																																															0
+Add Rune - El x8	1				100					9	y01	"r01,qty=8"						useitem				RB-Low			8	8																																																																															0
+Add Rune - Eld x8	1				100					9	y01	"r02,qty=8"						useitem				RB-Low			16	16																																																																															0
+Add Rune - Tir x8	1				100					9	y01	"r03,qty=8"						useitem				RB-Low			32	32																																																																															0
+Add Rune - Nef x8	1				100					9	y01	"r04,qty=8"						useitem				RB-Low			64	64																																																																															0
+Add Rune - Eth x8	1				100					9	y01	"r05,qty=8"						useitem				RB-Low			128	128																																																																															0
+Add Rune - Ith x8	1				100					9	y01	"r06,qty=8"						useitem				RB-Low			256	256																																																																															0
+Add Rune - Tal x8	1				100					9	y01	"r07,qty=8"						useitem				RB-Low			512	512																																																																															0
+Add Rune - Ral x8	1				100					9	y01	"r08,qty=8"						useitem				RB-Low			1024	1024																																																																															0
+Add Rune - Ort x8	1				100					9	y01	"r09,qty=8"						useitem				RB-Low			2048	2048																																																																															0
+Add Rune - Thul x8	1				100					9	y01	"r10,qty=8"						useitem				RB-Low			4096	4096																																																																															0
+Add Rune - Amn x8	1				100					9	y01	"r11,qty=8"						useitem				RB-Low			8192	8192																																																																															0
+Add Rune - Sol x8	1				100					9	y01	"r12,qty=8"						useitem				RB-Mid			8	8																																																																															0
+Add Rune - Shael x8	1				100					9	y01	"r13,qty=8"						useitem				RB-Mid			16	16																																																																															0
+Add Rune - Dol x8	1				100					9	y01	"r14,qty=8"						useitem				RB-Mid			32	32																																																																															0
+Add Rune - Hel x8	1				100					9	y01	"r15,qty=8"						useitem				RB-Mid			64	64																																																																															0
+Add Rune - Io x8	1				100					9	y01	"r16,qty=8"						useitem				RB-Mid			128	128																																																																															0
+Add Rune - Lum x8	1				100					9	y01	"r17,qty=8"						useitem				RB-Mid			256	256																																																																															0
+Add Rune - Ko x8	1				100					9	y01	"r18,qty=8"						useitem				RB-Mid			512	512																																																																															0
+Add Rune - Fal x8	1				100					9	y01	"r19,qty=8"						useitem				RB-Mid			1024	1024																																																																															0
+Add Rune - Lem x8	1				100					9	y01	"r20,qty=8"						useitem				RB-Mid			2048	2048																																																																															0
+Add Rune - Pul x8	1				100					9	y01	"r21,qty=8"						useitem				RB-Mid			4096	4096																																																																															0
+Add Rune - Um x8	1				100					9	y01	"r22,qty=8"						useitem				RB-Mid			8192	8192																																																																															0
+Add Rune - Mal x8	1				100					9	y01	"r23,qty=8"						useitem				RB-High			8	8																																																																															0
+Add Rune - Ist x8	1				100					9	y01	"r24,qty=8"						useitem				RB-High			16	16																																																																															0
+Add Rune - Gul x8	1				100					9	y01	"r25,qty=8"						useitem				RB-High			32	32																																																																															0
+Add Rune - Vex x8	1				100					9	y01	"r26,qty=8"						useitem				RB-High			64	64																																																																															0
+Add Rune - Ohm x8	1				100					9	y01	"r27,qty=8"						useitem				RB-High			128	128																																																																															0
+Add Rune - Lo x8	1				100					9	y01	"r28,qty=8"						useitem				RB-High			256	256																																																																															0
+Add Rune - Sur x8	1				100					9	y01	"r29,qty=8"						useitem				RB-High			512	512																																																																															0
+Add Rune - Ber x8	1				100					9	y01	"r30,qty=8"						useitem				RB-High			1024	1024																																																																															0
+Add Rune - Jah x8	1				100					9	y01	"r31,qty=8"						useitem				RB-High			2048	2048																																																																															0
+Add Rune - Cham x8	1				100					9	y01	"r32,qty=8"						useitem				RB-High			4096	4096																																																																															0
+Add Rune - Zod x8	1				100					9	y01	"r33,qty=8"						useitem				RB-High			8192	8192																																																																															0
+Add Rune - El x9	1				100					10	y01	"r01,qty=9"						useitem				RB-Low			9	9																																																																															0
+Add Rune - Eld x9	1				100					10	y01	"r02,qty=9"						useitem				RB-Low			18	18																																																																															0
+Add Rune - Tir x9	1				100					10	y01	"r03,qty=9"						useitem				RB-Low			36	36																																																																															0
+Add Rune - Nef x9	1				100					10	y01	"r04,qty=9"						useitem				RB-Low			72	72																																																																															0
+Add Rune - Eth x9	1				100					10	y01	"r05,qty=9"						useitem				RB-Low			144	144																																																																															0
+Add Rune - Ith x9	1				100					10	y01	"r06,qty=9"						useitem				RB-Low			288	288																																																																															0
+Add Rune - Tal x9	1				100					10	y01	"r07,qty=9"						useitem				RB-Low			576	576																																																																															0
+Add Rune - Ral x9	1				100					10	y01	"r08,qty=9"						useitem				RB-Low			1152	1152																																																																															0
+Add Rune - Ort x9	1				100					10	y01	"r09,qty=9"						useitem				RB-Low			2304	2304																																																																															0
+Add Rune - Thul x9	1				100					10	y01	"r10,qty=9"						useitem				RB-Low			4608	4608																																																																															0
+Add Rune - Amn x9	1				100					10	y01	"r11,qty=9"						useitem				RB-Low			9216	9216																																																																															0
+Add Rune - Sol x9	1				100					10	y01	"r12,qty=9"						useitem				RB-Mid			9	9																																																																															0
+Add Rune - Shael x9	1				100					10	y01	"r13,qty=9"						useitem				RB-Mid			18	18																																																																															0
+Add Rune - Dol x9	1				100					10	y01	"r14,qty=9"						useitem				RB-Mid			36	36																																																																															0
+Add Rune - Hel x9	1				100					10	y01	"r15,qty=9"						useitem				RB-Mid			72	72																																																																															0
+Add Rune - Io x9	1				100					10	y01	"r16,qty=9"						useitem				RB-Mid			144	144																																																																															0
+Add Rune - Lum x9	1				100					10	y01	"r17,qty=9"						useitem				RB-Mid			288	288																																																																															0
+Add Rune - Ko x9	1				100					10	y01	"r18,qty=9"						useitem				RB-Mid			576	576																																																																															0
+Add Rune - Fal x9	1				100					10	y01	"r19,qty=9"						useitem				RB-Mid			1152	1152																																																																															0
+Add Rune - Lem x9	1				100					10	y01	"r20,qty=9"						useitem				RB-Mid			2304	2304																																																																															0
+Add Rune - Pul x9	1				100					10	y01	"r21,qty=9"						useitem				RB-Mid			4608	4608																																																																															0
+Add Rune - Um x9	1				100					10	y01	"r22,qty=9"						useitem				RB-Mid			9216	9216																																																																															0
+Add Rune - Mal x9	1				100					10	y01	"r23,qty=9"						useitem				RB-High			9	9																																																																															0
+Add Rune - Ist x9	1				100					10	y01	"r24,qty=9"						useitem				RB-High			18	18																																																																															0
+Add Rune - Gul x9	1				100					10	y01	"r25,qty=9"						useitem				RB-High			36	36																																																																															0
+Add Rune - Vex x9	1				100					10	y01	"r26,qty=9"						useitem				RB-High			72	72																																																																															0
+Add Rune - Ohm x9	1				100					10	y01	"r27,qty=9"						useitem				RB-High			144	144																																																																															0
+Add Rune - Lo x9	1				100					10	y01	"r28,qty=9"						useitem				RB-High			288	288																																																																															0
+Add Rune - Sur x9	1				100					10	y01	"r29,qty=9"						useitem				RB-High			576	576																																																																															0
+Add Rune - Ber x9	1				100					10	y01	"r30,qty=9"						useitem				RB-High			1152	1152																																																																															0
+Add Rune - Jah x9	1				100					10	y01	"r31,qty=9"						useitem				RB-High			2304	2304																																																																															0
+Add Rune - Cham x9	1				100					10	y01	"r32,qty=9"						useitem				RB-High			4608	4608																																																																															0
+Add Rune - Zod x9	1				100					10	y01	"r33,qty=9"						useitem				RB-High			9216	9216																																																																															0
+Add Rune - El x10	1				100					11	y01	"r01,qty=10"						useitem				RB-Low			10	10																																																																															0
+Add Rune - Eld x10	1				100					11	y01	"r02,qty=10"						useitem				RB-Low			20	20																																																																															0
+Add Rune - Tir x10	1				100					11	y01	"r03,qty=10"						useitem				RB-Low			40	40																																																																															0
+Add Rune - Nef x10	1				100					11	y01	"r04,qty=10"						useitem				RB-Low			80	80																																																																															0
+Add Rune - Eth x10	1				100					11	y01	"r05,qty=10"						useitem				RB-Low			160	160																																																																															0
+Add Rune - Ith x10	1				100					11	y01	"r06,qty=10"						useitem				RB-Low			320	320																																																																															0
+Add Rune - Tal x10	1				100					11	y01	"r07,qty=10"						useitem				RB-Low			640	640																																																																															0
+Add Rune - Ral x10	1				100					11	y01	"r08,qty=10"						useitem				RB-Low			1280	1280																																																																															0
+Add Rune - Ort x10	1				100					11	y01	"r09,qty=10"						useitem				RB-Low			2560	2560																																																																															0
+Add Rune - Thul x10	1				100					11	y01	"r10,qty=10"						useitem				RB-Low			5120	5120																																																																															0
+Add Rune - Amn x10	1				100					11	y01	"r11,qty=10"						useitem				RB-Low			10240	10240																																																																															0
+Add Rune - Sol x10	1				100					11	y01	"r12,qty=10"						useitem				RB-Mid			10	10																																																																															0
+Add Rune - Shael x10	1				100					11	y01	"r13,qty=10"						useitem				RB-Mid			20	20																																																																															0
+Add Rune - Dol x10	1				100					11	y01	"r14,qty=10"						useitem				RB-Mid			40	40																																																																															0
+Add Rune - Hel x10	1				100					11	y01	"r15,qty=10"						useitem				RB-Mid			80	80																																																																															0
+Add Rune - Io x10	1				100					11	y01	"r16,qty=10"						useitem				RB-Mid			160	160																																																																															0
+Add Rune - Lum x10	1				100					11	y01	"r17,qty=10"						useitem				RB-Mid			320	320																																																																															0
+Add Rune - Ko x10	1				100					11	y01	"r18,qty=10"						useitem				RB-Mid			640	640																																																																															0
+Add Rune - Fal x10	1				100					11	y01	"r19,qty=10"						useitem				RB-Mid			1280	1280																																																																															0
+Add Rune - Lem x10	1				100					11	y01	"r20,qty=10"						useitem				RB-Mid			2560	2560																																																																															0
+Add Rune - Pul x10	1				100					11	y01	"r21,qty=10"						useitem				RB-Mid			5120	5120																																																																															0
+Add Rune - Um x10	1				100					11	y01	"r22,qty=10"						useitem				RB-Mid			10240	10240																																																																															0
+Add Rune - Mal x10	1				100					11	y01	"r23,qty=10"						useitem				RB-High			10	10																																																																															0
+Add Rune - Ist x10	1				100					11	y01	"r24,qty=10"						useitem				RB-High			20	20																																																																															0
+Add Rune - Gul x10	1				100					11	y01	"r25,qty=10"						useitem				RB-High			40	40																																																																															0
+Add Rune - Vex x10	1				100					11	y01	"r26,qty=10"						useitem				RB-High			80	80																																																																															0
+Add Rune - Ohm x10	1				100					11	y01	"r27,qty=10"						useitem				RB-High			160	160																																																																															0
+Add Rune - Lo x10	1				100					11	y01	"r28,qty=10"						useitem				RB-High			320	320																																																																															0
+Add Rune - Sur x10	1				100					11	y01	"r29,qty=10"						useitem				RB-High			640	640																																																																															0
+Add Rune - Ber x10	1				100					11	y01	"r30,qty=10"						useitem				RB-High			1280	1280																																																																															0
+Add Rune - Jah x10	1				100					11	y01	"r31,qty=10"						useitem				RB-High			2560	2560																																																																															0
+Add Rune - Cham x10	1				100					11	y01	"r32,qty=10"						useitem				RB-High			5120	5120																																																																															0
+Add Rune - Zod x10	1				100					11	y01	"r33,qty=10"						useitem				RB-High			10240	10240																																																																															0
+Remove Rune - El	1				100	15	386	1		2	y01	y09						useitem				RB-Low			-1	-1																					y09																													r01																													0
+Remove Rune - Eld	1				100	15	386	2		2	y01	y10						useitem				RB-Low			-2	-2																					y10																													r02																													0
+Remove Rune - Tir	1				100	15	386	4		2	y01	y11						useitem				RB-Low			-4	-4																					y11																													r03																													0
+Remove Rune - Nef	1				100	15	386	8		2	y01	y12						useitem				RB-Low			-8	-8																					y12																													r04																													0
+Remove Rune - Eth	1				100	15	386	16		2	y01	y13						useitem				RB-Low			-16	-16																					y13																													r05																													0
+Remove Rune - Ith	1				100	15	386	32		2	y01	y14						useitem				RB-Low			-32	-32																					y14																													r06																													0
+Remove Rune - Tal	1				100	15	386	64		2	y01	y15						useitem				RB-Low			-64	-64																					y15																													r07																													0
+Remove Rune - Ral	1				100	15	386	128		2	y01	y16						useitem				RB-Low			-128	-128																					y16																													r08																													0
+Remove Rune - Ort	1				100	15	386	256		2	y01	y17						useitem				RB-Low			-256	-256																					y17																													r09																													0
+Remove Rune - Thul	1				100	15	386	512		2	y01	y18						useitem				RB-Low			-512	-512																					y18																													r10																													0
+Remove Rune - Amn	1				100	15	386	1024		2	y01	y19						useitem				RB-Low			-1024	-1024																					y19																													r11																													0
+Remove Rune - Sol	1				100	15	387	1		2	y01	y20						useitem				RB-Mid			-1	-1																					y20																													r12																													0
+Remove Rune - Shael	1				100	15	387	2		2	y01	y21						useitem				RB-Mid			-2	-2																					y21																													r13																													0
+Remove Rune - Dol	1				100	15	387	4		2	y01	y22						useitem				RB-Mid			-4	-4																					y22																													r14																													0
+Remove Rune - Hel	1				100	15	387	8		2	y01	y23						useitem				RB-Mid			-8	-8																					y23																													r15																													0
+Remove Rune - Io	1				100	15	387	16		2	y01	y24						useitem				RB-Mid			-16	-16																					y24																													r16																													0
+Remove Rune - Lum	1				100	15	387	32		2	y01	y25						useitem				RB-Mid			-32	-32																					y25																													r17																													0
+Remove Rune - Ko	1				100	15	387	64		2	y01	y26						useitem				RB-Mid			-64	-64																					y26																													r18																													0
+Remove Rune - Fal	1				100	15	387	128		2	y01	y27						useitem				RB-Mid			-128	-128																					y27																													r19																													0
+Remove Rune - Lem	1				100	15	387	256		2	y01	y28						useitem				RB-Mid			-256	-256																					y28																													r20																													0
+Remove Rune - Pul	1				100	15	387	512		2	y01	y29						useitem				RB-Mid			-512	-512																					y29																													r21																													0
+Remove Rune - Um	1				100	15	387	1024		2	y01	y30						useitem				RB-Mid			-1024	-1024																					y30																													r22																													0
+Remove Rune - Mal	1				100	15	388	1		2	y01	y31						useitem				RB-High			-1	-1																					y31																													r23																													0
+Remove Rune - Ist	1				100	15	388	2		2	y01	y32						useitem				RB-High			-2	-2																					y32																													r24																													0
+Remove Rune - Gul	1				100	15	388	4		2	y01	y33						useitem				RB-High			-4	-4																					y33																													r25																													0
+Remove Rune - Vex	1				100	15	388	8		2	y01	y34						useitem				RB-High			-8	-8																					y34																													r26																													0
+Remove Rune - Ohm	1				100	15	388	16		2	y01	y35						useitem				RB-High			-16	-16																					y35																													r27																													0
+Remove Rune - Lo	1				100	15	388	32		2	y01	y36						useitem				RB-High			-32	-32																					y36																													r28																													0
+Remove Rune - Sur	1				100	15	388	64		2	y01	y37						useitem				RB-High			-64	-64																					y37																													r29																													0
+Remove Rune - Ber	1				100	15	388	128		2	y01	y38						useitem				RB-High			-128	-128																					y38																													r30																													0
+Remove Rune - Jah	1				100	15	388	256		2	y01	y39						useitem				RB-High			-256	-256																					y39																													r31																													0
+Remove Rune - Cham	1				100	15	388	512		2	y01	y40						useitem				RB-High			-512	-512																					y40																													r32																													0
+Remove Rune - Zod	1				100	15	388	1024		2	y01	y41						useitem				RB-High			-1024	-1024																					y41																													r33																													0
+Rune Cycle - El	1				100					1	y09							y10																																																																																							0
+Rune Cycle - Eld	1				100					1	y10							y11																																																																																							0
+Rune Cycle - Tir	1				100					1	y11							y12																																																																																							0
+Rune Cycle - Nef	1				100					1	y12							y13																																																																																							0
+Rune Cycle - Eth	1				100					1	y13							y14																																																																																							0
+Rune Cycle - Ith	1				100					1	y14							y15																																																																																							0
+Rune Cycle - Tal	1				100					1	y15							y16																																																																																							0
+Rune Cycle - Ral	1				100					1	y16							y17																																																																																							0
+Rune Cycle - Ort	1				100					1	y17							y18																																																																																							0
+Rune Cycle - Thul	1				100					1	y18							y19																																																																																							0
+Rune Cycle - Amn	1				100					1	y19							y20																																																																																							0
+Rune Cycle - Sol	1				100					1	y20							y21																																																																																							0
+Rune Cycle - Shael	1				100					1	y21							y22																																																																																							0
+Rune Cycle - Dol	1				100					1	y22							y23																																																																																							0
+Rune Cycle - Hel	1				100					1	y23							y24																																																																																							0
+Rune Cycle - Io	1				100					1	y24							y25																																																																																							0
+Rune Cycle - Lum	1				100					1	y25							y26																																																																																							0
+Rune Cycle - Ko	1				100					1	y26							y27																																																																																							0
+Rune Cycle - Fal	1				100					1	y27							y28																																																																																							0
+Rune Cycle - Lem	1				100					1	y28							y29																																																																																							0
+Rune Cycle - Pul	1				100					1	y29							y30																																																																																							0
+Rune Cycle - Um	1				100					1	y30							y31																																																																																							0
+Rune Cycle - Mal	1				100					1	y31							y32																																																																																							0
+Rune Cycle - Ist	1				100					1	y32							y33																																																																																							0
+Rune Cycle - Gul	1				100					1	y33							y34																																																																																							0
+Rune Cycle - Vex	1				100					1	y34							y35																																																																																							0
+Rune Cycle - Ohm	1				100					1	y35							y36																																																																																							0
+Rune Cycle - Lo	1				100					1	y36							y37																																																																																							0
+Rune Cycle - Sur	1				100					1	y37							y38																																																																																							0
+Rune Cycle - Ber	1				100					1	y38							y39																																																																																							0
+Rune Cycle - Jah	1				100					1	y39							y40																																																																																							0
+Rune Cycle - Cham	1				100					1	y40							y41																																																																																							0
+Rune Cycle - Zod	1				100					1	y41							y09																																																																																							0
+Add Chipped Gem x1	1				100					2	y01	gem0						useitem				GB-Total			1	1																																																																															0
+Add Chipped Gem x2	1				100					3	y01	"gem0,qty=2"						useitem				GB-Total			2	2																																																																															0
+Add Chipped Gem x3	1				100					4	y01	"gem0,qty=3"						useitem				GB-Total			3	3																																																																															0
+Add Chipped Gem x4	1				100					5	y01	"gem0,qty=4"						useitem				GB-Total			4	4																																																																															0
+Add Chipped Gem x5	1				100					6	y01	"gem0,qty=5"						useitem				GB-Total			5	5																																																																															0
+Add Chipped Gem x6	1				100					7	y01	"gem0,qty=6"						useitem				GB-Total			6	6																																																																															0
+Add Chipped Gem x7	1				100					8	y01	"gem0,qty=7"						useitem				GB-Total			7	7																																																																															0
+Add Chipped Gem x8	1				100					9	y01	"gem0,qty=8"						useitem				GB-Total			8	8																																																																															0
+Add Chipped Gem x9	1				100					10	y01	"gem0,qty=9"						useitem				GB-Total			9	9																																																																															0
+Add Chipped Gem x10	1				100					11	y01	"gem0,qty=10"						useitem				GB-Total			10	10																																																																															0
+Add Chipped Gem x11	1				100					12	y01	"gem0,qty=11"						useitem				GB-Total			11	11																																																																															0
+Add Chipped Gem x12	1				100					13	y01	"gem0,qty=12"						useitem				GB-Total			12	12																																																																															0
+Add Chipped Gem x13	1				100					14	y01	"gem0,qty=13"						useitem				GB-Total			13	13																																																																															0
+Add Chipped Gem x14	1				100					15	y01	"gem0,qty=14"						useitem				GB-Total			14	14																																																																															0
+Add Chipped Gem x15	1				100					16	y01	"gem0,qty=15"						useitem				GB-Total			15	15																																																																															0
+Add Chipped Gem x16	1				100					17	y01	"gem0,qty=16"						useitem				GB-Total			16	16																																																																															0
+Add Chipped Gem x17	1				100					18	y01	"gem0,qty=17"						useitem				GB-Total			17	17																																																																															0
+Add Chipped Gem x18	1				100					19	y01	"gem0,qty=18"						useitem				GB-Total			18	18																																																																															0
+Add Chipped Gem x19	1				100					20	y01	"gem0,qty=19"						useitem				GB-Total			19	19																																																																															0
+Add Chipped Gem x20	1				100					21	y01	"gem0,qty=20"						useitem				GB-Total			20	20																																																																															0
+Add Chipped Gem x21	1				100					22	y01	"gem0,qty=21"						useitem				GB-Total			21	21																																																																															0
+Add Chipped Gem x22	1				100					23	y01	"gem0,qty=22"						useitem				GB-Total			22	22																																																																															0
+Add Chipped Gem x23	1				100					24	y01	"gem0,qty=23"						useitem				GB-Total			23	23																																																																															0
+Add Chipped Gem x24	1				100					25	y01	"gem0,qty=24"						useitem				GB-Total			24	24																																																																															0
+Add Chipped Gem x25	1				100					26	y01	"gem0,qty=25"						useitem				GB-Total			25	25																																																																															0
+Add Chipped Gem x26	1				100					27	y01	"gem0,qty=26"						useitem				GB-Total			26	26																																																																															0
+Add Chipped Gem x27	1				100					28	y01	"gem0,qty=27"						useitem				GB-Total			27	27																																																																															0
+Add Chipped Gem x28	1				100					29	y01	"gem0,qty=28"						useitem				GB-Total			28	28																																																																															0
+Add Chipped Gem x29	1				100					30	y01	"gem0,qty=29"						useitem				GB-Total			29	29																																																																															0
+Add Chipped Gem x30	1				100					31	y01	"gem0,qty=30"						useitem				GB-Total			30	30																																																																															0
+Add Chipped Gem x31	1				100					32	y01	"gem0,qty=31"						useitem				GB-Total			31	31																																																																															0
+Add Chipped Gem x32	1				100					33	y01	"gem0,qty=32"						useitem				GB-Total			32	32																																																																															0
+Add Chipped Gem x33	1				100					34	y01	"gem0,qty=33"						useitem				GB-Total			33	33																																																																															0
+Add Chipped Gem x34	1				100					35	y01	"gem0,qty=34"						useitem				GB-Total			34	34																																																																															0
+Add Chipped Gem x35	1				100					36	y01	"gem0,qty=35"						useitem				GB-Total			35	35																																																																															0
+Add Chipped Gem x36	1				100					37	y01	"gem0,qty=36"						useitem				GB-Total			36	36																																																																															0
+Add Chipped Gem x37	1				100					38	y01	"gem0,qty=37"						useitem				GB-Total			37	37																																																																															0
+Add Chipped Gem x38	1				100					39	y01	"gem0,qty=38"						useitem				GB-Total			38	38																																																																															0
+Add Chipped Gem x39	1				100					40	y01	"gem0,qty=39"						useitem				GB-Total			39	39																																																																															0
+Add Chipped Gem x40	1				100					41	y01	"gem0,qty=40"						useitem				GB-Total			40	40																																																																															0
+Add Chipped Gem x41	1				100					42	y01	"gem0,qty=41"						useitem				GB-Total			41	41																																																																															0
+Add Chipped Gem x42	1				100					43	y01	"gem0,qty=42"						useitem				GB-Total			42	42																																																																															0
+Add Chipped Gem x43	1				100					44	y01	"gem0,qty=43"						useitem				GB-Total			43	43																																																																															0
+Add Chipped Gem x44	1				100					45	y01	"gem0,qty=44"						useitem				GB-Total			44	44																																																																															0
+Add Chipped Gem x45	1				100					46	y01	"gem0,qty=45"						useitem				GB-Total			45	45																																																																															0
+Add Chipped Gem x46	1				100					47	y01	"gem0,qty=46"						useitem				GB-Total			46	46																																																																															0
+Add Chipped Gem x47	1				100					48	y01	"gem0,qty=47"						useitem				GB-Total			47	47																																																																															0
+Add Chipped Gem x48	1				100					49	y01	"gem0,qty=48"						useitem				GB-Total			48	48																																																																															0
+Add Chipped Gem x49	1				100					50	y01	"gem0,qty=49"						useitem				GB-Total			49	49																																																																															0
+Add Chipped Gem x50	1				100					51	y01	"gem0,qty=50"						useitem				GB-Total			50	50																																																																															0
+Add Flawed Gem x1	1				100					2	y01	gem1						useitem				GB-Total			3	3																																																																															0
+Add Flawed Gem x2	1				100					3	y01	"gem1,qty=2"						useitem				GB-Total			6	6																																																																															0
+Add Flawed Gem x3	1				100					4	y01	"gem1,qty=3"						useitem				GB-Total			9	9																																																																															0
+Add Flawed Gem x4	1				100					5	y01	"gem1,qty=4"						useitem				GB-Total			12	12																																																																															0
+Add Flawed Gem x5	1				100					6	y01	"gem1,qty=5"						useitem				GB-Total			15	15																																																																															0
+Add Flawed Gem x6	1				100					7	y01	"gem1,qty=6"						useitem				GB-Total			18	18																																																																															0
+Add Flawed Gem x7	1				100					8	y01	"gem1,qty=7"						useitem				GB-Total			21	21																																																																															0
+Add Flawed Gem x8	1				100					9	y01	"gem1,qty=8"						useitem				GB-Total			24	24																																																																															0
+Add Flawed Gem x9	1				100					10	y01	"gem1,qty=9"						useitem				GB-Total			27	27																																																																															0
+Add Flawed Gem x10	1				100					11	y01	"gem1,qty=10"						useitem				GB-Total			30	30																																																																															0
+Add Flawed Gem x11	1				100					12	y01	"gem1,qty=11"						useitem				GB-Total			33	33																																																																															0
+Add Flawed Gem x12	1				100					13	y01	"gem1,qty=12"						useitem				GB-Total			36	36																																																																															0
+Add Flawed Gem x13	1				100					14	y01	"gem1,qty=13"						useitem				GB-Total			39	39																																																																															0
+Add Flawed Gem x14	1				100					15	y01	"gem1,qty=14"						useitem				GB-Total			42	42																																																																															0
+Add Flawed Gem x15	1				100					16	y01	"gem1,qty=15"						useitem				GB-Total			45	45																																																																															0
+Add Flawed Gem x16	1				100					17	y01	"gem1,qty=16"						useitem				GB-Total			48	48																																																																															0
+Add Flawed Gem x17	1				100					18	y01	"gem1,qty=17"						useitem				GB-Total			51	51																																																																															0
+Add Flawed Gem x18	1				100					19	y01	"gem1,qty=18"						useitem				GB-Total			54	54																																																																															0
+Add Flawed Gem x19	1				100					20	y01	"gem1,qty=19"						useitem				GB-Total			57	57																																																																															0
+Add Flawed Gem x20	1				100					21	y01	"gem1,qty=20"						useitem				GB-Total			60	60																																																																															0
+Add Flawed Gem x21	1				100					22	y01	"gem1,qty=21"						useitem				GB-Total			63	63																																																																															0
+Add Flawed Gem x22	1				100					23	y01	"gem1,qty=22"						useitem				GB-Total			66	66																																																																															0
+Add Flawed Gem x23	1				100					24	y01	"gem1,qty=23"						useitem				GB-Total			69	69																																																																															0
+Add Flawed Gem x24	1				100					25	y01	"gem1,qty=24"						useitem				GB-Total			72	72																																																																															0
+Add Flawed Gem x25	1				100					26	y01	"gem1,qty=25"						useitem				GB-Total			75	75																																																																															0
+Add Flawed Gem x26	1				100					27	y01	"gem1,qty=26"						useitem				GB-Total			78	78																																																																															0
+Add Flawed Gem x27	1				100					28	y01	"gem1,qty=27"						useitem				GB-Total			81	81																																																																															0
+Add Flawed Gem x28	1				100					29	y01	"gem1,qty=28"						useitem				GB-Total			84	84																																																																															0
+Add Flawed Gem x29	1				100					30	y01	"gem1,qty=29"						useitem				GB-Total			87	87																																																																															0
+Add Flawed Gem x30	1				100					31	y01	"gem1,qty=30"						useitem				GB-Total			90	90																																																																															0
+Add Flawed Gem x31	1				100					32	y01	"gem1,qty=31"						useitem				GB-Total			93	93																																																																															0
+Add Flawed Gem x32	1				100					33	y01	"gem1,qty=32"						useitem				GB-Total			96	96																																																																															0
+Add Flawed Gem x33	1				100					34	y01	"gem1,qty=33"						useitem				GB-Total			99	99																																																																															0
+Add Flawed Gem x34	1				100					35	y01	"gem1,qty=34"						useitem				GB-Total			102	102																																																																															0
+Add Flawed Gem x35	1				100					36	y01	"gem1,qty=35"						useitem				GB-Total			105	105																																																																															0
+Add Flawed Gem x36	1				100					37	y01	"gem1,qty=36"						useitem				GB-Total			108	108																																																																															0
+Add Flawed Gem x37	1				100					38	y01	"gem1,qty=37"						useitem				GB-Total			111	111																																																																															0
+Add Flawed Gem x38	1				100					39	y01	"gem1,qty=38"						useitem				GB-Total			114	114																																																																															0
+Add Flawed Gem x39	1				100					40	y01	"gem1,qty=39"						useitem				GB-Total			117	117																																																																															0
+Add Flawed Gem x40	1				100					41	y01	"gem1,qty=40"						useitem				GB-Total			120	120																																																																															0
+Add Flawed Gem x41	1				100					42	y01	"gem1,qty=41"						useitem				GB-Total			123	123																																																																															0
+Add Flawed Gem x42	1				100					43	y01	"gem1,qty=42"						useitem				GB-Total			126	126																																																																															0
+Add Flawed Gem x43	1				100					44	y01	"gem1,qty=43"						useitem				GB-Total			129	129																																																																															0
+Add Flawed Gem x44	1				100					45	y01	"gem1,qty=44"						useitem				GB-Total			132	132																																																																															0
+Add Flawed Gem x45	1				100					46	y01	"gem1,qty=45"						useitem				GB-Total			135	135																																																																															0
+Add Flawed Gem x46	1				100					47	y01	"gem1,qty=46"						useitem				GB-Total			138	138																																																																															0
+Add Flawed Gem x47	1				100					48	y01	"gem1,qty=47"						useitem				GB-Total			141	141																																																																															0
+Add Flawed Gem x48	1				100					49	y01	"gem1,qty=48"						useitem				GB-Total			144	144																																																																															0
+Add Flawed Gem x49	1				100					50	y01	"gem1,qty=49"						useitem				GB-Total			147	147																																																																															0
+Add Flawed Gem x50	1				100					51	y01	"gem1,qty=50"						useitem				GB-Total			150	150																																																																															0
+Add Standard Gem x1	1				100					2	y01	gem2						useitem				GB-Total			9	9																																																																															0
+Add Standard Gem x2	1				100					3	y01	"gem2,qty=2"						useitem				GB-Total			18	18																																																																															0
+Add Standard Gem x3	1				100					4	y01	"gem2,qty=3"						useitem				GB-Total			27	27																																																																															0
+Add Standard Gem x4	1				100					5	y01	"gem2,qty=4"						useitem				GB-Total			36	36																																																																															0
+Add Standard Gem x5	1				100					6	y01	"gem2,qty=5"						useitem				GB-Total			45	45																																																																															0
+Add Standard Gem x6	1				100					7	y01	"gem2,qty=6"						useitem				GB-Total			54	54																																																																															0
+Add Standard Gem x7	1				100					8	y01	"gem2,qty=7"						useitem				GB-Total			63	63																																																																															0
+Add Standard Gem x8	1				100					9	y01	"gem2,qty=8"						useitem				GB-Total			72	72																																																																															0
+Add Standard Gem x9	1				100					10	y01	"gem2,qty=9"						useitem				GB-Total			81	81																																																																															0
+Add Standard Gem x10	1				100					11	y01	"gem2,qty=10"						useitem				GB-Total			90	90																																																																															0
+Add Standard Gem x11	1				100					12	y01	"gem2,qty=11"						useitem				GB-Total			99	99																																																																															0
+Add Standard Gem x12	1				100					13	y01	"gem2,qty=12"						useitem				GB-Total			108	108																																																																															0
+Add Standard Gem x13	1				100					14	y01	"gem2,qty=13"						useitem				GB-Total			117	117																																																																															0
+Add Standard Gem x14	1				100					15	y01	"gem2,qty=14"						useitem				GB-Total			126	126																																																																															0
+Add Standard Gem x15	1				100					16	y01	"gem2,qty=15"						useitem				GB-Total			135	135																																																																															0
+Add Standard Gem x16	1				100					17	y01	"gem2,qty=16"						useitem				GB-Total			144	144																																																																															0
+Add Standard Gem x17	1				100					18	y01	"gem2,qty=17"						useitem				GB-Total			153	153																																																																															0
+Add Standard Gem x18	1				100					19	y01	"gem2,qty=18"						useitem				GB-Total			162	162																																																																															0
+Add Standard Gem x19	1				100					20	y01	"gem2,qty=19"						useitem				GB-Total			171	171																																																																															0
+Add Standard Gem x20	1				100					21	y01	"gem2,qty=20"						useitem				GB-Total			180	180																																																																															0
+Add Standard Gem x21	1				100					22	y01	"gem2,qty=21"						useitem				GB-Total			189	189																																																																															0
+Add Standard Gem x22	1				100					23	y01	"gem2,qty=22"						useitem				GB-Total			198	198																																																																															0
+Add Standard Gem x23	1				100					24	y01	"gem2,qty=23"						useitem				GB-Total			207	207																																																																															0
+Add Standard Gem x24	1				100					25	y01	"gem2,qty=24"						useitem				GB-Total			216	216																																																																															0
+Add Standard Gem x25	1				100					26	y01	"gem2,qty=25"						useitem				GB-Total			225	225																																																																															0
+Add Standard Gem x26	1				100					27	y01	"gem2,qty=26"						useitem				GB-Total			234	234																																																																															0
+Add Standard Gem x27	1				100					28	y01	"gem2,qty=27"						useitem				GB-Total			243	243																																																																															0
+Add Standard Gem x28	1				100					29	y01	"gem2,qty=28"						useitem				GB-Total			252	252																																																																															0
+Add Standard Gem x29	1				100					30	y01	"gem2,qty=29"						useitem				GB-Total			261	261																																																																															0
+Add Standard Gem x30	1				100					31	y01	"gem2,qty=30"						useitem				GB-Total			270	270																																																																															0
+Add Standard Gem x31	1				100					32	y01	"gem2,qty=31"						useitem				GB-Total			279	279																																																																															0
+Add Standard Gem x32	1				100					33	y01	"gem2,qty=32"						useitem				GB-Total			288	288																																																																															0
+Add Standard Gem x33	1				100					34	y01	"gem2,qty=33"						useitem				GB-Total			297	297																																																																															0
+Add Standard Gem x34	1				100					35	y01	"gem2,qty=34"						useitem				GB-Total			306	306																																																																															0
+Add Standard Gem x35	1				100					36	y01	"gem2,qty=35"						useitem				GB-Total			315	315																																																																															0
+Add Standard Gem x36	1				100					37	y01	"gem2,qty=36"						useitem				GB-Total			324	324																																																																															0
+Add Standard Gem x37	1				100					38	y01	"gem2,qty=37"						useitem				GB-Total			333	333																																																																															0
+Add Standard Gem x38	1				100					39	y01	"gem2,qty=38"						useitem				GB-Total			342	342																																																																															0
+Add Standard Gem x39	1				100					40	y01	"gem2,qty=39"						useitem				GB-Total			351	351																																																																															0
+Add Standard Gem x40	1				100					41	y01	"gem2,qty=40"						useitem				GB-Total			360	360																																																																															0
+Add Standard Gem x41	1				100					42	y01	"gem2,qty=41"						useitem				GB-Total			369	369																																																																															0
+Add Standard Gem x42	1				100					43	y01	"gem2,qty=42"						useitem				GB-Total			378	378																																																																															0
+Add Standard Gem x43	1				100					44	y01	"gem2,qty=43"						useitem				GB-Total			387	387																																																																															0
+Add Standard Gem x44	1				100					45	y01	"gem2,qty=44"						useitem				GB-Total			396	396																																																																															0
+Add Standard Gem x45	1				100					46	y01	"gem2,qty=45"						useitem				GB-Total			405	405																																																																															0
+Add Standard Gem x46	1				100					47	y01	"gem2,qty=46"						useitem				GB-Total			414	414																																																																															0
+Add Standard Gem x47	1				100					48	y01	"gem2,qty=47"						useitem				GB-Total			423	423																																																																															0
+Add Standard Gem x48	1				100					49	y01	"gem2,qty=48"						useitem				GB-Total			432	432																																																																															0
+Add Standard Gem x49	1				100					50	y01	"gem2,qty=49"						useitem				GB-Total			441	441																																																																															0
+Add Standard Gem x50	1				100					51	y01	"gem2,qty=50"						useitem				GB-Total			450	450																																																																															0
+Add Flawless Gem x1	1				100					2	y01	gem3						useitem				GB-Total			27	27																																																																															0
+Add Flawless Gem x2	1				100					3	y01	"gem3,qty=2"						useitem				GB-Total			54	54																																																																															0
+Add Flawless Gem x3	1				100					4	y01	"gem3,qty=3"						useitem				GB-Total			81	81																																																																															0
+Add Flawless Gem x4	1				100					5	y01	"gem3,qty=4"						useitem				GB-Total			108	108																																																																															0
+Add Flawless Gem x5	1				100					6	y01	"gem3,qty=5"						useitem				GB-Total			135	135																																																																															0
+Add Flawless Gem x6	1				100					7	y01	"gem3,qty=6"						useitem				GB-Total			162	162																																																																															0
+Add Flawless Gem x7	1				100					8	y01	"gem3,qty=7"						useitem				GB-Total			189	189																																																																															0
+Add Flawless Gem x8	1				100					9	y01	"gem3,qty=8"						useitem				GB-Total			216	216																																																																															0
+Add Flawless Gem x9	1				100					10	y01	"gem3,qty=9"						useitem				GB-Total			243	243																																																																															0
+Add Flawless Gem x10	1				100					11	y01	"gem3,qty=10"						useitem				GB-Total			270	270																																																																															0
+Add Flawless Gem x11	1				100					12	y01	"gem3,qty=11"						useitem				GB-Total			297	297																																																																															0
+Add Flawless Gem x12	1				100					13	y01	"gem3,qty=12"						useitem				GB-Total			324	324																																																																															0
+Add Flawless Gem x13	1				100					14	y01	"gem3,qty=13"						useitem				GB-Total			351	351																																																																															0
+Add Flawless Gem x14	1				100					15	y01	"gem3,qty=14"						useitem				GB-Total			378	378																																																																															0
+Add Flawless Gem x15	1				100					16	y01	"gem3,qty=15"						useitem				GB-Total			405	405																																																																															0
+Add Flawless Gem x16	1				100					17	y01	"gem3,qty=16"						useitem				GB-Total			432	432																																																																															0
+Add Flawless Gem x17	1				100					18	y01	"gem3,qty=17"						useitem				GB-Total			459	459																																																																															0
+Add Flawless Gem x18	1				100					19	y01	"gem3,qty=18"						useitem				GB-Total			486	486																																																																															0
+Add Flawless Gem x19	1				100					20	y01	"gem3,qty=19"						useitem				GB-Total			513	513																																																																															0
+Add Flawless Gem x20	1				100					21	y01	"gem3,qty=20"						useitem				GB-Total			540	540																																																																															0
+Add Flawless Gem x21	1				100					22	y01	"gem3,qty=21"						useitem				GB-Total			567	567																																																																															0
+Add Flawless Gem x22	1				100					23	y01	"gem3,qty=22"						useitem				GB-Total			594	594																																																																															0
+Add Flawless Gem x23	1				100					24	y01	"gem3,qty=23"						useitem				GB-Total			621	621																																																																															0
+Add Flawless Gem x24	1				100					25	y01	"gem3,qty=24"						useitem				GB-Total			648	648																																																																															0
+Add Flawless Gem x25	1				100					26	y01	"gem3,qty=25"						useitem				GB-Total			675	675																																																																															0
+Add Flawless Gem x26	1				100					27	y01	"gem3,qty=26"						useitem				GB-Total			702	702																																																																															0
+Add Flawless Gem x27	1				100					28	y01	"gem3,qty=27"						useitem				GB-Total			729	729																																																																															0
+Add Flawless Gem x28	1				100					29	y01	"gem3,qty=28"						useitem				GB-Total			756	756																																																																															0
+Add Flawless Gem x29	1				100					30	y01	"gem3,qty=29"						useitem				GB-Total			783	783																																																																															0
+Add Flawless Gem x30	1				100					31	y01	"gem3,qty=30"						useitem				GB-Total			810	810																																																																															0
+Add Flawless Gem x31	1				100					32	y01	"gem3,qty=31"						useitem				GB-Total			837	837																																																																															0
+Add Flawless Gem x32	1				100					33	y01	"gem3,qty=32"						useitem				GB-Total			864	864																																																																															0
+Add Flawless Gem x33	1				100					34	y01	"gem3,qty=33"						useitem				GB-Total			891	891																																																																															0
+Add Flawless Gem x34	1				100					35	y01	"gem3,qty=34"						useitem				GB-Total			918	918																																																																															0
+Add Flawless Gem x35	1				100					36	y01	"gem3,qty=35"						useitem				GB-Total			945	945																																																																															0
+Add Flawless Gem x36	1				100					37	y01	"gem3,qty=36"						useitem				GB-Total			972	972																																																																															0
+Add Flawless Gem x37	1				100					38	y01	"gem3,qty=37"						useitem				GB-Total			999	999																																																																															0
+Add Flawless Gem x38	1				100					39	y01	"gem3,qty=38"						useitem				GB-Total			1026	1026																																																																															0
+Add Flawless Gem x39	1				100					40	y01	"gem3,qty=39"						useitem				GB-Total			1053	1053																																																																															0
+Add Flawless Gem x40	1				100					41	y01	"gem3,qty=40"						useitem				GB-Total			1080	1080																																																																															0
+Add Flawless Gem x41	1				100					42	y01	"gem3,qty=41"						useitem				GB-Total			1107	1107																																																																															0
+Add Flawless Gem x42	1				100					43	y01	"gem3,qty=42"						useitem				GB-Total			1134	1134																																																																															0
+Add Flawless Gem x43	1				100					44	y01	"gem3,qty=43"						useitem				GB-Total			1161	1161																																																																															0
+Add Flawless Gem x44	1				100					45	y01	"gem3,qty=44"						useitem				GB-Total			1188	1188																																																																															0
+Add Flawless Gem x45	1				100					46	y01	"gem3,qty=45"						useitem				GB-Total			1215	1215																																																																															0
+Add Flawless Gem x46	1				100					47	y01	"gem3,qty=46"						useitem				GB-Total			1242	1242																																																																															0
+Add Flawless Gem x47	1				100					48	y01	"gem3,qty=47"						useitem				GB-Total			1269	1269																																																																															0
+Add Flawless Gem x48	1				100					49	y01	"gem3,qty=48"						useitem				GB-Total			1296	1296																																																																															0
+Add Flawless Gem x49	1				100					50	y01	"gem3,qty=49"						useitem				GB-Total			1323	1323																																																																															0
+Add Flawless Gem x50	1				100					51	y01	"gem3,qty=50"						useitem				GB-Total			1350	1350																																																																															0
+Add Perfect Gem x1	1				100					2	y01	gem4						useitem				GB-Total			81	81																																																																															0
+Add Perfect Gem x2	1				100					3	y01	"gem4,qty=2"						useitem				GB-Total			162	162																																																																															0
+Add Perfect Gem x3	1				100					4	y01	"gem4,qty=3"						useitem				GB-Total			243	243																																																																															0
+Add Perfect Gem x4	1				100					5	y01	"gem4,qty=4"						useitem				GB-Total			324	324																																																																															0
+Add Perfect Gem x5	1				100					6	y01	"gem4,qty=5"						useitem				GB-Total			405	405																																																																															0
+Add Perfect Gem x6	1				100					7	y01	"gem4,qty=6"						useitem				GB-Total			486	486																																																																															0
+Add Perfect Gem x7	1				100					8	y01	"gem4,qty=7"						useitem				GB-Total			567	567																																																																															0
+Add Perfect Gem x8	1				100					9	y01	"gem4,qty=8"						useitem				GB-Total			648	648																																																																															0
+Add Perfect Gem x9	1				100					10	y01	"gem4,qty=9"						useitem				GB-Total			729	729																																																																															0
+Add Perfect Gem x10	1				100					11	y01	"gem4,qty=10"						useitem				GB-Total			810	810																																																																															0
+Add Perfect Gem x11	1				100					12	y01	"gem4,qty=11"						useitem				GB-Total			891	891																																																																															0
+Add Perfect Gem x12	1				100					13	y01	"gem4,qty=12"						useitem				GB-Total			972	972																																																																															0
+Add Perfect Gem x13	1				100					14	y01	"gem4,qty=13"						useitem				GB-Total			1053	1053																																																																															0
+Add Perfect Gem x14	1				100					15	y01	"gem4,qty=14"						useitem				GB-Total			1134	1134																																																																															0
+Add Perfect Gem x15	1				100					16	y01	"gem4,qty=15"						useitem				GB-Total			1215	1215																																																																															0
+Add Perfect Gem x16	1				100					17	y01	"gem4,qty=16"						useitem				GB-Total			1296	1296																																																																															0
+Add Perfect Gem x17	1				100					18	y01	"gem4,qty=17"						useitem				GB-Total			1377	1377																																																																															0
+Add Perfect Gem x18	1				100					19	y01	"gem4,qty=18"						useitem				GB-Total			1458	1458																																																																															0
+Add Perfect Gem x19	1				100					20	y01	"gem4,qty=19"						useitem				GB-Total			1539	1539																																																																															0
+Add Perfect Gem x20	1				100					21	y01	"gem4,qty=20"						useitem				GB-Total			1620	1620																																																																															0
+Add Perfect Gem x21	1				100					22	y01	"gem4,qty=21"						useitem				GB-Total			1701	1701																																																																															0
+Add Perfect Gem x22	1				100					23	y01	"gem4,qty=22"						useitem				GB-Total			1782	1782																																																																															0
+Add Perfect Gem x23	1				100					24	y01	"gem4,qty=23"						useitem				GB-Total			1863	1863																																																																															0
+Add Perfect Gem x24	1				100					25	y01	"gem4,qty=24"						useitem				GB-Total			1944	1944																																																																															0
+Add Perfect Gem x25	1				100					26	y01	"gem4,qty=25"						useitem				GB-Total			2025	2025																																																																															0
+Add Perfect Gem x26	1				100					27	y01	"gem4,qty=26"						useitem				GB-Total			2106	2106																																																																															0
+Add Perfect Gem x27	1				100					28	y01	"gem4,qty=27"						useitem				GB-Total			2187	2187																																																																															0
+Add Perfect Gem x28	1				100					29	y01	"gem4,qty=28"						useitem				GB-Total			2268	2268																																																																															0
+Add Perfect Gem x29	1				100					30	y01	"gem4,qty=29"						useitem				GB-Total			2349	2349																																																																															0
+Add Perfect Gem x30	1				100					31	y01	"gem4,qty=30"						useitem				GB-Total			2430	2430																																																																															0
+Add Perfect Gem x31	1				100					32	y01	"gem4,qty=31"						useitem				GB-Total			2511	2511																																																																															0
+Add Perfect Gem x32	1				100					33	y01	"gem4,qty=32"						useitem				GB-Total			2592	2592																																																																															0
+Add Perfect Gem x33	1				100					34	y01	"gem4,qty=33"						useitem				GB-Total			2673	2673																																																																															0
+Add Perfect Gem x34	1				100					35	y01	"gem4,qty=34"						useitem				GB-Total			2754	2754																																																																															0
+Add Perfect Gem x35	1				100					36	y01	"gem4,qty=35"						useitem				GB-Total			2835	2835																																																																															0
+Add Perfect Gem x36	1				100					37	y01	"gem4,qty=36"						useitem				GB-Total			2916	2916																																																																															0
+Add Perfect Gem x37	1				100					38	y01	"gem4,qty=37"						useitem				GB-Total			2997	2997																																																																															0
+Add Perfect Gem x38	1				100					39	y01	"gem4,qty=38"						useitem				GB-Total			3078	3078																																																																															0
+Add Perfect Gem x39	1				100					40	y01	"gem4,qty=39"						useitem				GB-Total			3159	3159																																																																															0
+Add Perfect Gem x40	1				100					41	y01	"gem4,qty=40"						useitem				GB-Total			3240	3240																																																																															0
+Add Perfect Gem x41	1				100					42	y01	"gem4,qty=41"						useitem				GB-Total			3321	3321																																																																															0
+Add Perfect Gem x42	1				100					43	y01	"gem4,qty=42"						useitem				GB-Total			3402	3402																																																																															0
+Add Perfect Gem x43	1				100					44	y01	"gem4,qty=43"						useitem				GB-Total			3483	3483																																																																															0
+Add Perfect Gem x44	1				100					45	y01	"gem4,qty=44"						useitem				GB-Total			3564	3564																																																																															0
+Add Perfect Gem x45	1				100					46	y01	"gem4,qty=45"						useitem				GB-Total			3645	3645																																																																															0
+Add Perfect Gem x46	1				100					47	y01	"gem4,qty=46"						useitem				GB-Total			3726	3726																																																																															0
+Add Perfect Gem x47	1				100					48	y01	"gem4,qty=47"						useitem				GB-Total			3807	3807																																																																															0
+Add Perfect Gem x48	1				100					49	y01	"gem4,qty=48"						useitem				GB-Total			3888	3888																																																																															0
+Add Perfect Gem x49	1				100					50	y01	"gem4,qty=49"						useitem				GB-Total			3969	3969																																																																															0
+Add Perfect Gem x50	1				100					51	y01	"gem4,qty=50"						useitem				GB-Total			4050	4050																																																																															0
+Remove Gem - Chipped Amethyst	1				100	15	385	1		2	y01	y63						useitem				GB-Total			-1	-1																					y63																													gcv																													0
+Remove Gem - Chipped Topaz	1				100	15	385	1		2	y01	y64						useitem				GB-Total			-1	-1																					y64																													gcy																													0
+Remove Gem - Chipped Sapphire	1				100	15	385	1		2	y01	y65						useitem				GB-Total			-1	-1																					y65																													gcb																													0
+Remove Gem - Chipped Emerald	1				100	15	385	1		2	y01	y66						useitem				GB-Total			-1	-1																					y66																													gcg																													0
+Remove Gem - Chipped Ruby	1				100	15	385	1		2	y01	y67						useitem				GB-Total			-1	-1																					y67																													gcr																													0
+Remove Gem - Chipped Diamond	1				100	15	385	1		2	y01	y68						useitem				GB-Total			-1	-1																					y68																													gcw																													0
+Remove Gem - Chipped Skull	1				100	15	385	1		2	y01	y69						useitem				GB-Total			-1	-1																					y69																													skc																													0
+Remove Gem - Flawed Amethyst	1				100	15	385	3		2	y01	y70						useitem				GB-Total			-3	-3																					y70																													gfv																													0
+Remove Gem - Flawed Topaz	1				100	15	385	3		2	y01	y71						useitem				GB-Total			-3	-3																					y71																													gfy																													0
+Remove Gem - Flawed Sapphire	1				100	15	385	3		2	y01	y72						useitem				GB-Total			-3	-3																					y72																													gfb																													0
+Remove Gem - Flawed Emerald	1				100	15	385	3		2	y01	y73						useitem				GB-Total			-3	-3																					y73																													gfg																													0
+Remove Gem - Flawed Ruby	1				100	15	385	3		2	y01	y74						useitem				GB-Total			-3	-3																					y74																													gfr																													0
+Remove Gem - Flawed Diamond	1				100	15	385	3		2	y01	y75						useitem				GB-Total			-3	-3																					y75																													gfw																													0
+Remove Gem - Flawed Skull	1				100	15	385	3		2	y01	y76						useitem				GB-Total			-3	-3																					y76																													skf																													0
+Remove Gem - Standard Amethyst	1				100	15	385	9		2	y01	y77						useitem				GB-Total			-9	-9																					y77																													gsv																													0
+Remove Gem - Standard Topaz	1				100	15	385	9		2	y01	y78						useitem				GB-Total			-9	-9																					y78																													gsy																													0
+Remove Gem - Standard Sapphire	1				100	15	385	9		2	y01	y79						useitem				GB-Total			-9	-9																					y79																													gsb																													0
+Remove Gem - Standard Emerald	1				100	15	385	9		2	y01	y80						useitem				GB-Total			-9	-9																					y80																													gsg																													0
+Remove Gem - Standard Ruby	1				100	15	385	9		2	y01	y81						useitem				GB-Total			-9	-9																					y81																													gsr																													0
+Remove Gem - Standard Diamond	1				100	15	385	9		2	y01	y82						useitem				GB-Total			-9	-9																					y82																													gsw																													0
+Remove Gem - Standard Skull	1				100	15	385	9		2	y01	y83						useitem				GB-Total			-9	-9																					y83																													sku																													0
+Remove Gem - Flawless Amethyst	1				100	15	385	27		2	y01	y84						useitem				GB-Total			-27	-27																					y84																													gzv																													0
+Remove Gem - Flawless Topaz	1				100	15	385	27		2	y01	y85						useitem				GB-Total			-27	-27																					y85																													gly																													0
+Remove Gem - Flawless Sapphire	1				100	15	385	27		2	y01	y86						useitem				GB-Total			-27	-27																					y86																													glb																													0
+Remove Gem - Flawless Emerald	1				100	15	385	27		2	y01	y87						useitem				GB-Total			-27	-27																					y87																													glg																													0
+Remove Gem - Flawless Ruby	1				100	15	385	27		2	y01	y88						useitem				GB-Total			-27	-27																					y88																													glr																													0
+Remove Gem - Flawless Diamond	1				100	15	385	27		2	y01	y89						useitem				GB-Total			-27	-27																					y89																													glw																													0
+Remove Gem - Flawless Skull	1				100	15	385	27		2	y01	y90						useitem				GB-Total			-27	-27																					y90																													skl																													0
+Remove Gem - Perfect Amethyst	1				100	15	385	81		2	y01	y02						useitem				GB-Total			-81	-81																					y02																													gpv																													0
+Remove Gem - Perfect Topaz	1				100	15	385	81		2	y01	y03						useitem				GB-Total			-81	-81																					y03																													gpy																													0
+Remove Gem - Perfect Sapphire	1				100	15	385	81		2	y01	y04						useitem				GB-Total			-81	-81																					y04																													gpb																													0
+Remove Gem - Perfect Emerald	1				100	15	385	81		2	y01	y05						useitem				GB-Total			-81	-81																					y05																													gpg																													0
+Remove Gem - Perfect Ruby	1				100	15	385	81		2	y01	y06						useitem				GB-Total			-81	-81																					y06																													gpr																													0
+Remove Gem - Perfect Diamond	1				100	15	385	81		2	y01	y07						useitem				GB-Total			-81	-81																					y07																													gpw																													0
+Remove Gem - Perfect Skull	1				100	15	385	81		2	y01	y08						useitem				GB-Total			-81	-81																					y08																													skz																													0
+Cycle Gem Remover Color - Chipped Amethyst	1				100					1	y63							y64																																																																																							0
+Cycle Gem Remover Color - Chipped Topaz	1				100					1	y64							y65																																																																																							0
+Cycle Gem Remover Color - Chipped Sapphire	1				100					1	y65							y66																																																																																							0
+Cycle Gem Remover Color - Chipped Emerald	1				100					1	y66							y67																																																																																							0
+Cycle Gem Remover Color - Chipped Ruby	1				100					1	y67							y68																																																																																							0
+Cycle Gem Remover Color - Chipped Diamond	1				100					1	y68							y69																																																																																							0
+Cycle Gem Remover Color - Chipped Skull	1				100					1	y69							y63																																																																																							0
+Cycle Gem Remover Color - Flawed Amethyst	1				100					1	y70							y71																																																																																							0
+Cycle Gem Remover Color - Flawed Topaz	1				100					1	y71							y72																																																																																							0
+Cycle Gem Remover Color - Flawed Sapphire	1				100					1	y72							y73																																																																																							0
+Cycle Gem Remover Color - Flawed Emerald	1				100					1	y73							y74																																																																																							0
+Cycle Gem Remover Color - Flawed Ruby	1				100					1	y74							y75																																																																																							0
+Cycle Gem Remover Color - Flawed Diamond	1				100					1	y75							y76																																																																																							0
+Cycle Gem Remover Color - Flawed Skull	1				100					1	y76							y70																																																																																							0
+Cycle Gem Remover Color - Standard Amethyst	1				100					1	y77							y78																																																																																							0
+Cycle Gem Remover Color - Standard Topaz	1				100					1	y78							y79																																																																																							0
+Cycle Gem Remover Color - Standard Sapphire	1				100					1	y79							y80																																																																																							0
+Cycle Gem Remover Color - Standard Emerald	1				100					1	y80							y81																																																																																							0
+Cycle Gem Remover Color - Standard Ruby	1				100					1	y81							y82																																																																																							0
+Cycle Gem Remover Color - Standard Diamond	1				100					1	y82							y83																																																																																							0
+Cycle Gem Remover Color - Standard Skull	1				100					1	y83							y77																																																																																							0
+Cycle Gem Remover Color - Flawless Amethyst	1				100					1	y84							y85																																																																																							0
+Cycle Gem Remover Color - Flawless Topaz	1				100					1	y85							y86																																																																																							0
+Cycle Gem Remover Color - Flawless Sapphire	1				100					1	y86							y87																																																																																							0
+Cycle Gem Remover Color - Flawless Emerald	1				100					1	y87							y88																																																																																							0
+Cycle Gem Remover Color - Flawless Ruby	1				100					1	y88							y89																																																																																							0
+Cycle Gem Remover Color - Flawless Diamond	1				100					1	y89							y90																																																																																							0
+Cycle Gem Remover Color - Flawless Skull	1				100					1	y90							y84																																																																																							0
+Cycle Gem Remover Color - Perfect Amethyst	1				100					1	y02							y03																																																																																							0
+Cycle Gem Remover Color - Perfect Topaz	1				100					1	y03							y04																																																																																							0
+Cycle Gem Remover Color - Perfect Sapphire	1				100					1	y04							y05																																																																																							0
+Cycle Gem Remover Color - Perfect Emerald	1				100					1	y05							y06																																																																																							0
+Cycle Gem Remover Color - Perfect Ruby	1				100					1	y06							y07																																																																																							0
+Cycle Gem Remover Color - Perfect Diamond	1				100					1	y07							y08																																																																																							0
+Cycle Gem Remover Color - Perfect Skull	1				100					1	y08							y02																																																																																							0
+Rune Convert - Low -> Mid	1				100	15	386	2048		2	y01	y48						useitem				RB-Low			-2048	-2048	RB-Mid			1	1																y48																																																										0
+Rune Convert - Mid -> High	1				100	15	387	2048		2	y01	y49						useitem				RB-Mid			-2048	-2048	RB-High			1	1																y49																																																										0
+Rune Convert - Low <- Mid	1				100	15	387	1		2	y01	y50						useitem				RB-Low			2048	2048	RB-Mid			-1	-1																y50																																																										0
+Rune Convert - Mid <- High	1				100	15	388	1		2	y01	y51						useitem				RB-Mid			2048	2048	RB-High			-1	-1																y51																																																										0
+Rune Convert Cycle	1				100					1	y48							y49																																																																																							0
+Rune Convert Cycle	1				100					1	y49							y50																																																																																							0
+Rune Convert Cycle	1				100					1	y50							y51																																																																																							0
+Rune Convert Cycle	1				100					1	y51							y48																																																																																							0

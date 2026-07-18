@@ -667,7 +667,7 @@ of Lower Resistance	100	1	1	65		50				2	45	hit-skill	91	8	22										miss	mele	
 of Lower Resistance	100	1	1	85		80				1	45	hit-skill	91	11	22										miss	mele											0	0
 of Damage Amplification	100	1	1	35		50				2	45	kill-skill	66	20	22										miss	mele											0	0
 of Damage Amplification	100	1	1	60		80				1	45	kill-skill	66	24	22										miss	mele											0	0
-of Lower Resist	100	1	1	70		80				2	45	kill-skill	91	20	22										miss	weap	orb	wa	staf								0	0
+of Lower Resist	100	1	1	70		80				2	45	kill-skill	91	20	22										miss	weap	orb	wand	staf								0	0
 of Lower Resist	100	1	1	85		90				1	45	kill-skill	91	24	22										miss	weap	orb	wand	staf								0	0
 of the Icicle	100	1	1	37		29				2	10	cold-min		2	3	cold-max		6	10	cold-len		50	50	dblu	jewl												0	0
 of the Glacier	100	1	1	58		50				2	10	cold-min		4	5	cold-max		11	15	cold-len		50	50	dblu	jewl												0	0
