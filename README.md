@@ -9,11 +9,12 @@ Les `.txt` restent la **source de vérité** ; pas de base de données — git e
 
 ## Structure
 
-- `data-TCP/` — le mod de Vincent, **en développement** (seule zone de données modifiable)
+- `data-TCP/` — source historique 2.4 du mod de Vincent, conservée pendant la migration
   - `global/excel/` — tables de gameplay (`.txt`) : armor, weapons, hireling, runes, setitems…
   - `local/lng` — chaînes localisées, **versionnées**
   - `hd/` — assets HD **versionnés via Git LFS**
   - `D2RLAN/` — profil launcher local et intégration runtime de TCP, **modifiable mais non versionné**
+- `data-BKVince/` — cible de migration **D2RLoader 3.2**, issue de BK converti; nouvelle zone de développement modifiable, synchronisée vers le mod local BKVince seulement par lots validés
 - `data-BK/`, `data-BT/` — mods externes de **référence** (lecture seule) ; `local/` et `hd/` de BK sont versionnés, tandis que `hd/` de BT reste local
 - `data-VNP/` — Mod Vanilla++ servant d'inspiration pour mon mod TCP (**lecture seule**, hors Comparateur) ; seuls `global/`, `local/` et `hd/` sont versionnés
 - `excel-vanilla2.4/` — tables du jeu de base D2 2.4 (référence, lecture seule)

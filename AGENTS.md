@@ -21,6 +21,7 @@ Les `.txt` restent la source ; **pas de base de données**. Les dossiers `local/
 |---|---|---|
 | `data-TCP/` (`global`, `hd`, `local`) | mod en développement | **modifiable** |
 | `data-TCP/D2RLAN/` | profil local D2RLAN et intégration runtime de TCP | **modifiable** |
+| `data-BKVince/` | nouvelle source de développement D2RLoader 3.2, issue de BK converti | **modifiable** |
 | `data-BK/`, `data-BT/` | mods de référence / inspiration | **read-only** |
 | `data-VNP/` | Mod Vanilla++ servant d'inspiration pour mon mod TCP | **read-only** |
 | `excel-vanilla2.4/` | données vanilla Diablo II 2.4 | **read-only** |
@@ -31,7 +32,7 @@ Les `.txt` restent la source ; **pas de base de données**. Les dossiers `local/
 | `scripts/` | outillage (cadastre, validateur, TSV, dev-server) | modifiable |
 | `guide/` | guide D2R communautaire (clone local) | **gitignoré — ne pas versionner** |
 
-En clair : côté **données et runtime**, seul `data-TCP` se modifie, y compris son profil local `D2RLAN` (les références servent de comparaison). Côté **plateforme**, `apps/`, `schemas/`, `scripts/` sont le code de l'outil.
+En clair : côté **données et runtime**, `data-TCP` demeure la source historique 2.4 et `data-BKVince` est la cible de migration D2RLoader 3.2; les références servent uniquement de comparaison. Côté **plateforme**, `apps/`, `schemas/`, `scripts/` sont le code de l'outil.
 
 ## Conventions
 
