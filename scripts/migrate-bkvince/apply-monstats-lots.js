@@ -19,7 +19,7 @@ const FILES = Object.freeze({
   target: path.join(
     ROOT,
     'data-BKVince',
-    'bkdiablo.mpq',
+    'BKVince.mpq',
     'data',
     'global',
     'excel',

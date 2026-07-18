@@ -12,7 +12,7 @@ const ROOT = path.resolve(__dirname, '..', '..');
 const EXCEL = path.join(
   ROOT,
   'data-BKVince',
-  'bkdiablo.mpq',
+  'BKVince.mpq',
   'data',
   'global',
   'excel',

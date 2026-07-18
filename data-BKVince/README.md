@@ -5,7 +5,7 @@ est la cible gouvernée du portage de TCP; `data-TCP/` demeure la référence
 historique 2.4. La conversion a été finalisée le 17 juillet 2026 avec
 `d2rl convert BKVince` sous D2RLoader 1.0.1-beta et le build D2R 92777.
 
-- Source Git : `data-BKVince/bkdiablo.mpq/` et `data-BKVince/d2rloader/`
+- Source Git : `data-BKVince/BKVince.mpq/` et `data-BKVince/d2rloader/`
 - Runtime local : `mods/BKVince/BKVince.mpq/` et `mods/BKVince/d2rloader/`
 - Intégration D2RLoader : métadonnées, configuration, README et gabarit de
   patch générés dans `data-BKVince/d2rloader/`; le `savepath` historique

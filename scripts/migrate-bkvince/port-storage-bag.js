@@ -17,7 +17,7 @@ const {
 const ROOT = path.resolve(__dirname, '..', '..');
 const CHECK_ONLY = process.argv.includes('--check');
 const SOURCE_ROOT = path.join(ROOT, 'data-TCP');
-const TARGET_ROOT = path.join(ROOT, 'data-BKVince', 'bkdiablo.mpq', 'data');
+const TARGET_ROOT = path.join(ROOT, 'data-BKVince', 'BKVince.mpq', 'data');
 const SOURCE_EXCEL = path.join(SOURCE_ROOT, 'global', 'excel');
 const TARGET_EXCEL = path.join(TARGET_ROOT, 'global', 'excel');
 

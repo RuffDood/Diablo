@@ -142,8 +142,8 @@
       "decision": "Do not port the three legacy >=100 to >=99 comparisons.",
       "reason": "The edit belongs to the customized pre-native Sunder mechanic. D2R 3.2 has native item_pierce_*_immunity stats and states.txt sunderfull/sunder-res-reduce support; the native Sunder result is 95 resistance rather than the legacy custom 99 threshold.",
       "localEvidence": [
-        "data-BKVince/bkdiablo.mpq/data/global/excel/itemstatcost.txt",
-        "data-BKVince/bkdiablo.mpq/data/global/excel/states.txt",
+        "data-BKVince/BKVince.mpq/data/global/excel/itemstatcost.txt",
+        "data-BKVince/BKVince.mpq/data/global/excel/states.txt",
         "data-vanilla3.2/data/data/global/excel/properties.txt"
       ]
     },

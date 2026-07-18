@@ -18,7 +18,7 @@ const ROOT = path.resolve(__dirname, '..', '..');
 const SOURCES = Object.freeze({
   bk: path.join(ROOT, 'data-BK', 'global', 'excel'),
   tcp: path.join(ROOT, 'data-TCP', 'global', 'excel'),
-  target: path.join(ROOT, 'data-BKVince', 'bkdiablo.mpq', 'data', 'global', 'excel'),
+  target: path.join(ROOT, 'data-BKVince', 'BKVince.mpq', 'data', 'global', 'excel'),
 });
 
 function assert(condition, message) {
