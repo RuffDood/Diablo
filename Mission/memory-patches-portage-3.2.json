@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-18",
+  "updatedAt": "2026-07-19",
   "target": {
     "game": "D2R 3.2",
     "build": 92777,
@@ -23,35 +23,40 @@
     ]
   },
   "statusSummary": {
-    "trackedLegacyTechnicalEntries": 48,
+    "trackedLegacyTechnicalEntries": 49,
     "trackedLegacyWriteSites": 95,
     "ported": 3,
-    "implementedAwaitingGameValidation": 38,
+    "implementedAwaitingGameValidation": 39,
     "nativeOrAbsorbed": 3,
     "notApplicable": 4,
     "pendingFromLegacyManifest": 0,
     "pendingSupplemental": 0,
     "pendingTotal": 0,
-    "deliveredOutsideLegacyManifest": 1,
+    "deliveredOutsideLegacyManifest": 2,
     "capturedPanels": 20,
     "capturedPanelsAlreadyInLegacyManifest": 1
   },
   "implementationSummary": {
     "implementedAt": "2026-07-18",
-    "targetPatchFiles": 19,
-    "targetPatchSites": 56,
-    "newPatchFiles": 16,
-    "newPatchSites": 49,
-    "newlyImplementedEntries": 38,
+    "targetPatchFiles": 20,
+    "targetPatchSites": 59,
+    "newPatchFiles": 17,
+    "newPatchSites": 52,
+    "newlyImplementedEntries": 39,
     "validation": {
       "targetImageArtifact": "codex-d2r-92777-decrypted.exe",
       "targetImageSha256": "CC59119DC2A6C7D43D088098FC162EAFA4AE1299B2079126AEF43C1ACA914715",
       "expectedByteMismatches": 0,
       "overlaps": 0,
+      "staticPatchFilesValidated": 20,
+      "staticPatchSitesValidated": 59,
+      "thornsAndBurnPatchSha256": "AF35CC9093B52EFE5476C2D9E8D74EEE8B6F9043BFD5923DA368DC29862CFC79",
+      "thornsAndBurnRuntimeByteIdentical": true,
+      "thornsAndBurnRuntimeLoadStatus": "awaiting-next-launch",
       "runtimePatchFilesScanned": 19,
       "runtimePatchFilesApplied": 19,
       "runtimePatchFilesFailed": 0,
-      "status": "runtime-load-passed-awaiting-gameplay-validation"
+      "status": "static-validation-and-runtime-sync-passed-awaiting-runtime-load-and-gameplay-validation"
     },
     "patches": [
       {
@@ -117,6 +122,10 @@
       {
         "path": "data-BKVince/d2rloader/patches/allow-ctc-while-uninterruptible.json",
         "entries": ["Allow CTC while Uninterruptible (On Position)", "Allow CTC while Uninterruptible (On Target)"]
+      },
+      {
+        "path": "data-BKVince/d2rloader/patches/thorns-and-burn-kill-credit.json",
+        "entries": ["Thorns and Burn Kill Credit"]
       }
     ]
   },
@@ -445,10 +454,18 @@
       "target": "909090909090",
       "addresses": ["0x3654E0"],
       "evidence": "codex-clipboard-edb46694-f5e0-4855-94e8-49c06a7d6682.png"
+    },
+    {
+      "name": "Thorns and Burn Kill Credit",
+      "group": "Combat",
+      "status": "implemented-awaiting-game-validation",
+      "description": "Credits lethal Thorns and Burning damage to the responsible player, allowing experience and death-trigger events such as CTC missile portals.",
+      "targetBuild": "D2R 3.2.92777",
+      "targetPatch": "data-BKVince/d2rloader/patches/thorns-and-burn-kill-credit.json"
     }
   ],
   "targetAnalysis": {
-    "analyzedAt": "2026-07-18",
+    "analyzedAt": "2026-07-19",
     "targetBuild": 92777,
     "legacyBuild": 69270,
     "method": "Static comparison of the plaintext 1.2.69270 executable with a read-only process-memory reconstruction of D2R 3.2.92777, followed by manual control-flow and gameplay-semantic review. No process memory was written.",
@@ -457,9 +474,9 @@
       "targetDecryptedSha256": "CC59119DC2A6C7D43D088098FC162EAFA4AE1299B2079126AEF43C1ACA914715"
     },
     "coverage": {
-      "trackedEntries": 48,
-      "analyzedEntries": 48,
-      "entriesWithOwnConcreteSites": 42,
+      "trackedEntries": 49,
+      "analyzedEntries": 49,
+      "entriesWithOwnConcreteSites": 43,
       "entriesAbsorbedByOtherConcreteSites": 1,
       "cancelledEntries": 4,
       "nativeRedesignWithoutPatchSite": 1
@@ -810,6 +827,17 @@
         "classification": "patch-site-located",
         "confidence": "high",
         "sites": [{ "rva": "0x589736", "expected": "0F85C1000000", "futureIntent": "NOP the six-byte branch." }]
+      },
+      {
+        "name": "Thorns and Burn Kill Credit",
+        "classification": "implemented-awaiting-game-validation",
+        "confidence": "high",
+        "sites": [
+          { "rva": "0x43975A", "expected": "B821400000", "implemented": "B801400000", "role": "allow Thorns killed/kill events" },
+          { "rva": "0x448DCA", "expected": "C744244002000000", "implemented": "C7442440023E7300", "role": "pack Poison, Open Wounds, and Burning state IDs" },
+          { "rva": "0x448DE5", "expected": "8B549C40488BCFE84FCBEAFF48FFC3488BF04883FB027CE3", "implemented": "0FB6541C40488BCFE84ECBEAFFFFC3488BF04883FB037CE3", "role": "scan three packed state IDs and preserve the owner lookup call target" }
+        ],
+        "decision": "Thorns used result flags 0x4021, whose 0x20 bit suppresses KILLED/KILL events; changing it to 0x4001 restores that path. The lethal periodic-damage owner lookup only scanned Poison (2) and Open Wounds (62); it now also scans Burning (115), whose stat list already retains the applying unit as owner."
       }
     ]
   },
@@ -818,6 +846,11 @@
       "name": "Disable Run Defense and Block Penalties",
       "status": "ported",
       "targetPatch": "data-BKVince/d2rloader/patches/Disable Run Defense and Block Penalties.json"
+    },
+    {
+      "name": "Thorns and Burn Kill Credit",
+      "status": "implemented-awaiting-game-validation",
+      "targetPatch": "data-BKVince/d2rloader/patches/thorns-and-burn-kill-credit.json"
     }
   ]
 }
