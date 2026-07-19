@@ -1,0 +1,7 @@
+# BKVince item-type ethereal exclusions
+# Item type codes come from the Code column of itemtypes.txt.
+# Parent types use D2R's native inheritance: "armo" covers its child types.
+
+[ethereal_exclusions]
+enabled = true
+item_types = []

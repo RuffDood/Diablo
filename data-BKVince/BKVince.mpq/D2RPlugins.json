@@ -142,7 +142,7 @@
         // (vanilla behaviour: scales with the real /players value, up to 8).
         // Set to 1 to remove that stat's /players scaling entirely. The two
         // caps are independent of each other and of the real /players value.
-        "monsterHpPlayerCountCap": 0,
+        "monsterHpPlayerCountCap": 8,
         "monsterExperiencePlayerCountCap": 0
     },
 

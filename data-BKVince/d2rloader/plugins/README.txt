@@ -173,8 +173,19 @@ Its code is embedded in the five plugin DLLs, so there is no separate
 The pack reads its feature configuration from
 `BKVince.mpq/D2RPlugins.json`. All optional behavior starts disabled.
 
+`plugin-misc.dll` is rebuilt from the same pinned commit with
+`plugin-misc-native-hooks.patch`. The upstream plugin installs an inline hook
+when either monster player-count cap is enabled, but declares no native-hook
+capability; D2RLoader 1.0.1-beta correctly rejects it. The local one-line patch
+declares `PluginFlags::NativeHooks` so the signature-checked hook can load.
+
 ## TCP mod-local plugins
 
+* `PotionAutoPickup.dll` routes configured potion families through the vanilla
+  server pickup path.
 * `DurabilityResistance.dll` applies separate normal and ethereal resistance to
   the native durability-loss check, and exposes the ethereal maximum-durability
   percentage. Its config is `d2rloader/config/durability-resistance.toml`.
+* `NoEtherealItemTypes.dll` prevents configured `itemtypes.txt` families from
+  ever entering the ethereal creation path. Its config is
+  `d2rloader/config/no-ethereal-item-types.toml`.

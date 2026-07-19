@@ -53,9 +53,23 @@
       "thornsAndBurnPatchSha256": "AF35CC9093B52EFE5476C2D9E8D74EEE8B6F9043BFD5923DA368DC29862CFC79",
       "thornsAndBurnRuntimeByteIdentical": true,
       "thornsAndBurnRuntimeLoadStatus": "awaiting-next-launch",
-      "runtimePatchFilesScanned": 19,
-      "runtimePatchFilesApplied": 19,
+      "runtimePatchFilesScanned": 20,
+      "runtimePatchFilesApplied": 20,
       "runtimePatchFilesFailed": 0,
+      "runtimePluginFilesScanned": 7,
+      "runtimePluginFilesActive": 7,
+      "runtimePluginFilesFailed": 0,
+      "playerDifficultyMaximumAcceptedInGame": 14,
+      "playerDifficultySafetyClampReason": "A user report reproduces corpse/body save rejection after death at players 16; no failure was reported through players 14. Until the corrupting subsystem is identified and validated, every command, server, and UI path is capped at 14.",
+      "playerDifficultySafetyClampValidation": "D2RLoader cold start applied all 20 enabled patches without failure; live process bytes confirmed the command maximum, server maximum, and all UI maximums at 14 while preserving the vanilla command clamp.",
+      "monsterHpPlayerCountCap": 8,
+      "monsterHpCapHookRva": "0x542F40",
+      "monsterHpCapHookExpected": "48895C2418555741564883EC40498BD9",
+      "pluginMiscNativeHooksPatch": "data-BKVince/d2rloader/plugins/plugin-misc-native-hooks.patch",
+      "pluginMiscSha256": "EF92AC285FA58083D0D3F89CADE94AD93220CAD3875D820F63A56C35C5CFED79",
+      "monsterHpCapValidation": "runtime-hook-and-command-smoke-passed-awaiting-boss-gameplay-validation",
+      "infiniteTomesPatchAppliedAt": "0x5817BD",
+      "rejectedTomeSitesRemainVanilla": ["0x47145D", "0x4F5849"],
       "status": "static-validation-and-runtime-sync-passed-awaiting-runtime-load-and-gameplay-validation"
     },
     "patches": [
@@ -522,13 +536,14 @@
       },
       {
         "name": "Infinite Town Portal and Identify Tomes",
-        "classification": "multi-site-patched",
+        "classification": "patch-site-corrected",
         "confidence": "high",
-        "sites": [
-          { "rva": "0x4F5849", "expected": "458D41FF", "intent": "Change the direct-use tome quantity delta from -1 to 0." },
-          { "rva": "0x47145D", "expected": "458D41FF", "intent": "Change the inventory book-skill quantity delta from -1 to 0." }
+        "sites": [{ "rva": "0x5817BD", "expected": "41B9FFFFFFFF", "intent": "Change the Book-specific delta argument from -1 to 0 before calling the central item and bound-skill quantity routine." }],
+        "rejectedSites": [
+          { "rva": "0x47145D", "expected": "458D41FF", "reason": "False positive: the preceding item-type check uses 0x29 (Javelin), not 0x12 (Book)." },
+          { "rva": "0x4F5849", "expected": "458D41FF", "reason": "Rejected as an isolated Book-path write: it bypasses the central bound-skill synchronization used by actual tome consumption." }
         ],
-        "decision": "The original single-site port covered direct item use but missed the separate inventory book-skill path, which subtracts quantity and synchronizes the resulting STAT_QUANTITY value to the client. Both D2R 3.2 paths must use a zero delta."
+        "decision": "The exact 3.2 equivalent of the legacy 2.4 patch is the Book-gated call at 0x5817BD: after an explicit item-type 0x12 check, it loads -1 into r9d and calls the central routine at 0x46F090. That routine applies STAT_QUANTITY and synchronizes the bound Book skill. Passing zero preserves both quantities and their packets for TP/ID tomes, while scrolls and weapon quantities remain on their separate paths."
       },
       {
         "name": "Hit Chance % (Display Fix)",
@@ -748,17 +763,17 @@
       },
       {
         "name": "Player Difficulty Scaling Override (Actual)",
-        "classification": "patch-site-located",
+        "classification": "safety-capped-awaiting-game-validation",
         "confidence": "high",
-        "sites": [{ "rva": "0x425A69", "expected": "0F46C1", "futureIntent": "Replace cmovbe eax, ecx with mov eax, ecx; nop (89C890)." }],
-        "decision": "This exact 3.2 function writes the shared server difficulty global at RVA 0x2AA6A30."
+        "sites": [{ "rva": "0x425A66", "expected": "83F908", "implemented": "83F90E", "role": "raise the server ceiling from 8 to the safe maximum 14 while retaining the vanilla conditional move" }],
+        "decision": "The unlimited conditional-move bypass is withdrawn. This exact 3.2 setter still writes the shared server difficulty global at RVA 0x2AA6A30, but requests above 14 can no longer enter it through the supported command or UI paths."
       },
       {
         "name": "Player Difficulty Scaling Override (Command)",
-        "classification": "implemented-awaiting-game-validation",
+        "classification": "safety-capped-awaiting-game-validation",
         "confidence": "high",
-        "sites": [{ "rva": "0x188860", "expected": "41BF01000000413BC7440F4FF8453BFC450F4CE7", "implemented": "4189C4 plus NOP17" }],
-        "decision": "The legacy 17-byte window expanded to 20 bytes because the 3.2 compiler uses r15d/r12d."
+        "sites": [{ "rva": "0x188816", "expected": "41BC08000000", "implemented": "41BC0E000000", "role": "set the command maximum to 14 before the vanilla clamp at 0x188860" }],
+        "decision": "The raw parsed-value bypass at 0x188860 is removed. The original clamp remains byte-for-byte vanilla and now clamps every /players argument into 1..14 using the patched r12d maximum."
       },
       {
         "name": "Autogold: always pass cost (data)",
@@ -769,15 +784,15 @@
       },
       {
         "name": "Player Difficulty Scaling Override (Max/UI)",
-        "classification": "implemented-awaiting-game-validation",
+        "classification": "safety-capped-awaiting-game-validation",
         "confidence": "high",
         "sites": [
-          { "rva": "0x346ED", "expected": "BA01000000488BCF448D4207E892A6CF00", "implemented": "6A015A488BCF41B8FFFF0000E892A6CF00", "role": "primary initialized-path range 1..65535" },
-          { "rva": "0x3474E", "expected": "BA08000000", "implemented": "BAFFFF0000", "role": "primary fallback maximum 65535" },
-          { "rva": "0xE1A09", "expected": "BA01000000488D0D5B1E9502448D4207E872D3C400", "implemented": "6A015A41B8FFFF0000488D0D571E9502E872D3C400", "role": "secondary initialized-path range 1..65535" },
-          { "rva": "0xE1A57", "expected": "BA08000000", "implemented": "BAFFFF0000", "role": "secondary fallback maximum 65535" }
+          { "rva": "0x346ED", "expected": "BA01000000488BCF448D4207E892A6CF00", "implemented": "6A015A488BCF41B80E000000E892A6CF00", "role": "primary initialized-path range 1..14" },
+          { "rva": "0x3474E", "expected": "BA08000000", "implemented": "BA0E000000", "role": "primary fallback maximum 14" },
+          { "rva": "0xE1A09", "expected": "BA01000000488D0D5B1E9502448D4207E872D3C400", "implemented": "6A015A41B80E000000488D0D571E9502E872D3C400", "role": "secondary initialized-path range 1..14" },
+          { "rva": "0xE1A57", "expected": "BA08000000", "implemented": "BA0E000000", "role": "secondary fallback maximum 14" }
         ],
-        "decision": "Patch both lazy initializer paths and both fallback descriptors in code. This preserves the minimum of 1, raises the maximum to 65535, and avoids fragile writes to live BSS objects."
+        "decision": "Patch both lazy initializer paths and both fallback descriptors in code. This preserves the minimum of 1, exposes only the safe maximum 14, and keeps UI state consistent with the command and server limits."
       },
       {
         "name": "Hireling Follow Distance (Moving Owner)",

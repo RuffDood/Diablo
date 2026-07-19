@@ -11,18 +11,11 @@
       "expected": "FF"
     },
     {
-      "description": "Change the direct-use tome quantity delta from -1 to 0",
+      "description": "Change the Book quantity delta from -1 to 0 before the central item and bound-skill synchronization",
       "op": "bytes",
-      "rva": "0x4F5849",
-      "expected": "45 8D 41 FF",
-      "bytes": "45 8D 41 00"
-    },
-    {
-      "description": "Change the inventory book-skill quantity delta from -1 to 0",
-      "op": "bytes",
-      "rva": "0x47145D",
-      "expected": "45 8D 41 FF",
-      "bytes": "45 8D 41 00"
+      "rva": "0x5817BD",
+      "expected": "41 B9 FF FF FF FF",
+      "bytes": "41 B9 00 00 00 00"
     }
   ]
 }

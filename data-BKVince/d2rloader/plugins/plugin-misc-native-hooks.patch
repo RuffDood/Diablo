@@ -1,0 +1,13 @@
+diff --git a/src/plugin-misc/misc-main.cpp b/src/plugin-misc/misc-main.cpp
+index 8e262ab..dc7b5cb 100644
+--- a/src/plugin-misc/misc-main.cpp
++++ b/src/plugin-misc/misc-main.cpp
+@@ -121,7 +121,7 @@ static constexpr D2RL::PluginInfo PluginInfo {
+ 	.version    = "2.0.1",
+ 	.author     = "eezstreet",
+ 	.description = "Miscellaneous changes.",
+-	.flags      = D2RL::PluginFlags::None,
++	.flags      = D2RL::PluginFlags::NativeHooks,
+ };
+ 
+ D2RL_PLUGIN_EXPORT auto D2RLoaderGetPluginInfo() noexcept -> const D2RL::PluginInfo* {

@@ -49,7 +49,7 @@ Act 1 - Pond	46	0	1	0	1	0	1	1	8	8	0	0	0	0	1	Act1/Outdoors/Pond1.ds1	0	0	0	0	0	41
 Act 1 - Cottages 1	47	0	1	1	1	0	1	1	8	8	0	0	2	-4	6	Act1/Outdoors/Cott1.ds1	Act1/Outdoors/Cott2.ds1	Act1/Outdoors/Cott3.ds1	Act1/Outdoors/Cott4.ds1	Act1/Outdoors/Cott5.ds1	Act1/Outdoors/Cott6.ds1	16777217
 Act 1 - Cottages 2	48	0	1	1	1	0	1	1	8	8	0	0	2	-4	6	Act1/Outdoors/Cott1A.ds1	Act1/Outdoors/Cott2A.ds1	Act1/Outdoors/Cott3A.ds1	Act1/Outdoors/Cott4A.ds1	Act1/Outdoors/Cott5A.ds1	Act1/Outdoors/Cott6A.ds1	16777217
 Act 1 - Cottages 3	49	0	1	1	1	0	1	1	8	8	0	0	2	-4	1	Act1/Outdoors/Cott7.ds1	0	0	0	0	0	16777217
-Act 1 - Bivouac	50	0	1	1	1	0	1	1	16	16	0	0	0	0	1	Act1/Outdoors/Bivouac.ds1	0	0	0	0	0	41943297
+Act 1 - Bivouac	50	0	1	1	1	0	1	1	16	16	0	1	0	0	1	Act1/Outdoors/Bivouac.ds1	0	0	0	0	0	41943297
 Act 1 - Cave Entrance	51	0	1	0	1	0	1	1	8	8	0	1	0	0	2	Act1/Caves/CaveDr1.ds1	Act1/Caves/CaveDr2.ds1	0	0	0	0	1048835
 Act 1 - DOE Entrance	52	0	1	0	1	0	1	1	8	8	0	1	0	0	2	Act1/Caves/DenEnt.ds1	Act1/Caves/DenEnt2.ds1	0	0	0	0	1048835
 Act 1 - Cave W	53	0	1	0	0	0	1	1	24	24	0	0	0	0	2	Act1/Caves/CaveW.ds1	Act1/Caves/CaveW2.ds1	0	0	0	0	1
@@ -340,10 +340,10 @@ Act 2 - Sewer Next W	337	0	1	0	0	0	1	1	12	12	0	1	0	0	1	Act2/Sewer/SewWDown.ds1	0
 Act 2 - Sewer Next E	338	0	1	0	0	0	1	1	12	12	0	1	0	0	1	Act2/Sewer/SewEDown.ds1	0	0	0	0	0	3
 Act 2 - Sewer Next S	339	0	1	0	0	0	1	1	12	12	0	1	0	0	1	Act2/Sewer/SewSDown.ds1	0	0	0	0	0	3
 Act 2 - Sewer Next N	340	0	1	0	0	0	1	1	12	12	0	1	0	0	1	Act2/Sewer/SewNDown.ds1	0	0	0	0	0	3
-Act 2 - Sewer Radament's Lair W	341	0	1	0	0	0	1	1	12	12	0	0	0	0	1	Act2/Sewer/SewWRad.ds1	0	0	0	0	0	15
-Act 2 - Sewer Radament's Lair E	342	0	1	0	0	0	1	1	12	12	0	0	0	0	1	Act2/Sewer/SewERad.ds1	0	0	0	0	0	15
-Act 2 - Sewer Radament's Lair S	343	0	1	0	0	0	1	1	12	12	0	0	0	0	1	Act2/Sewer/SewSRad.ds1	0	0	0	0	0	15
-Act 2 - Sewer Radament's Lair N	344	0	1	0	0	0	1	1	12	12	0	0	0	0	1	Act2/Sewer/SewNRad.ds1	0	0	0	0	0	15
+Act 2 - Sewer Radament's Lair W	341	0	1	0	0	0	1	1	12	12	0	1	0	0	1	Act2/Sewer/SewWRad.ds1	0	0	0	0	0	15
+Act 2 - Sewer Radament's Lair E	342	0	1	0	0	0	1	1	12	12	0	1	0	0	1	Act2/Sewer/SewERad.ds1	0	0	0	0	0	15
+Act 2 - Sewer Radament's Lair S	343	0	1	0	0	0	1	1	12	12	0	1	0	0	1	Act2/Sewer/SewSRad.ds1	0	0	0	0	0	15
+Act 2 - Sewer Radament's Lair N	344	0	1	0	0	0	1	1	12	12	0	1	0	0	1	Act2/Sewer/SewNRad.ds1	0	0	0	0	0	15
 Act 2 - Sewer Waypoint W	345	0	1	0	0	0	1	1	12	12	0	1	0	0	1	Act2/Sewer/SewWWaypoint.ds1	0	0	0	0	0	15
 Act 2 - Sewer Waypoint E	346	0	1	0	0	0	1	1	12	12	0	1	0	0	1	Act2/Sewer/SewEWaypoint.ds1	0	0	0	0	0	15
 Act 2 - Sewer Waypoint S	347	0	1	0	0	0	1	1	12	12	0	1	0	0	1	Act2/Sewer/SewSWaypoint.ds1	0	0	0	0	0	15
@@ -524,10 +524,10 @@ Act 2 - Arcane NS	521	0	1	0	0	0	1	1	12	12	0	0	0	0	0	Act2/Arcane/SanctNS.ds1	Act2
 Act 2 - Arcane NSW	522	0	1	0	0	0	1	1	12	12	0	0	0	0	0	Act2/Arcane/SanctNSW.ds1	Act2/Arcane/SanctNSW1.ds1	Act2/Arcane/SanctNSW2.ds1	Act2/Arcane/SanctNSW3.ds1	0	0	1
 Act 2 - Arcane NSE	523	0	1	0	0	0	1	1	12	12	0	0	0	0	0	Act2/Arcane/SanctNSE.ds1	Act2/Arcane/SanctNSE1.ds1	Act2/Arcane/SanctNSE2.ds1	Act2/Arcane/SanctNSE3.ds1	0	0	1
 Act 2 - Arcane NSEW	524	0	1	0	0	0	1	1	12	12	0	1	0	0	0	Act2/Arcane/SanctNSEW.ds1	Act2/Arcane/SanctNSEW1.ds1	Act2/Arcane/SanctNSEW2.ds1	Act2/Arcane/SanctNSEW3.ds1	Act2/Arcane/SanctNSEW4.ds1	0	1
-Act 2 - Arcane Summoner W	525	0	1	0	0	0	1	1	12	12	0	0	0	0	1	Act2/Arcane/SummW.ds1	0	0	0	0	0	1
-Act 2 - Arcane Summoner E	526	0	1	0	0	0	1	1	12	12	0	0	0	0	1	Act2/Arcane/SummE.ds1	0	0	0	0	0	1
-Act 2 - Arcane Summoner S	527	0	1	0	0	0	1	1	12	12	0	0	0	0	1	Act2/Arcane/SummS.ds1	0	0	0	0	0	1
-Act 2 - Arcane Summoner N	528	0	1	0	0	0	1	1	12	12	0	0	0	0	1	Act2/Arcane/SummN.ds1	0	0	0	0	0	1
+Act 2 - Arcane Summoner W	525	0	1	0	0	0	1	1	12	12	0	1	0	0	1	Act2/Arcane/SummW.ds1	0	0	0	0	0	1
+Act 2 - Arcane Summoner E	526	0	1	0	0	0	1	1	12	12	0	1	0	0	1	Act2/Arcane/SummE.ds1	0	0	0	0	0	1
+Act 2 - Arcane Summoner S	527	0	1	0	0	0	1	1	12	12	0	1	0	0	1	Act2/Arcane/SummS.ds1	0	0	0	0	0	1
+Act 2 - Arcane Summoner N	528	0	1	0	0	0	1	1	12	12	0	1	0	0	1	Act2/Arcane/SummN.ds1	0	0	0	0	0	1
 Act 3 - Town	529	75	1	0	1	0	0	1	0	0	1	1	2	0	1	Act3/Docktown/DockTown3.ds1	0	0	0	0	0	1023
 Act 3 - Jungle W	530	0	1	0	1	0	1	1	32	32	0	0	0	0	3	Act3/Jungle/RivW.ds1	Act3/Jungle/RivW2.ds1	Act3/Jungle/RivW3.ds1	0	0	0	255
 Act 3 - Jungle E	531	0	1	0	1	0	1	1	32	32	0	0	0	0	3	Act3/Jungle/RivE.ds1	Act3/Jungle/RivE2.ds1	Act3/Jungle/RivE3.ds1	0	0	0	255
@@ -821,7 +821,7 @@ Act 4 - Mesa 2 16X16	818	0	1	1	1	0	1	1	16	16	0	0	0	-4	5	Act4/Mesa/Mid16X16_0.ds1
 Act 4 - Mesa 2 16X08	819	0	1	1	1	0	1	1	16	8	0	0	0	-4	5	Act4/Mesa/Mid16X08_0.ds1	Act4/Mesa/Mid16X08_1.ds1	Act4/Mesa/Mid16X08_2.ds1	Act4/Mesa/Mid16X08_3.ds1	Act4/Mesa/Mid16X08_4.ds1	0	511
 Act 4 - Mesa 2 08X16	820	0	1	1	1	0	1	1	8	16	0	0	0	-4	5	Act4/Mesa/Mid08X16_0.ds1	Act4/Mesa/Mid08X16_1.ds1	Act4/Mesa/Mid08X16_2.ds1	Act4/Mesa/Mid08X16_3.ds1	Act4/Mesa/Mid08X16_4.ds1	0	511
 Act 4 - Mesa 2 08X08	821	0	1	1	1	0	1	1	8	8	0	0	0	-4	5	Act4/Mesa/Mid08X08_0.ds1	Act4/Mesa/Mid08X08_1.ds1	Act4/Mesa/Mid08X08_2.ds1	Act4/Mesa/Mid08X08_3.ds1	Act4/Mesa/Mid08X08_4.ds1	0	511
-Act 4 - Mesa 2 Izual	822	0	1	1	1	0	1	1	8	8	0	0	0	-4	1	Act4/Mesa/Mid08X08Izual.ds1	0	0	0	0	0	511
+Act 4 - Mesa 2 Izual	822	0	1	1	1	0	1	1	8	8	0	1	0	-4	1	Act4/Mesa/Mid08X08Izual.ds1	0	0	0	0	0	511
 Act 4 - Mesa 3 24X24	823	0	1	1	1	0	1	1	24	24	0	0	0	-4	4	Act4/Mesa/Chaos24X24_0.ds1	Act4/Mesa/Chaos24X24_1.ds1	Act4/Mesa/Chaos24X24_2.ds1	Act4/Mesa/Chaos24X24_3.ds1	0	0	511
 Act 4 - Mesa 3 16X16	824	0	1	1	1	0	1	1	16	16	0	0	0	-4	4	Act4/Mesa/Chaos16X16_0.ds1	Act4/Mesa/Chaos16X16_1.ds1	Act4/Mesa/Chaos16X16_2.ds1	Act4/Mesa/Chaos16X16_3.ds1	0	0	511
 Act 4 - Mesa 3 16X08	825	0	1	1	1	0	1	1	16	8	0	0	0	-4	4	Act4/Mesa/Chaos16X08_0.ds1	Act4/Mesa/Chaos16X08_1.ds1	Act4/Mesa/Chaos16X08_2.ds1	Act4/Mesa/Chaos16X08_3.ds1	0	0	511
@@ -852,11 +852,11 @@ Act 4 - Lava NSW	849	0	1	1	1	1	0	0	24	24	0	0	0	-4	2	Act4/Lava/LavaNSW.ds1	Act4/L
 Act 4 - Lava NSE	850	0	1	1	1	1	0	0	24	24	0	0	0	-4	2	Act4/Lava/LavaNSE.ds1	Act4/Lava/LavaNSE2.ds1	0	0	0	0	2047
 Act 4 - Lava NSEW	851	0	1	1	1	1	0	0	24	24	0	0	0	-4	2	Act4/Lava/LavaNSEW.ds1	Act4/Lava/LavaNSEW2.ds1	0	0	0	0	2047
 Act 4 - Lava Warp N	852	0	1	1	1	1	0	0	24	24	0	1	0	-4	2	Act4/Lava/WarpMesa.ds1	Act4/Lava/WarpMesa1.ds1	0	0	0	0	2047
-Act 4 - Lava Forge W	853	0	1	1	1	1	0	0	24	24	0	0	0	-4	1	Act4/Lava/ForgeW.ds1	0	0	0	0	0	2047
-Act 4 - Lava Forge E	854	0	1	1	1	1	0	0	24	24	0	0	0	-4	1	Act4/Lava/ForgeE.ds1	0	0	0	0	0	2047
+Act 4 - Lava Forge W	853	0	1	1	1	1	0	0	24	24	0	1	0	-4	1	Act4/Lava/ForgeW.ds1	0	0	0	0	0	2047
+Act 4 - Lava Forge E	854	0	1	1	1	1	0	0	24	24	0	1	0	-4	1	Act4/Lava/ForgeE.ds1	0	0	0	0	0	2047
 Act 4 - Bridge 1	855	0	1	0	1	1	0	0	24	24	0	1	4	0	1	Act4/Diab/BridgeLava.ds1	0	0	0	0	0	2047
 Act 4 - Bridge 2	856	0	1	0	1	1	0	0	24	24	0	0	0	-4	4	Act4/Diab/Bridge1.ds1	Act4/Diab/Bridge2.ds1	Act4/Diab/Bridge3.ds1	Act4/Diab/Bridge4.ds1	0	0	2047
-Act 4 - Diablo Entry	857	0	1	0	1	1	0	0	24	24	0	0	1	-4	1	Act4/Diab/Entry1.ds1	0	0	0	0	0	1567
+Act 4 - Diablo Entry	857	0	1	0	1	1	0	0	24	24	0	1	1	-4	1	Act4/Diab/Entry1.ds1	0	0	0	0	0	1567
 Act 4 - Diablo Arm W	858	0	1	0	1	1	0	0	24	24	0	0	0	-4	2	Act4/Diab/WingW1.ds1	Act4/Diab/WingW2.ds1	0	0	0	0	1567
 Act 4 - Diablo Arm E	859	0	1	0	1	1	0	0	24	24	0	0	0	-4	2	Act4/Diab/WingE1.ds1	Act4/Diab/WingE2.ds1	0	0	0	0	1567
 Act 4 - Diablo Arm S	860	0	1	0	1	1	0	0	24	24	0	0	0	-4	2	Act4/Diab/WingS1.ds1	Act4/Diab/WingS2.ds1	0	0	0	0	1567
@@ -865,7 +865,7 @@ Act 4 - Diablo Heart	862	0	1	0	1	1	0	0	24	24	0	0	0	-4	1	Act4/Diab/Heart.ds1	0	0	
 Expansion																						
 Act 5 - Town	863	109	0	0	1	0	1	1	0	0	1	1	1	-4	1	Expansion/Town/townWest.ds1	0	0	0	0	0	1048575
 Act 5 - Temple Final Room	864	124	1	0	1	0	1	1	0	0	0	1	0	0	4	Expansion/wildtemple/NihlE.ds1	Expansion/wildtemple/NihlN.ds1	Expansion/wildtemple/NihlS.ds1	Expansion/wildtemple/NihlW.ds1	0	0	1
-Act 5 - Siege To Town	865	0	1	0	1	0	1	1	16	48	0	0	0	0	1	Expansion/Siege/striptownsiege.ds1	0	0	0	0	0	2047
+Act 5 - Siege To Town	865	0	1	0	1	0	1	1	16	48	0	1	0	0	1	Expansion/Siege/striptownsiege.ds1	0	0	0	0	0	2047
 Act 5 - Siege Strip 1	866	0	1	0	1	0	1	1	16	48	0	0	0	0	1	Expansion/Siege/strip01.ds1	0	0	0	0	0	2047
 Act 5 - Siege Strip 2	867	0	1	0	1	0	1	1	16	48	0	0	0	0	1	Expansion/Siege/strip02.ds1	0	0	0	0	0	2047
 Act 5 - Siege Strip 3	868	0	1	0	1	0	1	1	16	48	0	0	0	0	1	Expansion/Siege/strip03.ds1	0	0	0	0	0	2047
