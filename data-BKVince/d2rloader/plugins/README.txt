@@ -189,3 +189,7 @@ declares `PluginFlags::NativeHooks` so the signature-checked hook can load.
 * `NoEtherealItemTypes.dll` prevents configured `itemtypes.txt` families from
   ever entering the ethereal creation path. Its config is
   `d2rloader/config/no-ethereal-item-types.toml`.
+* `EnhancedDamageMinMaxFix.dll` restores the missing off-weapon Enhanced Damage
+  component when flat minimum or maximum damage triggers ItemStatCost operation
+  13. Weapons retain vanilla local ED behavior. The command
+  `enhanced-damage-min-max-fix` reports runtime correction counters.

@@ -20,6 +20,14 @@
       "notes": "Native base-durability path hooked by DurabilityResistance."
     },
     {
+      "rva": "0x2F5C60",
+      "name": "STATLIST_UnitGetStatValue",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/ed-min-max-jewel-fix-3.2.md",
+      "notes": "Central (unit, statId, layer) total-stat getter. The persistent 92777 index records 91 direct callers; the function resolves the unit stat list and ItemStatCost record before delegating to the recursive total-stat evaluator at RVA 0x2F9B10. EnhancedDamageMinMaxFix hooks its strict 15-byte prologue."
+    },
+    {
       "rva": "0x300A90",
       "name": "GetDataTablesForContext",
       "kind": "function",
@@ -34,6 +42,14 @@
       "confidence": "high",
       "source": "Mission/no-ethereal-item-types-3.2.md",
       "notes": "Returns the data-table context byte for an item unit immediately before item-record and item-type lookups."
+    },
+    {
+      "rva": "0x34B9D0",
+      "name": "UNITS_GetUnitType",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/ed-min-max-jewel-fix-3.2.md",
+      "notes": "Returns the unit type used throughout the 92777 stat paths (0 player, 1 monster, 4 item). EnhancedDamageMinMaxFix limits inventory correction to players and monsters."
     },
     {
       "rva": "0x373890",
