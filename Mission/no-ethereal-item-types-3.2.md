@@ -46,9 +46,9 @@ exactement les équivalences du jeu.
   `D2RLoaderUnloadPlugin` présents, manifeste v2 accepté ;
 - DLL et TOML source/runtime byte-identiques ;
 - archive partageable `addons/NoEtherealItemTypes/NoEtherealItemTypes.zip`,
-  SHA-256 `4104B2289D8E4AB605C00F9F35E682961F1241D78FC24F754D9BD0C3C3105B99`,
+  SHA-256 `3A6E46EC8D0ADC9EAAF6BAC915BFAF66E4D789E21976EC613F385D8789371B12`,
   vérifiée avec exactement la DLL et le TOML à la racine, sans README ni
-  sources ;
+  sources ; les commentaires du TOML public sont intégralement en anglais ;
 - cold start sous D2RLoader 1.0.1-beta et build 92777 : hook installé à
   `0x373890`, `20/20 patches`, `8/8 plugins`, `24/24` étapes de démarrage ;
 - l’assertion RapidJSON tardive déjà connue se reproduit après le frontend et

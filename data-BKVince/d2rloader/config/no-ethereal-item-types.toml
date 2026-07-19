@@ -1,10 +1,10 @@
-# Les codes viennent de la colonne Code de itemtypes.txt.
-# Un type parent inclut ses enfants : "armo" couvre notamment boot, glov et tors.
+# Item type codes come from the Code column of itemtypes.txt.
+# Parent types use D2R's native inheritance: "armo" covers boot, glov, tors, and other children.
 
 [ethereal_exclusions]
 enabled = true
 
-# Pour cibler plusieurs types, utilise une seule liste TOML :
+# To target multiple types, use a single TOML array:
 # item_types = ["boot", "glov", "tors"]
-# Chaque code doit etre entre guillemets et separe du suivant par une virgule.
+# Quote every code and separate each entry with a comma.
 item_types = []
