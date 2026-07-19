@@ -1,7 +1,10 @@
-# BKVince item-type ethereal exclusions
-# Item type codes come from the Code column of itemtypes.txt.
-# Parent types use D2R's native inheritance: "armo" covers its child types.
+# Les codes viennent de la colonne Code de itemtypes.txt.
+# Un type parent inclut ses enfants : "armo" couvre notamment boot, glov et tors.
 
 [ethereal_exclusions]
 enabled = true
+
+# Pour cibler plusieurs types, utilise une seule liste TOML :
+# item_types = ["boot", "glov", "tors"]
+# Chaque code doit etre entre guillemets et separe du suivant par une virgule.
 item_types = []
