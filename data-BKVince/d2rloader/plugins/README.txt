@@ -172,3 +172,9 @@ Its code is embedded in the five plugin DLLs, so there is no separate
 
 The pack reads its feature configuration from
 `BKVince.mpq/D2RPlugins.json`. All optional behavior starts disabled.
+
+## TCP mod-local plugins
+
+* `DurabilityResistance.dll` applies separate normal and ethereal resistance to
+  the native durability-loss check, and exposes the ethereal maximum-durability
+  percentage. Its config is `d2rloader/config/durability-resistance.toml`.

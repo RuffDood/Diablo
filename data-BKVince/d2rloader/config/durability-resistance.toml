@@ -1,0 +1,22 @@
+# BKVince preset for the mod-local DurabilityResistance plugin.
+# Changes take effect after a cold start.
+
+[durability_loss]
+enabled = true
+# Higher number = slower durability loss.
+# 0 = vanilla durability loss; 50 = loses durability half as often;
+# 100 = never loses durability.
+normal_resistance_percent = 50
+ethereal_resistance_percent = 50
+
+[ethereal]
+# Percentage of the normal item's maximum durability given to a new ethereal item.
+# 50 = vanilla ethereal durability: floor(normal / 2) + 1.
+# 75 = approximately 75% of the normal item's maximum durability.
+# 100 = the same maximum durability as the normal item (roughly twice vanilla
+# ethereal durability, but the item remains ethereal and normally cannot be repaired).
+# Accepted range: 1..100. This affects newly generated ethereal items only.
+max_durability_percent = 50
+
+[diagnostics]
+enabled = false
