@@ -25,7 +25,7 @@
       "kind": "patch-site",
       "confidence": "high",
       "source": "data-BKVince/d2rloader/patches/infinite-item-quantity-and-tomes.json",
-      "notes": "Weapon/arrow/bolt/throwable quantity delta byte."
+      "notes": "Separate projectile-consumption path for weapon/arrow/bolt/throwable quantity; it is not the melee durability rollover handled by ApplyDurabilityLoss."
     },
     {
       "rva": "0x441B10",
@@ -33,7 +33,7 @@
       "kind": "function",
       "confidence": "high",
       "source": "Mission/durability-loss-resistance-3.2.md",
-      "notes": "Native durability-loss routine; 4 percent weapon and 10 percent armor thresholds."
+      "notes": "Native durability-loss routine; 4 percent weapon and 10 percent armor thresholds. Throwing weapons used in melee enter this routine, and depleted internal durability can roll over into a one-point stack reduction."
     },
     {
       "rva": "0x442C78",

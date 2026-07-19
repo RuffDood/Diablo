@@ -18,6 +18,7 @@ namespace {
 using tcp::durability::ClampEtherealMaxPercent;
 using tcp::durability::ClampResistance;
 using tcp::durability::EffectiveChanceBasisPoints;
+using tcp::durability::EncodeEtherealMaximumTarget;
 using tcp::durability::EncodeForVanillaEtherealHalving;
 using tcp::durability::PreventsLoss;
 
@@ -27,7 +28,6 @@ constexpr std::uintptr_t GetBaseStatRva = 0x2F48C0;
 constexpr std::uintptr_t UnitSeedRva = 0x34A1E0;
 constexpr std::uintptr_t RandomRva = 0x153B00;
 constexpr std::uintptr_t CheckItemFlagRva = 0x36E2D0;
-constexpr std::uintptr_t IsThrowableRva = 0x374710;
 constexpr std::uintptr_t EtherealMaximumReturnRva = 0x44351F;
 constexpr std::uint32_t EtherealItemFlag = 0x00400000;
 constexpr std::int32_t MaxDurabilityStat = 73;
@@ -42,8 +42,13 @@ normal_resistance_percent = 50
 ethereal_resistance_percent = 50
 
 [ethereal]
-# Vanilla is 50 and uses floor(normal / 2) + 1. Range: 1..100.
+# Below 100, the vanilla-style +1 is preserved after scaling.
+# 25/50/75/100/200 on a normal maximum of 20 produce 6/11/16/20/40.
+# Range: 1..200. Final durability is always capped at 255.
 max_durability_percent = 50
+# true ignores the percentage and forces 255 points,
+# D2R's absolute maximum item durability.
+force_maximum_durability = false
 
 [diagnostics]
 enabled = false
@@ -55,6 +60,7 @@ struct Config {
     std::uint32_t normalResistance{50};
     std::uint32_t etherealResistance{50};
     std::uint32_t etherealMaxPercent{50};
+    bool forceMaximumDurability{};
 };
 
 using UpdateDurabilityFn = void(__fastcall*)(void*, void*, void*) noexcept;
@@ -62,7 +68,6 @@ using GetBaseStatFn = std::int32_t(__fastcall*)(void*, std::int32_t, std::uint16
 using UnitSeedFn = void*(__fastcall*)(void*);
 using RandomFn = std::uint32_t(__fastcall*)(void*, std::int32_t);
 using CheckItemFlagFn = std::int32_t(__fastcall*)(void*, std::uint32_t, std::int32_t, const char*);
-using IsThrowableFn = std::int32_t(__fastcall*)(void*);
 
 const D2RL::PluginContext* Context{};
 std::uint8_t* Base{};
@@ -72,7 +77,6 @@ GetBaseStatFn OriginalGetBaseStat{};
 UnitSeedFn GetUnitSeed{};
 RandomFn RollRandom{};
 CheckItemFlagFn CheckItemFlag{};
-IsThrowableFn IsThrowable{};
 std::atomic<std::uint64_t> PreventedNormal{};
 std::atomic<std::uint64_t> PreventedEthereal{};
 
@@ -81,7 +85,7 @@ constexpr D2RL::PluginInfo Info{
     .apiVersion = D2RL_PLUGIN_API_VERSION,
     .id = "durability-resistance",
     .name = "Durability Resistance",
-    .version = "1.0.0",
+    .version = "1.0.1",
     .author = "TCP",
     .description = "Separate normal/ethereal durability-loss resistance and configurable ethereal maximum durability for D2R 3.2.92777.",
     .flags = D2RL::PluginFlags::ModScopedOnly | D2RL::PluginFlags::NativeHooks,
@@ -154,6 +158,8 @@ bool LoadConfig() noexcept {
             }
         } else if (section == "ethereal" && key == "max_durability_percent") {
             Settings.etherealMaxPercent = ClampEtherealMaxPercent(ParseUnsigned(value, Settings.etherealMaxPercent));
+        } else if (section == "ethereal" && key == "force_maximum_durability") {
+            Settings.forceMaximumDurability = ParseBool(value, Settings.forceMaximumDurability);
         } else if (section == "diagnostics" && key == "enabled") {
             Settings.diagnostics = ParseBool(value, Settings.diagnostics);
         }
@@ -166,7 +172,7 @@ bool IsEtherealItem(void* item) noexcept {
 }
 
 void __fastcall HookUpdateDurability(void* game, void* unit, void* item) noexcept {
-    if (!Settings.enabled || !unit || !item || IsThrowable(item)) {
+    if (!Settings.enabled || !unit || !item) {
         OriginalUpdateDurability(game, unit, item);
         return;
     }
@@ -199,6 +205,9 @@ __declspec(noinline) std::int32_t __fastcall HookGetBaseStat(
         || stat != MaxDurabilityStat) {
         return value;
     }
+    if (Settings.forceMaximumDurability && value > 0) {
+        return EncodeEtherealMaximumTarget(255);
+    }
     return EncodeForVanillaEtherealHalving(value, Settings.etherealMaxPercent);
 }
 
@@ -223,14 +232,15 @@ auto Status(
     std::snprintf(
         message,
         sizeof(message),
-        "DurabilityResistance 1.0: normal resistance %u%% (weapon %s, armor %s); ethereal resistance %u%% (weapon %s, armor %s); ethereal max %u%%; prevented normal=%llu ethereal=%llu.",
+        "DurabilityResistance 1.0.1: normal resistance %u%% (weapon %s, armor %s); ethereal resistance %u%% (weapon %s, armor %s); ethereal max %u%s; prevented normal=%llu ethereal=%llu.",
         Settings.normalResistance,
         normalWeapon,
         normalArmor,
         Settings.etherealResistance,
         etherealWeapon,
         etherealArmor,
-        Settings.etherealMaxPercent,
+        Settings.forceMaximumDurability ? 255u : Settings.etherealMaxPercent,
+        Settings.forceMaximumDurability ? " points (forced maximum)" : "%",
         static_cast<unsigned long long>(PreventedNormal.load()),
         static_cast<unsigned long long>(PreventedEthereal.load())
     );
@@ -291,7 +301,6 @@ D2RL_PLUGIN_EXPORT auto D2RLoaderLoadPlugin(const D2RL::PluginContext* context) 
     GetUnitSeed = At<UnitSeedFn>(UnitSeedRva);
     RollRandom = At<RandomFn>(RandomRva);
     CheckItemFlag = At<CheckItemFlagFn>(CheckItemFlagRva);
-    IsThrowable = At<IsThrowableFn>(IsThrowableRva);
     if (!InstallHooks()) return false;
 
     if (!context->RegisterConsoleCommand(
@@ -301,7 +310,7 @@ D2RL_PLUGIN_EXPORT auto D2RLoaderLoadPlugin(const D2RL::PluginContext* context) 
         )) {
         context->LogWarn("DurabilityResistance: status command could not be registered.");
     }
-    context->LogInfo("DurabilityResistance 1.0 active for D2R 3.2.92777 (normal/ethereal loss resistance and ethereal maximum). ");
+    context->LogInfo("DurabilityResistance 1.0.1 active for D2R 3.2.92777 (normal/ethereal loss resistance and ethereal maximum). ");
     return true;
 }
 

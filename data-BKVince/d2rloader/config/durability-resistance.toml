@@ -11,12 +11,21 @@ ethereal_resistance_percent = 50
 
 [ethereal]
 # Percentage of the normal item's maximum durability given to a new ethereal item.
-# 50 = vanilla ethereal durability: floor(normal / 2) + 1.
-# 75 = approximately 75% of the normal item's maximum durability.
-# 100 = the same maximum durability as the normal item (roughly twice vanilla
-# ethereal durability, but the item remains ethereal and normally cannot be repaired).
-# Accepted range: 1..100. This affects newly generated ethereal items only.
+# Below 100, the vanilla-style +1 is preserved after scaling.
+# Example for an item with 20 normal durability:
+# 25 = floor(20 * 25 / 100) + 1 = 6.
+# 50 = vanilla: floor(20 / 2) + 1 = 11.
+# 75 = floor(20 * 75 / 100) + 1 = 16.
+# 100 = the same maximum durability as the normal item.
+# 200 = twice the normal item's maximum durability.
+# Accepted percentage range: 1..200. Final durability is always capped at 255.
 max_durability_percent = 50
+# false = use the percentage above.
+# true = ignore the percentage and give every new ethereal item exactly
+# 255 durability points, D2R's absolute maximum.
+force_maximum_durability = false
+# These settings affect newly generated ethereal items only. The item remains
+# ethereal and normally cannot be repaired.
 
 [diagnostics]
 enabled = false

@@ -7,7 +7,8 @@ using namespace tcp::durability;
 int main() {
     static_assert(ClampResistance(125) == 100);
     static_assert(ClampEtherealMaxPercent(0) == 1);
-    static_assert(ClampEtherealMaxPercent(125) == 100);
+    static_assert(ClampEtherealMaxPercent(125) == 125);
+    static_assert(ClampEtherealMaxPercent(250) == 200);
 
     assert(!PreventsLoss(0, 0));
     assert(PreventsLoss(50, 49));
@@ -19,17 +20,21 @@ int main() {
     assert(EffectiveChanceBasisPoints(10, 75) == 250);
     assert(EffectiveChanceBasisPoints(10, 100) == 0);
 
-    // A value of 50 preserves D2R's exact floor(base / 2) + 1 behavior.
-    assert(EncodeForVanillaEtherealHalving(30, 50) == 30);
-    assert(ApplyVanillaEtherealHalving(30) == 16);
-    assert(ApplyVanillaEtherealHalving(31) == 16);
+    // Below 100%, keep D2R's vanilla-style floor(scaled value) + 1 bonus.
+    assert(TargetEtherealMaxDurability(20, 25) == 6);
+    assert(TargetEtherealMaxDurability(20, 50) == 11);
+    assert(TargetEtherealMaxDurability(20, 75) == 16);
+    assert(ApplyVanillaEtherealHalving(EncodeForVanillaEtherealHalving(20, 25)) == 6);
+    assert(ApplyVanillaEtherealHalving(EncodeForVanillaEtherealHalving(20, 50)) == 11);
+    assert(ApplyVanillaEtherealHalving(EncodeForVanillaEtherealHalving(20, 75)) == 16);
 
-    assert(TargetEtherealMaxDurability(40, 75) == 30);
-    assert(ApplyVanillaEtherealHalving(EncodeForVanillaEtherealHalving(40, 75)) == 30);
     assert(TargetEtherealMaxDurability(30, 100) == 30);
     assert(ApplyVanillaEtherealHalving(EncodeForVanillaEtherealHalving(30, 100)) == 30);
+    assert(TargetEtherealMaxDurability(20, 200) == 40);
+    assert(ApplyVanillaEtherealHalving(EncodeForVanillaEtherealHalving(20, 200)) == 40);
     assert(TargetEtherealMaxDurability(10, 1) == 1);
     assert(ApplyVanillaEtherealHalving(EncodeForVanillaEtherealHalving(10, 1)) == 1);
-    assert(TargetEtherealMaxDurability(500, 100) == 255);
-    assert(ApplyVanillaEtherealHalving(EncodeForVanillaEtherealHalving(500, 100)) == 255);
+    assert(TargetEtherealMaxDurability(500, 200) == 255);
+    assert(ApplyVanillaEtherealHalving(EncodeForVanillaEtherealHalving(500, 200)) == 255);
+    assert(ApplyVanillaEtherealHalving(EncodeEtherealMaximumTarget(255)) == 255);
 }

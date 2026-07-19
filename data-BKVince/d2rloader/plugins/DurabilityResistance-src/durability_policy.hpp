@@ -10,7 +10,7 @@ constexpr std::uint32_t ClampResistance(std::uint32_t value) noexcept {
 }
 
 constexpr std::uint32_t ClampEtherealMaxPercent(std::uint32_t value) noexcept {
-    return std::clamp(value, 1u, 100u);
+    return std::clamp(value, 1u, 200u);
 }
 
 constexpr bool PreventsLoss(std::uint32_t resistancePercent, std::uint32_t roll) noexcept {
@@ -30,23 +30,27 @@ constexpr std::int32_t TargetEtherealMaxDurability(
     std::uint32_t percent
 ) noexcept {
     if (normalMaximum <= 0) return normalMaximum;
-    const auto scaled = (
-        static_cast<std::int64_t>(normalMaximum) * ClampEtherealMaxPercent(percent) + 50
-    ) / 100;
+    const auto clampedPercent = ClampEtherealMaxPercent(percent);
+    const auto numerator = static_cast<std::int64_t>(normalMaximum) * clampedPercent;
+    const auto scaled = clampedPercent < 100u
+        ? numerator / 100 + 1
+        : (numerator + 50) / 100;
     return static_cast<std::int32_t>(std::clamp<std::int64_t>(scaled, 1, 255));
 }
 
 // D2R 3.2 applies (value / 2) + 1 immediately after reading the base maximum.
 // Supplying this pre-compensated value makes that native formula produce target.
+constexpr std::int32_t EncodeEtherealMaximumTarget(std::int32_t target) noexcept {
+    return 2 * (std::clamp(target, 1, 255) - 1);
+}
+
 constexpr std::int32_t EncodeForVanillaEtherealHalving(
     std::int32_t normalMaximum,
     std::uint32_t percent
 ) noexcept {
-    if (normalMaximum <= 0 || ClampEtherealMaxPercent(percent) == 50u) {
-        return normalMaximum;
-    }
+    if (normalMaximum <= 0) return normalMaximum;
     const auto target = TargetEtherealMaxDurability(normalMaximum, percent);
-    return 2 * (target - 1);
+    return EncodeEtherealMaximumTarget(target);
 }
 
 constexpr std::int32_t ApplyVanillaEtherealHalving(std::int32_t value) noexcept {
