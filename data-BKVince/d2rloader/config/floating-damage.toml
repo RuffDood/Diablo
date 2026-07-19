@@ -1,0 +1,70 @@
+# Floating Damage configuration for BKVince.
+# All damage values are visual only and never alter combat simulation.
+
+[general]
+enabled = true
+max_numbers_on_screen = 160
+font_index = 0
+color_by_damage_type = false
+
+[appearance]
+text_size = 38.0
+critical_hit_size = 48.0
+text_outline_width = 1
+shadow_left_right_offset = 0.0
+shadow_up_down_offset = 0.0
+
+[animation]
+display_time_seconds = 0.85
+critical_display_time_seconds = 0.95
+fade_out_start = 0.75
+spawn_size = 0.01
+pop_bounce_size = 1.75
+pop_in_time_seconds = 0.08
+settle_time_seconds = 0.12
+upward_drift_speed = 45.0
+sideways_spread = 0.0
+spawn_height_offset = 0.0
+
+[combining]
+enable_hit_combining = true
+max_combined_hit_size = 999999
+combine_window_ms = 500
+extend_display_on_hit_seconds = 0.52
+hit_pulse_size = 1.24
+hit_pulse_time_seconds = 0.13
+show_tick_popups = true
+tick_popup_time_seconds = 0.70
+tick_popup_size = 0.60
+tick_popup_travel = 64.0
+tick_popup_height_offset = -28.0
+
+[layout]
+spread_numbers_horizontally = true
+number_of_columns = 7
+column_spacing = 40.0
+stack_height_step = 24.0
+column_reuse_time_seconds = 0.60
+max_stack_height = 96.0
+
+[dps]
+show_dps_counter = true
+horizontal_position_percent = 2.0
+vertical_position_percent = 98.0
+dps_sample_time_seconds = 5.0
+
+[preview]
+preview_number_count = 8
+preview_spread = 32.0
+
+[colors]
+normal = [0.92, 0.92, 0.88, 1.0]
+critical = [1.0, 0.84, 0.27, 1.0]
+physical = [0.92, 0.92, 0.88, 1.0]
+fire = [1.0, 0.45, 0.12, 1.0]
+lightning = [1.0, 0.95, 0.35, 1.0]
+cold = [0.45, 0.78, 1.0, 1.0]
+poison = [0.35, 0.90, 0.30, 1.0]
+magic = [0.72, 0.45, 1.0, 1.0]
+outline = [0.16, 0.11, 0.03, 1.0]
+shadow = [0.16, 0.11, 0.02, 1.0]

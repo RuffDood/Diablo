@@ -68,6 +68,14 @@
       "notes": "Server-side ceiling comparison in the setter that writes the shared player-difficulty global. BKVince raises the immediate from 8 to 14 while retaining the vanilla conditional move."
     },
     {
+      "rva": "0x427150",
+      "name": "DAMAGE_LogResolvedType",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/floating-damage-portage-3.2.md",
+      "notes": "Per-damage-type observer called by SUNITDMG_ApplyResistancesAndAbsorb after resistance and flat reduction are resolved. The 3.2 caller at 0x452651 passes game, attacker, defender, base damage, resistance, reduction, final damage, type name, damage structure, and the table flag. FloatingDamage hooks its build-unique strict 26-byte prologue without modifying any argument or result."
+    },
+    {
       "rva": "0x436830",
       "name": "D2GAME_SKILLMANA_Consume",
       "kind": "function",
@@ -122,6 +130,14 @@
       "confidence": "high",
       "source": "Mission/no-ethereal-item-types-3.2.md",
       "notes": "Fallback ethereal eligibility type check: ITEMS_CheckItemTypeId(item, ITEMTYPE_ANY_ARMOR), returning to 0x4432E9."
+    },
+    {
+      "rva": "0x4523E0",
+      "name": "SUNITDMG_ApplyResistancesAndAbsorb",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/floating-damage-portage-3.2.md",
+      "notes": "D2R 3.2 equivalent proven from the unique 12-entry damage-stat loop at 0x44EC44, matching damage offsets, resistance/pierce/absorb flow, fixed-point percentage branches, and the post-resolution observer call at 0x452651."
     },
     {
       "rva": "0x46F090",

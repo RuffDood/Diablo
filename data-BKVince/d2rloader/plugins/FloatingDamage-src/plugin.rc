@@ -1,0 +1,18 @@
+#include <D2RLPlugin/resource.h>
+#include <D2RLPlugin/version.h>
+#include "resource.h"
+
+D2RL_PLUGIN_MANIFEST_RESOURCE_ID RCDATA { D2RL_PLUGIN_RESOURCE_DWORD(D2RL_PLUGIN_API_VERSION) }
+
+IDR_FD_FONT_0   RCDATA "fonts\\0.otf"
+IDR_FD_FONT_1   RCDATA "fonts\\1.otf"
+IDR_FD_FONT_2   RCDATA "fonts\\2.otf"
+IDR_FD_FONT_3   RCDATA "fonts\\3.otf"
+IDR_FD_FONT_4   RCDATA "fonts\\4.otf"
+IDR_FD_FONT_5   RCDATA "fonts\\5.otf"
+IDR_FD_FONT_6   RCDATA "fonts\\6.otf"
+IDR_FD_FONT_7   RCDATA "fonts\\7.otf"
+IDR_FD_FONT_8   RCDATA "fonts\\8.otf"
+IDR_FD_FONT_9   RCDATA "fonts\\9.otf"
+IDR_FD_FONT_10  RCDATA "fonts\\10.otf"
+IDR_FD_FONT_11  RCDATA "fonts\\11.otf"
