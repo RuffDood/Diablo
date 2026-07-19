@@ -8,7 +8,7 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 # Dossiers exclus du cadastre (bruit / non versionne / genere)
-$script:excludedDirectories = @('.git', 'node_modules', 'guide', 'dist', '.turbo', '.netlify')
+$script:excludedDirectories = @('.git', 'node_modules', 'guide', 'dist', '.turbo', '.netlify', 'analysis-cache', '__pycache__')
 
 # Sous-arbres locaux dont seule une branche gouvernée doit entrer au cadastre.
 # Les ancêtres du sous-arbre sont conservés afin que l'arbre reste navigable.

@@ -44,6 +44,23 @@ En clair : côté **données et runtime**, `data-TCP` demeure la source historiq
 - **Git** : ne change **jamais** de branche, et ne commit ni ne push jamais, sans un `GO` dédié et explicite de Guillaume.
 - **Runtime Diablo** : lorsqu'une opération sur Diablo, D2RLoader ou le profil BKVince exige de libérer des fichiers verrouillés, ferme toi-même les instances concernées du jeu. Ne demande pas à Vincent de fermer le jeu. Relance ensuite une seule instance si la validation de la tâche l'exige.
 
+## Atelier persistant de reverse engineering D2R 3.2
+
+Pour tout memory patch ou plugin natif ciblant `D2R.exe 3.2.92777`, commence
+obligatoirement par `npm run re:d2r32 -- status`, puis interroge le workbench
+`reverse-engineering/d2r-3.2.92777/` avec `known`, `function`, `xrefs` ou
+`bytes`. Si l'image et l'index sont vérifiés, ne redumpe pas le processus et ne
+réimporte pas le binaire : réutilise le projet Ghidra persistant via
+`npm run re:d2r32:ghidra -- ...`.
+
+Les images déchiffrées, projets Ghidra, index SQLite, corpus intermédiaires et
+clones de référence résident sous `analysis-cache/`, restent locaux, sont
+gitignorés et ne doivent jamais être commités. Les manifestes, RVA prouvés,
+notes et scripts reproductibles sont versionnés. Toute nouvelle identification
+stable doit enrichir `known-rvas.json` avec sa source et son niveau de confiance;
+un nouveau build D2R reçoit un nouveau workbench et ne réutilise jamais les RVA
+92777 sans preuve.
+
 ## Développement de la plateforme
 
 - `npm install` puis `npm run dev` : lance le **dev-server** local (`scripts/dev-server.js`, port 4000, lit/écrit les `.txt`) et l'**admin** Vite (port 5173).
@@ -53,7 +70,7 @@ En clair : côté **données et runtime**, `data-TCP` demeure la source historiq
 
 Après toute modification **structurelle** (ajout / suppression / renommage de fichier ou dossier) :
 
-1. Régénère : `powershell -File scripts/generate-architecture.ps1` (exclut `.git`, `node_modules`, `guide`, `dist`, `.turbo`, `.netlify`).
+1. Régénère : `powershell -File scripts/generate-architecture.ps1` (exclut `.git`, `node_modules`, `guide`, `dist`, `.turbo`, `.netlify`, `analysis-cache`, `__pycache__`).
 2. Valide : `node scripts/validate-cartographie/validate.mjs` → doit afficher `VALID`.
 
 Le générateur préserve les annotations manuelles (`role`, `summary`, `agentAccess`) : enrichis-les pour toute zone signifiante.

@@ -30,7 +30,11 @@
     "generate:bkvince-itemtypes": "node scripts/migrate-bkvince/rebuild-itemtypes.js",
     "test:bkvince-itemtypes": "node scripts/migrate-bkvince/rebuild-itemtypes.js --check",
     "generate:bkvince-staffmods": "node scripts/migrate-bkvince/generate-staffmod-patch.mjs",
-    "test:bkvince-staffmods": "node scripts/migrate-bkvince/generate-staffmod-patch.mjs --check"
+    "test:bkvince-staffmods": "node scripts/migrate-bkvince/generate-staffmod-patch.mjs --check",
+    "re:d2r32": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/d2r32.ps1",
+    "re:d2r32:init": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/Initialize-D2R32Workbench.ps1",
+    "re:d2r32:ghidra-import": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/Import-D2R32Ghidra.ps1",
+    "re:d2r32:ghidra": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/Invoke-D2R32Ghidra.ps1"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",

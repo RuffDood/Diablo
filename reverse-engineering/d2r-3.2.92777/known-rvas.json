@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "build": 92777,
+  "imageBase": "0x140000000",
+  "entries": [
+    {
+      "rva": "0x2F48C0",
+      "name": "GetItemBaseDurability",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/durability-loss-resistance-3.2.md",
+      "notes": "Native base-durability path hooked by DurabilityResistance."
+    },
+    {
+      "rva": "0x436830",
+      "name": "D2GAME_SKILLMANA_Consume",
+      "kind": "function",
+      "confidence": "high",
+      "source": "D2RL-Plugins plugin-skills 2.0.1 (commit dc75b49ffbb67b887d7757ee00ee9a03bcde5d8a)",
+      "notes": "Native mana and charged-item consumption path used by the official plugin pack."
+    },
+    {
+      "rva": "0x43921F",
+      "name": "WeaponQuantityDelta",
+      "kind": "patch-site",
+      "confidence": "high",
+      "source": "data-BKVince/d2rloader/patches/infinite-item-quantity-and-tomes.json",
+      "notes": "Weapon/arrow/bolt/throwable quantity delta byte."
+    },
+    {
+      "rva": "0x441B10",
+      "name": "ApplyDurabilityLoss",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/durability-loss-resistance-3.2.md",
+      "notes": "Native durability-loss routine; 4 percent weapon and 10 percent armor thresholds."
+    },
+    {
+      "rva": "0x442C78",
+      "name": "ForceMagicPrefixSite",
+      "kind": "patch-site",
+      "confidence": "high",
+      "source": "Mission/memory-patches-portage-3.2.json",
+      "notes": "Validated 3.2 equivalent of the legacy force-magic-prefix edit."
+    },
+    {
+      "rva": "0x442CF0",
+      "name": "ForceMagicSuffixSite",
+      "kind": "patch-site",
+      "confidence": "high",
+      "source": "Mission/memory-patches-portage-3.2.json",
+      "notes": "Validated 3.2 equivalent of the legacy force-magic-suffix edit."
+    },
+    {
+      "rva": "0x46F090",
+      "name": "SynchronizeItemAndBoundSkillQuantity",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/memory-patches-portage-3.2.json",
+      "notes": "Central routine reached by the Book path; updates STAT_QUANTITY and the bound scroll/book skill."
+    },
+    {
+      "rva": "0x47145D",
+      "name": "RejectedJavelinQuantityCandidate",
+      "kind": "rejected-site",
+      "confidence": "high",
+      "source": "Mission/memory-patches-portage-3.2.json",
+      "notes": "Explicit Javelin item-type path (0x29), not the tome path."
+    },
+    {
+      "rva": "0x4F5849",
+      "name": "RejectedBookQuantityCandidate",
+      "kind": "rejected-site",
+      "confidence": "high",
+      "source": "Mission/memory-patches-portage-3.2.json",
+      "notes": "Rejected candidate retained vanilla for regression checks."
+    },
+    {
+      "rva": "0x542F40",
+      "name": "GAME_GetPlayerCountBonus",
+      "kind": "function",
+      "confidence": "high",
+      "source": "D2RL-Plugins plugin-misc 2.0.1 (commit dc75b49ffbb67b887d7757ee00ee9a03bcde5d8a)",
+      "notes": "Computes per-monster player-count bonuses. BKVince hooks it with strict expected bytes to cap monster HP scaling independently at players 8 while the requested difficulty can remain 65535."
+    },
+    {
+      "rva": "0x5817BD",
+      "name": "BookQuantityDeltaBeforeSynchronization",
+      "kind": "patch-site",
+      "confidence": "high",
+      "source": "data-BKVince/d2rloader/patches/infinite-item-quantity-and-tomes.json",
+      "notes": "Loads -1 into r9d after the Book type check and before the central quantity synchronization call."
+    }
+  ]
+}

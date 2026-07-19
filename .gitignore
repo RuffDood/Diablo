@@ -14,6 +14,10 @@ dist/
 .netlify/
 deno.lock
 
+# Reverse engineering D2R : images du jeu, projets Ghidra et index locaux.
+# Les manifestes, notes et outils reproductibles restent versionnes.
+reverse-engineering/**/analysis-cache/
+
 # Reference externe : guide D2R communautaire (clone local, non versionne)
 guide/
 
