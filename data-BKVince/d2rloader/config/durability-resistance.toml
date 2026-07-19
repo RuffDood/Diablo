@@ -1,6 +1,3 @@
-# BKVince preset for the mod-local DurabilityResistance plugin.
-# Changes take effect after a cold start.
-
 [durability_loss]
 enabled = true
 # Higher number = slower durability loss.
@@ -26,6 +23,14 @@ max_durability_percent = 50
 force_maximum_durability = false
 # These settings affect newly generated ethereal items only. The item remains
 # ethereal and normally cannot be repaired.
+
+[ranged_weapons]
+# false = vanilla: bows and crossbows do not use durability.
+# true = bows, crossbows, and Amazon bows use their existing weapons.txt
+# durability values (20..55) and can be repaired by merchants.
+# Because ethereal eligibility requires durability, true also allows these
+# weapons to become ethereal unless another plugin excludes their item type.
+bows_and_crossbows_have_durability = false
 
 [diagnostics]
 enabled = false

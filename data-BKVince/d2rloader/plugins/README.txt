@@ -185,7 +185,9 @@ declares `PluginFlags::NativeHooks` so the signature-checked hook can load.
   server pickup path.
 * `DurabilityResistance.dll` applies separate normal and ethereal resistance to
   the native durability-loss check, and exposes the ethereal maximum-durability
-  percentage. Its config is `d2rloader/config/durability-resistance.toml`.
+  percentage. Version 1.1.0 can also enable durability and merchant repair for
+  bow, crossbow, and Amazon bow families. Its config is
+  `d2rloader/config/durability-resistance.toml`.
 * `NoEtherealItemTypes.dll` prevents configured `itemtypes.txt` families from
   ever entering the ethereal creation path. Its config is
   `d2rloader/config/no-ethereal-item-types.toml`.

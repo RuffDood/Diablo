@@ -5,6 +5,23 @@
 
 namespace tcp::durability {
 
+constexpr std::uint32_t PackItemTypeCode(
+    char first,
+    char second,
+    char third,
+    char fourth = ' '
+) noexcept {
+    return static_cast<std::uint32_t>(static_cast<std::uint8_t>(first))
+        | (static_cast<std::uint32_t>(static_cast<std::uint8_t>(second)) << 8)
+        | (static_cast<std::uint32_t>(static_cast<std::uint8_t>(third)) << 16)
+        | (static_cast<std::uint32_t>(static_cast<std::uint8_t>(fourth)) << 24);
+}
+
+constexpr bool IsBowOrCrossbowItemTypeCode(std::uint32_t code) noexcept {
+    return code == PackItemTypeCode('b', 'o', 'w')
+        || code == PackItemTypeCode('x', 'b', 'o', 'w');
+}
+
 constexpr std::uint32_t ClampResistance(std::uint32_t value) noexcept {
     return std::min(value, 100u);
 }

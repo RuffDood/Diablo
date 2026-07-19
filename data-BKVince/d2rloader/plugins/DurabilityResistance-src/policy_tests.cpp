@@ -5,6 +5,11 @@
 using namespace tcp::durability;
 
 int main() {
+    static_assert(IsBowOrCrossbowItemTypeCode(PackItemTypeCode('b', 'o', 'w')));
+    static_assert(IsBowOrCrossbowItemTypeCode(PackItemTypeCode('x', 'b', 'o', 'w')));
+    static_assert(!IsBowOrCrossbowItemTypeCode(PackItemTypeCode('a', 'b', 'o', 'w')));
+    static_assert(!IsBowOrCrossbowItemTypeCode(PackItemTypeCode('m', 'i', 's', 's')));
+
     static_assert(ClampResistance(125) == 100);
     static_assert(ClampEtherealMaxPercent(0) == 1);
     static_assert(ClampEtherealMaxPercent(125) == 125);

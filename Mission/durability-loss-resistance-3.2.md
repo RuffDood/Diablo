@@ -6,10 +6,11 @@ Option A retenue par Vincent le 18 juillet 2026 : entreprendre ce memory edit
 immédiatement après la validation fonctionnelle des tomes TP/ID illimités, puis
 reprendre `pierce-res` et les autres memory edits.
 
-Le périmètre couvre les armes à durabilité, les pièces d'armure et la durabilité
-interne des armes de jet lorsqu'elles sont utilisées en mêlée. La consommation
-d'une unité par projectile lancé passe par une routine séparée et demeure hors
-du périmètre de ce plugin.
+Le périmètre couvre les armes à durabilité, les pièces d'armure, la durabilité
+interne des armes de jet lorsqu'elles sont utilisées en mêlée et l'activation
+optionnelle de la durabilité pour les bows, crossbows et Amazon bows. La
+consommation d'une unité par projectile lancé passe par une routine séparée et
+demeure hors du périmètre de ce plugin.
 
 ## Objectif gameplay
 
@@ -17,7 +18,7 @@ Permettre aux armes et armures de perdre leur durabilité moins souvent, afin
 d'allonger le temps entre les réparations sans modifier les affixes, le format
 des sauvegardes ni les coûts unitaires de réparation.
 
-Quatre réglages sont ajustables dans
+Cinq réglages sont ajustables dans
 `d2rloader/config/durability-resistance.toml` :
 
 - `normal_resistance_percent` : résistance à la perte pour un objet normal;
@@ -25,7 +26,10 @@ Quatre réglages sont ajustables dans
 - `max_durability_percent` : part de la durabilité maximale normale conservée
   lorsqu'un objet devient éthéré, de 1 à 200 %;
 - `force_maximum_durability` : surcharge le pourcentage et force la borne D2R
-  absolue de 255 points.
+  absolue de 255 points;
+- `bows_and_crossbows_have_durability` : conserve le comportement vanilla à
+  `false`; à `true`, active la durabilité et la réparation des bows, crossbows et
+  Amazon bows avec leurs valeurs déjà présentes dans `weapons.txt` (20 à 55).
 
 La résistance est appliquée au-dessus des probabilités natives, sans les
 remplacer : la fréquence effective vaut `chance vanilla × (100 - résistance) /
@@ -79,15 +83,27 @@ La génération éthérée est confirmée séparément :
 - `0x00443532` écrit le nouveau maximum, puis `0x00443541–0x00443553`
   initialise la durabilité courante à ce maximum.
 
+Les 42 bases bow/crossbow de `weapons.txt` portent déjà une durabilité comprise
+entre 20 et 55, mais `nodurability=1` la désactive. Le getter natif des records
+d'items au RVA `0x00314110` retourne des records compilés de `0x1C0` octets :
+`durability` est à `+0x121`, `nodurability` à `+0x122` et le type principal à
+`+0x12E`. Les records compilés d'`itemtypes.txt` ont un stride `0xE8`; leur code
+est à `+0x00`, leurs parents à `+0x04/+0x06` et leur flag de réparation à
+`+0x08`. La résolution doit suivre ces parents à l'exécution : l'Amazon Bow est
+le type compilé 86 dans le runtime testé, malgré sa ligne TSV 87.
+
 ## Implantation livrée
 
 `DurabilityResistance.dll` est un plugin D2RLoader mod-local, verrouillé à la
-build 92777 et à deux signatures strictes :
+build 92777 et à deux signatures strictes permanentes, plus une troisième
+signature conditionnelle lorsque la durabilité ranged est activée :
 
 - hook de la routine de perte au RVA `0x00441B10`, signature attendue
   `48 89 6C 24 10 56 57 41 54 41 56 41`;
 - hook du getter de stat de base au RVA `0x002F48C0`, signature attendue
-  `48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20`.
+  `48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20`;
+- hook conditionnel du getter des records d'items au RVA `0x00314110`, signature
+  attendue `40 57 48 83 EC 30 8B FA E8 73 C9 FE FF 3B B8`.
 
 Le premier hook effectue un tirage de résistance avec la seed native de l'unité,
 puis laisse la routine originale faire son tirage 4 %/10 %, sa décrémentation de
@@ -102,11 +118,19 @@ Sous 100 %, le bonus vanilla `+1` est conservé : pour une base de 20, les valeu
 durabilité normale et son double. Le résultat est borné à 255 et
 `force_maximum_durability=true` force directement cette borne absolue.
 
+Depuis la version 1.1.0, le troisième hook résout `bow` et `xbow` par les codes
+des records runtime et leur arbre d'équivalences, ce qui couvre aussi `abow` et
+les types dérivés sans dépendre d'un ID TSV fixe. Quand l'option est active, il
+met `nodurability` à zéro avant que le caller lise le record et active le flag
+`Repair` du type concret. Cette activation rend également ces armes admissibles
+à la génération éthérée, puisque D2R exige une durabilité pour appliquer le flag
+éthéré; un plugin d'exclusion de types peut neutraliser séparément cet effet.
+
 Sources : `data-BKVince/d2rloader/plugins/DurabilityResistance-src/`.
 Configuration : `data-BKVince/d2rloader/config/durability-resistance.toml`.
 Archive publique : `addons/DurabilityResistance/DurabilityResistance.zip`,
-contenant uniquement la DLL et le TOML, sans README ni sources. Archive 1.0.1 :
-SHA-256 `B509AF955BE992BEA0CEBE9C8204366460B657BFE9E6B3112129A8957541A772`.
+contenant uniquement la DLL et le TOML, sans README ni sources. Archive 1.1.0 :
+SHA-256 `8719496479899286AD1B30E9B654750510D4EE92BBDEA69F9315CC82519F0103`.
 
 ## Cible et méthode
 
@@ -127,7 +151,7 @@ SHA-256 `B509AF955BE992BEA0CEBE9C8204366460B657BFE9E6B3112129A8957541A772`.
 1. **Réussi** — RVA, fonctions englobantes, formule et signatures du build 92777
    documentés.
 2. **Réussi** — signatures et formule relues byte-exactes sur l'image d'analyse
-   déchiffrée; aucun patch JSON existant ne cible les deux fonctions hookées.
+   déchiffrée; aucun patch JSON existant ne cible les trois fonctions hookées.
 3. **Réussi pour l'extension** — compilation Release x64, tests unitaires de la
    politique, source/runtime SHA-256 identiques, puis cold-start 1.0.1 avec 20/20
    patches et 7/7 plugins, deux hooks acceptés et startup 24/24. La DLL validée
@@ -141,16 +165,28 @@ SHA-256 `B509AF955BE992BEA0CEBE9C8204366460B657BFE9E6B3112129A8957541A772`.
    La version 1.0.1 ajoute la couverture unitaire des cibles 25/50/75/100/200 et
    du réglage absolu 255; son cold-start et ses hashes sont consignés lors de sa
    reconstruction.
-4. Mesurer sur un nombre suffisant de coups admissibles que les fréquences arme
+4. **Réussi techniquement pour la version 1.1.0** — option ranged activée lors
+   d'un cold-start : troisième hook accepté à `0x00314110`, 20/20 patches, 8/8
+   plugins et startup 24/24. La relecture du runtime expansion confirme les 42
+   records bow/crossbow avec `nodurability=0` et leur type concret avec
+   `Repair=1`, sans échec; représentants relus : Short Bow 20, Light Crossbow 30
+   et Stag Bow 48. La DLL porte le SHA-256
+   `ACBF59CC6B4E5C5EA1E847C97D5443A3AB029F9CDC080A6E5BAE67AE08EB72DB` et
+   le TOML public, où l'option est désactivée par défaut, le SHA-256
+   `AF94E48E9955EB9FFD44D7F0E373436D4AF58AE74AA7BE9529946DF5A8D27C33`.
+5. Mesurer sur un nombre suffisant de coups admissibles que les fréquences arme
    et armure suivent les valeurs configurées et que chaque succès retire toujours
    exactement 1 point.
-5. Générer des exemplaires normaux et éthérés d'une même base avec plusieurs
+6. Générer des exemplaires normaux et éthérés d'une même base avec plusieurs
    valeurs du pourcentage, puis confirmer la durabilité maximale, la durabilité
    courante initiale, l'arrondi, la borne de sauvegarde et le coût de réparation.
-6. Tester arme à une main, arme à deux mains, dual wield, bouclier, chaque slot
+7. Tester arme à une main, arme à deux mains, dual wield, bouclier, chaque slot
    d'armure, objet éthéré, indestructible, self-repair et objet déjà brisé.
-7. Vérifier souris et manette, solo, hôte et joiner, sauvegarde/rechargement,
+8. Vérifier souris et manette, solo, hôte et joiner, sauvegarde/rechargement,
    réparation marchande et absence de désynchronisation. Pour les armes de jet,
    vérifier séparément qu'une attaque de mêlée à 100 % ne réduit plus la
    durabilité interne ni le stack, tandis qu'un projectile lancé continue de
    consommer exactement une unité.
+9. Avec l'option ranged active, tirer avec au moins un bow, un crossbow et un
+   Amazon bow, confirmer la perte selon la résistance configurée, le bris à zéro,
+   la réparation marchande, la sauvegarde/rechargement et le comportement éthéré.

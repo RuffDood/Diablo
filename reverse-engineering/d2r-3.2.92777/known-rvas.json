@@ -36,6 +36,14 @@
       "notes": "Returns the active compiled data-table container for the classic or expansion context. NoEtherealItemTypes uses it to resolve configured codes against the runtime itemtypes records."
     },
     {
+      "rva": "0x314110",
+      "name": "GetItemsTxtRecord",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/durability-loss-resistance-3.2.md",
+      "notes": "Returns a 0x1C0-byte compiled items record for a data context and class ID. DurabilityResistance 1.1.0 conditionally clears nodurability at +0x122 for bow/xbow families before the caller reads the record."
+    },
+    {
       "rva": "0x34A0E0",
       "name": "GetItemDataContext",
       "kind": "function",
