@@ -25,7 +25,47 @@
       "kind": "function",
       "confidence": "high",
       "source": "Mission/ed-min-max-jewel-fix-3.2.md",
-      "notes": "Central (unit, statId, layer) total-stat getter. The persistent 92777 index records 91 direct callers; the function resolves the unit stat list and ItemStatCost record before delegating to the recursive total-stat evaluator at RVA 0x2F9B10. EnhancedDamageMinMaxFix hooks its strict 15-byte prologue."
+      "notes": "Unit-level (unit, statId, layer) wrapper with 91 direct callers. It packs the key as (statId << 16) | layer, resolves ItemStatCost, then calls the full-stat lookup at 0x2F9B10. EnhancedDamageMinMaxFix 1.0.0 hooked this wrapper unsuccessfully."
+    },
+    {
+      "rva": "0x2F8AD0",
+      "name": "STATLIST_EvaluateStatOperations",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/ed-min-max-jewel-fix-3.2.md",
+      "notes": "Recursive ItemStatCost operation evaluator. Its 14-entry switch maps operation 13 to 0x2F9709, where an item-owned stat is combined with the configured op-stat value as a percentage."
+    },
+    {
+      "rva": "0x2F9A80",
+      "name": "STATLIST_GetBaseStatValue",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/ed-min-max-jewel-fix-3.2.md",
+      "notes": "Reads the packed stat from the base Stats array at stat-list offset 0x30 and applies the ItemStatCost minimum clamp."
+    },
+    {
+      "rva": "0x2F9B10",
+      "name": "STATLIST_GetTotalStatValue",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/ed-min-max-jewel-fix-3.2.md",
+      "notes": "Reads the packed stat from FullStats at offset 0xA8 for an extended list, or from base Stats at offset 0x30 otherwise. It is a lookup, not the recursive ItemStatCost evaluator. EnhancedDamageMinMaxFix 1.1.0 hooked this function unsuccessfully and also decoded the packed stat in reverse."
+    },
+    {
+      "rva": "0x2F9DB0",
+      "name": "STATLIST_UpdateUnitStat",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/ed-min-max-jewel-fix-3.2.md",
+      "notes": "Updates a computed FullStats entry and runs the native unit/callback propagation path. ABI proven from calls at 0x2FA476, 0x2FA4B1 and 0x2FA7DD: (statList, packedStat, value, itemStatCost, callbackUnit)."
+    },
+    {
+      "rva": "0x2FA430",
+      "name": "STATLIST_EvaluateAndUpdateStat",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/ed-min-max-jewel-fix-3.2.md",
+      "notes": "Evaluates a packed stat through 0x2F8AD0, recursively refreshes dependent op stats, and normally commits through 0x2F9DB0. Its operation switch at 0x2FA697 maps op=13 to 0x2FA8C7, which suppresses the commit when statList ownerType at +0x08 is UNIT_ITEM (4). EnhancedDamageMinMaxFix 1.2.0 hooks this routine and restores only the suppressed stats 17/18 update for effective nonweapon items; external in-game validation passed for melee and throwable weapon damage on 2026-07-20."
     },
     {
       "rva": "0x300A90",

@@ -11,60 +11,72 @@
 #include <cstdio>
 
 namespace {
-using tcp::enhanced_damage::CanOwnActiveEquipment;
-using tcp::enhanced_damage::IsEnhancedDamageStat;
-using tcp::enhanced_damage::MissingPercentContribution;
-using tcp::enhanced_damage::SaturatingAdd;
+using tcp::enhanced_damage::IsEnhancedDamagePackedStat;
+using tcp::enhanced_damage::ItemMaxDamagePercentStat;
+using tcp::enhanced_damage::ItemUnitType;
+using tcp::enhanced_damage::ShouldRestoreSuppressedUpdate;
 using tcp::enhanced_damage::WeaponItemTypeId;
 
 constexpr std::uint32_t SupportedBuild = 92777;
-constexpr std::uintptr_t UnitGetStatValueRva = 0x2F5C60;
-constexpr std::uintptr_t GetBaseStatRva = 0x2F48C0;
-constexpr std::uintptr_t GetInventoryRva = 0x34A360;
-constexpr std::uintptr_t GetStatListRva = 0x34B870;
+
+// D2R.exe 3.2.92777, proven against the persistent decrypted image.
+constexpr std::uintptr_t EvaluateAndUpdateStatRva = 0x2FA430;
+constexpr std::uintptr_t GetTotalStatRva = 0x2F9B10;
+constexpr std::uintptr_t UpdateUnitStatRva = 0x2F9DB0;
 constexpr std::uintptr_t GetUnitTypeRva = 0x34B9D0;
 constexpr std::uintptr_t CheckItemTypeRva = 0x373890;
-constexpr std::uintptr_t GetFirstItemRva = 0x388C10;
-constexpr std::uintptr_t GetNextItemRva = 0x38ABA0;
-constexpr std::size_t StatListOwnerOffset = 0;
-constexpr std::size_t MaximumTraversedItems = 4096;
-constexpr std::size_t MaximumSocketDepth = 2;
 
-using UnitGetStatValueFn = std::int32_t(__fastcall*)(void*, std::int32_t, std::uint16_t) noexcept;
-using GetBaseStatFn = std::int32_t(__fastcall*)(void*, std::int32_t, std::uint16_t) noexcept;
-using GetInventoryFn = void*(__fastcall*)(void*, const char*, std::int32_t) noexcept;
-using GetStatListFn = std::uint8_t*(__fastcall*)(void*) noexcept;
+constexpr std::size_t StatListUnitOffset = 0x00;
+constexpr std::size_t StatListOwnerTypeOffset = 0x08;
+constexpr std::size_t StatListOwnerOffset = 0xA0;
+constexpr std::size_t ItemStatCostOperationOffset = 0x50;
+
+using EvaluateAndUpdateStatFn = std::int32_t(__fastcall*)(
+    void*,
+    std::int32_t,
+    void*,
+    void*
+) noexcept;
+using GetTotalStatFn = std::int32_t(__fastcall*)(
+    void*,
+    std::int32_t,
+    void*
+) noexcept;
+using UpdateUnitStatFn = void(__fastcall*)(
+    void*,
+    std::int32_t,
+    std::int32_t,
+    void*,
+    void*
+) noexcept;
 using GetUnitTypeFn = std::int32_t(__fastcall*)(void*) noexcept;
 using CheckItemTypeFn = std::int32_t(__fastcall*)(void*, std::int32_t) noexcept;
-using GetFirstItemFn = void*(__fastcall*)(void*) noexcept;
-using GetNextItemFn = void*(__fastcall*)(void*) noexcept;
 
 const D2RL::PluginContext* Context{};
 std::uint8_t* Base{};
-UnitGetStatValueFn OriginalUnitGetStatValue{};
-GetBaseStatFn GetBaseStat{};
-GetInventoryFn GetInventory{};
-GetStatListFn GetStatList{};
+EvaluateAndUpdateStatFn OriginalEvaluateAndUpdateStat{};
+GetTotalStatFn GetTotalStat{};
+UpdateUnitStatFn UpdateUnitStat{};
 GetUnitTypeFn GetUnitType{};
 CheckItemTypeFn CheckItemType{};
-GetFirstItemFn GetFirstItem{};
-GetNextItemFn GetNextItem{};
-thread_local bool CorrectionActive{};
-std::atomic<std::uint64_t> CorrectedReads{};
-std::atomic<std::uint64_t> RestoredPercentPoints{};
-std::atomic<std::uint64_t> ScannedEquipmentItems{};
-std::atomic<std::uint64_t> ScannedSocketFillers{};
-std::atomic<std::uint64_t> TraversalGuardHits{};
+thread_local bool CorrectionWriteActive{};
+
+std::atomic<std::uint64_t> RestoredUpdates{};
+std::atomic<std::uint64_t> RestoredMaximumComponents{};
+std::atomic<std::uint64_t> RestoredMinimumComponents{};
+std::atomic<std::uint64_t> WeaponUpdatesLeftVanilla{};
+std::atomic<std::uint64_t> PostWriteVerificationFailures{};
+std::atomic<bool> FirstCorrectionLogged{};
 
 constexpr D2RL::PluginInfo Info{
     .infoSize = D2RL::PluginInfoSize,
     .apiVersion = D2RL_PLUGIN_API_VERSION,
     .id = "enhanced-damage-min-max-fix",
     .name = "Enhanced Damage Min/Max Fix",
-    .version = "1.0.0",
-    .author = "TCP",
-    .description = "Restores missing off-weapon Enhanced Damage components when flat minimum or maximum damage is present on D2R 3.2.92777.",
-    .flags = D2RL::PluginFlags::ModScopedOnly | D2RL::PluginFlags::NativeHooks,
+    .version = "1.2.0",
+    .author = "RuffnecKk",
+    .description = "Restores the off-weapon op=13 update suppressed by the Enhanced Damage plus minimum/maximum damage bug on D2R 3.2.92777.",
+    .flags = D2RL::PluginFlags::NativeHooks,
 };
 
 template<class T>
@@ -72,92 +84,140 @@ T At(std::uintptr_t rva) noexcept {
     return reinterpret_cast<T>(Base + rva);
 }
 
-struct CorrectionScope {
-    CorrectionScope() noexcept { CorrectionActive = true; }
-    ~CorrectionScope() { CorrectionActive = false; }
+template<class T>
+T ReadAt(void* address, std::size_t offset) noexcept {
+    return *reinterpret_cast<T*>(static_cast<std::uint8_t*>(address) + offset);
+}
+
+struct CorrectionWriteScope {
+    CorrectionWriteScope() noexcept { CorrectionWriteActive = true; }
+    ~CorrectionWriteScope() { CorrectionWriteActive = false; }
 };
 
-bool IsOwnedBy(void* item, void* owner) noexcept {
-    auto* statList = GetStatList(item);
-    return statList
-        && *reinterpret_cast<void* const*>(statList + StatListOwnerOffset) == owner;
+void* ResolveEffectiveItem(void* statList) noexcept {
+    auto* activeUnit = ReadAt<void*>(statList, StatListUnitOffset);
+    if (activeUnit && GetUnitType(activeUnit) == ItemUnitType) {
+        return activeUnit;
+    }
+
+    auto* originalOwner = ReadAt<void*>(statList, StatListOwnerOffset);
+    if (originalOwner && GetUnitType(originalOwner) == ItemUnitType) {
+        return originalOwner;
+    }
+    return nullptr;
 }
 
-std::int32_t CollectRawSocketPercent(
-    void* host,
-    std::int32_t stat,
-    std::size_t depth
+void LogFirstCorrection(
+    std::int32_t packedStat,
+    std::int32_t retainedValue,
+    std::int32_t evaluatedValue
 ) noexcept {
-    if (!host || depth >= MaximumSocketDepth) return 0;
-    auto* inventory = GetInventory(host, "EnhancedDamageMinMaxFix", __LINE__);
-    if (!inventory) return 0;
+    if (!Context || FirstCorrectionLogged.exchange(true, std::memory_order_relaxed)) {
+        return;
+    }
 
-    std::int32_t total{};
-    std::size_t traversed{};
-    for (auto* filler = GetFirstItem(inventory);
-         filler && traversed < MaximumTraversedItems;
-         filler = GetNextItem(filler)) {
-        ++traversed;
-        if (!IsOwnedBy(filler, host)) continue;
-        ScannedSocketFillers.fetch_add(1, std::memory_order_relaxed);
-        total = SaturatingAdd(total, GetBaseStat(filler, stat, 0));
-        total = SaturatingAdd(total, CollectRawSocketPercent(filler, stat, depth + 1));
-    }
-    if (traversed == MaximumTraversedItems) {
-        TraversalGuardHits.fetch_add(1, std::memory_order_relaxed);
-    }
-    return total;
+    char message[256]{};
+    std::snprintf(
+        message,
+        sizeof(message),
+        "EnhancedDamageMinMaxFix 1.2.0 applied its first off-weapon op=13 repair (stat=%u, retained=%d, evaluated=%d).",
+        static_cast<unsigned>(static_cast<std::uint32_t>(packedStat) >> 16U),
+        retainedValue,
+        evaluatedValue
+    );
+    Context->LogInfo(message);
 }
 
-std::int32_t MissingEquipmentPercent(void* owner, std::int32_t stat) noexcept {
-    auto* inventory = GetInventory(owner, "EnhancedDamageMinMaxFix", __LINE__);
-    if (!inventory) return 0;
+std::int32_t __fastcall HookEvaluateAndUpdateStat(
+    void* statList,
+    std::int32_t packedStat,
+    void* itemStatCost,
+    void* callbackUnit
+) noexcept {
+    const auto evaluatedValue = OriginalEvaluateAndUpdateStat(
+        statList,
+        packedStat,
+        itemStatCost,
+        callbackUnit
+    );
 
-    std::int32_t correction{};
-    std::size_t traversed{};
-    for (auto* item = GetFirstItem(inventory);
-         item && traversed < MaximumTraversedItems;
-         item = GetNextItem(item)) {
-        ++traversed;
-        if (!IsOwnedBy(item, owner)) continue;
-        if (CheckItemType(item, WeaponItemTypeId) != 0) continue;
+    if (CorrectionWriteActive
+        || !statList
+        || !itemStatCost
+        || !IsEnhancedDamagePackedStat(packedStat)) {
+        return evaluatedValue;
+    }
 
-        ScannedEquipmentItems.fetch_add(1, std::memory_order_relaxed);
-        auto rawPercent = GetBaseStat(item, stat, 0);
-        rawPercent = SaturatingAdd(rawPercent, CollectRawSocketPercent(item, stat, 0));
-        const auto propagatedPercent = OriginalUnitGetStatValue(item, stat, 0);
-        correction = SaturatingAdd(
-            correction,
-            MissingPercentContribution(rawPercent, propagatedPercent)
+    const auto ownerType = ReadAt<std::int32_t>(
+        statList,
+        StatListOwnerTypeOffset
+    );
+    const auto operation = ReadAt<std::uint8_t>(
+        itemStatCost,
+        ItemStatCostOperationOffset
+    );
+    if (ownerType != ItemUnitType) {
+        return evaluatedValue;
+    }
+
+    auto* effectiveItem = ResolveEffectiveItem(statList);
+    if (!effectiveItem) {
+        return evaluatedValue;
+    }
+
+    const bool effectiveItemIsWeapon =
+        CheckItemType(effectiveItem, WeaponItemTypeId) != 0;
+    if (effectiveItemIsWeapon) {
+        WeaponUpdatesLeftVanilla.fetch_add(1, std::memory_order_relaxed);
+        return evaluatedValue;
+    }
+
+    const auto retainedValue = GetTotalStat(
+        statList,
+        packedStat,
+        itemStatCost
+    );
+    if (!ShouldRestoreSuppressedUpdate(
+            ownerType,
+            operation,
+            packedStat,
+            effectiveItemIsWeapon,
+            evaluatedValue,
+            retainedValue
+        )) {
+        return evaluatedValue;
+    }
+
+    {
+        const CorrectionWriteScope scope;
+        UpdateUnitStat(
+            statList,
+            packedStat,
+            evaluatedValue,
+            itemStatCost,
+            callbackUnit
         );
     }
-    if (traversed == MaximumTraversedItems) {
-        TraversalGuardHits.fetch_add(1, std::memory_order_relaxed);
-    }
-    return correction;
-}
 
-std::int32_t __fastcall HookUnitGetStatValue(
-    void* unit,
-    std::int32_t stat,
-    std::uint16_t layer
-) noexcept {
-    const auto vanillaValue = OriginalUnitGetStatValue(unit, stat, layer);
-    if (CorrectionActive || !unit || !IsEnhancedDamageStat(stat, layer)) {
-        return vanillaValue;
-    }
-    if (!CanOwnActiveEquipment(GetUnitType(unit))) return vanillaValue;
-
-    const CorrectionScope scope;
-    const auto correction = MissingEquipmentPercent(unit, stat);
-    if (correction <= 0) return vanillaValue;
-
-    CorrectedReads.fetch_add(1, std::memory_order_relaxed);
-    RestoredPercentPoints.fetch_add(
-        static_cast<std::uint64_t>(correction),
-        std::memory_order_relaxed
+    const auto repairedValue = GetTotalStat(
+        statList,
+        packedStat,
+        itemStatCost
     );
-    return SaturatingAdd(vanillaValue, correction);
+    if (repairedValue != evaluatedValue) {
+        PostWriteVerificationFailures.fetch_add(1, std::memory_order_relaxed);
+        return evaluatedValue;
+    }
+
+    RestoredUpdates.fetch_add(1, std::memory_order_relaxed);
+    const auto stat = static_cast<std::uint32_t>(packedStat) >> 16U;
+    if (stat == static_cast<std::uint32_t>(ItemMaxDamagePercentStat)) {
+        RestoredMaximumComponents.fetch_add(1, std::memory_order_relaxed);
+    } else {
+        RestoredMinimumComponents.fetch_add(1, std::memory_order_relaxed);
+    }
+    LogFirstCorrection(packedStat, retainedValue, evaluatedValue);
+    return evaluatedValue;
 }
 
 auto Status(
@@ -165,18 +225,20 @@ auto Status(
     const D2RL::ConsoleCommandContext* command,
     void*
 ) noexcept -> D2RL::ConsoleCommandResult {
-    if (!command || !command->plugin) return D2RL::ConsoleCommandResult::Failed;
+    if (!command || !command->plugin) {
+        return D2RL::ConsoleCommandResult::Failed;
+    }
 
     char message[512]{};
     std::snprintf(
         message,
         sizeof(message),
-        "EnhancedDamageMinMaxFix 1.0.0: corrected reads=%llu; restored ED points=%llu; equipment scanned=%llu; socket fillers scanned=%llu; traversal guards=%llu.",
-        static_cast<unsigned long long>(CorrectedReads.load(std::memory_order_relaxed)),
-        static_cast<unsigned long long>(RestoredPercentPoints.load(std::memory_order_relaxed)),
-        static_cast<unsigned long long>(ScannedEquipmentItems.load(std::memory_order_relaxed)),
-        static_cast<unsigned long long>(ScannedSocketFillers.load(std::memory_order_relaxed)),
-        static_cast<unsigned long long>(TraversalGuardHits.load(std::memory_order_relaxed))
+        "EnhancedDamageMinMaxFix 1.2.0: restored op=13 updates=%llu; maximum components=%llu; minimum components=%llu; weapon updates left vanilla=%llu; post-write failures=%llu.",
+        static_cast<unsigned long long>(RestoredUpdates.load(std::memory_order_relaxed)),
+        static_cast<unsigned long long>(RestoredMaximumComponents.load(std::memory_order_relaxed)),
+        static_cast<unsigned long long>(RestoredMinimumComponents.load(std::memory_order_relaxed)),
+        static_cast<unsigned long long>(WeaponUpdatesLeftVanilla.load(std::memory_order_relaxed)),
+        static_cast<unsigned long long>(PostWriteVerificationFailures.load(std::memory_order_relaxed))
     );
     command->plugin->WriteConsoleMessage(message);
     return D2RL::ConsoleCommandResult::Handled;
@@ -184,18 +246,21 @@ auto Status(
 
 bool InstallHook() noexcept {
     constexpr std::array<std::uint8_t, 15> expected{
-        0x48, 0x89, 0x5C, 0x24, 0x10,
-        0x48, 0x89, 0x6C, 0x24, 0x18,
-        0x48, 0x89, 0x74, 0x24, 0x20
+        0x4C, 0x89, 0x4C, 0x24, 0x20,
+        0x4C, 0x89, 0x44, 0x24, 0x18,
+        0x89, 0x54, 0x24, 0x10,
+        0x53
     };
     if (!Context->InstallInlineHook(
-            UnitGetStatValueRva,
+            EvaluateAndUpdateStatRva,
             expected.data(),
             static_cast<std::uint32_t>(expected.size()),
-            HookUnitGetStatValue,
-            &OriginalUnitGetStatValue
+            HookEvaluateAndUpdateStat,
+            &OriginalEvaluateAndUpdateStat
         )) {
-        Context->LogError("EnhancedDamageMinMaxFix: stat-value signature mismatch; hook refused.");
+        Context->LogError(
+            "EnhancedDamageMinMaxFix: op=13 update signature mismatch; hook refused."
+        );
         return false;
     }
     return true;
@@ -206,33 +271,45 @@ D2RL_PLUGIN_EXPORT auto D2RLoaderGetPluginInfo() noexcept -> const D2RL::PluginI
     return &Info;
 }
 
-D2RL_PLUGIN_EXPORT auto D2RLoaderLoadPlugin(const D2RL::PluginContext* context) noexcept -> bool {
-    if (!context) return false;
+D2RL_PLUGIN_EXPORT auto D2RLoaderLoadPlugin(
+    const D2RL::PluginContext* context
+) noexcept -> bool {
+    if (!context) {
+        return false;
+    }
     Context = context;
     Base = reinterpret_cast<std::uint8_t*>(GetModuleHandleW(nullptr));
-    if (!Base) return false;
-    if (context->modDataVersionBuild != 0 && context->modDataVersionBuild != SupportedBuild) {
-        context->LogError("EnhancedDamageMinMaxFix: only D2R build 92777 is supported.");
+    if (!Base) {
+        return false;
+    }
+    if (context->modDataVersionBuild != 0
+        && context->modDataVersionBuild != SupportedBuild) {
+        context->LogError(
+            "EnhancedDamageMinMaxFix: only D2R build 92777 is supported."
+        );
         return false;
     }
 
-    GetBaseStat = At<GetBaseStatFn>(GetBaseStatRva);
-    GetInventory = At<GetInventoryFn>(GetInventoryRva);
-    GetStatList = At<GetStatListFn>(GetStatListRva);
+    GetTotalStat = At<GetTotalStatFn>(GetTotalStatRva);
+    UpdateUnitStat = At<UpdateUnitStatFn>(UpdateUnitStatRva);
     GetUnitType = At<GetUnitTypeFn>(GetUnitTypeRva);
     CheckItemType = At<CheckItemTypeFn>(CheckItemTypeRva);
-    GetFirstItem = At<GetFirstItemFn>(GetFirstItemRva);
-    GetNextItem = At<GetNextItemFn>(GetNextItemRva);
-    if (!InstallHook()) return false;
+    if (!InstallHook()) {
+        return false;
+    }
 
     if (!context->RegisterConsoleCommand(
             "enhanced-damage-min-max-fix",
             Status,
-            "Show restored off-weapon Enhanced Damage counters."
+            "Show off-weapon op=13 repair counters."
         )) {
-        context->LogWarn("EnhancedDamageMinMaxFix: status command could not be registered.");
+        context->LogWarn(
+            "EnhancedDamageMinMaxFix: status command could not be registered."
+        );
     }
-    context->LogInfo("EnhancedDamageMinMaxFix 1.0.0 active for D2R 3.2.92777.");
+    context->LogInfo(
+        "EnhancedDamageMinMaxFix 1.2.0 active for D2R 3.2.92777 (global/mod-local hybrid; op=13 update repair)."
+    );
     return true;
 }
 
