@@ -132,6 +132,18 @@ Archive publique : `addons/DurabilityResistance/DurabilityResistance.zip`,
 contenant uniquement la DLL et le TOML, sans README ni sources. Archive 1.1.0 :
 SHA-256 `8719496479899286AD1B30E9B654750510D4EE92BBDEA69F9315CC82519F0103`.
 
+## Distribution hybride 1.2.0 (20 juillet 2026)
+
+La DLL ne declare plus `PluginFlags::ModScopedOnly` et conserve
+`PluginFlags::NativeHooks`. Elle peut etre installee globalement dans
+`d2rloader/plugins` ou localement dans le dossier d'un mod. Le TOML actif est
+celui du contexte d'installation choisi par D2RLoader.
+
+- SHA-256 DLL Release x64 : `2EA3D096EB3AA244882911D43BDA93A6400378A427C5ADE7F152700FA65C03BC`
+- SHA-256 ZIP : `AC9FA22828743033E9838A9F84A532DD901C446B3B4C13DC07636C3117CAD70E`
+- archive verifiee : DLL et TOML uniquement a la racine
+- compilation Release, test de politique et exports D2RLoader valides
+
 ## Cible et méthode
 
 - cible exclusive : `D2R.exe 3.2.92777` sous D2RLoader 1.0.1-beta;

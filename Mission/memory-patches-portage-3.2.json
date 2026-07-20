@@ -32,7 +32,7 @@
     "pendingFromLegacyManifest": 0,
     "pendingSupplemental": 0,
     "pendingTotal": 0,
-    "deliveredOutsideLegacyManifest": 2,
+    "deliveredOutsideLegacyManifest": 3,
     "capturedPanels": 20,
     "capturedPanelsAlreadyInLegacyManifest": 1
   },
@@ -59,9 +59,6 @@
       "runtimePluginFilesScanned": 7,
       "runtimePluginFilesActive": 7,
       "runtimePluginFilesFailed": 0,
-      "playerDifficultyMaximumAcceptedInGame": 14,
-      "playerDifficultySafetyClampReason": "A user report reproduces corpse/body save rejection after death at players 16; no failure was reported through players 14. Until the corrupting subsystem is identified and validated, every command, server, and UI path is capped at 14.",
-      "playerDifficultySafetyClampValidation": "D2RLoader cold start applied all 20 enabled patches without failure; live process bytes confirmed the command maximum, server maximum, and all UI maximums at 14 while preserving the vanilla command clamp.",
       "monsterHpPlayerCountCap": 8,
       "monsterHpCapHookRva": "0x542F40",
       "monsterHpCapHookExpected": "48895C2418555741564883EC40498BD9",
@@ -763,17 +760,17 @@
       },
       {
         "name": "Player Difficulty Scaling Override (Actual)",
-        "classification": "safety-capped-awaiting-game-validation",
+        "classification": "patch-site-located",
         "confidence": "high",
-        "sites": [{ "rva": "0x425A66", "expected": "83F908", "implemented": "83F90E", "role": "raise the server ceiling from 8 to the safe maximum 14 while retaining the vanilla conditional move" }],
-        "decision": "The unlimited conditional-move bypass is withdrawn. This exact 3.2 setter still writes the shared server difficulty global at RVA 0x2AA6A30, but requests above 14 can no longer enter it through the supported command or UI paths."
+        "sites": [{ "rva": "0x425A69", "expected": "0F46C1", "futureIntent": "Replace cmovbe eax, ecx with mov eax, ecx; nop (89C890)." }],
+        "decision": "This exact 3.2 function writes the shared server difficulty global at RVA 0x2AA6A30."
       },
       {
         "name": "Player Difficulty Scaling Override (Command)",
-        "classification": "safety-capped-awaiting-game-validation",
+        "classification": "implemented-awaiting-game-validation",
         "confidence": "high",
-        "sites": [{ "rva": "0x188816", "expected": "41BC08000000", "implemented": "41BC0E000000", "role": "set the command maximum to 14 before the vanilla clamp at 0x188860" }],
-        "decision": "The raw parsed-value bypass at 0x188860 is removed. The original clamp remains byte-for-byte vanilla and now clamps every /players argument into 1..14 using the patched r12d maximum."
+        "sites": [{ "rva": "0x188860", "expected": "41BF01000000413BC7440F4FF8453BFC450F4CE7", "implemented": "4189C4 plus NOP17" }],
+        "decision": "The legacy 17-byte window expanded to 20 bytes because the 3.2 compiler uses r15d/r12d."
       },
       {
         "name": "Autogold: always pass cost (data)",
@@ -784,15 +781,15 @@
       },
       {
         "name": "Player Difficulty Scaling Override (Max/UI)",
-        "classification": "safety-capped-awaiting-game-validation",
+        "classification": "implemented-awaiting-game-validation",
         "confidence": "high",
         "sites": [
-          { "rva": "0x346ED", "expected": "BA01000000488BCF448D4207E892A6CF00", "implemented": "6A015A488BCF41B80E000000E892A6CF00", "role": "primary initialized-path range 1..14" },
-          { "rva": "0x3474E", "expected": "BA08000000", "implemented": "BA0E000000", "role": "primary fallback maximum 14" },
-          { "rva": "0xE1A09", "expected": "BA01000000488D0D5B1E9502448D4207E872D3C400", "implemented": "6A015A41B80E000000488D0D571E9502E872D3C400", "role": "secondary initialized-path range 1..14" },
-          { "rva": "0xE1A57", "expected": "BA08000000", "implemented": "BA0E000000", "role": "secondary fallback maximum 14" }
+          { "rva": "0x346ED", "expected": "BA01000000488BCF448D4207E892A6CF00", "implemented": "6A015A488BCF41B8FFFF0000E892A6CF00", "role": "primary initialized-path range 1..65535" },
+          { "rva": "0x3474E", "expected": "BA08000000", "implemented": "BAFFFF0000", "role": "primary fallback maximum 65535" },
+          { "rva": "0xE1A09", "expected": "BA01000000488D0D5B1E9502448D4207E872D3C400", "implemented": "6A015A41B8FFFF0000488D0D571E9502E872D3C400", "role": "secondary initialized-path range 1..65535" },
+          { "rva": "0xE1A57", "expected": "BA08000000", "implemented": "BAFFFF0000", "role": "secondary fallback maximum 65535" }
         ],
-        "decision": "Patch both lazy initializer paths and both fallback descriptors in code. This preserves the minimum of 1, exposes only the safe maximum 14, and keeps UI state consistent with the command and server limits."
+        "decision": "Patch both lazy initializer paths and both fallback descriptors in code. This preserves the minimum of 1, raises the maximum to 65535, and avoids fragile writes to live BSS objects."
       },
       {
         "name": "Hireling Follow Distance (Moving Owner)",
@@ -866,6 +863,12 @@
       "name": "Thorns and Burn Kill Credit",
       "status": "implemented-awaiting-game-validation",
       "targetPatch": "data-BKVince/d2rloader/patches/thorns-and-burn-kill-credit.json"
+    },
+    {
+      "name": "Charm Aura Zone Transition Fix",
+      "status": "implemented-awaiting-game-validation",
+      "targetPlugin": "data-BKVince/d2rloader/plugins/CharmInventoryAuras.dll",
+      "evidence": "Mission/charm-inventory-auras-3.2.md"
     }
   ]
 }

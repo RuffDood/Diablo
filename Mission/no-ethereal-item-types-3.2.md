@@ -56,6 +56,18 @@ exactement les équivalences du jeu.
 - liste `item_types` volontairement vide tant que Vincent n’a pas choisi les
   familles à activer : le plugin est chargé mais ne change encore aucun drop.
 
+## Distribution hybride 1.1.0 (20 juillet 2026)
+
+La DLL ne declare plus `PluginFlags::ModScopedOnly` et conserve
+`PluginFlags::NativeHooks`. Elle fonctionne depuis le dossier global
+`d2rloader/plugins` comme depuis le dossier local d'un mod. Dans les deux cas,
+le TOML est resolu par le contexte D2RLoader correspondant.
+
+- SHA-256 DLL Release x64 : `56CD7A727196051225F1E53D13CF0923615DF435F41C049CAA0B99C771E5883F`
+- SHA-256 ZIP : `7FFC14307093EFDF7C8D15CBF8B39A7AB51F539E63E2C804B97C8140847F00D0`
+- archive verifiee : DLL et TOML uniquement a la racine
+- compilation Release, test de politique et exports D2RLoader valides
+
 ## Validation requise
 
 1. Choisir au moins un code précis et, séparément, un parent pour la validation.

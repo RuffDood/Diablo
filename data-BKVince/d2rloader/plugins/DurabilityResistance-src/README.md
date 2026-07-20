@@ -1,6 +1,7 @@
 # DurabilityResistance
 
-Mod-local D2RLoader plugin for BKVince on D2R 3.2.92777.
+Hybrid D2RLoader plugin for D2R 3.2.92777. Version 1.2.0 can be installed
+globally in `d2rloader/plugins` or locally in a mod's plugin folder.
 
 It hooks the native durability update routine at RVA `0x00441B10`. A separate
 resistance percentage can suppress otherwise eligible durability checks for

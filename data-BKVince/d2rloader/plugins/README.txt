@@ -179,18 +179,23 @@ when either monster player-count cap is enabled, but declares no native-hook
 capability; D2RLoader 1.0.1-beta correctly rejects it. The local one-line patch
 declares `PluginFlags::NativeHooks` so the signature-checked hook can load.
 
-## TCP mod-local plugins
+## TCP hybrid and mod-local plugins
 
 * `PotionAutoPickup.dll` routes configured potion families through the vanilla
   server pickup path.
-* `DurabilityResistance.dll` applies separate normal and ethereal resistance to
+* `DurabilityResistance.dll` 1.2.0 is hybrid (global or mod-local) and applies separate normal and ethereal resistance to
   the native durability-loss check, and exposes the ethereal maximum-durability
   percentage. Version 1.1.0 can also enable durability and merchant repair for
   bow, crossbow, and Amazon bow families. Its config is
   `d2rloader/config/durability-resistance.toml`.
-* `NoEtherealItemTypes.dll` prevents configured `itemtypes.txt` families from
+* `NoEtherealItemTypes.dll` 1.1.0 is hybrid (global or mod-local) and prevents configured `itemtypes.txt` families from
   ever entering the ethereal creation path. Its config is
   `d2rloader/config/no-ethereal-item-types.toml`.
+* `CharmInventoryAuras.dll` 1.2.0 is hybrid (global or mod-local) and re-registers only identified inventory charms
+  that actually contain `item_aura`. Non-aura charms are left untouched, and
+  aura charms containing `item_nonclassskill` are skipped to preserve selected
+  oskills across the matching zone-transition path. The command
+  `charm-inventory-auras` reports runtime counters.
 * `EnhancedDamageMinMaxFix.dll` restores the missing off-weapon Enhanced Damage
   component when flat minimum or maximum damage triggers ItemStatCost operation
   13. Weapons retain vanilla local ED behavior. The command

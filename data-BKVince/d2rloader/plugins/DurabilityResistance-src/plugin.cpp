@@ -45,7 +45,7 @@ constexpr std::size_t ItemTypesCodeOffset = 0x00;
 constexpr std::size_t ItemTypesEquivalentOneOffset = 0x04;
 constexpr std::size_t ItemTypesEquivalentTwoOffset = 0x06;
 
-constexpr char DefaultConfig[] = R"toml(# BKVince durability resistance
+constexpr char DefaultConfig[] = R"toml(# Durability resistance
 # Values are percentages and take effect after a cold start.
 
 [durability_loss]
@@ -112,10 +112,10 @@ constexpr D2RL::PluginInfo Info{
     .apiVersion = D2RL_PLUGIN_API_VERSION,
     .id = "durability-resistance",
     .name = "Durability Resistance",
-    .version = "1.1.0",
-    .author = "TCP",
+    .version = "1.2.0",
+    .author = "RuffnecKk",
     .description = "Configurable durability resistance, ethereal maximum durability, and optional bow/crossbow durability for D2R 3.2.92777.",
-    .flags = D2RL::PluginFlags::ModScopedOnly | D2RL::PluginFlags::NativeHooks,
+    .flags = D2RL::PluginFlags::NativeHooks,
 };
 
 template<class T>
@@ -335,7 +335,7 @@ auto Status(
     std::snprintf(
         message,
         sizeof(message),
-        "DurabilityResistance 1.1.0: normal resistance %u%% (weapon %s, armor %s); ethereal resistance %u%% (weapon %s, armor %s); ethereal max %u%s; bow/crossbow durability %s (item records=%llu, repair types=%llu); prevented normal=%llu ethereal=%llu.",
+        "DurabilityResistance 1.2.0: normal resistance %u%% (weapon %s, armor %s); ethereal resistance %u%% (weapon %s, armor %s); ethereal max %u%s; bow/crossbow durability %s (item records=%llu, repair types=%llu); prevented normal=%llu ethereal=%llu.",
         Settings.normalResistance,
         normalWeapon,
         normalArmor,
@@ -434,7 +434,7 @@ D2RL_PLUGIN_EXPORT auto D2RLoaderLoadPlugin(const D2RL::PluginContext* context) 
         )) {
         context->LogWarn("DurabilityResistance: status command could not be registered.");
     }
-    context->LogInfo("DurabilityResistance 1.1.0 active for D2R 3.2.92777 (resistance, ethereal maximum, and optional bow/crossbow durability).");
+    context->LogInfo("DurabilityResistance 1.2.0 active for D2R 3.2.92777 (global/mod-local hybrid; resistance, ethereal maximum, and optional bow/crossbow durability).");
     return true;
 }
 

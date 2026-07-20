@@ -1,6 +1,7 @@
 # NoEtherealItemTypes
 
-Mod-local D2RLoader plugin for BKVince on D2R 3.2.92777.
+Hybrid D2RLoader plugin for D2R 3.2.92777. Version 1.1.0 can be installed
+globally in `d2rloader/plugins` or locally in a mod's plugin folder.
 
 The plugin hooks `ITEMS_CheckItemTypeId` at RVA `0x00373890`, but changes its
 answer only for the two calls made by the ethereal-generation path (return RVAs

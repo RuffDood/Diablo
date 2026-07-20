@@ -217,7 +217,7 @@ constexpr D2RL::PluginInfo Info{
     .id = "configurable-charsi-reward",
     .name = "Configurable Charsi Reward",
     .version = "2.1.0",
-    .author = "TCP",
+    .author = "RuffnecKk",
     .description = "Adds one to three native Charsi Imbues when a configured superunique or boss dies; no item drop or token.",
     .flags = D2RL::PluginFlags::NativeHooks,
 };

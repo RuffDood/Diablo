@@ -58,7 +58,7 @@ thread_local std::uint32_t TriggerCounter{};
 constexpr D2RL::PluginInfo Info{
     .infoSize=D2RL::PluginInfoSize, .apiVersion=D2RL_PLUGIN_API_VERSION,
     .id="potion-auto-pickup", .name="PotionAutoPickup", .version="1.0.0",
-    .author="TCP", .description="Configurable native potion autopickup for BKVince 3.2.92777.",
+    .author="RuffnecKk", .description="Configurable native potion autopickup for BKVince 3.2.92777.",
     .flags=D2RL::PluginFlags::ModScopedOnly | D2RL::PluginFlags::NativeHooks,
 };
 

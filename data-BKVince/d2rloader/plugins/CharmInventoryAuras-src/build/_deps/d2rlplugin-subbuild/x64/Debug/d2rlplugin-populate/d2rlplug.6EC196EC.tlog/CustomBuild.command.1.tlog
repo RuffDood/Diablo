@@ -1,0 +1,150 @@
+^C:\WORKSPACES\DIABLO\DATA-BKVINCE\D2RLOADER\PLUGINS\CHARMINVENTORYAURAS-SRC\BUILD\_DEPS\D2RLPLUGIN-SUBBUILD\CMAKEFILES\3145C25799E61852C319008BBA7DB023\D2RLPLUGIN-POPULATE-MKDIR.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild/d2rlplugin-populate-prefix/tmp/d2rlplugin-populate-mkdirs.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild/d2rlplugin-populate-prefix/src/d2rlplugin-populate-stamp/Debug/d2rlplugin-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\WORKSPACES\DIABLO\DATA-BKVINCE\D2RLOADER\PLUGINS\CHARMINVENTORYAURAS-SRC\BUILD\_DEPS\D2RLPLUGIN-SUBBUILD\CMAKEFILES\3145C25799E61852C319008BBA7DB023\D2RLPLUGIN-POPULATE-DOWNLOAD.RULE
+setlocal
+cd C:\Workspaces\Diablo\data-BKVince\d2rloader\plugins\CharmInventoryAuras-src\build\_deps
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild/d2rlplugin-populate-prefix/tmp/d2rlplugin-populate-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild/d2rlplugin-populate-prefix/src/d2rlplugin-populate-stamp/Debug/d2rlplugin-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\WORKSPACES\DIABLO\DATA-BKVINCE\D2RLOADER\PLUGINS\CHARMINVENTORYAURAS-SRC\BUILD\_DEPS\D2RLPLUGIN-SUBBUILD\CMAKEFILES\3145C25799E61852C319008BBA7DB023\D2RLPLUGIN-POPULATE-UPDATE.RULE
+setlocal
+cd C:\Workspaces\Diablo\data-BKVince\d2rloader\plugins\CharmInventoryAuras-src\build\_deps\d2rlplugin-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -Dcan_fetch=YES -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild/d2rlplugin-populate-prefix/tmp/d2rlplugin-populate-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\WORKSPACES\DIABLO\DATA-BKVINCE\D2RLOADER\PLUGINS\CHARMINVENTORYAURAS-SRC\BUILD\_DEPS\D2RLPLUGIN-SUBBUILD\CMAKEFILES\3145C25799E61852C319008BBA7DB023\D2RLPLUGIN-POPULATE-PATCH.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild/d2rlplugin-populate-prefix/src/d2rlplugin-populate-stamp/Debug/d2rlplugin-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\WORKSPACES\DIABLO\DATA-BKVINCE\D2RLOADER\PLUGINS\CHARMINVENTORYAURAS-SRC\BUILD\_DEPS\D2RLPLUGIN-SUBBUILD\CMAKEFILES\3145C25799E61852C319008BBA7DB023\D2RLPLUGIN-POPULATE-CONFIGURE.RULE
+setlocal
+cd C:\Workspaces\Diablo\data-BKVince\d2rloader\plugins\CharmInventoryAuras-src\build\_deps\d2rlplugin-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild/d2rlplugin-populate-prefix/src/d2rlplugin-populate-stamp/Debug/d2rlplugin-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\WORKSPACES\DIABLO\DATA-BKVINCE\D2RLOADER\PLUGINS\CHARMINVENTORYAURAS-SRC\BUILD\_DEPS\D2RLPLUGIN-SUBBUILD\CMAKEFILES\3145C25799E61852C319008BBA7DB023\D2RLPLUGIN-POPULATE-BUILD.RULE
+setlocal
+cd C:\Workspaces\Diablo\data-BKVince\d2rloader\plugins\CharmInventoryAuras-src\build\_deps\d2rlplugin-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild/d2rlplugin-populate-prefix/src/d2rlplugin-populate-stamp/Debug/d2rlplugin-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\WORKSPACES\DIABLO\DATA-BKVINCE\D2RLOADER\PLUGINS\CHARMINVENTORYAURAS-SRC\BUILD\_DEPS\D2RLPLUGIN-SUBBUILD\CMAKEFILES\3145C25799E61852C319008BBA7DB023\D2RLPLUGIN-POPULATE-INSTALL.RULE
+setlocal
+cd C:\Workspaces\Diablo\data-BKVince\d2rloader\plugins\CharmInventoryAuras-src\build\_deps\d2rlplugin-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild/d2rlplugin-populate-prefix/src/d2rlplugin-populate-stamp/Debug/d2rlplugin-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\WORKSPACES\DIABLO\DATA-BKVINCE\D2RLOADER\PLUGINS\CHARMINVENTORYAURAS-SRC\BUILD\_DEPS\D2RLPLUGIN-SUBBUILD\CMAKEFILES\3145C25799E61852C319008BBA7DB023\D2RLPLUGIN-POPULATE-TEST.RULE
+setlocal
+cd C:\Workspaces\Diablo\data-BKVince\d2rloader\plugins\CharmInventoryAuras-src\build\_deps\d2rlplugin-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild/d2rlplugin-populate-prefix/src/d2rlplugin-populate-stamp/Debug/d2rlplugin-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\WORKSPACES\DIABLO\DATA-BKVINCE\D2RLOADER\PLUGINS\CHARMINVENTORYAURAS-SRC\BUILD\_DEPS\D2RLPLUGIN-SUBBUILD\CMAKEFILES\1737C1EFFB896DB8BAA9185ED84EF282\D2RLPLUGIN-POPULATE-COMPLETE.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild/CMakeFiles/Debug
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild/CMakeFiles/Debug/d2rlplugin-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild/d2rlplugin-populate-prefix/src/d2rlplugin-populate-stamp/Debug/d2rlplugin-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\WORKSPACES\DIABLO\DATA-BKVINCE\D2RLOADER\PLUGINS\CHARMINVENTORYAURAS-SRC\BUILD\_DEPS\D2RLPLUGIN-SUBBUILD\CMAKEFILES\A926140FA9069D4353E22B744F03A8A9\D2RLPLUGIN-POPULATE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\WORKSPACES\DIABLO\DATA-BKVINCE\D2RLOADER\PLUGINS\CHARMINVENTORYAURAS-SRC\BUILD\_DEPS\D2RLPLUGIN-SUBBUILD\CMAKELISTS.TXT
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild -BC:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild --check-stamp-file C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

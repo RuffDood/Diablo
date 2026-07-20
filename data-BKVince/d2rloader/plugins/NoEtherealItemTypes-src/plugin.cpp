@@ -30,7 +30,7 @@ constexpr std::uintptr_t EtherealArmorCheckReturnRva = 0x4432E9;
 constexpr std::uintptr_t ItemTypesRecordsOffset = 0x1348;
 constexpr std::uintptr_t ItemTypesCountOffset = 0x1350;
 
-constexpr char DefaultConfig[] = R"toml(# BKVince item-type ethereal exclusions
+constexpr char DefaultConfig[] = R"toml(# Item-type ethereal exclusions
 # Item type codes come from the Code column of itemtypes.txt.
 # Parent types use D2R's native inheritance: "armo" covers its child types.
 
@@ -78,10 +78,10 @@ constexpr D2RL::PluginInfo Info{
     .apiVersion = D2RL_PLUGIN_API_VERSION,
     .id = "no-ethereal-item-types",
     .name = "No Ethereal Item Types",
-    .version = "1.0.0",
-    .author = "TCP",
+    .version = "1.1.0",
+    .author = "RuffnecKk",
     .description = "Prevents configured itemtypes.txt families from ever becoming ethereal on D2R 3.2.92777.",
-    .flags = D2RL::PluginFlags::ModScopedOnly | D2RL::PluginFlags::NativeHooks,
+    .flags = D2RL::PluginFlags::NativeHooks,
 };
 
 template<class T>
@@ -299,7 +299,7 @@ auto Status(
     std::snprintf(
         message,
         sizeof(message),
-        "NoEtherealItemTypes 1.0.0: %s; configured=[%s]; runtime resolved=%u unresolved=%u; excluded eligible generations=%llu.",
+        "NoEtherealItemTypes 1.1.0: %s; configured=[%s]; runtime resolved=%u unresolved=%u; excluded eligible generations=%llu.",
         Settings.enabled ? "enabled" : "disabled",
         types,
         ResolvedTypeCount.load(std::memory_order_relaxed),
@@ -358,7 +358,7 @@ D2RL_PLUGIN_EXPORT auto D2RLoaderLoadPlugin(const D2RL::PluginContext* context) 
         )) {
         context->LogWarn("NoEtherealItemTypes: status command could not be registered.");
     }
-    context->LogInfo("NoEtherealItemTypes 1.0.0 active for D2R 3.2.92777.");
+    context->LogInfo("NoEtherealItemTypes 1.1.0 active for D2R 3.2.92777 (global/mod-local hybrid).");
     return true;
 }
 

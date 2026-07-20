@@ -1,0 +1,3 @@
+C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild/CMakeFiles/d2rlplugin-populate.dir
+C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild/CMakeFiles/ALL_BUILD.dir
+C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/CharmInventoryAuras-src/build/_deps/d2rlplugin-subbuild/CMakeFiles/ZERO_CHECK.dir

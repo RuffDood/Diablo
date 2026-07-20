@@ -4,14 +4,6 @@
   "imageBase": "0x140000000",
   "entries": [
     {
-      "rva": "0x188816",
-      "name": "PlayersCommandMaximumConstant",
-      "kind": "patch-site",
-      "confidence": "high",
-      "source": "data-BKVince/d2rloader/patches/player-difficulty-overrides.json",
-      "notes": "Initializes r12d with the /players command maximum immediately before the vanilla clamp at 0x188860. BKVince sets it to the verified-safe ceiling of 14 and leaves the clamp intact."
-    },
-    {
       "rva": "0x2F48C0",
       "name": "GetItemBaseDurability",
       "kind": "function",
@@ -68,6 +60,30 @@
       "notes": "Evaluates a packed stat through 0x2F8AD0, recursively refreshes dependent op stats, and normally commits through 0x2F9DB0. Its operation switch at 0x2FA697 maps op=13 to 0x2FA8C7, which suppresses the commit when statList ownerType at +0x08 is UNIT_ITEM (4). EnhancedDamageMinMaxFix 1.2.0 hooks this routine and restores only the suppressed stats 17/18 update for effective nonweapon items; external in-game validation passed for melee and throwable weapon damage on 2026-07-20."
     },
     {
+      "rva": "0x2F81A0",
+      "name": "STATLIST_MergeStatLists",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "Merges an item's extended stat list into a target unit. Clearing StatList[0] before calling this routine with mode 1 reproduces the 2.4 charm-aura re-registration path."
+    },
+    {
+      "rva": "0x2F8120",
+      "name": "STATLIST_GetOwner",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "Returns the owner stored by an item's extended stat list and writes its merge mode. The canonical refresh loop at 0x46F220 calls it before expiring and re-merging each owned inventory item."
+    },
+    {
+      "rva": "0x2F8290",
+      "name": "STATLIST_ExpireUnitStatlist",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "Canonical stat-list invalidation step called with (player, item) at 0x46F2C4, immediately before STATLIST_MergeStatLists. It clears the stale extended ownership/effects that a direct owner-pointer reset does not cover after death."
+    },
+    {
       "rva": "0x300A90",
       "name": "GetDataTablesForContext",
       "kind": "function",
@@ -84,12 +100,60 @@
       "notes": "Returns a 0x1C0-byte compiled items record for a data context and class ID. DurabilityResistance 1.1.0 conditionally clears nodurability at +0x122 for bow/xbow families before the caller reads the record."
     },
     {
+      "rva": "0x33EC70",
+      "name": "SKILLS_SetLeftActiveSkill",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "Canonical left-slot restore routine. It resolves a recreated skill by (skillId, ownerGUID) and stores it at skillList+0x08; CharmInventoryAuras uses it after re-merging aura charms."
+    },
+    {
+      "rva": "0x33EF10",
+      "name": "SKILLS_SetRightActiveSkill",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "Canonical right-slot restore routine. It resolves a recreated skill by (skillId, ownerGUID) and stores it at skillList+0x10; CharmInventoryAuras uses it after re-merging aura charms."
+    },
+    {
       "rva": "0x34A0E0",
       "name": "GetItemDataContext",
       "kind": "function",
       "confidence": "high",
       "source": "Mission/no-ethereal-item-types-3.2.md",
       "notes": "Returns the data-table context byte for an item unit immediately before item-record and item-type lookups."
+    },
+    {
+      "rva": "0x34A360",
+      "name": "UNITS_GetInventory",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "Resolves a unit's inventory pointer through the same +A0/+98/+90 reference path as the legacy 0x208330 routine."
+    },
+    {
+      "rva": "0x34A500",
+      "name": "UNITS_GetItemData",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "Returns the item-data pointer stored at unit+0x10. CharmInventoryAuras reads flags at +0x18 and the inventory-grid node position at +0xB8."
+    },
+    {
+      "rva": "0x34B6E0",
+      "name": "UNITS_GetSkillList",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "Returns the skill list stored through the player-unit path at +0x100. Active left and right skill pointers are at skillList+0x08 and +0x10; skill identity is the signed SkillsTxt ID plus owner GUID."
+    },
+    {
+      "rva": "0x34B870",
+      "name": "UNITS_GetStatListEx",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "Returns the extended stat-list pointer stored at unit+0x88; its first pointer is the current owning target unit."
     },
     {
       "rva": "0x34B9D0",
@@ -108,12 +172,20 @@
       "notes": "Checks an item against an itemtypes row through D2R's compiled equivalence LUT. The plugin filters only the two ethereal-generation callers."
     },
     {
-      "rva": "0x425A66",
-      "name": "ServerPlayerDifficultyMaximumCompare",
-      "kind": "patch-site",
+      "rva": "0x388C10",
+      "name": "INVENTORY_GetFirstItem",
+      "kind": "function",
       "confidence": "high",
-      "source": "data-BKVince/d2rloader/patches/player-difficulty-overrides.json",
-      "notes": "Server-side ceiling comparison in the setter that writes the shared player-difficulty global. BKVince raises the immediate from 8 to 14 while retaining the vanilla conditional move."
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "Validates the 0x01020304 inventory header and returns the first item pointer at inventory+0x10."
+    },
+    {
+      "rva": "0x38ABA0",
+      "name": "INVENTORY_GetNextItem",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "Validates an item unit, resolves ItemData, and returns the linked-list successor at ItemData+0xB0."
     },
     {
       "rva": "0x427150",
@@ -196,12 +268,44 @@
       "notes": "Central routine reached by the Book path; updates STAT_QUANTITY and the bound scroll/book skill."
     },
     {
+      "rva": "0x46F220",
+      "name": "RefreshPlayerItemStatLists",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "Native full player-item refresh: snapshots vitals and active skills, walks the inventory, obtains each owned item's stat-list mode, calls 0x2F8290 then 0x2F81A0, and restores the snapshot. CharmInventoryAuras 1.5.0 invokes it only after confirmed corpse recovery."
+    },
+    {
       "rva": "0x47145D",
       "name": "RejectedJavelinQuantityCandidate",
       "kind": "rejected-site",
       "confidence": "high",
       "source": "Mission/memory-patches-portage-3.2.json",
       "notes": "Explicit Javelin item-type path (0x29), not the tome path."
+    },
+    {
+      "rva": "0x486AE0",
+      "name": "CharmAuraZoneTransitionCall",
+      "kind": "call-site",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "Unique 3.2 equivalent of the legacy 0x2A041F call. Its return address 0x486AE5 selects the intended zone-transition caller of ActTransitionDispatch."
+    },
+    {
+      "rva": "0x491960",
+      "name": "SUNIT_AttachSound",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "Stores the 16-bit sound ID and source unit, then schedules the sound. CharmInventoryAuras filters this shared routine by the unique successful corpse-recovery return address 0x4B35A6 and sound ID 0x64."
+    },
+    {
+      "rva": "0x4B3594",
+      "name": "CorpseRecoverySuccessSoundCall",
+      "kind": "call-site",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "Unique 18-byte sequence that loads sound 0x64, passes the recovering player as both unit and source, and calls SUNIT_AttachSound after item transfer, corpse-list removal, world deletion and server-unit removal have succeeded. Return address is 0x4B35A6."
     },
     {
       "rva": "0x4F5849",
@@ -212,12 +316,20 @@
       "notes": "Rejected candidate retained vanilla for regression checks."
     },
     {
+      "rva": "0x502D00",
+      "name": "ActTransitionDispatch",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "D2R 3.2 equivalent of legacy 0x2EC080. CharmInventoryAuras hooks its build-specific prologue and refreshes charms only when the caller returns to 0x486AE5."
+    },
+    {
       "rva": "0x542F40",
       "name": "GAME_GetPlayerCountBonus",
       "kind": "function",
       "confidence": "high",
       "source": "D2RL-Plugins plugin-misc 2.0.1 (commit dc75b49ffbb67b887d7757ee00ee9a03bcde5d8a)",
-      "notes": "Computes per-monster player-count bonuses. BKVince hooks it with strict expected bytes to cap monster HP scaling independently at players 8 while the safe requested difficulty ceiling is 14."
+      "notes": "Computes per-monster player-count bonuses. BKVince hooks it with strict expected bytes to cap monster HP scaling independently at players 8 while the requested difficulty can remain 65535."
     },
     {
       "rva": "0x5817BD",

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Workspaces\Diablo\data-BKVince\d2rloader\plugins\CharmInventoryAuras-src\build\CMakeFiles\4de7550c2fa3c7b32628e3f969495d76\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{A455F9C2-332D-3062-B6A8-1364C5EAC8B1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
