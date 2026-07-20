@@ -1,0 +1,100 @@
+{
+  "dependencies": {
+    "particles": [
+      {
+        "path": "data/hd/vfx/particles/overlays/common/battleorders/vfx_battle_orders.particles"
+      }
+    ],
+    "models": [
+      {
+        "path": "data/hd/vfx/meshes/FX_Mesh_Bless.model"
+      }
+    ],
+    "skeletons": [],
+    "animations": [],
+    "textures": [
+      {
+        "path": "data/hd/vfx/textures/gradient/T_FX_Mirror_Gradient_02.texture"
+      }
+    ],
+    "physics": [],
+    "json": [],
+    "variantdata": [],
+    "objecteffects": [],
+    "other": []
+  },
+  "type": "OverlayDefinition",
+  "name": "battleorders",
+  "entities": [
+    {
+      "type": "Entity",
+      "name": "entity_root",
+      "id": 3238534566,
+      "components": [
+        {
+          "type": "VfxDefinitionComponent",
+          "name": "component_vfx",
+          "filename": "data/hd/vfx/particles/overlays/common/battleorders/vfx_battle_orders.particles",
+          "hardKillOnDestroy": false
+        }
+      ]
+    },
+    {
+      "type": "Entity",
+      "name": "droplight",
+      "id": 9999996974,
+      "components": [
+        {
+          "type": "TransformDefinitionComponent",
+          "name": "component_transform1",
+          "position": {
+            "x": 0,
+            "y": 6,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "inheritOnlyPosition": false
+        },
+        {
+          "type": "VfxDefinitionComponent",
+          "name": "entity_root_VfxDefinition",
+          "filename": "data/hd/vfx/particles/character/enemy/compellingorb/FX_CompellingOrb_Idle.particles",
+          "hardKillOnDestroy": true
+        }
+      ]
+    },
+    {
+      "type": "Entity",
+      "name": "entity_root",
+      "id": 992020576,
+      "components": [
+        {
+          "type": "VfxDefinitionComponent",
+          "name": "component_vfx",
+          "filename": "data/hd/vfx/particles/yupgoolg/battleorders_icon.particles",
+          "hardKillOnDestroy": true
+        },
+        {
+          "type": "TransformDefinitionComponent",
+          "name": "entity_root_TransformDefinition",
+          "position": {
+            "x": 127.1,
+            "y": 103.15,
+            "z": 124.4
+          },
+          "inheritOnlyPosition": true
+        }
+      ]
+    }
+  ]
+}
