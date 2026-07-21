@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "dev": "concurrently -n api,web -c blue,green \"node scripts/dev-server.js\" \"npm run dev -w apps/admin\"",
+    "dev:hero-editor": "npm run dev -w apps/hero-editor",
     "build": "turbo run build",
     "preview": "turbo run preview",
     "generate:schemas": "node scripts/build-data/gen-schemas.js",
@@ -35,6 +36,7 @@
     "re:d2r32": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/d2r32.ps1",
     "re:refs": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/references.ps1",
     "ref:d2moo": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/references.ps1 -Reference d2moo",
+    "ref:d2ssharp": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/references.ps1 -Reference d2ssharp",
     "re:d2r32:init": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/Initialize-D2R32Workbench.ps1",
     "re:d2r32:ghidra-import": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/Import-D2R32Ghidra.ps1",
     "re:d2r32:ghidra": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/Invoke-D2R32Ghidra.ps1"

@@ -1,0 +1,24 @@
+{
+  "name": "bkvince-hero-editor",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-catalog.cjs",
+    "check:catalog": "node scripts/generate-catalog.cjs --check",
+    "inspect:save": "node scripts/inspect-save.mjs",
+    "forge:save": "node scripts/forge-save.mjs",
+    "test": "node --test src/lib/*.test.js",
+    "dev": "npm run generate && vite",
+    "build": "npm run generate && npm test && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.4"
+  }
+}
