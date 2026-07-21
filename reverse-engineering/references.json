@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "references": [
+    {
+      "id": "d2moo",
+      "name": "D2MOO",
+      "repository": "https://github.com/ThePhrozenKeep/D2MOO.git",
+      "webUrl": "https://github.com/ThePhrozenKeep/D2MOO",
+      "branch": "master",
+      "commit": "19019806df7f3e877fa105b05395d1e3597e2316",
+      "pinnedAt": "2026-07-21",
+      "localPath": "analysis-cache/references/D2MOO",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "upstreamTarget": "Diablo II 1.10f",
+      "role": "semantic-reference-only",
+      "citationFormat": "D2MOO@{commit}:{path}:{line}",
+      "policy": [
+        "Use source code to recover gameplay intent, names and control-flow concepts.",
+        "Never reuse 32-bit addresses, ordinals, structure layouts or ABI assumptions in D2R.",
+        "Prove every D2R 3.2.92777 correspondence independently in the persistent workbench."
+      ]
+    }
+  ]
+}

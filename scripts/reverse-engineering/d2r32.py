@@ -11,6 +11,7 @@ import os
 import re
 import sqlite3
 import struct
+import subprocess
 import sys
 import tempfile
 from pathlib import Path
@@ -649,6 +650,19 @@ def command_known(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_reference(args: argparse.Namespace) -> int:
+    reference_script = Path(__file__).with_name("references.py")
+    command = [
+        sys.executable,
+        str(reference_script),
+        "symbol" if args.symbol else "search",
+        args.reference,
+    ]
+    command.extend([" ".join(args.term)] if args.symbol else args.term)
+    command.extend(["--limit", str(args.limit)])
+    return subprocess.run(command, cwd=REPO_ROOT, check=False).returncode
+
+
 def parse_pattern(pattern: str) -> tuple[bytes, bytes]:
     tokens = pattern.replace(",", " ").split()
     if not tokens:
@@ -827,6 +841,15 @@ def build_parser() -> argparse.ArgumentParser:
     known.add_argument("term", nargs="*")
     known.add_argument("--limit", type=int, default=80)
     known.set_defaults(handler=command_known)
+
+    reference = subparsers.add_parser(
+        "reference", help="Search a pinned external source reference"
+    )
+    reference.add_argument("reference", help="Reference id, for example d2moo")
+    reference.add_argument("term", nargs="+", help="Text or exact symbol to search")
+    reference.add_argument("--symbol", action="store_true", help="Match an exact symbol")
+    reference.add_argument("--limit", type=int, default=80)
+    reference.set_defaults(handler=command_reference)
 
     byte_search = subparsers.add_parser("bytes", help="Search an exact/wildcard byte pattern")
     byte_search.add_argument("pattern")

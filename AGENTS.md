@@ -65,6 +65,14 @@ stable doit enrichir `known-rvas.json` avec sa source et son niveau de confiance
 un nouveau build D2R reçoit un nouveau workbench et ne réutilise jamais les RVA
 92777 sans preuve.
 
+Les références de code externes sont gouvernées par
+`reverse-engineering/references.json` et clonées sous
+`analysis-cache/references/`. Pour D2MOO, utilise d'abord
+`npm run ref:d2moo -- status`, puis `search` ou `symbol`, et cite toute preuve
+avec le commit, le fichier et la ligne. D2MOO cible Diablo II 1.10f : ses
+adresses, ordinals, structures et ABI 32 bits ne sont jamais transposables sans
+preuve indépendante dans le workbench D2R 3.2.92777.
+
 ## Développement de la plateforme
 
 - `npm install` puis `npm run dev` : lance le **dev-server** local (`scripts/dev-server.js`, port 4000, lit/écrit les `.txt`) et l'**admin** Vite (port 5173).

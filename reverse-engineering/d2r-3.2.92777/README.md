@@ -15,6 +15,8 @@ npm run re:d2r32 -- known tome
 npm run re:d2r32 -- function 0x5817BD
 npm run re:d2r32 -- xrefs 0x46F090
 npm run re:d2r32 -- bytes "41 B9 ?? ?? ?? ??"
+npm run re:d2r32 -- reference d2moo durability
+npm run re:d2r32 -- reference d2moo ITEMS_UpdateDurability --symbol
 ```
 
 `function` desassemble uniquement la fonction concernee a partir de la table
@@ -65,6 +67,12 @@ marquees `low` tant qu'elles ne sont pas validees.
 resume les preuves deja acquises, les hypotheses rejetees ou encore ouvertes et
 la prochaine requete utile. Le consulter avant les corpus bruts evite de payer
 a nouveau leur lecture complete.
+
+`reference` interroge les clones externes gouvernés par
+`reverse-engineering/references.json` et imprime des citations stables incluant
+le commit, le chemin et la ligne. D2MOO reste une référence sémantique 1.10f :
+toute correspondance avec le build 92777 doit ensuite être prouvée par
+`function`, `xrefs`, `bytes` ou Ghidra.
 
 Deux images locales sont volontairement conservees. L'image `decrypted` garde
 le SHA-256 exact deja cite par la mission de portage. L'image `analysis` en est

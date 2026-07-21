@@ -35,6 +35,7 @@
     "relativePath": "analysis-cache/index/d2r32.sqlite",
     "formatVersion": 1
   },
+  "externalReferencesManifest": "../references.json",
   "ghidra": {
     "home": "C:/CodexTools/ghidra/ghidra_12.1.2_PUBLIC",
     "javaHome": "C:/Program Files/Eclipse Adoptium/jdk-21.0.11.10-hotspot",
@@ -50,6 +51,7 @@
   },
   "governedSources": [
     "Mission/memory-patches-portage-3.2.json",
+    "reverse-engineering/references.json",
     "data-BKVince/d2rloader/patches",
     "data-BKVince/d2rloader/plugins"
   ]
