@@ -4,6 +4,54 @@
   "imageBase": "0x140000000",
   "entries": [
     {
+      "rva": "0x8B2D0",
+      "name": "CLIENT_GetLocalDataContext",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "Returns the local client data-table context. SKILLTREE_CanAllocateSkill calls it first and passes the result to CLIENT_GetLocalPlayer. Its strict 10-byte signature is checked by BulkSkillPointAllocation."
+    },
+    {
+      "rva": "0x9A480",
+      "name": "CLIENT_GetLocalPlayer",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "Returns the local player for a client data context. The 92777 skill-tree eligibility path calls it at 0x14C3DB6; BulkSkillPointAllocation uses the same ABI to observe server-confirmed base-level changes."
+    },
+    {
+      "rva": "0xEC700",
+      "name": "CLIENT_SendFiveByteCommandPacket",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "Builds a five-byte client command from (opcode byte, value word, extra word) and submits it through the outgoing queue at 0xEE2A0. The skill-tree caller uses opcode 0x3B and one request per rank; the extra word is not a rank counter. BulkSkillPointAllocation hooks the strict 29-byte prologue and filters only opcode 0x3B."
+    },
+    {
+      "rva": "0xEE2A0",
+      "name": "CLIENT_QueueOutgoingPacket",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "Generic outgoing client packet queue called by the five-byte builder at 0xEC700. BulkSkillPointAllocation preserves this native route and sequences individual skill requests instead of extending protocol 0x3B."
+    },
+    {
+      "rva": "0x214220",
+      "name": "SKILLS_GetRuntimeMaxLevel",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "Returns the effective runtime maximum for a compiled SkillsTxt row and data context. SKILLTREE_CanAllocateSkill calls it at 0x14C3E54; BulkSkillPointAllocation uses it so MaxLvl 20, 25, 30 and other valid mod values are not hardcoded."
+    },
+    {
+      "rva": "0x2BD480",
+      "name": "ITEMS_BuildItemTooltip",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Builds the final item-tooltip string. Transmogrify 1.0.3 hooks its strict 32-byte prologue, calls the native builder first, then inserts a bounded red localized conversion hint below required-stat lines when the loaded ItemsTxt row enables Transmogrify. Cold-start and visual placement were confirmed in game on 2026-07-21."
+    },
+    {
       "rva": "0x2DC4B0",
       "name": "ITEMS_GetStatsDescription",
       "kind": "function",
@@ -100,12 +148,36 @@
       "notes": "Returns the active compiled data-table container for the classic or expansion context. NoEtherealItemTypes uses it to resolve configured codes against the runtime itemtypes records."
     },
     {
+      "rva": "0x314070",
+      "name": "DATATBLS_GetItemRecordFromItemCode",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Resolves a four-byte item code in the active data context, writes the class ID and returns the corresponding 0x1C0-byte ItemsTxt record. Transmogrify 1.0.3 validates its strict 16-byte entry signature and uses the returned record to obtain the configured output's localized name-string ID."
+    },
+    {
       "rva": "0x314110",
       "name": "GetItemsTxtRecord",
       "kind": "function",
       "confidence": "high",
       "source": "Mission/durability-loss-resistance-3.2.md",
       "notes": "Returns a 0x1C0-byte compiled items record for a data context and class ID. DurabilityResistance 1.1.0 conditionally clears nodurability at +0x122 for bow/xbow families before the caller reads the record."
+    },
+    {
+      "rva": "0x33D1E0",
+      "name": "SKILLS_GetBaseLevel",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "Returns the requested native skill-level view. The skill-tree eligibility path passes flags 0,0 for the base invested level; BulkSkillPointAllocation observes the same value and waits for it to change before sending the next mono-rank request."
+    },
+    {
+      "rva": "0x33DCD0",
+      "name": "SKILLS_GetSkillById",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "Resolves a player's skill by skill id and owner GUID. The eligibility path and BulkSkillPointAllocation pass owner GUID -1 for the base class skill."
     },
     {
       "rva": "0x33EC70",
@@ -188,12 +260,28 @@
       "notes": "Checks an item against an itemtypes row through D2R's compiled equivalence LUT. The plugin filters only the two ethereal-generation callers."
     },
     {
+      "rva": "0x382D20",
+      "name": "ITEMS_CapturePacketState",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Captures the server item's mode, inventory page, packed position and node page into a 16-byte state structure. Transmogrify records this state before emitting the remove-from-container action and detaching the source."
+    },
+    {
       "rva": "0x388C10",
       "name": "INVENTORY_GetFirstItem",
       "kind": "function",
       "confidence": "high",
       "source": "Mission/charm-inventory-auras-3.2.md",
       "notes": "Validates the 0x01020304 inventory header and returns the first item pointer at inventory+0x10."
+    },
+    {
+      "rva": "0x389820",
+      "name": "INVENTORY_RemoveItemFromInventory",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Detaches an item from its actual parent inventory and returns the removed unit on success. The ABI and return contract were proven from 92777 call sites and validated by Transmogrify for inventory and stash sources."
     },
     {
       "rva": "0x38ABA0",
@@ -204,12 +292,28 @@
       "notes": "Validates an item unit, resolves ItemData, and returns the linked-list successor at ItemData+0xB0."
     },
     {
+      "rva": "0x38AC50",
+      "name": "ITEMS_GetParentInventory",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Returns the inventory that currently owns an item. Transmogrify uses it to validate direct player ownership or an item-container whose own parent is the requesting player's inventory."
+    },
+    {
       "rva": "0x427150",
       "name": "DAMAGE_LogResolvedType",
       "kind": "function",
       "confidence": "high",
       "source": "Mission/floating-damage-portage-3.2.md",
       "notes": "Per-damage-type observer called by SUNITDMG_ApplyResistancesAndAbsorb after resistance and flat reduction are resolved. The 3.2 caller at 0x452651 passes game, attacker, defender, base damage, resistance, reduction, final damage, type name, damage structure, and the table flag. FloatingDamage hooks its build-unique strict 26-byte prologue without modifying any argument or result."
+    },
+    {
+      "rva": "0x42D2C0",
+      "name": "PLRMODE_FinalizePlayerMode",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "D2R 3.2 equivalent of legacy sub_6FC817D0. Its seven-argument ABI and mode-finalization role are proven by the resurrect handler call at 0x4B664B, which passes (game, player, null, TOWNNEUTRAL, 0, 0, 1). CharmInventoryAuras hooks the strict prologue and filters the shared routine by return address 0x4B6650."
     },
     {
       "rva": "0x436830",
@@ -226,6 +330,22 @@
       "confidence": "high",
       "source": "data-BKVince/d2rloader/patches/infinite-item-quantity-and-tomes.json",
       "notes": "Separate projectile-consumption path for weapon/arrow/bolt/throwable quantity; it is not the melee durability rollover handled by ApplyDurabilityLoss."
+    },
+    {
+      "rva": "0x43D530",
+      "name": "ITEMS_CreateItemUnit",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Creates an item unit from player, class id, game, spawn target, quality, no-sockets, no-ethereal, item level and optional seed arguments. The 11-argument ABI is proven by the 92777 wrapper at 0x517530 and the stack-to-drop-flags mapping in its strict prologue. Transmogrify 1.0.2 hooks it only while creating its output and forces noSockets=1 before packet serialization."
+    },
+    {
+      "rva": "0x43EC10",
+      "name": "SUNIT_RemoveServerUnit",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Releases a server unit after it has been detached from inventory ownership. Transmogrify calls it only after the native remove-from-container action and successful inventory detach."
     },
     {
       "rva": "0x441B10",
@@ -289,7 +409,7 @@
       "kind": "function",
       "confidence": "high",
       "source": "Mission/charm-inventory-auras-3.2.md",
-      "notes": "Native full player-item refresh: snapshots vitals and active skills, walks the inventory, obtains each owned item's stat-list mode, calls 0x2F8290 then 0x2F81A0, and restores the snapshot. CharmInventoryAuras 1.5.0 invokes it only after confirmed corpse recovery."
+      "notes": "Native full player-item refresh: snapshots vitals and active skills, walks the inventory, obtains each owned item's stat-list mode, calls 0x2F8290 then 0x2F81A0, and restores the snapshot. CharmInventoryAuras invokes it after confirmed corpse recovery and, since 1.6.0, immediately after the softcore player returns to town."
     },
     {
       "rva": "0x47145D",
@@ -306,6 +426,14 @@
       "confidence": "high",
       "source": "Mission/charm-inventory-auras-3.2.md",
       "notes": "Unique 3.2 equivalent of the legacy 0x2A041F call. Its return address 0x486AE5 selects the intended zone-transition caller of ActTransitionDispatch."
+    },
+    {
+      "rva": "0x48FE80",
+      "name": "SUNIT_GetServerUnit",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Resolves a server unit by game, unit type and GUID. Transmogrify uses the item GUID carried by the native use-item packet and requests unit type 4 before any recipe or ownership decision."
     },
     {
       "rva": "0x491960",
@@ -388,6 +516,30 @@
       "notes": "Unique 18-byte sequence that loads sound 0x64, passes the recovering player as both unit and source, and calls SUNIT_AttachSound after item transfer, corpse-list removal, world deletion and server-unit removal have succeeded. Return address is 0x4B35A6."
     },
     {
+      "rva": "0x4B6160",
+      "name": "D2GAME_PACKETCALLBACK_Resurrect",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "Server handler for the one-byte resurrect packet. The 92777 control flow matches legacy Rcv0x41_Resurrect: validates packet size, requires player mode 0x11 (dead), disconnects hardcore clients, restores life/mana/stamina, changes act, finalizes town-neutral mode, then reassigns both active skills."
+    },
+    {
+      "rva": "0x4B664B",
+      "name": "TownRespawnPlayerModeFinalizeCall",
+      "kind": "call-site",
+      "confidence": "high",
+      "source": "Mission/charm-inventory-auras-3.2.md",
+      "notes": "Unique resurrect-handler call to 0x42D2C0 after PlayerChangeAct has returned the softcore player to town. The 43-byte signed setup passes (game, player, null, 1, 0, 0, 1) and returns at 0x4B6650; the hardcore disconnect branch does not reach this site."
+    },
+    {
+      "rva": "0x4F40C0",
+      "name": "D2GAME_HandleUseItemPacket",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Authoritative server handler for the D2R use-item request. The source item GUID is stored at packet+0x0A in the 92777 packet layout. Transmogrify hooks the strict prologue, validates the resolved item and loaded recipe server-side, and delegates all noneligible items to the original handler."
+    },
+    {
       "rva": "0x4F5849",
       "name": "RejectedBookQuantityCandidate",
       "kind": "rejected-site",
@@ -402,6 +554,22 @@
       "confidence": "high",
       "source": "Mission/charm-inventory-auras-3.2.md",
       "notes": "D2R 3.2 equivalent of legacy 0x2EC080. CharmInventoryAuras hooks its build-specific prologue and refreshes charms only when the caller returns to 0x486AE5."
+    },
+    {
+      "rva": "0x517530",
+      "name": "ITEMS_GiveQuestItem",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Resolves an item code, creates a quality-controlled item through ITEMS_CreateItemUnit, finds player-inventory space, places it and emits the native creation/update packets. Its decompiled 92777 ABI is (game, player, code, itemLevel, quality, groundFallback). Transmogrify uses quality 2 and disables ground fallback so a failed placement preserves the source."
+    },
+    {
+      "rva": "0x535F60",
+      "name": "ITEMS_SendItemUpdate",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Serializes generalized item actions to the owning client. Native 92777 call sites prove the nine-argument ABI; Transmogrify uses action 0x20 with the captured packed position to remove the source from its displayed container before server-side detach."
     },
     {
       "rva": "0x542F40",
@@ -426,6 +594,54 @@
       "confidence": "high",
       "source": "ROADMAP.html#i9-bkvince-revive-ai-32",
       "notes": "Full-unit-size distance helper used by the inlined MinionLeash at 0x4A3C05. Its result feeds the exact <=1 close-owner and >20 catch-up comparisons, matching the legacy AIUTIL_GetDistanceToCoordinates_FullUnitSize call."
+    },
+    {
+      "rva": "0x5F4A50",
+      "name": "LANG_GetStringById",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Resolves a 16-bit localized string ID to the active-language UTF-8 text. Independent 92777 callers read the ItemsTxt name-string ID at record offset +0xFC before calling it. Transmogrify 1.0.3 validates its strict 14-byte entry signature and resolves UI string 5387 (convertsto) plus the TMogType output name."
+    },
+    {
+      "rva": "0x120A100",
+      "name": "INPUT_IsVirtualKeyDownAsync",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "Thin native wrapper around the imported asynchronous key-state function: it forwards the virtual-key code in ECX and returns bit 15 as a boolean. The skill-tree allocation path calls it with VK_SHIFT at 0x14C69F3. BulkSkillPointAllocation 1.0.2 uses the same strict 21-byte function for Shift and Ctrl modifier detection."
+    },
+    {
+      "rva": "0x14C3DA0",
+      "name": "SKILLTREE_CanAllocateSkill",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "Client skill-tree gate taking a skill id and returning a boolean. It obtains the local player, checks unspent skill points stat 5, resolves SkillsTxt and current base level, applies the custom cost/requirement calculation, reads runtime MaxLvl through 0x214220 and rejects blocking state 0x36. BulkSkillPointAllocation calls it before every queued rank."
+    },
+    {
+      "rva": "0x14C69D6",
+      "name": "SkillTreeAllocateClickBranch",
+      "kind": "call-site",
+      "confidence": "high",
+      "source": "Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "Skill-tree click branch that extracts the selected skill id and invokes SKILLTREE_CanAllocateSkill before the native 0x3B packet builder."
+    },
+    {
+      "rva": "0x14C6A07",
+      "name": "SkillTreeAllocatePacketCall",
+      "kind": "call-site",
+      "confidence": "high",
+      "source": "Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "Validated skill-tree call to CLIENT_SendFiveByteCommandPacket after the eligibility gate, using opcode 0x3B for one skill rank."
+    },
+    {
+      "rva": "0x14E9DC0",
+      "name": "StatsAllocateClickHandler",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "Reference UI handler for stat allocation. Its modifier payload resolves normal click to 1, Ctrl to 5 and Shift to 0xFFFF, with Shift precedence, before sending opcode 0x3A. This behavior informs the skill UX only; protocol 0x3A is not reused for skills."
     }
   ]
 }

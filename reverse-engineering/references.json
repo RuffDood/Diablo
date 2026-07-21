@@ -20,6 +20,26 @@
         "Never reuse 32-bit addresses, ordinals, structure layouts or ABI assumptions in D2R.",
         "Prove every D2R 3.2.92777 correspondence independently in the persistent workbench."
       ]
+    },
+    {
+      "id": "d2ssharp",
+      "name": "D2SSharp",
+      "repository": "https://github.com/ResurrectedTrader/D2SSharp.git",
+      "webUrl": "https://github.com/ResurrectedTrader/D2SSharp",
+      "branch": "main",
+      "commit": "f26f21897db5c0075e74defca1e31d1930080750",
+      "pinnedAt": "2026-07-21",
+      "localPath": "analysis-cache/references/D2SSharp",
+      "license": "MIT",
+      "licensePath": "README.md",
+      "upstreamTarget": "Diablo II and D2R save formats 96-105",
+      "role": "save-format-reference",
+      "citationFormat": "D2SSharp@{commit}:{path}:{line}",
+      "policy": [
+        "Use the pinned implementation to verify D2S and D2I section layouts, version boundaries and bit encodings.",
+        "Keep BKVince TXT files as the sole gameplay-data and item-stat encoding source.",
+        "Preserve MIT attribution for any source code adapted rather than independently reimplemented."
+      ]
     }
   ]
 }
