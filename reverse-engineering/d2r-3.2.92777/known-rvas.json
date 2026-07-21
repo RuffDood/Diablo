@@ -641,7 +641,7 @@
       "kind": "function",
       "confidence": "high",
       "source": "Mission/transmogrify-restoration-3.2.md",
-      "notes": "Serializes generalized item actions to the owning client. Native 92777 call sites prove the nine-argument ABI; Transmogrify uses action 0x20 with the captured packed position to remove the source from its displayed container before server-side detach."
+      "notes": "Serializes generalized item actions to the owning client. Native 92777 call sites prove the nine-argument ABI: creation passes action, secondary code, mode, inventory page, node page, then packed position. Transmogrify 1.1.1 follows that order; 1.1.0 had inverted the last two values and produced a visible but frozen client item. Source removal uses action 0x20 with the captured packed position in the final argument."
     },
     {
       "rva": "0x542F40",

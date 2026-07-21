@@ -1,0 +1,8 @@
+# Transmogrify tooltip configuration
+# Values take effect after a cold start.
+
+[tooltip]
+# This adds a red text line to eligible item tooltips.
+# Leave empty to automatically display the localized TMogType result.
+# Example: "Right Click to Transmog..."
+manual_text = ""

@@ -9,6 +9,7 @@
 #include <cstring>
 #include <string>
 #include <string_view>
+#include <utility>
 
 namespace {
 constexpr std::uintptr_t GetItemsTxtRecordRva = 0x314110;
@@ -49,6 +50,21 @@ constexpr std::size_t UseableOffset = 0x12C;
 constexpr std::size_t TransmogrifyOffset = 0x149;
 constexpr std::size_t TmogMinOffset = 0x14A;
 constexpr std::size_t TmogMaxOffset = 0x14B;
+constexpr std::size_t MaximumManualTooltipLength = 512;
+
+constexpr char DefaultConfig[] = R"toml(# Transmogrify tooltip configuration
+# Values take effect after a cold start.
+
+[tooltip]
+# This adds a red text line to eligible item tooltips.
+# Leave empty to automatically display the localized TMogType result.
+# Example: "Right Click to Transmog..."
+manual_text = ""
+)toml";
+
+struct Config {
+    std::string manualTooltip;
+};
 
 using GetItemsTxtRecordFn = std::uint8_t*(__fastcall*)(std::uint8_t, std::int32_t) noexcept;
 using GetItemRecordFromCodeFn = std::uint8_t*(__fastcall*)(
@@ -124,6 +140,7 @@ SetItemByteFn SetItemCell{};
 SendItemUpdateFn SendItemUpdate{};
 SetUnitStatFn SetUnitStat{};
 DeleteItemFn DeleteItem{};
+Config Settings{};
 thread_local bool ForceNoSocketsForTransmogrify{};
 
 constexpr D2RL::PluginInfo Info{
@@ -131,7 +148,7 @@ constexpr D2RL::PluginInfo Info{
     .apiVersion = D2RL_PLUGIN_API_VERSION,
     .id = "transmogrify",
     .name = "Transmogrify",
-    .version = "1.1.0",
+    .version = "1.2.0",
     .author = "RuffnecKk",
     .description = "Transforms configured items with a right-click.",
     .flags = D2RL::PluginFlags::NativeHooks,
@@ -139,6 +156,97 @@ constexpr D2RL::PluginInfo Info{
 
 template<class T> T At(std::uintptr_t rva) noexcept {
     return reinterpret_cast<T>(Base + rva);
+}
+
+std::string Trim(std::string text) {
+    const auto first = text.find_first_not_of(" \t\r\n");
+    if (first == std::string::npos) return {};
+    const auto last = text.find_last_not_of(" \t\r\n");
+    return text.substr(first, last - first + 1);
+}
+
+std::string StripTomlComment(std::string text) {
+    bool quoted{};
+    bool escaped{};
+    for (std::size_t index = 0; index < text.size(); ++index) {
+        const auto ch = text[index];
+        if (escaped) {
+            escaped = false;
+            continue;
+        }
+        if (quoted && ch == '\\') {
+            escaped = true;
+            continue;
+        }
+        if (ch == '"') {
+            quoted = !quoted;
+            continue;
+        }
+        if (!quoted && ch == '#') return Trim(text.substr(0, index));
+    }
+    return Trim(std::move(text));
+}
+
+bool ParseTomlBasicString(std::string_view value, std::string& output) {
+    if (value.size() < 2 || value.front() != '"' || value.back() != '"') return false;
+    output.clear();
+    output.reserve(value.size() - 2);
+    for (std::size_t index = 1; index + 1 < value.size(); ++index) {
+        auto ch = value[index];
+        if (ch != '\\') {
+            output.push_back(ch);
+            continue;
+        }
+        if (++index + 1 >= value.size()) return false;
+        ch = value[index];
+        switch (ch) {
+        case '"': output.push_back('"'); break;
+        case '\\': output.push_back('\\'); break;
+        case 'n': output.push_back('\n'); break;
+        case 'r': output.push_back('\r'); break;
+        case 't': output.push_back('\t'); break;
+        default: return false;
+        }
+    }
+    return output.size() <= MaximumManualTooltipLength;
+}
+
+bool LoadConfig() noexcept {
+    try {
+        if (!Context->EnsureConfig(DefaultConfig)) return false;
+
+        std::array<char, 4096> buffer{};
+        std::uint32_t requiredSize{};
+        if (!Context->ReadConfig(
+                buffer.data(), static_cast<std::uint32_t>(buffer.size()), &requiredSize)) {
+            return false;
+        }
+
+        Settings = {};
+        const std::string input(buffer.data());
+        std::string section;
+        std::size_t start{};
+        while (start < input.size()) {
+            const auto end = input.find('\n', start);
+            auto line = StripTomlComment(input.substr(start, end - start));
+            start = end == std::string::npos ? input.size() : end + 1;
+            if (line.empty()) continue;
+            if (line.front() == '[' && line.back() == ']') {
+                section = Trim(line.substr(1, line.size() - 2));
+                continue;
+            }
+            const auto equal = line.find('=');
+            if (equal == std::string::npos) continue;
+            const auto key = Trim(line.substr(0, equal));
+            const auto value = Trim(line.substr(equal + 1));
+            if (section == "tooltip" && key == "manual_text") {
+                if (!ParseTomlBasicString(value, Settings.manualTooltip)) return false;
+            }
+        }
+        return true;
+    } catch (...) {
+        return false;
+    }
 }
 
 std::uint8_t* ItemRecord(void* item) noexcept {
@@ -221,6 +329,12 @@ std::string BuildTransmogrifyTooltipLine(void* item, const std::uint8_t* sourceR
     return action + outputName;
 }
 
+std::string ResolveTransmogrifyTooltipLine(
+    void* item, const std::uint8_t* sourceRecord) {
+    if (!Settings.manualTooltip.empty()) return Settings.manualTooltip;
+    return BuildTransmogrifyTooltipLine(item, sourceRecord);
+}
+
 std::string InsertTransmogrifyLine(std::string tooltip, std::string_view text) {
     if (text.empty() || tooltip.find(text) != std::string::npos) return tooltip;
     const std::string line = "\xEE\x81\xBE" "1" + std::string(text);
@@ -276,7 +390,7 @@ void* __fastcall HookBuildItemTooltip(
         if (length == 0 || length > 16 * 1024 || !IsReadable(data, length + 1)) return result;
 
         const std::string original(data, length);
-        const auto line = BuildTransmogrifyTooltipLine(item, sourceRecord);
+        const auto line = ResolveTransmogrifyTooltipLine(item, sourceRecord);
         const auto enhanced = InsertTransmogrifyLine(original, line);
         if (enhanced == original) return result;
 
@@ -449,7 +563,7 @@ bool TransformServerItem(void* game, void* player, void* source, std::uint32_t s
         0x20, 4, 0, 0, 0, sourceState.packedPosition);
     SendItemUpdate(game, player, output,
         1, 2, outputState.mode, outputState.inventoryPage,
-        outputState.packedPosition, outputState.nodePage);
+        outputState.nodePage, outputState.packedPosition);
 
     FinalizePlacedItem(game, player, output, 0);
     if (AttachPlacedItem(output, player) != 0) {
@@ -500,7 +614,9 @@ auto Status(D2R::Game::Client*, const D2RL::ConsoleCommandContext* command, void
     -> D2RL::ConsoleCommandResult {
     if (!command || !command->plugin) return D2RL::ConsoleCommandResult::Failed;
     command->plugin->WriteConsoleMessage(
-        "Transmogrify 1.1.0: same-container TXT transformations are active.");
+        Settings.manualTooltip.empty()
+            ? "Transmogrify 1.2.0: same-container TXT transformations are active; tooltip=automatic."
+            : "Transmogrify 1.2.0: same-container TXT transformations are active; tooltip=manual.");
     return D2RL::ConsoleCommandResult::Handled;
 }
 
@@ -566,6 +682,11 @@ D2RL_PLUGIN_EXPORT auto D2RLoaderLoadPlugin(const D2RL::PluginContext* context) 
         || !MatchesCode(RefreshPlayerInventoryRva, refreshInventoryExpected)) {
         context->LogError(
             "Transmogrify: D2R 3.2.92777 item-placement signature mismatch; plugin refused.");
+        return false;
+    }
+    if (!LoadConfig()) {
+        context->LogError(
+            "Transmogrify: configuration could not be loaded; plugin refused.");
         return false;
     }
 
@@ -639,7 +760,9 @@ D2RL_PLUGIN_EXPORT auto D2RLoaderLoadPlugin(const D2RL::PluginContext* context) 
         context->LogError("Transmogrify: console command registration failed.");
         return false;
     }
-    context->LogInfo("Transmogrify 1.1.0 native hooks active for D2R 3.2.92777.");
+    context->LogInfo(Settings.manualTooltip.empty()
+        ? "Transmogrify 1.2.0 native hooks active for D2R 3.2.92777 (automatic tooltip)."
+        : "Transmogrify 1.2.0 native hooks active for D2R 3.2.92777 (manual tooltip)." );
     return true;
 }
 

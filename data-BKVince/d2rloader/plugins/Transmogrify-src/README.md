@@ -16,4 +16,13 @@ Outputs are created at normal quality with automatic socket rolls disabled. This
 
 Eligible items display a red localized conversion line below their requirements when applicable, such as `Right Click to make Minor Mana Potion`. The plugin combines D2R's native `convertsto` string (ID 5387) with the localized name of the `TMogType` output.
 
+### Manual tooltip override
+
+Configuration is read from `d2rloader/config/transmogrify.toml` in the same global or mod-local scope as the DLL and takes effect after a cold start.
+
+- `manual_text = ""` keeps the automatic localized tooltip based on `TMogType`.
+- A non-empty value replaces it on every eligible item, for example `manual_text = "Right Click to Transmog..."`.
+
+The override changes only the red tooltip line. It does not define recipes, outputs, or probabilities.
+
 The plugin is hybrid: install the same DLL in either `<D2R>/d2rloader/plugins/` or `<D2R>/mods/<mod>/d2rloader/plugins/`. In multiplayer, both the client and the authoritative host must load the plugin and use matching TXT data.

@@ -5,11 +5,15 @@
 - Statut : **implantation native fonctionnelle, matrice étendue encore ouverte**.
 - Cible : `D2R.exe 3.2.92777` sous D2RLoader.
 - Option A retenue par Vincent le 21 juillet 2026.
-- `Transmogrify 1.0.3` est installé comme plugin hybride global/mod-local ; la
+- `Transmogrify 1.2.0` est installé comme plugin hybride global/mod-local ; la
   copie mod-local est prioritaire lorsque les deux portées sont présentes.
-- Le chemin souris a été confirmé en jeu depuis l’inventory et le stash : la
-  source disparaît, le résultat arrive dans l’inventory et les transformations
-  répétées ne génèrent plus de sockets aléatoires.
+- Le chemin souris 1.0.3 a été confirmé en jeu depuis l’inventory et le stash,
+  et les transformations répétées ne génèrent plus de sockets aléatoires. La
+  version 1.1.1 remplace le fallback vers l’inventory par un placement dans le
+  même conteneur. Vincent a confirmé en jeu que les sorties 1.1.1 restent
+  manipulables dans l’inventory et le stash ; le log autoritaire confirme les
+  pages source `0` puis `4`. Cube et shared stash restent à distinguer dans la
+  matrice complète.
 - `AdvancedItemTooltips` demeure désactivé dans le dépôt et les deux portées
   runtime en attendant sa reprise indépendante.
 
@@ -82,10 +86,11 @@ de sortie.
 
 La conversion vise une mutation atomique : une erreur de cible, de quantité, de
 conteneur ou de placement conserve l’objet source et ne crée aucun résultat.
-La politique exacte de placement — même cellule, autre cellule du même
-conteneur, fallback inventory ou annulation — doit être arrêtée avant
-l’implantation; aucun drop au sol implicite ne sera adopté sans décision
-explicite.
+La sortie reste dans le conteneur de la source : inventory vers inventory, Cube
+vers Cube et stash vers le même stash. La source est détachée temporairement
+afin que sa cellule puisse accueillir la sortie ; si aucune position valide
+n’existe, elle est restaurée sans être consommée. Aucun fallback vers
+l’inventory ni drop au sol implicite n’est permis.
 
 ## Implantation livrée le 21 juillet 2026
 
@@ -96,26 +101,42 @@ explicite.
   chaîne native `convertsto` (ID 5387) et le nom localisé de la sortie
   `TMogType`, par exemple `Right Click to make Minor Mana Potion` ;
 - résolution du code de sortie par `0x314070`, puis du texte actif par
-  `0x5F4A50` à partir du champ nom D2R 92777 prouvé à `ItemsTxt+0xFC` ; aucun
-  texte de tooltip ni réglage TOML propre au plugin n’est requis ;
+  `0x5F4A50` à partir du champ nom D2R 92777 prouvé à `ItemsTxt+0xFC` ;
+- option globale `tooltip.manual_text` dans `transmogrify.toml` : une chaîne
+  vide conserve le texte automatique localisé selon `TMogType`, tandis qu’une
+  chaîne non vide le remplace exactement sur tous les objets éligibles, sans
+  modifier les recettes, sorties ni probabilités ;
 - interception autoritaire du clic droit serveur au RVA `0x4F40C0`, résolution
   du GUID et relecture des colonnes depuis les tables chargées par l’hôte ;
 - validation du propriétaire direct ou du conteneur appartenant au joueur,
   couvrant notamment les objets stockés dans le stash ;
-- création de qualité normale par le helper natif `0x517530`, puis notification,
-  détachement et libération de la source par les chemins natifs 92777 ;
+- création non placée de qualité normale par `0x43D530`, recherche d’une place
+  dans la grille native de la page source (`0x34A410`, `0x3865B0`), puis
+  placement par `0x471500` avec conservation de la page et du node de stash ;
+- détachement temporaire de la source avant la recherche afin de rendre sa
+  cellule disponible, avec rollback vers son état original si la sortie ne peut
+  pas être placée dans ce même conteneur ;
 - hook ciblé du créateur `0x43D530` pendant une conversion afin de forcer son
   paramètre `noSockets=1` avant la sérialisation du nouvel objet ; aucun autre
   drop du jeu n’est modifié ;
-- signatures strictes sur les quatre hooks et les deux résolveurs de tooltip ;
-  le cold-start 1.0.3 accepte les quatre hooks du plugin mod-local et refuse
+- signatures strictes sur les quatre hooks, les deux résolveurs de tooltip et
+  les routines natives de placement ; les cold-starts 1.2.0 acceptent les
+  modes de tooltip manuel et automatique ainsi que les quatre
+  hooks du plugin mod-local et refusent
   proprement le doublon global ; DLL dépôt/global/mod-local identiques,
-  SHA-256 `1DEECC4E65F005F489F237FD851D6F9C9116687CB1FD7A7FF8485DA5CEC65488` ;
+  SHA-256 `8985808DC7864A7DA42FBDF62DC0B84C6A319F47E72433319CCE4654264E75AE` ;
+- correctif 1.1.1 confirmé en jeu du paquet de création : `nodePage` précède
+  `packedPosition`, conformément à l’appel natif `0x517530`; l’ordre inverse
+  de 1.1.0 affichait la sortie mais la laissait gelée côté client ;
 - règles temporaires `mp1 → qui` et armures de test `→ mp1` retirées après
   validation ; les recettes permanentes restent exclusivement sous contrôle
   des TXT.
-- recette dummy temporaire `hp1 → mp1` activée dans `misc.txt` pour valider le
-  tooltip localisé 1.0.3 et la conversion, à retirer après confirmation.
+- recette dummy `hp1 → mp1` retirée après confirmation du placement 1.1.1 ; la
+  ligne `hp1` a retrouvé ses valeurs normales `Transmogrify=0` et
+  `TMogType=xxx` dans les données source et runtime.
+- package partageable créé sous `addons/Transmogrify/Transmogrify.zip` avec la
+  DLL 1.2.0, son TOML et son README, sans table TXT ni recette dummy ; SHA-256
+  du ZIP `F04932018B9F7A1F2782E1343B479216548EAE925DE00C063FD94483A09542FD`.
 
 ## Questions et gates restant à fermer
 
@@ -124,7 +145,6 @@ explicite.
 - États autorisés : socketed, runeword, ethereal, personalized et quest items.
 - Interprétation des bornes lorsque `TMogMin` ou `TMogMax` est vide, nul,
   inversé ou supérieur au maximum de stack de la cible.
-- Politique de placement lorsque le résultat est plus grand que la source.
 - Compatibilité attendue lorsqu’un joiner n’a pas le plugin ou charge des TXT
   différents de ceux de l’hôte.
 
