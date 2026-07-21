@@ -1,0 +1,42 @@
+# ReviveOverhaul configuration for D2R 3.2.92777.
+# Permanent Revive duration is configured separately through skills.txt calc2.
+
+# Master switch for the AI changes below. When false, Revives use their vanilla
+# following behavior. This does not change the permanent duration from skills.txt.
+enabled = true
+
+[ai]
+# When true, Revives no longer step away just because they are standing very
+# close to their owner. When false, they keep the vanilla scattering behavior.
+disable_owner_scatter = true
+
+# How far a Revive may fall behind before it starts moving faster to catch up.
+# Lower values make catch-up start sooner. Higher values let Revives fall farther
+# behind before they hurry back. Vanilla value: 20. Valid range: 2 to 20.
+catch_up_distance = 12
+
+# How close Revives try to stay after moving back toward their owner.
+# Lower values make them gather closer around the owner. Higher values make them
+# stop farther away. Keep this below catch_up_distance so they have room to
+# follow normally before catch-up begins. Vanilla value: 19.
+# Valid range: 1 to catch_up_distance - 1.
+follow_distance = 8
+
+# Extra movement speed Revives receive while trying to catch up to their owner.
+# Higher values make them catch up faster. Lower values make them catch up more
+# slowly, and 0 removes the extra speed bonus. This is used only after the Revive
+# has crossed catch_up_distance. Vanilla value: 40.
+# Valid range: 0 to 255.
+velocity_bonus = 40
+
+# Result with the current settings: when a Revive falls more than 12 units behind,
+# it receives a movement speed bonus of 40 and tries to return to about 8 units
+# from its owner. If you change the values above, read them in the same order:
+# when catch_up_distance is crossed, velocity_bonus is applied until the Revive
+# moves back toward follow_distance.
+
+[diagnostics]
+# When true, the load log clearly states that diagnostics are enabled.
+# You can view the current settings and behavior counters at any time by entering
+# the revive-overhaul command in the D2RLoader console.
+enabled = false

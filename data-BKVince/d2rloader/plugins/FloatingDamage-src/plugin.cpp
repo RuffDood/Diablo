@@ -62,8 +62,8 @@ constexpr D2RL::PluginInfo Info{
     .id = "floating-damage",
     .name = "Floating Damage",
     .version = "1.0.0",
-    .author = "RuffnecKk / d2rlan",
-    .description = "D2RLAN floating combat numbers and rolling DPS for D2R 3.2.92777.",
+    .author = "RuffnecKk",
+    .description = "Shows floating combat numbers and rolling damage per second.",
     .flags = D2RL::PluginFlags::NativeHooks,
 };
 

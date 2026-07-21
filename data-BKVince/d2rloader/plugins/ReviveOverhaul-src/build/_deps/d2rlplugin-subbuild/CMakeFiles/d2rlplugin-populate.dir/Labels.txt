@@ -1,0 +1,14 @@
+# Target labels
+ d2rlplugin-populate
+# Source files and their labels
+C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/ReviveOverhaul-src/build/_deps/d2rlplugin-subbuild/CMakeFiles/d2rlplugin-populate
+C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/ReviveOverhaul-src/build/_deps/d2rlplugin-subbuild/CMakeFiles/ece9740602c5a92c32e43c13070c4f11/d2rlplugin-populate.rule
+C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/ReviveOverhaul-src/build/_deps/d2rlplugin-subbuild/CMakeFiles/7906dced6ad2260b182128cefffd9584/d2rlplugin-populate-complete.rule
+C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/ReviveOverhaul-src/build/_deps/d2rlplugin-subbuild/CMakeFiles/d9a1d46ef0bf3681c6f8dd87b0608a10/d2rlplugin-populate-build.rule
+C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/ReviveOverhaul-src/build/_deps/d2rlplugin-subbuild/CMakeFiles/d9a1d46ef0bf3681c6f8dd87b0608a10/d2rlplugin-populate-configure.rule
+C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/ReviveOverhaul-src/build/_deps/d2rlplugin-subbuild/CMakeFiles/d9a1d46ef0bf3681c6f8dd87b0608a10/d2rlplugin-populate-download.rule
+C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/ReviveOverhaul-src/build/_deps/d2rlplugin-subbuild/CMakeFiles/d9a1d46ef0bf3681c6f8dd87b0608a10/d2rlplugin-populate-install.rule
+C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/ReviveOverhaul-src/build/_deps/d2rlplugin-subbuild/CMakeFiles/d9a1d46ef0bf3681c6f8dd87b0608a10/d2rlplugin-populate-mkdir.rule
+C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/ReviveOverhaul-src/build/_deps/d2rlplugin-subbuild/CMakeFiles/d9a1d46ef0bf3681c6f8dd87b0608a10/d2rlplugin-populate-patch.rule
+C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/ReviveOverhaul-src/build/_deps/d2rlplugin-subbuild/CMakeFiles/d9a1d46ef0bf3681c6f8dd87b0608a10/d2rlplugin-populate-test.rule
+C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/ReviveOverhaul-src/build/_deps/d2rlplugin-subbuild/CMakeFiles/d9a1d46ef0bf3681c6f8dd87b0608a10/d2rlplugin-populate-update.rule

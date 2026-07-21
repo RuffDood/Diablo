@@ -30,7 +30,7 @@ Le preset BKVince initial réserve la colonne 1 aux Greater/Super Healing, la co
 
 ## Gate de sécurité
 
-- plugin mod-local avec identifiant interne `potion-auto-pickup`, nom `PotionAutoPickup` et drapeaux `ModScopedOnly | NativeHooks`;
+- plugin hybride avec identifiant interne `potion-auto-pickup`, nom `PotionAutoPickup` et drapeau `NativeHooks`, installable globalement ou dans le dossier d’un mod;
 - signatures `expected` vérifiées par D2RLoader avant chaque hook;
 - aucun RVA 2.4 recopié sans correspondance démontrée dans le build 92777;
 - activation atomique : si une cible obligatoire manque, aucun hook gameplay ne reste actif;

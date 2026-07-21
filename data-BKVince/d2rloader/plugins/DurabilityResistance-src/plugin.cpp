@@ -114,7 +114,7 @@ constexpr D2RL::PluginInfo Info{
     .name = "Durability Resistance",
     .version = "1.2.0",
     .author = "RuffnecKk",
-    .description = "Configurable durability resistance, ethereal maximum durability, and optional bow/crossbow durability for D2R 3.2.92777.",
+    .description = "Controls durability loss, ethereal maximum durability, and bow/crossbow durability.",
     .flags = D2RL::PluginFlags::NativeHooks,
 };
 

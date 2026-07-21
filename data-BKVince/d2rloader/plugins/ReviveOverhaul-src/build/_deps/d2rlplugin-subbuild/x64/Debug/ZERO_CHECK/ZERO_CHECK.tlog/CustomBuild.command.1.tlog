@@ -1,0 +1,10 @@
+^C:\WORKSPACES\DIABLO\DATA-BKVINCE\D2RLOADER\PLUGINS\REVIVEOVERHAUL-SRC\BUILD\_DEPS\D2RLPLUGIN-SUBBUILD\CMAKEFILES\ECE9740602C5A92C32E43C13070C4F11\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/ReviveOverhaul-src/build/_deps/d2rlplugin-subbuild -BC:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/ReviveOverhaul-src/build/_deps/d2rlplugin-subbuild --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Workspaces/Diablo/data-BKVince/d2rloader/plugins/ReviveOverhaul-src/build/_deps/d2rlplugin-subbuild/d2rlplugin-populate.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

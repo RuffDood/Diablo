@@ -58,8 +58,8 @@ thread_local std::uint32_t TriggerCounter{};
 constexpr D2RL::PluginInfo Info{
     .infoSize=D2RL::PluginInfoSize, .apiVersion=D2RL_PLUGIN_API_VERSION,
     .id="potion-auto-pickup", .name="PotionAutoPickup", .version="1.0.0",
-    .author="RuffnecKk", .description="Configurable native potion autopickup for BKVince 3.2.92777.",
-    .flags=D2RL::PluginFlags::ModScopedOnly | D2RL::PluginFlags::NativeHooks,
+    .author="RuffnecKk", .description="Automatically picks up configured potions when belt and inventory rules allow.",
+    .flags=D2RL::PluginFlags::NativeHooks,
 };
 
 std::string Trim(std::string text) {
@@ -155,7 +155,9 @@ D2RL_PLUGIN_EXPORT auto D2RLoaderLoadPlugin(const D2RL::PluginContext* context) 
     if(!context->InstallInlineHook(TriggerRva,expected.data(),static_cast<std::uint32_t>(expected.size()),HookTrigger,&OriginalTrigger)) {
         context->LogError("PotionAutoPickup: D2R 3.2.92777 trigger signature mismatch; hook refused."); return false;
     }
-    context->RegisterConsoleCommand("potion-auto-pickup",Status,"Show PotionAutoPickup native-hook status.");
+    if(!context->RegisterConsoleCommand("potion-auto-pickup",Status,"Show PotionAutoPickup native-hook status.")) {
+        context->LogError("PotionAutoPickup: console command registration failed."); return false;
+    }
     context->LogInfo("PotionAutoPickup 1.0 native hook active (D2R 3.2.92777, distance capped to vanilla gold range 4).");
     return true;
 }

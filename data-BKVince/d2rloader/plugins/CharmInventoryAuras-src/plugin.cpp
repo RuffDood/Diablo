@@ -111,7 +111,7 @@ constexpr D2RL::PluginInfo Info{
     .name = "Charm Inventory Auras",
     .version = "1.5.0",
     .author = "RuffnecKk",
-    .description = "Re-registers identified inventory charm auras after zone transitions and performs a native item-stat refresh after corpse recovery on D2R 3.2.92777.",
+    .description = "Keeps identified inventory charm auras active after changing zones or recovering a corpse.",
     .flags = D2RL::PluginFlags::NativeHooks,
 };
 

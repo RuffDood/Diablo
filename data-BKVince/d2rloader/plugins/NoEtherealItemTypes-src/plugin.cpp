@@ -80,7 +80,7 @@ constexpr D2RL::PluginInfo Info{
     .name = "No Ethereal Item Types",
     .version = "1.1.0",
     .author = "RuffnecKk",
-    .description = "Prevents configured itemtypes.txt families from ever becoming ethereal on D2R 3.2.92777.",
+    .description = "Prevents configured item-type families from spawning as ethereal.",
     .flags = D2RL::PluginFlags::NativeHooks,
 };
 

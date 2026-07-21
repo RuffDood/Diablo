@@ -75,7 +75,7 @@ constexpr D2RL::PluginInfo Info{
     .name = "Enhanced Damage Min/Max Fix",
     .version = "1.2.0",
     .author = "RuffnecKk",
-    .description = "Restores the off-weapon op=13 update suppressed by the Enhanced Damage plus minimum/maximum damage bug on D2R 3.2.92777.",
+    .description = "Fixes Enhanced Damage on non-weapon gear that also adds minimum or maximum damage.",
     .flags = D2RL::PluginFlags::NativeHooks,
 };
 

@@ -200,6 +200,11 @@ declares `PluginFlags::NativeHooks` so the signature-checked hook can load.
   component when flat minimum or maximum damage triggers ItemStatCost operation
   13. Weapons retain vanilla local ED behavior. The command
   `enhanced-damage-min-max-fix` reports runtime correction counters.
+* `AdvancedItemTooltips.dll` 1.0.1 is hybrid (global or mod-local). It shows the
+  native maximum socket count in vanilla gray and, for identified items only,
+  appends variable affix and base-defense ranges in green. It reads the active
+  mod's TXT tables instead of duplicating gameplay values. The command
+  `advanced-item-tooltips` reports runtime counters.
 * `FloatingDamage.dll` renders D2RLAN-style combat numbers and rolling DPS from
   the build-verified post-resistance damage observer. Its defaults live in
   `d2rloader/config/floating-damage.toml`; the command `floating-damage` controls

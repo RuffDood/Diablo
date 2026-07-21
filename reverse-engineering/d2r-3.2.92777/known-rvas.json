@@ -4,6 +4,14 @@
   "imageBase": "0x140000000",
   "entries": [
     {
+      "rva": "0x2DC4B0",
+      "name": "ITEMS_GetStatsDescription",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/advanced-item-tooltips-3.2.md",
+      "notes": "Builds the item-stat description buffer used by the tooltip. AdvancedItemTooltips hooks its strict 32-byte prologue, calls vanilla first, then appends only bounded presentation text. Four direct call sites and the item-type branch were verified in the persistent 92777 workbench."
+    },
+    {
       "rva": "0x2F48C0",
       "name": "GetItemBaseDurability",
       "kind": "function",
@@ -164,6 +172,14 @@
       "notes": "Returns the unit type used throughout the 92777 stat paths (0 player, 1 monster, 4 item). EnhancedDamageMinMaxFix limits inventory correction to players and monsters."
     },
     {
+      "rva": "0x36EAD0",
+      "name": "ITEMS_GetMaxSockets",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/advanced-item-tooltips-3.2.md",
+      "notes": "Returns the maximum socket count for the concrete item. The 92777 implementation reads ItemData item level at +0x38, ItemTypes socket thresholds and the compiled Items gemsockets cap. AdvancedItemTooltips calls this native routine instead of duplicating the rules."
+    },
+    {
       "rva": "0x373890",
       "name": "ITEMS_CheckItemTypeId",
       "kind": "function",
@@ -300,6 +316,70 @@
       "notes": "Stores the 16-bit sound ID and source unit, then schedules the sound. CharmInventoryAuras filters this shared routine by the unique successful corpse-recovery return address 0x4B35A6 and sound ID 0x64."
     },
     {
+      "rva": "0x4A2BC8",
+      "name": "AiSpecialStateDispatchRead",
+      "kind": "patch-site",
+      "confidence": "high",
+      "source": "ROADMAP.html#i9-bkvince-revive-ai-32",
+      "notes": "Direct 92777 ABI proof for the AI special state: the AI tick object begins with D2AiControl*, and D2AiControl begins with the signed 32-bit nAiSpecialState. The unique sequence at 0x4A2BC8 loads the tick's first pointer, reads dword [control+0x00] into EDX, calls AITHINK_GetAiTableRecord at 0x4A36C0, then dispatches on the returned record. AISPECIALSTATE_REVIVED remains value 7."
+    },
+    {
+      "rva": "0x4A36C0",
+      "name": "AITHINK_GetAiTableRecord",
+      "kind": "function",
+      "confidence": "high",
+      "source": "ROADMAP.html#i9-bkvince-revive-ai-32",
+      "notes": "Resolves a unit's active AI table record from nAiSpecialState. Nonzero accepted states index the special-state table at RVA 0x23981F0 with 0x20-byte records; state 7 therefore selects the Revive/NecroPet record at RVA 0x23982D0. Its strict 17-byte prologue is unique in 92777."
+    },
+    {
+      "rva": "0x4A3A20",
+      "name": "D2GAME_MONSTERS_AiFunction03",
+      "kind": "function",
+      "confidence": "high",
+      "source": "ROADMAP.html#i9-bkvince-revive-ai-32",
+      "notes": "D2R 3.2 generic monster AI preamble containing the inlined equivalent of legacy D2GAME_AICORE_MinionLeash_6FCF0D10. The caller at 0x4A2BBB supplies the game, monster and AI tick state after resolving MonStats and MonStats2; the inlined leash spans 0x4A3B50-0x4A3C6B and matches the legacy owner, walk-mode, owner-life, distance, scatter and catch-up control flow."
+    },
+    {
+      "rva": "0x4A3C0A",
+      "name": "MinionLeashOwnerScatterGate",
+      "kind": "patch-site",
+      "confidence": "high",
+      "source": "ROADMAP.html#i9-bkvince-revive-ai-32",
+      "notes": "Unique 92777 sequence for the legacy close-owner scatter branch: compares full-unit distance with 1, then at 0x4A3C0F requires ownerType UNIT_PLAYER before calling the escape helper at 0x4A7DF0 with distance 19. This path is shared by all applicable minions and must be filtered to AISPECIALSTATE_REVIVED by the plugin instead of patched globally."
+    },
+    {
+      "rva": "0x4A3C34",
+      "name": "MinionLeashCatchUpGate",
+      "kind": "patch-site",
+      "confidence": "high",
+      "source": "ROADMAP.html#i9-bkvince-revive-ai-32",
+      "notes": "Unique 92777 catch-up sequence matching legacy MinionLeash: compares distance with 20, calls AITACTICS_SetVelocity at 0x4A7270 with mode 7, velocity 0 and bonus 40, then calls the owner-follow helper at 0x4A8090 with distance 19. The exact signature begins 83 F8 14 0F 8E 5A FF FF FF 45 33 C0 41 B1 28."
+    },
+    {
+      "rva": "0x4A7270",
+      "name": "AITACTICS_SetVelocity",
+      "kind": "function",
+      "confidence": "high",
+      "source": "ROADMAP.html#i9-bkvince-revive-ai-32",
+      "notes": "Exact 3.2 equivalent of the legacy helper: normalizes mode 1 to 7, validates a monster unit, obtains MonsterData AI velocity parameters and tail-calls the low-level setter with (mode, velocity, byte bonus). MinionLeash calls it at 0x4A3C4A with (monster, 7, 0, 40), returning at 0x4A3C4F; ReviveOverhaul 1.1 uses that exact return address plus the signed call sequence 41 B1 28 48 8B CB 41 8D 50 07 E8 21 36 00 00 to confine velocity configuration to the Revive catch-up path."
+    },
+    {
+      "rva": "0x4A7DF0",
+      "name": "D2GAME_AICORE_Escape",
+      "kind": "function",
+      "confidence": "high",
+      "source": "ROADMAP.html#i9-bkvince-revive-ai-32",
+      "notes": "Escape helper used by the close-owner MinionLeash branch. The call at 0x4A3C29 passes game, minion, owner, distance 19 and flag 1, matching the legacy D2GAME_AICORE_Escape_6FCD0560 invocation."
+    },
+    {
+      "rva": "0x4A8090",
+      "name": "D2GAME_AICORE_WalkToOwner",
+      "kind": "function",
+      "confidence": "high",
+      "source": "ROADMAP.html#i9-bkvince-revive-ai-32",
+      "notes": "Owner-follow helper called by both MinionLeash branches at 0x4A3C61 with game, minion, owner and distance 19. Its role and arguments match legacy D2GAME_AICORE_WalkToOwner_6FCD0B60."
+    },
+    {
       "rva": "0x4B3594",
       "name": "CorpseRecoverySuccessSoundCall",
       "kind": "call-site",
@@ -338,6 +418,14 @@
       "confidence": "high",
       "source": "data-BKVince/d2rloader/patches/infinite-item-quantity-and-tomes.json",
       "notes": "Loads -1 into r9d after the Book type check and before the central quantity synchronization call."
+    },
+    {
+      "rva": "0x596720",
+      "name": "AIUTIL_GetDistanceToCoordinates_FullUnitSize",
+      "kind": "function",
+      "confidence": "high",
+      "source": "ROADMAP.html#i9-bkvince-revive-ai-32",
+      "notes": "Full-unit-size distance helper used by the inlined MinionLeash at 0x4A3C05. Its result feeds the exact <=1 close-owner and >20 catch-up comparisons, matching the legacy AIUTIL_GetDistanceToCoordinates_FullUnitSize call."
     }
   ]
 }

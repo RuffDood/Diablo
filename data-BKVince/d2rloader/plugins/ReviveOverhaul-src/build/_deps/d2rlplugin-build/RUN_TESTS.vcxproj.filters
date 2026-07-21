@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Workspaces\Diablo\data-BKVince\d2rloader\plugins\ReviveOverhaul-src\build\CMakeFiles\70d408bb783ca13a15fd52c06581c957\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{8ECBAC48-273E-35EC-A381-C65CE229BDA2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
