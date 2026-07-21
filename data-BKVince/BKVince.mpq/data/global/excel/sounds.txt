@@ -11944,3 +11944,5 @@ Ber_drop	99999		master	Ber.flac	0	0	0	0	0	255	255	100	100	0	0	0	0	0	0	0	0	0	4	0	
 Jah_drop	99999		master	Jah.flac	0	0	0	0	0	255	255	100	100	0	0	0	0	0	0	0	0	0	4	0	90	255	0	0	1	1	0	-1	-1	-1	0	0	
 Cham_drop	99999		master	Cham.flac	0	0	0	0	0	255	255	100	100	0	0	0	0	0	0	0	0	0	4	0	90	255	0	0	1	1	0	-1	-1	-1	0	0	
 Zod_drop	99999		master	Zod.flac	0	0	0	0	0	255	255	100	100	0	0	0	0	0	0	0	0	0	4	0	90	255	0	0	1	1	0	-1	-1	-1	0	0	
+item_rune_sfx	60000	item_rune_sfx_hd	sfx/items_sd	item\item_rune_sfx.flac	0	0	0	0	0	200	200	100	100	0	0	0	0	0	0	1	0	0	1	0	90	100	0	0	0	0	0	-1	-1	-1	0	0	
+item_rune_sfx_hd	60001		sfx/items_hd	item\item_rune_sfx.flac	0	0	0	0	0	200	200	100	100	0	0	0	0	0	0	1	0	0	1	0	90	100	0	0	0	0	0	-1	-1	-1	0	0	
