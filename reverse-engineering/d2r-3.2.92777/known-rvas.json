@@ -204,12 +204,28 @@
       "notes": "Returns the data-table context byte for an item unit immediately before item-record and item-type lookups."
     },
     {
+      "rva": "0x34A330",
+      "name": "UNITS_GetItemCell",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Returns the item's current inventory cell. Transmogrify preserves this value while temporarily detaching a source and uses the output cell when calling the native placement routine."
+    },
+    {
       "rva": "0x34A360",
       "name": "UNITS_GetInventory",
       "kind": "function",
       "confidence": "high",
       "source": "Mission/charm-inventory-auras-3.2.md",
       "notes": "Resolves a unit's inventory pointer through the same +A0/+98/+90 reference path as the legacy 0x208330 routine."
+    },
+    {
+      "rva": "0x34A410",
+      "name": "UNITS_GetInventoryGrid",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Maps a player, storage page and expansion flag to the active Inventory.txt grid. Page 0 resolves the main inventory, page 3 the Horadric Cube and page 4 the personal/shared stash grid."
     },
     {
       "rva": "0x34A500",
@@ -244,6 +260,14 @@
       "notes": "Returns the unit type used throughout the 92777 stat paths (0 player, 1 monster, 4 item). EnhancedDamageMinMaxFix limits inventory correction to players and monsters."
     },
     {
+      "rva": "0x36AE00",
+      "name": "ITEMS_AttachPlacedItem",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Performs the native post-placement attachment step for an item and its player. Transmogrify follows the same finalize, attach and conditional refresh sequence as the proven 92777 item-grant path."
+    },
+    {
       "rva": "0x36EAD0",
       "name": "ITEMS_GetMaxSockets",
       "kind": "function",
@@ -266,6 +290,22 @@
       "confidence": "high",
       "source": "Mission/transmogrify-restoration-3.2.md",
       "notes": "Captures the server item's mode, inventory page, packed position and node page into a 16-byte state structure. Transmogrify records this state before emitting the remove-from-container action and detaching the source."
+    },
+    {
+      "rva": "0x382E30",
+      "name": "ITEMS_InitializePacketState",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Initializes the 16-byte item packet state as unplaced (mode 4, inventory page 0xFF, zero position and node). Transmogrify initializes its output state here before setting the selected same-container position."
+    },
+    {
+      "rva": "0x3865B0",
+      "name": "INVENTORY_FindFreePosition",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Finds a valid free x/y position for an item in a specified inventory, Inventory.txt grid and storage page. Transmogrify searches only the source container after temporarily freeing the source slot."
     },
     {
       "rva": "0x388C10",
@@ -337,7 +377,15 @@
       "kind": "function",
       "confidence": "high",
       "source": "Mission/transmogrify-restoration-3.2.md",
-      "notes": "Creates an item unit from player, class id, game, spawn target, quality, no-sockets, no-ethereal, item level and optional seed arguments. The 11-argument ABI is proven by the 92777 wrapper at 0x517530 and the stack-to-drop-flags mapping in its strict prologue. Transmogrify 1.0.2 hooks it only while creating its output and forces noSockets=1 before packet serialization."
+      "notes": "Creates an item unit from player, class id, game, spawn target, quality, no-sockets, no-ethereal, item level and optional seed arguments. The 11-argument ABI is proven by the 92777 wrapper at 0x517530 and the stack-to-drop-flags mapping in its strict prologue. Transmogrify hooks it only while creating its output and forces noSockets=1 before packet serialization."
+    },
+    {
+      "rva": "0x43E8A0",
+      "name": "ITEMS_GetPlayerItemLevel",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Returns the native item level selected for a player-created item. Transmogrify uses it when creating an unplaced normal-quality output before same-container placement."
     },
     {
       "rva": "0x43EC10",
@@ -396,6 +444,14 @@
       "notes": "D2R 3.2 equivalent proven from the unique 12-entry damage-stat loop at 0x44EC44, matching damage offsets, resistance/pierce/absorb flow, fixed-point percentage branches, and the post-resolution observer call at 0x452651."
     },
     {
+      "rva": "0x46E8C0",
+      "name": "ITEMS_FinalizePlacedItem",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Finalizes a newly placed server item for its player and game. The native 0x517530 item-grant path calls it after placement and client notification; Transmogrify preserves that sequence."
+    },
+    {
       "rva": "0x46F090",
       "name": "SynchronizeItemAndBoundSkillQuantity",
       "kind": "function",
@@ -412,12 +468,28 @@
       "notes": "Native full player-item refresh: snapshots vitals and active skills, walks the inventory, obtains each owned item's stat-list mode, calls 0x2F8290 then 0x2F81A0, and restores the snapshot. CharmInventoryAuras invokes it after confirmed corpse recovery and, since 1.6.0, immediately after the softcore player returns to town."
     },
     {
+      "rva": "0x470C90",
+      "name": "ITEMS_RefreshPlayerInventory",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Thin native inventory-refresh dispatch used when post-placement attachment reports that a player refresh is required. Transmogrify calls it under the same condition as the proven item-grant path."
+    },
+    {
       "rva": "0x47145D",
       "name": "RejectedJavelinQuantityCandidate",
       "kind": "rejected-site",
       "confidence": "high",
       "source": "Mission/memory-patches-portage-3.2.json",
       "notes": "Explicit Javelin item-type path (0x29), not the tome path."
+    },
+    {
+      "rva": "0x471500",
+      "name": "ITEMS_PlaceItemForPlayer",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/transmogrify-restoration-3.2.md",
+      "notes": "Places an item for a player from a 16-byte item state and cell value. Native Cube and generic move call sites prove that the state's inventory page controls the destination; Transmogrify also preserves the source node page for shared-stash routing."
     },
     {
       "rva": "0x486AE0",
@@ -561,7 +633,7 @@
       "kind": "function",
       "confidence": "high",
       "source": "Mission/transmogrify-restoration-3.2.md",
-      "notes": "Resolves an item code, creates a quality-controlled item through ITEMS_CreateItemUnit, finds player-inventory space, places it and emits the native creation/update packets. Its decompiled 92777 ABI is (game, player, code, itemLevel, quality, groundFallback). Transmogrify uses quality 2 and disables ground fallback so a failed placement preserves the source."
+      "notes": "Resolves an item code, creates a quality-controlled item through ITEMS_CreateItemUnit, finds player-inventory space, places it and emits the native creation/update packets. Its decompiled 92777 ABI is (game, player, code, itemLevel, quality, groundFallback). It provides the canonical creation/finalization sequence used as the proof model for Transmogrify's explicit same-container placement path."
     },
     {
       "rva": "0x535F60",
