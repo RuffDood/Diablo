@@ -25,6 +25,8 @@ constexpr std::uintptr_t ZoneTransitionReturnRva = 0x486AE5;
 constexpr std::uintptr_t AttachSoundRva = 0x491960;
 constexpr std::uintptr_t CorpseRecoveryReturnRva = 0x4B35A6;
 constexpr std::uint16_t CorpseRecoverySoundId = 0x64;
+constexpr std::uintptr_t PlayerModeFinalizeRva = 0x42D2C0;
+constexpr std::uintptr_t TownRespawnReturnRva = 0x4B6650;
 constexpr std::uintptr_t GetInventoryRva = 0x34A360;
 constexpr std::uintptr_t GetItemDataRva = 0x34A500;
 constexpr std::uintptr_t GetStatListRva = 0x34B870;
@@ -66,6 +68,9 @@ struct ActiveSkillSnapshot {
 
 using ActTransitionFn = void(__fastcall*)(void*, void*, std::int32_t, std::int32_t) noexcept;
 using AttachSoundFn = void(__fastcall*)(void*, std::uint16_t, void*) noexcept;
+using PlayerModeFinalizeFn = void(__fastcall*)(
+    void*, void*, void*, std::int32_t, std::int32_t, std::int32_t, std::int32_t
+) noexcept;
 using GetInventoryFn = void*(__fastcall*)(void*, const char*, std::int32_t) noexcept;
 using GetItemDataFn = std::uint8_t*(__fastcall*)(void*) noexcept;
 using GetStatListFn = std::uint8_t*(__fastcall*)(void*) noexcept;
@@ -81,6 +86,7 @@ const D2RL::PluginContext* Context{};
 std::uint8_t* Base{};
 ActTransitionFn OriginalActTransition{};
 AttachSoundFn OriginalAttachSound{};
+PlayerModeFinalizeFn OriginalPlayerModeFinalize{};
 GetInventoryFn GetInventory{};
 GetItemDataFn GetItemData{};
 GetStatListFn GetStatList{};
@@ -95,6 +101,8 @@ SetActiveSkillFn SetRightActiveSkill{};
 std::atomic<std::uint64_t> ZoneTransitions{};
 std::atomic<std::uint64_t> CorpseRecoveries{};
 std::atomic<std::uint64_t> NativeCorpseRefreshes{};
+std::atomic<std::uint64_t> TownRespawns{};
+std::atomic<std::uint64_t> NativeTownRespawnRefreshes{};
 std::atomic<std::uint64_t> ScannedItems{};
 std::atomic<std::uint64_t> RefreshedCharms{};
 std::atomic<std::uint64_t> SkippedWithoutAura{};
@@ -109,9 +117,9 @@ constexpr D2RL::PluginInfo Info{
     .apiVersion = D2RL_PLUGIN_API_VERSION,
     .id = "charm-inventory-auras",
     .name = "Charm Inventory Auras",
-    .version = "1.5.0",
+    .version = "1.6.0",
     .author = "RuffnecKk",
-    .description = "Keeps identified inventory charm auras active after changing zones or recovering a corpse.",
+    .description = "Reactivates inventory charm auras after death, corpse recovery, and zone changes.",
     .flags = D2RL::PluginFlags::NativeHooks,
 };
 
@@ -279,6 +287,28 @@ __declspec(noinline) void __fastcall HookActTransition(
     RefreshCharmAuras(player);
 }
 
+__declspec(noinline) void __fastcall HookPlayerModeFinalize(
+    void* game,
+    void* player,
+    void* usedSkill,
+    std::int32_t mode,
+    std::int32_t x,
+    std::int32_t y,
+    std::int32_t finalFlag
+) noexcept {
+    const auto returnRva = reinterpret_cast<std::uintptr_t>(_ReturnAddress())
+        - reinterpret_cast<std::uintptr_t>(Base);
+    OriginalPlayerModeFinalize(game, player, usedSkill, mode, x, y, finalFlag);
+    if (returnRva != TownRespawnReturnRva || !game || !player) return;
+
+    TownRespawns.fetch_add(1, std::memory_order_relaxed);
+    // This call returns only after the softcore resurrection path has moved the
+    // player back to town and finalized PLRMODE_TOWNNEUTRAL. Refreshing here
+    // excludes the earlier hardcore-disconnect branch by construction.
+    RefreshPlayerItems(game, player);
+    NativeTownRespawnRefreshes.fetch_add(1, std::memory_order_relaxed);
+}
+
 auto Status(
     D2R::Game::Client*,
     const D2RL::ConsoleCommandContext* command,
@@ -290,10 +320,12 @@ auto Status(
     std::snprintf(
         message,
         sizeof(message),
-        "CharmInventoryAuras 1.5.0: transitions=%llu; corpse recoveries=%llu; native corpse refreshes=%llu; items scanned=%llu; aura charms refreshed=%llu; non-aura charms skipped=%llu; active skills restored=%llu; active skill restore failures=%llu; invalid stat arrays=%llu; over-cap charms=%llu; traversal guards=%llu.",
+        "CharmInventoryAuras 1.6.0: transitions=%llu; corpse recoveries=%llu; native corpse refreshes=%llu; town respawns=%llu; native town refreshes=%llu; items scanned=%llu; aura charms refreshed=%llu; non-aura charms skipped=%llu; active skills restored=%llu; active skill restore failures=%llu; invalid stat arrays=%llu; over-cap charms=%llu; traversal guards=%llu.",
         static_cast<unsigned long long>(ZoneTransitions.load(std::memory_order_relaxed)),
         static_cast<unsigned long long>(CorpseRecoveries.load(std::memory_order_relaxed)),
         static_cast<unsigned long long>(NativeCorpseRefreshes.load(std::memory_order_relaxed)),
+        static_cast<unsigned long long>(TownRespawns.load(std::memory_order_relaxed)),
+        static_cast<unsigned long long>(NativeTownRespawnRefreshes.load(std::memory_order_relaxed)),
         static_cast<unsigned long long>(ScannedItems.load(std::memory_order_relaxed)),
         static_cast<unsigned long long>(RefreshedCharms.load(std::memory_order_relaxed)),
         static_cast<unsigned long long>(SkippedWithoutAura.load(std::memory_order_relaxed)),
@@ -324,6 +356,22 @@ bool InstallHooks() noexcept {
         0x4C, 0x8B, 0xC1,
         0xE8, 0xBA, 0xE3, 0xFD, 0xFF
     };
+    constexpr std::array<std::uint8_t, 16> playerModeFinalizeExpected{
+        0x48, 0x89, 0x5C, 0x24, 0x20,
+        0x4C, 0x89, 0x44, 0x24, 0x18,
+        0x55, 0x56, 0x57, 0x48, 0x83, 0xEC
+    };
+    constexpr std::array<std::uint8_t, 43> townRespawnCallExpected{
+        0x44, 0x89, 0x7C, 0x24, 0x38,
+        0x41, 0xB9, 0x01, 0x00, 0x00, 0x00,
+        0xC7, 0x44, 0x24, 0x30, 0x01, 0x00, 0x00, 0x00,
+        0x45, 0x33, 0xC0,
+        0x44, 0x89, 0x7C, 0x24, 0x28,
+        0x49, 0x8B, 0xD5,
+        0x49, 0x8B, 0xCE,
+        0x44, 0x89, 0x7C, 0x24, 0x20,
+        0xE8, 0x70, 0x6C, 0xF7, 0xFF
+    };
     if (!Context->CheckExpectedBytes(
             ActTransitionRva,
             actTransitionExpected.data(),
@@ -338,8 +386,18 @@ bool InstallHooks() noexcept {
             CorpseRecoveryReturnRva - corpseRecoveryCallExpected.size(),
             corpseRecoveryCallExpected.data(),
             static_cast<std::uint32_t>(corpseRecoveryCallExpected.size())
+        )
+        || !Context->CheckExpectedBytes(
+            PlayerModeFinalizeRva,
+            playerModeFinalizeExpected.data(),
+            static_cast<std::uint32_t>(playerModeFinalizeExpected.size())
+        )
+        || !Context->CheckExpectedBytes(
+            TownRespawnReturnRva - townRespawnCallExpected.size(),
+            townRespawnCallExpected.data(),
+            static_cast<std::uint32_t>(townRespawnCallExpected.size())
         )) {
-        Context->LogError("CharmInventoryAuras: hook or corpse-recovery call-site signature mismatch; plugin refused.");
+        Context->LogError("CharmInventoryAuras: hook or refresh call-site signature mismatch; plugin refused.");
         return false;
     }
     if (!Context->InstallInlineHook(
@@ -360,6 +418,16 @@ bool InstallHooks() noexcept {
             &OriginalAttachSound
         )) {
         Context->LogError("CharmInventoryAuras: attach-sound signature mismatch; corpse-recovery hook refused.");
+        return false;
+    }
+    if (!Context->InstallInlineHook(
+            PlayerModeFinalizeRva,
+            playerModeFinalizeExpected.data(),
+            static_cast<std::uint32_t>(playerModeFinalizeExpected.size()),
+            HookPlayerModeFinalize,
+            &OriginalPlayerModeFinalize
+        )) {
+        Context->LogError("CharmInventoryAuras: player-mode signature mismatch; town-respawn hook refused.");
         return false;
     }
     return true;
@@ -476,11 +544,11 @@ D2RL_PLUGIN_EXPORT auto D2RLoaderLoadPlugin(const D2RL::PluginContext* context) 
     if (!context->RegisterConsoleCommand(
             "charm-inventory-auras",
             Status,
-            "Show zone-transition and corpse-recovery charm-aura refresh counters."
+            "Show charm-aura refresh counters for transitions, corpse recovery, and town respawns."
         )) {
         context->LogWarn("CharmInventoryAuras: status command could not be registered.");
     }
-    context->LogInfo("CharmInventoryAuras 1.5.0 active for D2R 3.2.92777 (global/mod-local hybrid; transition aura refresh plus native corpse item-stat refresh).");
+    context->LogInfo("CharmInventoryAuras 1.6.0 active for D2R 3.2.92777 (global/mod-local hybrid; transition, corpse-recovery, and town-respawn aura refreshes).");
     return true;
 }
 

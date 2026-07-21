@@ -7,8 +7,10 @@ Compilation, tests unitaires, signatures statiques et synchronisation runtime
 validés. Le maintien de l'aura et du `oskill` sélectionné pendant les
 transitions de zone a été validé en jeu par le testeur. La réactivation après
 récupération du cadavre par le simple rattachement 1.4.0 a échoué en jeu. La
-version 1.5.0 emploie maintenant la séquence native complète
-expiration/rattachement et reste à valider en jeu.
+séquence native complète expiration/rattachement de la version 1.5.0 a ensuite
+été validée en jeu lors de la reprise du cadavre. La version 1.6.0 applique
+maintenant ce même refresh dès le retour du personnage en ville après sa mort ;
+ce dernier chemin reste à valider en jeu.
 
 ## Source 2.4
 
@@ -49,6 +51,9 @@ est toujours à `ItemData + 0xB8` dans le build 92777.
 | rafraîchir les statlists du joueur | — | `0x46F220` | sauvegarde ressources/compétences, expire et fusionne les items possédés, puis restaure l'état |
 | succès de récupération du cadavre | — | `0x4B3594` | séquence unique après transfert et suppression du corps, retour `0x4B35A6` |
 | attacher le son de succès | — | `0x491960` | hook filtré par retour `0x4B35A6` et son `0x64` |
+| handler de résurrection | `0x6FC87480` | `0x4B6160` | même packet de taille 1, branche Hardcore, restauration des ressources, retour en ville et réassignation des compétences |
+| finaliser le mode joueur | `0x6FC817D0` | `0x42D2C0` | ABI à 7 arguments et même appel `(game, player, null, TOWNNEUTRAL, 0, 0, 1)` |
+| retour en ville après mort | appel interne | `0x4B664B` | séquence de 43 octets unique après `PlayerChangeAct`, retour `0x4B6650` |
 
 Le site `0x486AE0` retourne à `0x486AE5`. La routine `0x502D00` possède un
 second appelant (`0x488228`) qui n'appartient pas au chemin du patch 2.4 ; le
@@ -61,20 +66,23 @@ plugin filtre donc explicitement l'adresse de retour `0x486AE5`.
 - Archive publique sans guide : `addons/CharmInventoryAuras/CharmInventoryAuras.zip`
 - ID : `charm-inventory-auras`
 - Commande : `charm-inventory-auras`
-- Version : `1.5.0`
+- Version : `1.6.0`
 - Auteur : `RuffnecKk`
 - Flags : `0x2` (`NativeHooks` uniquement, sans `ModScopedOnly`)
-- SHA-256 DLL Release x64 : `3B3ECBA1C7F5C6A9BC9345E2452BEAA1D95208D6F718F2F0C3B163B614D82041`
-- SHA-256 ZIP : `727CF1DED8979A8FD7497E4BA2BD8E4A8CF833E210346C69F3D0DA1322172B6F`
+- SHA-256 DLL Release x64 : `510DB9ABEFD94E08EA1FF7CF56EEC9DB8F6B5F25138B8EDC381B61C149A8F4F0`
+- SHA-256 ZIP : `DE8DB8CABBCB7CA33672762016888122DE88E98A6E71C9C0DBCB12A6C4827376`
 
-Le plugin hooke l'entrée de `0x502D00` pour les transitions et `0x491960` pour
-la reprise du cadavre. Il appelle toujours les routines originales en premier,
-puis reproduit le parcours et la limite de 32 charms du patch 2.4 lors des
-transitions. Le second hook ne déclenche le rafraîchissement natif complet des
-statlists du joueur qu'après la séquence de succès unique qui retourne à
-`0x4B35A6`; un clic échoué ne fait donc rien. Le plugin refuse l'installation si
-le build déclaré n'est pas 92777 ou si une signature de fonction, de séquence
-expiration/fusion, de slot de compétence ou de call-site ne correspond pas.
+Le plugin hooke l'entrée de `0x502D00` pour les transitions, `0x491960` pour la
+reprise du cadavre et `0x42D2C0` pour la finalisation du mode joueur. Il appelle
+toujours les routines originales en premier, puis reproduit le parcours et la
+limite de 32 charms du patch 2.4 lors des transitions. Le hook de reprise ne
+déclenche le rafraîchissement natif complet qu'après la séquence de succès qui
+retourne à `0x4B35A6`. Le hook de mode partagé est filtré par l'unique retour
+`0x4B6650`, atteint après le retour en ville du personnage Softcore ; la branche
+de déconnexion Hardcore se termine avant cet appel. Le plugin refuse
+l'installation si le build déclaré n'est pas 92777 ou si une signature de
+fonction, de séquence expiration/fusion, de slot de compétence ou de call-site
+ne correspond pas.
 
 ## Validation effectuée
 
@@ -83,6 +91,8 @@ expiration/fusion, de slot de compétence ou de call-site ne correspond pas.
 - test `charm-inventory-auras-policy` réussi ;
 - `itemtypes.txt` BKVince : ID `13` confirmé comme `Charm` / code `char` ;
 - appel 3.2 `0x486AE0` : signature `E8 1B C2 07 00` unique ;
+- prologue `0x42D2C0` et séquence de résurrection `0x4B6625` : signatures
+  respectivement uniques dans `.text` ;
 - runtime BKVince démarré à froid le 2026-07-19 ;
 - journal `charm-inventory-auras.log` : hook natif installé à `0x502D00`, puis
   `CharmInventoryAuras 1.0.0 active for D2R 3.2.92777` ;
@@ -176,15 +186,39 @@ validé en 1.3.0 reste inchangé.
 - version/flags vérifiés : `1.5.0`, `0x2` ;
 - auteur embarqué : `RuffnecKk` ;
 - ZIP : DLL seule, byte-identique au runtime ;
+- validation gameplay : réussie le 21 juillet 2026 ; le testeur confirme que
+  l'aura se réactive lors de la reprise du cadavre.
+
+## Réactivation immédiate au retour en ville 1.6.0 (21 juillet 2026)
+
+Le handler serveur de résurrection `0x4B6160` reproduit le chemin legacy du
+packet `0x41`. En Softcore, il restaure les ressources, change d'acte, appelle
+la finalisation du mode joueur `0x42D2C0` avec le mode ville, puis réassigne les
+compétences actives. La branche Hardcore déconnecte le client plus tôt et
+n'atteint jamais cette finalisation.
+
+La version 1.6.0 hooke la routine partagée `0x42D2C0`, appelle vanilla en
+premier et n'exécute le refresh natif `0x46F220` que lorsque l'adresse de retour
+est `0x4B6650`. L'aura doit ainsi revenir dès l'apparition du personnage en
+ville, avant toute reprise de cadavre.
+
+- compilation MSVC Release x64 réussie ;
+- test `charm-inventory-auras-policy` réussi ;
+- signatures de fonction et de call-site uniques vérifiées dans `.text` ;
+- version/auteur/description/exports vérifiés dans la DLL ;
+- DLL source, build et runtime BKVince byte-identiques ;
+- ZIP vérifié : DLL seule, sans guide ;
 - validation gameplay : en attente.
 
 ## Validation en jeu restante
 
 1. Mourir avec un charm identifié portant `item_aura` dans l'inventaire
-   principal, puis reprendre le cadavre.
-2. Confirmer que l'aura revient sans retirer/remettre le charm.
-3. Avec un charm combinant aura + `oskill`, confirmer aussi que la compétence
-   sélectionnée demeure valide.
-4. Vérifier que la commande `charm-inventory-auras` incrémente
-   `corpse recoveries` et `native corpse refreshes` une seule fois.
-5. Confirmer qu'un clic de reprise échoué n'incrémente pas le compteur.
+   principal et revenir en ville sans reprendre le cadavre.
+2. Confirmer que l'aura revient dès l'apparition en ville, sans retirer/remettre
+   le charm.
+3. Avec un charm combinant aura + `oskill`, confirmer que la compétence
+   sélectionnée demeure valide au retour en ville.
+4. Vérifier que la commande `charm-inventory-auras` incrémente `town respawns`
+   et `native town refreshes` exactement une fois.
+5. Confirmer qu'une mort Hardcore conserve le comportement vanilla et ne peut
+   pas atteindre ce refresh.
