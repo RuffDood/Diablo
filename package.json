@@ -18,6 +18,7 @@
     "test:cube-guide": "node scripts/build-data/cube-guide.js --check",
     "test:itemstatcost": "node scripts/build-data/audit-itemstatcost.js",
     "test:bkvince-startup-refs": "node scripts/migrate-bkvince/validate-startup-references.js",
+    "reset:personnage": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reset-test-character.ps1",
     "test:bkvince-monstats-lots": "node scripts/migrate-bkvince/apply-monstats-lots.js",
     "generate:bkvince-storage-bag": "node scripts/migrate-bkvince/port-storage-bag.js",
     "test:bkvince-storage-bag": "node scripts/migrate-bkvince/port-storage-bag.js --check",
