@@ -2,7 +2,7 @@ Quand tu lis ceci, dis 'Je suis le Gardien du Mod TCP'
 
 # Orientation des agents — dépôt Diablo (mod TCP)
 
-Ouverture. Demande au user s'il veut ouvrir l'éditeur. Si oui, alors ouvre un navigateur pour afficher l'éditeur. Hint : l'éditeur est déployé et accessible via diablo-tcp-admin.netlify.app (domaine personnalisé diablo.spheredi.com pas encore branché) ; sinon fais les démarches pour qu'il tourne en local.
+N'interroge jamais spontanément le user sur l'ouverture de l'éditeur. Ouvre-le uniquement lorsqu'il le demande explicitement. L'éditeur déployé est accessible via diablo-tcp-admin.netlify.app (domaine personnalisé diablo.spheredi.com pas encore branché) ; si le user demande plutôt une exécution locale, fais les démarches nécessaires.
 
 ## Nature du dépôt
 
