@@ -106,7 +106,7 @@ Sources :
 `data-BKVince/d2rloader/plugins/BulkSkillPointAllocation-src/`.
 Archive publique :
 `addons/BulkSkillPointAllocation/BulkSkillPointAllocation.zip`, avec la DLL, le
-JSON et le README.
+JSON seulement.
 
 La commande console `bulk-skill-points` affiche la configuration active, l'état
 de la file et les compteurs clic normal, lots Ctrl, Shift acceptés/annulés,
@@ -226,7 +226,7 @@ patch est refusé.
 
 Le plugin demeure une DLL RuffnecKk distincte. Il ne lie, ne modifie et ne
 redistribue aucune DLL d'eezstreet. La destination logique d'une intégration
-future est toutefois `plugin-misc`, et non `plugin-skills`.
+future est toutefois `plugin-items`, et non `plugin-skills` ou `plugin-misc`.
 
 La configuration TOML individuelle est remplacée par
 `BulkSkillPointAllocation.json`. Comme ce fichier ne configure qu'un plugin,
@@ -236,7 +236,7 @@ JSON avec commentaires, recherche prioritaire dans le dossier du mod actif,
 puis repli dans le dossier du jeu. Une configuration absente emploie les
 valeurs par défaut; une configuration présente mais invalide fait refuser le
 chargement. Lors d'un merge accepté, l'objet plat pourra être déplacé sous
-`misc.bulkSkillAllocation` dans `D2RPlugins.json`.
+`items.bulkSkillAllocation` dans `D2RPlugins.json`.
 
 La compatibilité a été auditée contre le dernier commit officiel
 D2RL-Plugins 2.0.1, `dc75b49ffbb67b887d7757ee00ee9a03bcde5d8a` : aucun
@@ -256,8 +256,8 @@ neutralisée par l'identifiant du plugin, les six DLL coexistent avec
   `0C784A408D9DE8504494D70042CDDF9C8822058FDAF0A67EA836E1A8C3524440`;
 - JSON dépôt/runtime SHA-256 :
   `133177B5588322B9A74DB5C06C89FB0F7877177B5F41A25D30A73241F4A35340`;
-- ZIP DLL + JSON + README SHA-256 :
-  `A67A5A851D3FFBDAD74BD74A939220FB6DF71644D0F33B187AE3170F40F74F21`.
+- ZIP DLL + JSON SHA-256 :
+  `36A72095B496F9F45056C4ACF1BCE409C6E3BD1504C2F44A3C027529E7432EBB`.
 
 ## Gate fonctionnel restant
 

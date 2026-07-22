@@ -37,6 +37,7 @@
     "re:refs": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/references.ps1",
     "ref:d2moo": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/references.ps1 -Reference d2moo",
     "ref:d2ssharp": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/references.ps1 -Reference d2ssharp",
+    "ref:d2rlplugins": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/references.ps1 -Reference d2rlplugins",
     "re:d2r32:init": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/Initialize-D2R32Workbench.ps1",
     "re:d2r32:ghidra-import": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/Import-D2R32Ghidra.ps1",
     "re:d2r32:ghidra": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/Invoke-D2R32Ghidra.ps1"

@@ -17,6 +17,8 @@ npm run re:d2r32 -- xrefs 0x46F090
 npm run re:d2r32 -- bytes "41 B9 ?? ?? ?? ??"
 npm run re:d2r32 -- reference d2moo durability
 npm run re:d2r32 -- reference d2moo ITEMS_UpdateDurability --symbol
+npm run re:d2r32 -- reference d2rlplugins sgptDataTables
+npm run re:d2r32 -- reference d2rlplugins D2UnitStrc --symbol
 ```
 
 `function` desassemble uniquement la fonction concernee a partir de la table

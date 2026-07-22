@@ -40,6 +40,28 @@
         "Keep BKVince TXT files as the sole gameplay-data and item-stat encoding source.",
         "Preserve MIT attribution for any source code adapted rather than independently reimplemented."
       ]
+    },
+    {
+      "id": "d2rlplugins",
+      "name": "eezstreet D2RL-Plugins",
+      "repository": "https://github.com/eezstreet/D2RL-Plugins.git",
+      "webUrl": "https://github.com/eezstreet/D2RL-Plugins",
+      "branch": "master",
+      "commit": "dc75b49ffbb67b887d7757ee00ee9a03bcde5d8a",
+      "pinnedAt": "2026-07-22",
+      "localPath": "analysis-cache/references/D2RL-Plugins",
+      "license": "MIT (declared in README)",
+      "licensePath": "README.md",
+      "upstreamTarget": "D2RLoader PluginPack 2.0.1 for Diablo II: Resurrected",
+      "role": "plugin-pack-integration-reference",
+      "citationFormat": "D2RL-Plugins@{commit}:{path}:{line}",
+      "policy": [
+        "Treat the pinned CMake files, headers and plugin sources as the authoritative PluginPack skeleton; the upstream README may lag the implementation.",
+        "Never edit the governed clean checkout. Develop RuffnecKk integrations in the separate build-specific workbench clone.",
+        "Before designing a plugin, inventory the owning module, shared structures, configuration keys, RVAs and hook ranges against this pinned commit.",
+        "Advance the pin only through an explicit reviewed update; never silently mix evidence from different PluginPack commits.",
+        "Preserve eezstreet's MIT attribution and distinguish upstream code from independently implemented RuffnecKk features."
+      ]
     }
   ]
 }

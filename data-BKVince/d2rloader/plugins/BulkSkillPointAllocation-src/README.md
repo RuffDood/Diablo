@@ -61,5 +61,5 @@ overlapping hook makes the plugin refuse to load safely.
 
 The standalone DLL does not link to, modify or redistribute any PluginPack DLL.
 If the feature is accepted upstream later, this flat configuration object can
-be moved under `misc.bulkSkillAllocation` and the implementation compiled into
-`plugin-misc`.
+be moved under `items.bulkSkillAllocation` and the implementation compiled into
+`plugin-items`.
