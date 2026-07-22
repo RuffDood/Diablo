@@ -231,7 +231,7 @@
 {
   "type": "Entity",
   "name": "droplight",
-  "id": 9999996974,
+  "id": 1410062382,
   "components": [
     {
       "type": "TransformDefinitionComponent",

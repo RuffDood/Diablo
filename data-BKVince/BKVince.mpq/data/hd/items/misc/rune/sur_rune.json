@@ -111,7 +111,7 @@
                 {
             "type": "Entity",
             "name": "SFX_Waypoint",
-            "id": 8000009541,
+            "id": 3705042245,
             "components": [
                 {
                     "type": "AudioEmitterComponent",
@@ -401,7 +401,7 @@
 {
   "type": "Entity",
   "name": "droplight",
-  "id": 9999996974,
+  "id": 1410062382,
   "components": [
     {
       "type": "TransformDefinitionComponent",

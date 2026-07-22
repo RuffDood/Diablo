@@ -52,7 +52,7 @@
         {
             "type": "Entity",
             "name": "entity_vfx1",
-            "id": 76534545456,
+            "id": 3520101424,
             "components": [
                 {
                     "type": "VfxDefinitionComponent",
@@ -86,7 +86,7 @@
         {
             "type": "Entity",
             "name": "entity_vfx1",
-            "id": 76534545456,
+            "id": 3520101424,
             "components": [
                 {
                     "type": "VfxDefinitionComponent",
@@ -120,7 +120,7 @@
         {
             "type": "Entity",
             "name": "entity_vfx1",
-            "id": 76534545456,
+            "id": 3520101424,
             "components": [
                 {
                     "type": "VfxDefinitionComponent",
@@ -154,7 +154,7 @@
         {
             "type": "Entity",
             "name": "entity_vfx1",
-            "id": 76534545456,
+            "id": 3520101424,
             "components": [
                 {
                     "type": "VfxDefinitionComponent",
@@ -188,7 +188,7 @@
         {
             "type": "Entity",
             "name": "entity_vfx1",
-            "id": 76534545456,
+            "id": 3520101424,
             "components": [
                 {
                     "type": "VfxDefinitionComponent",
@@ -222,7 +222,7 @@
         {
             "type": "Entity",
             "name": "entity_vfx1",
-            "id": 76534545456,
+            "id": 3520101424,
             "components": [
                 {
                     "type": "VfxDefinitionComponent",
@@ -256,7 +256,7 @@
         {
             "type": "Entity",
             "name": "entity_vfx1",
-            "id": 76534545456,
+            "id": 3520101424,
             "components": [
                 {
                     "type": "VfxDefinitionComponent",
@@ -290,7 +290,7 @@
         {
             "type": "Entity",
             "name": "entity_vfx1",
-            "id": 76534545456,
+            "id": 3520101424,
             "components": [
                 {
                     "type": "VfxDefinitionComponent",
@@ -324,7 +324,7 @@
         {
             "type": "Entity",
             "name": "entity_vfx1",
-            "id": 76534545456,
+            "id": 3520101424,
             "components": [
                 {
                     "type": "VfxDefinitionComponent",
@@ -358,7 +358,7 @@
         {
             "type": "Entity",
             "name": "entity_vfx1",
-            "id": 76534545456,
+            "id": 3520101424,
             "components": [
                 {
                     "type": "VfxDefinitionComponent",

@@ -174,7 +174,7 @@
         {
             "type": "Entity",
             "name": "entity_root",
-            "id": 786798775534,
+            "id": 819760366,
             "components": [
               {
                 "type": "VfxDefinitionComponent",
