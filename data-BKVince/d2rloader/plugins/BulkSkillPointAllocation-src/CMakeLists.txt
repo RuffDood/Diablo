@@ -7,11 +7,21 @@ FetchContent_Declare(
     GIT_REPOSITORY https://github.com/D2RLoader/PluginSDK.git
     GIT_TAG efcfaaa52eeec9e379b3fc2aad1013bb3dddc970
 )
+FetchContent_Declare(
+    nlohmann_json
+    GIT_REPOSITORY https://github.com/nlohmann/json.git
+    GIT_TAG v3.11.3
+    GIT_SHALLOW TRUE
+)
 FetchContent_MakeAvailable(D2RLPlugin)
+FetchContent_MakeAvailable(nlohmann_json)
 
 add_library(BulkSkillPointAllocation SHARED plugin.cpp plugin.rc)
 target_compile_features(BulkSkillPointAllocation PRIVATE cxx_std_20)
-target_link_libraries(BulkSkillPointAllocation PRIVATE D2RLPlugin::D2RLPlugin)
+target_link_libraries(BulkSkillPointAllocation PRIVATE
+    D2RLPlugin::D2RLPlugin
+    nlohmann_json::nlohmann_json
+)
 set_target_properties(BulkSkillPointAllocation PROPERTIES OUTPUT_NAME "BulkSkillPointAllocation")
 
 add_executable(BulkSkillPointAllocationTests allocation_policy_tests.cpp)

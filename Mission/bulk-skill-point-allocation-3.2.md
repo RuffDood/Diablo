@@ -71,7 +71,7 @@ Les getters strictement signés utilisés pour observer la progression sont
 
 ## Implantation livrée
 
-`BulkSkillPointAllocation 1.0.2` est un plugin D2RLoader hybride, attribué à
+`BulkSkillPointAllocation 1.1.0` est un plugin D2RLoader hybride, attribué à
 `RuffnecKk`, sans `ModScopedOnly`. Il peut être installé globalement ou sous un
 mod. Il intercepte le builder à `0x000EC700` avec son prologue strict de 29
 octets et ne modifie que l'opcode `0x3B`; tous les autres paquets traversent le
@@ -82,8 +82,8 @@ supplémentaire, une file bornée attend que le niveau de base observé change,
 preuve que le rang précédent a été traité, puis rappelle la validation native
 `0x014C3DA0` avant d'envoyer une nouvelle requête mono-rang. La file s'arrête au
 premier refus ou après une sécurité interne fixe de 2000 ms sans confirmation.
-Cette valeur n'est pas un délai entre deux points et n'est plus exposée dans le
-TOML. Ce modèle
+Cette valeur n'est pas un délai entre deux points et n'est pas exposée dans la
+configuration publique. Ce modèle
 laisse les règles runtime et le serveur autoritaires pour les coûts `SkPoints`,
 la classe, les prérequis, les attributs, le niveau requis, les points restants
 et le plafond effectif.
@@ -93,19 +93,20 @@ D2RLoader n'expose pas actuellement d'API stable permettant de construire une
 confirmation native en jeu. Refuser la boîte n'envoie aucun paquet. Ctrl ne
 demande aucune confirmation.
 
-La version 1.0.2 corrige la détection de Ctrl : `GetKeyState` pouvait perdre
-l'état Ctrl entre le clic UI et la construction du paquet, ce qui classait le
-clic comme un clic normal. Le plugin appelle désormais le wrapper asynchrone
-natif `0x0120A100`, comme le fait déjà D2R pour Shift. Cette correction ne
-change pas le comportement des clics répétés et n'ajoute aucun verrou anti-spam.
+La version 1.0.3 durcit la détection après l'échec fonctionnel de 1.0.2 :
+`Shift` est déduit du marqueur natif `extra = 0xFFFF` produit par le chemin
+skill, tandis que Ctrl interroge `VK_CONTROL`, `VK_LCONTROL` et
+`VK_RCONTROL` via le wrapper D2R signé et via Win32. La commande de statut
+expose le dernier masque de touches et la valeur `extra` pour distinguer sans
+ambiguïté un problème de détection d'un arrêt ultérieur de la file.
 
 Configuration :
-`data-BKVince/d2rloader/config/bulk-skill-point-allocation.toml`.
+`data-BKVince/BKVince.mpq/BulkSkillPointAllocation.json`.
 Sources :
 `data-BKVince/d2rloader/plugins/BulkSkillPointAllocation-src/`.
 Archive publique :
-`addons/BulkSkillPointAllocation/BulkSkillPointAllocation.zip`, avec la DLL et
-le TOML seulement.
+`addons/BulkSkillPointAllocation/BulkSkillPointAllocation.zip`, avec la DLL, le
+JSON et le README.
 
 La commande console `bulk-skill-points` affiche la configuration active, l'état
 de la file et les compteurs clic normal, lots Ctrl, Shift acceptés/annulés,
@@ -132,6 +133,131 @@ rangs envoyés, lots terminés, arrêts par règle et timeouts de synchronisatio
 - l'assertion RapidJSON tardive au caller RVA `0x0007600A` a été capturée et
   ignorée par D2RLoader; elle est déjà connue dans ce runtime et n'est pas
   attribuée à ce plugin.
+
+## Correctif 1.0.3 du 22 juillet 2026
+
+Le retour en jeu a confirmé que 1.0.2 classait encore `Ctrl + clic` comme un
+clic normal, malgré une DLL et un TOML runtime byte-identiques aux sources.
+La version 1.0.3 conserve la file mono-rang et ne change que la résolution des
+modificateurs : marqueur paquet natif pour Shift, puis contrôles générique,
+gauche et droite pour Ctrl par les chemins D2R et Win32. Le test de politique,
+la compilation Release x64 et les trois exports D2RLoader réussissent. La DLL
+dépôt/runtime porte le SHA-256
+`E565A4F4419AC9AFB14F334F6F7866E17751F40C9E21F0A3DFBE5E0EA4A6788A`.
+Le ZIP DLL + TOML porte le SHA-256
+`968909723344EDE1CEDAE65ED10CB1F123BCD1F3C0FA4232E4C6E2A9333D5554`.
+Le cold-start global charge explicitement 1.0.3, accepte le hook strict et
+atteint les 24/24 étapes de démarrage; l'assertion RapidJSON connue au caller
+`0x0007600A` reste capturée et ignorée.
+Le nouveau gate prioritaire est `Ctrl + clic = 5`; si nécessaire, la commande
+`bulk-skill-points` expose `last modifiers` et `last extra` immédiatement après
+le clic pour isoler le code de touche réellement observé.
+
+## Correctif 1.0.4 du 22 juillet 2026
+
+Le second retour en jeu a confirmé qu'un seul rang était encore envoyé en
+1.0.3. La détection Ctrl n'est donc plus considérée comme cause suffisante :
+la file 1.0.x exécutait ses lectures de structures client et ses rappels de
+fonctions D2R depuis un `std::thread`, alors que le chemin natif démontré les
+exécute sur le thread client/UI. La version 1.0.4 supprime entièrement ce
+worker. Un timer Windows attaché à la fenêtre D2R est armé depuis le hook du
+clic; ses callbacks observent la confirmation serveur, rappellent la validation
+native puis envoient chaque paquet suivant sur le même thread que le clic.
+Le délai de sécurité, les règles d'arrêt et le protocole mono-rang restent
+inchangés. Tests de politique et compilation Release x64 réussis; DLL dépôt et
+runtime global identiques, SHA-256
+`8C8571799414D8339ACE556F0A03447EB5681220C7EFA6B3179A3E2001D98531`.
+ZIP DLL + TOML, SHA-256
+`3E121FC9B4E49F1A07E3596AD3761059500352BC89D005E968CA9A6CC4BBABFF`.
+
+## Correctif diagnostique 1.0.5 du 22 juillet 2026
+
+Le test de 1.0.4 a produit des lots instables de 1, 2, 5 et même 6 rangs pour
+une cible de 5. Le dépassement prouve une réentrance possible du callback timer
+pendant qu'un appel D2R repompe les messages. La version 1.0.5 ajoute un verrou
+`processing` maintenu pendant toute observation, validation et émission, ainsi
+qu'une génération de lot stricte pour empêcher un ancien callback de muter un
+nouveau clic sur la même compétence. Une confirmation n'est acceptée que si le
+niveau progresse exactement de `+1`; tout saut ou recul arrête la file. Le timer
+n'est armé qu'après le retour du premier envoi natif afin d'interdire un rappel
+imbriqué pendant ce premier paquet. Les diagnostics sont temporairement actifs
+et journalisent `click`, `started`, chaque `send`, `completed`, `timeout`,
+`native-rule-stop` ou `non-monotone-ack` avec niveau, restant et génération.
+DLL dépôt/runtime global SHA-256
+`944A33B0B7B08B9B818A587E4D474D4419479A12BF5424C728CC382E93586C2F`;
+ZIP DLL + TOML SHA-256
+`2CE709A14886ABFB30BE13C9CD00CC4EEBF124A60695E229C859E2A8920D1ED4`.
+
+## Stabilisation temporelle 1.0.6 du 22 juillet 2026
+
+Les diagnostics 1.0.5 prouvent un lot complet `0 → 5`, mais aussi des arrêts
+après qu'un paquet envoyé environ 30 ms après l'accusé précédent n'a produit
+aucun nouveau rang. Le niveau de compétence devient donc observable avant que
+l'ensemble de l'état associé soit systématiquement stabilisé. La version 1.0.6
+conserve l'accusé exact `+1`, puis attend 150 ms depuis l'envoi précédent avant
+de rappeler la validation native et d'envoyer le rang suivant. Un lot Ctrl de
+cinq rangs prend environ 600 ms. DLL dépôt/runtime global SHA-256
+`B4BC803BEC9E5A2EBB2886BC76669964238320A5CD5E941573643C0DC0EE79A6`;
+ZIP SHA-256
+`5CB6143F80C62CA88CD4294E3F299994A6B88C6B8C34A12FED8170AC21732BFE`.
+
+## Accélération sûre 1.0.7 du 22 juillet 2026
+
+Huit lots successifs de 1.0.6 ont terminé exactement à cinq rangs avec un
+espacement fixe de 150 ms, confirmant la stabilité mais laissant environ
+600–800 ms de latence visible. La version 1.0.7 remplace ce délai arbitraire par
+deux accusés natifs : le niveau de base doit progresser exactement de `+1` et
+la stat 5 des points disponibles, lue par `STATLIST_GetUnitBaseStat` au RVA
+`0x002F48C0`, doit réellement diminuer. Dès que les deux sont visibles, la
+validation et le paquet suivants partent au prochain tick de 20 ms. Le getter
+possède l'ABI prouvée `(unit, statId, uint16 layer)` et une signature stricte de
+15 octets. DLL dépôt/runtime global SHA-256
+`7E710703415086407AA9C43298E0DA4152ABBDB11F7A410BBF99065D8E05A1FB`;
+ZIP SHA-256
+`493AF0135EDD21DCF7884951904AD408846564CB25658B12C5DBDA2B1A9E83F8`.
+Dans BKVince, `DurabilityResistance` intercepte déjà ce getter. La validation
+accepte donc soit le prologue natif exact, soit exclusivement le trampoline
+D2RLoader à deux étages — `JMP rel32` vers un relais voisin, puis
+`JMP [RIP+0]` absolu — dont les dix octets natifs non remplacés restent exacts
+et dont la cible finale appartient à `DurabilityResistance.dll`; tout autre
+patch est refusé.
+
+## DLL autonome compatible PluginPack 1.1.0 du 22 juillet 2026
+
+Le plugin demeure une DLL RuffnecKk distincte. Il ne lie, ne modifie et ne
+redistribue aucune DLL d'eezstreet. La destination logique d'une intégration
+future est toutefois `plugin-misc`, et non `plugin-skills`.
+
+La configuration TOML individuelle est remplacée par
+`BulkSkillPointAllocation.json`. Comme ce fichier ne configure qu'un plugin,
+ses clés `skillPointsPerCtrlClick` et `diagnostics` sont directement à la
+racine, sans section artificielle `misc`. Le lecteur suit le modèle eezstreet :
+JSON avec commentaires, recherche prioritaire dans le dossier du mod actif,
+puis repli dans le dossier du jeu. Une configuration absente emploie les
+valeurs par défaut; une configuration présente mais invalide fait refuser le
+chargement. Lors d'un merge accepté, l'objet plat pourra être déplacé sous
+`misc.bulkSkillAllocation` dans `D2RPlugins.json`.
+
+La compatibilité a été auditée contre le dernier commit officiel
+D2RL-Plugins 2.0.1, `dc75b49ffbb67b887d7757ee00ee9a03bcde5d8a` : aucun
+des cinq modules n'écrit le hook BulkSkill `0x000EC700` ni l'entrée lue
+`0x002F48C0`. Le cold-start BKVince charge les cinq DLL du PluginPack, puis
+`BulkSkillPointAllocation.dll` en portée globale avec son JSON mod-local :
+`active=17`, `rejected=0`, `failed=0` et démarrage `24/24`. Les 19 échecs de
+patches globaux sont des doublons d'entrées déjà appliquées en portée mod et ne
+concernent pas cette coexistence. Un second cold-start place BulkSkill en portée
+mod-local dans le même dossier que les cinq DLL eezstreet; la copie globale est
+neutralisée par l'identifiant du plugin, les six DLL coexistent avec
+`active=17`, `rejected=0`, `failed=0` et un second démarrage `24/24`.
+
+- test de politique : réussi;
+- compilation Release x64 : réussie;
+- DLL dépôt/runtime SHA-256 :
+  `0C784A408D9DE8504494D70042CDDF9C8822058FDAF0A67EA836E1A8C3524440`;
+- JSON dépôt/runtime SHA-256 :
+  `133177B5588322B9A74DB5C06C89FB0F7877177B5F41A25D30A73241F4A35340`;
+- ZIP DLL + JSON + README SHA-256 :
+  `A67A5A851D3FFBDAD74BD74A939220FB6DF71644D0F33B187AE3170F40F74F21`.
 
 ## Gate fonctionnel restant
 
