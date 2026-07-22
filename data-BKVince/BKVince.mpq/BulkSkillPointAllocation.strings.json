@@ -1,0 +1,5 @@
+{
+    // Text displayed by Diablo's native confirmation modal for Shift + click.
+    // This file is UTF-8, so the prompt can be replaced with any language.
+    "shiftConfirmation": "Invest all currently usable skill points in this skill?"
+}

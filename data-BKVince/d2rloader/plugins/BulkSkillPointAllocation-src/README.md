@@ -12,23 +12,23 @@ Shift uses D2R's native packet marker. Ctrl checks the generic, left and right
 Control keys through both D2R's signed asynchronous key-state wrapper and
 Win32 when the skill-allocation packet is constructed.
 
-Every additional skill point passes through the native client eligibility check and the
-native single-point packet path. The queue waits for the server-confirmed base-level update before
-sending the next request, so custom `SkPoints`, prerequisites, attributes, required level,
-class restrictions and runtime `MaxLvl` values remain authoritative. No level-20 cap is
-compiled into the plugin. Queue polling and subsequent sends run through a timer attached
-to the D2R window, on the same client thread as the original skill click. A strict
-in-flight guard and batch generation prevent timer re-entry from duplicating requests.
-Each subsequent rank waits for both the exact `+1` skill-level acknowledgement
-and a decrease in the native unspent-skill-points stat. Once both are visible,
-the next validation and request run on the following 20 ms timer tick.
+D2R's native five-byte `0x3B` request encodes the number of additional ranks in
+its final word: `0` means one total point, `4` means five total points, and
+`0xFFFF` means every point the runtime allows. Ctrl therefore sends exactly one
+packet with `skillPointsPerCtrlClick - 1`; Shift sends exactly one packet with
+`0xFFFF`. The authoritative game-side handler still enforces available points,
+custom `SkPoints`, prerequisites, attributes, required level, class restrictions
+and runtime `MaxLvl`. The plugin contains no rank loop, timer, packet burst or
+hard-coded level-20 cap.
 
-The Shift confirmation is an owned Windows confirmation dialog because D2R 3.2 does not
-expose a stable plugin API for constructing an in-game confirmation panel. Cancelling it
-sends no allocation request.
+Shift opens Diablo's native `ConfirmationModal` asynchronously. The plugin reuses the
+signed stat-allocation modal builder, substitutes only the prompt while that modal is
+being created, and recognizes its private callback marker at the UI dispatcher. The
+game keeps rendering while the modal is open. `Yes` sends the single native
+assign-all request; `No` sends no allocation request.
 
 Use `bulk-skill-points` in the D2RLoader console to show the active settings,
-queue state, last modifier mask, packet extra value and diagnostic counters.
+last modifier mask, incoming/outgoing packet values and diagnostic counters.
 
 ## Configuration
 
@@ -42,7 +42,7 @@ because this file configures only one plugin:
     // Accepted range: 1 through 1000.
     "skillPointsPerCtrlClick": 5,
 
-    // Emit queue diagnostics in the D2RLoader log.
+    // Emit native bulk diagnostics in the D2RLoader log.
     "diagnostics": false
 }
 ```
@@ -50,16 +50,31 @@ because this file configures only one plugin:
 If the file is absent, these defaults are used. A malformed file is rejected
 instead of silently installing native hooks with unexpected settings.
 
+The prompt is stored separately in `BulkSkillPointAllocation.strings.json`:
+
+```jsonc
+{
+    // This file is UTF-8 and accepts any language.
+    "shiftConfirmation": "Invest all currently usable skill points in this skill?"
+}
+```
+
+This strings file follows the same active-mod-first, game-directory-second lookup.
+Keeping text separate lets translators edit the prompt without touching gameplay
+settings. The `Yes` and `No` labels remain Diablo's own localized strings.
+
 ## PluginPack compatibility
 
-Version 1.1.0 was audited against eezstreet D2RL-Plugins 2.0.1 at commit
+Version 1.2.1 was audited against the latest eezstreet D2RL-Plugins 2.0.1 commit
 `dc75b49ffbb67b887d7757ee00ee9a03bcde5d8a`. Bulk Skill Point Allocation owns
-only the allocation-packet builder hook at D2R RVA `0x000EC700`; none of the
-five PluginPack modules writes that site or the read-only acknowledgement entry
-at `0x002F48C0`. Runtime byte and ABI checks remain strict, so an unknown
-overlapping hook makes the plugin refuse to load safely.
+the allocation-packet builder hook at D2R RVA `0x000EC700`, the localized-key
+resolver hook at `0x005F4B90`, and the UI dispatcher hook at `0x00843D90`.
+It calls the native stat confirmation builder at `0x014EF670` without patching
+that entry. None of the five PluginPack modules writes these sites. Runtime byte
+and ABI checks remain
+strict, so an unknown overlapping hook makes the plugin refuse to load safely.
 
 The standalone DLL does not link to, modify or redistribute any PluginPack DLL.
 If the feature is accepted upstream later, this flat configuration object can
-be moved under `items.bulkSkillAllocation` and the implementation compiled into
-`plugin-items`.
+be moved into `D2RPlugins.json` and the implementation compiled into
+`plugin-misc`.

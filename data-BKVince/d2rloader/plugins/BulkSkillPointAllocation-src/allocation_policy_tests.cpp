@@ -4,7 +4,7 @@
 
 using tcp::bulk_skills::AllocationMode;
 using tcp::bulk_skills::ClampSkillPointsPerCtrlClick;
-using tcp::bulk_skills::RequestedSkillPoints;
+using tcp::bulk_skills::NativeSkillPacketExtra;
 using tcp::bulk_skills::ResolveMode;
 
 int main() {
@@ -17,13 +17,9 @@ int main() {
     assert(ClampSkillPointsPerCtrlClick(5) == 5);
     assert(ClampSkillPointsPerCtrlClick(10'000) == 1'000);
 
-    assert(RequestedSkillPoints(AllocationMode::Single, 5, 0, 20) == 1);
-    assert(RequestedSkillPoints(AllocationMode::CtrlBatch, 1, 0, 20) == 1);
-    assert(RequestedSkillPoints(AllocationMode::CtrlBatch, 5, 0, 20) == 5);
-    assert(RequestedSkillPoints(AllocationMode::CtrlBatch, 10, 18, 20) == 2);
-    assert(RequestedSkillPoints(AllocationMode::ShiftAll, 5, 0, 20) == 20);
-    assert(RequestedSkillPoints(AllocationMode::ShiftAll, 5, 7, 25) == 18);
-    assert(RequestedSkillPoints(AllocationMode::ShiftAll, 5, 11, 30) == 19);
-    assert(RequestedSkillPoints(AllocationMode::ShiftAll, 5, 30, 30) == 0);
-    assert(RequestedSkillPoints(AllocationMode::ShiftAll, 5, 31, 30) == 0);
+    assert(NativeSkillPacketExtra(AllocationMode::Single, 1) == 0);
+    assert(NativeSkillPacketExtra(AllocationMode::CtrlBatch, 1) == 0);
+    assert(NativeSkillPacketExtra(AllocationMode::CtrlBatch, 5) == 4);
+    assert(NativeSkillPacketExtra(AllocationMode::CtrlBatch, 1'000) == 999);
+    assert(NativeSkillPacketExtra(AllocationMode::ShiftAll, 1) == 0xFFFF);
 }

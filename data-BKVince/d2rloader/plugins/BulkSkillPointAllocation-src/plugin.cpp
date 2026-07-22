@@ -6,9 +6,7 @@
 #include <Windows.h>
 
 #include <array>
-#include <algorithm>
 #include <atomic>
-#include <chrono>
 #include <cstdint>
 #include <cstdio>
 #include <cstring>
@@ -20,58 +18,51 @@
 
 namespace {
 using tcp::bulk_skills::AllocationMode;
+using tcp::bulk_skills::AssignAllSkillPointsExtra;
 using tcp::bulk_skills::ClampSkillPointsPerCtrlClick;
 using tcp::bulk_skills::DefaultSkillPointsPerCtrlClick;
-using tcp::bulk_skills::RequestedSkillPoints;
+using tcp::bulk_skills::NativeSkillPacketExtra;
 using tcp::bulk_skills::ResolveMode;
 
 constexpr std::uint32_t SupportedBuild = 92777;
 constexpr std::uintptr_t SendFiveBytePacketRva = 0x0EC700;
 constexpr std::uintptr_t IsVirtualKeyDownRva = 0x120A100;
-constexpr std::uintptr_t CanAllocateSkillRva = 0x14C3DA0;
-constexpr std::uintptr_t GetLocalDataContextRva = 0x08B2D0;
-constexpr std::uintptr_t GetLocalPlayerRva = 0x09A480;
-constexpr std::uintptr_t GetUnitDataContextRva = 0x34A0E0;
-constexpr std::uintptr_t GetSkillByIdRva = 0x33DCD0;
-constexpr std::uintptr_t GetSkillLevelRva = 0x33D1E0;
-constexpr std::uintptr_t GetRuntimeMaxSkillLevelRva = 0x214220;
-constexpr std::uintptr_t GetUnitBaseStatRva = 0x2F48C0;
+constexpr std::uintptr_t GetLocalizedStringByKeyRva = 0x5F4B90;
+constexpr std::uintptr_t ShowAssignAllStatsConfirmationRva = 0x14EF670;
+constexpr std::uintptr_t UiDispatchMessageRva = 0x843D90;
 constexpr std::uint8_t AllocateSkillOpcode = 0x3B;
-constexpr std::uint16_t ShiftAllocateExtra = 0xFFFF;
-constexpr UINT_PTR QueueTimerId = 0x42534B4C;
-constexpr std::chrono::milliseconds PollInterval{20};
-constexpr std::chrono::milliseconds ServerSyncTimeout{2'000};
-constexpr std::int32_t UnspentSkillPointsStat = 5;
+constexpr std::int32_t SkillConfirmationSentinel = 0x42534B50;
+constexpr std::size_t FakeStatWidgetSize = 0xB90;
+constexpr std::size_t FakeStatIndexOffset = 0xB88;
+constexpr std::size_t MessagePayloadOffset = 0x110;
+constexpr char AssignAllStatPointsConfirmationKey[] = "AssignAllStatPointsConfirmation";
+constexpr char DefaultShiftConfirmation[] =
+    "Invest all currently usable skill points in this skill?";
 
 constexpr wchar_t ConfigFileName[] = L"BulkSkillPointAllocation.json";
+constexpr wchar_t StringsFileName[] = L"BulkSkillPointAllocation.strings.json";
+
+struct GameStringView {
+    const char* data{};
+    std::size_t size{};
+};
 
 struct Config {
     std::uint32_t skillPointsPerCtrlClick{DefaultSkillPointsPerCtrlClick};
     bool diagnostics{};
+    std::string shiftConfirmation{DefaultShiftConfirmation};
 };
 
-struct QueueState {
+struct PendingConfirmationState {
     bool active{};
-    bool processing{};
     std::uint16_t skillId{};
-    std::uint16_t packetExtra{};
-    std::uint32_t remaining{};
-    std::int32_t observedBaseLevel{};
-    std::int32_t observedUnspentPoints{};
-    std::chrono::steady_clock::time_point deadline{};
-    std::uint64_t generation{};
 };
 
 using SendFiveBytePacketFn = void(__fastcall*)(std::uint8_t, std::uint16_t, std::uint16_t) noexcept;
 using IsVirtualKeyDownFn = std::uint32_t(__fastcall*)(std::int32_t) noexcept;
-using CanAllocateSkillFn = bool(__fastcall*)(std::int32_t) noexcept;
-using GetLocalDataContextFn = std::int32_t(__fastcall*)() noexcept;
-using GetLocalPlayerFn = void*(__fastcall*)(std::int32_t) noexcept;
-using GetUnitDataContextFn = std::uint8_t(__fastcall*)(void*) noexcept;
-using GetSkillByIdFn = void*(__fastcall*)(void*, std::int32_t, std::int32_t) noexcept;
-using GetSkillLevelFn = std::int32_t(__fastcall*)(void*, void*, std::int32_t, std::int32_t) noexcept;
-using GetRuntimeMaxSkillLevelFn = std::int32_t(__fastcall*)(std::uint8_t, std::int32_t) noexcept;
-using GetUnitBaseStatFn = std::int32_t(__fastcall*)(void*, std::int32_t, std::uint16_t) noexcept;
+using GetLocalizedStringByKeyFn = const char*(__fastcall*)(const GameStringView*) noexcept;
+using ShowAssignAllStatsConfirmationFn = void(__fastcall*)(const void*) noexcept;
+using UiDispatchMessageFn = void(__fastcall*)(void*) noexcept;
 
 const D2RL::PluginContext* Context{};
 std::uint8_t* Base{};
@@ -79,30 +70,23 @@ Config Settings{};
 std::string LoadedConfigPath{"built-in defaults"};
 SendFiveBytePacketFn OriginalSendFiveBytePacket{};
 IsVirtualKeyDownFn IsVirtualKeyDown{};
-CanAllocateSkillFn CanAllocateSkill{};
-GetLocalDataContextFn GetLocalDataContext{};
-GetLocalPlayerFn GetLocalPlayer{};
-GetUnitDataContextFn GetUnitDataContext{};
-GetSkillByIdFn GetSkillById{};
-GetSkillLevelFn GetSkillLevel{};
-GetRuntimeMaxSkillLevelFn GetRuntimeMaxSkillLevel{};
-GetUnitBaseStatFn GetUnitBaseStat{};
+GetLocalizedStringByKeyFn OriginalGetLocalizedStringByKey{};
+ShowAssignAllStatsConfirmationFn ShowAssignAllStatsConfirmation{};
+UiDispatchMessageFn OriginalUiDispatchMessage{};
 
-std::mutex QueueMutex;
-QueueState Queue{};
-HWND QueueTimerWindow{};
-std::uint64_t NextQueueGeneration{};
+std::mutex ConfirmationMutex;
+PendingConfirmationState PendingConfirmation{};
+alignas(16) std::array<std::uint8_t, FakeStatWidgetSize> FakeStatWidget{};
+thread_local bool OpeningSkillConfirmation{};
 
 std::atomic<std::uint64_t> SingleClicks{};
 std::atomic<std::uint64_t> CtrlBatches{};
 std::atomic<std::uint64_t> ShiftAccepted{};
 std::atomic<std::uint64_t> ShiftCancelled{};
-std::atomic<std::uint64_t> QueuedPointsSent{};
-std::atomic<std::uint64_t> CompletedBatches{};
-std::atomic<std::uint64_t> RuleStops{};
-std::atomic<std::uint64_t> SyncTimeouts{};
+std::atomic<std::uint64_t> NativeBulkPacketsSent{};
 std::atomic<std::uint32_t> LastModifierMask{};
-std::atomic<std::uint16_t> LastPacketExtra{};
+std::atomic<std::uint16_t> LastIncomingExtra{};
+std::atomic<std::uint16_t> LastOutgoingExtra{};
 
 enum ModifierMask : std::uint32_t {
     NativeCtrl = 1U << 0,
@@ -119,9 +103,9 @@ constexpr D2RL::PluginInfo Info{
     .apiVersion = D2RL_PLUGIN_API_VERSION,
     .id = "bulk-skill-point-allocation",
     .name = "Bulk Skill Point Allocation",
-    .version = "1.1.0",
+    .version = "1.2.1",
     .author = "RuffnecKk",
-    .description = "Adds configurable bulk skill allocation with Ctrl and Shift clicks.",
+    .description = "Adds fast Ctrl and confirmed Shift skill allocation.",
     .flags = D2RL::PluginFlags::NativeHooks,
 };
 
@@ -130,18 +114,21 @@ T At(std::uintptr_t rva) noexcept {
     return reinterpret_cast<T>(Base + rva);
 }
 
+std::vector<std::filesystem::path> ConfigCandidates(const wchar_t* fileName) {
+    std::vector<std::filesystem::path> candidates;
+    if (Context && Context->modDirectory && Context->modDirectory[0] != L'\0') {
+        candidates.emplace_back(std::filesystem::path(Context->modDirectory) / fileName);
+    }
+    candidates.emplace_back(fileName);
+    return candidates;
+}
+
 bool LoadConfig() noexcept {
     Settings = {};
     LoadedConfigPath = "built-in defaults";
 
-    std::vector<std::filesystem::path> candidates;
-    if (Context && Context->modDirectory && Context->modDirectory[0] != L'\0') {
-        candidates.emplace_back(std::filesystem::path(Context->modDirectory) / ConfigFileName);
-    }
-    candidates.emplace_back(ConfigFileName);
-
     bool malformedConfigFound{};
-    for (const auto& path : candidates) {
+    for (const auto& path : ConfigCandidates(ConfigFileName)) {
         std::error_code error;
         if (!std::filesystem::is_regular_file(path, error)) continue;
 
@@ -174,247 +161,106 @@ bool LoadConfig() noexcept {
     return !malformedConfigFound;
 }
 
-void* LocalPlayer() noexcept {
-    return GetLocalPlayer ? GetLocalPlayer(GetLocalDataContext()) : nullptr;
-}
+bool LoadStrings() noexcept {
+    for (const auto& path : ConfigCandidates(StringsFileName)) {
+        std::error_code error;
+        if (!std::filesystem::is_regular_file(path, error)) continue;
 
-std::int32_t CurrentBaseLevel(std::uint16_t skillId) noexcept {
-    void* player = LocalPlayer();
-    if (!player) return -1;
-    void* skill = GetSkillById(player, skillId, -1);
-    return skill ? GetSkillLevel(player, skill, 0, 0) : 0;
-}
-
-std::int32_t RuntimeMaxLevel(std::uint16_t skillId) noexcept {
-    void* player = LocalPlayer();
-    if (!player) return 0;
-    return GetRuntimeMaxSkillLevel(GetUnitDataContext(player), skillId);
-}
-
-std::int32_t CurrentUnspentSkillPoints() noexcept {
-    void* player = LocalPlayer();
-    return player ? GetUnitBaseStat(player, UnspentSkillPointsStat, 0) : -1;
-}
-
-BOOL CALLBACK FindGameWindow(HWND window, LPARAM output) noexcept {
-    DWORD processId{};
-    GetWindowThreadProcessId(window, &processId);
-    if (processId != GetCurrentProcessId() || !IsWindowVisible(window) || GetWindow(window, GW_OWNER)) {
-        return TRUE;
+        try {
+            std::ifstream input(path);
+            if (!input.is_open()) continue;
+            const auto strings = nlohmann::json::parse(input, nullptr, true, true);
+            if (!strings.is_object()) {
+                throw nlohmann::json::type_error::create(
+                    302,
+                    "strings root must be an object",
+                    &strings
+                );
+            }
+            const auto prompt = strings.value("shiftConfirmation", std::string{});
+            if (prompt.empty() || prompt.size() > 1024) {
+                throw nlohmann::json::out_of_range::create(
+                    401,
+                    "shiftConfirmation must contain 1 through 1024 UTF-8 bytes",
+                    &strings
+                );
+            }
+            Settings.shiftConfirmation = prompt;
+            return true;
+        } catch (const std::exception& exception) {
+            if (Context) {
+                const auto message = std::string("BulkSkillPointAllocation: invalid ")
+                    + path.string() + " (" + exception.what() + ").";
+                Context->LogError(message.c_str());
+            }
+            return false;
+        }
     }
-    *reinterpret_cast<HWND*>(output) = window;
-    return FALSE;
+    return true;
 }
 
-bool ConfirmShiftAllocation() noexcept {
-    HWND owner{};
-    EnumWindows(FindGameWindow, reinterpret_cast<LPARAM>(&owner));
-    const int result = MessageBoxW(
-        owner,
-        L"Invest all currently usable skill points in this skill?",
-        L"Allocate Skill Points",
-        MB_YESNO | MB_ICONQUESTION | MB_DEFBUTTON2 | MB_SETFOREGROUND
-    );
-    return result == IDYES;
-}
-
-void LogQueueDiagnostic(
-    const char* event,
-    std::uint16_t skillId,
-    std::int32_t currentBaseLevel,
-    std::int32_t observedBaseLevel,
-    std::int32_t currentUnspentPoints,
-    std::int32_t observedUnspentPoints,
-    std::uint32_t remaining,
-    std::uint64_t generation
+const char* __fastcall HookGetLocalizedStringByKey(
+    const GameStringView* key
 ) noexcept {
-    if (!Settings.diagnostics || !Context) return;
-    char message[320]{};
-    std::snprintf(
-        message,
-        sizeof(message),
-        "BulkSkillPointAllocation queue: event=%s skill=%u current=%d observed=%d points=%d observed_points=%d remaining=%u generation=%llu.",
-        event,
-        static_cast<unsigned>(skillId),
-        currentBaseLevel,
-        observedBaseLevel,
-        currentUnspentPoints,
-        observedUnspentPoints,
-        remaining,
-        static_cast<unsigned long long>(generation)
-    );
-    Context->LogInfo(message);
-}
-
-void StopActiveQueue() noexcept {
-    HWND timerWindow{};
-    {
-        std::scoped_lock lock(QueueMutex);
-        Queue = {};
-        timerWindow = QueueTimerWindow;
-        QueueTimerWindow = nullptr;
+    constexpr std::size_t expectedLength = sizeof(AssignAllStatPointsConfirmationKey) - 1;
+    if (OpeningSkillConfirmation
+        && key
+        && key->data
+        && key->size == expectedLength
+        && std::memcmp(
+            key->data,
+            AssignAllStatPointsConfirmationKey,
+            expectedLength
+        ) == 0) {
+        return Settings.shiftConfirmation.c_str();
     }
-    if (timerWindow) KillTimer(timerWindow, QueueTimerId);
+    return OriginalGetLocalizedStringByKey(key);
 }
 
-void CALLBACK QueueTimerProc(HWND window, UINT, UINT_PTR timerId, DWORD) noexcept;
+bool CancelPendingConfirmation() noexcept {
+    std::scoped_lock lock(ConfirmationMutex);
+    if (!PendingConfirmation.active) return false;
+    PendingConfirmation = {};
+    return true;
+}
 
-void StartQueue(
-    std::uint16_t skillId,
-    std::uint16_t packetExtra,
-    std::uint32_t requestedRanks,
-    std::int32_t currentBaseLevel,
-    std::int32_t currentUnspentPoints
-) noexcept {
-    HWND timerWindow{};
-    EnumWindows(FindGameWindow, reinterpret_cast<LPARAM>(&timerWindow));
-    const bool needsTimer = requestedRanks > 1;
-    const bool timerStarted = !needsTimer || (
-        timerWindow
-        && SetTimer(timerWindow, QueueTimerId,
-            static_cast<UINT>(PollInterval.count()), QueueTimerProc) != 0
-    );
-    std::uint64_t generation{};
+void ShowShiftConfirmation(std::uint16_t skillId) noexcept {
     {
-        std::scoped_lock lock(QueueMutex);
-        generation = ++NextQueueGeneration;
-        Queue = {
-            .active = needsTimer && timerStarted,
-            .processing = false,
+        std::scoped_lock lock(ConfirmationMutex);
+        if (PendingConfirmation.active) ++ShiftCancelled;
+        PendingConfirmation = {
+            .active = true,
             .skillId = skillId,
-            .packetExtra = packetExtra,
-            .remaining = requestedRanks > 0 ? requestedRanks - 1 : 0,
-            .observedBaseLevel = currentBaseLevel,
-            .observedUnspentPoints = currentUnspentPoints,
-            .deadline = std::chrono::steady_clock::now()
-                + ServerSyncTimeout,
-            .generation = generation,
         };
-        QueueTimerWindow = Queue.active ? timerWindow : nullptr;
     }
-    LogQueueDiagnostic(
-        timerStarted ? "started" : "timer-failed",
-        skillId,
-        currentBaseLevel,
-        currentBaseLevel,
-        currentUnspentPoints,
-        currentUnspentPoints,
-        requestedRanks > 0 ? requestedRanks - 1 : 0,
-        generation
+
+    std::int32_t sentinel = SkillConfirmationSentinel;
+    std::memcpy(
+        FakeStatWidget.data() + FakeStatIndexOffset,
+        &sentinel,
+        sizeof(sentinel)
     );
-    if (needsTimer && !timerStarted && Settings.diagnostics && Context) {
-        Context->LogWarn("BulkSkillPointAllocation: client-thread queue timer could not be started; sending one vanilla rank only.");
-    }
+    OpeningSkillConfirmation = true;
+    ShowAssignAllStatsConfirmation(FakeStatWidget.data());
+    OpeningSkillConfirmation = false;
 }
 
-void CALLBACK QueueTimerProc(HWND window, UINT, UINT_PTR timerId, DWORD) noexcept {
-    if (timerId != QueueTimerId) return;
-
-    std::unique_lock lock(QueueMutex);
-    if (!Queue.active || QueueTimerWindow != window) {
-        lock.unlock();
-        KillTimer(window, QueueTimerId);
-        return;
-    }
-    if (Queue.processing) return;
-
-    Queue.processing = true;
-    const auto queued = Queue;
-    lock.unlock();
-    const auto currentBaseLevel = CurrentBaseLevel(queued.skillId);
-    const auto currentUnspentPoints = CurrentUnspentSkillPoints();
-    const auto now = std::chrono::steady_clock::now();
-    lock.lock();
-
-    if (!Queue.active || Queue.generation != queued.generation) return;
-    if (currentBaseLevel == queued.observedBaseLevel) {
-        if (now < queued.deadline) {
-            Queue.processing = false;
-            return;
-        }
-        Queue = {};
-        QueueTimerWindow = nullptr;
-        ++SyncTimeouts;
-        lock.unlock();
-        LogQueueDiagnostic("timeout", queued.skillId, currentBaseLevel,
-            queued.observedBaseLevel, currentUnspentPoints,
-            queued.observedUnspentPoints, queued.remaining, queued.generation);
-        KillTimer(window, QueueTimerId);
-        return;
-    }
-
-    if (currentBaseLevel != queued.observedBaseLevel + 1) {
-        Queue = {};
-        QueueTimerWindow = nullptr;
-        ++RuleStops;
-        lock.unlock();
-        LogQueueDiagnostic("non-monotone-ack", queued.skillId, currentBaseLevel,
-            queued.observedBaseLevel, currentUnspentPoints,
-            queued.observedUnspentPoints, queued.remaining, queued.generation);
-        KillTimer(window, QueueTimerId);
-        return;
-    }
-
-    if (currentUnspentPoints < 0
-        || currentUnspentPoints >= queued.observedUnspentPoints) {
-        if (now < queued.deadline) {
-            Queue.processing = false;
-            return;
-        }
-        Queue = {};
-        QueueTimerWindow = nullptr;
-        ++SyncTimeouts;
-        lock.unlock();
-        LogQueueDiagnostic("points-timeout", queued.skillId, currentBaseLevel,
-            queued.observedBaseLevel, currentUnspentPoints,
-            queued.observedUnspentPoints, queued.remaining, queued.generation);
-        KillTimer(window, QueueTimerId);
-        return;
-    }
-
-    if (Queue.remaining == 0) {
-        Queue = {};
-        QueueTimerWindow = nullptr;
-        ++CompletedBatches;
-        lock.unlock();
-        LogQueueDiagnostic("completed", queued.skillId, currentBaseLevel,
-            queued.observedBaseLevel, currentUnspentPoints,
-            queued.observedUnspentPoints, queued.remaining, queued.generation);
-        KillTimer(window, QueueTimerId);
-        return;
-    }
-
-    lock.unlock();
-    const bool allowed = CanAllocateSkill(static_cast<std::int32_t>(queued.skillId));
-    lock.lock();
-    if (!Queue.active || Queue.generation != queued.generation) return;
-    if (!allowed) {
-        Queue = {};
-        QueueTimerWindow = nullptr;
-        ++RuleStops;
-        lock.unlock();
-        LogQueueDiagnostic("native-rule-stop", queued.skillId, currentBaseLevel,
-            queued.observedBaseLevel, currentUnspentPoints,
-            queued.observedUnspentPoints, queued.remaining, queued.generation);
-        KillTimer(window, QueueTimerId);
-        return;
-    }
-
-    Queue.observedBaseLevel = currentBaseLevel;
-    Queue.observedUnspentPoints = currentUnspentPoints;
-    --Queue.remaining;
-    Queue.deadline = now + ServerSyncTimeout;
-    const auto skillId = Queue.skillId;
-    const auto packetExtra = Queue.packetExtra;
-    lock.unlock();
-    LogQueueDiagnostic("send", skillId, currentBaseLevel,
-        queued.observedBaseLevel, currentUnspentPoints,
-        queued.observedUnspentPoints, queued.remaining - 1, queued.generation);
-    OriginalSendFiveBytePacket(AllocateSkillOpcode, skillId, packetExtra);
-    ++QueuedPointsSent;
-    lock.lock();
-    if (Queue.active && Queue.generation == queued.generation) {
-        Queue.processing = false;
+bool ReadMessagePayload(
+    void* message,
+    std::int32_t& statIndex,
+    std::int32_t& mode
+) noexcept {
+    if (!message) return false;
+    __try {
+        const auto payload = *reinterpret_cast<std::uint8_t**>(
+            static_cast<std::uint8_t*>(message) + MessagePayloadOffset
+        );
+        if (!payload) return false;
+        std::memcpy(&statIndex, payload, sizeof(statIndex));
+        std::memcpy(&mode, payload + sizeof(statIndex), sizeof(mode));
+        return true;
+    } __except (EXCEPTION_EXECUTE_HANDLER) {
+        return false;
     }
 }
 
@@ -431,8 +277,81 @@ std::uint32_t ReadModifierMask(std::uint16_t packetExtra) noexcept {
     if (Win32KeyDown(VK_CONTROL)) mask |= Win32Ctrl;
     if (Win32KeyDown(VK_LCONTROL)) mask |= Win32LeftCtrl;
     if (Win32KeyDown(VK_RCONTROL)) mask |= Win32RightCtrl;
-    if (packetExtra == ShiftAllocateExtra) mask |= PacketShift;
+    if (packetExtra == AssignAllSkillPointsExtra) mask |= PacketShift;
     return mask;
+}
+
+void BeginBulkAllocation(
+    AllocationMode mode,
+    std::uint16_t skillId
+) noexcept {
+    const auto requested = mode == AllocationMode::ShiftAll
+        ? 1U
+        : Settings.skillPointsPerCtrlClick;
+    const auto nativeBulkExtra = NativeSkillPacketExtra(mode, requested);
+    LastOutgoingExtra.store(nativeBulkExtra, std::memory_order_relaxed);
+    OriginalSendFiveBytePacket(AllocateSkillOpcode, skillId, nativeBulkExtra);
+    ++NativeBulkPacketsSent;
+
+    if (Settings.diagnostics && Context) {
+        char message[192]{};
+        std::snprintf(
+            message,
+            sizeof(message),
+            "BulkSkillPointAllocation native bulk: mode=%s skill=%u requested=%u extra=0x%04X.",
+            mode == AllocationMode::ShiftAll ? "shift-all" : "ctrl",
+            static_cast<unsigned>(skillId),
+            requested,
+            static_cast<unsigned>(nativeBulkExtra)
+        );
+        Context->LogInfo(message);
+    }
+}
+
+void __fastcall HookUiDispatchMessage(void* message) noexcept {
+    std::int32_t statIndex{};
+    std::int32_t mode{};
+    const bool payloadRead = ReadMessagePayload(message, statIndex, mode);
+    bool confirmationPending{};
+    {
+        std::scoped_lock lock(ConfirmationMutex);
+        confirmationPending = PendingConfirmation.active;
+    }
+    if (Settings.diagnostics
+        && Context
+        && confirmationPending
+        && payloadRead
+        && statIndex == SkillConfirmationSentinel) {
+        char diagnostic[192]{};
+        std::snprintf(
+            diagnostic,
+            sizeof(diagnostic),
+            "BulkSkillPointAllocation UI dispatch: payload=%s stat=0x%08X mode=%d pending=%s opening=%s.",
+            payloadRead ? "yes" : "no",
+            static_cast<unsigned>(statIndex),
+            mode,
+            confirmationPending ? "yes" : "no",
+            OpeningSkillConfirmation ? "yes" : "no"
+        );
+        Context->LogInfo(diagnostic);
+    }
+    if (OpeningSkillConfirmation
+        || !payloadRead
+        || statIndex != SkillConfirmationSentinel) {
+        OriginalUiDispatchMessage(message);
+        return;
+    }
+
+    PendingConfirmationState pending;
+    {
+        std::scoped_lock lock(ConfirmationMutex);
+        pending = PendingConfirmation;
+        PendingConfirmation = {};
+    }
+    if (!pending.active) return;
+
+    ++ShiftAccepted;
+    BeginBulkAllocation(AllocationMode::ShiftAll, pending.skillId);
 }
 
 void __fastcall HookSendFiveBytePacket(
@@ -447,7 +366,7 @@ void __fastcall HookSendFiveBytePacket(
 
     const auto modifierMask = ReadModifierMask(extra);
     LastModifierMask.store(modifierMask, std::memory_order_relaxed);
-    LastPacketExtra.store(extra, std::memory_order_relaxed);
+    LastIncomingExtra.store(extra, std::memory_order_relaxed);
     const bool shiftPressed = (modifierMask & PacketShift) != 0;
     const bool ctrlPressed = (modifierMask & (
         NativeCtrl | NativeLeftCtrl | NativeRightCtrl
@@ -455,49 +374,21 @@ void __fastcall HookSendFiveBytePacket(
     )) != 0;
     const auto mode = ResolveMode(shiftPressed, ctrlPressed);
     if (mode == AllocationMode::Single) {
-        StopActiveQueue();
+        if (CancelPendingConfirmation()) ++ShiftCancelled;
         ++SingleClicks;
+        LastOutgoingExtra.store(extra, std::memory_order_relaxed);
         OriginalSendFiveBytePacket(opcode, value, extra);
         return;
     }
 
-    StopActiveQueue();
     if (mode == AllocationMode::ShiftAll) {
-        if (!ConfirmShiftAllocation()) {
-            ++ShiftCancelled;
-            return;
-        }
-        ++ShiftAccepted;
+        ShowShiftConfirmation(value);
+        return;
     } else {
+        if (CancelPendingConfirmation()) ++ShiftCancelled;
         ++CtrlBatches;
     }
-
-    const auto currentBaseLevel = CurrentBaseLevel(value);
-    const auto runtimeMaxLevel = RuntimeMaxLevel(value);
-    const auto currentUnspentPoints = CurrentUnspentSkillPoints();
-    if (currentBaseLevel < 0 || runtimeMaxLevel <= 0 || currentUnspentPoints < 0) {
-        if (Settings.diagnostics && Context) {
-            Context->LogWarn("BulkSkillPointAllocation: runtime skill snapshot unavailable; sending one vanilla rank only.");
-        }
-        OriginalSendFiveBytePacket(opcode, value, extra);
-        return;
-    }
-    const auto requested = RequestedSkillPoints(
-        mode,
-        Settings.skillPointsPerCtrlClick,
-        currentBaseLevel,
-        runtimeMaxLevel
-    );
-    if (requested == 0) {
-        OriginalSendFiveBytePacket(opcode, value, extra);
-        return;
-    }
-
-    LogQueueDiagnostic("click", value, currentBaseLevel, runtimeMaxLevel,
-        currentUnspentPoints, currentUnspentPoints, requested, 0);
-
-    OriginalSendFiveBytePacket(opcode, value, extra);
-    StartQueue(value, extra, requested, currentBaseLevel, currentUnspentPoints);
+    BeginBulkAllocation(mode, value);
 }
 
 D2RL::ConsoleCommandResult __cdecl Status(
@@ -507,67 +398,29 @@ D2RL::ConsoleCommandResult __cdecl Status(
 ) noexcept {
     if (!command || !command->plugin) return D2RL::ConsoleCommandResult::Failed;
 
-    QueueState queue;
+    PendingConfirmationState confirmation;
     {
-        std::scoped_lock lock(QueueMutex);
-        queue = Queue;
+        std::scoped_lock lock(ConfirmationMutex);
+        confirmation = PendingConfirmation;
     }
-    char message[768]{};
+    char message[640]{};
     std::snprintf(
         message,
         sizeof(message),
-        "BulkSkillPointAllocation 1.1.0: JSON config; dual-ack queue; safeguard=2000 ms; ctrl skill points=%u; active=%s; skill=%u; remaining=%u; last modifiers=0x%02X; last extra=0x%04X; single=%llu; ctrl batches=%llu; shift accepted=%llu; shift cancelled=%llu; queued points=%llu; completed=%llu; rule stops=%llu; sync timeouts=%llu.",
+        "BulkSkillPointAllocation 1.2.1: native modal and native bulk; ctrl skill points=%u; confirmation=%s; last modifiers=0x%02X; incoming extra=0x%04X; outgoing extra=0x%04X; single=%llu; ctrl batches=%llu; shift confirmed=%llu; shift superseded=%llu; native bulk packets=%llu.",
         Settings.skillPointsPerCtrlClick,
-        queue.active ? "yes" : "no",
-        static_cast<unsigned>(queue.skillId),
-        queue.remaining,
+        confirmation.active ? "pending" : "idle",
         static_cast<unsigned>(LastModifierMask.load(std::memory_order_relaxed)),
-        static_cast<unsigned>(LastPacketExtra.load(std::memory_order_relaxed)),
+        static_cast<unsigned>(LastIncomingExtra.load(std::memory_order_relaxed)),
+        static_cast<unsigned>(LastOutgoingExtra.load(std::memory_order_relaxed)),
         static_cast<unsigned long long>(SingleClicks.load()),
         static_cast<unsigned long long>(CtrlBatches.load()),
         static_cast<unsigned long long>(ShiftAccepted.load()),
         static_cast<unsigned long long>(ShiftCancelled.load()),
-        static_cast<unsigned long long>(QueuedPointsSent.load()),
-        static_cast<unsigned long long>(CompletedBatches.load()),
-        static_cast<unsigned long long>(RuleStops.load()),
-        static_cast<unsigned long long>(SyncTimeouts.load())
+        static_cast<unsigned long long>(NativeBulkPacketsSent.load())
     );
     command->plugin->WriteConsoleMessage(message);
     return D2RL::ConsoleCommandResult::Handled;
-}
-
-bool ValidateUnitBaseStatEntry() noexcept {
-    constexpr std::array<std::uint8_t, 15> nativeExpected{
-        0x48, 0x89, 0x5C, 0x24, 0x10, 0x48, 0x89, 0x6C,
-        0x24, 0x18, 0x48, 0x89, 0x74, 0x24, 0x20
-    };
-    const auto* entry = Base + GetUnitBaseStatRva;
-    if (std::equal(nativeExpected.begin(), nativeExpected.end(), entry)) {
-        return true;
-    }
-    if (entry[0] != 0xE9
-        || !std::equal(nativeExpected.begin() + 5, nativeExpected.end(), entry + 5)) {
-        return false;
-    }
-
-    std::int32_t displacement{};
-    std::memcpy(&displacement, entry + 1, sizeof(displacement));
-    const auto* relay = entry + 5 + displacement;
-    constexpr std::array<std::uint8_t, 6> absoluteJump{
-        0xFF, 0x25, 0x00, 0x00, 0x00, 0x00
-    };
-    if (!std::equal(absoluteJump.begin(), absoluteJump.end(), relay)) {
-        return false;
-    }
-
-    const void* target{};
-    std::memcpy(&target, relay + absoluteJump.size(), sizeof(target));
-    const auto durabilityModule = GetModuleHandleW(L"DurabilityResistance.dll");
-    if (!durabilityModule) return false;
-
-    MEMORY_BASIC_INFORMATION memory{};
-    return VirtualQuery(target, &memory, sizeof(memory)) == sizeof(memory)
-        && memory.AllocationBase == durabilityModule;
 }
 
 bool ValidateRuntime() noexcept {
@@ -577,51 +430,34 @@ bool ValidateRuntime() noexcept {
         0x24, 0x49, 0xBA, 0x05, 0x00, 0x00, 0x00, 0x66,
         0x44, 0x89, 0x44, 0x24, 0x4B
     };
-    constexpr std::array<std::uint8_t, 27> canAllocateExpected{
-        0x48, 0x89, 0x5C, 0x24, 0x18, 0x55, 0x56, 0x41,
-        0x57, 0x48, 0x83, 0xEC, 0x30, 0x8B, 0xE9, 0xE8,
-        0x1C, 0x75, 0xBC, 0xFE, 0x8B, 0xC8, 0xE8, 0xC5,
-        0x66, 0xBD, 0xFE
-    };
     constexpr std::array<std::uint8_t, 21> isVirtualKeyDownExpected{
         0x48, 0x83, 0xEC, 0x28, 0xFF, 0x15, 0x86, 0x6E,
         0xAA, 0x00, 0xC1, 0xE8, 0x0F, 0x83, 0xE0, 0x01,
         0x48, 0x83, 0xC4, 0x28, 0xC3
     };
-    constexpr std::array<std::uint8_t, 10> localContextExpected{
-        0x8B, 0x05, 0x2E, 0x84, 0x99, 0x02, 0xC3, 0xCC, 0xCC, 0xCC
+    constexpr std::array<std::uint8_t, 29> localizedStringByKeyExpected{
+        0x4C, 0x8B, 0xDC, 0x55, 0x53, 0x57, 0x49, 0x8D,
+        0x6B, 0xA1, 0x48, 0x81, 0xEC, 0xB0, 0x00, 0x00,
+        0x00, 0x48, 0x8B, 0x05, 0x20, 0x67, 0x3D, 0x02,
+        0x48, 0x33, 0xC4, 0x48, 0x89
     };
-    constexpr std::array<std::uint8_t, 19> localPlayerExpected{
-        0x48, 0x89, 0x5C, 0x24, 0x08, 0x57, 0x48, 0x83,
-        0xEC, 0x20, 0x83, 0xF9, 0x08, 0x0F, 0x83, 0x85,
-        0x00, 0x00, 0x00
+    constexpr std::array<std::uint8_t, 29> statsConfirmationExpected{
+        0x48, 0x89, 0x5C, 0x24, 0x18, 0x48, 0x89, 0x74,
+        0x24, 0x20, 0x55, 0x57, 0x41, 0x55, 0x41, 0x56,
+        0x41, 0x57, 0x48, 0x8D, 0xAC, 0x24, 0x70, 0xFC,
+        0xFF, 0xFF, 0x48, 0x81, 0xEC
     };
-    constexpr std::array<std::uint8_t, 14> unitContextExpected{
-        0x48, 0x83, 0xEC, 0x28, 0x48, 0x85, 0xC9, 0x75,
-        0x1A, 0x88, 0x4C, 0x24, 0x30, 0x48
-    };
-    constexpr std::array<std::uint8_t, 16> getSkillExpected{
-        0x48, 0x89, 0x5C, 0x24, 0x08, 0x57, 0x48, 0x83,
-        0xEC, 0x20, 0x41, 0x8B, 0xD8, 0x8B, 0xFA, 0xE8
-    };
-    constexpr std::array<std::uint8_t, 14> getLevelExpected{
-        0x40, 0x57, 0x48, 0x83, 0xEC, 0x20, 0x48, 0x8B,
-        0xF9, 0x48, 0x85, 0xC9, 0x75, 0x1B
-    };
-    constexpr std::array<std::uint8_t, 16> getMaxExpected{
-        0x48, 0x89, 0x5C, 0x24, 0x08, 0x48, 0x89, 0x74,
-        0x24, 0x20, 0x57, 0x48, 0x83, 0xEC, 0x30, 0x48
+    constexpr std::array<std::uint8_t, 29> uiDispatchExpected{
+        0x40, 0x53, 0x56, 0x57, 0x48, 0x83, 0xEC, 0x20,
+        0x4C, 0x89, 0x7C, 0x24, 0x58, 0x4C, 0x8B, 0xF9,
+        0xE8, 0x7B, 0x1C, 0xA6, 0x00, 0x0F, 0xB6, 0x90,
+        0x18, 0x01, 0x00, 0x00, 0x84
     };
     return Context->CheckExpectedBytes(SendFiveBytePacketRva, sendPacketExpected.data(), sendPacketExpected.size())
         && Context->CheckExpectedBytes(IsVirtualKeyDownRva, isVirtualKeyDownExpected.data(), isVirtualKeyDownExpected.size())
-        && Context->CheckExpectedBytes(CanAllocateSkillRva, canAllocateExpected.data(), canAllocateExpected.size())
-        && Context->CheckExpectedBytes(GetLocalDataContextRva, localContextExpected.data(), localContextExpected.size())
-        && Context->CheckExpectedBytes(GetLocalPlayerRva, localPlayerExpected.data(), localPlayerExpected.size())
-        && Context->CheckExpectedBytes(GetUnitDataContextRva, unitContextExpected.data(), unitContextExpected.size())
-        && Context->CheckExpectedBytes(GetSkillByIdRva, getSkillExpected.data(), getSkillExpected.size())
-        && Context->CheckExpectedBytes(GetSkillLevelRva, getLevelExpected.data(), getLevelExpected.size())
-        && Context->CheckExpectedBytes(GetRuntimeMaxSkillLevelRva, getMaxExpected.data(), getMaxExpected.size())
-        && ValidateUnitBaseStatEntry();
+        && Context->CheckExpectedBytes(GetLocalizedStringByKeyRva, localizedStringByKeyExpected.data(), localizedStringByKeyExpected.size())
+        && Context->CheckExpectedBytes(ShowAssignAllStatsConfirmationRva, statsConfirmationExpected.data(), statsConfirmationExpected.size())
+        && Context->CheckExpectedBytes(UiDispatchMessageRva, uiDispatchExpected.data(), uiDispatchExpected.size());
 }
 
 } // namespace
@@ -643,18 +479,51 @@ D2RL_PLUGIN_EXPORT auto D2RLoaderLoadPlugin(const D2RL::PluginContext* context) 
         context->LogError("BulkSkillPointAllocation: configuration could not be loaded.");
         return false;
     }
+    if (!LoadStrings()) {
+        context->LogError("BulkSkillPointAllocation: strings configuration could not be loaded.");
+        return false;
+    }
 
     IsVirtualKeyDown = At<IsVirtualKeyDownFn>(IsVirtualKeyDownRva);
-    CanAllocateSkill = At<CanAllocateSkillFn>(CanAllocateSkillRva);
-    GetLocalDataContext = At<GetLocalDataContextFn>(GetLocalDataContextRva);
-    GetLocalPlayer = At<GetLocalPlayerFn>(GetLocalPlayerRva);
-    GetUnitDataContext = At<GetUnitDataContextFn>(GetUnitDataContextRva);
-    GetSkillById = At<GetSkillByIdFn>(GetSkillByIdRva);
-    GetSkillLevel = At<GetSkillLevelFn>(GetSkillLevelRva);
-    GetRuntimeMaxSkillLevel = At<GetRuntimeMaxSkillLevelFn>(GetRuntimeMaxSkillLevelRva);
-    GetUnitBaseStat = At<GetUnitBaseStatFn>(GetUnitBaseStatRva);
+    ShowAssignAllStatsConfirmation = At<ShowAssignAllStatsConfirmationFn>(
+        ShowAssignAllStatsConfirmationRva
+    );
     if (!ValidateRuntime()) {
         context->LogError("BulkSkillPointAllocation: 92777 runtime signature mismatch; plugin refused.");
+        return false;
+    }
+
+    constexpr std::array<std::uint8_t, 29> localizedStringByKeyExpected{
+        0x4C, 0x8B, 0xDC, 0x55, 0x53, 0x57, 0x49, 0x8D,
+        0x6B, 0xA1, 0x48, 0x81, 0xEC, 0xB0, 0x00, 0x00,
+        0x00, 0x48, 0x8B, 0x05, 0x20, 0x67, 0x3D, 0x02,
+        0x48, 0x33, 0xC4, 0x48, 0x89
+    };
+    if (!context->InstallInlineHook(
+            GetLocalizedStringByKeyRva,
+            localizedStringByKeyExpected.data(),
+            static_cast<std::uint32_t>(localizedStringByKeyExpected.size()),
+            HookGetLocalizedStringByKey,
+            &OriginalGetLocalizedStringByKey
+        )) {
+        context->LogError("BulkSkillPointAllocation: localized-string hook installation failed.");
+        return false;
+    }
+
+    constexpr std::array<std::uint8_t, 29> uiDispatchExpected{
+        0x40, 0x53, 0x56, 0x57, 0x48, 0x83, 0xEC, 0x20,
+        0x4C, 0x89, 0x7C, 0x24, 0x58, 0x4C, 0x8B, 0xF9,
+        0xE8, 0x7B, 0x1C, 0xA6, 0x00, 0x0F, 0xB6, 0x90,
+        0x18, 0x01, 0x00, 0x00, 0x84
+    };
+    if (!context->InstallInlineHook(
+            UiDispatchMessageRva,
+            uiDispatchExpected.data(),
+            static_cast<std::uint32_t>(uiDispatchExpected.size()),
+            HookUiDispatchMessage,
+            &OriginalUiDispatchMessage
+        )) {
+        context->LogError("BulkSkillPointAllocation: UI-dispatch hook installation failed.");
         return false;
     }
 
@@ -678,19 +547,20 @@ D2RL_PLUGIN_EXPORT auto D2RLoaderLoadPlugin(const D2RL::PluginContext* context) 
     if (!context->RegisterConsoleCommand(
             "bulk-skill-points",
             Status,
-            "Show bulk skill allocation settings, queue state, and counters."
+            "Show bulk skill allocation settings and counters."
         )) {
         context->LogWarn("BulkSkillPointAllocation: status command could not be registered.");
     }
     const auto activeMessage = std::string(
-        "BulkSkillPointAllocation 1.1.0 active for D2R 3.2.92777 "
-        "(standalone DLL; JSON config: "
-    ) + LoadedConfigPath + "; dual acknowledgements enabled).";
+        "BulkSkillPointAllocation 1.2.1 active for D2R 3.2.92777 "
+        "(native confirmation modal; standalone DLL; JSON config: "
+    ) + LoadedConfigPath + "; native bulk enabled).";
     context->LogInfo(activeMessage.c_str());
     return true;
 }
 
 D2RL_PLUGIN_EXPORT void D2RLoaderUnloadPlugin() noexcept {
-    StopActiveQueue();
+    CancelPendingConfirmation();
+    OpeningSkillConfirmation = false;
     Context = nullptr;
 }

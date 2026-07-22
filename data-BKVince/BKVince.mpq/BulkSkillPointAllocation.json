@@ -3,6 +3,9 @@
     // Accepted range: 1 through 1000. Native allocation rules can stop earlier.
     "skillPointsPerCtrlClick": 5,
 
-    // Emit queue diagnostics in the D2RLoader log.
+    // Shift + click works like stat allocation and asks for confirmation before investing all usable points.
+    // Edit BulkSkillPointAllocation.strings.json to translate the prompt.
+
+    // Emit native bulk diagnostics in the D2RLoader log.
     "diagnostics": false
 }

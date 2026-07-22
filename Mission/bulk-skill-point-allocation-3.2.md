@@ -36,8 +36,9 @@ fournit uniquement une preuve sémantique; aucune adresse, structure ou ABI
   prérequis, attributs, niveau courant, maximum et dépense.
 
 Le paquet D2R 3.2 observé n'est pas copié sur cette structure historique : son
-builder client écrit 5 octets. La propriété importante conservée est qu'une
-requête `0x3B` représente toujours un seul rang et n'offre aucun champ de lot.
+builder client écrit 5 octets et le dernier mot possède une sémantique bulk.
+La validation fonctionnelle 92777 établit que `0` demande un point total, `4`
+en demande cinq et `0xFFFF` demande tout ce que les règles runtime autorisent.
 
 ## Preuve D2R.exe 3.2.92777
 
@@ -56,8 +57,8 @@ Les chemins suivants ont été reconstruits directement dans cette image :
   personnalisé, lit le maximum runtime, puis contrôle l'état bloquant;
 - `0x00214220` : helper du maximum runtime de la compétence;
 - `0x000EC700` : builder client d'une commande de 5 octets. Pour l'opcode
-  `0x3B`, les deux octets de valeur contiennent le skill id; les deux derniers
-  octets ne constituent pas un compteur de rangs;
+  `0x3B`, les deux octets de valeur contiennent le skill id et les deux derniers
+  encodent les rangs supplémentaires : `total - 1`, ou `0xFFFF` pour tout;
 - `0x000EE2A0` : file réseau client appelée par le builder;
 - `0x014E9DC0` : gestionnaire comparable des points de statistiques. Son
   résolveur assigne 1 au clic normal, 5 à Ctrl et `0xFFFF` à Shift; cela prouve
@@ -71,27 +72,24 @@ Les getters strictement signés utilisés pour observer la progression sont
 
 ## Implantation livrée
 
-`BulkSkillPointAllocation 1.1.0` est un plugin D2RLoader hybride, attribué à
+`BulkSkillPointAllocation 1.2.1` est un plugin D2RLoader hybride, attribué à
 `RuffnecKk`, sans `ModScopedOnly`. Il peut être installé globalement ou sous un
 mod. Il intercepte le builder à `0x000EC700` avec son prologue strict de 29
 octets et ne modifie que l'opcode `0x3B`; tous les autres paquets traversent le
 trampoline intact.
 
-Le premier rang utilise immédiatement le builder natif. Pour chaque rang
-supplémentaire, une file bornée attend que le niveau de base observé change,
-preuve que le rang précédent a été traité, puis rappelle la validation native
-`0x014C3DA0` avant d'envoyer une nouvelle requête mono-rang. La file s'arrête au
-premier refus ou après une sécurité interne fixe de 2000 ms sans confirmation.
-Cette valeur n'est pas un délai entre deux points et n'est pas exposée dans la
-configuration publique. Ce modèle
-laisse les règles runtime et le serveur autoritaires pour les coûts `SkPoints`,
-la classe, les prérequis, les attributs, le niveau requis, les points restants
-et le plafond effectif.
+Ctrl envoie une seule requête native dont le dernier mot vaut
+`skillPointsPerCtrlClick - 1`; la valeur par défaut 5 produit donc `extra = 4`.
+Shift confirmé envoie une seule requête avec `extra = 0xFFFF`. Aucun timer,
+worker, polling, paquet répété ni file mono-rang ne subsiste en 1.2.1. Le
+gestionnaire autoritaire du jeu applique lui-même les coûts `SkPoints`, la
+classe, les prérequis, les attributs, le niveau requis, les points restants et
+le `MaxLvl` effectif du runtime.
 
-La confirmation Shift utilise une boîte Windows possédée par la fenêtre du jeu.
-D2RLoader n'expose pas actuellement d'API stable permettant de construire une
-confirmation native en jeu. Refuser la boîte n'envoie aucun paquet. Ctrl ne
-demande aucune confirmation.
+Depuis la version 1.2.0, la confirmation Shift réutilise le `ConfirmationModal`
+natif de Diablo. Le modal est asynchrone : le rendu et le thread client ne sont
+plus bloqués pendant la décision. Refuser n'envoie aucun paquet; accepter
+envoie l'unique requête native assign-all. Ctrl ne demande aucune confirmation.
 
 La version 1.0.3 durcit la détection après l'échec fonctionnel de 1.0.2 :
 `Shift` est déduit du marqueur natif `extra = 0xFFFF` produit par le chemin
@@ -105,12 +103,12 @@ Configuration :
 Sources :
 `data-BKVince/d2rloader/plugins/BulkSkillPointAllocation-src/`.
 Archive publique :
-`addons/BulkSkillPointAllocation/BulkSkillPointAllocation.zip`, avec la DLL, le
-JSON seulement.
+`addons/BulkSkillPointAllocation/BulkSkillPointAllocation.zip`, avec la DLL,
+le JSON de gameplay et le JSON de chaîne, sans README.
 
-La commande console `bulk-skill-points` affiche la configuration active, l'état
-de la file et les compteurs clic normal, lots Ctrl, Shift acceptés/annulés,
-rangs envoyés, lots terminés, arrêts par règle et timeouts de synchronisation.
+La commande console `bulk-skill-points` affiche la configuration active, les
+dernières valeurs `extra` entrante et sortante ainsi que les compteurs clic
+normal, lots Ctrl, Shift acceptés/annulés et paquets bulk natifs.
 
 ## Validation technique du 21 juillet 2026
 
@@ -226,7 +224,8 @@ patch est refusé.
 
 Le plugin demeure une DLL RuffnecKk distincte. Il ne lie, ne modifie et ne
 redistribue aucune DLL d'eezstreet. La destination logique d'une intégration
-future est toutefois `plugin-items`, et non `plugin-skills` ou `plugin-misc`.
+future est `plugin-misc`, conformément au découpage retenu pour le
+CommunityPack.
 
 La configuration TOML individuelle est remplacée par
 `BulkSkillPointAllocation.json`. Comme ce fichier ne configure qu'un plugin,
@@ -235,13 +234,13 @@ racine, sans section artificielle `misc`. Le lecteur suit le modèle eezstreet :
 JSON avec commentaires, recherche prioritaire dans le dossier du mod actif,
 puis repli dans le dossier du jeu. Une configuration absente emploie les
 valeurs par défaut; une configuration présente mais invalide fait refuser le
-chargement. Lors d'un merge accepté, l'objet plat pourra être déplacé sous
-`items.bulkSkillAllocation` dans `D2RPlugins.json`.
+chargement. Lors d'un merge accepté, les clés pourront être intégrées au format
+retenu par `plugin-misc` dans `D2RPlugins.json` sans modifier leur sémantique.
 
 La compatibilité a été auditée contre le dernier commit officiel
 D2RL-Plugins 2.0.1, `dc75b49ffbb67b887d7757ee00ee9a03bcde5d8a` : aucun
-des cinq modules n'écrit le hook BulkSkill `0x000EC700` ni l'entrée lue
-`0x002F48C0`. Le cold-start BKVince charge les cinq DLL du PluginPack, puis
+des cinq modules n'écrit les trois hooks BulkSkill. Le cold-start BKVince charge
+les cinq DLL du PluginPack, puis
 `BulkSkillPointAllocation.dll` en portée globale avec son JSON mod-local :
 `active=17`, `rejected=0`, `failed=0` et démarrage `24/24`. Les 19 échecs de
 patches globaux sont des doublons d'entrées déjà appliquées en portée mod et ne
@@ -255,9 +254,81 @@ neutralisée par l'identifiant du plugin, les six DLL coexistent avec
 - DLL dépôt/runtime SHA-256 :
   `0C784A408D9DE8504494D70042CDDF9C8822058FDAF0A67EA836E1A8C3524440`;
 - JSON dépôt/runtime SHA-256 :
-  `133177B5588322B9A74DB5C06C89FB0F7877177B5F41A25D30A73241F4A35340`;
+  `A13FF8A6962198C29E1766D2281746C4FB05BC07030BABC725E420F16AEFC442`;
 - ZIP DLL + JSON SHA-256 :
-  `36A72095B496F9F45056C4ACF1BCE409C6E3BD1504C2F44A3C027529E7432EBB`.
+  `BB6B4F39F75EF25FC81AE22E9D4E96204D46C3BF889C0732EE956E02D2C9A2A0`.
+
+## Confirmation Diablo native 1.2.0 du 22 juillet 2026
+
+Le chemin Stat natif a été reconstruit dans le workbench 92777. La fonction
+`0x014EF670` construit un `ConfirmationModal` avec le prompt localisé, les
+libellés natifs `Yes` et `No`, puis deux messages de réponse indépendants. Le
+constructeur générique appelé à `0x00847C40` reçoit le prompt, les deux libellés,
+les deux charges utiles et un booléen d'affichage. Le resolveur de chaîne par
+clé est `0x005F4B90`.
+
+BulkSkillPointAllocation appelle le constructeur Stat avec un widget minimal
+dont l'index porte une sentinelle privée. Pendant ce seul appel, le hook strict
+du resolveur remplace `AssignAllStatPointsConfirmation` par la valeur UTF-8 de
+`BulkSkillPointAllocation.strings.json`. Les boutons restent entièrement
+localisés par Diablo. Le premier essai qui interceptait le gestionnaire final
+des stats à `0x014E9DC0` n'a volontairement rien attribué : lorsque seul
+l'arbre Skill est ouvert, aucun panneau Stat n'est abonné à ce message.
+
+La version finale intercepte donc le dispatcher UI commun `0x00843D90`. Elle
+laisse traverser tous les messages ordinaires et ne consomme que la charge utile
+portant sa sentinelle. `Yes` récupère alors le skill mémorisé et envoie la
+requête assign-all native; `No` ne contient pas cette sentinelle et n'envoie
+aucun paquet. Cette
+approche évite tout `MessageBoxW`, n'arrête pas le rendu et ne dépend pas de la
+présence du panneau Stat.
+
+Validation en jeu par Vincent : le modal Diablo s'affiche, le jeu ne gèle plus
+et `Yes` attribue bien les points de compétence en bulk. Le cold-start BKVince
+avec les cinq DLL du PluginPack accepte les trois hooks stricts
+`0x005F4B90`, `0x00843D90` et `0x000EC700`, charge la version 1.2.0 avec
+`rejected=0`, `failed=0`, puis atteint les 24/24 étapes de démarrage.
+
+- DLL build, dépôt, globale et mod-locale identiques, SHA-256
+  `596562160B56598468211B67C8DA48B7265E7EB2A6C84F7A9C23BFDF18B58B88`;
+- JSON gameplay dépôt/runtime identiques, SHA-256
+  `904B477B624F6A0A7B1BB34BB6AE59F0A7B746F4F59C5D1E0FB14A690166E4F3`;
+- JSON de chaîne dépôt/runtime identiques, SHA-256
+  `C2BD6D856DC19E67533EA622E803320588C827DADBCB964791AB772B8F8F54D0`;
+- ZIP DLL + deux JSON, sans README, SHA-256
+  `1A1483CBAC9F2122144BBBDA80B975F41405DE7F2B951A2ADBEF94CFC1BBEA98`.
+
+## Bulk natif instantané 1.2.1 du 22 juillet 2026
+
+L'observation visuelle de Vincent a révélé que Shift n'exécutait pas la file
+mono-rang décrite initialement : son premier paquet `0x3B`, portant
+`extra = 0xFFFF`, attribuait déjà tous les rangs en une opération. La file ne
+faisait ensuite que constater un saut supérieur à `+1` et s'arrêter. Cette
+preuve fonctionnelle invalide l'ancienne conclusion selon laquelle les deux
+derniers octets du paquet n'avaient aucune sémantique bulk.
+
+Le chemin Stat à `0x014E9F4D` encode lui aussi une quantité sous la forme
+`total - 1`. La 1.2.1 applique ce même encodage au paquet Skill : une
+configuration Ctrl de 5 envoie `extra = 4`, tandis que Shift confirmé conserve
+`0xFFFF`. Vincent a validé en jeu qu'un seul Ctrl + clic attribue instantanément
+exactement cinq points, sans progression visuelle 1→2→3→4→5.
+
+Après cette validation, toute la file de secours a été retirée : plus de timer,
+polling, worker, accusés client, boucle de rangs ni rafale réseau. Chaque action
+bulk émet exactement un paquet natif, et le serveur reste responsable de toutes
+les règles gameplay. Les signatures strictes conservées concernent uniquement
+le builder `0x000EC700`, le resolveur de texte `0x005F4B90`, le dispatcher UI
+`0x00843D90`, le constructeur modal appelé `0x014EF670` et la lecture Ctrl
+`0x0120A100`.
+
+- DLL build, dépôt, globale et mod-locale identiques, SHA-256
+  `685BDB509B8AF0DDE0841D96C3B17051602759A9F6EE95ED7CBD9F719C233115`;
+- JSON gameplay dépôt/runtime identiques, SHA-256
+  `6468BD071E204477C5B06B7C85E963EDFB9D994170C6D4FBADBA237C840F062B`;
+- JSON de chaîne dépôt/runtime identiques, SHA-256
+  `C2BD6D856DC19E67533EA622E803320588C827DADBCB964791AB772B8F8F54D0`;
+- ZIP DLL + deux JSON, sans README, SHA-256
+  `603BE3C1C523630ED807AD7BCC2D7AB16A54E4EF7BF825B3523F17A010DD1933`.
 
 ## Gate fonctionnel restant
 

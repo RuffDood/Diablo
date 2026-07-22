@@ -9,7 +9,7 @@
       "kind": "function",
       "confidence": "high",
       "source": "Mission/bulk-skill-point-allocation-3.2.md",
-      "notes": "Returns the local client data-table context. SKILLTREE_CanAllocateSkill calls it first and passes the result to CLIENT_GetLocalPlayer. Its strict 10-byte signature is checked by BulkSkillPointAllocation."
+      "notes": "Returns the local client data-table context. SKILLTREE_CanAllocateSkill calls it first and passes the result to CLIENT_GetLocalPlayer. It was used by the superseded mono-rank BulkSkillPointAllocation queue and is not required by 1.2.1."
     },
     {
       "rva": "0x9A480",
@@ -17,7 +17,7 @@
       "kind": "function",
       "confidence": "high",
       "source": "Mission/bulk-skill-point-allocation-3.2.md",
-      "notes": "Returns the local player for a client data context. The 92777 skill-tree eligibility path calls it at 0x14C3DB6; BulkSkillPointAllocation uses the same ABI to observe server-confirmed base-level changes."
+      "notes": "Returns the local player for a client data context. The 92777 skill-tree eligibility path calls it at 0x14C3DB6. It was used by the superseded mono-rank BulkSkillPointAllocation queue and is not required by 1.2.1."
     },
     {
       "rva": "0xEC700",
@@ -25,7 +25,7 @@
       "kind": "function",
       "confidence": "high",
       "source": "Mission/bulk-skill-point-allocation-3.2.md",
-      "notes": "Builds a five-byte client command from (opcode byte, value word, extra word) and submits it through the outgoing queue at 0xEE2A0. The skill-tree caller uses opcode 0x3B and one request per rank; the extra word is not a rank counter. BulkSkillPointAllocation hooks the strict 29-byte prologue and filters only opcode 0x3B."
+      "notes": "Builds a five-byte client command from (opcode byte, value word, extra word) and submits it through the outgoing queue at 0xEE2A0. For opcode 0x3B, value is the skill id and extra encodes additional ranks: 0 means one total, 4 means five total, and 0xFFFF means every rank the runtime permits. The 0/0xFFFF client branches are proven at 0x14C6A11/0x14C6A01; extra=4 producing exactly five instant ranks was validated in game on 92777. BulkSkillPointAllocation 1.2.1 hooks the strict 29-byte prologue and filters only opcode 0x3B."
     },
     {
       "rva": "0xEE2A0",
@@ -33,7 +33,7 @@
       "kind": "function",
       "confidence": "high",
       "source": "Mission/bulk-skill-point-allocation-3.2.md",
-      "notes": "Generic outgoing client packet queue called by the five-byte builder at 0xEC700. BulkSkillPointAllocation preserves this native route and sequences individual skill requests instead of extending protocol 0x3B."
+      "notes": "Generic outgoing client packet queue called by the five-byte builder at 0xEC700. BulkSkillPointAllocation 1.2.1 preserves this native route and sends exactly one native 0x3B request per Ctrl or confirmed Shift action."
     },
     {
       "rva": "0x214220",
@@ -41,7 +41,7 @@
       "kind": "function",
       "confidence": "high",
       "source": "Mission/bulk-skill-point-allocation-3.2.md",
-      "notes": "Returns the effective runtime maximum for a compiled SkillsTxt row and data context. SKILLTREE_CanAllocateSkill calls it at 0x14C3E54; BulkSkillPointAllocation uses it so MaxLvl 20, 25, 30 and other valid mod values are not hardcoded."
+      "notes": "Returns the effective runtime maximum for a compiled SkillsTxt row and data context. SKILLTREE_CanAllocateSkill calls it at 0x14C3E54. BulkSkillPointAllocation 1.2.1 delegates the cap to the authoritative native bulk handler and no longer calls this helper."
     },
     {
       "rva": "0x2BD480",
@@ -61,11 +61,11 @@
     },
     {
       "rva": "0x2F48C0",
-      "name": "GetItemBaseDurability",
+      "name": "STATLIST_GetUnitBaseStat",
       "kind": "function",
       "confidence": "high",
-      "source": "Mission/durability-loss-resistance-3.2.md",
-      "notes": "Native base-durability path hooked by DurabilityResistance."
+      "source": "Mission/durability-loss-resistance-3.2.md; Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "Generic unit base-stat getter with ABI (unit, stat id, 16-bit layer). DurabilityResistance hooks its max-durability calls; SKILLTREE_CanAllocateSkill calls it with stat 5 and layer 0 for unspent skill points. BulkSkillPointAllocation 1.0.7 used it for its superseded per-rank acknowledgement queue; 1.2.1 no longer reads it."
     },
     {
       "rva": "0x2F5C60",
@@ -169,7 +169,7 @@
       "kind": "function",
       "confidence": "high",
       "source": "Mission/bulk-skill-point-allocation-3.2.md",
-      "notes": "Returns the requested native skill-level view. The skill-tree eligibility path passes flags 0,0 for the base invested level; BulkSkillPointAllocation observes the same value and waits for it to change before sending the next mono-rank request."
+      "notes": "Returns the requested native skill-level view. The skill-tree eligibility path passes flags 0,0 for the base invested level. BulkSkillPointAllocation used it in its superseded mono-rank queue; 1.2.1 no longer polls skill levels."
     },
     {
       "rva": "0x33DCD0",
@@ -177,7 +177,7 @@
       "kind": "function",
       "confidence": "high",
       "source": "Mission/bulk-skill-point-allocation-3.2.md",
-      "notes": "Resolves a player's skill by skill id and owner GUID. The eligibility path and BulkSkillPointAllocation pass owner GUID -1 for the base class skill."
+      "notes": "Resolves a player's skill by skill id and owner GUID. The eligibility path passes owner GUID -1 for the base class skill. BulkSkillPointAllocation used it in its superseded mono-rank queue; 1.2.1 no longer calls it."
     },
     {
       "rva": "0x33EC70",
@@ -681,7 +681,7 @@
       "kind": "function",
       "confidence": "high",
       "source": "Mission/bulk-skill-point-allocation-3.2.md",
-      "notes": "Thin native wrapper around the imported asynchronous key-state function: it forwards the virtual-key code in ECX and returns bit 15 as a boolean. The skill-tree allocation path calls it with VK_SHIFT at 0x14C69F3. BulkSkillPointAllocation 1.0.2 uses the same strict 21-byte function for Shift and Ctrl modifier detection."
+      "notes": "Thin native wrapper around the imported asynchronous key-state function: it forwards the virtual-key code in ECX and returns bit 15 as a boolean. The skill-tree allocation path calls it with VK_SHIFT at 0x14C69F3. BulkSkillPointAllocation 1.0.7 validates the same strict 21-byte function and queries generic, left and right Ctrl; Shift is resolved from the native packet extra marker emitted immediately after this call."
     },
     {
       "rva": "0x14C3DA0",
@@ -689,7 +689,7 @@
       "kind": "function",
       "confidence": "high",
       "source": "Mission/bulk-skill-point-allocation-3.2.md",
-      "notes": "Client skill-tree gate taking a skill id and returning a boolean. It obtains the local player, checks unspent skill points stat 5, resolves SkillsTxt and current base level, applies the custom cost/requirement calculation, reads runtime MaxLvl through 0x214220 and rejects blocking state 0x36. BulkSkillPointAllocation calls it before every queued rank."
+      "notes": "Client skill-tree gate taking a skill id and returning a boolean. It obtains the local player, checks unspent skill points stat 5, resolves SkillsTxt and current base level, applies the custom cost/requirement calculation, reads runtime MaxLvl through 0x214220 and rejects blocking state 0x36. The native click path invokes it before BulkSkillPointAllocation observes the 0x3B request; 1.2.1 adds no client-side rank loop."
     },
     {
       "rva": "0x14C69D6",
@@ -705,7 +705,7 @@
       "kind": "call-site",
       "confidence": "high",
       "source": "Mission/bulk-skill-point-allocation-3.2.md",
-      "notes": "Validated skill-tree call to CLIENT_SendFiveByteCommandPacket after the eligibility gate, using opcode 0x3B for one skill rank."
+      "notes": "Validated skill-tree call to CLIENT_SendFiveByteCommandPacket after the eligibility gate. It uses opcode 0x3B, the selected skill id, extra=0 for one total rank, or extra=0xFFFF when Shift requests every permitted rank."
     },
     {
       "rva": "0x14E9DC0",
@@ -713,7 +713,47 @@
       "kind": "function",
       "confidence": "high",
       "source": "Mission/bulk-skill-point-allocation-3.2.md",
-      "notes": "Reference UI handler for stat allocation. Its modifier payload resolves normal click to 1, Ctrl to 5 and Shift to 0xFFFF, with Shift precedence, before sending opcode 0x3A. This behavior informs the skill UX only; protocol 0x3A is not reused for skills."
+      "notes": "Reference UI handler for stat allocation. Its modifier payload resolves normal click to a total of 1 and Ctrl to 5, then the packet call at 0x14E9F4D passes total-1 in the extra word; Shift takes precedence and follows the confirmation path. This behavior proves the native quantity encoding pattern, but protocol 0x3A itself is not reused for skills."
+    },
+    {
+      "rva": "0x5F4B90",
+      "name": "LANG_GetStringByKey",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "Resolves a UTF-8 string key view {pointer,length} to active-language text. CharacterStatLevelUpButtonWidget_ShowAssignAllConfirmation calls it for the prompt and native Yes/No labels. BulkSkillPointAllocation 1.2.1 hooks its strict 29-byte prologue and substitutes only AssignAllStatPointsConfirmation while opening its own modal."
+    },
+    {
+      "rva": "0x843D90",
+      "name": "UI_DispatchMessage",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "Common UI message dispatcher receiving a message object whose optional payload pointer is stored at +0x110. ConfirmationModal dispatches its selected callback through this entry. BulkSkillPointAllocation 1.2.1 consumes only the callback carrying its private stat-index sentinel and forwards every other message unchanged."
+    },
+    {
+      "rva": "0x847C40",
+      "name": "UI_ShowConfirmationModal",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "Build-92777 ConfirmationModal constructor with ABI (prompt, confirmLabel, dismissLabel, confirmMessage, dismissMessage, displayFlag). It copies the two callback messages into the modal and updates the three text widgets when an existing modal is reused."
+    },
+    {
+      "rva": "0x14E9F4D",
+      "name": "StatsAllocatePacketCountEncoding",
+      "kind": "call-site",
+      "confidence": "high",
+      "source": "Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "The instruction LEA R8D,[RDI-1] encodes a resolved total allocation count as additional ranks immediately before CLIENT_SendFiveByteCommandPacket. Normal total 1 becomes extra 0 and Ctrl total 5 becomes extra 4. BulkSkillPointAllocation 1.2.1 applies this proven total-minus-one encoding to opcode 0x3B; extra 4 yielding exactly five instant skill ranks was validated in game on build 92777."
+    },
+    {
+      "rva": "0x14EF670",
+      "name": "CharacterStatLevelUpButtonWidget_ShowAssignAllConfirmation",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/bulk-skill-point-allocation-3.2.md",
+      "notes": "Reads the stat index at widget+0xB88, constructs confirm and dismiss UI messages, resolves AssignAllStatPointsConfirmation plus native Yes/No labels, and calls UI_ShowConfirmationModal at 0x847C40. BulkSkillPointAllocation 1.2.1 calls this proven builder with a private sentinel instead of reimplementing Diablo's modal layout."
     }
   ]
 }

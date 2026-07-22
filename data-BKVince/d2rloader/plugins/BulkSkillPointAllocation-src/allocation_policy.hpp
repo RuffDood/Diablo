@@ -13,6 +13,7 @@ enum class AllocationMode : std::uint8_t {
 
 inline constexpr std::uint32_t DefaultSkillPointsPerCtrlClick = 5;
 inline constexpr std::uint32_t MaximumSkillPointsPerCtrlClick = 1'000;
+inline constexpr std::uint16_t AssignAllSkillPointsExtra = 0xFFFF;
 
 constexpr AllocationMode ResolveMode(bool shiftPressed, bool ctrlPressed) noexcept {
     if (shiftPressed) return AllocationMode::ShiftAll;
@@ -24,20 +25,13 @@ constexpr std::uint32_t ClampSkillPointsPerCtrlClick(std::uint32_t value) noexce
     return std::clamp(value, 1U, MaximumSkillPointsPerCtrlClick);
 }
 
-constexpr std::uint32_t RequestedSkillPoints(
+constexpr std::uint16_t NativeSkillPacketExtra(
     AllocationMode mode,
-    std::uint32_t skillPointsPerCtrlClick,
-    std::int32_t currentBaseLevel,
-    std::int32_t runtimeMaxLevel
+    std::uint32_t requestedPoints
 ) noexcept {
-    if (runtimeMaxLevel <= currentBaseLevel) return 0;
-
-    const auto capacity = static_cast<std::uint32_t>(runtimeMaxLevel - currentBaseLevel);
-    if (mode == AllocationMode::ShiftAll) return capacity;
-    if (mode == AllocationMode::CtrlBatch) {
-        return std::min(ClampSkillPointsPerCtrlClick(skillPointsPerCtrlClick), capacity);
-    }
-    return 1;
+    if (mode == AllocationMode::ShiftAll) return AssignAllSkillPointsExtra;
+    if (requestedPoints <= 1) return 0;
+    return static_cast<std::uint16_t>(std::min(requestedPoints - 1, 0xFFFEU));
 }
 
 } // namespace tcp::bulk_skills
