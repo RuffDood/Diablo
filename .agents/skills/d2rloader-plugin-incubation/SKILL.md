@@ -17,7 +17,8 @@ description: Concevoir, auditer, implanter et emballer un nouveau plugin D2RLoad
 1. Pour le build 92777, exécuter le skill `d2r32-reverse-engineering` et franchir son gate `status`.
 2. Vérifier la référence PluginPack épinglée, puis inventorier le module propriétaire : fichiers internes, structures partagées, champs, config, callbacks, RVA et plages de hooks.
 3. Identifier chaque collision potentielle et désigner un propriétaire unique pour tout hook ou structure canonique.
-4. Refuser une implantation fondée sur une ABI, une signature ou un build non prouvé.
+4. Si une incompatibilité avec le PluginPack est envisagée, avertir explicitement Vincent que le prochain plugin devrait être autonome.
+5. Refuser une implantation fondée sur une ABI, une signature ou un build non prouvé.
 
 ## Incuber de façon autonome
 
