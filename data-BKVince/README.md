@@ -21,6 +21,11 @@ leurs identifiants ont été déplacés de `+11000`, sans modifier leurs clés n
 leurs textes. Une relance à froid confirme les onglets `Extensions` et `About`
 ainsi que les sections `Plugins` et `Patches`.
 
+La restriction de classe Warlock prolonge la séquence historique des libellés
+de classe à l'ID `10924`; `Chatcaps` conserve sa clé et son texte `CHAT` à l'ID
+`27602`. Cette permutation data-only empêche les grimoires d'afficher `CHAT`
+à la place de `(Warlock Only)` sans ajouter de hook natif.
+
 Deux références de données BK invalides au démarrage ont ensuite été corrigées
 sélectivement : la formule de portée d'Eruption utilise maintenant le missile
 réel `erruption center`, et la classe non-quest `Andariel Essence (H)` existe
