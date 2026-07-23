@@ -1,0 +1,4 @@
+Enabled	Source	Output	Weight	TMogMin	TMogMax	*Comment
+0	hp1	mp1	70	1	1	Example only: 70 relative weight for Minor Mana Potion
+0	hp1	rvs	25	1	1	Example only: 25 relative weight for Rejuvenation Potion
+0	hp1	rvl	5	1	1	Example only: 5 relative weight for Full Rejuvenation Potion

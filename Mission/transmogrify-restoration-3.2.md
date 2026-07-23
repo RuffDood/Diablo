@@ -106,6 +106,10 @@ l’inventory ni drop au sol implicite n’est permis.
   vide conserve le texte automatique localisé selon `TMogType`, tandis qu’une
   chaîne non vide le remplace exactement sur tous les objets éligibles, sans
   modifier les recettes, sorties ni probabilités ;
+- blueprint `transmogrify-outputs.txt` ajouté avec les colonnes `Enabled`,
+  `Source`, `Output`, `Weight`, `TMogMin`, `TMogMax` et `*Comment` ; ses trois
+  exemples `hp1` sont désactivés et la version 1.2.0 ne lit pas encore cette
+  table, qui fixe seulement le contrat du futur moteur weighted ;
 - interception autoritaire du clic droit serveur au RVA `0x4F40C0`, résolution
   du GUID et relecture des colonnes depuis les tables chargées par l’hôte ;
 - validation du propriétaire direct ou du conteneur appartenant au joueur,
@@ -135,8 +139,9 @@ l’inventory ni drop au sol implicite n’est permis.
   ligne `hp1` a retrouvé ses valeurs normales `Transmogrify=0` et
   `TMogType=xxx` dans les données source et runtime.
 - package partageable créé sous `addons/Transmogrify/Transmogrify.zip` avec la
-  DLL 1.2.0, son TOML et son README, sans table TXT ni recette dummy ; SHA-256
-  du ZIP `F04932018B9F7A1F2782E1343B479216548EAE925DE00C063FD94483A09542FD`.
+  DLL 1.2.0, son TOML, le blueprint TXT et son README, sans recette dummy
+  active ; SHA-256 du ZIP
+  `E91613C0A8B31B690C517E5EF17A7402FCA7A646781E1568C32FACAB245C39AE`.
 
 ## Questions et gates restant à fermer
 

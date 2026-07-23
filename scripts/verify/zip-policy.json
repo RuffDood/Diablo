@@ -64,6 +64,7 @@
       "entries": [
         "README.md",
         "Transmogrify.dll",
+        "transmogrify-outputs.txt",
         "transmogrify.toml"
       ]
     }

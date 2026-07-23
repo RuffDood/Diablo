@@ -25,4 +25,17 @@ Configuration is read from `d2rloader/config/transmogrify.toml` in the same glob
 
 The override changes only the red tooltip line. It does not define recipes, outputs, or probabilities.
 
+### Weighted-output blueprint
+
+`d2rloader/config/transmogrify-outputs.txt` documents the planned weighted-output schema:
+
+- `Enabled` enables an individual output row with `1`; the bundled examples use `0`.
+- `Source` joins the row to an item `code` in `armor.txt`, `weapons.txt`, or `misc.txt`.
+- `Output` is a possible output item code.
+- `Weight` is a positive relative weight; weights do not need to total 100.
+- `TMogMin` and `TMogMax` define the output quantity bounds.
+- `*Comment` is documentation ignored by the planned reader.
+
+The blueprint is not consumed by Transmogrify 1.2.0 yet. Weighted selection requires a future plugin update; the current DLL continues to use the single `TMogType` output.
+
 The plugin is hybrid: install the same DLL in either `<D2R>/d2rloader/plugins/` or `<D2R>/mods/<mod>/d2rloader/plugins/`. In multiplayer, both the client and the authoritative host must load the plugin and use matching TXT data.
