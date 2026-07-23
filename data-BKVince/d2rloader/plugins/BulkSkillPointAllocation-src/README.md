@@ -50,22 +50,41 @@ because this file configures only one plugin:
 If the file is absent, these defaults are used. A malformed file is rejected
 instead of silently installing native hooks with unexpected settings.
 
-The prompt is stored separately in `BulkSkillPointAllocation.strings.json`:
+The prompt is resolved through Diablo's active-language database. The localization
+key and English fallback are stored separately in
+`BulkSkillPointAllocation.strings.json`:
 
 ```jsonc
 {
-    // This file is UTF-8 and accepts any language.
-    "shiftConfirmation": "Invest all currently usable skill points in this skill?"
+    // Read this key from the active mod's data/local/lng/strings/ui.json.
+    "shiftConfirmationKey": "shiftConfirmation",
+
+    // Used only when the localization key is missing or unresolved.
+    "shiftConfirmationFallback": "Invest all currently usable skill points in this skill?"
 }
 ```
 
 This strings file follows the same active-mod-first, game-directory-second lookup.
-Keeping text separate lets translators edit the prompt without touching gameplay
-settings. The `Yes` and `No` labels remain Diablo's own localized strings.
+Add an unused numeric `id`, the key `shiftConfirmation`, and each desired locale to
+the active mod's `<mod>.mpq/data/local/lng/strings/ui.json`. For example:
+
+```jsonc
+{
+    "id": 31188,
+    "Key": "shiftConfirmation",
+    "enUS": "Invest all currently usable skill points in this skill?",
+    "koKR": "이 스킬에 현재 사용할 수 있는 모든 스킬 포인트를 투자하시겠습니까?"
+}
+```
+
+The numeric ID above is only an example and must be replaced if it is already used
+by that mod. Diablo selects the matching locale automatically. The English fallback
+is used only when the key cannot be resolved. The `Yes` and `No` labels remain
+Diablo's own localized strings.
 
 ## PluginPack compatibility
 
-Version 1.2.1 was audited against the latest eezstreet D2RL-Plugins 2.0.1 commit
+Version 1.2.2 was audited against the latest eezstreet D2RL-Plugins 2.0.1 commit
 `dc75b49ffbb67b887d7757ee00ee9a03bcde5d8a`. Bulk Skill Point Allocation owns
 the allocation-packet builder hook at D2R RVA `0x000EC700`, the localized-key
 resolver hook at `0x005F4B90`, and the UI dispatcher hook at `0x00843D90`.

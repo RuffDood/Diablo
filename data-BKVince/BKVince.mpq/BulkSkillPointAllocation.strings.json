@@ -1,5 +1,12 @@
 {
-    // Text displayed by Diablo's native confirmation modal for Shift + click.
-    // This file is UTF-8, so the prompt can be replaced with any language.
-    "shiftConfirmation": "Invest all currently usable skill points in this skill?"
+    // Diablo resolves this key in the language currently selected by the player.
+    // Add the key to the active mod's localization file, for example:
+    // <D2R>/mods/<mod>/<mod>.mpq/data/local/lng/strings/ui.json
+    // Source-tree example: <mod>.mpq/data/local/lng/strings/ui.json
+    // ui.json entry example:
+    // { "id": <unused integer>, "Key": "shiftConfirmation", "enUS": "Invest all currently usable skill points in this skill?", "koKR": "..." }
+    "shiftConfirmationKey": "shiftConfirmation",
+
+    // English text used only when the localization key is missing or unresolved.
+    "shiftConfirmationFallback": "Invest all currently usable skill points in this skill?"
 }

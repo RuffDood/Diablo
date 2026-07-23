@@ -72,7 +72,7 @@ Les getters strictement signés utilisés pour observer la progression sont
 
 ## Implantation livrée
 
-`BulkSkillPointAllocation 1.2.1` est un plugin D2RLoader hybride, attribué à
+`BulkSkillPointAllocation 1.2.2` est un plugin D2RLoader hybride, attribué à
 `RuffnecKk`, sans `ModScopedOnly`. Il peut être installé globalement ou sous un
 mod. Il intercepte le builder à `0x000EC700` avec son prologue strict de 29
 octets et ne modifie que l'opcode `0x3B`; tous les autres paquets traversent le
@@ -329,6 +329,34 @@ le builder `0x000EC700`, le resolveur de texte `0x005F4B90`, le dispatcher UI
   `C2BD6D856DC19E67533EA622E803320588C827DADBCB964791AB772B8F8F54D0`;
 - ZIP DLL + deux JSON, sans README, SHA-256
   `603BE3C1C523630ED807AD7BCC2D7AB16A54E4EF7BF825B3523F17A010DD1933`.
+
+## Localisation native 1.2.2 du 22 juillet 2026
+
+Le retour du testeur coréen a démontré que la 1.2.1 ne localisait pas réellement
+le prompt : `BulkSkillPointAllocation.strings.json` contenait une phrase UTF-8
+littérale, donc Diablo affichait toujours cette phrase quelle que soit la langue
+active. La 1.2.2 remplace ce comportement par une résolution native. Pendant la
+construction du modal, le hook demande maintenant la clé configurable
+`shiftConfirmation` au resolveur `LANG_GetStringByKey` à `0x005F4B90`. Diablo
+sélectionne alors automatiquement `enUS`, `koKR` ou toute autre locale déclarée
+dans le `data/local/lng/strings/ui.json` du mod actif.
+
+Le fichier de chaînes expose `shiftConfirmationKey` et documente les chemins
+runtime/source ainsi qu'un exemple d'entrée `ui.json`. Une phrase anglaise
+`shiftConfirmationFallback` n'est utilisée que si la clé est absente, vide ou
+retournée telle quelle par le resolveur. Les libellés Yes/No demeurent entièrement
+natifs. Compilation Release, test de politique 1/1, trois exports, métadonnée
+1.2.2 et cold-start 24/24 réussis; les trois hooks stricts sont acceptés,
+`rejected=0` et `failed=0` côté plugins.
+
+- DLL build, dépôt, globale et mod-locale identiques, SHA-256
+  `3393D4EC5E35B6887E1ABB693F496276449AA0BD5833DF54AD60B7C2F8DFBBC7`;
+- JSON gameplay dépôt/runtime identiques, SHA-256
+  `6B205C7490CB87FA5318405D57B987C919F3719B9E7C5C8A749A01D05685B09A`;
+- JSON de chaîne dépôt/runtime identiques, SHA-256
+  `A47DE4EE2E4E75E247A0D0E20E04FECEE5841F413B302DB9FC5FA69EF145CDCE`;
+- ZIP DLL + deux JSON, sans README, SHA-256
+  `53A94D27C524D8EC025D00EEAA99317D3FAAA6FB969CE21EC0E99BEB7F5642CF`.
 
 ## Gate fonctionnel restant
 

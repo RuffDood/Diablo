@@ -4,7 +4,7 @@
     "skillPointsPerCtrlClick": 5,
 
     // Shift + click works like stat allocation and asks for confirmation before investing all usable points.
-    // Edit BulkSkillPointAllocation.strings.json to translate the prompt.
+    // BulkSkillPointAllocation.strings.json explains how to resolve the prompt from the active mod's ui.json.
 
     // Emit native bulk diagnostics in the D2RLoader log.
     "diagnostics": false
