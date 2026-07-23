@@ -8,7 +8,6 @@
   "scripts": {
     "verify": "node scripts/verify/verify.mjs",
     "dev": "concurrently -n api,web -c blue,green \"node scripts/dev-server.js\" \"npm run dev -w apps/admin\"",
-    "dev:hero-editor": "npm run dev -w apps/hero-editor",
     "build": "turbo run build",
     "verify:data": "npm run test:gem-storage && npm run test:pandemonium-storage && npm run test:cube-guide && npm run test:itemstatcost && npm run test:bkvince-startup-refs && npm run test:bkvince-monstats-lots && npm run test:bkvince-storage-bag && npm run test:bkvince-super-tk && npm run test:bkvince-itemtypes && npm run test:bkvince-staffmods",
     "preview": "turbo run preview",
@@ -48,6 +47,7 @@
     "re:d2r32:ghidra": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/reverse-engineering/Invoke-D2R32Ghidra.ps1"
   },
   "devDependencies": {
+    "@d2runewizard/d2s": "2.0.132",
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
     "concurrently": "^9.1.2",

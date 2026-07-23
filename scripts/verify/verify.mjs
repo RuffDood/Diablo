@@ -40,8 +40,6 @@ try {
   runProcess(process.execPath, ['scripts/validate-cartographie/validate.mjs'], { cwd: repoRoot });
   console.log('VALID');
 
-  runNpm(['run', 'check:catalog', '-w', 'apps/hero-editor'], 'Hero Editor catalog');
-
   heading('ZIP contents');
   const zip = verifyZipContents(repoRoot);
   console.log(`archives checked: ${zip.checked}`);
