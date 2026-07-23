@@ -9,6 +9,8 @@
     "dev": "concurrently -n api,web -c blue,green \"node scripts/dev-server.js\" \"npm run dev -w apps/admin\"",
     "dev:hero-editor": "npm run dev -w apps/hero-editor",
     "build": "turbo run build",
+    "verify": "npm run verify:data && npm run build",
+    "verify:data": "npm run test:gem-storage && npm run test:pandemonium-storage && npm run test:cube-guide && npm run test:itemstatcost && npm run test:bkvince-startup-refs && npm run test:bkvince-monstats-lots && npm run test:bkvince-storage-bag && npm run test:bkvince-super-tk && npm run test:bkvince-itemtypes && npm run test:bkvince-staffmods",
     "preview": "turbo run preview",
     "generate:schemas": "node scripts/build-data/gen-schemas.js",
     "generate:gem-storage": "node scripts/build-data/gem-storage.js",
