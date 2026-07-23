@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "archives": {
+    "addons/BulkSkillPointAllocation/BulkSkillPointAllocation.zip": {
+      "kind": "plugin",
+      "entries": [
+        "BulkSkillPointAllocation.dll",
+        "BulkSkillPointAllocation.json",
+        "BulkSkillPointAllocation.strings.json"
+      ]
+    },
+    "addons/CharmInventoryAuras/CharmInventoryAuras.zip": {
+      "kind": "plugin",
+      "entries": [
+        "CharmInventoryAuras.dll"
+      ]
+    },
+    "addons/ConfigurableCharsiReward/ConfigurableCharsiReward.zip": {
+      "kind": "plugin",
+      "legacy": true,
+      "reason": "Existing pre-incubation package keeps its TOML configuration.",
+      "entries": [
+        "ConfigurableCharsiReward.dll",
+        "configurable-charsi-reward.toml"
+      ]
+    },
+    "addons/DurabilityResistance/DurabilityResistance.zip": {
+      "kind": "plugin",
+      "legacy": true,
+      "reason": "Existing pre-incubation package keeps its TOML configuration.",
+      "entries": [
+        "DurabilityResistance.dll",
+        "durability-resistance.toml"
+      ]
+    },
+    "addons/EnhancedDamageMinMaxFix/EnhancedDamageMinMaxFix.zip": {
+      "kind": "plugin",
+      "entries": [
+        "EnhancedDamageMinMaxFix.dll"
+      ]
+    },
+    "addons/FloatingDamage/FloatingDamage.zip": {
+      "kind": "plugin",
+      "legacy": true,
+      "reason": "Existing pre-incubation package keeps its TOML configuration.",
+      "entries": [
+        "FloatingDamage.dll",
+        "floating-damage.toml"
+      ]
+    },
+    "addons/NoEtherealItemTypes/NoEtherealItemTypes.zip": {
+      "kind": "plugin",
+      "legacy": true,
+      "reason": "Existing pre-incubation package keeps its TOML configuration.",
+      "entries": [
+        "NoEtherealItemTypes.dll",
+        "no-ethereal-item-types.toml"
+      ]
+    },
+    "addons/Transmogrify/Transmogrify.zip": {
+      "kind": "plugin",
+      "legacy": true,
+      "reason": "Existing package intentionally preserves its documented TOML and output list layout.",
+      "entries": [
+        "README.md",
+        "Transmogrify.dll",
+        "transmogrify.toml"
+      ]
+    }
+  }
+}

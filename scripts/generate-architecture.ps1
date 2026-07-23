@@ -15,6 +15,7 @@ $script:excludedDirectories = @('.git', 'node_modules', 'guide', 'dist', '.turbo
 $script:selectiveWorkspaceSubtrees = @(
     'data-vanilla3.2/data/data/global/excel'
 )
+$script:includedWorkspacePaths = $null
 
 if ([string]::IsNullOrWhiteSpace($Root)) {
     $Root = Split-Path -Parent $PSScriptRoot
@@ -99,6 +100,44 @@ function Get-RelativeWorkspacePath {
     return $FullName.Substring($rootPath.Length).TrimStart([char[]]'\/').Replace('\', '/')
 }
 
+function Initialize-IncludedWorkspacePaths {
+    $gitRoot = & git -C $rootPath rev-parse --show-toplevel 2>$null
+    if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($gitRoot)) {
+        return
+    }
+
+    $resolvedGitRoot = [System.IO.Path]::GetFullPath(([string]$gitRoot).Trim()).TrimEnd('\', '/')
+    if (-not $resolvedGitRoot.Equals($rootPath, [System.StringComparison]::OrdinalIgnoreCase)) {
+        return
+    }
+
+    $included = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
+    [void]$included.Add('.')
+    $repositoryFiles = & git -c core.quotepath=false -C $rootPath ls-files --cached --others --exclude-standard
+    if ($LASTEXITCODE -ne 0) {
+        throw 'Unable to inventory versioned and pending repository files.'
+    }
+
+    foreach ($repositoryFile in $repositoryFiles) {
+        $relativePath = ([string]$repositoryFile).Replace('\', '/').Trim('/')
+        if ([string]::IsNullOrWhiteSpace($relativePath)) {
+            continue
+        }
+
+        [void]$included.Add($relativePath)
+        $parent = [System.IO.Path]::GetDirectoryName($relativePath.Replace('/', [System.IO.Path]::DirectorySeparatorChar))
+        while (-not [string]::IsNullOrWhiteSpace($parent)) {
+            $normalizedParent = $parent.Replace('\', '/')
+            [void]$included.Add($normalizedParent)
+            $parent = [System.IO.Path]::GetDirectoryName($parent)
+        }
+    }
+
+    $outputRelativePath = Get-RelativeWorkspacePath -FullName $outputPath
+    [void]$included.Add($outputRelativePath)
+    $script:includedWorkspacePaths = $included
+}
+
 function Add-PreservedNodeData {
     param(
         [Parameter(Mandatory)][System.Collections.Specialized.OrderedDictionary]$Node,
@@ -128,6 +167,10 @@ function Test-ArchitectureItemExcluded {
     }
 
     $relativePath = Get-RelativeWorkspacePath -FullName $Item.FullName
+    if ($null -ne $script:includedWorkspacePaths -and -not $script:includedWorkspacePaths.Contains($relativePath)) {
+        return $true
+    }
+
     foreach ($subtree in $script:selectiveWorkspaceSubtrees) {
         $scopeRoot = ($subtree -split '/')[0]
         $insideScope = $relativePath -eq $scopeRoot -or $relativePath.StartsWith($scopeRoot + '/', [System.StringComparison]::OrdinalIgnoreCase)
@@ -200,6 +243,8 @@ function Convert-ToArchitectureNode {
     return $node
 }
 
+Initialize-IncludedWorkspacePaths
+
 $rootItem = Get-Item -LiteralPath $rootPath -Force
 $document = [ordered]@{
     schemaVersion = '1.1.0'
@@ -211,10 +256,10 @@ if ($null -ne $existingDocumentExtensions) {
     $document['extensions'] = $existingDocumentExtensions
 }
 
-$json = $document | ConvertTo-Json -Depth 100
+$json = ($document | ConvertTo-Json -Depth 100).Replace("`r`n", "`n")
 [System.IO.File]::WriteAllText(
     $outputPath,
-    $json + [System.Environment]::NewLine,
+    $json + "`n",
     [System.Text.UTF8Encoding]::new($false)
 )
 

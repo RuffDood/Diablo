@@ -1,2 +1,0 @@
-charm-inventory-auras-policy 1 0.0489739
----
