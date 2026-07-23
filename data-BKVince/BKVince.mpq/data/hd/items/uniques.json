@@ -1730,9 +1730,9 @@
   "ultra": "armor/quilted_armor"
 } },
   { "gheeds_fortune": {
-  "normal": "charm/charm_large",
-  "uber": "charm/charm_large",
-  "ultra": "charm/charm_large"
+  "normal": "charm/gheeds",
+  "uber": "charm/gheeds",
+  "ultra": "charm/gheeds"
 } },
   { "stormlash": {
   "normal": "mace/flail",
@@ -1890,34 +1890,34 @@
   "ultra": "torch/torch"
 } },
   { "cold_rupture": {
-  "normal": "charm/charm_large",
-  "uber": "charm/charm_large",
-  "ultra": "charm/charm_large"
+  "normal": "charm/new_cold",
+  "uber": "charm/new_cold",
+  "ultra": "charm/new_cold"
 } },
   { "flame_rift": {
-  "normal": "charm/charm_large",
-  "uber": "charm/charm_large",
-  "ultra": "charm/charm_large"
+  "normal": "charm/new_fire",
+  "uber": "charm/new_fire",
+  "ultra": "charm/new_fire"
 } },
   { "crack_of_the_heavens": {
-  "normal": "charm/charm_large",
-  "uber": "charm/charm_large",
-  "ultra": "charm/charm_large"
+  "normal": "charm/new_lightning",
+  "uber": "charm/new_lightning",
+  "ultra": "charm/new_lightning"
 } },
   { "rotting_fissure": {
-  "normal": "charm/charm_large",
-  "uber": "charm/charm_large",
-  "ultra": "charm/charm_large"
+  "normal": "charm/new_poison",
+  "uber": "charm/new_poison",
+  "ultra": "charm/new_poison"
 } },
   { "bone_break": {
-  "normal": "charm/charm_large",
-  "uber": "charm/charm_large",
-  "ultra": "charm/charm_large"
+  "normal": "charm/new_physical",
+  "uber": "charm/new_physical",
+  "ultra": "charm/new_physical"
 } },
   { "black_cleft": {
-  "normal": "charm/charm_large",
-  "uber": "charm/charm_large",
-  "ultra": "charm/charm_large"
+  "normal": "charm/new_magic",
+  "uber": "charm/new_magic",
+  "ultra": "charm/new_magic"
 } },
 { "ars_aldiablolos": {
   "normal": "grimoires/ars_aldiablolos",
@@ -2023,5 +2023,95 @@
   "normal": "charm/charm_level",
   "uber": "charm/charm_level",
   "ultra": "charm/charm_level"
+} },
+  { "precrafted_cold_rupture": {
+  "normal": "charm/new_cold",
+  "uber": "charm/new_cold",
+  "ultra": "charm/new_cold"
+} },
+  { "pre_crafted_cold_rupture": {
+  "normal": "charm/new_cold",
+  "uber": "charm/new_cold",
+  "ultra": "charm/new_cold"
+} },
+  { "precrafted_flame_rift": {
+  "normal": "charm/new_fire",
+  "uber": "charm/new_fire",
+  "ultra": "charm/new_fire"
+} },
+  { "pre_crafted_flame_rift": {
+  "normal": "charm/new_fire",
+  "uber": "charm/new_fire",
+  "ultra": "charm/new_fire"
+} },
+  { "precrafted_crack_of_the_heavens": {
+  "normal": "charm/new_lightning",
+  "uber": "charm/new_lightning",
+  "ultra": "charm/new_lightning"
+} },
+  { "pre_crafted_crack_of_the_heavens": {
+  "normal": "charm/new_lightning",
+  "uber": "charm/new_lightning",
+  "ultra": "charm/new_lightning"
+} },
+  { "precrafted_rotting_fissure": {
+  "normal": "charm/new_poison",
+  "uber": "charm/new_poison",
+  "ultra": "charm/new_poison"
+} },
+  { "pre_crafted_rotting_fissure": {
+  "normal": "charm/new_poison",
+  "uber": "charm/new_poison",
+  "ultra": "charm/new_poison"
+} },
+  { "precrafted_bone_break": {
+  "normal": "charm/new_physical",
+  "uber": "charm/new_physical",
+  "ultra": "charm/new_physical"
+} },
+  { "pre_crafted_bone_break": {
+  "normal": "charm/new_physical",
+  "uber": "charm/new_physical",
+  "ultra": "charm/new_physical"
+} },
+  { "precrafted_black_cleft": {
+  "normal": "charm/new_magic",
+  "uber": "charm/new_magic",
+  "ultra": "charm/new_magic"
+} },
+  { "pre_crafted_black_cleft": {
+  "normal": "charm/new_magic",
+  "uber": "charm/new_magic",
+  "ultra": "charm/new_magic"
+} },
+  { "crafted_cold_rupture": {
+  "normal": "charm/new_cold",
+  "uber": "charm/new_cold",
+  "ultra": "charm/new_cold"
+} },
+  { "crafted_flame_rift": {
+  "normal": "charm/new_fire",
+  "uber": "charm/new_fire",
+  "ultra": "charm/new_fire"
+} },
+  { "crafted_crack_of_the_heavens": {
+  "normal": "charm/new_lightning",
+  "uber": "charm/new_lightning",
+  "ultra": "charm/new_lightning"
+} },
+  { "crafted_rotting_fissure": {
+  "normal": "charm/new_poison",
+  "uber": "charm/new_poison",
+  "ultra": "charm/new_poison"
+} },
+  { "crafted_bone_break": {
+  "normal": "charm/new_physical",
+  "uber": "charm/new_physical",
+  "ultra": "charm/new_physical"
+} },
+  { "crafted_black_cleft": {
+  "normal": "charm/new_magic",
+  "uber": "charm/new_magic",
+  "ultra": "charm/new_magic"
 } }
 ]
