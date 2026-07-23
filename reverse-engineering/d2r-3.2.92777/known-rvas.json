@@ -644,6 +644,14 @@
       "notes": "Serializes generalized item actions to the owning client. Native 92777 call sites prove the nine-argument ABI: creation passes action, secondary code, mode, inventory page, node page, then packed position. Transmogrify 1.1.1 follows that order; 1.1.0 had inverted the last two values and produced a visible but frozen client item. Source removal uses action 0x20 with the captured packed position in the final argument."
     },
     {
+      "rva": "0x541A7E",
+      "name": "GambleScreenGenerationLimitImmediate",
+      "kind": "patch-site",
+      "confidence": "high",
+      "source": "Mission/gamble-screen-limit-3.2.md",
+      "notes": "Immediate byte in the unique 92777 loop bound `83 FD 0E 0F 8C DB FE FF FF` inside D2GAME_STORES_FillGamble. EBP is incremented after item generation and the loop continues while EBP is below this value. Vanilla is exactly 14; GambleScreenLimit validates the full signature and configures the immediate from 14 through 127."
+    },
+    {
       "rva": "0x542F40",
       "name": "GAME_GetPlayerCountBonus",
       "kind": "function",

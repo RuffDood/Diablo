@@ -48,6 +48,13 @@
         "floating-damage.toml"
       ]
     },
+    "addons/GambleScreenLimit/GambleScreenLimit.zip": {
+      "kind": "plugin",
+      "entries": [
+        "GambleScreenLimit.dll",
+        "GambleScreenLimit.json"
+      ]
+    },
     "addons/NoEtherealItemTypes/NoEtherealItemTypes.zip": {
       "kind": "plugin",
       "legacy": true,
