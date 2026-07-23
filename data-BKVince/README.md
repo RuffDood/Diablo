@@ -8,8 +8,8 @@ historique 2.4. La conversion a été finalisée le 17 juillet 2026 avec
 - Source Git : `data-BKVince/BKVince.mpq/` et `data-BKVince/d2rloader/`
 - Runtime local : `mods/BKVince/BKVince.mpq/` et `mods/BKVince/d2rloader/`
 - Intégration D2RLoader : métadonnées, configuration, README et gabarit de
-  patch générés dans `data-BKVince/d2rloader/`; le `savepath` historique
-  `BKDiablo/` est conservé.
+  patch générés dans `data-BKVince/d2rloader/`; le profil de sauvegarde
+  utilise désormais `BKVince/`.
 - Méthode : calculer les deltas `BK → TCP`, puis les rejouer sélectivement sur
   BKVince afin de préserver Warlock, l'endgame et les adaptations 3.2.
 - Sécurité : ne jamais remplacer BKVince en bloc par TCP et ne synchroniser le
