@@ -55,6 +55,13 @@
         "GambleScreenLimit.json"
       ]
     },
+    "addons/QtyDisplayIssue/QtyDisplayIssue.zip": {
+      "kind": "plugin",
+      "entries": [
+        "QtyDisplayIssue.dll",
+        "QtyDisplayIssue.json"
+      ]
+    },
     "addons/NoEtherealItemTypes/NoEtherealItemTypes.zip": {
       "kind": "plugin",
       "legacy": true,
