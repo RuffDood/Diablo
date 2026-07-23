@@ -80,7 +80,6 @@ ciblées et, pour quelques plugins, des offsets locaux documentés.
 | `PotionAutoPickup` | hook `0x4B9DF0` | accesseurs natifs d’unités | 2 |
 | `FloatingDamage` | hook `0x427150`, plus D3D12/MinHook | vue locale de l’événement de dégâts et rendu privé | 3 |
 | `CharmInventoryAuras` | hooks `0x42D2C0`, `0x491960`, `0x502D00` | offsets skill/item/stat-list ciblés | 3 |
-| `RevealMap` | hook `0x3271C0` | offsets unit/path/level/room/DRLG ciblés | 3 |
 | `ReviveOverhaul` | hooks `0x4A3A20`, `0x4A7270`, `0x4A8090`, `0x596720` | ABI IA et return-sites stricts | 3 |
 | `DurabilityResistance` | hooks `0x2F48C0`, `0x314110`, `0x441B10` | `ItemsTxt` et `ItemTypesTxt` par offsets ciblés | 4, conflit interne à résoudre |
 | `Transmogrify` | hooks `0x2BD480`, `0x314110`, `0x43D530`, `0x4F40C0` | records items, tooltip, création et placement | 4, conflit interne à résoudre |
@@ -191,7 +190,7 @@ par eezstreet sans modifier la fondation.
 
 ### Tranche 3 — sous-systèmes complexes
 
-`FloatingDamage`, `CharmInventoryAuras`, `RevealMap` et `ReviveOverhaul` sont
+`FloatingDamage`, `CharmInventoryAuras` et `ReviveOverhaul` sont
 traités séparément, avec validation de leurs dépendances graphiques, offsets de
 structures ou chemins IA.
 
