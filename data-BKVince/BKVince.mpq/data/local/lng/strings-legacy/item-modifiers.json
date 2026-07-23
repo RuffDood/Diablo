@@ -5736,5 +5736,17 @@
     "itIT": "Clicca col destro per terrorizzare l'Atto 5",
     "koKR": "오른쪽 클릭으로 5막에 공포의 마수 뻗기",
     "plPL": "Naciśnij PPM, aby Aktem V owładnęła Groza"
+  },
+  {
+    "id": 10924,
+    "Key": "WarOnly",
+    "enUS": "(Warlock Only)",
+    "zhTW": "（只限術士）",
+    "deDE": "(Nur Hexenmeister)",
+    "esES": "(Solo brujo)",
+    "frFR": "(Démoniste uniquement)",
+    "itIT": "(Solo Stregone)",
+    "koKR": "(악마술사 전용)",
+    "plPL": "(Tylko czarnoksiężnicy)"
   }
 ]
