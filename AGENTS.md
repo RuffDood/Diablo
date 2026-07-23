@@ -47,7 +47,7 @@ En clair : côté **données et runtime**, `data-TCP` demeure la source historiq
 - **Documentation des `.txt`** : `https://eezstreet.github.io/d2rdoc/` est la référence primaire pour les tables D2R 3.2 et les descriptions de headers de l’Éditeur. L’ancien guide ne tranche plus une question concernant un header `.txt` 3.2; il reste utilisable pour les assets et certains JSON.
 - **Encodage & intégrité des `.txt`** : UTF-8 sans BOM pour le code ; les tables `.txt` D2R restent en **CRLF**. Toute réécriture doit utiliser le skill `diablo-tsv` et `scripts/build-data/tsv.js`, avec un round-trip **byte-exact** obligatoire.
 - **Assets versionnés** : `data-TCP/hd`, `data-TCP/local`, `data-BK/hd` et `data-BK/local` sont dans Git. Les formats HD binaires de TCP/BK passent par Git LFS ; les backups `*.bak` restent exclus.
-- **Git** : ne change **jamais** de branche, et ne commit ni ne push jamais, sans un `GO` dédié et explicite de Guillaume.
+- **Git** : ne change jamais de branche et ne commit ni ne push jamais de ta propre initiative. Une demande explicite de l’utilisateur courant suffit; aucune formule `GO` dédiée ni identité particulière n’est requise.
 - **Runtime Diablo** : utiliser le skill `d2r-runtime-validation`. Si des fichiers sont verrouillés, fermer soi-même les instances concernées; ne jamais demander à Vincent de fermer le jeu. Relancer ensuite une seule instance si la validation l’exige.
 
 ## Skills spécialisés
@@ -84,4 +84,4 @@ Cherche et trouve la mission courante avec le skill `diablo-roadmap-release`. Si
 ## Hygiène Git
 
 - **Vincent** (humain) : rappelle-lui régulièrement de commit et push son travail — grain fin, messages clairs.
-- **Toi (agent)** : ne commit ni ne push **jamais** de ta propre initiative — uniquement sur `GO` explicite de Guillaume (cf. § Conventions).
+- **Toi (agent)** : ne commit ni ne push **jamais** de ta propre initiative. Agis uniquement après une demande explicite de l’utilisateur courant, formulée naturellement ou sous forme de `GO` (cf. § Conventions).

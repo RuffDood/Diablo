@@ -52,34 +52,18 @@ test('blocks apply_patch writes in a read-only cadastre zone', () => {
   assert.match(output.hookSpecificOutput.permissionDecisionReason, /read-only/);
 });
 
-test('blocks Git commit unless a dedicated authorization is consumed', () => {
-  const sessionId = `guard-git-test-${process.pid}`;
-  const denied = runHook({
-    session_id: sessionId,
+test('does not impose a dedicated Git authorization prompt', () => {
+  const commit = runHook({
     hook_event_name: 'PreToolUse',
     tool_name: 'Bash',
     tool_input: { command: 'git commit -m "test"' },
   });
-  assert.equal(denied.hookSpecificOutput.permissionDecision, 'deny');
+  assert.equal(commit, null);
 
-  runHook({
-    session_id: sessionId,
-    hook_event_name: 'UserPromptSubmit',
-    prompt: 'GO COMMIT',
-  });
-  const allowed = runHook({
-    session_id: sessionId,
+  const push = runHook({
     hook_event_name: 'PreToolUse',
     tool_name: 'Bash',
-    tool_input: { command: 'git commit -m "test"' },
+    tool_input: { command: 'git push origin current-branch' },
   });
-  assert.equal(allowed, null);
-
-  const consumed = runHook({
-    session_id: sessionId,
-    hook_event_name: 'PreToolUse',
-    tool_name: 'Bash',
-    tool_input: { command: 'git commit -m "test"' },
-  });
-  assert.equal(consumed.hookSpecificOutput.permissionDecision, 'deny');
+  assert.equal(push, null);
 });

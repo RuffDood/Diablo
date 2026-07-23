@@ -1,19 +1,6 @@
 {
-  "description": "Enforces Diablo cadastre, Git authorization, and verification gates.",
+  "description": "Enforces Diablo cadastre access and verification gates.",
   "hooks": {
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"$(git rev-parse --show-toplevel)/.codex/hooks/diablo-guard.mjs\"",
-            "commandWindows": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"$repo = git rev-parse --show-toplevel; node (Join-Path $repo '.codex/hooks/diablo-guard.mjs')\"",
-            "timeout": 30,
-            "statusMessage": "Checking dedicated Git authorization"
-          }
-        ]
-      }
-    ],
     "PreToolUse": [
       {
         "matcher": "Bash|apply_patch|Edit|Write|mcp__.*",

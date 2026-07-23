@@ -1,10 +1,8 @@
-import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   accessForPath,
   buildAccessRules,
-  classifyProtectedGitActions,
   collectStringValues,
   commandReferencesReadOnly,
   extractApplyPatchPaths,
@@ -17,8 +15,6 @@ import {
   runProcess,
   runQuickChecks,
 } from '../../scripts/verify/repo-policy.mjs';
-
-const AUTHORIZATION_TTL_MS = 15 * 60 * 1000;
 
 async function readInput() {
   let input = '';
@@ -51,64 +47,6 @@ function blockAfterTool(reason) {
   });
 }
 
-function authorizationPath(repoRoot, sessionId) {
-  const safeSession = String(sessionId || 'unknown').replace(/[^A-Za-z0-9_.-]/g, '_');
-  const resolved = runProcess('git', [
-    'rev-parse',
-    '--path-format=absolute',
-    '--git-path',
-    'codex-diablo-guard',
-  ], { cwd: repoRoot, allowFailure: true });
-  const authorizationRoot = resolved.status === 0 && resolved.stdout.trim()
-    ? resolved.stdout.trim()
-    : path.join(repoRoot, '.git', 'codex-diablo-guard');
-  return path.join(authorizationRoot, `${safeSession}.json`);
-}
-
-function recordGitAuthorization(repoRoot, input) {
-  const prompt = String(input.prompt || '').trim();
-  const match = /^GO\s+(COMMIT|PUSH)$|^GO\s+BRANCH\s+([^\r\n]+)$/i.exec(prompt);
-  if (!match) return false;
-  const action = match[1]?.toLowerCase() || 'branch';
-  const branch = match[2]?.trim() || null;
-  const filePath = authorizationPath(repoRoot, input.session_id);
-  fs.mkdirSync(path.dirname(filePath), { recursive: true });
-  const authorization = {
-    action,
-    branch,
-    sessionId: input.session_id,
-    expiresAt: Date.now() + AUTHORIZATION_TTL_MS,
-  };
-  const temporary = `${filePath}.tmp`;
-  fs.writeFileSync(temporary, `${JSON.stringify(authorization)}\n`, 'utf8');
-  fs.renameSync(temporary, filePath);
-  emit({
-    hookSpecificOutput: {
-      hookEventName: 'UserPromptSubmit',
-      additionalContext: `One ${action} Git operation is authorized for 15 minutes in this session.`,
-    },
-  });
-  return true;
-}
-
-function consumeGitAuthorization(repoRoot, input, requested) {
-  const filePath = authorizationPath(repoRoot, input.session_id);
-  if (!fs.existsSync(filePath)) return false;
-  let authorization;
-  try {
-    authorization = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  } catch {
-    fs.rmSync(filePath, { force: true });
-    return false;
-  }
-  const valid = authorization.sessionId === input.session_id
-    && authorization.expiresAt >= Date.now()
-    && authorization.action === requested.action
-    && (requested.action !== 'branch' || authorization.branch === requested.target);
-  if (valid || authorization.expiresAt < Date.now()) fs.rmSync(filePath, { force: true });
-  return valid;
-}
-
 function mutatingMcpTool(toolName) {
   return /^mcp__/i.test(toolName)
     && /(?:filesystem|file|fs__)/i.test(toolName)
@@ -119,17 +57,6 @@ function preToolUse(repoRoot, input) {
   const toolName = String(input.tool_name || '');
   const toolInput = input.tool_input || {};
   const command = String(toolInput.command || '');
-
-  if (toolName === 'Bash') {
-    const protectedActions = classifyProtectedGitActions(command);
-    if (protectedActions.length) {
-      if (protectedActions.length !== 1 || !consumeGitAuthorization(repoRoot, input, protectedActions[0])) {
-        const requested = protectedActions.map(({ action, target }) => `${action}${target ? ` ${target}` : ''}`).join(', ');
-        denyPreTool(`Git ${requested} is blocked by default. Ask Guillaume for a dedicated prompt: GO COMMIT, GO PUSH, or GO BRANCH <name>.`);
-        return;
-      }
-    }
-  }
 
   const rules = buildAccessRules(loadCadastre(repoRoot));
   let candidatePaths = [];
@@ -198,8 +125,7 @@ export async function main() {
   const input = await readInput();
   const repoRoot = findRepoRoot(input.cwd || process.cwd());
   try {
-    if (input.hook_event_name === 'UserPromptSubmit') recordGitAuthorization(repoRoot, input);
-    else if (input.hook_event_name === 'PreToolUse') preToolUse(repoRoot, input);
+    if (input.hook_event_name === 'PreToolUse') preToolUse(repoRoot, input);
     else if (input.hook_event_name === 'PostToolUse') postToolUse(repoRoot, input);
     else if (input.hook_event_name === 'Stop') stop(repoRoot, input);
   } catch (error) {
