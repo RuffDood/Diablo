@@ -30,8 +30,10 @@ Ajouter les tests/builds spécifiques au composant. Si des fichiers ou dossiers 
 
 ## Gate Git
 
-- Ne pas changer de branche.
-- Ne pas committer.
-- Ne pas pousser.
-- Attendre un `GO` dédié et explicite de Guillaume pour chacune de ces actions.
-- Une demande de livraison ou d'archive ne constitue pas automatiquement ce `GO` Git.
+- Ne pas changer de branche, committer ou pousser de sa propre initiative.
+- Une demande explicite de l’utilisateur courant suffit; aucune formule `GO`
+  dédiée ni identité particulière n’est requise.
+- Autoriser ensemble les actions clairement demandées ensemble, par exemple
+  « commit ces changements puis push ».
+- Une demande de livraison ou d’archive ne constitue pas automatiquement une
+  demande de commit ou de push.

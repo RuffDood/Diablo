@@ -33,7 +33,7 @@ description: Maintenir la mission courante et ROADMAP.html, séquencer une nouve
 2. Construire l'archive depuis des artefacts validés, inspecter ses entrées réelles et vérifier l'absence de sources, secrets, logs ou preuves non destinés au public.
 3. Calculer les SHA-256 des artefacts et prouver leur égalité avec les fichiers testés dans le runtime.
 4. Exécuter les tests ciblés, le build, la validation du cadastre si nécessaire, le cold start et la matrice fonctionnelle requise.
-5. Examiner `git status`, `git diff --check` et le diff complet. Ne changer jamais de branche et ne jamais commit/push sans un `GO` dédié et explicite de Guillaume.
+5. Examiner `git status`, `git diff --check` et le diff complet. Ne changer jamais de branche et ne jamais commit/push de sa propre initiative; une demande explicite de l’utilisateur courant suffit, sans formule `GO` dédiée ni identité particulière.
 6. Rappeler à Vincent de commit et push par petits lots cohérents avec des messages clairs lorsque le travail est prêt.
 
 Lire [references/release-checklist.md](references/release-checklist.md) pour le contrôle final d'archive, de mission, de ROADMAP et de Git.
