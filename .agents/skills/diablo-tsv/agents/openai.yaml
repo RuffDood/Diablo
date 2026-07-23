@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diablo TSV"
+  short_description: "Editer les tables D2R sans alterer leurs octets"
+  default_prompt: "Utilise $diablo-tsv pour modifier une table D2R avec un round-trip byte-exact."

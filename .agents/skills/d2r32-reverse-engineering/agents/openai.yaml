@@ -1,0 +1,4 @@
+interface:
+  display_name: "D2R 3.2 Reverse Engineering"
+  short_description: "Prouver les RVA et ABI du build 3.2.92777"
+  default_prompt: "Utilise $d2r32-reverse-engineering pour etablir une preuve native sur D2R.exe 3.2.92777."

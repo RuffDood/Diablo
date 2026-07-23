@@ -1,0 +1,4 @@
+interface:
+  display_name: "D2R Runtime Validation"
+  short_description: "Deployer et valider un build dans le runtime D2R"
+  default_prompt: "Utilise $d2r-runtime-validation pour installer et valider ce changement dans le runtime D2R."

@@ -30,6 +30,7 @@ Les `.txt` restent la source ; **pas de base de données**. Les dossiers `local/
 | `apps/` | plateforme web (admin, wiki) | modifiable |
 | `schemas/` | catalogue de schémas de colonnes (dérivé du guide TXT eezstreet/d2rdoc) | modifiable |
 | `scripts/` | outillage (cadastre, validateur, TSV, dev-server) | modifiable |
+| `.agents/skills/` | procédures spécialisées réutilisables des agents | modifiable |
 | `guide/d2rdoc/` | guide TXT courant pour D2R 3.x/3.2 (`eezstreet/d2rdoc`) | **gitignoré — source primaire des schémas TXT** |
 | `guide/legacy/` | ancien D2R Data Guide | **gitignoré — référence complémentaire pour assets et certains JSON, jamais normative pour les `.txt` 3.2** |
 
@@ -42,36 +43,26 @@ En clair : côté **données et runtime**, `data-TCP` demeure la source historiq
 - **Auteur des patchs et plugins** : utiliser exactement `RuffnecKk` dans les métadonnées d’auteur — jamais `TCP`. Conserver séparément les crédits tiers déjà présents.
 - **Description des plugins** : rédiger en anglais une seule phrase courte, idéalement moins de 100 caractères, commençant par un verbe au présent et décrivant d’abord l’effet visible pour le joueur. Ne pas y répéter le build D2R, le mode de chargement ni les détails internes (`RVA`, hooks, ABI, identifiants de statistiques) ; conserver ces précisions dans le README et les logs.
 - **Plugins D2RLoader hybrides** : toute nouvelle DLL doit pouvoir être installée indifféremment dans le dossier global `<D2R>/d2rloader/plugins/` ou dans le dossier d’un mod `<D2R>/mods/<mod>/d2rloader/plugins/`. Ne déclare pas `ModScopedOnly`; conserve les mêmes contrôles stricts de build, de signatures et d’ABI dans les deux portées.
+- **Gate absolu pour chaque nouveau plugin** : avant toute implantation, utiliser le skill `d2rloader-plugin-incubation`, proposer à Vincent le propriétaire futur (`items`, `levels`, `misc`, `quests` ou `skills`) et attendre sa confirmation explicite. Avant cette confirmation, ne modifier ni code, ni configuration, ni archive. Pendant l’incubation, conserver une DLL RuffnecKk autonome et hybride, un JSON autonome compatible PluginPack — jamais de TOML — et ne modifier, lier ni redistribuer aucune DLL d’eezstreet.
 - **Documentation des `.txt`** : `https://eezstreet.github.io/d2rdoc/` est la référence primaire pour les tables D2R 3.2 et les descriptions de headers de l’Éditeur. L’ancien guide ne tranche plus une question concernant un header `.txt` 3.2; il reste utilisable pour les assets et certains JSON.
-- **Encodage & intégrité des `.txt`** : UTF-8 sans BOM pour le code ; les tables `.txt` D2R sont en **CRLF** (épinglé par `.gitattributes`). Toute réécriture doit préserver le **format TSV exact**, les **CRLF** et l'**encodage**, sinon D2RLAN casse. Le parseur/écrivain `scripts/build-data/tsv.js` garantit un round-trip **byte-exact** — passe toujours par lui.
+- **Encodage & intégrité des `.txt`** : UTF-8 sans BOM pour le code ; les tables `.txt` D2R restent en **CRLF**. Toute réécriture doit utiliser le skill `diablo-tsv` et `scripts/build-data/tsv.js`, avec un round-trip **byte-exact** obligatoire.
 - **Assets versionnés** : `data-TCP/hd`, `data-TCP/local`, `data-BK/hd` et `data-BK/local` sont dans Git. Les formats HD binaires de TCP/BK passent par Git LFS ; les backups `*.bak` restent exclus.
 - **Git** : ne change **jamais** de branche, et ne commit ni ne push jamais, sans un `GO` dédié et explicite de Guillaume.
-- **Runtime Diablo** : lorsqu'une opération sur Diablo, D2RLoader ou le profil BKVince exige de libérer des fichiers verrouillés, ferme toi-même les instances concernées du jeu. Ne demande pas à Vincent de fermer le jeu. Relance ensuite une seule instance si la validation de la tâche l'exige.
+- **Runtime Diablo** : utiliser le skill `d2r-runtime-validation`. Si des fichiers sont verrouillés, fermer soi-même les instances concernées; ne jamais demander à Vincent de fermer le jeu. Relancer ensuite une seule instance si la validation l’exige.
+
+## Skills spécialisés
+
+Les procédures répétables résident sous `.agents/skills/`. Utilise le skill correspondant dès que son domaine est engagé :
+
+- `diablo-tsv` — cadastre, schémas, tables TXT, CRLF et round-trip byte-exact;
+- `d2r32-reverse-engineering` — preuves natives du build 92777, fonctions, xrefs, signatures, ABI et RVA;
+- `d2rloader-plugin-incubation` — gate de catégorie, audit du PluginPack, JSON autonome, crédits et ZIP;
+- `d2r-runtime-validation` — arrêt/relance du jeu, synchronisation, hashes, logs et matrice de validation;
+- `diablo-roadmap-release` — mission courante, séquencement ROADMAP, archive publique et contrôles de livraison.
 
 ## Atelier persistant de reverse engineering D2R 3.2
 
-Pour tout memory patch ou plugin natif ciblant `D2R.exe 3.2.92777`, commence
-obligatoirement par `npm run re:d2r32 -- status`, puis interroge le workbench
-`reverse-engineering/d2r-3.2.92777/` avec `known`, `function`, `xrefs` ou
-`bytes`. Si l'image et l'index sont vérifiés, ne redumpe pas le processus et ne
-réimporte pas le binaire : réutilise le projet Ghidra persistant via
-`npm run re:d2r32:ghidra -- ...`.
-
-Les images déchiffrées, projets Ghidra, index SQLite, corpus intermédiaires et
-clones de référence résident sous `analysis-cache/`, restent locaux, sont
-gitignorés et ne doivent jamais être commités. Les manifestes, RVA prouvés,
-notes et scripts reproductibles sont versionnés. Toute nouvelle identification
-stable doit enrichir `known-rvas.json` avec sa source et son niveau de confiance;
-un nouveau build D2R reçoit un nouveau workbench et ne réutilise jamais les RVA
-92777 sans preuve.
-
-Les références de code externes sont gouvernées par
-`reverse-engineering/references.json` et clonées sous
-`analysis-cache/references/`. Pour D2MOO, utilise d'abord
-`npm run ref:d2moo -- status`, puis `search` ou `symbol`, et cite toute preuve
-avec le commit, le fichier et la ligne. D2MOO cible Diablo II 1.10f : ses
-adresses, ordinals, structures et ABI 32 bits ne sont jamais transposables sans
-preuve indépendante dans le workbench D2R 3.2.92777.
+Pour tout memory patch ou plugin natif ciblant `D2R.exe 3.2.92777`, utiliser obligatoirement le skill `d2r32-reverse-engineering` et commencer par `npm run re:d2r32 -- status`. Si l’image et l’index sont vérifiés, ne pas redumper ni réimporter le binaire. Les contenus de `analysis-cache/` restent locaux, gitignorés et jamais commités. Toute identification stable enrichit `known-rvas.json` avec sa source et sa confiance. Un autre build reçoit son propre workbench et ne réutilise aucun RVA 92777 sans preuve. D2MOO reste une référence sémantique 1.10f : aucune adresse, structure ou ABI 32 bits n’est transposable directement.
 
 ## Développement de la plateforme
 
@@ -80,30 +71,15 @@ preuve indépendante dans le workbench D2R 3.2.92777.
 
 ## Workflow cadastre
 
-Après toute modification **structurelle** (ajout / suppression / renommage de fichier ou dossier) :
-
-1. Régénère : `powershell -File scripts/generate-architecture.ps1` (exclut `.git`, `node_modules`, `guide`, `dist`, `.turbo`, `.netlify`, `analysis-cache`, `__pycache__`).
-2. Valide : `node scripts/validate-cartographie/validate.mjs` → doit afficher `VALID`.
-
-Le générateur préserve les annotations manuelles (`role`, `summary`, `agentAccess`) : enrichis-les pour toute zone signifiante.
+Après toute modification **structurelle** — ajout, suppression ou renommage de fichier ou dossier — appliquer le workflow cadastre du skill `diablo-tsv` : régénérer `ai-cartographie.json`, enrichir les annotations de toute zone signifiante et exiger `VALID` de `node scripts/validate-cartographie/validate.mjs`.
 
 ## Suivi de la ROADMAP
 
-`ROADMAP.html` est le tableau de bord du projet — tiens-le à jour au fil de l'avancement (marque les jalons livrés).
-
-Quand une **tâche significative émerge** en cours de conversation :
-
-1. **Propose** à l'utilisateur de l'ajouter à la ROADMAP.
-2. **Seulement si** l'utilisateur **confirme** l'ajout : **analyse** où l'insérer — au niveau **métier et efficacité d'avancement** du projet humain (le bon placement *technique* t'est acquis par défaut, ce n'est pas l'enjeu).
-3. À l'issue de cette analyse, dégage **deux séquencements** logiques et cohérents, puis **propose les 2 options** à l'utilisateur.
-
-Quand une **tâche ou un commit** est fait :
-
-1. **Vérifie** la fraîcheur de la ROADMAP. Et ajuste la ROADMAP selon le contexte.
+`ROADMAP.html` est le tableau de bord du projet. Utiliser le skill `diablo-roadmap-release` pour toute tâche significative ou livraison. Toujours proposer l’ajout d’une nouvelle tâche et attendre la confirmation avant d’éditer la ROADMAP; après confirmation, proposer deux séquencements fondés sur la valeur métier et l’efficacité d’avancement. Quand une tâche ou un commit est fait, vérifier la fraîcheur de la mission et de la ROADMAP.
 
 ## Mission courante
 
-Cherche et trouve la mission courante. Si le contexte ou la ROADMAP ne sont pas assez clair, valide inline avec le user sur les prochains steps (hint : si de nouvelles tâches émergent n'oublie pas de les ajouter à la roadmap )
+Cherche et trouve la mission courante avec le skill `diablo-roadmap-release`. Si le contexte ou la ROADMAP ne sont pas assez clairs, valide inline avec l'utilisateur le prochain pas.
 
 ## Hygiène Git
 

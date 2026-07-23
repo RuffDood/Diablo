@@ -1,0 +1,4 @@
+interface:
+  display_name: "D2RLoader Plugin Incubation"
+  short_description: "Incuber un plugin compatible avec le PluginPack"
+  default_prompt: "Utilise $d2rloader-plugin-incubation pour preparer un nouveau plugin D2RLoader autonome."

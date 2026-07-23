@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diablo Roadmap and Release"
+  short_description: "Piloter mission archive publique et livraison"
+  default_prompt: "Utilise $diablo-roadmap-release pour mettre a jour la mission et preparer la livraison publique."
