@@ -22,6 +22,7 @@ deno.lock
 # Les manifestes, notes et outils reproductibles restent versionnes.
 /analysis-cache/
 reverse-engineering/**/analysis-cache/
+reverse-engineering/**/sdk-contribution/*.zip
 
 # Reference externe : guide D2R communautaire (clone local, non versionne)
 guide/
