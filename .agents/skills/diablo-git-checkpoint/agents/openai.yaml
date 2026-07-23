@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diablo Git Checkpoint"
+  short_description: "Isoler, valider et livrer un checkpoint Git"
+  default_prompt: "Utilise $diablo-git-checkpoint pour isoler et valider le prochain lot Git."
