@@ -8,6 +8,7 @@
   "scripts": {
     "verify": "node scripts/verify/verify.mjs",
     "workstreams": "node scripts/workstreams/workstreams.mjs",
+    "checkpoint": "node scripts/checkpoint/checkpoint.mjs",
     "dev": "concurrently -n api,web -c blue,green \"node scripts/dev-server.js\" \"npm run dev -w apps/admin\"",
     "build": "turbo run build",
     "verify:data": "npm run test:gem-storage && npm run test:pandemonium-storage && npm run test:cube-guide && npm run test:itemstatcost && npm run test:bkvince-startup-refs && npm run test:bkvince-monstats-lots && npm run test:bkvince-storage-bag && npm run test:bkvince-super-tk && npm run test:bkvince-itemtypes && npm run test:bkvince-staffmods",

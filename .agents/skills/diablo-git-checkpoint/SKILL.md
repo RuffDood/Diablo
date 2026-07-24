@@ -15,6 +15,10 @@ description: Isoler, auditer, valider, committer et pousser des checkpoints Git 
 
 ## Inventorier le checkpoint
 
+0. Exécuter d'abord `npm run checkpoint` depuis la racine. Cette commande
+   rafraîchit `analysis-cache/checkpoint/state.json`; lire ce snapshot persistant
+   au lieu de demander à l'utilisateur de résumer l'état du dépôt.
+
 1. Exécuter `node .agents/skills/diablo-git-checkpoint/scripts/inspect-checkpoint.mjs` depuis la racine.
    Lire le regroupement automatique produit depuis `Mission/WORKSTREAMS.json` et
    refuser tout checkpoint tant qu'un fichier inattendu reste non attribué ou

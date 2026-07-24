@@ -83,5 +83,8 @@ Cherche et trouve la mission courante avec le skill `diablo-roadmap-release`. Si
 
 ## Hygiène Git
 
+- **Reprise automatique** : au début de chaque intervention, exécuter soi-même `npm run checkpoint`, puis lire `analysis-cache/checkpoint/state.json`. Après toute mutation, le rafraîchir avant la réponse finale. Ne jamais demander à l'utilisateur de résumer l'état du dépôt si ce diagnostic peut le reconstruire.
+- **Rituel conservé** : la préparation du checkpoint est automatique, mais commit et push exigent toujours la demande explicite de l'utilisateur; `commit push go` reste la formule habituelle.
+
 - **Vincent** (humain) : rappelle-lui régulièrement de commit et push son travail — grain fin, messages clairs.
 - **Toi (agent)** : ne commit ni ne push **jamais** de ta propre initiative. Agis uniquement après une demande explicite de l’utilisateur courant, formulée naturellement ou sous forme de `GO` (cf. § Conventions).

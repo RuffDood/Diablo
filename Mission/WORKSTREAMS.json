@@ -75,6 +75,7 @@
         "Mission/WORKSTREAMS.json",
         ".agents/skills/diablo-git-checkpoint/SKILL.md",
         ".agents/skills/diablo-git-checkpoint/scripts/inspect-checkpoint.mjs",
+        "scripts/checkpoint/**",
         "scripts/workstreams/**"
       ]
     }
@@ -94,6 +95,11 @@
       "pattern": "package.json",
       "workstreams": ["extended-item-stats", "workstream-registry"],
       "reason": "Root commands currently serve both the active plugin tests and repository organization."
+    },
+    {
+      "pattern": "AGENTS.md",
+      "workstreams": ["workstream-registry"],
+      "reason": "Durable repository instructions make automatic checkpoint refresh mandatory."
     },
     {
       "pattern": "scripts/verify/verify.mjs",

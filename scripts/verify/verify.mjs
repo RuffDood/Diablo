@@ -46,6 +46,9 @@ try {
   heading('workstream ownership');
   run(process.execPath, ['scripts/workstreams/workstreams.mjs', '--check'], 'Mission/WORKSTREAMS.json');
 
+  heading('automatic checkpoint state');
+  run(process.execPath, ['scripts/checkpoint/checkpoint.mjs', '--check'], 'automatic checkpoint');
+
   heading('ZIP contents');
   const zip = verifyZipContents(repoRoot);
   console.log(`archives checked: ${zip.checked}`);
@@ -59,6 +62,7 @@ try {
     'scripts/verify/repo-policy.test.mjs',
     'scripts/validate-current-mission/validate.test.mjs',
     'scripts/workstreams/workstreams.test.mjs',
+    'scripts/checkpoint/checkpoint.test.mjs',
     '.codex/hooks/diablo-guard.test.mjs',
   ], 'repository guardrail tests');
   if (process.platform === 'win32') {
