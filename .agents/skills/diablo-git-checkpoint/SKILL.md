@@ -16,6 +16,9 @@ description: Isoler, auditer, valider, committer et pousser des checkpoints Git 
 ## Inventorier le checkpoint
 
 1. Exécuter `node .agents/skills/diablo-git-checkpoint/scripts/inspect-checkpoint.mjs` depuis la racine.
+   Lire le regroupement automatique produit depuis `Mission/WORKSTREAMS.json` et
+   refuser tout checkpoint tant qu'un fichier inattendu reste non attribué ou
+   qu'un chevauchement n'est pas arbitré.
 2. Identifier la mission, l'effet joueur ou l'objectif technique unique du prochain lot.
 3. Définir une allowlist de fichiers et, pour les fichiers partagés, une allowlist de lignes ou d'objets. Exclure explicitement les builds, caches, sauvegardes, preuves locales et chantiers concurrents.
 4. Traiter chaque fichier `mixed` comme un risque : la version indexée et la version de travail diffèrent. Vérifier les deux avant de poursuivre.

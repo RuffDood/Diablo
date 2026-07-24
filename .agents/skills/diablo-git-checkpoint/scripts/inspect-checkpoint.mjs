@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { spawnSync } from 'node:child_process';
+import { getWorkstreamReport } from '../../../../scripts/workstreams/workstreams.mjs';
 
 const json = process.argv.includes('--json');
 const failOnMixed = process.argv.includes('--fail-on-mixed');
@@ -36,7 +37,7 @@ function lines(args) {
 }
 
 try {
-  git(['rev-parse', '--show-toplevel']);
+  const repoRoot = git(['rev-parse', '--show-toplevel']).stdout.trim();
 
   const branch = git(['rev-parse', '--abbrev-ref', 'HEAD']).stdout.trim();
   const upstreamResult = git(
@@ -60,6 +61,8 @@ try {
   const unstagedSet = new Set(unstaged);
   const mixed = staged.filter((path) => unstagedSet.has(path));
   const whitespace = git(['diff', '--cached', '--check'], { allowFailure: true });
+  const changedFiles = [...new Set([...staged, ...unstaged, ...untracked])];
+  const workstreams = getWorkstreamReport(repoRoot, changedFiles);
 
   const report = {
     branch,
@@ -73,6 +76,19 @@ try {
     conflicts: { count: conflicts.length, files: conflicts },
     cachedWhitespaceClean: whitespace.status === 0,
     cachedWhitespaceErrors: whitespace.stdout.trim(),
+    workstreams: {
+      validationErrors: workstreams.validationErrors,
+      streams: workstreams.registry.workstreams.map((stream) => ({
+        id: stream.id,
+        name: stream.name,
+        status: stream.status,
+        count: workstreams.classified.streams[stream.id].length,
+        files: workstreams.classified.streams[stream.id],
+      })),
+      shared: workstreams.classified.shared,
+      unassigned: workstreams.classified.unassigned,
+      overlaps: workstreams.classified.overlaps,
+    },
   };
 
   if (json) {
@@ -87,6 +103,13 @@ try {
     console.log(`mixed: ${mixed.length}`);
     console.log(`conflicts: ${conflicts.length}`);
     console.log(`cached diff check: ${report.cachedWhitespaceClean ? 'clean' : 'FAILED'}`);
+    console.log('workstreams:');
+    for (const stream of report.workstreams.streams) {
+      console.log(`  ${stream.name}: ${stream.count}`);
+    }
+    console.log(`  shared: ${report.workstreams.shared.length}`);
+    console.log(`  unassigned: ${report.workstreams.unassigned.length}`);
+    console.log(`  overlaps: ${report.workstreams.overlaps.length}`);
     if (mixed.length) {
       console.log('\nmixed files:');
       for (const path of mixed) console.log(`  ${path}`);

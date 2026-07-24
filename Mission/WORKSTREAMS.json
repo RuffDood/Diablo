@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-23",
+  "workstreams": [
+    {
+      "id": "extended-item-stats",
+      "name": "Extended Item Stats",
+      "status": "active",
+      "owner": "Guillaume + Codex",
+      "mission": "Mission/extended-item-stats-3.2.md",
+      "nextGate": "Measure native tooltip overflow across UI resolutions and scales.",
+      "include": [
+        "data-BKVince/BKVince.mpq/ExtendedItemStats.json",
+        "data-BKVince/d2rloader/plugins/ExtendedItemStats-src/**",
+        "data-BKVince/d2rloader/plugins/ExtendedItemStats.dll",
+        "data-BKVince/d2rloader/plugins/FloatingDamage-src/**",
+        "data-BKVince/d2rloader/plugins/FloatingDamage.dll",
+        "data-BKVince/d2rloader/plugins/Transmogrify-src/plugin.cpp",
+        "data-BKVince/d2rloader/plugins/Transmogrify.dll",
+        "scripts/reverse-engineering/extended-item-*"
+      ]
+    },
+    {
+      "id": "advanced-item-tooltips",
+      "name": "Advanced Item Tooltips",
+      "status": "active",
+      "owner": "Guillaume + Codex",
+      "mission": "Mission/advanced-item-tooltips-3.2.md",
+      "nextGate": "Finish the remaining visual validation without merging it into Extended Item Stats.",
+      "include": [
+        "Mission/advanced-item-tooltips-3.2.md",
+        "data-BKVince/d2rloader/plugins/AdvancedItemTooltips-src/**",
+        "data-BKVince/d2rloader/plugins/AdvancedItemTooltips.dll*"
+      ]
+    },
+    {
+      "id": "qty-display-issue",
+      "name": "Qty Display Issue",
+      "status": "active",
+      "owner": "Guillaume + Codex",
+      "mission": "Mission/qty-display-issue-3.2.md",
+      "nextGate": "Complete the active quantity tooltip validation before packaging another checkpoint.",
+      "include": [
+        "Mission/qty-display-issue-3.2.md",
+        "addons/QtyDisplayIssue/QtyDisplayIssue.zip",
+        "data-BKVince/d2rloader/plugins/QtyDisplayIssue-src/**",
+        "data-BKVince/d2rloader/plugins/QtyDisplayIssue.dll"
+      ]
+    },
+    {
+      "id": "ground-item-label-limit",
+      "name": "Ground Item Label Limit",
+      "status": "active",
+      "owner": "Guillaume + Codex",
+      "mission": "Mission/ground-item-label-limit-3.2.md",
+      "nextGate": "Finish the in-game visual validation before checkpointing the PluginPack prototype.",
+      "include": [
+        "Mission/ground-item-label-limit-3.2.md",
+        "data-BKVince/BKVince.mpq/D2RPlugins.json",
+        "data-BKVince/d2rloader/config/ground-item-label-limit.toml",
+        "data-BKVince/d2rloader/plugins/GroundItemLabelLimit-src/**",
+        "data-BKVince/d2rloader/plugins/GroundItemLabelLimit.dll*",
+        "data-BKVince/d2rloader/plugins/plugin-misc.dll",
+        "data-BKVince/d2rloader/plugins/README.txt"
+      ]
+    },
+    {
+      "id": "workstream-registry",
+      "name": "Workstream Registry",
+      "status": "maintenance",
+      "owner": "Guillaume + Codex",
+      "mission": null,
+      "nextGate": "Keep every changed file assigned or explicitly shared.",
+      "include": [
+        "Mission/WORKSTREAMS.json",
+        ".agents/skills/diablo-git-checkpoint/SKILL.md",
+        ".agents/skills/diablo-git-checkpoint/scripts/inspect-checkpoint.mjs",
+        "scripts/workstreams/**"
+      ]
+    }
+  ],
+  "sharedPaths": [
+    {
+      "pattern": "ROADMAP.html",
+      "workstreams": ["*"],
+      "reason": "Shared project dashboard; stage only the relevant task fragments."
+    },
+    {
+      "pattern": "ai-cartographie.json",
+      "workstreams": ["*"],
+      "reason": "Generated cadastre; stage only nodes belonging to the checkpoint."
+    },
+    {
+      "pattern": "package.json",
+      "workstreams": ["extended-item-stats", "workstream-registry"],
+      "reason": "Root commands currently serve both the active plugin tests and repository organization."
+    },
+    {
+      "pattern": "scripts/verify/verify.mjs",
+      "workstreams": ["workstream-registry"],
+      "reason": "Repository verification orchestrator."
+    },
+    {
+      "pattern": "reverse-engineering/d2r-3.2.92777/known-rvas.json",
+      "workstreams": ["extended-item-stats", "advanced-item-tooltips", "ground-item-label-limit"],
+      "reason": "Governed native evidence registry shared by native plugin missions."
+    }
+  ]
+}

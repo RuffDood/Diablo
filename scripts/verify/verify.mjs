@@ -43,6 +43,9 @@ try {
   heading('active mission pointer');
   run(process.execPath, ['scripts/validate-current-mission/validate.mjs'], 'Mission/CURRENT.md');
 
+  heading('workstream ownership');
+  run(process.execPath, ['scripts/workstreams/workstreams.mjs', '--check'], 'Mission/WORKSTREAMS.json');
+
   heading('ZIP contents');
   const zip = verifyZipContents(repoRoot);
   console.log(`archives checked: ${zip.checked}`);
@@ -55,6 +58,7 @@ try {
     '--test',
     'scripts/verify/repo-policy.test.mjs',
     'scripts/validate-current-mission/validate.test.mjs',
+    'scripts/workstreams/workstreams.test.mjs',
     '.codex/hooks/diablo-guard.test.mjs',
   ], 'repository guardrail tests');
   if (process.platform === 'win32') {
