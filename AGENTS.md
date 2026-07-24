@@ -1,14 +1,25 @@
 Quand tu lis ceci, dis 'Je suis le gardien du Workspace RuffnecKk'
 
-# Orientation des agents — dépôt Diablo (mod TCP)
+# Orientation des agents — Workspace Diablo RuffnecKk
 
 N'interroge jamais spontanément le user sur l'ouverture de l'éditeur. Ouvre-le uniquement lorsqu'il le demande explicitement. L'éditeur déployé est accessible via diablo-tcp-admin.netlify.app (domaine personnalisé diablo.spheredi.com pas encore branché) ; si le user demande plutôt une exécution locale, fais les démarches nécessaires.
 
 ## Nature du dépôt
 
+### Nomenclature autoritaire
+
+| Terme | Signification |
+|---|---|
+| **Workspace RuffnecKk** | Ensemble du dépôt, de ses outils et de ses projets |
+| **BKVince** | Mod actuel et cible active sous D2RLoader 3.2 |
+| **TCP** | Mod historique D2R 2.4, distinct de BKVince |
+| **BK, BT, VNP** | Mods de référence distincts, jamais synonymes de BKVince |
+
+Lorsque Vincent dit « mon mod » sans autre précision, interpréter **BKVince**. Ne jamais employer **TCP** comme synonyme du mod actuel; ne le mentionner que si Vincent le nomme explicitement ou si le travail concerne réellement `data-TCP/`.
+
 Deux choses cohabitent :
 
-1. **Les données du mod** — les tables `.txt` (TSV) de `data-BK/BT/TCP`, les références `data-VNP/`, `excel-vanilla2.4/` et `data-vanilla3.2/data/data/global/excel/`. C'est la source de vérité du gameplay selon le runtime ciblé.
+1. **Les données des mods** — les tables `.txt` (TSV) de `data-BKVince/`, `data-TCP/`, `data-BK/` et `data-BT/`, les références `data-VNP/`, `excel-vanilla2.4/` et `data-vanilla3.2/data/data/global/excel/`. C'est la source de vérité du gameplay selon le runtime ciblé.
 2. **Une plateforme web** (monorepo **npm + turbo**) construite par-dessus : un **Admin** pour éditer ces `.txt`, et (à venir) un **Wiki** de comparaison des 3 mods.
 
 Les `.txt` restent la source ; **pas de base de données**. Les dossiers `local/` et `hd/` de TCP et BK sont également versionnés, avec les binaires HD sous **Git LFS**. Stack : **Vite + React** (fronts), **Netlify** (hébergement en ligne : `diablo-tcp-admin.netlify.app`), git comme « base » (chaque édition = commit).
@@ -19,11 +30,11 @@ Les `.txt` restent la source ; **pas de base de données**. Les dossiers `local/
 
 | Zone | Rôle | Accès |
 |---|---|---|
-| `data-TCP/` (`global`, `hd`, `local`) | mod en développement | **modifiable** |
+| `data-TCP/` (`global`, `hd`, `local`) | mod historique D2R 2.4 | **modifiable** |
 | `data-TCP/D2RLAN/` | profil local D2RLAN et intégration runtime de TCP | **modifiable** |
-| `data-BKVince/` | nouvelle source de développement D2RLoader 3.2, issue de BK converti | **modifiable** |
+| `data-BKVince/` | mod actuel et source de développement D2RLoader 3.2, issue de BK converti | **modifiable** |
 | `data-BK/`, `data-BT/` | mods de référence / inspiration | **read-only** |
-| `data-VNP/` | Mod Vanilla++ servant d'inspiration pour mon mod TCP | **read-only** |
+| `data-VNP/` | Mod Vanilla++ servant d'inspiration pour BKVince | **read-only** |
 | `excel-vanilla2.4/` | données vanilla Diablo II 2.4 | **read-only** |
 | `data-vanilla3.2/` | extraction locale CASCView de D2R 3.2 ; seul `data/data/global/excel` est versionné | **read-only** |
 | `Mission/` | besoins et intentions | modifiable |
@@ -34,7 +45,7 @@ Les `.txt` restent la source ; **pas de base de données**. Les dossiers `local/
 | `guide/d2rdoc/` | guide TXT courant pour D2R 3.x/3.2 (`eezstreet/d2rdoc`) | **gitignoré — source primaire des schémas TXT** |
 | `guide/legacy/` | ancien D2R Data Guide | **gitignoré — référence complémentaire pour assets et certains JSON, jamais normative pour les `.txt` 3.2** |
 
-En clair : côté **données et runtime**, `data-TCP` demeure la source historique 2.4 et `data-BKVince` est la cible de migration D2RLoader 3.2; les références servent uniquement de comparaison. Côté **plateforme**, `apps/`, `schemas/`, `scripts/` sont le code de l'outil.
+En clair : côté **données et runtime**, `data-TCP` demeure la source historique 2.4 et `data-BKVince` est le mod actuel sous D2RLoader 3.2; les références servent uniquement de comparaison. Côté **plateforme**, `apps/`, `schemas/`, `scripts/` sont le code de l'outil.
 
 ## Conventions
 
