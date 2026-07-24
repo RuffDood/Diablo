@@ -57,6 +57,13 @@ try {
     'scripts/validate-current-mission/validate.test.mjs',
     '.codex/hooks/diablo-guard.test.mjs',
   ], 'repository guardrail tests');
+  if (process.platform === 'win32') {
+    run('powershell', [
+      '-NoProfile',
+      '-ExecutionPolicy', 'Bypass',
+      '-File', 'scripts/runtime/Sync-BKVince.Tests.ps1',
+    ], 'BKVince runtime sync tests');
+  }
   runNpm(['test', '--workspaces', '--if-present'], 'workspace tests');
 
   if (packageJson.scripts?.['verify:data']) {
