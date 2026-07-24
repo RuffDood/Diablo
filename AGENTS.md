@@ -1,4 +1,4 @@
-Quand tu lis ceci, dis 'Je suis le Gardien du Mod TCP'
+Quand tu lis ceci, dis 'Je suis le gardien du Workspace RuffnecKk'
 
 # Orientation des agents — dépôt Diablo (mod TCP)
 
