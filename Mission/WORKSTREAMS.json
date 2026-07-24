@@ -79,6 +79,20 @@
       ]
     },
     {
+      "id": "remote-stash",
+      "name": "RemoteStash",
+      "status": "active",
+      "owner": "Vincent + Codex",
+      "mission": "Mission/remote-stash-3.2.md",
+      "nextGate": "Identify and prove the 92777 server producer and client consumer of the event that opens the existing stash panel before implementing any hook.",
+      "include": [
+        "Mission/remote-stash-3.2.md",
+        "data-BKVince/BKVince.mpq/RemoteStash.json",
+        "data-BKVince/d2rloader/plugins/RemoteStash-src/**",
+        "data-BKVince/d2rloader/plugins/RemoteStash.dll"
+      ]
+    },
+    {
       "id": "workstream-registry",
       "name": "Workstream Registry",
       "status": "maintenance",
@@ -127,7 +141,7 @@
     },
     {
       "pattern": "reverse-engineering/d2r-3.2.92777/known-rvas.json",
-      "workstreams": ["extended-item-stats", "advanced-item-tooltips", "ground-item-label-limit", "configurable-larzuk-sockets"],
+      "workstreams": ["extended-item-stats", "advanced-item-tooltips", "ground-item-label-limit", "configurable-larzuk-sockets", "remote-stash"],
       "reason": "Governed native evidence registry shared by native plugin missions."
     }
   ]
