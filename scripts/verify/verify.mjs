@@ -40,6 +40,9 @@ try {
   runProcess(process.execPath, ['scripts/validate-cartographie/validate.mjs'], { cwd: repoRoot });
   console.log('VALID');
 
+  heading('active mission pointer');
+  run(process.execPath, ['scripts/validate-current-mission/validate.mjs'], 'Mission/CURRENT.md');
+
   heading('ZIP contents');
   const zip = verifyZipContents(repoRoot);
   console.log(`archives checked: ${zip.checked}`);
@@ -51,6 +54,7 @@ try {
   run(process.execPath, [
     '--test',
     'scripts/verify/repo-policy.test.mjs',
+    'scripts/validate-current-mission/validate.test.mjs',
     '.codex/hooks/diablo-guard.test.mjs',
   ], 'repository guardrail tests');
   runNpm(['test', '--workspaces', '--if-present'], 'workspace tests');
