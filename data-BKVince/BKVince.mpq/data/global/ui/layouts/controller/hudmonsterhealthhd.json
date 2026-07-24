@@ -17,7 +17,7 @@
             "fields": {
                 "rect": {
                     "x": -500,
-                    "y": 0,
+                    "y": 9,
                     "width": 1000,
                     "height": 74
                 }
@@ -80,6 +80,29 @@
                                     }
                                 }
                             }
+                        },
+                        {
+                            "type": "TextBoxWidget",
+                            "name": "LevelValueScreen",
+                            "fields": {
+                                "anchor": {
+                                    "x": 0.5,
+                                    "y": 0.5
+                                },
+                                "rect": {
+                                    "y": -112
+                                },
+                                "style": {
+                                    "pointSize": "$MediumFontSize",
+                                    "alignment": {
+                                        "h": "center",
+                                        "v": "center"
+                                    },
+                                    "options": {
+                                        "pipeCharacterBehavior": "handle"
+                                    }
+                                }
+                            }
                         }
                     ]
                 },
@@ -92,6 +115,50 @@
                         },
                         "rect": {
                             "y": 83
+                        },
+                        "style": {
+                            "fontFace": "Formal",
+                            "pointSize": "$MediumFontSize",
+                            "alignment": {
+                                "h": "center"
+                            },
+                            "options": {
+                                "pipeCharacterBehavior": "handle"
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "TextBoxWidget",
+                    "name": "AuraCompact",
+                    "fields": {
+                        "anchor": {
+                            "x": 0.5
+                        },
+                        "rect": {
+                            "y": 83
+                        },
+                        "style": {
+                            "fontFace": "Formal",
+                            "pointSize": "$MediumFontSize",
+                            "alignment": {
+                                "h": "center"
+                            },
+                            "options": {
+                                "pipeCharacterBehavior": "handle"
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "TextBoxWidget",
+                    "name": "AuraNormal",
+                    "fields": {
+                        "anchor": {
+                            "x": 0.5
+                        },
+                        "rect": {
+                            "y": 128
                         },
                         "style": {
                             "fontFace": "Formal",
@@ -151,6 +218,28 @@
                 },
                 {
                     "type": "TextBoxWidget",
+                    "name": "ResistanceRowExpand",
+                    "fields": {
+                        "anchor": {
+                            "x": 0.5
+                        },
+                        "rect": {
+                            "y": 173
+                        },
+                        "style": {
+                            "fontFace": "Formal",
+                            "pointSize": "$MediumFontSize",
+                            "alignment": {
+                                "h": "center"
+                            },
+                            "options": {
+                                "pipeCharacterBehavior": "handle"
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "TextBoxWidget",
                     "name": "Additional",
                     "fields": {
                         "anchor": {
@@ -170,12 +259,40 @@
                             }
                         }
                     }
+                },
+                {
+                    "type": "TextBoxWidget",
+                    "name": "AdditionalExpand",
+                    "fields": {
+                        "anchor": {
+                            "x": 0.5
+                        },
+                        "rect": {
+                            "y": 228
+                        },
+                        "style": {
+                            "fontFace": "Formal",
+                            "pointSize": "$MediumFontSize",
+                            "alignment": {
+                                "h": "center"
+                            },
+                            "options": {
+                                "pipeCharacterBehavior": "handle"
+                            }
+                        }
+                    }
                 }
             ]
         },
         {
             "type": "Widget",
             "name": "TargetAttached",
+            "fields": {
+                "rect": {
+                    "x": -250,
+                    "width": 500
+                }
+            },
             "children": [
                 {
                     "type": "TextBoxWidget",
@@ -186,7 +303,7 @@
                             "y": -131
                         },
                         "anchor": {
-                            "x": 0.5
+                            "x": 0
                         },
                         "style": {
                             "pointSize": "$LargeFontSize",
@@ -203,12 +320,12 @@
                 {
                     "type": "GrowableImageWidget",
                     "name": "UniqueMonsterBackground",
-                    "rect": {
-                        "x": -500,
-                        "y": -26
-                    },
-                    "fields": {
-                        "filename": "Controller/HUD/MonsterHealth/monster_healthbar_unique",
+                "rect": {
+                    "x": -500,
+                    "y": -26
+                },
+                "fields": {
+                    "filename": "Controller/HUD/MonsterHealth/monster_healthbar_unique",
                         "leftCap/filename": "Controller/HUD/MonsterHealth/monster_healthbar_unique_left_cap",
                         "rightCap/filename": "Controller/HUD/MonsterHealth/monster_healthbar_unique_right_cap",
                         "leftCapOffset": {
@@ -241,12 +358,12 @@
                 {
                     "type": "GrowableImageWidget",
                     "name": "NormalMonsterBackground",
-                    "rect": {
-                        "x": -500,
-                        "y": -26
-                    },
-                    "fields": {
-                        "filename": "Controller/HUD/MonsterHealth/monster_healthbar_normal",
+                "rect": {
+                    "x": -500,
+                    "y": -26
+                },
+                "fields": {
+                    "filename": "Controller/HUD/MonsterHealth/monster_healthbar_normal",
                         "leftCap/filename": "Controller/HUD/MonsterHealth/monster_healthbar_normal_left_cap",
                         "rightCap/filename": "Controller/HUD/MonsterHealth/monster_healthbar_normal_right_cap",
                         "leftCapOffset": {
@@ -261,10 +378,10 @@
                     }
                 },
                 {
-                    "type": "HealthBarWidget",
-                    "name": "Health",
-                    "fields": {
-                        "rect": {
+                "type": "HealthBarWidget",
+                "name": "Health",
+                "fields": {
+                    "rect": {
                             "x": 0,
                             "y": -86
                         },
@@ -283,6 +400,30 @@
                                 "rect": {
                                     "x": 0,
                                     "y": 0
+                                },
+                                "anchor": {
+                                    "x": 0.5,
+                                    "y": 0.5
+                                },
+                                "style": {
+                                    "pointSize": "$LargeFontSize",
+                                    "alignment": {
+                                        "h": "center",
+                                        "v": "center"
+                                    },
+                                    "options": {
+                                        "pipeCharacterBehavior": "handle"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "type": "TextBoxWidget",
+                            "name": "LevelValueTarget",
+                            "fields": {
+                                "rect": {
+                                    "x": 0,
+                                    "y": -90
                                 },
                                 "anchor": {
                                     "x": 0.5,
