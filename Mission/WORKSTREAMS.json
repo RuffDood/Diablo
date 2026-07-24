@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-23",
+  "updatedAt": "2026-07-24",
   "workstreams": [
     {
       "id": "extended-item-stats",
@@ -62,6 +62,20 @@
         "data-BKVince/d2rloader/plugins/GroundItemLabelLimit.dll*",
         "data-BKVince/d2rloader/plugins/plugin-misc.dll",
         "data-BKVince/d2rloader/plugins/README.txt"
+      ]
+    },
+    {
+      "id": "configurable-larzuk-sockets",
+      "name": "Configurable Larzuk Sockets",
+      "status": "paused",
+      "owner": "Vincent + Codex",
+      "mission": "Mission/configurable-larzuk-sockets-3.2.md",
+      "nextGate": "After Advanced Item Tooltips and Transmogrify close, verify the 92777 workbench and audit plugin-quests.",
+      "include": [
+        "Mission/configurable-larzuk-sockets-3.2.md",
+        "data-BKVince/BKVince.mpq/LarzukSockets.json",
+        "data-BKVince/d2rloader/plugins/LarzukSockets-src/**",
+        "data-BKVince/d2rloader/plugins/LarzukSockets.dll"
       ]
     },
     {
