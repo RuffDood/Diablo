@@ -1,0 +1,29 @@
+{
+    // Replace null with an object such as { "minSockets": 2, "maxSockets": 2 }
+    // to force an exact value. Different bounds roll an inclusive range.
+    // Every result is capped by the item's base, type, item level, and inventory size.
+    "normal": {
+        "magic": null,
+        "rare": null,
+        "set": null,
+        "unique": null,
+        "crafted": null
+    },
+    "nightmare": {
+        "magic": null,
+        "rare": null,
+        "set": null,
+        "unique": null,
+        "crafted": null
+    },
+    "hell": {
+        "magic": null,
+        "rare": null,
+        "set": null,
+        "unique": null,
+        "crafted": null
+    },
+
+    // Emit one log line for each configured Larzuk reward.
+    "diagnostics": false
+}

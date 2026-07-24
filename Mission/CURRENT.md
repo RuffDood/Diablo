@@ -1,44 +1,48 @@
 # Mission courante
 
-Dernière mise à jour : 23 juillet 2026
+Dernière mise à jour : 24 juillet 2026
 
 ## Priorité active
 
-[Extended Item Stats — D2R 3.2.92777](extended-item-stats-3.2.md)
+[Configurable Larzuk Sockets — D2R 3.2.92777](configurable-larzuk-sockets-3.2.md)
 
-État : prototype `0.3.0` validé dans le personal stash à la souris. Le transport
-atteint le plafond configuré de 4096 octets et 1019 stats. La scrollbar, le mode
-épinglé et le dernier segment du tooltip ont été confirmés en jeu. Le chantier
-n'est pas livré et aucune archive publique n'existe.
+État : l’instruction explicite `start` de Vincent remplace le séquencement
+Option B antérieur. Le chemin serveur Larzuk, la difficulté, les qualités, les
+plafonds et le setter de sockets sont prouvés. Le prototype autonome
+`LarzukSockets 0.1.0` compile en Release x64, son test de politique passe et son
+JSON conserve le comportement vanilla par défaut. Il n’est pas encore déployé
+ni validé en jeu, et aucune archive publique n’existe.
 
 ## Prochain gate
 
-Mesurer l'overflow depuis la hauteur réellement disponible dans l'interface,
-selon la résolution et l'échelle UI, puis prouver que le tooltip vanilla reste
-inchangé lorsqu'il tient et que le mode étendu s'active seulement lorsqu'il
-déborde.
+Fixer les valeurs réelles `minSockets`/`maxSockets` des 15 combinaisons
+difficulté × qualité, activer un témoin, puis exécuter la matrice runtime Larzuk
+avec logs frais et contrôles de consommation de quête, plafond légal et
+coexistence.
 
 Gates suivants :
 
-- valider les commandes à la manette;
-- valider le renderer DirectX 12 autonome sans `FloatingDamage`;
-- poursuivre la matrice de cycle de vie et les tests solo/hôte/joiner;
-- valider la portée globale avant toute livraison.
+- valider Normal, Nightmare et Hell pour magic, rare, set, unique et crafted;
+- tester valeur exacte et plage inclusive sur plusieurs bases et `ilvl`;
+- valider Infinite Larzuk, solo/hôte/joiner et les portées globale/mod-locale;
+- ne préparer aucun ZIP avant absence prouvée de valeur illégale, perte,
+  duplication, crash ou désynchronisation.
 
 ## Frontière Git
 
-Le lot Extended Item Stats comprend sa mission, ses sources, sa DLL, son JSON,
-ses fixtures et preuves gouvernées, ainsi que les fragments associés de la
-ROADMAP, du cadastre et du registre RVA. `FloatingDamage` et `Transmogrify` ne
-doivent y entrer que pour leurs changements de coexistence directement requis
-par ce prototype.
+Le lot Larzuk comprend sa mission, `LarzukSockets-src`, la DLL autonome, son
+JSON, les preuves RVA gouvernées, le registre de workstreams, le cadastre et les
+fragments associés de la ROADMAP. Il ne doit intégrer aucun fichier d’une DLL
+d’eezstreet; `plugin-quests.dll` demeure seulement la destination du merge
+futur.
 
 Ne pas mélanger sans checkpoint explicite les chantiers concurrents suivants :
 
+- Extended Item Stats;
 - Advanced Item Tooltips;
 - Qty Display Issue;
 - Ground Item Label Limit;
-- toute autre évolution indépendante de `FloatingDamage` ou `Transmogrify`.
+- toute évolution indépendante de `Transmogrify`.
 
 Ce fichier est un pointeur opérationnel. Les preuves, décisions et gates
 détaillés demeurent dans la mission liée et dans `ROADMAP.html`.

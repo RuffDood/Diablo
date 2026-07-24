@@ -67,10 +67,10 @@
     {
       "id": "configurable-larzuk-sockets",
       "name": "Configurable Larzuk Sockets",
-      "status": "paused",
+      "status": "active",
       "owner": "Vincent + Codex",
       "mission": "Mission/configurable-larzuk-sockets-3.2.md",
-      "nextGate": "After Advanced Item Tooltips and Transmogrify close, verify the 92777 workbench and audit plugin-quests.",
+      "nextGate": "Choose the 15 difficulty-by-quality ranges, then run the governed Larzuk runtime matrix.",
       "include": [
         "Mission/configurable-larzuk-sockets-3.2.md",
         "data-BKVince/BKVince.mpq/LarzukSockets.json",
@@ -95,6 +95,11 @@
     }
   ],
   "sharedPaths": [
+    {
+      "pattern": "Mission/CURRENT.md",
+      "workstreams": ["*"],
+      "reason": "Operational pointer shared by whichever mission is the current project priority."
+    },
     {
       "pattern": "ROADMAP.html",
       "workstreams": ["*"],
@@ -122,7 +127,7 @@
     },
     {
       "pattern": "reverse-engineering/d2r-3.2.92777/known-rvas.json",
-      "workstreams": ["extended-item-stats", "advanced-item-tooltips", "ground-item-label-limit"],
+      "workstreams": ["extended-item-stats", "advanced-item-tooltips", "ground-item-label-limit", "configurable-larzuk-sockets"],
       "reason": "Governed native evidence registry shared by native plugin missions."
     }
   ]

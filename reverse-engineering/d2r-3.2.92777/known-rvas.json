@@ -68,12 +68,28 @@
       "notes": "Generic unit base-stat getter with ABI (unit, stat id, 16-bit layer). DurabilityResistance hooks its max-durability calls; SKILLTREE_CanAllocateSkill calls it with stat 5 and layer 0 for unspent skill points. BulkSkillPointAllocation 1.0.7 used it for its superseded per-rank acknowledgement queue; 1.2.1 no longer reads it."
     },
     {
+      "rva": "0x2F5020",
+      "name": "STATLIST_GetUnitStat",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/configurable-larzuk-sockets-3.2.md",
+      "notes": "Reads a unit stat with ABI (unit, statId, layer). ITEMS_AddSockets calls it with stat 0xC2 to preserve an existing socket count on set and unique items. LarzukSockets uses the same getter only to refuse overwriting an already-socketed item."
+    },
+    {
       "rva": "0x2F5C60",
       "name": "STATLIST_UnitGetStatValue",
       "kind": "function",
       "confidence": "high",
       "source": "Mission/ed-min-max-jewel-fix-3.2.md",
       "notes": "Unit-level (unit, statId, layer) wrapper with 91 direct callers. It packs the key as (statId << 16) | layer, resolves ItemStatCost, then calls the full-stat lookup at 0x2F9B10. EnhancedDamageMinMaxFix 1.0.0 hooked this wrapper unsuccessfully."
+    },
+    {
+      "rva": "0x2F7D10",
+      "name": "STATLIST_SetUnitStat",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/configurable-larzuk-sockets-3.2.md",
+      "notes": "Sets a unit stat with ABI (unit, statId, value, layer). The proven tail of ITEMS_AddSockets calls it with stat 0xC2 after setting IFLAG_SOCKETED. LarzukSockets reuses this exact native setter only in the guarded Larzuk path after enforcing the physical and base/type/ilvl limits."
     },
     {
       "rva": "0x2F8AD0",
@@ -268,12 +284,28 @@
       "notes": "Performs the native post-placement attachment step for an item and its player. Transmogrify follows the same finalize, attach and conditional refresh sequence as the proven 92777 item-grant path."
     },
     {
+      "rva": "0x36CC80",
+      "name": "ITEMS_GetItemSeed",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/configurable-larzuk-sockets-3.2.md",
+      "notes": "Validates UNIT_ITEM and returns ItemData+0x04, the low/high item RNG seed pair. The vanilla Larzuk magic-quality branch calls it before the 0x6AC690C5 LCG roll. LarzukSockets advances the same seed only when a configured inclusive range contains more than one legal result."
+    },
+    {
+      "rva": "0x36CF60",
+      "name": "ITEMS_GetItemQuality",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/configurable-larzuk-sockets-3.2.md",
+      "notes": "Returns ItemData quality, defaulting to normal when no valid item data exists. The Larzuk reward path branches on values 4 through 9; LarzukSockets configures only magic 4, set 5, rare 6, unique 7 and crafted 8, leaving all other qualities vanilla."
+    },
+    {
       "rva": "0x36EAD0",
       "name": "ITEMS_GetMaxSockets",
       "kind": "function",
       "confidence": "high",
-      "source": "Mission/advanced-item-tooltips-3.2.md",
-      "notes": "Returns the maximum socket count for the concrete item. The 92777 implementation reads ItemData item level at +0x38, ItemTypes socket thresholds and the compiled Items gemsockets cap. AdvancedItemTooltips calls this native routine instead of duplicating the rules."
+      "source": "Mission/advanced-item-tooltips-3.2.md; Mission/configurable-larzuk-sockets-3.2.md",
+      "notes": "Returns the maximum socket count for the concrete item. The 92777 implementation reads ItemData item level at +0x38, ItemTypes socket thresholds and the compiled Items gemsockets cap. AdvancedItemTooltips and LarzukSockets call this native routine instead of duplicating those rules; LarzukSockets additionally preserves the inventory width-by-height cap applied by ITEMS_AddSockets."
     },
     {
       "rva": "0x3719E0",
@@ -290,6 +322,14 @@
       "confidence": "high",
       "source": "Mission/no-ethereal-item-types-3.2.md",
       "notes": "Checks an item against an itemtypes row through D2R's compiled equivalence LUT. The plugin filters only the two ethereal-generation callers."
+    },
+    {
+      "rva": "0x375560",
+      "name": "ITEMS_AddSockets",
+      "kind": "function",
+      "confidence": "high",
+      "source": "Mission/configurable-larzuk-sockets-3.2.md",
+      "notes": "Applies a requested socket count after capping inventory area to six, quality to magic 4, rare 2, crafted/tempered 3 and set/unique 1 unless already socketed, then base/type/ilvl through ITEMS_GetMaxSockets. It sets IFLAG_SOCKETED and stat 0xC2. LarzukSockets owns a strict 16-byte inline hook here, forwards every non-Larzuk caller unchanged and bypasses only the generic quality cap for the guarded quest call."
     },
     {
       "rva": "0x382D20",
@@ -626,6 +666,14 @@
       "confidence": "high",
       "source": "Mission/memory-patches-portage-3.2.json",
       "notes": "Rejected candidate retained vanilla for regression checks."
+    },
+    {
+      "rva": "0x4FD57B",
+      "name": "LarzukAddSocketsCall",
+      "kind": "call-site",
+      "confidence": "high",
+      "source": "Mission/configurable-larzuk-sockets-3.2.md",
+      "notes": "Authoritative server reward call to ITEMS_AddSockets after Larzuk sets IFLAG_SOCKETED, obtains ITEMS_GetMaxSockets, rolls magic in 1..min(2,max) and forces qualities 5 through 9 to min(1,max). The return RVA 0x4FD580 and caller stack slot +0x58 for D2GameStrc are exact on build 92777; D2GameStrc+0x104 is read by the same function for difficulty."
     },
     {
       "rva": "0x502D00",
