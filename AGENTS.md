@@ -81,6 +81,18 @@ Après toute modification **structurelle** — ajout, suppression ou renommage d
 
 Cherche et trouve la mission courante avec le skill `diablo-roadmap-release`. Si le contexte ou la ROADMAP ne sont pas assez clairs, valide inline avec l'utilisateur le prochain pas.
 
+## Gate anti-sauce
+
+Avant de recommander un nouvel outil, une automatisation ou une évolution d'architecture :
+
+1. identifier une friction réellement observée et citer sa preuve concrète;
+2. auditer ce que l'outillage actuel couvre déjà;
+3. distinguer explicitement **fait vérifié**, **hypothèse à tester**, **simple idée** et **recommandation démontrée**;
+4. annoncer un gain vérifiable et la manière de le mesurer;
+5. si le besoin ou le gain n'est pas démontré, conclure honnêtement qu'aucune amélioration n'est justifiée pour le moment.
+
+Ne jamais présenter une possibilité plausible comme une priorité établie. Préférer ne rien construire à ajouter une couche sans problème mesuré.
+
 ## Hygiène Git
 
 - **Reprise automatique** : au début de chaque intervention, exécuter soi-même `npm run checkpoint`, puis lire `analysis-cache/checkpoint/state.json`. Après toute mutation, le rafraîchir avant la réponse finale. Ne jamais demander à l'utilisateur de résumer l'état du dépôt si ce diagnostic peut le reconstruire.
